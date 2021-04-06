@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Eccentric&#39;s Note</title>
+        <link>https://hubu8.github.io/</link>
+        <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iwyang@qq.com (bore)</managingEditor>
+            <webMaster>iwyang@qq.com (bore)</webMaster>
+            <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>

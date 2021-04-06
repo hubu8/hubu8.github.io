@@ -1,0 +1,10 @@
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>https://hubu8.github.io/links/</loc><priority>0</priority></url><url>
+            <loc>https://hubu8.github.io/post/domo/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/post/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

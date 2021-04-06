@@ -3,13 +3,27 @@
         <title>所有文章 - Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iwyang@qq.com (bore)</managingEditor>
-            <webMaster>iwyang@qq.com (bore)</webMaster><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Docker</title>
+    <link>https://hubu8.github.io/docker/</link>
+    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/docker/</guid>
+    <description><![CDATA[docker概述 从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力 原：jar&mdash;&mdash;]]></description>
+</item><item>
+    <title>Redis</title>
+    <link>https://hubu8.github.io/%E7%8B%82%E7%A5%9E%E8%AF%B4redis%E7%AC%94%E8%AE%B0csdn%E6%95%B4%E7%90%86%E7%89%88/</link>
+    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E7%8B%82%E7%A5%9E%E8%AF%B4redis%E7%AC%94%E8%AE%B0csdn%E6%95%B4%E7%90%86%E7%89%88/</guid>
+    <description><![CDATA[一、Nosql概述 为什么使用Nosql 1、单机Mysql时代 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出]]></description>
+</item><item>
     <title></title>
-    <link>https://hubu8.github.io/domo/</link>
+    <link>https://hubu8.github.io/jenkins/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/domo/</guid>
-    <description><![CDATA[title: &ldquo;Domo&rdquo; subtitle: &quot;&quot; date: 2021-04-03T15:05:10+08:00 lastmod: 2021-04-03T15:05:10+08:00 draft: false toc: enable: true weight: false categories: [&quot;&quot;] tags: [&quot;&quot;]]]></description>
+    <guid>https://hubu8.github.io/jenkins/</guid>
+    <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 title: &#34;First&#34; subtitle: &#34;&#34; date: 2021-04-06T20:23:59+08:00 lastmod: 2021-04-06T20:23:59+08:00 draft: true author: &#34;&#34; authorLink: &#34;&#34; description: &#34;&#34; tags: [&#34;shrsr&#34;] categories: [&#34;15&#34;] hiddenFromHomePage: false hiddenFromSearch: false featuredImage: &#34;&#34; featuredImagePreview: &#34;&#34; toc: enable: true math: enable: false lightgallery: false license: &#34;&#34; 虽然不知道是如何]]></description>
 </item></channel>
 </rss>

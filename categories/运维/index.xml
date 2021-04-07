@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>docker - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/docker/</link>
-        <description>docker - 标签 - Eccentric&#39;s Note</description>
+        <title>运维 - 分类 - Eccentric&#39;s Note</title>
+        <link>https://hubu8.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
+        <description>运维 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E8%BF%90%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
     <title>Docker</title>
     <link>https://hubu8.github.io/docker%E7%AC%94%E8%AE%B0/</link>
     <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>

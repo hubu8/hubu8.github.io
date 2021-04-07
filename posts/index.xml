@@ -6,17 +6,17 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
             <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Docker</title>
-    <link>https://hubu8.github.io/docker/</link>
+    <link>https://hubu8.github.io/docker%E7%AC%94%E8%AE%B0/</link>
     <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/docker/</guid>
+    <guid>https://hubu8.github.io/docker%E7%AC%94%E8%AE%B0/</guid>
     <description><![CDATA[docker概述 从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力 原：jar&mdash;&mdash;]]></description>
 </item><item>
     <title>Redis</title>
-    <link>https://hubu8.github.io/%E7%8B%82%E7%A5%9E%E8%AF%B4redis%E7%AC%94%E8%AE%B0csdn%E6%95%B4%E7%90%86%E7%89%88/</link>
+    <link>https://hubu8.github.io/redis%E7%AC%94%E8%AE%B0/</link>
     <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/%E7%8B%82%E7%A5%9E%E8%AF%B4redis%E7%AC%94%E8%AE%B0csdn%E6%95%B4%E7%90%86%E7%89%88/</guid>
+    <guid>https://hubu8.github.io/redis%E7%AC%94%E8%AE%B0/</guid>
     <description><![CDATA[一、Nosql概述 为什么使用Nosql 1、单机Mysql时代 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出]]></description>
 </item><item>
     <title>Spring</title>

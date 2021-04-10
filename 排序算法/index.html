@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>排序算法 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="排序算法" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-07T19:31:24&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-07T19:31:24&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="排序算法"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" /><link rel="prev" href="https://hubu8.github.io/docker%E5%9F%BA%E7%A1%80/" /><link rel="next" href="https://hubu8.github.io/docker%E8%BF%9B%E9%98%B6/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "排序算法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95\/"
+        },"genre": "posts","keywords": "排序算法","wordcount":  2166 ,
+        "url": "https:\/\/hubu8.github.io\/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95\/","datePublished": "2021-04-07T19:31:24+08:00","dateModified": "2021-04-07T19:31:24+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentrie&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentrie&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">排序算法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-07">2021-04-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2166 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="leancloud_visitors" data-flag-title="排序算法">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#冒泡排序">冒泡排序</a>
+      <ul>
+        <li><a href="#代码实现">代码实现</a></li>
+        <li><a href="#特点">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#选择排序">选择排序</a>
+      <ul>
+        <li><a href="#代码实现-1">代码实现</a></li>
+        <li><a href="#特点-1">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#插入排序">插入排序</a>
+      <ul>
+        <li><a href="#代码实现-2">代码实现</a></li>
+        <li><a href="#特点-2">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#希尔排序">希尔排序</a>
+      <ul>
+        <li><a href="#代码实现-3">代码实现</a></li>
+        <li><a href="#特点-3">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#快速排序">快速排序</a>
+      <ul>
+        <li><a href="#代码实现-4">代码实现</a></li>
+        <li><a href="#特点-4">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序">排序</a>
+      <ul>
+        <li><a href="#代码实现-5">代码实现</a></li>
+        <li><a href="#特点-5">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序-1">排序</a>
+      <ul>
+        <li><a href="#代码实现-6">代码实现</a></li>
+        <li><a href="#特点-6">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序-2">排序</a>
+      <ul>
+        <li><a href="#代码实现-7">代码实现</a></li>
+        <li><a href="#特点-7">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序-3">排序</a>
+      <ul>
+        <li><a href="#代码实现-8">代码实现</a></li>
+        <li><a href="#特点-8">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序-4">排序</a>
+      <ul>
+        <li><a href="#代码实现-9">代码实现</a></li>
+        <li><a href="#特点-9">特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序-5">排序</a>
+      <ul>
+        <li><a href="#代码实现-10">代码实现</a></li>
+        <li><a href="#特点-10">特点</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="冒泡排序">冒泡排序</h2>
+<p>​		冒泡排序是通过比较两个相邻元素的大小实现排序，如果前一个元素大于后一个元素，就交换这两个元素。这样就会让每一趟冒泡都能找到最大一个元素并放到最后。</p>
+<p>以 [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，对它进行冒泡排序：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/100"
+        data-srcset="/images/100, /images/100 1.5x, /images/100 2x"
+        data-sizes="auto"
+        alt="/images/100"
+        title="图片" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/101"
+        data-srcset="/images/101, /images/101 1.5x, /images/101 2x"
+        data-sizes="auto"
+        alt="/images/101"
+        title="图片" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/102"
+        data-srcset="/images/102, /images/102 1.5x, /images/102 2x"
+        data-sizes="auto"
+        alt="/images/102"
+        title="/images/102" /></p>
+<h3 id="代码实现">代码实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">maopaoSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">){</span>
+        <span class="kt">boolean</span> <span class="n">isChanged</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="o">;</span><span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]&gt;</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="n">1</span><span class="o">]){</span>
+                    <span class="kt">int</span> <span class="n">temp</span><span class="o">=</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="n">1</span><span class="o">];</span>
+                    <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="n">1</span><span class="o">]=</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+                    <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]=</span><span class="n">temp</span><span class="o">;</span>
+                    <span class="n">isChanged</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="特点">特点</h3>
+<ul>
+<li>
+<p>稳定性：它是指对同样的数据进行排序，会不会改变它的相对位置。比如 [ 1, 3, 2, 4, 2 ] 经过排序后，两个相同的元素 2 位置会不会被交换。冒泡排序是比较相邻两个元素的大小，显然不会破坏稳定性。</p>
+</li>
+<li>
+<p>空间复杂度：由于整个排序过程是在原数据上进行操作，故为 O(1);</p>
+</li>
+<li>
+<p>时间复杂度：由于嵌套了 2 层循环，故为 O(n*n);</p>
+</li>
+</ul>
+<h2 id="选择排序">选择排序</h2>
+<p>​		选择排序的思想是，依次从「无序列表」中找到一个最小的元素放到「有序列表」的最后面。以 arr = [ 8, 1, 4, 6, 2, 3, 5, 4 ] 为例，排序开始时把 arr 分为有序列表 A = [ ], 无序列表 B = [ 8, 1, 4, 6, 2, 3, 5, 4 ]，依次从 B 中找出最小的元素放到 A 的最后面。这种排序也是逻辑上的分组，实际上不会创建 A 和 B，只是用下标来标记 A 和 B。</p>
+<p>​		以 arr = [ 8, 1, 4, 6, 2, 3, 5, 4 ] 为例，第一次找到最小元素 1 与 8 进行交换，这时有列表 A = [1], 无序列表 B = [8, 4, 6, 2, 3, 5, 4]；第二次从 B 中找到最小元素 2，与 B 中的第一个元素进行交换，交换后 A = [1，2]，B = [4, 6, 8, 3, 5, 4]；就这样不断缩短 B，扩大 A，最终达到有序。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/103"
+        data-srcset="/images/103, /images/103 1.5x, /images/103 2x"
+        data-sizes="auto"
+        alt="/images/103"
+        title="/images/103" /></p>
+<h3 id="代码实现-1">代码实现</h3>
+<p><strong>方法一：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">selectSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="n">i</span><span class="o">;</span>
+
+            <span class="c1">//找出n次无序列表中的最小值和他的下标
+</span><span class="c1"></span>            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]&lt;</span><span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">])</span> <span class="o">{</span>
+                    <span class="n">index</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+           <span class="kt">int</span> <span class="n">temp</span><span class="o">=</span><span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">];</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">]=</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">temp</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>方法二：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">selectSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="n">i</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">temp</span><span class="o">=</span><span class="n">999</span><span class="o">;</span>
+            <span class="c1">//找出n次无序列表中的最小值和他的下标
+</span><span class="c1"></span>            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]&lt;</span><span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">]){</span>
+                    <span class="n">index</span><span class="o">=</span><span class="n">j</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="n">temp</span><span class="o">=</span><span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">];</span>
+            <span class="o">}</span>
+            <span class="c1">//把[i,index]后移一位，给有序增加空位，插入最小值
+</span><span class="c1"></span>            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="n">index</span><span class="o">;</span><span class="n">m</span><span class="o">&gt;</span><span class="n">i</span><span class="o">;</span><span class="n">m</span><span class="o">--){</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">m</span><span class="o">]=</span><span class="n">array</span><span class="o">[</span><span class="n">m</span><span class="o">-</span><span class="n">1</span><span class="o">];</span>
+            <span class="o">}</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">temp</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="特点-1">特点</h3>
+<ul>
+<li>
+<p>稳定性：排序过程中元素是按顺序进行遍历，相同元素相对位置不会发生变化，故稳定。</p>
+</li>
+<li>
+<p>空间复杂度：在原序列进行操作，故为 O( 1 );</p>
+</li>
+<li>
+<p>时间复杂度：需要 2 次循环遍历，故为 O( n * n );</p>
+</li>
+</ul>
+<h2 id="插入排序">插入排序</h2>
+<p>​		在整个排序过程如图所示，以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7] 为例，它会把 arr 分成两组 A = [ 8 ] 和 B = [ 1, 4, 6, 2, 3, 5, 7] ，逐步遍历 B 中元素插入到 A 中，最终构成一个有序序列：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/104"
+        data-srcset="/images/104, /images/104 1.5x, /images/104 2x"
+        data-sizes="auto"
+        alt="/images/104"
+        title="/images/104" /></p>
+<h3 id="代码实现-2">代码实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">insertSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="kt">int</span> <span class="n">preindex</span><span class="o">=</span><span class="n">i</span><span class="o">-</span><span class="n">1</span><span class="o">;</span>
+            <span class="c1">// 必须记录这个元素，不然会被覆盖掉
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">current</span><span class="o">=</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="c1">// 当前元素小于排序好的元素，就移动到下一个位置,从后向前找位置插入
+</span><span class="c1"></span>            <span class="k">while</span><span class="o">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span><span class="o">&amp;&amp;</span><span class="n">current</span><span class="o">&lt;</span><span class="n">array</span><span class="o">[</span><span class="n">preindex</span><span class="o">]){</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="o">]=</span><span class="n">array</span><span class="o">[</span><span class="n">preindex</span><span class="o">];</span>
+                <span class="n">preindex</span><span class="o">--;</span>
+            <span class="o">}</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="o">]=</span><span class="n">current</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="特点-2">特点</h3>
+<ul>
+<li>
+<p>稳定性：它是从后往前遍历已排序好的序列，相同元素不会改变位置，故为稳定排序；</p>
+</li>
+<li>
+<p>空间复杂度：它是在原序列进行排序，故为 O ( 1 );</p>
+</li>
+<li>
+<p>时间复杂度：排序的过程中，首先要遍历所有的元素，然后在已排序序列中找到合适的位置并插入。共需要 2 层循环，故为 O ( n * n );</p>
+</li>
+</ul>
+<h2 id="希尔排序">希尔排序</h2>
+<p>​	希尔排序，它是由 D.L.Shell 于1959 年提出而得名。根据它的名字很难想象算法的核心思想。[ 所以只能死记硬背了，面试官问：希尔排序的思想是什么？]。它的核心思想是把一个序列分组，对分组后的内容进行插入排序，这里的分组只是逻辑上的分组，不会重新开辟存储空间。它其实是插入排序的优化版，插入排序对基本有序的序列性能好，希尔排序利用这一特性把原序列分组，对每个分组进行排序，逐步完成排序。</p>
+<p>以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，通过 floor(8/2) 来分为 4 组，8 表示数组中元素的个数。分完组后，对组内元素进行插入排序。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/106"
+        data-srcset="/images/106, /images/106 1.5x, /images/106 2x"
+        data-sizes="auto"
+        alt="/images/106"
+        title="/images/106" /></p>
+<p>「 利用第 1 次分组结果进行第 2 次分组 」</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/107"
+        data-srcset="/images/107, /images/107 1.5x, /images/107 2x"
+        data-sizes="auto"
+        alt="/images/107"
+        title="/images/107" /></p>
+<p>「 利用第 2 次分组结果进行最后一次分组 」</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/108"
+        data-srcset="/images/108, /images/108 1.5x, /images/108 2x"
+        data-sizes="auto"
+        alt="/images/108"
+        title="/images/108" /></p>
+<h3 id="代码实现-3">代码实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">lshellSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">){</span>
+        <span class="c1">//len=9
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="c1">//floor向下取整，4，2，1
+</span><span class="c1"></span>        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">gap</span><span class="o">=(</span><span class="kt">int</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">len</span><span class="o">/</span><span class="n">2</span><span class="o">);</span><span class="n">gap</span><span class="o">&gt;</span><span class="n">0</span><span class="o">;</span><span class="n">gap</span><span class="o">=</span><span class="n">gap</span><span class="o">/</span><span class="n">2</span><span class="o">){</span>
+            <span class="c1">//i=4;
+</span><span class="c1"></span>            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">gap</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="c1">// j=0,1,2,3,4
+</span><span class="c1"></span>                <span class="c1">// [0]-[4] [1]-[5] [2]-[6] [3]-[7] [4]-[8]
+</span><span class="c1"></span>                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">gap</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="n">gap</span><span class="o">];</span> <span class="n">j</span><span class="o">-=</span><span class="n">gap</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="c1">// 交换位置
+</span><span class="c1"></span>                    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+                    <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">gap</span><span class="o">+</span><span class="n">j</span><span class="o">];</span>
+                    <span class="n">array</span><span class="o">[</span><span class="n">gap</span><span class="o">+</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="特点-3">特点</h3>
+<ul>
+<li>
+<p>稳定性：它可能会把相同元素分到不同的组中，那么两个相同的元素就有可能调换相对位置，故不稳定。</p>
+</li>
+<li>
+<p>空间复杂度：由于整个排序过程是在原数据上进行操作，故为 O(1);</p>
+</li>
+<li>
+<p>时间复杂度：希尔排序的时间复杂度与增量序列的选取有关，例如希尔增量时间复杂度为O(n²)，而Hibbard增量的希尔排序的时间复杂度为O(log n的3/2)，希尔排序时间复杂度的下界是n*log2n</p>
+</li>
+</ul>
+<h2 id="快速排序">快速排序</h2>
+<p>快速排序的核心思想是对待排序序列通过一个「支点」（支点就是序列中的一个元素，别把它想的太高大上）进行拆分，使得左边的数据小于支点，右边的数据大于支点。然后把左边和右边再做一次递归，直到递归结束。支点的选择也是一门大学问，我们以 （左边index + 右边index）/ 2 来选择支点。</p>
+<p>以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，选择一个支点, index= (L+R)/2 = (0+7)/2=3, 支点的值 pivot = arr[index] = arr[3] = 6，接下来需要把 arr 中小于 6 的移到左边，大于 6 的移到右边。</p>
+<p>快速排序使用一个高效的方法做数据拆分。</p>
+<p>用一个指向左边的游标 i，和指向右边的游标 j，逐渐移动这两个游标，直到找到 arr[i] &gt; 6 和 arr[j] &lt; 6, 停止移动游标，交换 arr[i] 和 arr[j]，交换完后 i++，j&ndash;（对下一个元素进行比较），直到 i&gt;=j，停止移动。</p>
+<p>图中的 L，R 是指快速排序开始时序列的起始和结束索引，在一趟快速排序中，它们的值不会发生改变，直到下一趟排序时才会改变。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/110"
+        data-srcset="/images/110, /images/110 1.5x, /images/110 2x"
+        data-sizes="auto"
+        alt="/images/110"
+        title="图片" /></p>
+<p>一趟快速排序完成后，分别对小于6和大于等于6的部分进行快速排序，递归就好了。对 [ 5, 1, 4, 3, 2 ] 进行一趟快速排序。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/112"
+        data-srcset="/images/112, /images/112 1.5x, /images/112 2x"
+        data-sizes="auto"
+        alt="/images/112"
+        title="图片" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/113"
+        data-srcset="/images/113, /images/113 1.5x, /images/113 2x"
+        data-sizes="auto"
+        alt="/images/113"
+        title="图片" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/114"
+        data-srcset="/images/114, /images/114 1.5x, /images/114 2x"
+        data-sizes="auto"
+        alt="/images/114"
+        title="图片" /></p>
+<h3 id="代码实现-4">代码实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="特点-4">特点</h3>
+<h2 id="排序">排序</h2>
+<h3 id="代码实现-5">代码实现</h3>
+<h3 id="特点-5">特点</h3>
+<h2 id="排序-1">排序</h2>
+<h3 id="代码实现-6">代码实现</h3>
+<h3 id="特点-6">特点</h3>
+<h2 id="排序-2">排序</h2>
+<h3 id="代码实现-7">代码实现</h3>
+<h3 id="特点-7">特点</h3>
+<h2 id="排序-3">排序</h2>
+<h3 id="代码实现-8">代码实现</h3>
+<h3 id="特点-8">特点</h3>
+<h2 id="排序-4">排序</h2>
+<h3 id="代码实现-9">代码实现</h3>
+<h3 id="特点-9">特点</h3>
+<h2 id="排序-5">排序</h2>
+<h3 id="代码实现-10">代码实现</h3>
+<h3 id="特点-10">特点</h3></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-04-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/docker%E5%9F%BA%E7%A1%80/" class="prev" rel="prev" title="Docker基础"><i class="fas fa-angle-left fa-fw"></i>Docker基础</a>
+            <a href="/docker%E8%BF%9B%E9%98%B6/" class="next" rel="next" title="Docker进阶">Docker进阶<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"R7GU8Q3PGK","algoliaIndex":"hugo","algoliaSearchKey":"03cd2f39cefdd4b40deed2f1222ad496","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

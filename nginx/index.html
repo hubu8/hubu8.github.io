@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/nginx\/"
-        },"genre": "posts","keywords": "nginx","wordcount":  1706 ,
+        },"genre": "posts","keywords": "nginx基础","wordcount":  1807 ,
         "url": "https:\/\/hubu8.github.io\/nginx\/","datePublished": "2021-04-12T20:32:43+08:00","dateModified": "2021-04-12T20:32:43+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Nginx基础入门</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1706 字&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/nginx/"><i class="far fa-folder fa-fw"></i>nginx</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1807 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/nginx/" class="leancloud_visitors" data-flag-title="Nginx基础入门">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -574,7 +574,27 @@ java -jar democompose-0.0.1-SNAPSHOT.jar --server.port=8001
         data-srcset="/common_images/image-20210412222057222.png, /common_images/image-20210412222057222.png 1.5x, /common_images/image-20210412222057222.png 2x"
         data-sizes="auto"
         alt="/common_images/image-20210412222057222.png"
-        title="image-20210412222057222" /></p></div><div class="post-footer" id="post-footer">
+        title="image-20210412222057222" /></p>
+<p><strong>Windows双击运行nginx.exe带来的问题，没有办法通过命令行关闭，nginx80端口一直被占用：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#查看占用80端口的进程</span>
+netstat -ano <span class="p">|</span> findstr <span class="s2">&#34;:80 &#34;</span>
+<span class="c1">#查看对应进程的应用</span>
+tasklist /fi <span class="s2">&#34;PID eq 752&#34;</span>
+<span class="c1">#杀死进程</span>
+taskkill /pid <span class="m">752</span> /f
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -593,7 +613,7 @@ java -jar democompose-0.0.1-SNAPSHOT.jar --server.port=8001
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/nginx/">nginx</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/nginx%E5%9F%BA%E7%A1%80/">nginx基础</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>

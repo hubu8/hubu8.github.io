@@ -268,7 +268,16 @@ java -jar democompose-0.0.1-SNAPSHOT.jar --server.port=8001
 
 
 
+**Windows双击运行nginx.exe带来的问题，没有办法通过命令行关闭，nginx80端口一直被占用：**
 
+```shell
+#查看占用80端口的进程
+netstat -ano | findstr ":80 "
+#查看对应进程的应用
+tasklist /fi "PID eq 752"
+#杀死进程
+taskkill /pid 752 /f
+```
 
 
 

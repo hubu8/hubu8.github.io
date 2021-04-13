@@ -27,7 +27,7 @@
     [params.search.algolia]
       index = "hugo"
       appID = "CTZ67PPVA3"
-      searchKey = "e41367b9d69db67ea65d45a33d7ae089"
+      searchKey = "你的搜索密钥"
 ```
 
 ## 2 Algolia 配置
@@ -60,7 +60,7 @@ npm -g install atomic-algolia --save
 
 ```
 ALGOLIA_APP_ID="CTZ67PPVA3"
-ALGOLIA_ADMIN_KEY="b8709236a9a4453ddd4ac2a219eb7493"
+ALGOLIA_ADMIN_KEY="你的超级管理员密钥，上传json"
 ALGOLIA_INDEX_NAME="hugo"
 ALGOLIA_INDEX_FILE="public/index.json"
 ```

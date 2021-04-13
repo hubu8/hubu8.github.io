@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/git_algolia_sh\/"
-        },"genre": "posts","keywords": "shell","wordcount":  837 ,
+        },"genre": "posts","keywords": "shell","wordcount":  854 ,
         "url": "https:\/\/hubu8.github.io\/git_algolia_sh\/","datePublished": "2021-04-13T20:00:31+08:00","dateModified": "2021-04-13T20:00:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git_algolia_sh</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/windows/"><i class="far fa-folder fa-fw"></i>Windows</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-13">2021-04-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 837 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-13">2021-04-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 854 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/git_algolia_sh/" class="leancloud_visitors" data-flag-title="Git_algolia_sh">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -191,29 +191,29 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/image-20200627215434095.png"
-        data-srcset="images/image-20200627215434095.png, images/image-20200627215434095.png 1.5x, images/image-20200627215434095.png 2x"
+        data-src="/common_images/image-20200627215434095.png"
+        data-srcset="/common_images/image-20200627215434095.png, /common_images/image-20200627215434095.png 1.5x, /common_images/image-20200627215434095.png 2x"
         data-sizes="auto"
-        alt="images/image-20200627215434095.png"
+        alt="/common_images/image-20200627215434095.png"
         title="img" /></p>
 <h3 id="22-我这里选择香港作为存储地区">2.2 我这里选择香港作为存储地区</h3>
 <h3 id="23-创建index要与configtoml-的配置-index-一样">2.3 创建index，要与config.toml 的配置 index 一样</h3>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/image-20200627220936376.png"
-        data-srcset="images/image-20200627220936376.png, images/image-20200627220936376.png 1.5x, images/image-20200627220936376.png 2x"
+        data-src="/common_images/image-20200627220936376.png"
+        data-srcset="/common_images/image-20200627220936376.png, /common_images/image-20200627220936376.png 1.5x, /common_images/image-20200627220936376.png 2x"
         data-sizes="auto"
-        alt="images/image-20200627220936376.png"
+        alt="/common_images/image-20200627220936376.png"
         title="img" /></p>
 <h3 id="24-将-api-keys-里面补充到-configtoml-里面">2.4 将 API Keys 里面补充到 config.toml 里面</h3>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/image-20200627221400836.png"
-        data-srcset="images/image-20200627221400836.png, images/image-20200627221400836.png 1.5x, images/image-20200627221400836.png 2x"
+        data-src="/common_images/image-20200627221400836.png"
+        data-srcset="/common_images/image-20200627221400836.png, /common_images/image-20200627221400836.png 1.5x, /common_images/image-20200627221400836.png 2x"
         data-sizes="auto"
-        alt="images/image-20200627221400836.png"
+        alt="/common_images/image-20200627221400836.png"
         title="img" /></p>
 <h2 id="3-使用-atomic-algoliahttpsgithubcomchrisdmacraeatomic-algolia-来完成自动更新索引">3 使用 <a href="https://github.com/chrisdmacrae/atomic-algolia" target="_blank" rel="noopener noreffer">atomic-algolia</a> 来完成自动更新索引</h2>
 <h3 id="31-首先安装-npm这里不介绍">3.1 首先安装 npm，这里不介绍</h3>
@@ -348,6 +348,8 @@ ALGOLIA_INDEX_FILE=&#34;public/index.json&#34;
 </span><span class="lnt">80
 </span><span class="lnt">81
 </span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/sh
@@ -360,7 +362,7 @@ start_local_hugo_server<span class="o">(){</span>
 <span class="o">}</span>
 
 update_algolia<span class="o">(){</span>
-	<span class="nb">cd</span> ..
+
 	<span class="nb">pwd</span>	
 	npm run algolia
 	<span class="nb">printf</span> <span class="s2">&#34;\033[0;32m已经更新到 algolia ！！！\033[0m\n&#34;</span>
@@ -410,7 +412,6 @@ push_public<span class="o">(){</span>
 	<span class="c1"># Push source and build repos.</span>
 	git push 
 
-	<span class="c1">#update_algolia</span>
 	sleep <span class="m">10</span>
 <span class="o">}</span>
 
@@ -425,9 +426,12 @@ push_public<span class="o">(){</span>
 		push_public <span class="nv">$*</span>		
     <span class="p">;;</span>
 	4<span class="o">)</span>
+		update_algolia		
+    <span class="p">;;</span>
+	5<span class="o">)</span>
 		hugo serve -e production
 	<span class="p">;;</span>
-	5<span class="o">)</span>
+	6<span class="o">)</span>
 		hugo server --source<span class="o">=</span>themes/LoveIt/exampleSite
 	<span class="p">;;</span>
 <span class="k">esac</span>
@@ -438,10 +442,29 @@ push_public<span class="o">(){</span>
 <blockquote>
 <p>sh deploy.sh 1：启动 hugo 作为本地调试使用，实时将文章的内容更新到站点，不需要重启也能边修改边观看效果。</p>
 <p>sh deploy.sh 2：将 MyHugoBlog 上传到 Github 存储库。</p>
-<p>sh deploy.sh 3：将 public 静态文件站点上传到Github Pages 存储库，并更新 algolia 的索引。</p>
-<p>sh deploy.sh 4：主要是用来调试 cdn，评论系统等，所以要用 production 变量来启动。</p>
-<p>sh deploy.sh 5：查看官方例子，方便调试。</p>
-</blockquote></div><div class="post-footer" id="post-footer">
+<p>sh deploy.sh 3：将 public 静态文件站点上传到Github Pages 存储库。</p>
+<p>sh deploy.sh 4：更新 algolia 的索引.</p>
+<p>sh deploy.sh 5：主要是用来调试 cdn，评论系统等，所以要用 production 变量来启动。</p>
+<p>sh deploy.sh 6：查看官方例子，方便调试。</p>
+</blockquote>
+<p>仓库代码检验：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/common_images/image-20210413222226726.png"
+        data-srcset="/common_images/image-20210413222226726.png, /common_images/image-20210413222226726.png 1.5x, /common_images/image-20210413222226726.png 2x"
+        data-sizes="auto"
+        alt="/common_images/image-20210413222226726.png"
+        title="image-20210413222226726" /></p>
+<p>algolia 的索引:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/common_images/image-20210413223145848.png"
+        data-srcset="/common_images/image-20210413223145848.png, /common_images/image-20210413223145848.png 1.5x, /common_images/image-20210413223145848.png 2x"
+        data-sizes="auto"
+        alt="/common_images/image-20210413223145848.png"
+        title="image-20210413223145848" /></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

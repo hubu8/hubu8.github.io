@@ -4,9 +4,16 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 13 Apr 2021 20:00:31 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 15 Apr 2021 17:57:53 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>微服务compose&#43;Dockerfile部署</title>
+    <link>https://hubu8.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1compose-dockerfile%E9%83%A8%E7%BD%B2/</link>
+    <pubDate>Thu, 15 Apr 2021 17:57:53 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1compose-dockerfile%E9%83%A8%E7%BD%B2/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Git_algolia_sh git_bat升级版本</title>
     <link>https://hubu8.github.io/git_algolia_sh/</link>
     <pubDate>Tue, 13 Apr 2021 20:00:31 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/docker%E5%9F%BA%E7%A1%80/</guid>
     <description><![CDATA[docker概述 从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力 原：jar&mdash;&mdash;]]></description>
-</item><item>
-    <title>Redis</title>
-    <link>https://hubu8.github.io/redis%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/redis%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[一、Nosql概述 为什么使用Nosql 1、单机Mysql时代 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出]]></description>
 </item></channel>
 </rss>

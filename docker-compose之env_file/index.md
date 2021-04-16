@@ -149,3 +149,45 @@ env
 ![image-20210411172349531](/common_images/image-20210411172349531.png)
 
 ### 5、愉快地开始部署项目了！！！
+
+
+
+### 6、日常小计
+
+**限制内存(1.20版本以上)：**
+
+```yml
+version: '3'
+networks:
+  dockercompose_sc-net:
+    external: true
+services:
+  #人员信息服务
+  comp:
+    image: java:8
+    container_name: sc-comp
+    restart: always
+    networks:
+      - "dockercompose_sc-net"
+#    networks:
+#      - sc-net
+    ports:
+      - 5002:9011
+    volumes:
+      - "/home/hubu/dockerfiles/comp:/data"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1G
+    command: ["java", "-jar", "/data/comp.jar"]
+    env_file: .env
+```
+
+运行加参数：
+
+```shell
+docker-compose --compatibility up -d
+```
+
+

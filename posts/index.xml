@@ -4,7 +4,14 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 15 Apr 2021 17:57:53 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 16 Apr 2021 16:40:28 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Windows双引导关闭</title>
+    <link>https://hubu8.github.io/windows%E5%8F%8C%E5%BC%95%E5%AF%BC%E5%85%B3%E9%97%AD/</link>
+    <pubDate>Fri, 16 Apr 2021 16:40:28 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/windows%E5%8F%8C%E5%BC%95%E5%AF%BC%E5%85%B3%E9%97%AD/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>微服务compose&#43;Dockerfile部署</title>
     <link>https://hubu8.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1compose-dockerfile%E9%83%A8%E7%BD%B2/</link>
     <pubDate>Thu, 15 Apr 2021 17:57:53 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
     <description><![CDATA[]]></description>
-</item><item>
-    <title>Docker基础</title>
-    <link>https://hubu8.github.io/docker%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/docker%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[docker概述 从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力 原：jar&mdash;&mdash;]]></description>
 </item></channel>
 </rss>

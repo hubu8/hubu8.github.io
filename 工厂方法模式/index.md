@@ -147,6 +147,36 @@ public class Client {
 }
 ```
 
+```shell
+HisenseTVFactory
+io.hubu8.com.HisenseTVFactory@1540e19d
+海信电视机工厂生产海信电视机。
+海信电视播放中、、、
+```
+
+如果需要新增一种类型的电视，只需要新增一个具体产品类和一个具体工厂类：
+
+```java
+public class TCLTV implements TV {
+    @Override
+    public void play() {
+        System.out.println("TCL电视正在播放中、、、");
+    }
+}
+```
+
+```java
+public class TCLTVFactory implements TVFactory {
+    @Override
+    public TV produceTV() {
+        System.out.println("TCL电视工厂类正在生产");
+        return new TCLTV();
+    }
+}
+```
+
+
+
 ## 优点
 
 - 工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体产品类将被实例化这一细节

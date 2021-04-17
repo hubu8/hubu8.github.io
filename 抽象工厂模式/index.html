@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>工厂方法模式 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="工厂方法模式" />
+        <title>抽象工厂模式 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="抽象工厂模式" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-16T01:51:31&#43;08:00" />
+<meta property="og:url" content="https://hubu8.github.io/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-16T02:51:31&#43;08:00" />
 <meta property="article:modified_time" content="2021-04-16T20:51:31&#43;08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
 
-<meta name="twitter:title" content="工厂方法模式"/>
+<meta name="twitter:title" content="抽象工厂模式"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="Eccentric&#39;s Note">
 <meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://hubu8.github.io/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://hubu8.github.io/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://hubu8.github.io/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://hubu8.github.io/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "工厂方法模式",
+        "headline": "抽象工厂模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F\/"
-        },"genre": "posts","keywords": "工厂方法模式","wordcount":  1441 ,
-        "url": "https:\/\/hubu8.github.io\/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F\/","datePublished": "2021-04-16T01:51:31+08:00","dateModified": "2021-04-16T20:51:31+08:00","publisher": {
+            "@id": "https:\/\/hubu8.github.io\/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F\/"
+        },"genre": "posts","keywords": "抽象工厂模式","wordcount":  1604 ,
+        "url": "https:\/\/hubu8.github.io\/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F\/","datePublished": "2021-04-16T02:51:31+08:00","dateModified": "2021-04-16T20:51:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -104,10 +104,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">工厂方法模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">抽象工厂模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1441 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="工厂方法模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1604 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="抽象工厂模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -127,49 +127,37 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="模式动机">模式动机</h2>
+<p>**产品等级结构：**产品等级结构即产品的继承结构，例如一个抽象类是电视机，其子类有海尔电视机、海信电视机、TCL电视机，则抽象电视机与具体品牌的电视机之间构成了一个产品等级结构，抽象电视机是父类，而具体品牌的电视机是其子类。</p>
+<p>**产品族：**在抽象工厂模式中，产品族是指由同一个工厂生产的，位于不同产品等级结构中的一组产品，例如海尔电器工厂生产的海尔电视机、海尔电冰箱，海尔电视机位于电视机产品等级结构中，海尔电冰箱位于电冰箱产品等级结构中。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/desigh_images/image-20210416220937685.png"
-        data-srcset="/desigh_images/image-20210416220937685.png, /desigh_images/image-20210416220937685.png 1.5x, /desigh_images/image-20210416220937685.png 2x"
+        data-src="/desigh_images/image-20210417123336422.png"
+        data-srcset="/desigh_images/image-20210417123336422.png, /desigh_images/image-20210417123336422.png 1.5x, /desigh_images/image-20210417123336422.png 2x"
         data-sizes="auto"
-        alt="/desigh_images/image-20210416220937685.png"
-        title="image-20210416220937685" /></p>
+        alt="/desigh_images/image-20210417123336422.png"
+        title="image-20210417123336422" /></p>
 <h2 id="模式定义">模式定义</h2>
-<ul>
-<li>
-<p>工厂方法模式(Factory Method Pattern)简称工厂模式，也叫虚拟构造器(Virtual Constructor)模式或者多态工厂(Polymorphic Factory)模式，它属于类创建型模式。</p>
-</li>
-<li>
-<p>在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。</p>
+<p>抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式又称为Kit模式，属于对象创建型模式。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/desigh_images/image-20210416221137917.png"
-        data-srcset="/desigh_images/image-20210416221137917.png, /desigh_images/image-20210416221137917.png 1.5x, /desigh_images/image-20210416221137917.png 2x"
+        data-src="/desigh_images/image-20210417123615948.png"
+        data-srcset="/desigh_images/image-20210417123615948.png, /desigh_images/image-20210417123615948.png 1.5x, /desigh_images/image-20210417123615948.png 2x"
         data-sizes="auto"
-        alt="/desigh_images/image-20210416221137917.png"
-        title="image-20210416221137917" /></p>
-</li>
-</ul>
+        alt="/desigh_images/image-20210417123615948.png"
+        title="image-20210417123615948" /></p>
 <h2 id="模式分析">模式分析</h2>
-<ul>
-<li>工厂方法模式是简单工厂模式的进一步抽象和推广</li>
-<li>工厂方法模式保持了简单工厂模式的优点，并克服了它的缺点</li>
-<li>核心的工厂类不再负责所有产品的创建，而是将具体创建工作交给其子类去完成</li>
-<li>可以允许系统在不修改工厂角色的情况下引进新产品</li>
-<li>增加具体产品&ndash;&gt;增加具体工厂，符合“开闭原则”</li>
-</ul>
 <h2 id="代码示例">代码示例</h2>
-<p>将原有的电视机工厂进行分割，为每种品牌的电视机提供一个子工厂，海尔工厂专门负责生产海尔电视机，海信工厂专门负责生产海信电视机，如果需要生产TCL电视机或创维电视机，只需要对应增加一个新的TCL工厂或创维工厂即可，原有的工厂无须做任何修改，使得整个系统具有更加的灵活性和可扩展性。</p>
+<p>一个电器工厂可以产生多种类型的电器，如海尔工厂可以生产海尔电视机、海尔空调等，TCL工厂可以生产TCL电视机、TCL空调等，相同品牌的电器构成一个产品族，而相同类型的电器构成了一个产品等级结构，现使用抽象工厂模式模拟该场景。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/desigh_images/image-20210416221516090.png"
-        data-srcset="/desigh_images/image-20210416221516090.png, /desigh_images/image-20210416221516090.png 1.5x, /desigh_images/image-20210416221516090.png 2x"
+        data-src="/desigh_images/image-20210417123705922.png"
+        data-srcset="/desigh_images/image-20210417123705922.png, /desigh_images/image-20210417123705922.png 1.5x, /desigh_images/image-20210417123705922.png 2x"
         data-sizes="auto"
-        alt="/desigh_images/image-20210416221516090.png"
-        title="image-20210416221516090" /></p>
+        alt="/desigh_images/image-20210417123705922.png"
+        title="image-20210417123705922" /></p>
 <p>抽象产品接口：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -226,14 +214,130 @@
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TVFactory</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">();</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Factory</span> <span class="o">{</span>
+    <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">();</span>
+    <span class="n">AirCondition</span> <span class="nf">produceAC</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>具体工厂类:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HairFactory</span> <span class="kd">implements</span> <span class="n">Factory</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海尔工厂生产海尔电视机。&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">HairTV</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">AirCondition</span> <span class="nf">produceAC</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海尔工厂生产海尔空调。&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">HairAirCondition</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HisenseFactory</span> <span class="kd">implements</span> <span class="n">Factory</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海信电视机工厂生产海信电视机。&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">HisenseTV</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">AirCondition</span> <span class="nf">produceAC</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海信没有空调&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">public class TCLFactory implements Factory {
+    @Override
+    public TV produceTV() {
+        System.out.println(&#34;TCL工厂类正在生产电视&#34;);
+        return new TCLTV();
+    }
+
+    @Override
+    public AirCondition produceAC() {
+        System.out.println(&#34;CL工厂类正在生产空调&#34;);
+        return new TCLAirCondition();
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>产品族抽象类：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AirCondition</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">changeTemp</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>具体实现类：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -242,16 +346,12 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HisenseTVFactory</span> <span class="kd">implements</span> <span class="n">TVFactory</span> <span class="o">{</span>
-
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TCLAirCondition</span> <span class="kd">implements</span> <span class="n">AirCondition</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海信电视机工厂生产海信电视机。&#34;</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">HisenseTV</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeTemp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;TC课堂正在调节温度&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -264,16 +364,12 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HairTVFactory</span> <span class="kd">implements</span> <span class="n">TVFactory</span> <span class="o">{</span>
-
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HairAirCondition</span> <span class="kd">implements</span> <span class="n">AirCondition</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海尔电视机工厂生产海尔电视机。&#34;</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">HairTV</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeTemp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海尔空调正在调节温度&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -342,7 +438,7 @@
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&gt;</span>
 
 <span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;type&gt;</span>HairTVFactory<span class="nt">&lt;/type&gt;</span>
+    <span class="nt">&lt;type&gt;</span>HairFactory<span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -363,6 +459,8 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="o">{</span>
@@ -370,10 +468,12 @@
 
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">TV</span> <span class="n">tv</span><span class="o">;</span>
-            <span class="n">TVFactory</span> <span class="n">factory</span><span class="o">=(</span><span class="n">TVFactory</span><span class="o">)</span> <span class="n">XMLUtilTV</span><span class="o">.</span><span class="na">getType</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">factory</span><span class="o">);</span>
+            <span class="n">AirCondition</span> <span class="n">airCondition</span><span class="o">;</span>
+            <span class="n">Factory</span> <span class="n">factory</span><span class="o">=(</span><span class="n">Factory</span><span class="o">)</span> <span class="n">XMLUtilTV</span><span class="o">.</span><span class="na">getType</span><span class="o">();</span>
             <span class="n">tv</span><span class="o">=</span><span class="n">factory</span><span class="o">.</span><span class="na">produceTV</span><span class="o">();</span>
             <span class="n">tv</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+            <span class="n">airCondition</span><span class="o">=</span><span class="n">factory</span><span class="o">.</span><span class="na">produceAC</span><span class="o">();</span>
+            <span class="n">airCondition</span><span class="o">.</span><span class="na">changeTemp</span><span class="o">();</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
         <span class="o">}</span>
@@ -387,114 +487,33 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">HisenseTVFactory
-io.hubu8.com.HisenseTVFactory@1540e19d
-海信电视机工厂生产海信电视机。
-海信电视播放中、、、
-</code></pre></td></tr></table>
-</div>
-</div><p>如果需要新增一种类型的电视，只需要新增一个具体产品类和一个具体工厂类：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TCLTV</span> <span class="kd">implements</span> <span class="n">TV</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">play</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;TCL电视正在播放中、、、&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TCLTVFactory</span> <span class="kd">implements</span> <span class="n">TVFactory</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;TCL电视工厂类正在生产&#34;</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">TCLTV</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">TCLFactory
+TCL工厂类正在生产电视
+TCL电视正在播放中、、、
+CL工厂类正在生产空调
+TC课堂正在调节温度
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="优点">优点</h2>
 <ul>
-<li>工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体产品类将被实例化这一细节</li>
-<li>能够让工厂自主确定创建何种产品对象，而如何创建这个对象的细节则完全封装在具体工厂内部</li>
-<li>在系统中加入新产品时，完全符合开闭原则</li>
+<li>隔离了具体类的生成，使得客户端并不需要知道什么被创建</li>
+<li>当一个产品族中的多个对象被设计成一起工作时，它能够保证客户端始终只使用同一个产品族中的对象</li>
+<li>增加新的产品族很方便，无须修改已有系统，符合开闭原则</li>
 </ul>
 <h2 id="缺点">缺点</h2>
 <ul>
-<li>系统中类的个数将成对增加，在一定程度上增加了系统的复杂度，会给系统带来一些额外的开销</li>
-<li>增加了系统的抽象性和理解难度</li>
+<li>增加新的产品等级结构麻烦，需要对原有系统进行较大的修改，甚至需要修改抽象层代码，这显然会带来较大的不便，违背了开闭原则</li>
 </ul>
 <h2 id="应用场景">应用场景</h2>
 <ul>
-<li>客户端不知道它所需要的对象的类（客户端不需要知道具体产品类的类名，只需要知道所对应的工厂即可，具体产品对象由具体工厂类创建）</li>
-<li>抽象工厂类通过其子类来指定创建哪个对象</li>
-</ul>
-<p><strong>闹眼子呢？</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">java.lang.ClassNotFoundException: HisenseTVFactory
-	at java.net.URLClassLoader.findClass<span class="o">(</span>URLClassLoader.java:382<span class="o">)</span>
-	at java.lang.ClassLoader.loadClass<span class="o">(</span>ClassLoader.java:418<span class="o">)</span>
-	at sun.misc.Launcher<span class="nv">$AppClassLoader</span>.loadClass<span class="o">(</span>Launcher.java:355<span class="o">)</span>
-	at java.lang.ClassLoader.loadClass<span class="o">(</span>ClassLoader.java:351<span class="o">)</span>
-	at java.lang.Class.forName0<span class="o">(</span>Native Method<span class="o">)</span>
-	at java.lang.Class.forName<span class="o">(</span>Class.java:264<span class="o">)</span>
-	at io.hubu8.com.XMLUtilTV.getType<span class="o">(</span>XMLUtilTV.java:24<span class="o">)</span>
-	at io.hubu8.com.Client.main<span class="o">(</span>Client.java:8<span class="o">)</span>
-null
-java.lang.NullPointerException
-	at io.hubu8.com.Client.main<span class="o">(</span>Client.java:11<span class="o">)</span>
-
-Process finished with <span class="nb">exit</span> code <span class="m">0</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>需要在类名前面加上包名：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Class</span> <span class="n">c</span><span class="o">=</span><span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">&#34;io.hubu8.com.&#34;</span><span class="o">+</span><span class="n">string</span><span class="o">);</span>
-</code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
+<li>一个系统不应当依赖于产品类实例如何被创建、组合和表达的细节</li>
+<li>系统中有多于一个的产品族，但每次只使用其中某一产品族</li>
+<li>属于同一个产品族的产品将在一起使用，这一约束必须在系统的设计中体现出来</li>
+<li>产品等级结构稳定，在设计完成之后不会向系统中增加新的产品等级结构或者删除已有的产品等级结构</li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -504,7 +523,7 @@ Process finished with <span class="nb">exit</span> code <span class="m">0</span>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -513,14 +532,14 @@ Process finished with <span class="nb">exit</span> code <span class="m">0</span>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">工厂方法模式</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">抽象工厂模式</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="简单工厂模式"><i class="fas fa-angle-left fa-fw"></i>简单工厂模式</a>
-            <a href="/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="抽象工厂模式">抽象工厂模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="工厂方法模式"><i class="fas fa-angle-left fa-fw"></i>工厂方法模式</a>
+            <a href="/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="建造者模式">建造者模式<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

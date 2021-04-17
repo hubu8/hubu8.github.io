@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>简单工厂模式 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="简单工厂模式" />
+        <title>建造者模式 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="建造者模式" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-16T00:51:31&#43;08:00" />
+<meta property="og:url" content="https://hubu8.github.io/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-16T03:51:31&#43;08:00" />
 <meta property="article:modified_time" content="2021-04-16T20:51:31&#43;08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
 
-<meta name="twitter:title" content="简单工厂模式"/>
+<meta name="twitter:title" content="建造者模式"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="Eccentric&#39;s Note">
 <meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://hubu8.github.io/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%AD%AA%E8%A7%A3/" /><link rel="next" href="https://hubu8.github.io/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://hubu8.github.io/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://hubu8.github.io/windows%E5%8F%8C%E5%BC%95%E5%AF%BC%E5%85%B3%E9%97%AD/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "简单工厂模式",
+        "headline": "建造者模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F\/"
-        },"genre": "posts","keywords": "简单工厂模式","wordcount":  1114 ,
-        "url": "https:\/\/hubu8.github.io\/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F\/","datePublished": "2021-04-16T00:51:31+08:00","dateModified": "2021-04-16T20:51:31+08:00","publisher": {
+            "@id": "https:\/\/hubu8.github.io\/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F\/"
+        },"genre": "posts","keywords": "建造者模式","wordcount":  1278 ,
+        "url": "https:\/\/hubu8.github.io\/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F\/","datePublished": "2021-04-16T03:51:31+08:00","dateModified": "2021-04-16T20:51:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -104,10 +104,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">简单工厂模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">建造者模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1114 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="简单工厂模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1278 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="建造者模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -119,7 +119,6 @@
   <ul>
     <li><a href="#模式动机">模式动机</a></li>
     <li><a href="#模式定义">模式定义</a></li>
-    <li><a href="#模式结构">模式结构</a></li>
     <li><a href="#模式分析">模式分析</a></li>
     <li><a href="#代码示例">代码示例</a></li>
     <li><a href="#优点">优点</a></li>
@@ -128,59 +127,96 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="模式动机">模式动机</h2>
-<p>只需要告知水果名称就可以得到相应的水果：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/desigh_images/image-20210416212216842.png"
-        data-srcset="/desigh_images/image-20210416212216842.png, /desigh_images/image-20210416212216842.png 1.5x, /desigh_images/image-20210416212216842.png 2x"
+        data-src="/desigh_images/image-20210417130739334.png"
+        data-srcset="/desigh_images/image-20210417130739334.png, /desigh_images/image-20210417130739334.png 1.5x, /desigh_images/image-20210417130739334.png 2x"
         data-sizes="auto"
-        alt="/desigh_images/image-20210416212216842.png"
-        title="image-20210416212216842" /></p>
+        alt="/desigh_images/image-20210417130739334.png"
+        title="image-20210417130739334" /></p>
 <h2 id="模式定义">模式定义</h2>
-<p>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式</p>
-<p>在简单工厂模式中，可以根据参数的不同返回不同类的实例</p>
-<p>简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类</p>
-<h2 id="模式结构">模式结构</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/desigh_images/image-20210416212336941.png"
-        data-srcset="/desigh_images/image-20210416212336941.png, /desigh_images/image-20210416212336941.png 1.5x, /desigh_images/image-20210416212336941.png 2x"
-        data-sizes="auto"
-        alt="/desigh_images/image-20210416212336941.png"
-        title="image-20210416212336941" /></p>
-<h2 id="模式分析">模式分析</h2>
 <ul>
-<li>将对象的创建和对象本身业务处理分离可以降低系统的耦合度，使得两者修改起来都相对容易</li>
-<li>在调用工厂类的工厂方法时，由于工厂方法是静态方法，使用起来很方便，可通过工厂类类名直接调用，只需要传入一个简单的参数即可，无须知道对象的创建细节</li>
-<li>可以将参数保存在XML等格式的配置文件中，修改时无须修改任何Java源代码</li>
-<li>问题：工厂类的职责相对过重，增加新的产品需要修改工厂类的判断逻辑，违背开闭原则</li>
+<li>建造者模式(Builder Pattern)：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</li>
+<li>建造者模式是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节。建造者模式属于对象创建型模式。</li>
 </ul>
-<h2 id="代码示例">代码示例</h2>
-<p>某电视机厂专为各知名电视机品牌代工生产各类电视机，当需要海尔牌电视机时只需要在调用该工厂的工厂方法时传入参数“Haier”，需要海信电视机时只需要传入参数“Hisense”，工厂可以根据传入的不同参数返回不同品牌的电视机。现使用简单工厂模式来模拟该电视机工厂的生产过程。</p>
+<h2 id="模式分析">模式分析</h2>
+<p>将客户端与包含多个部件的复杂对象的创建过程分离，客户端无须知道复杂对象的内部组成部分与装配方式，只需要知道所需建造者的类型即可</p>
+<p>关注如何逐步创建一个复杂的对象，不同的建造者定义了不同的创建过程</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/desigh_images/image-20210416215907401.png"
-        data-srcset="/desigh_images/image-20210416215907401.png, /desigh_images/image-20210416215907401.png 1.5x, /desigh_images/image-20210416215907401.png 2x"
+        data-src="/desigh_images/image-20210417130851448.png"
+        data-srcset="/desigh_images/image-20210417130851448.png, /desigh_images/image-20210417130851448.png 1.5x, /desigh_images/image-20210417130851448.png 2x"
         data-sizes="auto"
-        alt="/desigh_images/image-20210416215907401.png"
-        title="image-20210416215907401" /></p>
-<p>抽象产品接口：</p>
+        alt="/desigh_images/image-20210417130851448.png"
+        title="image-20210417130851448" /></p>
+<h2 id="代码示例">代码示例</h2>
+<p>建造者模式可以用于描述KFC如何创建套餐：套餐是一个复杂对象，它一般包含主食（如汉堡、鸡肉卷等）和饮料（如果汁、可乐等）等组成部分，不同的套餐有不同的组成部分，而KFC的服务员可以根据顾客的要求，一步一步装配这些组成部分，构造一份完整的套餐，然后返回给顾客。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/desigh_images/image-20210417130954164.png"
+        data-srcset="/desigh_images/image-20210417130954164.png, /desigh_images/image-20210417130954164.png 1.5x, /desigh_images/image-20210417130954164.png 2x"
+        data-sizes="auto"
+        alt="/desigh_images/image-20210417130954164.png"
+        title="image-20210417130954164" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/desigh_images/image-20210417131009134.png"
+        data-srcset="/desigh_images/image-20210417131009134.png, /desigh_images/image-20210417131009134.png 1.5x, /desigh_images/image-20210417131009134.png 2x"
+        data-sizes="auto"
+        alt="/desigh_images/image-20210417131009134.png"
+        title="image-20210417131009134" /></p>
+<p>产品类Meal：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TV</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">play</span><span class="o">();</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Meal</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">food</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">drink</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFood</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">food</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFood</span><span class="o">(</span><span class="n">String</span> <span class="n">food</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">food</span> <span class="o">=</span> <span class="n">food</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDrink</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">drink</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDrink</span><span class="o">(</span><span class="n">String</span> <span class="n">drink</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">drink</span> <span class="o">=</span> <span class="n">drink</span><span class="o">;</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>具体产品类：</p>
+</div><p>抽象建造者类MealBuilder:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -189,35 +225,23 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HairTV</span> <span class="kd">implements</span> <span class="n">TV</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">play</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海尔电视播放中、、、、、&#34;</span><span class="o">);</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">MealBuilder</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="n">Meal</span> <span class="n">meal</span><span class="o">=</span><span class="k">new</span> <span class="n">Meal</span><span class="o">();</span>
+
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">buildFood</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">buildDrink</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="n">Meal</span> <span class="nf">getMeal</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">meal</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HisenseTV</span> <span class="kd">implements</span> <span class="n">TV</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">play</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;海信电视播放中、、、&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>工厂类：</p>
+</div><p>具体建造者类（A套餐）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -233,20 +257,20 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TVFactory</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">TV</span> <span class="nf">produceTV</span><span class="o">(</span><span class="n">String</span> <span class="n">type</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;Hair&#34;</span><span class="o">)){</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="n">HairTV</span><span class="o">();</span>
-        <span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;Hisense&#34;</span><span class="o">)){</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="n">HisenseTV</span><span class="o">();</span>
-        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">(</span><span class="s">&#34;对不起，不支持的电视类型&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SubMealBuilderA</span> <span class="kd">extends</span> <span class="n">MealBuilder</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">buildFood</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">meal</span><span class="o">.</span><span class="na">setFood</span><span class="o">(</span><span class="s">&#34;一个鸡腿&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">buildDrink</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">meal</span><span class="o">.</span><span class="na">setDrink</span><span class="o">(</span><span class="s">&#34;一杯可乐&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>客户端：</p>
+</div><p>具体建造者类（B套餐）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -260,14 +284,85 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SubMealBuilderB</span> <span class="kd">extends</span> <span class="n">MealBuilder</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">buildFood</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">meal</span><span class="o">.</span><span class="na">setFood</span><span class="o">(</span><span class="s">&#34;一个鸡肉卷&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">buildDrink</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">meal</span><span class="o">.</span><span class="na">setDrink</span><span class="o">(</span><span class="s">&#34;一杯果汁&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>指挥者类（KFCWaiter）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KFCWaiter</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">MealBuilder</span> <span class="n">mealBuilder</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMealBuilder</span><span class="o">(</span><span class="n">MealBuilder</span> <span class="n">mealBuilder</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mealBuilder</span><span class="o">=</span><span class="n">mealBuilder</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Meal</span> <span class="nf">construct</span><span class="o">(){</span>
+        <span class="n">mealBuilder</span><span class="o">.</span><span class="na">buildFood</span><span class="o">();</span>
+        <span class="n">mealBuilder</span><span class="o">.</span><span class="na">buildDrink</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">mealBuilder</span><span class="o">.</span><span class="na">getMeal</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>辅助代码与前面类似。。。。。。</p>
+<p>客户端类：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
-        <span class="n">TV</span> <span class="n">tv</span><span class="o">;</span>
+
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">tv</span><span class="o">=</span><span class="n">TVFactory</span><span class="o">.</span><span class="na">produceTV</span><span class="o">(</span><span class="s">&#34;Hair&#34;</span><span class="o">);</span>
-            <span class="n">tv</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+            <span class="n">MealBuilder</span> <span class="n">mealBuilder</span><span class="o">=</span> <span class="o">(</span><span class="n">MealBuilder</span><span class="o">)</span> <span class="n">XMLUtilTV</span><span class="o">.</span><span class="na">getType</span><span class="o">();</span>
+            <span class="n">KFCWaiter</span> <span class="n">kfcWaiter</span><span class="o">=</span><span class="k">new</span> <span class="n">KFCWaiter</span><span class="o">();</span>
+            <span class="n">kfcWaiter</span><span class="o">.</span><span class="na">setMealBuilder</span><span class="o">(</span><span class="n">mealBuilder</span><span class="o">);</span>
+            <span class="n">Meal</span> <span class="n">meal</span> <span class="o">=</span> <span class="n">kfcWaiter</span><span class="o">.</span><span class="na">construct</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;套餐组成&#34;</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">meal</span><span class="o">.</span><span class="na">getFood</span><span class="o">());</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">meal</span><span class="o">.</span><span class="na">getDrink</span><span class="o">());</span>
+
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
         <span class="o">}</span>
@@ -277,21 +372,21 @@
 </div>
 </div><h2 id="优点">优点</h2>
 <ul>
-<li>实现了对象创建和使用的分离</li>
-<li>客户端无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可</li>
-<li>通过引入配置文件，可以在不修改任何客户端代码的情况下更换和增加新的具体产品类，在一定程度上提高了系统的灵活性</li>
+<li>客户端不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象</li>
+<li>每一个具体建造者都相对独立，与其他的具体建造者无关，因此可以很方便地替换具体建造者或增加新的具体建造者，扩展方便，符合开闭原则</li>
+<li>可以更加精细地控制产品的创建过程</li>
 </ul>
 <h2 id="缺点">缺点</h2>
 <ul>
-<li>工厂类集中了所有产品的创建逻辑，职责过重，一旦不能正常工作，整个系统都要受到影响</li>
-<li>增加系统中类的个数（引入了新的工厂类），增加了系统的复杂度和理解难度</li>
-<li>系统扩展困难，一旦添加新产品不得不修改工厂逻辑</li>
-<li>由于使用了静态工厂方法，造成工厂角色无法形成基于继承的等级结构，工厂类不能得到很好地扩展</li>
+<li>建造者模式所创建的产品一般具有较多的共同点，其组成部分相似，如果产品之间的差异性很大，不适合使用建造者模式，因此其使用范围受到一定的限制</li>
+<li>如果产品的内部变化复杂，可能会需要定义很多具体建造者类来实现这种变化，导致系统变得很庞大，增加了系统的理解难度和运行成本</li>
 </ul>
 <h2 id="应用场景">应用场景</h2>
 <ul>
-<li>工厂类负责创建的对象比较少：由于创建的对象较少，不会造成工厂方法中的业务逻辑太过复杂</li>
-<li>客户端只知道传入工厂类的参数，对于如何创建对象不关心：客户端既不需要关心创建细节，甚至连类名都不需要记住，只需要知道类型所对应的参数</li>
+<li>需要生成的产品对象有复杂的内部结构，这些产品对象通常包含多个成员变量</li>
+<li>需要生成的产品对象的属性相互依赖，需要指定其生成顺序</li>
+<li>对象的创建过程独立于创建该对象的类。在建造者模式中通过引入了指挥者类，将创建过程封装在指挥者类中，而不在建造者类和客户类中</li>
+<li>隔离复杂对象的创建和使用，并使得相同的创建过程可以创建不同的产品</li>
 </ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -302,7 +397,7 @@
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -311,14 +406,14 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">简单工厂模式</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">建造者模式</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%AD%AA%E8%A7%A3/" class="prev" rel="prev" title="23种设计模式歪解"><i class="fas fa-angle-left fa-fw"></i>23种设计模式歪解</a>
-            <a href="/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="工厂方法模式">工厂方法模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="抽象工厂模式"><i class="fas fa-angle-left fa-fw"></i>抽象工厂模式</a>
+            <a href="/windows%E5%8F%8C%E5%BC%95%E5%AF%BC%E5%85%B3%E9%97%AD/" class="next" rel="next" title="Windows双引导关闭">Windows双引导关闭<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

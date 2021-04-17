@@ -4,9 +4,23 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sat, 17 Apr 2021 09:51:37 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sat, 17 Apr 2021 20:47:26 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>MySQL</title>
+    <link>https://hubu8.github.io/simpread-mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sat, 17 Apr 2021 20:47:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/simpread-mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>SpringCloud</title>
+    <link>https://hubu8.github.io/simpread-springcloud%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sat, 17 Apr 2021 20:47:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/simpread-springcloud%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>骰子等概率1-7与数组</title>
     <link>https://hubu8.github.io/%E9%AA%B0%E5%AD%90%E7%AD%89%E6%A6%82%E7%8E%871-7/</link>
     <pubDate>Sat, 17 Apr 2021 09:51:37 &#43;0800</pubDate>
@@ -61,20 +75,6 @@
     <pubDate>Fri, 16 Apr 2021 00:30:31 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%AD%AA%E8%A7%A3/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>微服务compose&#43;Dockerfile部署</title>
-    <link>https://hubu8.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1compose-dockerfile%E9%83%A8%E7%BD%B2/</link>
-    <pubDate>Thu, 15 Apr 2021 17:57:53 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1compose-dockerfile%E9%83%A8%E7%BD%B2/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Git_algolia_sh git_bat升级版本</title>
-    <link>https://hubu8.github.io/git_algolia_sh/</link>
-    <pubDate>Tue, 13 Apr 2021 20:00:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/git_algolia_sh/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

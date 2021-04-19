@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>商城系统笔记 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="商城系统笔记" />
+<meta property="og:description" content="《小米商城后台管理系统》 一、需求分析 电商系统项目结构 管理员登录 管理员要使用正确的账号和密码进行登录之后才能使用这个管理系统 商品类别管理 通过管" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/other/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%B1%B3%E5%95%86%E5%9F%8E%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="other" />
+<meta property="article:published_time" content="2021-04-06T20:23:59&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-06T20:23:59&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="商城系统笔记"/>
+<meta name="twitter:description" content="《小米商城后台管理系统》 一、需求分析 电商系统项目结构 管理员登录 管理员要使用正确的账号和密码进行登录之后才能使用这个管理系统 商品类别管理 通过管"/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/other/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%B1%B3%E5%95%86%E5%9F%8E%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" /><link rel="prev" href="https://hubu8.github.io/other/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/" /><link rel="next" href="https://hubu8.github.io/other/windows/git_bat/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "商城系统笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/other\/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0\/%E5%B0%8F%E7%B1%B3%E5%95%86%E5%9F%8E%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F\/"
+        },"genre": "other","wordcount":  6054 ,
+        "url": "https:\/\/hubu8.github.io\/other\/%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0\/%E5%B0%8F%E7%B1%B3%E5%95%86%E5%9F%8E%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F\/","datePublished": "2021-04-06T20:23:59+08:00","dateModified": "2021-04-06T20:23:59+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentrie&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentrie&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">商城系统笔记</h1><div class="content" id="content"><h2 id="小米商城后台管理系统">《小米商城后台管理系统》</h2>
+<h2 id="一需求分析">一、需求分析</h2>
+<table>
+<thead>
+<tr>
+<th>电商系统项目结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610244158701.png"
+        data-srcset="/imgs/1610244158701.png, /imgs/1610244158701.png 1.5x, /imgs/1610244158701.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610244158701.png"
+        title="1610244158701" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>管理员登录</p>
+<blockquote>
+<p>管理员要使用正确的账号和密码进行登录之后才能使用这个管理系统</p>
+</blockquote>
+</li>
+<li>
+<p>商品类别管理</p>
+<blockquote>
+<p>通过管理系统，能够动态完成添加商品类别、商品类别列表、修改类别及删除类别等操作</p>
+</blockquote>
+</li>
+<li>
+<p>商品管理</p>
+<blockquote>
+<p>通过管理系统，可以动态完成商品发布、商品列表（分页）、修改商品信息、删除商品信息（下架）</p>
+</blockquote>
+</li>
+<li>
+<p>用户管理</p>
+</li>
+<li>
+<p>订单管理</p>
+</li>
+<li>
+<p>售后服务</p>
+</li>
+</ul>
+<h2 id="二项目设计">二、项目设计</h2>
+<h4 id="21-数据库设计">2.1 数据库设计</h4>
+<h5 id="211-分析数据实体">2.1.1 分析数据实体</h5>
+<ul>
+<li>
+<p>管理员</p>
+</li>
+<li>
+<p>类别</p>
+</li>
+<li>
+<p>商品</p>
+</li>
+</ul>
+<h5 id="212-提取实体数据项">2.1.2 提取实体数据项</h5>
+<blockquote>
+<p>根据甲方的业务需求及项目的功能需求分析每个数据实体的属性</p>
+</blockquote>
+<ul>
+<li>管理员（管理员编号/工号，管理员账号，管理员密码，管理员姓名，管理员头像，管理员电话）</li>
+<li>类别（类别ID，类别名称，类别描述）</li>
+<li>商品（商品编号，商品名称，商品图片，商品价格，商品库存，商品说明，图文详情）、</li>
+</ul>
+<h5 id="213-规范实体数据项">2.1.3 规范实体数据项</h5>
+<blockquote>
+<p>使用数据库设计范式检查数据项是否合理——数据库设计三范式</p>
+</blockquote>
+<p><code>第一范式：数据表中的字段不可再分</code></p>
+<p><code>第二范式：不存在非关键字段对关键字段的部分函数依赖</code></p>
+<p><code>第三范式：不存在非关键字段之间的传递依赖</code></p>
+<h5 id="214-绘制实体关系图e-r">2.1.4 绘制实体关系图（E-R）</h5>
+<blockquote>
+<p>通过E-R图例，分析实体和实体之间的关系（一对一、一对多、多对一、多对多）</p>
+<p>在企业开发中通常是通过PD进行数据库建模</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>实体关系图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610259879582.png"
+        data-srcset="/imgs/1610259879582.png, /imgs/1610259879582.png 1.5x, /imgs/1610259879582.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610259879582.png"
+        title="1610259879582" /></td>
+</tr>
+</tbody>
+</table>
+<h5 id="215-数据表设计三线图">2.1.5 数据表设计（三线图）</h5>
+<blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610261848540.png"
+        data-srcset="/imgs/1610261848540.png, /imgs/1610261848540.png 1.5x, /imgs/1610261848540.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610261848540.png"
+        title="1610261848540" /></p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610260593733.png"
+        data-srcset="/imgs/1610260593733.png, /imgs/1610260593733.png 1.5x, /imgs/1610260593733.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610260593733.png"
+        title="1610260593733" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610261108490.png"
+        data-srcset="/imgs/1610261108490.png, /imgs/1610261108490.png 1.5x, /imgs/1610261108490.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610261108490.png"
+        title="1610261108490" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610262732828.png"
+        data-srcset="/imgs/1610262732828.png, /imgs/1610262732828.png 1.5x, /imgs/1610262732828.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610262732828.png"
+        title="1610262732828" /></p>
+<h5 id="216-建库建表sql">2.1.6 建库建表（SQL）</h5>
+<ul>
+<li>大家根据三线图自行完成</li>
+</ul>
+<h4 id="22-业务流程设计">2.2 业务流程设计</h4>
+<blockquote>
+<p>项目中业务实现的过程</p>
+</blockquote>
+<h5 id="221-管理登录业务流程">2.2.1 管理登录业务流程</h5>
+<table>
+<thead>
+<tr>
+<th>管理员登录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610442011156.png"
+        data-srcset="/imgs/1610442011156.png, /imgs/1610442011156.png 1.5x, /imgs/1610442011156.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610442011156.png"
+        title="1610442011156" /></td>
+</tr>
+</tbody>
+</table>
+<h5 id="222-类别管理业务流程">2.2.2 类别管理业务流程</h5>
+<table>
+<thead>
+<tr>
+<th>添加类别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610443063398.png"
+        data-srcset="/imgs/1610443063398.png, /imgs/1610443063398.png 1.5x, /imgs/1610443063398.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610443063398.png"
+        title="1610443063398" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>类别列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610499588468.png"
+        data-srcset="/imgs/1610499588468.png, /imgs/1610499588468.png 1.5x, /imgs/1610499588468.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610499588468.png"
+        title="1610499588468" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>修改类别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610501150920.png"
+        data-srcset="/imgs/1610501150920.png, /imgs/1610501150920.png 1.5x, /imgs/1610501150920.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610501150920.png"
+        title="1610501150920" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>删除类别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610501789493.png"
+        data-srcset="/imgs/1610501789493.png, /imgs/1610501789493.png 1.5x, /imgs/1610501789493.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610501789493.png"
+        title="1610501789493" /></td>
+</tr>
+</tbody>
+</table>
+<h5 id="223-商品管理业务流程">2.2.3 商品管理业务流程</h5>
+<table>
+<thead>
+<tr>
+<th>发布商品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610677841684.png"
+        data-srcset="/imgs/1610677841684.png, /imgs/1610677841684.png 1.5x, /imgs/1610677841684.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610677841684.png"
+        title="1610677841684" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>商品列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>修改商品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>删除商品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>商品详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="23-ui界面设计">2.3 UI界面设计</h4>
+<h5 id="231-管理员登录">2.3.1 管理员登录</h5>
+<ul>
+<li>登录页面 login.html</li>
+<li>主页面 index.html</li>
+</ul>
+<h5 id="232-类别管理">2.3.2 类别管理</h5>
+<ul>
+<li>类别添加页面 type-add.html</li>
+<li>类别列表页面 type-list.html</li>
+<li>类别修改页面 type-modify.html</li>
+<li>提示页面 tips.html</li>
+</ul>
+<h5 id="233-商品管理">2.3.3 商品管理</h5>
+<p>暂略</p>
+<h2 id="三编码数据库编程ui">三、编码—数据库编程、UI</h2>
+<h4 id="31-创建项目web项目">3.1 创建项目—web项目</h4>
+<h5 id="311-web项目创建">3.1.1 web项目创建</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610443666213.png"
+        data-srcset="/imgs/1610443666213.png, /imgs/1610443666213.png 1.5x, /imgs/1610443666213.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610443666213.png"
+        title="1610443666213" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610443710592.png"
+        data-srcset="/imgs/1610443710592.png, /imgs/1610443710592.png 1.5x, /imgs/1610443710592.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610443710592.png"
+        title="1610443710592" /></p>
+<h5 id="312-idea启动tomcat">3.1.2 IDEA启动tomcat</h5>
+<table>
+<thead>
+<tr>
+<th>启动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610523339517.png"
+        data-srcset="/imgs/1610523339517.png, /imgs/1610523339517.png 1.5x, /imgs/1610523339517.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610523339517.png"
+        title="1610523339517" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>如果在启动Tomcat时出现以下错误，请手动打开Tomcat/bin/tomcat8w.exe关闭之前运行的Tomcat</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610523020670.png"
+        data-srcset="/imgs/1610523020670.png, /imgs/1610523020670.png 1.5x, /imgs/1610523020670.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610523020670.png"
+        title="1610523020670" /></p>
+<h5 id="313-修改项目的访问路径">3.1.3 修改项目的访问路径</h5>
+<blockquote>
+<p>在IDEA中启动Tomcat，会自动将web项目部署到Tomcat，但是web项目的访问路径默认与web名称时不一致的；我们可以设置项目访问路径</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610523582882.png"
+        data-srcset="/imgs/1610523582882.png, /imgs/1610523582882.png 1.5x, /imgs/1610523582882.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610523582882.png"
+        title="1610523582882" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610523659284.png"
+        data-srcset="/imgs/1610523659284.png, /imgs/1610523659284.png 1.5x, /imgs/1610523659284.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610523659284.png"
+        title="1610523659284" /></td>
+</tr>
+</tbody>
+</table>
+<h5 id="314-设置项目的默认访问页面">3.1.4 设置项目的默认访问页面</h5>
+<blockquote>
+<p>当我们启动Tomcat之后，通过路径<code>http://ip:port/pro_name</code>后面没有指定访问的页面名称，会默认访问index.html,如果没有index.html就寻找index.jsp</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>web/WEB-INF/web.xml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610524292794.png"
+        data-srcset="/imgs/1610524292794.png, /imgs/1610524292794.png 1.5x, /imgs/1610524292794.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610524292794.png"
+        title="1610524292794" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="32-完成项目业务所需的jdbc操作">3.2 完成项目业务所需的JDBC操作</h4>
+<blockquote>
+<p>完成项目业务流程中所需的数据库操作</p>
+</blockquote>
+<h5 id="321-向web项目中添加mysql数据库驱动文件">3.2.1 向web项目中添加mysql数据库驱动文件</h5>
+<ul>
+<li>在web/WEB-INF目录下创建lib文件夹，将驱动文件拷贝粘贴到此文件夹，然后Add as Library</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>目录结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610524617669.png"
+        data-srcset="/imgs/1610524617669.png, /imgs/1610524617669.png 1.5x, /imgs/1610524617669.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610524617669.png"
+        title="1610524617669" /></td>
+</tr>
+</tbody>
+</table>
+<h5 id="322-创建数据库连接工具类dbutil">3.2.2 创建数据库连接工具类DBUtil</h5>
+<ul>
+<li>
+<p>创建<code>cn.edu.hubu.xmsc.utils</code>包</p>
+</li>
+<li>
+<p>在<code>cn.edu.hubu.xmsc.utils</code>包装创建<code>DBUtil</code>类</p>
+<table>
+<thead>
+<tr>
+<th>DBUtil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610525237922.png"
+        data-srcset="/imgs/1610525237922.png, /imgs/1610525237922.png 1.5x, /imgs/1610525237922.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610525237922.png"
+        title="1610525237922" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610525261726.png"
+        data-srcset="/imgs/1610525261726.png, /imgs/1610525261726.png 1.5x, /imgs/1610525261726.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610525261726.png"
+        title="1610525261726" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h5 id="323-完成管理登录所需的数据库操作">3.2.3 完成管理登录所需的数据库操作</h5>
+<ul>
+<li>
+<p>DTO类</p>
+<table>
+<thead>
+<tr>
+<th>Manager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610525517891.png"
+        data-srcset="/imgs/1610525517891.png, /imgs/1610525517891.png 1.5x, /imgs/1610525517891.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610525517891.png"
+        title="1610525517891" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>DAO类</p>
+<table>
+<thead>
+<tr>
+<th>ManagerDAO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610526283255.png"
+        data-srcset="/imgs/1610526283255.png, /imgs/1610526283255.png 1.5x, /imgs/1610526283255.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610526283255.png"
+        title="1610526283255" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h5 id="324-完成类别管理的数据库操作">3.2.4 完成类别管理的数据库操作</h5>
+<ul>
+<li>
+<p>DTO类</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610527450867.png"
+        data-srcset="/imgs/1610527450867.png, /imgs/1610527450867.png 1.5x, /imgs/1610527450867.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610527450867.png"
+        title="1610527450867" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>DAO类</p>
+<table>
+<thead>
+<tr>
+<th>TypeDAO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610528636872.png"
+        data-srcset="/imgs/1610528636872.png, /imgs/1610528636872.png 1.5x, /imgs/1610528636872.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610528636872.png"
+        title="1610528636872" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="33-设计界面并把界面整合到项目中">3.3 设计界面并把界面整合到项目中</h4>
+<h5 id="331-添加页面到项目的web目录">3.3.1 添加页面到项目的web目录</h5>
+<blockquote>
+<p>将在HBuilder中设计完成的HTML文件及其关联的静态资源(css\js\img\fonts)拷贝到Javaweb项目的 <code>web目录</code></p>
+</blockquote>
+<h5 id="332-将html页面转换成jsp页面">3.3.2 将HTML页面转换成JSP页面</h5>
+<blockquote>
+<p>JSP（Java Server Page） 是一种基于web服务器运行的动态网页技术</p>
+<ul>
+<li>
+<p>支持Java代码</p>
+</li>
+<li>
+<p>必须依赖于web服务器运行，不能使用浏览器直接打开</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610530081453.png"
+        data-srcset="/imgs/1610530081453.png, /imgs/1610530081453.png 1.5x, /imgs/1610530081453.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610530081453.png"
+        title="1610530081453" /></p>
+</li>
+<li>
+<p>兼容HTML，在JSP中可以向在HTML文件中一样写HTML/CSS和JS</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="四编码-业务流程实现">四、编码— 业务(流程)实现</h2>
+<blockquote>
+<p>按照设计阶段完成业务流程，完成项目功能的实现</p>
+</blockquote>
+<h4 id="41-管理员登录功能">4.1 管理员登录功能</h4>
+<h6 id="411-创建loginservlet">4.1.1 创建LoginServlet</h6>
+<blockquote>
+<p>Servlet类——指的是继承了javax.servlet.HttpServlet类、实现了HTTP协议、能够接收HTTP请求的类</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Servlet类的创建步骤</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610587012252.png"
+        data-srcset="/imgs/1610587012252.png, /imgs/1610587012252.png 1.5x, /imgs/1610587012252.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610587012252.png"
+        title="1610587012252" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="412-loginjsp提交数据到loginservlet类">4.1.2 login.jsp提交数据到LoginServlet类</h6>
+<table>
+<thead>
+<tr>
+<th>login.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610587524497.png"
+        data-srcset="/imgs/1610587524497.png, /imgs/1610587524497.png 1.5x, /imgs/1610587524497.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610587524497.png"
+        title="1610587524497" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="413-在loginservlet类接收并处理请求">4.1.3 在LoginServlet类接收并处理请求</h6>
+<table>
+<thead>
+<tr>
+<th>LoginServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610591013522.png"
+        data-srcset="/imgs/1610591013522.png, /imgs/1610591013522.png 1.5x, /imgs/1610591013522.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610591013522.png"
+        title="1610591013522" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="414-在loginjsp显示提示信息">4.1.4 在login.jsp显示提示信息</h6>
+<table>
+<thead>
+<tr>
+<th>login.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610591138468.png"
+        data-srcset="/imgs/1610591138468.png, /imgs/1610591138468.png 1.5x, /imgs/1610591138468.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610591138468.png"
+        title="1610591138468" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="415-使用session解决登录认证问题">4.1.5 使用session解决登录认证问题</h6>
+<blockquote>
+<p>登录认证问题：如果管理员没有，我们不允许浏览器访问处理login.jsp以外的任何页面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610592349346.png"
+        data-srcset="/imgs/1610592349346.png, /imgs/1610592349346.png 1.5x, /imgs/1610592349346.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610592349346.png"
+        title="1610592349346" /></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>index.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610592637201.png"
+        data-srcset="/imgs/1610592637201.png, /imgs/1610592637201.png 1.5x, /imgs/1610592637201.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610592637201.png"
+        title="1610592637201" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>LoginServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610592811633.png"
+        data-srcset="/imgs/1610592811633.png, /imgs/1610592811633.png 1.5x, /imgs/1610592811633.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610592811633.png"
+        title="1610592811633" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="416-在indexjsp显示当前登录管理员的姓名和头像">4.1.6 在index.jsp显示当前登录管理员的姓名和头像</h6>
+<blockquote>
+<p>当管理员登录成功之后，我们将管理员的信息已经存放到了session中</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>index.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610593336210.png"
+        data-srcset="/imgs/1610593336210.png, /imgs/1610593336210.png 1.5x, /imgs/1610593336210.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610593336210.png"
+        title="1610593336210" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="42-类别管理添加类别">4.2 类别管理—添加类别</h4>
+<h6 id="421-点击添加类别跳转到type-addjsp">4.2.1 点击添加类别跳转到type-add.jsp</h6>
+<table>
+<thead>
+<tr>
+<th>index.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610594673710.png"
+        data-srcset="/imgs/1610594673710.png, /imgs/1610594673710.png 1.5x, /imgs/1610594673710.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610594673710.png"
+        title="1610594673710" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="422-创建typeaddservlet">4.2.2 创建TypeAddServlet</h6>
+<table>
+<thead>
+<tr>
+<th>TypeAddServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610594884650.png"
+        data-srcset="/imgs/1610594884650.png, /imgs/1610594884650.png 1.5x, /imgs/1610594884650.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610594884650.png"
+        title="1610594884650" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="423-type-addjsp提交类别信息到typeaddservlet">4.2.3 type-add.jsp提交类别信息到TypeAddServlet</h6>
+<table>
+<thead>
+<tr>
+<th>type-add.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610595016332.png"
+        data-srcset="/imgs/1610595016332.png, /imgs/1610595016332.png 1.5x, /imgs/1610595016332.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610595016332.png"
+        title="1610595016332" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="424-在typeaddservlet中接收并保存类信息并跳转到提示页面">4.2.4 在TypeAddServlet中接收并保存类信息，并跳转到提示页面</h6>
+<table>
+<thead>
+<tr>
+<th>TypeAddServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610595527075.png"
+        data-srcset="/imgs/1610595527075.png, /imgs/1610595527075.png 1.5x, /imgs/1610595527075.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610595527075.png"
+        title="1610595527075" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="425-在tips页面显示提示信息">4.2.5 在tips页面显示提示信息</h6>
+<blockquote>
+<p>因为操作成功和操作失败显示不同的信息，因此在jsp页面中需要实现流程控制—分支语句。</p>
+<p>我们可以在JSP页面中使用JSTL实现流程控制（分支、循环）</p>
+</blockquote>
+<p><strong>在JSP页面中使用JSTL标签的准备工作：</strong></p>
+<ul>
+<li>
+<p>下载<code>jstl.jar</code> 和 <code>standard.jar</code>并添加到项目</p>
+</li>
+<li>
+<p>在需要使用JSTL标签库的JSP页面中引入标签</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34; %&gt;
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>tips.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610596793639.png"
+        data-srcset="/imgs/1610596793639.png, /imgs/1610596793639.png 1.5x, /imgs/1610596793639.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610596793639.png"
+        title="1610596793639" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="426-类别数据校验">4.2.6 类别数据校验</h6>
+<table>
+<thead>
+<tr>
+<th>type-add.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610675320038.png"
+        data-srcset="/imgs/1610675320038.png, /imgs/1610675320038.png 1.5x, /imgs/1610675320038.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610675320038.png"
+        title="1610675320038" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610675401594.png"
+        data-srcset="/imgs/1610675401594.png, /imgs/1610675401594.png 1.5x, /imgs/1610675401594.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610675401594.png"
+        title="1610675401594" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="43-类别管理类别列表">4.3 类别管理—类别列表</h4>
+<h6 id="431-创建typelistservlet类">4.3.1 创建TypeListServlet类</h6>
+<table>
+<thead>
+<tr>
+<th>TypeListServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610604929345.png"
+        data-srcset="/imgs/1610604929345.png, /imgs/1610604929345.png 1.5x, /imgs/1610604929345.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610604929345.png"
+        title="1610604929345" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="432-在indexjsp点击类别列表跳转到typelistservlet">4.3.2 在index.jsp点击<code>类别列表</code>跳转到TypeListServlet</h6>
+<table>
+<thead>
+<tr>
+<th>index.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610605023082.png"
+        data-srcset="/imgs/1610605023082.png, /imgs/1610605023082.png 1.5x, /imgs/1610605023082.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610605023082.png"
+        title="1610605023082" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="433-在typelistservlet中查询所有类别并传递到type-listjsp">4.3.3 在TypeListServlet中查询所有类别并传递到type-list.jsp</h6>
+<table>
+<thead>
+<tr>
+<th>TypeListServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610605323655.png"
+        data-srcset="/imgs/1610605323655.png, /imgs/1610605323655.png 1.5x, /imgs/1610605323655.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610605323655.png"
+        title="1610605323655" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="434-在type-listjsp中显示类别列表信息">4.3.4 在type-list.jsp中显示类别列表信息</h6>
+<blockquote>
+<p>因为TypeListServlet传递的是一个Type的集合，因此在type-list.jsp中需要通过JSTL的循环来遍历所有的类别</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>type-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610606044153.png"
+        data-srcset="/imgs/1610606044153.png, /imgs/1610606044153.png 1.5x, /imgs/1610606044153.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610606044153.png"
+        title="1610606044153" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="44-类别管理修改类别">4.4 类别管理—修改类别</h4>
+<h6 id="441-创建typequeryservlet">4.4.1 创建TypeQueryServlet</h6>
+<blockquote>
+<p>因为点击类别列表中的“修改”之后，需要跳转到TypeQueryServlet，因此要先完成TypeQueryServlet的创建</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>TypeQueryServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610606520243.png"
+        data-srcset="/imgs/1610606520243.png, /imgs/1610606520243.png 1.5x, /imgs/1610606520243.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610606520243.png"
+        title="1610606520243" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="442-点击type-listjsp页面的修改将类别id传递到typequeryservlet">4.4.2 点击type-list.jsp页面的<code>修改</code>将类别ID传递到TypeQueryServlet</h6>
+<table>
+<thead>
+<tr>
+<th>type-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610607061493.png"
+        data-srcset="/imgs/1610607061493.png, /imgs/1610607061493.png 1.5x, /imgs/1610607061493.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610607061493.png"
+        title="1610607061493" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="443-在typequeryservlet接收类别id查询并传递到type-modifyjsp">4.4.3 在TypeQueryServlet接收类别ID、查询并传递到type-modify.jsp</h6>
+<table>
+<thead>
+<tr>
+<th>TypeQueryServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610607434391.png"
+        data-srcset="/imgs/1610607434391.png, /imgs/1610607434391.png 1.5x, /imgs/1610607434391.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610607434391.png"
+        title="1610607434391" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="444-在type-modifyjsp显示类别的原始信息">4.4.4 在type-modify.jsp显示类别的原始信息</h6>
+<table>
+<thead>
+<tr>
+<th>type-modify.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610607955058.png"
+        data-srcset="/imgs/1610607955058.png, /imgs/1610607955058.png 1.5x, /imgs/1610607955058.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610607955058.png"
+        title="1610607955058" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="445-创建typeupdateservlet">4.4.5 创建TypeUpdateServlet</h6>
+<h6 id="446-在type-modifyjsp完成修改之后提交到typeupdateservlet">4.4.6 在type-modify.jsp完成修改之后提交到TypeUpdateServlet</h6>
+<table>
+<thead>
+<tr>
+<th>type-modify.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610608556742.png"
+        data-srcset="/imgs/1610608556742.png, /imgs/1610608556742.png 1.5x, /imgs/1610608556742.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610608556742.png"
+        title="1610608556742" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="447-在typeupdateservlet接收类别信息并执行修改">4.4.7 在TypeUpdateServlet接收类别信息并执行修改</h6>
+<table>
+<thead>
+<tr>
+<th>TypeUpdateServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610673044403.png"
+        data-srcset="/imgs/1610673044403.png, /imgs/1610673044403.png 1.5x, /imgs/1610673044403.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610673044403.png"
+        title="1610673044403" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="45-类别管理删除类别">4.5 类别管理—删除类别</h4>
+<h6 id="451-创建typedeleteservlet类">4.5.1 创建TypeDeleteServlet类</h6>
+<h6 id="452-在type-listjsp页面点击删除跳转到typedeleteservlet">4.5.2 在type-list.jsp页面点击删除跳转到TypeDeleteServlet</h6>
+<table>
+<thead>
+<tr>
+<th>type-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610672684600.png"
+        data-srcset="/imgs/1610672684600.png, /imgs/1610672684600.png 1.5x, /imgs/1610672684600.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610672684600.png"
+        title="1610672684600" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="453-在typedeleteservlet中接收类别id并执行删除">4.5.3 在TypeDeleteServlet中接收类别ID并执行删除</h6>
+<table>
+<thead>
+<tr>
+<th>TypeDeleteServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610673567623.png"
+        data-srcset="/imgs/1610673567623.png, /imgs/1610673567623.png 1.5x, /imgs/1610673567623.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610673567623.png"
+        title="1610673567623" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="454-当点击删除之后弹出弹窗确认">4.5.4 当点击“删除”之后弹出弹窗确认</h6>
+<table>
+<thead>
+<tr>
+<th>type-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610673640358.png"
+        data-srcset="/imgs/1610673640358.png, /imgs/1610673640358.png 1.5x, /imgs/1610673640358.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610673640358.png"
+        title="1610673640358" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="46-商品管理发布商品">4.6 商品管理—发布商品</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610677868219.png"
+        data-srcset="/imgs/1610677868219.png, /imgs/1610677868219.png 1.5x, /imgs/1610677868219.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610677868219.png"
+        title="1610677868219" /></p>
+<h6 id="461-设计goods-addjsp">4.6.1 设计goods-add.jsp</h6>
+<p>步骤略</p>
+<h6 id="462-完成数据库操作">4.6.2 完成数据库操作</h6>
+<ul>
+<li>
+<p>创建DTO类</p>
+<table>
+<thead>
+<tr>
+<th>Goods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610679631539.png"
+        data-srcset="/imgs/1610679631539.png, /imgs/1610679631539.png 1.5x, /imgs/1610679631539.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610679631539.png"
+        title="1610679631539" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>创建DAO类</p>
+<table>
+<thead>
+<tr>
+<th>GoodsDAO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610680057416.png"
+        data-srcset="/imgs/1610680057416.png, /imgs/1610680057416.png 1.5x, /imgs/1610680057416.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610680057416.png"
+        title="1610680057416" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h6 id="463-创建goodslisttypeservlet类">4.6.3 创建GoodsListTypeServlet类</h6>
+<h6 id="464-在indexjsp页面点击发布商品跳转到">4.6.4 在index.jsp页面点击发布商品跳转到</h6>
+<table>
+<thead>
+<tr>
+<th>index.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610681185646.png"
+        data-srcset="/imgs/1610681185646.png, /imgs/1610681185646.png 1.5x, /imgs/1610681185646.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610681185646.png"
+        title="1610681185646" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="465-在goodslisttypeservlet类中查询类别列表传递到goods-addjsp">4.6.5. 在GoodsListTypeServlet类中查询类别列表传递到goods-add.jsp</h6>
+<table>
+<thead>
+<tr>
+<th>GoodsListTypeServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610681358595.png"
+        data-srcset="/imgs/1610681358595.png, /imgs/1610681358595.png 1.5x, /imgs/1610681358595.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610681358595.png"
+        title="1610681358595" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="466-在goods-addjsp中通过jstl显示类别信息到下拉菜单选项">4.6.6 在goods-add.jsp中通过JSTL显示类别信息到下拉菜单选项</h6>
+<table>
+<thead>
+<tr>
+<th>goods-add.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610681638022.png"
+        data-srcset="/imgs/1610681638022.png, /imgs/1610681638022.png 1.5x, /imgs/1610681638022.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610681638022.png"
+        title="1610681638022" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="467-创建goodsaddservlet类">4.6.7 创建GoodsAddServlet类</h6>
+<h6 id="468-在goods-addjsp点击立即提交提交到goodsaddservlet类">4.6.8 在goods-add.jsp点击“立即提交”提交到GoodsAddServlet类</h6>
+<blockquote>
+<p>在goods-add.jsp表单中包含了文件，如果提交的form表单中包含文件，需要注意以下几点：</p>
+<ul>
+<li>form的提交方式必须为 post</li>
+<li>form表单中的数据默认会压缩传输，如果包了文件就必须设置 <code>enctype=&quot;multipart/form-data&quot;</code>声明表达中的数据非压缩传输</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>goods-add.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610682415839.png"
+        data-srcset="/imgs/1610682415839.png, /imgs/1610682415839.png 1.5x, /imgs/1610682415839.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610682415839.png"
+        title="1610682415839" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="469-在goodsaddservlet类中接收商品信息">4.6.9 在GoodsAddServlet类中接收商品信息</h6>
+<blockquote>
+<ul>
+<li>
+<p>因为表单提交数据采用<code>enctype=&quot;multipart/form-data&quot;</code>提交，所以在Servlet中按照原来的方式接收数据就接收不到了，必须在GoodsAddServlet类前添加<code>@MultipartConfig</code>解析非压缩方式提交的数据</p>
+</li>
+<li>
+<p>上传的文件需要保存在特定的目录——在项目的web目录下创建名为files的文件夹用于保存图片（如果files文件夹是空的，项目部署时不会自动创建此目录，因此建议在files目录下默认放一个文件）</p>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>GoodsAddServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610683448456.png"
+        data-srcset="/imgs/1610683448456.png, /imgs/1610683448456.png 1.5x, /imgs/1610683448456.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610683448456.png"
+        title="1610683448456" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610694609894.png"
+        data-srcset="/imgs/1610694609894.png, /imgs/1610694609894.png 1.5x, /imgs/1610694609894.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610694609894.png"
+        title="1610694609894" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610694643764.png"
+        data-srcset="/imgs/1610694643764.png, /imgs/1610694643764.png 1.5x, /imgs/1610694643764.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610694643764.png"
+        title="1610694643764" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="47-商品管理商品列表">4.7 商品管理—商品列表</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610697617245.png"
+        data-srcset="/imgs/1610697617245.png, /imgs/1610697617245.png 1.5x, /imgs/1610697617245.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610697617245.png"
+        title="1610697617245" /></p>
+<h6 id="471-设计goods-listjsp">4.7.1 设计goods-list.jsp</h6>
+<h6 id="472-完成此功能的数据库操作">4.7.2 完成此功能的数据库操作</h6>
+<table>
+<thead>
+<tr>
+<th>GoodsDAO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610698900572.png"
+        data-srcset="/imgs/1610698900572.png, /imgs/1610698900572.png 1.5x, /imgs/1610698900572.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610698900572.png"
+        title="1610698900572" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610699013847.png"
+        data-srcset="/imgs/1610699013847.png, /imgs/1610699013847.png 1.5x, /imgs/1610699013847.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610699013847.png"
+        title="1610699013847" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="473--创建goodslistservlet类">4.7.3  创建GoodsListServlet类</h6>
+<h6 id="474-在indexjsp中点击商品列表跳转到goodslistservlet类">4.7.4 在index.jsp中点击<code>商品列表</code>跳转到GoodsListServlet类</h6>
+<blockquote>
+<p>默认显示第一页商品信息，传递默认页码为1</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>index.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610700106378.png"
+        data-srcset="/imgs/1610700106378.png, /imgs/1610700106378.png 1.5x, /imgs/1610700106378.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610700106378.png"
+        title="1610700106378" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="475-在goodslistservlet类中接收页码查询数据">4.7.5 在GoodsListServlet类中接收页码、查询数据</h6>
+<table>
+<thead>
+<tr>
+<th>GoodsListServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610700741984.png"
+        data-srcset="/imgs/1610700741984.png, /imgs/1610700741984.png 1.5x, /imgs/1610700741984.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610700741984.png"
+        title="1610700741984" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="476-在goods-listjsp中通过jstl显示商品信息分页信息">4.7.6 在goods-list.jsp中通过JSTL显示商品信息、分页信息</h6>
+<table>
+<thead>
+<tr>
+<th>goods-list.jsp     显示商品数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610701545034.png"
+        data-srcset="/imgs/1610701545034.png, /imgs/1610701545034.png 1.5x, /imgs/1610701545034.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610701545034.png"
+        title="1610701545034" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>goods-list.jsp   显示分页数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610702700144.png"
+        data-srcset="/imgs/1610702700144.png, /imgs/1610702700144.png 1.5x, /imgs/1610702700144.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610702700144.png"
+        title="1610702700144" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="48-商品管理搜索按类别搜索">4.8 商品管理—搜索—按类别搜索</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610758976368.png"
+        data-srcset="/imgs/1610758976368.png, /imgs/1610758976368.png 1.5x, /imgs/1610758976368.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610758976368.png"
+        title="1610758976368" /></p>
+<h6 id="481-完成按类别查询商品的数据库操作">4.8.1 完成按类别查询商品的数据库操作</h6>
+<table>
+<thead>
+<tr>
+<th>GoodsDAO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610759807858.png"
+        data-srcset="/imgs/1610759807858.png, /imgs/1610759807858.png 1.5x, /imgs/1610759807858.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610759807858.png"
+        title="1610759807858" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="482-在goodslistservlet中查询所有类别并传递到goods-listjsp">4.8.2 在GoodsListServlet中查询所有类别，并传递到goods-list.jsp</h6>
+<table>
+<thead>
+<tr>
+<th><strong>GoodsListServlet</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610760088589.png"
+        data-srcset="/imgs/1610760088589.png, /imgs/1610760088589.png 1.5x, /imgs/1610760088589.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610760088589.png"
+        title="1610760088589" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="483-在商品列表页面显示类别列表">4.8.3 在商品列表页面显示类别列表</h6>
+<table>
+<thead>
+<tr>
+<th>goods-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610760363222.png"
+        data-srcset="/imgs/1610760363222.png, /imgs/1610760363222.png 1.5x, /imgs/1610760363222.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610760363222.png"
+        title="1610760363222" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="484-创建goodslistbytypeservlet类">4.8.4 创建GoodsListByTypeServlet类</h6>
+<h6 id="485-点击商品类别页面的类别跳转到goodslistbytypeservlet类">4.8.5 点击商品类别页面的类别跳转到GoodsListByTypeServlet类</h6>
+<table>
+<thead>
+<tr>
+<th>goods-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610760672833.png"
+        data-srcset="/imgs/1610760672833.png, /imgs/1610760672833.png 1.5x, /imgs/1610760672833.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610760672833.png"
+        title="1610760672833" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="486-在goodslistbytypeservlet中接收类别id和页码进行查询">4.8.6 在GoodsListByTypeServlet中接收类别ID和页码进行查询</h6>
+<table>
+<thead>
+<tr>
+<th>GoodsListByTypeServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610761241234.png"
+        data-srcset="/imgs/1610761241234.png, /imgs/1610761241234.png 1.5x, /imgs/1610761241234.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610761241234.png"
+        title="1610761241234" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="489-按类别查询商品分页问题">4.8.9 按类别查询商品分页问题</h6>
+<table>
+<thead>
+<tr>
+<th>GoodsListServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610763033370.png"
+        data-srcset="/imgs/1610763033370.png, /imgs/1610763033370.png 1.5x, /imgs/1610763033370.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610763033370.png"
+        title="1610763033370" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>GoodsListByTypeServlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610763056810.png"
+        data-srcset="/imgs/1610763056810.png, /imgs/1610763056810.png 1.5x, /imgs/1610763056810.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610763056810.png"
+        title="1610763056810" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>goods-list.jsp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610763127797.png"
+        data-srcset="/imgs/1610763127797.png, /imgs/1610763127797.png 1.5x, /imgs/1610763127797.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610763127797.png"
+        title="1610763127797" /></td>
+</tr>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610763174044.png"
+        data-srcset="/imgs/1610763174044.png, /imgs/1610763174044.png 1.5x, /imgs/1610763174044.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610763174044.png"
+        title="1610763174044" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="五项目部署linux">五、项目部署（Linux）</h2>
+<blockquote>
+<p>项目开发完成之后，将项目部署到生产环境正式的上线运营</p>
+</blockquote>
+<h4 id="51-linux介绍">5.1 Linux介绍</h4>
+<h6 id="511-优点">5.1.1 优点</h6>
+<blockquote>
+<p>用于生产环境的服务器主机通常会选择Linux系统</p>
+<ul>
+<li>windows的优点是有比较人性化的可视化操作界面，这个可视化界面会占用大量的系统资源；但是生产环境中服务器主机主要用于web容器（tomcat）的执行，为了最大限度的使用硬件资源，所以我们通常会选择系统开销更小的Linux</li>
+<li>Linux系统是开源</li>
+<li>Linux性能比windows更稳定（宕机概率较低）</li>
+<li>Linux防火墙组件性能高、保证系统安全</li>
+</ul>
+</blockquote>
+<h6 id="512-版本">5.1.2 版本</h6>
+<ul>
+<li>RedHat（效率高、可靠性好）</li>
+<li>Ubuntu</li>
+<li>CentOS（基于RedHat源码编译而成，完全开源） 6.x   7.x</li>
+</ul>
+<h6 id="513-如何获取linux">5.1.3 如何获取Linux</h6>
+<ul>
+<li>安装虚拟机，在虚拟机中安装CentOS</li>
+<li>购买硬件主机、安装（成本高、商用）</li>
+<li>购买云主机</li>
+</ul>
+<h4 id="52-购买云主机">5.2 购买云主机</h4>
+<h6 id="521-云主机运营商">5.2.1 云主机运营商</h6>
+<ul>
+<li>阿里云（推荐）
+<ul>
+<li><a href="https://developer.aliyun.com/adc/student/#ecscolleges-collocation-stu">https://developer.aliyun.com/adc/student/#ecscolleges-collocation-stu</a></li>
+<li><a href="https://dashi.aliyun.com/site/cloud/student">https://dashi.aliyun.com/site/cloud/student</a></li>
+</ul>
+</li>
+<li>腾讯云</li>
+</ul>
+<h4 id="53-管理云主机">5.3 管理云主机</h4>
+<h6 id="531-登录到云主机">5.3.1 登录到云主机</h6>
+<ul>
+<li>
+<p>登录到阿里云的控制台（使用购买云主机时的账号和密码）</p>
+<ul>
+<li><a href="https://account.aliyun.com/">https://account.aliyun.com/</a></li>
+</ul>
+</li>
+<li>
+<p>进入到ECS服务器管理界面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610766109066.png"
+        data-srcset="/imgs/1610766109066.png, /imgs/1610766109066.png 1.5x, /imgs/1610766109066.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610766109066.png"
+        title="1610766109066" /></p>
+</li>
+<li>
+<p>点击购买的实例进入到实例的配置页面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610766189956.png"
+        data-srcset="/imgs/1610766189956.png, /imgs/1610766189956.png 1.5x, /imgs/1610766189956.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610766189956.png"
+        title="1610766189956" /></p>
+</li>
+</ul>
+<h6 id="532-云主机系统管理">5.3.2 云主机系统管理</h6>
+<ul>
+<li>
+<p>常规配置</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610766335536.png"
+        data-srcset="/imgs/1610766335536.png, /imgs/1610766335536.png 1.5x, /imgs/1610766335536.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610766335536.png"
+        title="1610766335536" /></p>
+</li>
+</ul>
+<h6 id="533-修改云主机密码">5.3.3 修改云主机密码</h6>
+<ul>
+<li>
+<p>设置root用户的登录密码</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610766513247.png"
+        data-srcset="/imgs/1610766513247.png, /imgs/1610766513247.png 1.5x, /imgs/1610766513247.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610766513247.png"
+        title="1610766513247" /></p>
+</li>
+<li>
+<p>密码重置完成之后，重启服务器</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610766572092.png"
+        data-srcset="/imgs/1610766572092.png, /imgs/1610766572092.png 1.5x, /imgs/1610766572092.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610766572092.png"
+        title="1610766572092" /></p>
+</li>
+</ul>
+<h6 id="534-安全组设置">5.3.4 安全组设置</h6>
+<blockquote>
+<p>阿里云主机为了保证系统的安全，提供了访问限制（端口配置）</p>
+</blockquote>
+<ul>
+<li>
+<p>进入到安全组配置页面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610766840295.png"
+        data-srcset="/imgs/1610766840295.png, /imgs/1610766840295.png 1.5x, /imgs/1610766840295.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610766840295.png"
+        title="1610766840295" /></p>
+</li>
+<li>
+<p>放行 3306端口</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610767007831.png"
+        data-srcset="/imgs/1610767007831.png, /imgs/1610767007831.png 1.5x, /imgs/1610767007831.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610767007831.png"
+        title="1610767007831" /></p>
+</li>
+<li>
+<p>放行8080端口</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610767094433.png"
+        data-srcset="/imgs/1610767094433.png, /imgs/1610767094433.png 1.5x, /imgs/1610767094433.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610767094433.png"
+        title="1610767094433" /></p>
+</li>
+</ul>
+<h4 id="54-使用远程工具连接云主机">5.4 使用远程工具连接云主机</h4>
+<blockquote>
+<p>云主机是远程的主机，需要使用工具进行远程连接，然后通过远程工具进行云主机的操作</p>
+</blockquote>
+<h6 id="541-xftp">5.4.1 xftp</h6>
+<blockquote>
+<p>xftp是一个远程的文件传输工具，可以将本机上的文件上传到云主机</p>
+</blockquote>
+<ul>
+<li>
+<p>从群文件下载并安装（傻瓜式安装）</p>
+</li>
+<li>
+<p>创建连接</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610767640965.png"
+        data-srcset="/imgs/1610767640965.png, /imgs/1610767640965.png 1.5x, /imgs/1610767640965.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610767640965.png"
+        title="1610767640965" /></p>
+</li>
+<li>
+<p>将Tomcat和JDK的安装包 上传到 Linux</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610767811153.png"
+        data-srcset="/imgs/1610767811153.png, /imgs/1610767811153.png 1.5x, /imgs/1610767811153.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610767811153.png"
+        title="1610767811153" /></p>
+</li>
+</ul>
+<h6 id="542-xshell">5.4.2 xshell</h6>
+<blockquote>
+<p>xshell是一个远程终端，可以通过指令操作远程云主机</p>
+</blockquote>
+<ul>
+<li>
+<p>从群文件下载并安装（傻瓜式）</p>
+</li>
+<li>
+<p>如果xftp已经与云主机建立连接，xshell其实是可以不用建立连接的，建议在xshell创建连接</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610768173210.png"
+        data-srcset="/imgs/1610768173210.png, /imgs/1610768173210.png 1.5x, /imgs/1610768173210.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610768173210.png"
+        title="1610768173210" /></p>
+</li>
+</ul>
+<h4 id="55-在linux系统中安装jdk并配置环境变量">5.5 在Linux系统中安装JDK并配置环境变量</h4>
+<h6 id="551-将jdk的安装包上传到linux系统的usrlocal目录">5.5.1 将JDK的安装包上传到Linux系统的usr/local目录</h6>
+<ul>
+<li>使用xftp上传文件</li>
+</ul>
+<h6 id="552-解压jdk的压缩包">5.5.2 解压JDK的压缩包</h6>
+<ul>
+<li>xshell连接到云主机</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo ~<span class="o">]</span><span class="c1"># cd /usr/local</span>
+
+<span class="o">[</span>root@theo local<span class="o">]</span><span class="c1"># ls</span>
+aegis  apache-tomcat-8.5.46.tar.gz  bin  etc  games  include  jdk-8u221-linux-x64.tar.gz  lib  lib64  libexec  sbin  share  src
+
+<span class="o">[</span>root@theo local<span class="o">]</span><span class="c1"># tar -zxvf jdk-8u221-linux-x64.tar.gz</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看解压后的目录结构</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo local<span class="o">]</span><span class="c1"># ls</span>
+aegis  apache-tomcat-8.5.46.tar.gz  bin  etc  games  include  jdk1.8.0_221  jdk-8u221-linux-x64.tar.gz  lib  lib64  libexec  sbin  share  src
+
+<span class="o">[</span>root@theo local<span class="o">]</span><span class="c1"># cd jdk1.8.0_221/</span>
+<span class="o">[</span>root@theo jdk1.8.0_221<span class="o">]</span><span class="c1"># ls</span>
+bin  COPYRIGHT  include  javafx-src.zip  jre  lib  LICENSE  man  README.html  release  src.zip  THIRDPARTYLICENSEREADME-JAVAFX.txt  THIRDPARTYLICENSEREADME.txt
+
+<span class="o">[</span>root@theo jdk1.8.0_221<span class="o">]</span><span class="c1"># cd bin</span>
+<span class="o">[</span>root@theo bin<span class="o">]</span><span class="c1"># ls</span>
+appletviewer  jar        javadoc         javapackager  jconsole  jhat   jmc         jsadebugd  jvisualvm     pack200     rmiregistry  tnameserv  xjc
+ControlPanel  jarsigner  javafxpackager  java-rmi.cgi  jcontrol  jinfo  jmc.ini     jstack     keytool       policytool  schemagen    unpack200
+extcheck      java       javah           javaws        jdb       jjs    jps         jstat      native2ascii  rmic        serialver    wsgen
+idlj          javac      javap           jcmd          jdeps     jmap   jrunscript  jstatd     orbd          rmid        servertool   wsimport
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="553-配置jdk环境变量">5.5.3 配置JDK环境变量</h6>
+<ul>
+<li>进入到/etc目录，找到profile文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo bin<span class="o">]</span><span class="c1"># cd /etc</span>
+<span class="o">[</span>root@theo etc<span class="o">]</span><span class="c1"># ls</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610769015678.png"
+        data-srcset="/imgs/1610769015678.png, /imgs/1610769015678.png 1.5x, /imgs/1610769015678.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610769015678.png"
+        title="1610769015678" /></p>
+<ul>
+<li>编辑这个profile文件，在文件中添加JDK环境变量</li>
+</ul>
+<blockquote>
+<p>[root@theo etc]# vim profile  可以打开文件编辑器，必须输入字母i进入到编辑状态,在最后面添加如下四项配置：<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610769616142.png"
+        data-srcset="/imgs/1610769616142.png, /imgs/1610769616142.png 1.5x, /imgs/1610769616142.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610769616142.png"
+        title="1610769616142" /></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">export JAVA_HOME=/usr/local/jdk1.8.0_221
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>编辑完成之后，点击键盘“Esc”按键退出编辑状态，输入<code>:wq</code>保存并退出编辑器</p>
+</blockquote>
+<h6 id="554-重新加载配置文件">5.5.4 重新加载配置文件</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo etc<span class="o">]</span><span class="c1"># source /etc/profile</span>
+
+<span class="o">[</span>root@theo etc<span class="o">]</span><span class="c1"># java -version</span>
+java version <span class="s2">&#34;1.8.0_221&#34;</span>
+Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.8.0_221-b11<span class="o">)</span>
+Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 25.221-b11, mixed mode<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="56-在linux系统中安装tomcat">5.6 在Linux系统中安装Tomcat</h4>
+<h6 id="561-从群文件按下载tomcat安装包并上传到linux的usrlocal目录">5.6.1 从群文件按下载Tomcat安装包并上传到Linux的/usr/local目录</h6>
+<h6 id="562-解压tomcat">5.6.2 解压tomcat</h6>
+<blockquote>
+<p>xshell连接到linux，在xshell中输入以下指令：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo etc<span class="o">]</span><span class="c1"># cd /usr/local</span>
+<span class="o">[</span>root@theo local<span class="o">]</span><span class="c1"># tar -zxvf apache-tomcat-8.5.46.tar.gz </span>
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="563-启动tomcat">5.6.3 启动Tomcat</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo local<span class="o">]</span><span class="c1"># cd apache-tomcat-8.5.46/</span>
+<span class="o">[</span>root@theo apache-tomcat-8.5.46<span class="o">]</span><span class="c1"># cd bin</span>
+<span class="o">[</span>root@theo bin<span class="o">]</span><span class="c1"># ./startup.sh </span>
+Using CATALINA_BASE:   /usr/local/apache-tomcat-8.5.46
+Using CATALINA_HOME:   /usr/local/apache-tomcat-8.5.46
+Using CATALINA_TMPDIR: /usr/local/apache-tomcat-8.5.46/temp
+Using JRE_HOME:        /usr/local/jdk1.8.0_221/jre
+Using CLASSPATH:       /usr/local/apache-tomcat-8.5.46/bin/bootstrap.jar:/usr/local/apache-tomcat-8.5.46/bin/tomcat-juli.jar
+Tomcat started.
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="564-关闭linux防火墙">5.6.4 关闭linux防火墙</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 查看防火墙状态
+[root@theo bin]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)
+   Active: inactive (dead)
+     Docs: man:firewalld(1)
+     
+# 关闭防火墙
+[root@theo bin]# systemctl stop firewalld
+
+# 启动防火墙
+[root@theo bin]# systemctl start firewalld
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="565-远程访问linux中的tomcat">5.6.5 远程访问linux中的tomcat</h6>
+<table>
+<thead>
+<tr>
+<th>http://47.96.11.185:8080/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610777918268.png"
+        data-srcset="/imgs/1610777918268.png, /imgs/1610777918268.png 1.5x, /imgs/1610777918268.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610777918268.png"
+        title="1610777918268" /></td>
+</tr>
+</tbody>
+</table>
+<h6 id="566-停止tomcat">5.6.6 停止Tomcat</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 在Linux系统中安装lsof指令（安装一次之后就不用重复安装了）
+[root@theo bin]# yum install -y lsof
+
+# 通过lsof 指令查看8080的进程号
+[root@theo bin]# lsof -i:8080
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+java    2749 root   53u  IPv4  37961      0t0  TCP *:webcache (LISTEN)
+
+# 通过kill指令停止指定进程
+[root@theo bin]# kill -9 2749
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="57-在linux系统中安装mysql">5.7 在Linux系统中安装MySQL</h4>
+<h6 id="571-安装mysql">5.7.1 安装MySQL</h6>
+<blockquote>
+<p>在线安装  <a href="http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm">http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 下载rpm安装包
+[root@theo bin]# cd /usr/local
+[root@theo local]# wget http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+
+# 安装rpm
+[root@theo local]# rpm -ivh mysql57-community-release-el7-10.noarch.rpm
+
+# 通过yum指令安装mysql服务 （下载安装mysql）
+[root@theo local]# yum -y install mysql-community-server
+
+# 将mysql加入到开机启动项 （mysql安装之后，在linux中的服务名为 mysqld）
+[root@theo local]# systemctl enable mysqld
+
+# 启动MySQL
+[root@theo local]# systemctl start mysqld
+
+# 检查3306端口是否被mysql占用
+[root@theo local]# lsof -i:3306
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+mysqld  3192 mysql   17u  IPv6  42484      0t0  TCP *:mysql (LISTEN)
+
+# 停止MySQL
+[root@theo local]# systemctl stop mysqld
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="572-mysql的基本使用">5.7.2 MySQL的基本使用</h6>
+<blockquote>
+<p>在Linux中安装MySQL并没有提示设置root用户的密码，安装包中设置了一个默认随机密码；但是这个默认随机密码只能用来初始登录，不能用来进行数据库操作（默认密码必须改）</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 1.查询初始密码
+[root@theo local]# cat /var/log/mysqld.log | grep password
+2021-01-16T06:41:27.753855Z 1 [Note] A temporary password is generated for root@localhost: gpKBe-Oqj6SD
+
+# 2.登录mysql
+[root@theo log]# mysql -uroot -p
+Enter password: （粘贴复制的初始密码--回车）
+
+# 3.修改初始密码
+mysql&gt; set global validate_password_policy=LOW;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; set password=password(&#39;admin123&#39;);
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+# 4.mysql的root账号默认不允许远程连接——授权远程连接
+GRANT ALL PRIVILEGES on *.* to &#39;root&#39;@&#39;%&#39; IDENTIFIED by &#39;admin123&#39; WITH GRANT OPTION;
+# 授权之后刷新权限
+flush PRIVILEGES;
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="58-项目部署">5.8 项目部署</h4>
+<h6 id="581-数据库迁移">5.8.1 数据库迁移</h6>
+<blockquote>
+<p>在linux中的mysql中创建数据库、添加准备数据  （可以复制）</p>
+</blockquote>
+<h6 id="582-将web项目部署到linux的tomcat中">5.8.2 将web项目部署到linux的tomcat中</h6>
+<blockquote>
+<p>最直观的方法如下（省略打包的过程）：</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/imgs/1610781176254.png"
+        data-srcset="/imgs/1610781176254.png, /imgs/1610781176254.png 1.5x, /imgs/1610781176254.png 2x"
+        data-sizes="auto"
+        alt="/imgs/1610781176254.png"
+        title="1610781176254" /></p>
+<ul>
+<li>启动Tomcat</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@theo log<span class="o">]</span><span class="c1"># cd /usr/local/apache-tomcat-8.5.46/bin</span>
+<span class="o">[</span>root@theo bin<span class="o">]</span><span class="c1"># ./startup.sh </span>
+Using CATALINA_BASE:   /usr/local/apache-tomcat-8.5.46
+Using CATALINA_HOME:   /usr/local/apache-tomcat-8.5.46
+Using CATALINA_TMPDIR: /usr/local/apache-tomcat-8.5.46/temp
+Using JRE_HOME:        /usr/local/jdk1.8.0_221/jre
+Using CLASSPATH:       /usr/local/apache-tomcat-8.5.46/bin/bootstrap.jar:/usr/local/apache-tomcat-8.5.46/bin/tomcat-juli.jar
+Tomcat started.
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="六项目开发任务必须完成">六、项目开发任务（必须完成）</h2>
+<h4 id="1随堂项目功能需要完成">1.随堂项目功能需要完成</h4>
+<ul>
+<li>
+<p>管理员登录</p>
+</li>
+<li>
+<p>类别管理</p>
+<ul>
+<li>添加类别（JS数据校验）</li>
+<li>类别列表</li>
+<li>删除类别（JS提示）</li>
+<li>修改类别</li>
+</ul>
+</li>
+<li>
+<p>商品管理</p>
+<ul>
+<li>发布商品</li>
+<li>商品列表+分页</li>
+</ul>
+</li>
+</ul>
+<h4 id="2扩展功能自行完成">2.扩展功能（自行完成）</h4>
+<ul>
+<li>管理员登录的表单校验</li>
+<li>类别管理
+<ul>
+<li>修改类别（JS数据校验）</li>
+</ul>
+</li>
+<li>商品管理
+<ul>
+<li>发布商品（JS数据校验）</li>
+<li>删除商品</li>
+<li>修改商品</li>
+<li>商品详情</li>
+</ul>
+</li>
+</ul>
+</div><div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CTZ67PPVA3","algoliaIndex":"hugo","algoliaSearchKey":"e41367b9d69db67ea65d45a33d7ae089","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

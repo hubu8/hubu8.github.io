@@ -52,6 +52,8 @@ PDF文章列表
 | [Exin DevOps Master WhitePaper_V1.5_CN.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=Exin_DevOps_Master_WhitePaper_V1.5_CN.pdf) | DevOps Master 白皮书<br/>企业DevOps的成功之路 |
 | [Devops之基于Jenkins的CI与CD(1).pdf](https://hubu8.github.io/pdf/web/viewer.html?file=Devops之基于Jenkins的CI与CD(1).pdf) | Devops之基于Jenkins的CI与CD                   |
 | [Jenkins与Gitlab.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=Jenkins与Gitlab-markdown.pdf) |                                               |
+| [2021阿里巴巴Java面试手册](https://hubu8.github.io/pdf/web/viewer.html?file=2021阿里巴巴Java面试手册.pdf) |                                               |
+| [剑指OFFER名企面试官精讲典型编程题_第2版](https://hubu8.github.io/pdf/web/viewer.html?file=剑指OFFER名企面试官精讲典型编程题_第2版.pdf) | 剑指OFFER                                     |
 
 
 

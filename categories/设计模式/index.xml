@@ -4,7 +4,14 @@
         <link>https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
         <description>设计模式 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 30 Apr 2021 20:51:31 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 02 May 2021 20:44:38 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>单例模式</title>
+    <link>https://hubu8.github.io/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sun, 02 May 2021 20:44:38 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>原型模式</title>
     <link>https://hubu8.github.io/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Fri, 30 Apr 2021 20:51:31 &#43;0800</pubDate>

@@ -120,12 +120,16 @@
     <li><a href="#一环境准备导入依赖">一、环境准备（导入依赖）</a>
       <ul>
         <li><a href="#1pom原始导入">1、pom原始导入</a></li>
-        <li><a href="#2分词">2、分词</a></li>
-        <li><a href="#3工具类调用service">3、工具类调用service</a></li>
-        <li><a href="#4调用分词生成词云">4、调用分词生成词云</a></li>
-        <li><a href="#5前端结果显示">5、前端结果显示</a></li>
+        <li><a href="#2本地导入">2、本地导入</a></li>
       </ul>
     </li>
+    <li><a href="#二分词">二、分词</a>
+      <ul>
+        <li><a href="#1工具类调用service">1、工具类调用service</a></li>
+        <li><a href="#2调用分词生成词云">2、调用分词生成词云</a></li>
+      </ul>
+    </li>
+    <li><a href="#三前端结果显示">三、前端结果显示</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Stanford Nlp是一个比较牛叉的自然语言处理工具，其很多模型都是基于深度学习方法进行训练得到的，准确率比起原来的很多工具有了很大程度的提高。近年来很多开源项目也用到了其中的一些方法。</p>
@@ -190,7 +194,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>如果上述方法pom不能导入可以选择第二种方法，把jar包下载到本地，然后本地导入</p>
-<p>2、本地导入</p>
+<h3 id="2本地导入">2、本地导入</h3>
 <p><a href="https://stanfordnlp.github.io/CoreNLP/index.html" target="_blank" rel="noopener noreffer">下载地址</a>主要下载两个文件</p>
 <p><img
         class="lazyload"
@@ -286,7 +290,7 @@
         <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2分词">2、分词</h3>
+</div><h2 id="二分词">二、分词</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -486,7 +490,7 @@
         alt="/java_images/image-20210509083842970.png"
         title="image-20210509083842970" /></p>
 <p>pS：该代码的思想是将text字符串交给Stanford CoreNLP处理，StanfordCoreNLP的各个组件（annotator）按“tokenize（分词）, ssplit（断句）, pos（词性标注）, lemma（词元化）, ner（命名实体识别）, parse（语法分析）, dcoref（同义词分辨）”顺序进行处理。</p>
-<h3 id="3工具类调用service">3、工具类调用service</h3>
+<h3 id="1工具类调用service">1、工具类调用service</h3>
 <p>工具类为了调用service方法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -614,7 +618,7 @@
     <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="4调用分词生成词云">4、调用分词生成词云</h3>
+</div><h3 id="2调用分词生成词云">2、调用分词生成词云</h3>
 <p>词云依赖：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -854,7 +858,7 @@
 <p>对象controller中的方法调用对象&quot;wordscloud&quot;的方法，程序并不需要等待对象a的方法返回结果值，直接继续往下走。</p>
 <p>为什么不同步？</p>
 <p>由于模型的构建复杂性，生成一个模型并返回结果需要40+秒，如果模型复杂度增加，还会增加响应时间，影响客户端体验。</p>
-<h3 id="5前端结果显示">5、前端结果显示</h3>
+<h2 id="三前端结果显示">三、前端结果显示</h2>
 <p>后端传的数据是base64编码后的字符串，怎么显示在前端？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

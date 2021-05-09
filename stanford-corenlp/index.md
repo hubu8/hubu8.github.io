@@ -43,7 +43,7 @@
 
 如果上述方法pom不能导入可以选择第二种方法，把jar包下载到本地，然后本地导入
 
-2、本地导入
+### 2、本地导入
 
 [下载地址](https://stanfordnlp.github.io/CoreNLP/index.html)主要下载两个文件
 
@@ -91,7 +91,7 @@ pom文件导入本地Jar
         </dependency>
 ```
 
-### 2、分词
+## 二、分词
 
 ```java
 package com.jd.posttimer.Util.SegmentationUtil;
@@ -195,7 +195,7 @@ public class Segmentation {
 
 pS：该代码的思想是将text字符串交给Stanford CoreNLP处理，StanfordCoreNLP的各个组件（annotator）按“tokenize（分词）, ssplit（断句）, pos（词性标注）, lemma（词元化）, ner（命名实体识别）, parse（语法分析）, dcoref（同义词分辨）”顺序进行处理。
 
-### 3、工具类调用service
+### 1、工具类调用service
 
 工具类为了调用service方法：
 
@@ -267,7 +267,7 @@ public class BeanUtil implements ApplicationContextAware, DisposableBean {
 
 
 
-### 4、调用分词生成词云
+### 2、调用分词生成词云
 
 词云依赖：
 
@@ -399,7 +399,7 @@ public class WordsCloud extends Thread{
 
 由于模型的构建复杂性，生成一个模型并返回结果需要40+秒，如果模型复杂度增加，还会增加响应时间，影响客户端体验。
 
-### 5、前端结果显示
+## 三、前端结果显示
 
 后端传的数据是base64编码后的字符串，怎么显示在前端？
 

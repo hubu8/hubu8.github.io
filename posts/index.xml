@@ -4,7 +4,28 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 02 May 2021 20:44:38 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 09 May 2021 08:08:18 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Stanford CoreNLP 词云</title>
+    <link>https://hubu8.github.io/stanford-corenlp/</link>
+    <pubDate>Sun, 09 May 2021 08:08:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/stanford-corenlp/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>代理模式</title>
+    <link>https://hubu8.github.io/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Wed, 05 May 2021 10:34:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>统计代码行</title>
+    <link>https://hubu8.github.io/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C/</link>
+    <pubDate>Tue, 04 May 2021 19:00:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>单例模式</title>
     <link>https://hubu8.github.io/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Sun, 02 May 2021 20:44:38 &#43;0800</pubDate>
@@ -52,27 +73,6 @@
     <pubDate>Sat, 17 Apr 2021 20:47:26 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/simpread-springcloud%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>骰子等概率1-7与数组</title>
-    <link>https://hubu8.github.io/%E9%AA%B0%E5%AD%90%E7%AD%89%E6%A6%82%E7%8E%871-7/</link>
-    <pubDate>Sat, 17 Apr 2021 09:51:37 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E9%AA%B0%E5%AD%90%E7%AD%89%E6%A6%82%E7%8E%871-7/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>实验三---抽象工厂模式、建造者模式</title>
-    <link>https://hubu8.github.io/%E5%AE%9E%E9%AA%8C%E4%B8%89-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 16 Apr 2021 20:51:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%AE%9E%E9%AA%8C%E4%B8%89-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Windows双引导关闭</title>
-    <link>https://hubu8.github.io/windows%E5%8F%8C%E5%BC%95%E5%AF%BC%E5%85%B3%E9%97%AD/</link>
-    <pubDate>Fri, 16 Apr 2021 16:40:28 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/windows%E5%8F%8C%E5%BC%95%E5%AF%BC%E5%85%B3%E9%97%AD/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

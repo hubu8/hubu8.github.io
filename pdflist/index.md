@@ -54,6 +54,9 @@ PDF文章列表
 | [Jenkins与Gitlab.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=Jenkins与Gitlab-markdown.pdf) |                                               |
 | [2021阿里巴巴Java面试手册](https://hubu8.github.io/pdf/web/viewer.html?file=2021阿里巴巴Java面试手册.pdf) |                                               |
 | [剑指OFFER名企面试官精讲典型编程题_第2版](https://hubu8.github.io/pdf/web/viewer.html?file=剑指OFFER名企面试官精讲典型编程题_第2版.pdf) | 剑指OFFER                                     |
+| [机器学习](https://hubu8.github.io/pdf/web/viewer.html?file=MLY-zh-cn.pdf) | 机器学习                                      |
+
+
 
 
 

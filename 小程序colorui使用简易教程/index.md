@@ -77,16 +77,12 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 `App.vue` 引入关键Css `main.css` `icon.css`
 
 ```
-
-
-1.  <style>
-2.  @import "colorui/main.css";
-3.  @import "colorui/icon.css";
-4.  @import "app.css"; /* 你的项目css */
-5.  ....
-6.  </style>
-
-
+<style>
+@import "colorui/main.css";
+@import "colorui/icon.css";
+@import "app.css"; /* 你的项目css */
+....
+</style>
 ```
 
 ### 使用自定义导航栏
@@ -96,46 +92,38 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 `App.vue` 获得系统信息
 
 ```
-
-
-1.  onLaunch: function() {
-2.  	uni.getSystemInfo({
-3.  		success: function(e) {
-4.  			// #ifndef MP
-5.  			Vue.prototype.StatusBar = e.statusBarHeight;
-6.  			if (e.platform == 'android') {
-7.  				Vue.prototype.CustomBar = e.statusBarHeight + 50;
-8.  			} else {
-9.  				Vue.prototype.CustomBar = e.statusBarHeight + 45;
-10.  			};
-11.  			// #endif
-12.  			// #ifdef MP-WEIXIN
-13.  			Vue.prototype.StatusBar = e.statusBarHeight;
-14.  			let custom = wx.getMenuButtonBoundingClientRect();
-15.  			Vue.prototype.Custom = custom;
-16.  			Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
-17.  			// #endif		
-18.  			// #ifdef MP-ALIPAY
-19.  			Vue.prototype.StatusBar = e.statusBarHeight;
-20.  			Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
-21.  			// #endif
-22.  		}
-23.  	})
-24.  },
-
-
+onLaunch: function() {
+	uni.getSystemInfo({
+		success: function(e) {
+			// #ifndef MP
+			Vue.prototype.StatusBar = e.statusBarHeight;
+			if (e.platform == 'android') {
+				Vue.prototype.CustomBar = e.statusBarHeight + 50;
+			} else {
+				Vue.prototype.CustomBar = e.statusBarHeight + 45;
+			};
+			// #endif
+			// #ifdef MP-WEIXIN
+			Vue.prototype.StatusBar = e.statusBarHeight;
+			let custom = wx.getMenuButtonBoundingClientRect();
+			Vue.prototype.Custom = custom;
+			Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+			// #endif		
+			// #ifdef MP-ALIPAY
+			Vue.prototype.StatusBar = e.statusBarHeight;
+			Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
+			// #endif
+		}
+	})
+},
 ```
 
 `pages.json` 配置取消系统导航栏
 
 ```
-
-
-1.  "globalStyle": {
-2.  	"navigationStyle": "custom"
-3.  },
-
-
+"globalStyle": {
+	"navigationStyle": "custom"
+},
 ```
 
 复制代码结构可以直接使用，注意全局变量的获取。
@@ -143,25 +131,17 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 使用封装,在`main.js` 引入 `cu-custom` 组件。
 
 ```
-
-
-1.  import cuCustom from './colorui/components/cu-custom.vue'
-2.  Vue.component('cu-custom',cuCustom)
-
-
+import cuCustom from './colorui/components/cu-custom.vue'
+Vue.component('cu-custom',cuCustom)
 ```
 
 `page.vue` 页面可以直接调用了
 
 ```
-
-
-1.  <cu-custom bgColor="bg-gradual-blue" :isBack="true">
-2.  	<block slot="backText">返回</block>
-3.  	<block slot="content">导航栏</block>
-4.  </cu-custom>
-
-
+<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+	<block slot="backText">返回</block>
+	<block slot="content">导航栏</block>
+</cu-custom>
 ```
 
 <table><thead><tr><th>参数</th><th>作用</th><th>类型</th><th>默认值</th></tr></thead><tbody><tr><td>bgColor</td><td>背景颜色类名</td><td>String</td><td>''</td></tr><tr><td>isBack</td><td>是否开启返回</td><td>Boolean</td><td>false</td></tr><tr><td>bgImage</td><td>背景图片路径</td><td>String</td><td>''</td></tr></tbody></table><table><thead><tr><th>slot块</th><th>作用</th></tr></thead><tbody><tr><td>backText</td><td>返回时的文字</td></tr><tr><td>content</td><td>中间区域</td></tr><tr><td>right</td><td>右侧区域(小程序端可使用范围很窄！)</td></tr></tbody></table>
@@ -176,14 +156,10 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 `App.wxss` 引入关键Css `main.wxss` `icon.wxss`
 
 ```
-
-
-1.  @import "colorui/main.wxss";
-2.  @import "colorui/icon.wxss";
-3.  @import "app.css"; /* 你的项目css */
-4.  ....
-
-
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "app.css"; /* 你的项目css */
+....
 ```
 
 ### 从新项目开始
@@ -197,40 +173,37 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 `App.js` 获得系统信息
 
 ```
- 1.   onLaunch: function() {
-2.      wx.getSystemInfo({
-3.        success: e => {
-4.          this.globalData.StatusBar = e.statusBarHeight;
-5.          let custom = wx.getMenuButtonBoundingClientRect();
-6.          this.globalData.Custom = custom;  
-7.          this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
-8.        }
-9.      })
-10.  },
+ onLaunch: function() {
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let custom = wx.getMenuButtonBoundingClientRect();
+        this.globalData.Custom = custom;  
+        this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+      }
+    })
+},
 ```
 
 `App.json` 配置取消系统导航栏,并全局引入组件
 
 ```
-
-
-1.  "window": {
-2.  	"navigationStyle": "custom"
-3.  },
-4.  "usingComponents": {
-5.      "cu-custom":"/colorui/components/cu-custom"
-6.  }
-
-
+"window": {
+	"navigationStyle": "custom"
+},
+"usingComponents": {
+    "cu-custom":"/colorui/components/cu-custom"
+}
 ```
 
 `page.wxml` 页面可以直接调用了
 
 ```
-1.  <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-2.  	<view slot="backText">返回</view>
-3.  	<view slot="content">导航栏</view>
-4.  </cu-custom> 
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">导航栏</view>
+</cu-custom>
+ 
 ```
 
 <table><thead><tr><th>参数</th><th>作用</th><th>类型</th><th>默认值</th></tr></thead><tbody><tr><td>bgColor</td><td>背景颜色类名</td><td>String</td><td>''</td></tr><tr><td>isBack</td><td>是否开启返回</td><td>Boolean</td><td>false</td></tr><tr><td>isCustom</td><td>是否开启左侧胶囊</td><td>Boolean</td><td>false</td></tr><tr><td>bgImage</td><td>背景图片路径</td><td>String</td><td>''</td></tr></tbody></table><table><thead><tr><th>slot块</th><th>作用</th></tr></thead><tbody><tr><td>backText</td><td>返回时的文字</td></tr><tr><td>content</td><td>中间区域</td></tr><tr><td>right</td><td>右侧区域(小程序端可使用范围很窄！)</td></tr></tbody></table>
@@ -256,21 +229,17 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![固定尺寸](https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="flex flex-wrap">
-3.  		<view class="basis-xs bg-grey margin-xs padding-sm radius">xs(20%)</view>
-4.  		<view class="basis-df"></view>
-5.  		<view class="basis-sm bg-grey margin-xs padding-sm radius">sm(40%)</view>
-6.  		<view class="basis-df"></view>
-7.  		<view class="basis-df bg-grey margin-xs padding-sm radius">df(50%)</view>
-8.  		<view class="basis-lg bg-grey margin-xs padding-sm radius">lg(60%)</view>
-9.  		<view class="basis-xl bg-grey margin-xs padding-sm radius">xl(80%)</view>
-10.  	</view>
-11.  </view>
-
-
+<view class="padding bg-white">
+	<view class="flex flex-wrap">
+		<view class="basis-xs bg-grey margin-xs padding-sm radius">xs(20%)</view>
+		<view class="basis-df"></view>
+		<view class="basis-sm bg-grey margin-xs padding-sm radius">sm(40%)</view>
+		<view class="basis-df"></view>
+		<view class="basis-df bg-grey margin-xs padding-sm radius">df(50%)</view>
+		<view class="basis-lg bg-grey margin-xs padding-sm radius">lg(60%)</view>
+		<view class="basis-xl bg-grey margin-xs padding-sm radius">xl(80%)</view>
+	</view>
+</view>
 ```
 
 *   比例布局
@@ -280,25 +249,21 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![比例布局](https://img-blog.csdnimg.cn/20191108160308488.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="flex">
-3.  		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
-4.  		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
-5.  	</view>
-6.  	<view class="flex">
-7.  		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
-8.  		<view class="flex-twice bg-grey padding-sm margin-xs radius">2</view>
-9.  	</view>
-10.  	<view class="flex">
-11.  		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
-12.  		<view class="flex-twice bg-grey padding-sm margin-xs radius">2</view>
-13.  		<view class="flex-treble bg-grey padding-sm margin-xs radius">3</view>
-14.  	</view>
-15.  </view>
-
-
+<view class="padding bg-white">
+	<view class="flex">
+		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
+		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
+	</view>
+	<view class="flex">
+		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
+		<view class="flex-twice bg-grey padding-sm margin-xs radius">2</view>
+	</view>
+	<view class="flex">
+		<view class="flex-sub bg-grey padding-sm margin-xs radius">1</view>
+		<view class="flex-twice bg-grey padding-sm margin-xs radius">2</view>
+		<view class="flex-treble bg-grey padding-sm margin-xs radius">3</view>
+	</view>
+</view>
 ```
 
 *   水平对齐（justify）
@@ -308,32 +273,28 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![水平对齐](https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="bg-white">
-2.  	<view class="flex solid-bottom padding justify-start">
-3.  		<view class="bg-grey padding-sm margin-xs radius">start</view>
-4.  		<view class="bg-grey padding-sm margin-xs radius">start</view>
-5.  	</view>
-6.  	<view class="flex solid-bottom padding justify-end">
-7.  		<view class="bg-grey padding-sm margin-xs radius">end</view>
-8.  		<view class="bg-grey padding-sm margin-xs radius">end</view>
-9.  	</view>
-10.  	<view class="flex solid-bottom padding justify-center">
-11.  		<view class="bg-grey padding-sm margin-xs radius">center</view>
-12.  		<view class="bg-grey padding-sm margin-xs radius">center</view>
-13.  	</view>
-14.  	<view class="flex solid-bottom padding justify-between">
-15.  		<view class="bg-grey padding-sm margin-xs radius">between</view>
-16.  		<view class="bg-grey padding-sm margin-xs radius">between</view>
-17.  	</view>
-18.  	<view class="flex solid-bottom padding justify-around">
-19.  		<view class="bg-grey padding-sm margin-xs radius">around</view>
-20.  		<view class="bg-grey padding-sm margin-xs radius">around</view>
-21.  	</view>
-22.  </view>
-
-
+<view class="bg-white">
+	<view class="flex solid-bottom padding justify-start">
+		<view class="bg-grey padding-sm margin-xs radius">start</view>
+		<view class="bg-grey padding-sm margin-xs radius">start</view>
+	</view>
+	<view class="flex solid-bottom padding justify-end">
+		<view class="bg-grey padding-sm margin-xs radius">end</view>
+		<view class="bg-grey padding-sm margin-xs radius">end</view>
+	</view>
+	<view class="flex solid-bottom padding justify-center">
+		<view class="bg-grey padding-sm margin-xs radius">center</view>
+		<view class="bg-grey padding-sm margin-xs radius">center</view>
+	</view>
+	<view class="flex solid-bottom padding justify-between">
+		<view class="bg-grey padding-sm margin-xs radius">between</view>
+		<view class="bg-grey padding-sm margin-xs radius">between</view>
+	</view>
+	<view class="flex solid-bottom padding justify-around">
+		<view class="bg-grey padding-sm margin-xs radius">around</view>
+		<view class="bg-grey padding-sm margin-xs radius">around</view>
+	</view>
+</view>
 ```
 
 *   垂直对齐（align）
@@ -343,24 +304,20 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![垂直对齐](https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="bg-white">
-2.  	<view class="flex solid-bottom padding align-start">
-3.  		<view class="bg-grey padding-lg margin-xs radius">ColorUi</view>
-4.  		<view class="bg-grey padding-sm margin-xs radius">start</view>
-5.  	</view>
-6.  	<view class="flex solid-bottom padding align-end">
-7.  		<view class="bg-grey padding-lg margin-xs radius">ColorUi</view>
-8.  		<view class="bg-grey padding-sm margin-xs radius">end</view>
-9.  	</view>
-10.  	<view class="flex solid-bottom padding align-center">
-11.  		<view class="bg-grey padding-lg margin-xs radius">ColorUi</view>
-12.  		<view class="bg-grey padding-sm margin-xs radius">center</view>
-13.  	</view>
-14.  </view>
-
-
+<view class="bg-white">
+	<view class="flex solid-bottom padding align-start">
+		<view class="bg-grey padding-lg margin-xs radius">ColorUi</view>
+		<view class="bg-grey padding-sm margin-xs radius">start</view>
+	</view>
+	<view class="flex solid-bottom padding align-end">
+		<view class="bg-grey padding-lg margin-xs radius">ColorUi</view>
+		<view class="bg-grey padding-sm margin-xs radius">end</view>
+	</view>
+	<view class="flex solid-bottom padding align-center">
+		<view class="bg-grey padding-lg margin-xs radius">ColorUi</view>
+		<view class="bg-grey padding-sm margin-xs radius">center</view>
+	</view>
+</view>
 ```
 
 **Grid布局**
@@ -374,15 +331,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![等分列](https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="bg-white padding">
-2.  	<view class="grid margin-bottom text-center" v-for="(item,index) in 5" :key="index" :class="'col-' + (index+1)">
-3.  		<view class="padding" :class="indexs%2==0?'bg-cyan':'bg-blue'" v-for="(item,indexs) in (index+1)" :key="indexs">{{index+1}}</view>
-4.  	</view>
-5.  </view>
-
-
+<view class="bg-white padding">
+	<view class="grid margin-bottom text-center" v-for="(item,index) in 5" :key="index" :class="'col-' + (index+1)">
+		<view class="padding" :class="indexs%2==0?'bg-cyan':'bg-blue'" v-for="(item,indexs) in (index+1)" :key="indexs">{{index+1}}</view>
+	</view>
+</view>
 ```
 
 *   等高
@@ -392,27 +345,23 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![等高](https://img-blog.csdnimg.cn/20191108162002771.png)
 
 ```
-
-
-1.  <view class="bg-white padding">
-2.  	<view class="grid col-4 grid-square">
-3.  		<view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
-4.  	</view>
-5.  </view>
-
-7.  ----------------------------------------------------------------------------------------
-
-9.  data() {
-10.  	return {
-11.  		avatar: ['https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
-12.  			'https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg',
-13.  			'https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg',
-14.  			'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
-15.  		],
-16.  	}
-17.  },
-
-
+<view class="bg-white padding">
+	<view class="grid col-4 grid-square">
+		<view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+	</view>
+</view>
+ 
+----------------------------------------------------------------------------------------
+ 
+data() {
+	return {
+		avatar: ['https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+			'https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg',
+			'https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg',
+			'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+		],
+	}
+},
 ```
 
 **布局相关class**
@@ -432,18 +381,14 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
  ![深色背景](https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="grid col-3 padding-sm">
-2.  	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index">
-3.  		<view class="padding radius text-center shadow-blur" :class="'bg-' + item.name">
-4.  			<view class="text-lg">{{item.title}}</view>
-5.  			<view class="margin-top-sm text-Abc">{{item.name}}</view>
-6.  		</view>
-7.  	</view>
-8.  </view>
-
-
+<view class="grid col-3 padding-sm">
+	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index">
+		<view class="padding radius text-center shadow-blur" :class="'bg-' + item.name">
+			<view class="text-lg">{{item.title}}</view>
+			<view class="margin-top-sm text-Abc">{{item.name}}</view>
+		</view>
+	</view>
+</view>
 ```
 
 *   浅色
@@ -453,18 +398,14 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![浅色背景](https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="grid col-3 bg-white padding-sm">
-2.  	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index" v-if="index<12">
-3.  		<view class="padding radius text-center light" :class="'bg-' + item.name">
-4.  			<view class="text-lg">{{item.title}}</view>
-5.  			<view class="margin-top-sm text-Abc">{{item.name}}</view>
-6.  		</view>
-7.  	</view>
-8.  </view>
-
-
+<view class="grid col-3 bg-white padding-sm">
+	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index" v-if="index<12">
+		<view class="padding radius text-center light" :class="'bg-' + item.name">
+			<view class="text-lg">{{item.title}}</view>
+			<view class="margin-top-sm text-Abc">{{item.name}}</view>
+		</view>
+	</view>
+</view>
 ```
 
 *    渐变
@@ -474,48 +415,44 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![渐变背景](https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="grid col-2 padding-sm">
-2.  	<view class="padding-sm">
-3.  		<view class="bg-gradual-red padding radius text-center shadow-blur">
-4.  			<view class="text-lg">魅红</view>
-5.  			<view class="margin-top-sm text-Abc">#f43f3b - #ec008c</view>
-6.  		</view>
-7.  	</view>
-8.  	<view class="padding-sm">
-9.  		<view class="bg-gradual-orange padding radius text-center shadow-blur">
-10.  			<view class="text-lg">鎏金</view>
-11.  			<view class="margin-top-sm text-Abc">#ff9700 - #ed1c24</view>
-12.  		</view>
-13.  	</view>
-14.  	<view class="padding-sm">
-15.  		<view class="bg-gradual-green padding radius text-center shadow-blur">
-16.  			<view class="text-lg">翠柳</view>
-17.  			<view class="margin-top-sm text-Abc">#39b54a - #8dc63f</view>
-18.  		</view>
-19.  	</view>
-20.  	<view class="padding-sm">
-21.  		<view class="bg-gradual-blue padding radius text-center shadow-blur">
-22.  			<view class="text-lg">靛青</view>
-23.  			<view class="margin-top-sm text-Abc">#0081ff - #1cbbb4</view>
-24.  		</view>
-25.  	</view>
-26.  	<view class="padding-sm">
-27.  		<view class="bg-gradual-purple padding radius text-center shadow-blur">
-28.  			<view class="text-lg">惑紫</view>
-29.  			<view class="margin-top-sm text-Abc">#9000ff - #5e00ff</view>
-30.  		</view>
-31.  	</view>
-32.  	<view class="padding-sm">
-33.  		<view class="bg-gradual-pink padding radius text-center shadow-blur">
-34.  			<view class="text-lg">霞彩</view>
-35.  			<view class="margin-top-sm text-Abc">#ec008c - #6739b6</view>
-36.  		</view>
-37.  	</view>
-38.  </view>
-
-
+<view class="grid col-2 padding-sm">
+	<view class="padding-sm">
+		<view class="bg-gradual-red padding radius text-center shadow-blur">
+			<view class="text-lg">魅红</view>
+			<view class="margin-top-sm text-Abc">#f43f3b - #ec008c</view>
+		</view>
+	</view>
+	<view class="padding-sm">
+		<view class="bg-gradual-orange padding radius text-center shadow-blur">
+			<view class="text-lg">鎏金</view>
+			<view class="margin-top-sm text-Abc">#ff9700 - #ed1c24</view>
+		</view>
+	</view>
+	<view class="padding-sm">
+		<view class="bg-gradual-green padding radius text-center shadow-blur">
+			<view class="text-lg">翠柳</view>
+			<view class="margin-top-sm text-Abc">#39b54a - #8dc63f</view>
+		</view>
+	</view>
+	<view class="padding-sm">
+		<view class="bg-gradual-blue padding radius text-center shadow-blur">
+			<view class="text-lg">靛青</view>
+			<view class="margin-top-sm text-Abc">#0081ff - #1cbbb4</view>
+		</view>
+	</view>
+	<view class="padding-sm">
+		<view class="bg-gradual-purple padding radius text-center shadow-blur">
+			<view class="text-lg">惑紫</view>
+			<view class="margin-top-sm text-Abc">#9000ff - #5e00ff</view>
+		</view>
+	</view>
+	<view class="padding-sm">
+		<view class="bg-gradual-pink padding radius text-center shadow-blur">
+			<view class="text-lg">霞彩</view>
+			<view class="margin-top-sm text-Abc">#ec008c - #6739b6</view>
+		</view>
+	</view>
+</view>
 ```
 
  **图片背景**
@@ -527,41 +464,33 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![透明背景](https://img-blog.csdnimg.cn/20191111094642351.png)
 
 ```
-
-
-1.  <view class="bg-img bg-mask flex align-center" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 414upx;">
-2.  	<view class="padding-xl text-white">
-3.  		<view class="padding-xs text-xxl text-bold">
-4.  			钢铁之翼
-5.  		</view>
-6.  		<view class="padding-xs text-lg">
-7.  			Only the guilty need fear me.
-8.  		</view>
-9.  	</view>
-10.  </view>
-
-
+<view class="bg-img bg-mask flex align-center" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 414upx;">
+	<view class="padding-xl text-white">
+		<view class="padding-xs text-xxl text-bold">
+			钢铁之翼
+		</view>
+		<view class="padding-xs text-lg">
+			Only the guilty need fear me.
+		</view>
+	</view>
+</view>
 ```
 
 >  通过bg-shadeTop设置遮罩层上阴影，bg-shadeBottom设置遮罩层下阴影
 
 ```
-
-
-1.  <view class="grid col-2">
-2.  	<view class="bg-img padding-bottom-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10007.jpg');height: 207upx;">
-3.  		<view class="bg-shadeTop padding padding-bottom-xl">
-4.  			上面开始
-5.  		</view>
-6.  	</view>
-7.  	<view class="bg-img padding-top-xl flex align-end" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg');height: 207upx;">
-8.  		<view class="bg-shadeBottom padding padding-top-xl flex-sub">
-9.  			下面开始
-10.  		</view>
-11.  	</view>
-12.  </view>
-
-
+<view class="grid col-2">
+	<view class="bg-img padding-bottom-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10007.jpg');height: 207upx;">
+		<view class="bg-shadeTop padding padding-bottom-xl">
+			上面开始
+		</view>
+	</view>
+	<view class="bg-img padding-top-xl flex align-end" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg');height: 207upx;">
+		<view class="bg-shadeBottom padding padding-top-xl flex-sub">
+			下面开始
+		</view>
+	</view>
+</view>
 ```
 
  **背景相关class**
@@ -587,17 +516,13 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![文字颜色](https://img-blog.csdnimg.cn/20191111134530426.png)
 
 ```
-
-
-1.  <view class="grid col-5 padding-sm">
-2.  	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index">
-3.  		<view class="text-center" :class="'text-' + item.name">
-4.  			{{item.title}}
-5.  		</view>
-6.  	</view>
-7.  </view>
-
-
+<view class="grid col-5 padding-sm">
+	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index">
+		<view class="text-center" :class="'text-' + item.name">
+			{{item.title}}
+		</view>
+	</view>
+</view>
 ```
 
 **文字阴影**
@@ -607,17 +532,13 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![文字阴影](https://img-blog.csdnimg.cn/20191111134737509.png)
 
 ```
-
-
-1.  <view class="grid col-5 padding-sm">
-2.  	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index">
-3.  		<view class="text-center text-shadow" :class="'text-' + item.name">
-4.  			<view class="cuIcon-ellipse text-xxl"></view>
-5.  		</view>
-6.  	</view>
-7.  </view>
-
-
+<view class="grid col-5 padding-sm">
+	<view class="padding-sm" v-for="(item,index) in ColorList" :key="index">
+		<view class="text-center text-shadow" :class="'text-' + item.name">
+			<view class="cuIcon-ellipse text-xxl"></view>
+		</view>
+	</view>
+</view>
 ```
 
 **文字截断**
@@ -627,13 +548,9 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![文字截断](https://img-blog.csdnimg.cn/20191111134948425.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="text-cut padding bg-grey radius" style="width:220px">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
-3.  </view>
-
-
+<view class="padding bg-white">
+	<view class="text-cut padding bg-grey radius" style="width:220px">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
+</view>
 ```
 
 **文字对齐** 
@@ -643,15 +560,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![文字对齐](https://img-blog.csdnimg.cn/20191111135201781.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="text-left padding">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
-3.  	<view class="text-center padding">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
-4.  	<view class="text-right padding">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
-5.  </view>
-
-
+<view class="padding bg-white">
+	<view class="text-left padding">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
+	<view class="text-center padding">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
+	<view class="text-right padding">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
+</view>
 ```
 
  **特殊文字**
@@ -661,56 +574,37 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![价格](https://img-blog.csdnimg.cn/20191111135548406.png)![首字母大写](https://img-blog.csdnimg.cn/20191111135609974.png)![大写](https://img-blog.csdnimg.cn/20191111135632717.png)![小写](https://img-blog.csdnimg.cn/20191111135646227.png)
 
 ```
-
-
-1.  <view class="padding text-center">
-2.  	<view class="padding-lr bg-white">
-3.  		<view class="solid-bottom padding">
-4.  			<text class="text-price">80.00</text>
-5.  		</view>
-6.  		<view class="padding">价格文本，利用伪元素添加"¥"符号</view>
-7.  	</view>
-8.  	<view class="padding-lr bg-white margin-top">
-9.  		<view class="solid-bottom padding">
-10.  			<text class="text-Abc">color Ui</text>
-11.  		</view>
-12.  		<view class="padding">英文单词首字母大写</view>
-13.  	</view>
-14.  	<view class="padding-lr bg-white margin-top">
-15.  		<view class="solid-bottom padding">
-16.  			<text class="text-ABC">color Ui</text>
-17.  		</view>
-18.  		<view class="padding">全部字母大写</view>
-19.  	</view>
-20.  	<view class="padding-lr bg-white margin-top">
-21.  		<view class="solid-bottom padding">
-22.  			<text class="text-abc">color Ui</text>
-23.  		</view>
-24.  		<view class="padding">全部字母小写</view>
-25.  	</view>
-26.  </view>
-
-
+<view class="padding text-center">
+	<view class="padding-lr bg-white">
+		<view class="solid-bottom padding">
+			<text class="text-price">80.00</text>
+		</view>
+		<view class="padding">价格文本，利用伪元素添加"¥"符号</view>
+	</view>
+	<view class="padding-lr bg-white margin-top">
+		<view class="solid-bottom padding">
+			<text class="text-Abc">color Ui</text>
+		</view>
+		<view class="padding">英文单词首字母大写</view>
+	</view>
+	<view class="padding-lr bg-white margin-top">
+		<view class="solid-bottom padding">
+			<text class="text-ABC">color Ui</text>
+		</view>
+		<view class="padding">全部字母大写</view>
+	</view>
+	<view class="padding-lr bg-white margin-top">
+		<view class="solid-bottom padding">
+			<text class="text-abc">color Ui</text>
+		</view>
+		<view class="padding">全部字母小写</view>
+	</view>
+</view>
 ```
 
 **文字相关class**
 
-| class | 说明 | 
-
-可选值
-
- |
-| --- | --- | --- |
-| text-{{size}} | 文字大小 | xs(20upx)/sm(24upx)/df(28upx)/lg(32upx)/xl(36upx)/xxl(44upx)/sl(80upx)/xsl(120upx) |
-| text-{{color}} | 文字颜色 | red/orange/yellow/olive/green/cyan/blue/purple/mauve/brown/grey/gray/black/white |
-| text-shadow | 文字阴影 | —— |
-| text-cut | 文字截断 | —— |
-| text-bold | 文字加粗 | —— |
-| text-{{position}} | 文字对齐 | left/center/right |
-| text-price | 带￥符号 | —— |
-| text-Abc | 首字母大写 | —— |
-| text-ABC | 全部大写 | —— |
-| text-abc | 全部小写 | —— |
+![image-20210512214923077](/common_images/image-20210512214923077.png)
 
 ### Icon图标
 
@@ -729,17 +623,13 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![按钮大小](https://img-blog.csdnimg.cn/20191111165212978.png)
 
 ```
-
-
-1.  <view class="padding flex flex-wrap justify-between align-center bg-white">
-2.  	<button class="cu-btn">默认</button>
-3.  	<button class="cu-btn round">圆角</button>
-4.  	<button class="cu-btn cuIcon">
-5.  		<text class="cuIcon-goodsfill"></text>
-6.  	</button>
-7.  </view>
-
-
+<view class="padding flex flex-wrap justify-between align-center bg-white">
+	<button class="cu-btn">默认</button>
+	<button class="cu-btn round">圆角</button>
+	<button class="cu-btn cuIcon">
+		<text class="cuIcon-goodsfill"></text>
+	</button>
+</view>
 ```
 
 **按钮尺寸**
@@ -749,15 +639,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![按钮尺寸](https://img-blog.csdnimg.cn/20191111165433741.png)
 
 ```
-
-
-1.  <view class="padding flex flex-wrap justify-between align-center bg-white">
-2.  	<button class="cu-btn round sm">小尺寸</button>
-3.  	<button class="cu-btn round">默认</button>
-4.  	<button class="cu-btn round lg">大尺寸</button>
-5.  </view>
-
-
+<view class="padding flex flex-wrap justify-between align-center bg-white">
+	<button class="cu-btn round sm">小尺寸</button>
+	<button class="cu-btn round">默认</button>
+	<button class="cu-btn round lg">大尺寸</button>
+</view>
 ```
 
 **按钮颜色** 
@@ -767,15 +653,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
  ![按钮颜色](https://img-blog.csdnimg.cn/20191111165859113.png)
 
 ```
-
-
-1.  <view class="grid col-5 padding-sm">
-2.  	<view class="margin-tb-sm text-center" v-for="(item,index) in ColorList" :key="index">
-3.  		<button class="cu-btn round" :class="'bg-' + item.name ">{{item.title}}</button>
-4.  	</view>
-5.  </view>
-
-
+<view class="grid col-5 padding-sm">
+	<view class="margin-tb-sm text-center" v-for="(item,index) in ColorList" :key="index">
+		<button class="cu-btn round" :class="'bg-' + item.name ">{{item.title}}</button>
+	</view>
+</view>
 ```
 
 **幽灵按钮**
@@ -785,15 +667,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![youling](https://img-blog.csdnimg.cn/20191112093523337.png)
 
 ```
-
-
-1.  <view class="grid col-5 padding-sm">
-2.  	<view class="margin-tb-sm text-center" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='white'">
-3.  		<button class="cu-btn round" :class="'line-' + item.name">{{item.title}}</button>
-4.  	</view>
-5.  </view>
-
-
+<view class="grid col-5 padding-sm">
+	<view class="margin-tb-sm text-center" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='white'">
+		<button class="cu-btn round" :class="'line-' + item.name">{{item.title}}</button>
+	</view>
+</view>
 ```
 
 **禁用按钮**
@@ -803,14 +681,10 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![禁用按钮](https://img-blog.csdnimg.cn/20191113095716624.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<button class="cu-btn block bg-blue margin-tb-sm lg" disabled type="">无效状态</button>
-3.  	<button class="cu-btn block line-blue margin-tb-sm lg" disabled>无效状态</button>
-4.  </view>
-
-
+<view class="padding">
+	<button class="cu-btn block bg-blue margin-tb-sm lg" disabled type="">无效状态</button>
+	<button class="cu-btn block line-blue margin-tb-sm lg" disabled>无效状态</button>
+</view>
 ```
 
  **自定义图标按钮**
@@ -820,15 +694,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![图标按钮](https://img-blog.csdnimg.cn/20191113095733628.png)
 
 ```
-
-
-1.  <view class="padding-xl">
-2.  	<button class="cu-btn block line-orange lg cuIcon-upload"><text class="cuIcon-upload"></text> 图标</button>
-3.  	<button class="cu-btn block bg-blue margin-tb-sm lg"><text class="cuIcon-loading2 cuIconfont-spin"></text> 加载</button>
-4.  	<button class="cu-btn block bg-black margin-tb-sm lg" loading> 原生加载</button>
-5.  </view>
-
-
+<view class="padding-xl">
+	<button class="cu-btn block line-orange lg cuIcon-upload"><text class="cuIcon-upload"></text> 图标</button>
+	<button class="cu-btn block bg-blue margin-tb-sm lg"><text class="cuIcon-loading2 cuIconfont-spin"></text> 加载</button>
+	<button class="cu-btn block bg-black margin-tb-sm lg" loading> 原生加载</button>
+</view>
 ```
 
 **按钮相关class**
@@ -846,15 +716,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![标签形状](https://img-blog.csdnimg.cn/20191113105209689.png)
 
 ```
-
-
-1.  <view class="padding bg-white solid-bottom">
-2.  	<view class='cu-tag'>默认</view>
-3.  	<view class='cu-tag round'>椭圆</view>
-4.  	<view class='cu-tag radius'>圆角</view>
-5.  </view>
-
-
+<view class="padding bg-white solid-bottom">
+	<view class='cu-tag'>默认</view>
+	<view class='cu-tag round'>椭圆</view>
+	<view class='cu-tag radius'>圆角</view>
+</view>
 ```
 
  **标签尺寸**
@@ -864,14 +730,10 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![标签尺寸](https://img-blog.csdnimg.cn/20191113110743846.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class='cu-tag radius sm'>小尺寸</view>
-3.  	<view class='cu-tag radius'>普通尺寸</view>
-4.  </view>
-
-
+<view class="padding bg-white">
+	<view class='cu-tag radius sm'>小尺寸</view>
+	<view class='cu-tag radius'>普通尺寸</view>
+</view>
 ```
 
  **标签颜色**
@@ -881,18 +743,14 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![标签颜色](https://img-blog.csdnimg.cn/20191113111823368.png)
 
 ```
-
-
-1.  <view class='padding-sm flex flex-wrap'>
-2.  	<view class="padding-xs" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='gray'">
-3.  		<view class='cu-tag' :class="'bg-' + item.name">{{item.title}}</view>
-4.  	</view>
-5.  	<view class="padding-xs" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='gray' && item.name!='black' && item.name!='white'">
-6.  		<view class='cu-tag light' :class="'bg-' + item.name">{{item.title}}</view>
-7.  	</view>
-8.  </view>
-
-
+<view class='padding-sm flex flex-wrap'>
+	<view class="padding-xs" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='gray'">
+		<view class='cu-tag' :class="'bg-' + item.name">{{item.title}}</view>
+	</view>
+	<view class="padding-xs" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='gray' && item.name!='black' && item.name!='white'">
+		<view class='cu-tag light' :class="'bg-' + item.name">{{item.title}}</view>
+	</view>
+</view>
 ```
 
 **幽灵标签**
@@ -902,15 +760,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![幽灵标签](https://img-blog.csdnimg.cn/20191113111934479.png)
 
 ```
-
-
-1.  <view class='padding-sm flex flex-wrap'>
-2.  	<view class="padding-xs" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='white'">
-3.  		<view class='cu-tag' :class="'line-' + item.name">{{item.title}}</view>
-4.  	</view>
-5.  </view>
-
-
+<view class='padding-sm flex flex-wrap'>
+	<view class="padding-xs" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='white'">
+		<view class='cu-tag' :class="'line-' + item.name">{{item.title}}</view>
+	</view>
+</view>
 ```
 
 **胶囊样式**
@@ -920,32 +774,28 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![胶囊样式](https://img-blog.csdnimg.cn/20191113113252320.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<view class="cu-capsule">
-3.  		<view class='cu-tag bg-red'><text class='cuIcon-likefill'></text></view>
-4.  		<view class="cu-tag line-red">12</view>
-5.  	</view>
-6.  	<view class="cu-capsule round">
-7.  		<view class='cu-tag bg-blue '><text class='cuIcon-likefill'></text></view>
-8.  		<view class="cu-tag line-blue">23</view>
-9.  	</view>
-10.  	<view class="cu-capsule round">
-11.  		<view class='cu-tag bg-blue '>说明</view>
-12.  		<view class="cu-tag line-blue">123</view>
-13.  	</view>
-14.  	<view class="cu-capsule radius">
-15.  		<view class='cu-tag bg-grey '><text class='cuIcon-likefill'></text></view>
-16.  		<view class="cu-tag line-grey">23</view>
-17.  	</view>
-18.  	<view class="cu-capsule radius">
-19.  		<view class='cu-tag bg-brown sm'><text class='cuIcon-likefill'></text></view>
-20.  		<view class="cu-tag line-brown sm">23</view>
-21.  	</view>
-22.  </view>
-
-
+<view class="padding">
+	<view class="cu-capsule">
+		<view class='cu-tag bg-red'><text class='cuIcon-likefill'></text></view>
+		<view class="cu-tag line-red">12</view>
+	</view>
+	<view class="cu-capsule round">
+		<view class='cu-tag bg-blue '><text class='cuIcon-likefill'></text></view>
+		<view class="cu-tag line-blue">23</view>
+	</view>
+	<view class="cu-capsule round">
+		<view class='cu-tag bg-blue '>说明</view>
+		<view class="cu-tag line-blue">123</view>
+	</view>
+	<view class="cu-capsule radius">
+		<view class='cu-tag bg-grey '><text class='cuIcon-likefill'></text></view>
+		<view class="cu-tag line-grey">23</view>
+	</view>
+	<view class="cu-capsule radius">
+		<view class='cu-tag bg-brown sm'><text class='cuIcon-likefill'></text></view>
+		<view class="cu-tag line-brown sm">23</view>
+	</view>
+</view>
 ```
 
 **数字标签**
@@ -955,23 +805,19 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
  ![数字标签](https://img-blog.csdnimg.cn/2019111311364981.png)
 
 ```
-
-
-1.  <view class="padding flex justify-between align-center">
-2.  	<view class='cu-avatar xl radius'>港<view class="cu-tag badge">99+</view></view>
-3.  	<view class='cu-avatar xl radius' style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)">
-4.  		<view class='cu-tag badge'>9</view>
-5.  	</view>
-6.  	<view class='cu-avatar xl radius'>
-7.  		<view class='cu-tag badge'>99</view>
-8.  		<text class='cuIcon-people'></text>
-9.  	</view>
-10.  	<view class='cu-avatar xl radius'>
-11.  		<view class='cu-tag badge'>99+</view>
-12.  	</view>
-13.  </view>
-
-
+<view class="padding flex justify-between align-center">
+	<view class='cu-avatar xl radius'>港<view class="cu-tag badge">99+</view></view>
+	<view class='cu-avatar xl radius' style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)">
+		<view class='cu-tag badge'>9</view>
+	</view>
+	<view class='cu-avatar xl radius'>
+		<view class='cu-tag badge'>99</view>
+		<text class='cuIcon-people'></text>
+	</view>
+	<view class='cu-avatar xl radius'>
+		<view class='cu-tag badge'>99+</view>
+	</view>
+</view>
 ```
 
 **标签相关class**
@@ -989,14 +835,10 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![头像形状](https://img-blog.csdnimg.cn/20191113165047125.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)"></view>
-3.  	<view class="cu-avatar radius margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
-4.  </view>
-
-
+<view class="padding">
+	<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)"></view>
+	<view class="cu-avatar radius margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
+</view>
 ```
 
 **头像尺寸**
@@ -1006,24 +848,20 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![头像尺寸](https://img-blog.csdnimg.cn/20191113165147527.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<view class="cu-avatar sm round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)"></view>
-3.  	<view class="cu-avatar round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
-4.  	<view class="cu-avatar lg round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
-5.  	<view class="cu-avatar xl round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"></view>
-6.  </view>
-7.  <view class="padding">
-8.  	<view class="cu-avatar sm round margin-left bg-red"> 蔚</view>
-9.  	<view class="cu-avatar round margin-left bg-red">蓝</view>
-10.  	<view class="cu-avatar lg round margin-left bg-red"><text>wl</text></view>
-11.  	<view class="cu-avatar xl round margin-left bg-red">
-12.  		<text class="avatar-text">网络</text>
-13.  	</view>
-14.  </view>
-
-
+<view class="padding">
+	<view class="cu-avatar sm round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)"></view>
+	<view class="cu-avatar round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
+	<view class="cu-avatar lg round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
+	<view class="cu-avatar xl round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"></view>
+</view>
+<view class="padding">
+	<view class="cu-avatar sm round margin-left bg-red"> 蔚</view>
+	<view class="cu-avatar round margin-left bg-red">蓝</view>
+	<view class="cu-avatar lg round margin-left bg-red"><text>wl</text></view>
+	<view class="cu-avatar xl round margin-left bg-red">
+		<text class="avatar-text">网络</text>
+	</view>
+</view>
 ```
 
 **内嵌文字**
@@ -1033,18 +871,14 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![内嵌文字](https://img-blog.csdnimg.cn/20191113165402123.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<view class="cu-avatar radius">
-3.  		<text class="cuIcon-people"></text>
-4.  	</view>
-5.  	<view class="cu-avatar radius margin-left">
-6.  		<text>港</text>
-7.  	</view>
-8.  </view>
-
-
+<view class="padding">
+	<view class="cu-avatar radius">
+		<text class="cuIcon-people"></text>
+	</view>
+	<view class="cu-avatar radius margin-left">
+		<text>港</text>
+	</view>
+</view>
 ```
 
  **头像颜色**
@@ -1054,15 +888,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![头像颜色](https://img-blog.csdnimg.cn/20191113165654604.png)
 
 ```
-
-
-1.  <view class="padding-sm">
-2.  	<view class="cu-avatar round lg margin-xs" :class="'bg-' + item.name" v-for="(item,index) in ColorList" :key="index">
-3.  		<text class="avatar-text">{{item.name}}</text>
-4.  	</view>
-5.  </view>
-
-
+<view class="padding-sm">
+	<view class="cu-avatar round lg margin-xs" :class="'bg-' + item.name" v-for="(item,index) in ColorList" :key="index">
+		<text class="avatar-text">{{item.name}}</text>
+	</view>
+</view>
 ```
 
  **头像组**
@@ -1072,15 +902,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![头像组](https://img-blog.csdnimg.cn/20191113165955393.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<view class="cu-avatar-group">
-3.  		<view class="cu-avatar round lg" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
-4.  	</view>
-5.  </view>
-
-
+<view class="padding">
+	<view class="cu-avatar-group">
+		<view class="cu-avatar round lg" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+	</view>
+</view>
 ```
 
 **头像标签**
@@ -1090,15 +916,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![头像标签](https://img-blog.csdnimg.cn/20191113170127235.png)
 
 ```
-
-
-1.  <view class="padding">
-2.  	<view class="cu-avatar round lg margin-left"  v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]">
-3.  		<view class="cu-tag badge" :class="index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'"></view>
-4.  	</view>
-5.  </view>
-
-
+<view class="padding">
+	<view class="cu-avatar round lg margin-left"  v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]">
+		<view class="cu-tag badge" :class="index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'"></view>
+	</view>
+</view>
 ```
 
 **头像相关class**
@@ -1116,21 +938,17 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条形状](https://img-blog.csdnimg.cn/20191114145356523.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="cu-progress">
-3.  		<view class="bg-red" style="width:61.8%">61.8%</view>
-4.  	</view>
-5.  	<view class="cu-progress radius margin-top">
-6.  		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]">61.8%</view>
-7.  	</view>
-8.  	<view class="cu-progress round margin-top">
-9.  		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]">61.8%</view>
-10.  	</view>
-11.  </view>
-
-
+<view class="padding bg-white">
+	<view class="cu-progress">
+		<view class="bg-red" style="width:61.8%">61.8%</view>
+	</view>
+	<view class="cu-progress radius margin-top">
+		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]">61.8%</view>
+	</view>
+	<view class="cu-progress round margin-top">
+		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]">61.8%</view>
+	</view>
+</view>
 ```
 
 **进度条尺寸**
@@ -1140,21 +958,17 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条尺寸](https://img-blog.csdnimg.cn/20191114145626765.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="cu-progress round">
-3.  		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]"></view>
-4.  	</view>
-5.  	<view class="cu-progress round margin-top sm">
-6.  		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]"></view>
-7.  	</view>
-8.  	<view class="cu-progress round margin-top xs">
-9.  		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]"></view>
-10.  	</view>
-11.  </view>
-
-
+<view class="padding bg-white">
+	<view class="cu-progress round">
+		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]"></view>
+	</view>
+	<view class="cu-progress round margin-top sm">
+		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]"></view>
+	</view>
+	<view class="cu-progress round margin-top xs">
+		<view class="bg-red" :style="[{ width:loading?'61.8%':''}]"></view>
+	</view>
+</view>
 ```
 
  **进度条颜色**
@@ -1164,15 +978,11 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条颜色](https://img-blog.csdnimg.cn/20191114152225684.png)
 
 ```
-
-
-1.  <view class="padding" :class="color=='white'?'bg-grey':'bg-white'">
-2.  	<view class="cu-progress round">
-3.  		<view :class="'bg-' + color" :style="[{ width:loading?'61.8%':''}]"></view>
-4.  	</view>
-5.  </view>
-
-
+<view class="padding" :class="color=='white'?'bg-grey':'bg-white'">
+	<view class="cu-progress round">
+		<view :class="'bg-' + color" :style="[{ width:loading?'61.8%':''}]"></view>
+	</view>
+</view>
 ```
 
 **进度条条纹**
@@ -1182,18 +992,14 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条条纹](https://img-blog.csdnimg.cn/20191114155705759.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="cu-progress round sm striped active" >
-3.  		<view class="bg-green" :style="[{ width:loading?'60%':''}]"></view>
-4.  	</view>
-5.  	<view class="cu-progress round sm margin-top-sm striped" >
-6.  		<view class="bg-black" :style="[{ width:loading?'40%':''}]"></view>
-7.  	</view>
-8.  </view>
-
-
+<view class="padding bg-white">
+	<view class="cu-progress round sm striped active" >
+		<view class="bg-green" :style="[{ width:loading?'60%':''}]"></view>
+	</view>
+	<view class="cu-progress round sm margin-top-sm striped" >
+		<view class="bg-black" :style="[{ width:loading?'40%':''}]"></view>
+	</view>
+</view>
 ```
 
 **进度条比例**
@@ -1203,17 +1009,13 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条比例](https://img-blog.csdnimg.cn/20191114160101242.png)
 
 ```
-
-
-1.  <view class="padding bg-white">
-2.  	<view class="cu-progress radius striped active">
-3.  		<view class="bg-red" :style="[{ width:loading?'30%':''}]">30%</view>
-4.  		<view class="bg-olive" :style="[{ width:loading?'45%':''}]">45%</view>
-5.  		<view class="bg-cyan" :style="[{ width:loading?'25%':''}]">25%</view>
-6.  	</view>
-7.  </view>
-
-
+<view class="padding bg-white">
+	<view class="cu-progress radius striped active">
+		<view class="bg-red" :style="[{ width:loading?'30%':''}]">30%</view>
+		<view class="bg-olive" :style="[{ width:loading?'45%':''}]">45%</view>
+		<view class="bg-cyan" :style="[{ width:loading?'25%':''}]">25%</view>
+	</view>
+</view>
 ```
 
 **进度条布局**
@@ -1223,24 +1025,20 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条布局](https://img-blog.csdnimg.cn/20191114160359906.png)
 
 ```
-
-
-1.  <view class="padding bg-white ">
-2.  	<view class="flex">
-3.  		<view class="cu-progress round">
-4.  			<view class="bg-green" :style="[{ width:loading?'100%':''}]"></view>
-5.  		</view>
-6.  		<text class="cuIcon-roundcheckfill text-green margin-left-sm"></text>
-7.  	</view>
-8.  	<view class="flex margin-top">
-9.  		<view class="cu-progress round">
-10.  			<view class="bg-green" :style="[{ width:loading?'80%':''}]"></view>
-11.  		</view>
-12.  		<text class="margin-left">80%</text>
-13.  	</view>
-14.  </view>
-
-
+<view class="padding bg-white ">
+	<view class="flex">
+		<view class="cu-progress round">
+			<view class="bg-green" :style="[{ width:loading?'100%':''}]"></view>
+		</view>
+		<text class="cuIcon-roundcheckfill text-green margin-left-sm"></text>
+	</view>
+	<view class="flex margin-top">
+		<view class="cu-progress round">
+			<view class="bg-green" :style="[{ width:loading?'80%':''}]"></view>
+		</view>
+		<text class="margin-left">80%</text>
+	</view>
+</view>
 ```
 
  **进度条相关class**
@@ -1254,20 +1052,16 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![阴影1](https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![阴影2](https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="padding text-center">
-2.  	<view class="padding-xl radius shadow bg-white">默认阴影</view>
-3.  	<view class="padding-xl radius shadow bg-gradual-red margin-top">根据背景颜色而改变的阴影</view>
-4.  	<view class="padding-xl radius shadow shadow-lg bg-white margin-top">长阴影</view>
-5.  	<view class="padding-xl radius shadow shadow-lg bg-blue margin-top">长阴影</view>
-6.  	<view class="padding-xl radius shadow-warp bg-white margin-top">翘边阴影</view>
-7.  	<view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91005.jpg);">
-8.  		<view>根据背景图而改变的阴影</view>
-9.  	</view>
-10.  </view>
-
-
+<view class="padding text-center">
+	<view class="padding-xl radius shadow bg-white">默认阴影</view>
+	<view class="padding-xl radius shadow bg-gradual-red margin-top">根据背景颜色而改变的阴影</view>
+	<view class="padding-xl radius shadow shadow-lg bg-white margin-top">长阴影</view>
+	<view class="padding-xl radius shadow shadow-lg bg-blue margin-top">长阴影</view>
+	<view class="padding-xl radius shadow-warp bg-white margin-top">翘边阴影</view>
+	<view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91005.jpg);">
+		<view>根据背景图而改变的阴影</view>
+	</view>
+</view>
 ```
 
  **边框阴影相关class**
@@ -1289,13 +1083,9 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![加载失败](https://img-blog.csdnimg.cn/20191114165846401.png)
 
 ```
-
-
-1.  <view class="cu-load bg-blue loading"></view>
-2.  <view class="cu-load bg-blue over"></view>
-3.  <view class="cu-load bg-red erro"></view>
-
-
+<view class="cu-load bg-blue loading"></view>
+<view class="cu-load bg-blue over"></view>
+<view class="cu-load bg-red erro"></view>
 ```
 
 **弹框加载**
@@ -1305,42 +1095,39 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![弹框加载](https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
 
 ```
-
-
-1.  <view class="cu-bar bg-white margin-top">
-2.  	<view class="action">
-3.  		<text class="cuIcon-title text-blue"></text>弹框加载
-4.  	</view>
-5.  	<view class="action">
-6.  		<button class="cu-btn bg-green shadow" @tap="LoadModal">
-7.  			点我
-8.  		</button>
-9.  	</view>
-10.  </view>
-11.  <view class="cu-load load-modal" v-if="loadModal">
-12.  	<image src="/static/logo.png" mode="aspectFit"></image>
-13.  	<view class="gray-text">加载中...</view>
-14.  </view>
-
-17.  <script>
-18.  	export default {
-19.  		data() {
-20.  			return {
-21.  				loadModal: false
-22.  			};
-23.  		},
-24.  		methods: {
-25.  			LoadModal(e) {
-26.  				this.loadModal = true;
-27.  				setTimeout(() => {
-28.  					this.loadModal = false;
-29.  				}, 2000)
-30.  			}
-31.  		}
-32.  	}
-33.  </script>
-
-
+<view class="cu-bar bg-white margin-top">
+	<view class="action">
+		<text class="cuIcon-title text-blue"></text>弹框加载
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-green shadow" @tap="LoadModal">
+			点我
+		</button>
+	</view>
+</view>
+<view class="cu-load load-modal" v-if="loadModal">
+	<image src="/static/logo.png" mode="aspectFit"></image>
+	<view class="gray-text">加载中...</view>
+</view>
+ 
+ 
+<script>
+	export default {
+		data() {
+			return {
+				loadModal: false
+			};
+		},
+		methods: {
+			LoadModal(e) {
+				this.loadModal = true;
+				setTimeout(() => {
+					this.loadModal = false;
+				}, 2000)
+			}
+		}
+	}
+</script>
 ```
 
  **进度条加载**
@@ -1350,41 +1137,37 @@ ColorUI是一个css库！！！在你引入样式后可以根据class来调用�
 ![进度条加载](https://img-blog.csdnimg.cn/20191115101626286.png)
 
 ```
-
-
-1.  <view class="action">
-2.  	<button class="cu-btn bg-green shadow" @tap="LoadProgress">
-3.  		点我
-4.  	</button>
-5.  </view>
-6.  <view class="load-progress" :class="loadProgress!=0?'show':'hide'" style="top:100px">
-7.  	<view class="load-progress-bar bg-green" :style="[{transform: 'translate3d(-' + (100-loadProgress) + '%, 0px, 0px)'}]"></view>
-8.  	<view class="load-progress-spinner text-green"></view>
-9.  </view>
-
-11.  <script>
-12.      export default{
-13.          data(){
-14.              return{
-15.                  loadProgress:0
-16.              }
-17.          },
-18.          methods:{
-19.              LoadProgress(e) {
-20.  				this.loadProgress = this.loadProgress + 3;
-21.  				if (this.loadProgress < 100) {
-22.  					setTimeout(() => {
-23.  						this.LoadProgress();
-24.  					}, 100)
-25.  				} else {
-26.  					this.loadProgress = 0;
-27.  				}
-28.  			}
-29.          }
-30.      }
-31.  </script>
-
-
+<view class="action">
+	<button class="cu-btn bg-green shadow" @tap="LoadProgress">
+		点我
+	</button>
+</view>
+<view class="load-progress" :class="loadProgress!=0?'show':'hide'" style="top:100px">
+	<view class="load-progress-bar bg-green" :style="[{transform: 'translate3d(-' + (100-loadProgress) + '%, 0px, 0px)'}]"></view>
+	<view class="load-progress-spinner text-green"></view>
+</view>
+ 
+<script>
+    export default{
+        data(){
+            return{
+                loadProgress:0
+            }
+        },
+        methods:{
+            LoadProgress(e) {
+				this.loadProgress = this.loadProgress + 3;
+				if (this.loadProgress < 100) {
+					setTimeout(() => {
+						this.LoadProgress();
+					}, 100)
+				} else {
+					this.loadProgress = 0;
+				}
+			}
+        }
+    }
+</script>
 ```
 
 **加载相关class**

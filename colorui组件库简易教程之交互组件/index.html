@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6\/"
-        },"genre": "posts","keywords": "ColorUI","wordcount":  19353 ,
+        },"genre": "posts","keywords": "ColorUI","wordcount":  17660 ,
         "url": "https:\/\/hubu8.github.io\/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6\/","datePublished": "2021-05-12T02:08:31+08:00","dateModified": "2021-05-12T02:08:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">ColorUI交互组件</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%89%8D%E7%AB%AF/"><i class="far fa-folder fa-fw"></i>前端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-12">2021-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 19353 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 39 分钟&nbsp;<span id="/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/" class="leancloud_visitors" data-flag-title="ColorUI交互组件">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-12">2021-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 17660 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 36 分钟&nbsp;<span id="/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/" class="leancloud_visitors" data-flag-title="ColorUI交互组件">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -213,50 +213,52 @@
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
+</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">1.  &lt;template&gt;
-2.  	&lt;view&gt;
-3.  		&lt;basics v-if=&#34;PageCur==&#39;basics&#39;&#34;&gt;&lt;/basics&gt;
-4.  		&lt;components v-if=&#34;PageCur==&#39;component&#39;&#34;&gt;&lt;/components&gt;
-5.  		&lt;plugin v-if=&#34;PageCur==&#39;plugin&#39;&#34;&gt;&lt;/plugin&gt;
-6.  		&lt;view class=&#34;cu-bar tabbar bg-white shadow foot&#34;&gt;
-7.  			&lt;view class=&#34;action&#34; @click=&#34;NavChange&#34; data-cur=&#34;basics&#34;&gt;
-8.  				&lt;view class=&#39;cuIcon-cu-image&#39;&gt;
-9.  					&lt;image :src=&#34;&#39;/static/tabbar/basics&#39; + [PageCur==&#39;basics&#39;?&#39;_cur&#39;:&#39;&#39;] + &#39;.png&#39;&#34;&gt;&lt;/image&gt;
-10.  				&lt;/view&gt;
-11.  				&lt;view :class=&#34;PageCur==&#39;basics&#39;?&#39;text-green&#39;:&#39;text-gray&#39;&#34;&gt;元素&lt;/view&gt;
-12.  			&lt;/view&gt;
-13.  			&lt;view class=&#34;action&#34; @click=&#34;NavChange&#34; data-cur=&#34;component&#34;&gt;
-14.  				&lt;view class=&#39;cuIcon-cu-image&#39;&gt;
-15.  					&lt;image :src=&#34;&#39;/static/tabbar/component&#39; + [PageCur == &#39;component&#39;?&#39;_cur&#39;:&#39;&#39;] + &#39;.png&#39;&#34;&gt;&lt;/image&gt;
-16.  				&lt;/view&gt;
-17.  				&lt;view :class=&#34;PageCur==&#39;component&#39;?&#39;text-green&#39;:&#39;text-gray&#39;&#34;&gt;组件&lt;/view&gt;
-18.  			&lt;/view&gt;
-19.  			&lt;view class=&#34;action&#34; @click=&#34;NavChange&#34; data-cur=&#34;plugin&#34;&gt;
-20.  				&lt;view class=&#39;cuIcon-cu-image&#39;&gt;
-21.  					&lt;image :src=&#34;&#39;/static/tabbar/plugin&#39; + [PageCur == &#39;plugin&#39;?&#39;_cur&#39;:&#39;&#39;] + &#39;.png&#39;&#34;&gt;&lt;/image&gt;
-22.  				&lt;/view&gt;
-23.  				&lt;view :class=&#34;PageCur==&#39;plugin&#39;?&#39;text-green&#39;:&#39;text-gray&#39;&#34;&gt;扩展&lt;/view&gt;
-24.  			&lt;/view&gt;
-25.  		&lt;/view&gt;
-26.  	&lt;/view&gt;
-27.  &lt;/template&gt;
-
-29.  &lt;script&gt;
-30.  	export default {
-31.  		data() {
-32.  		return {
-33.  				PageCur: &#39;basics&#39;
-34.  			}
-35.  		},
-36.  		methods: {
-37.  			NavChange: function(e) {
-38.  				this.PageCur = e.currentTarget.dataset.cur
-39.  			}
-40.  		}
-41.  	}
-42.  &lt;/script&gt; 
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">basics</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;PageCur==&#39;basics&#39;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">basics</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">components</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;PageCur==&#39;component&#39;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">components</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">plugin</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;PageCur==&#39;plugin&#39;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">plugin</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;cu-bar tabbar bg-white shadow foot&#34;</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;action&#34;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;NavChange&#34;</span> <span class="na">data-cur</span><span class="o">=</span><span class="s">&#34;basics&#34;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;cuIcon-cu-image&#39;</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">image</span> <span class="na">:src</span><span class="o">=</span><span class="s">&#34;&#39;/static/tabbar/basics&#39; + [PageCur==&#39;basics&#39;?&#39;_cur&#39;:&#39;&#39;] + &#39;.png&#39;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">image</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">view</span> <span class="na">:class</span><span class="o">=</span><span class="s">&#34;PageCur==&#39;basics&#39;?&#39;text-green&#39;:&#39;text-gray&#39;&#34;</span><span class="p">&gt;</span>元素<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;action&#34;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;NavChange&#34;</span> <span class="na">data-cur</span><span class="o">=</span><span class="s">&#34;component&#34;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;cuIcon-cu-image&#39;</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">image</span> <span class="na">:src</span><span class="o">=</span><span class="s">&#34;&#39;/static/tabbar/component&#39; + [PageCur == &#39;component&#39;?&#39;_cur&#39;:&#39;&#39;] + &#39;.png&#39;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">image</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">view</span> <span class="na">:class</span><span class="o">=</span><span class="s">&#34;PageCur==&#39;component&#39;?&#39;text-green&#39;:&#39;text-gray&#39;&#34;</span><span class="p">&gt;</span>组件<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;action&#34;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;NavChange&#34;</span> <span class="na">data-cur</span><span class="o">=</span><span class="s">&#34;plugin&#34;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;cuIcon-cu-image&#39;</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">image</span> <span class="na">:src</span><span class="o">=</span><span class="s">&#34;&#39;/static/tabbar/plugin&#39; + [PageCur == &#39;plugin&#39;?&#39;_cur&#39;:&#39;&#39;] + &#39;.png&#39;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">image</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">view</span> <span class="na">:class</span><span class="o">=</span><span class="s">&#34;PageCur==&#39;plugin&#39;?&#39;text-green&#39;:&#39;text-gray&#39;&#34;</span><span class="p">&gt;</span>扩展<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+ 
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+	<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+		<span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="p">{</span>
+				<span class="nx">PageCur</span><span class="o">:</span> <span class="s1">&#39;basics&#39;</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+			<span class="nx">NavChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+				<span class="k">this</span><span class="p">.</span><span class="nx">PageCur</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">cur</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+ 
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -325,69 +327,61 @@
 </span><span class="lnt">51
 </span><span class="lnt">52
 </span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-bar tabbar bg-white&#34;&gt;
-2.  	&lt;view class=&#34;action&#34;&gt;
-3.  		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
-4.  			&lt;image src=&#34;/static/tabbar/basics_cur.png&#34;&gt;&lt;/image&gt;
-5.  		&lt;/view&gt;
-6.  		&lt;view class=&#34;text-green&#34;&gt;元素&lt;/view&gt;
-7.  	&lt;/view&gt;
-8.  	&lt;view class=&#34;action&#34;&gt;
-9.  		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
-10.  			&lt;image src=&#34;/static/tabbar/component.png&#34;&gt;&lt;/image&gt;
-11.  		&lt;/view&gt;
-12.  		&lt;view class=&#34;text-gray&#34;&gt;组件&lt;/view&gt;
-13.  	&lt;/view&gt;
-14.  	&lt;view class=&#34;action&#34;&gt;
-15.  		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
-16.  			&lt;image src=&#34;/static/tabbar/plugin.png&#34;&gt;&lt;/image&gt;
-17.  			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
-18.  		&lt;/view&gt;
-19.  		&lt;view class=&#34;text-gray&#34;&gt;扩展&lt;/view&gt;
-20.  	&lt;/view&gt;
-21.  	&lt;view class=&#34;action&#34;&gt;
-22.  		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
-23.  			&lt;image src=&#34;/static/tabbar/about.png&#34;&gt;&lt;/image&gt;
-24.  			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-25.  		&lt;/view&gt;
-26.  		&lt;view class=&#34;text-gray&#34;&gt;关于&lt;/view&gt;
-27.  	&lt;/view&gt;
-28.  &lt;/view&gt;
-
-30.  &lt;view class=&#34;cu-bar tabbar margin-bottom-xl bg-black&#34;&gt;
-31.  	&lt;view class=&#34;action text-orange&#34;&gt;
-32.  		&lt;view class=&#34;cuIcon-homefill&#34;&gt;&lt;/view&gt; 首页
-33.  	&lt;/view&gt;
-34.  	&lt;view class=&#34;action text-gray&#34;&gt;
-35.  		&lt;view class=&#34;cuIcon-similar&#34;&gt;&lt;/view&gt; 分类
-36.  	&lt;/view&gt;
-37.  	&lt;view class=&#34;action text-gray&#34;&gt;
-38.  		&lt;view class=&#34;cuIcon-recharge&#34;&gt;&lt;/view&gt;
-39.  		积分
-40.  	&lt;/view&gt;
-41.  	&lt;view class=&#34;action text-gray&#34;&gt;
-42.  		&lt;view class=&#34;cuIcon-cart&#34;&gt;
-43.  			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
-44.  		&lt;/view&gt;
-45.  		购物车
-46.  	&lt;/view&gt;
-47.  	&lt;view class=&#34;action text-gray&#34;&gt;
-48.  		&lt;view class=&#34;cuIcon-my&#34;&gt;
-49.  			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-50.  		&lt;/view&gt;
-51.  		我的
-52.  	&lt;/view&gt;
-53.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-bar tabbar bg-white&#34;&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
+			&lt;image src=&#34;/static/tabbar/basics_cur.png&#34;&gt;&lt;/image&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;text-green&#34;&gt;元素&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
+			&lt;image src=&#34;/static/tabbar/component.png&#34;&gt;&lt;/image&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;text-gray&#34;&gt;组件&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
+			&lt;image src=&#34;/static/tabbar/plugin.png&#34;&gt;&lt;/image&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;text-gray&#34;&gt;扩展&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;view class=&#34;cuIcon-cu-image&#34;&gt;
+			&lt;image src=&#34;/static/tabbar/about.png&#34;&gt;&lt;/image&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;text-gray&#34;&gt;关于&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+ 
+&lt;view class=&#34;cu-bar tabbar margin-bottom-xl bg-black&#34;&gt;
+	&lt;view class=&#34;action text-orange&#34;&gt;
+		&lt;view class=&#34;cuIcon-homefill&#34;&gt;&lt;/view&gt; 首页
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-similar&#34;&gt;&lt;/view&gt; 分类
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-recharge&#34;&gt;&lt;/view&gt;
+		积分
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-cart&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
+		&lt;/view&gt;
+		购物车
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-my&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		我的
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -427,40 +421,32 @@
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-bar tabbar margin-bottom-xl bg-white&#34;&gt;
-2.  	&lt;view class=&#34;action text-green&#34;&gt;
-3.  		&lt;view class=&#34;cuIcon-homefill&#34;&gt;&lt;/view&gt; 首页
-4.  	&lt;/view&gt;
-5.  	&lt;view class=&#34;action text-gray&#34;&gt;
-6.  		&lt;view class=&#34;cuIcon-similar&#34;&gt;&lt;/view&gt; 分类
-7.  	&lt;/view&gt;
-8.  	&lt;view class=&#34;action text-gray add-action&#34;&gt;
-9.  		&lt;button class=&#34;cu-btn cuIcon-add bg-green shadow&#34;&gt;&lt;/button&gt;
-10.  		发布
-11.  	&lt;/view&gt;
-12.  	&lt;view class=&#34;action text-gray&#34;&gt;
-13.  		&lt;view class=&#34;cuIcon-cart&#34;&gt;
-14.  			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
-15.  		&lt;/view&gt;
-16.  		购物车
-17.  	&lt;/view&gt;
-18.  	&lt;view class=&#34;action text-gray&#34;&gt;
-19.  		&lt;view class=&#34;cuIcon-my&#34;&gt;
-20.  			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-21.  		&lt;/view&gt;
-22.  		我的
-23.  	&lt;/view&gt;
-24.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-bar tabbar margin-bottom-xl bg-white&#34;&gt;
+	&lt;view class=&#34;action text-green&#34;&gt;
+		&lt;view class=&#34;cuIcon-homefill&#34;&gt;&lt;/view&gt; 首页
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-similar&#34;&gt;&lt;/view&gt; 分类
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray add-action&#34;&gt;
+		&lt;button class=&#34;cu-btn cuIcon-add bg-green shadow&#34;&gt;&lt;/button&gt;
+		发布
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-cart&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
+		&lt;/view&gt;
+		购物车
+	&lt;/view&gt;
+	&lt;view class=&#34;action text-gray&#34;&gt;
+		&lt;view class=&#34;cuIcon-my&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		我的
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -494,34 +480,26 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-bar bg-white tabbar border shop&#34;&gt;
-2.  	&lt;button class=&#34;action&#34; open-type=&#34;contact&#34;&gt;
-3.  		&lt;view class=&#34;cuIcon-service text-green&#34;&gt;
-4.  			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-5.  		&lt;/view&gt;
-6.  		客服
-7.  	&lt;/button&gt;
-8.  	&lt;view class=&#34;action text-orange&#34;&gt;
-9.  		&lt;view class=&#34;cuIcon-favorfill&#34;&gt;&lt;/view&gt; 已收藏
-10.  	&lt;/view&gt;
-11.  	&lt;view class=&#34;action&#34;&gt;
-12.  		&lt;view class=&#34;cuIcon-cart&#34;&gt;
-13.  			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
-14.  		&lt;/view&gt;
-15.  		购物车
-16.  	&lt;/view&gt;
-17.  	&lt;view class=&#34;bg-red submit&#34;&gt;立即订购&lt;/view&gt;
-18.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-bar bg-white tabbar border shop&#34;&gt;
+	&lt;button class=&#34;action&#34; open-type=&#34;contact&#34;&gt;
+		&lt;view class=&#34;cuIcon-service text-green&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		客服
+	&lt;/button&gt;
+	&lt;view class=&#34;action text-orange&#34;&gt;
+		&lt;view class=&#34;cuIcon-favorfill&#34;&gt;&lt;/view&gt; 已收藏
+	&lt;/view&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;view class=&#34;cuIcon-cart&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
+		&lt;/view&gt;
+		购物车
+	&lt;/view&gt;
+	&lt;view class=&#34;bg-red submit&#34;&gt;立即订购&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -554,33 +532,25 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-bar bg-white tabbar border shop&#34;&gt;
-2.  	&lt;button class=&#34;action&#34; open-type=&#34;contact&#34;&gt;
-3.  		&lt;view class=&#34;cuIcon-service text-green&#34;&gt;
-4.  			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-5.  		&lt;/view&gt; 客服
-6.  	&lt;/button&gt;
-7.  	&lt;view class=&#34;action&#34;&gt;
-8.  		&lt;view class=&#34;cuIcon-cart&#34;&gt;
-9.  			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
-10.  		&lt;/view&gt;
-11.  		购物车
-12.  	&lt;/view&gt;
-13.  	&lt;view class=&#34;btn-group&#34;&gt;
-14.  		&lt;button class=&#34;cu-btn bg-orange round shadow-blur&#34;&gt;加入购物车&lt;/button&gt;
-15.  		&lt;button class=&#34;cu-btn bg-red round shadow-blur&#34;&gt;立即订购&lt;/button&gt;
-16.  	&lt;/view&gt;
-17.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-bar bg-white tabbar border shop&#34;&gt;
+	&lt;button class=&#34;action&#34; open-type=&#34;contact&#34;&gt;
+		&lt;view class=&#34;cuIcon-service text-green&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt; 客服
+	&lt;/button&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;view class=&#34;cuIcon-cart&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;99&lt;/view&gt;
+		&lt;/view&gt;
+		购物车
+	&lt;/view&gt;
+	&lt;view class=&#34;btn-group&#34;&gt;
+		&lt;button class=&#34;cu-btn bg-orange round shadow-blur&#34;&gt;加入购物车&lt;/button&gt;
+		&lt;button class=&#34;cu-btn bg-red round shadow-blur&#34;&gt;立即订购&lt;/button&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>标题操作条</strong></p>
@@ -652,64 +622,56 @@
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;box&#34;&gt;
-2.  //第一种和第二种都是标题和类似边框的组合样式，添加border-title类名， 底部样式是text标签的last-child选择器设置的，可以自定义颜色和长度
-3.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-4.  		&lt;view class=&#34;action border-title&#34;&gt;
-5.  			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
-6.  			&lt;text class=&#34;bg-grey&#34; style=&#34;width:2rem&#34;&gt;&lt;/text&gt;
-7.  		&lt;/view&gt;
-8.  	&lt;/view&gt;
-9.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-10.  		&lt;view class=&#34;action border-title&#34;&gt;
-11.  			&lt;text class=&#34;text-xl text-bold text-blue&#34;&gt;关于我们&lt;/text&gt;
-12.  			&lt;text class=&#34;bg-gradual-blue&#34; style=&#34;width:3rem&#34;&gt;&lt;/text&gt;
-13.  		&lt;/view&gt;
-14.  	&lt;/view&gt;
-15.  //下面这两种和上面的原理相同，添加的是sub-title类名，底部可以设置文字
-16.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-17.  		&lt;view class=&#34;action sub-title&#34;&gt;
-18.  			&lt;text class=&#34;text-xl text-bold text-green&#34;&gt;关于我们&lt;/text&gt;
-19.  			&lt;text class=&#34;bg-green&#34;&gt;&lt;/text&gt;
-20.  		&lt;/view&gt;
-21.  	&lt;/view&gt;
-22.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-23.  		&lt;view class=&#34;action sub-title&#34;&gt;
-24.  			&lt;text class=&#34;text-xl text-bold text-blue&#34;&gt;关于我们&lt;/text&gt;
-25.  			&lt;text class=&#34;text-ABC text-blue&#34;&gt;about&lt;/text&gt;
-26.  		&lt;/view&gt;
-27.  	&lt;/view&gt;
-28.  //这一种主要是类名self-end，设置了最后一行字的位置，就是css属性align-self: flex-end;详情可以去看看flex布局
-29.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-30.  		&lt;view class=&#34;action&#34;&gt;
-31.  			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
-32.  			&lt;text class=&#34;text-Abc text-gray self-end margin-left-sm&#34;&gt;about&lt;/text&gt;
-33.  		&lt;/view&gt;
-34.  	&lt;/view&gt;
-35.  //最后这两种就是简单的添加了两个图标，没什么好说的
-36.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-37.  		&lt;view class=&#34;action&#34;&gt;
-38.  			&lt;text class=&#34;cuIcon-title text-green&#34;&gt;&lt;/text&gt;
-39.  			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
-40.  		&lt;/view&gt;
-41.  	&lt;/view&gt;
-42.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-43.  		&lt;view class=&#34;action&#34;&gt;
-44.  			&lt;text class=&#34;cuIcon-titles text-green&#34;&gt;&lt;/text&gt;
-45.  			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
-46.  		&lt;/view&gt;
-47.  	&lt;/view&gt;
-48.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;box&#34;&gt;
+//第一种和第二种都是标题和类似边框的组合样式，添加border-title类名， 底部样式是text标签的last-child选择器设置的，可以自定义颜色和长度
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action border-title&#34;&gt;
+			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
+			&lt;text class=&#34;bg-grey&#34; style=&#34;width:2rem&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action border-title&#34;&gt;
+			&lt;text class=&#34;text-xl text-bold text-blue&#34;&gt;关于我们&lt;/text&gt;
+			&lt;text class=&#34;bg-gradual-blue&#34; style=&#34;width:3rem&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+//下面这两种和上面的原理相同，添加的是sub-title类名，底部可以设置文字
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action sub-title&#34;&gt;
+			&lt;text class=&#34;text-xl text-bold text-green&#34;&gt;关于我们&lt;/text&gt;
+			&lt;text class=&#34;bg-green&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action sub-title&#34;&gt;
+			&lt;text class=&#34;text-xl text-bold text-blue&#34;&gt;关于我们&lt;/text&gt;
+			&lt;text class=&#34;text-ABC text-blue&#34;&gt;about&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+//这一种主要是类名self-end，设置了最后一行字的位置，就是css属性align-self: flex-end;详情可以去看看flex布局
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
+			&lt;text class=&#34;text-Abc text-gray self-end margin-left-sm&#34;&gt;about&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+//最后这两种就是简单的添加了两个图标，没什么好说的
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-title text-green&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-titles text-green&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-xl text-bold&#34;&gt;关于我们&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>顶部操作条</strong></p>
@@ -764,47 +726,39 @@
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;box&#34;&gt;
-2.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-3.  		&lt;view class=&#34;action&#34;&gt;
-4.  			&lt;text class=&#34;cuIcon-back text-gray&#34;&gt;&lt;/text&gt; 返回
-5.  		&lt;/view&gt;
-6.  		&lt;view class=&#34;content text-bold&#34;&gt;操作条	&lt;/view&gt;
-7.  	&lt;/view&gt;
-8.  	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-9.  		&lt;view class=&#34;action&#34;&gt;
-10.  			&lt;text class=&#34;cuIcon-homefill text-gray&#34;&gt;&lt;/text&gt; 首页
-11.  		&lt;/view&gt;
-12.  		&lt;view class=&#34;content text-bold&#34;&gt;鲜亮的高饱和色彩，专注视觉的小程序组件库&lt;/view&gt;
-13.  		&lt;view class=&#34;action&#34;&gt;
-14.  			&lt;text class=&#34;cuIcon-cardboardfill text-grey&#34;&gt;&lt;/text&gt;
-15.  			&lt;text class=&#34;cuIcon-recordfill text-red&#34;&gt;&lt;/text&gt;
-16.  		&lt;/view&gt;
-17.  	&lt;/view&gt;
-18.  	&lt;view class=&#34;cu-bar bg-blue&#34;&gt;
-19.  		&lt;view class=&#34;action&#34;&gt;
-20.  			&lt;text class=&#34;cuIcon-close&#34;&gt;&lt;/text&gt;关闭
-21.  		&lt;/view&gt;
-22.  		&lt;view class=&#34;content text-bold&#34;&gt;海蓝&lt;/view&gt;
-23.  	&lt;/view&gt;
-24.  	&lt;view class=&#34;cu-bar bg-black search&#34;&gt;
-25.  		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);&#34;&gt;&lt;/view&gt;
-26.  		&lt;view class=&#34;content&#34;&gt;ColorUI&lt;/view&gt;
-27.  		&lt;view class=&#34;action&#34;&gt;
-28.  			&lt;text class=&#34;cuIcon-more&#34;&gt;&lt;/text&gt;
-29.  		&lt;/view&gt;
-30.  	&lt;/view&gt;
-31.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;box&#34;&gt;
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-back text-gray&#34;&gt;&lt;/text&gt; 返回
+		&lt;/view&gt;
+		&lt;view class=&#34;content text-bold&#34;&gt;操作条	&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-homefill text-gray&#34;&gt;&lt;/text&gt; 首页
+		&lt;/view&gt;
+		&lt;view class=&#34;content text-bold&#34;&gt;鲜亮的高饱和色彩，专注视觉的小程序组件库&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-cardboardfill text-grey&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;cuIcon-recordfill text-red&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-blue&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-close&#34;&gt;&lt;/text&gt;关闭
+		&lt;/view&gt;
+		&lt;view class=&#34;content text-bold&#34;&gt;海蓝&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-black search&#34;&gt;
+		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;ColorUI&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-more&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>搜索操作条</strong></p>
@@ -875,63 +829,55 @@
 </span><span class="lnt">45
 </span><span class="lnt">46
 </span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;box&#34;&gt;
-2.  	&lt;view class=&#34;cu-bar search bg-white&#34;&gt;
-3.  		&lt;view class=&#34;search-form round&#34;&gt;
-4.  			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
-5.  			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
-6.  			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
-7.  		&lt;/view&gt;
-8.  		&lt;view class=&#34;action&#34;&gt;
-9.  			&lt;button class=&#34;cu-btn bg-green shadow-blur round&#34;&gt;搜索&lt;/button&gt;
-10.  		&lt;/view&gt;
-11.  	&lt;/view&gt;
-12.  	&lt;view class=&#34;cu-bar search bg-white&#34;&gt;
-13.  		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big11010.jpg&#34;&gt;&lt;/view&gt;
-14.  		&lt;view class=&#34;search-form round&#34;&gt;
-15.  			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
-16.  			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
-17.  			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
-18.  		&lt;/view&gt;
-19.  		&lt;view class=&#34;action&#34;&gt;
-20.  			&lt;text&gt;广州&lt;/text&gt;
-21.  			&lt;text class=&#34;cuIcon-triangledownfill&#34;&gt;&lt;/text&gt;
-22.  		&lt;/view&gt;
-23.  	&lt;/view&gt;
-24.  	&lt;view class=&#34;cu-bar bg-red search&#34;&gt;
-25.  		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big114004.jpg);&#34;&gt;&lt;/view&gt;
-26.  		&lt;view class=&#34;search-form radius&#34;&gt;
-27.  			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
-28.  			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
-29.  			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
-30.  		&lt;/view&gt;
-31.  		&lt;view class=&#34;action&#34;&gt;
-32.  			&lt;text&gt;广州&lt;/text&gt;
-33.  			&lt;text class=&#34;cuIcon-triangledownfill&#34;&gt;&lt;/text&gt;
-34.  		&lt;/view&gt;
-35.  	&lt;/view&gt;
-36.  	&lt;view class=&#34;cu-bar bg-cyan search&#34;&gt;
-37.  		&lt;view class=&#34;search-form radius&#34;&gt;
-38.  			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
-39.  			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
-40.  			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
-41.  		&lt;/view&gt;
-42.  		&lt;view class=&#34;action&#34;&gt;
-43.  			&lt;text class=&#34;cuIcon-close&#34;&gt;&lt;/text&gt;
-44.  			&lt;text&gt;取消&lt;/text&gt;
-45.  		&lt;/view&gt;
-46.  	&lt;/view&gt;
-47.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;box&#34;&gt;
+	&lt;view class=&#34;cu-bar search bg-white&#34;&gt;
+		&lt;view class=&#34;search-form round&#34;&gt;
+			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
+			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
+			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;button class=&#34;cu-btn bg-green shadow-blur round&#34;&gt;搜索&lt;/button&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar search bg-white&#34;&gt;
+		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big11010.jpg&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;search-form round&#34;&gt;
+			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
+			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
+			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text&gt;广州&lt;/text&gt;
+			&lt;text class=&#34;cuIcon-triangledownfill&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-red search&#34;&gt;
+		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big114004.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;search-form radius&#34;&gt;
+			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
+			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
+			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text&gt;广州&lt;/text&gt;
+			&lt;text class=&#34;cuIcon-triangledownfill&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar bg-cyan search&#34;&gt;
+		&lt;view class=&#34;search-form radius&#34;&gt;
+			&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
+			&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; type=&#34;text&#34; placeholder=&#34;搜索图片、文章、视频&#34;
+			 confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-close&#34;&gt;&lt;/text&gt;
+			&lt;text&gt;取消&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>按钮组操作条</strong></p>
@@ -961,29 +907,21 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;box&#34;&gt;
-2.  	&lt;view class=&#34;cu-bar btn-group&#34;&gt;
-3.  		&lt;button class=&#34;cu-btn bg-green shadow-blur round lg&#34;&gt;保存&lt;/button&gt;
-4.  	&lt;/view&gt;
-5.  	&lt;view class=&#34;btn-group&#34;&gt;
-6.  		&lt;button class=&#34;cu-btn bg-green shadow-blur&#34;&gt;保存&lt;/button&gt;
-7.  		&lt;button class=&#34;cu-btn text-green line-green shadow&#34;&gt;上传&lt;/button&gt;
-8.  	&lt;/view&gt;
-9.  	&lt;view class=&#34;cu-bar btn-group&#34;&gt;
-10.  		&lt;button class=&#34;cu-btn bg-green shadow-blur round&#34;&gt;保存&lt;/button&gt;
-11.  		&lt;button class=&#34;cu-btn bg-blue shadow-blur round&#34;&gt;提交&lt;/button&gt;
-12.  	&lt;/view&gt;
-13.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;box&#34;&gt;
+	&lt;view class=&#34;cu-bar btn-group&#34;&gt;
+		&lt;button class=&#34;cu-btn bg-green shadow-blur round lg&#34;&gt;保存&lt;/button&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;btn-group&#34;&gt;
+		&lt;button class=&#34;cu-btn bg-green shadow-blur&#34;&gt;保存&lt;/button&gt;
+		&lt;button class=&#34;cu-btn text-green line-green shadow&#34;&gt;上传&lt;/button&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-bar btn-group&#34;&gt;
+		&lt;button class=&#34;cu-btn bg-green shadow-blur round&#34;&gt;保存&lt;/button&gt;
+		&lt;button class=&#34;cu-btn bg-blue shadow-blur round&#34;&gt;提交&lt;/button&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>输入操作条</strong></p>
@@ -1026,42 +964,34 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;box&#34;&gt;
-2.  	&lt;view class=&#34;cu-bar input&#34;&gt;
-3.  		&lt;view class=&#34;action&#34;&gt;
-4.  			&lt;text class=&#34;cuIcon-sound text-grey&#34;&gt;&lt;/text&gt;
-5.  		&lt;/view&gt;
-6.  		&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; class=&#34;solid-bottom&#34; :focus=&#34;false&#34; maxlength=&#34;300&#34;
-7.  		 cursor-spacing=&#34;10&#34;&gt;&lt;/input&gt;
-8.  		&lt;view class=&#34;action&#34;&gt;
-9.  			&lt;text class=&#34;cuIcon-emojifill text-grey&#34;&gt;&lt;/text&gt;
-10.  		&lt;/view&gt;
-11.  		&lt;button class=&#34;cu-btn bg-green shadow-blur&#34;&gt;发送&lt;/button&gt;
-12.  	&lt;/view&gt;
-
-14.  	&lt;view class=&#34;cu-bar input&#34;&gt;
-15.  		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);&#34;&gt;&lt;/view&gt;
-16.  		&lt;view class=&#34;action&#34;&gt;
-17.  			&lt;text class=&#34;cuIcon-roundaddfill text-grey&#34;&gt;&lt;/text&gt;
-18.  		&lt;/view&gt;
-19.  		&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; class=&#34;solid-bottom&#34; maxlength=&#34;300&#34;
-20.  		 cursor-spacing=&#34;10&#34;&gt;&lt;/input&gt;
-21.  		&lt;view class=&#34;action&#34;&gt;
-22.  			&lt;text class=&#34;cuIcon-emojifill text-grey&#34;&gt;&lt;/text&gt;
-23.  		&lt;/view&gt;
-24.  		&lt;button class=&#34;cu-btn bg-green shadow-blur&#34;&gt;发送&lt;/button&gt;
-25.  	&lt;/view&gt;
-26.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;box&#34;&gt;
+	&lt;view class=&#34;cu-bar input&#34;&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-sound text-grey&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; class=&#34;solid-bottom&#34; :focus=&#34;false&#34; maxlength=&#34;300&#34;
+		 cursor-spacing=&#34;10&#34;&gt;&lt;/input&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-emojifill text-grey&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;button class=&#34;cu-btn bg-green shadow-blur&#34;&gt;发送&lt;/button&gt;
+	&lt;/view&gt;
+ 
+	&lt;view class=&#34;cu-bar input&#34;&gt;
+		&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-roundaddfill text-grey&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;input @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34; :adjust-position=&#34;false&#34; class=&#34;solid-bottom&#34; maxlength=&#34;300&#34;
+		 cursor-spacing=&#34;10&#34;&gt;&lt;/input&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;cuIcon-emojifill text-grey&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;button class=&#34;cu-btn bg-green shadow-blur&#34;&gt;发送&lt;/button&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>操作条相关class</strong></p>
@@ -1106,38 +1036,30 @@
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;scroll-view scroll-x class=&#34;bg-white nav&#34; scroll-with-animation :scroll-left=&#34;scrollLeft&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; :class=&#34;index==TabCur?&#39;text-green cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 10&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
-3.  		Tab{{index}}
-4.  	&lt;/view&gt;
-5.  &lt;/scroll-view&gt;
-
-7.  &lt;script&gt;
-8.  	export default {
-9.  		data() {
-10.  			return {
-11.  				TabCur: 0,
-12.  				scrollLeft: 0
-13.  			};
-14.  		},
-15.  		methods: {
-16.  			tabSelect(e) {
-17.  				this.TabCur = e.currentTarget.dataset.id;
-18.  				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
-19.  			}
-20.  		}
-21.  	}
-22.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;scroll-view scroll-x class=&#34;bg-white nav&#34; scroll-with-animation :scroll-left=&#34;scrollLeft&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;index==TabCur?&#39;text-green cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 10&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
+		Tab{{index}}
+	&lt;/view&gt;
+&lt;/scroll-view&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				TabCur: 0,
+				scrollLeft: 0
+			};
+		},
+		methods: {
+			tabSelect(e) {
+				this.TabCur = e.currentTarget.dataset.id;
+				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
+			}
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>居中</strong></p>
@@ -1159,21 +1081,13 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;scroll-view scroll-x class=&#34;bg-white nav text-center&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; :class=&#34;index==TabCur?&#39;text-blue cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 3&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
-3.  		Tab{{index}}
-4.  	&lt;/view&gt;
-5.  &lt;/scroll-view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;scroll-view scroll-x class=&#34;bg-white nav text-center&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;index==TabCur?&#39;text-blue cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 3&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
+		Tab{{index}}
+	&lt;/view&gt;
+&lt;/scroll-view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>平分</strong></p>
@@ -1190,30 +1104,22 @@
         title="平分nav" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;scroll-view scroll-x class=&#34;bg-white nav&#34;&gt;
-2.  	&lt;view class=&#34;flex text-center&#34;&gt;
-3.  		&lt;view class=&#34;cu-item flex-sub&#34; :class=&#34;index==TabCur?&#39;text-orange cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 4&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
-4.  			Tab{{index}}
-5.  		&lt;/view&gt;
-6.  	&lt;/view&gt;
-7.  &lt;/scroll-view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;scroll-view scroll-x class=&#34;bg-white nav&#34;&gt;
+	&lt;view class=&#34;flex text-center&#34;&gt;
+		&lt;view class=&#34;cu-item flex-sub&#34; :class=&#34;index==TabCur?&#39;text-orange cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 4&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
+			Tab{{index}}
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/scroll-view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>背景</strong></p>
@@ -1235,21 +1141,13 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;scroll-view scroll-x class=&#34;bg-red nav text-center&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; :class=&#34;index==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 3&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
-3.  		Tab{{index}}
-4.  	&lt;/view&gt;
-5.  &lt;/scroll-view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;scroll-view scroll-x class=&#34;bg-red nav text-center&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;index==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 3&#34; :key=&#34;index&#34; @tap=&#34;tabSelect&#34; :data-id=&#34;index&#34;&gt;
+		Tab{{index}}
+	&lt;/view&gt;
+&lt;/scroll-view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>图标</strong></p>
@@ -1277,27 +1175,19 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;scroll-view scroll-x class=&#34;bg-green nav text-center&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; :class=&#34;0==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; @tap=&#34;tabSelect&#34; data-id=&#34;0&#34;&gt;
-3.  		&lt;text class=&#34;cuIcon-camerafill&#34;&gt;&lt;/text&gt; 数码
-4.  	&lt;/view&gt;
-5.  	&lt;view class=&#34;cu-item&#34; :class=&#34;1==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; @tap=&#34;tabSelect&#34; data-id=&#34;1&#34;&gt;
-6.  		&lt;text class=&#34;cuIcon-upstagefill&#34;&gt;&lt;/text&gt; 排行榜
-7.  	&lt;/view&gt;
-8.  	&lt;view class=&#34;cu-item&#34; :class=&#34;2==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; @tap=&#34;tabSelect&#34; data-id=&#34;2&#34;&gt;
-9.  		&lt;text class=&#34;cuIcon-clothesfill&#34;&gt;&lt;/text&gt; 皮肤
-10.  	&lt;/view&gt;
-11.  &lt;/scroll-view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;scroll-view scroll-x class=&#34;bg-green nav text-center&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;0==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; @tap=&#34;tabSelect&#34; data-id=&#34;0&#34;&gt;
+		&lt;text class=&#34;cuIcon-camerafill&#34;&gt;&lt;/text&gt; 数码
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;1==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; @tap=&#34;tabSelect&#34; data-id=&#34;1&#34;&gt;
+		&lt;text class=&#34;cuIcon-upstagefill&#34;&gt;&lt;/text&gt; 排行榜
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;2==TabCur?&#39;text-white cur&#39;:&#39;&#39;&#34; @tap=&#34;tabSelect&#34; data-id=&#34;2&#34;&gt;
+		&lt;text class=&#34;cuIcon-clothesfill&#34;&gt;&lt;/text&gt; 皮肤
+	&lt;/view&gt;
+&lt;/scroll-view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>导航栏相关class</strong></p>
@@ -1354,43 +1244,35 @@
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-list grid&#34; :class=&#34;[&#39;col-&#39; + gridCol,gridBorder?&#39;&#39;:&#39;no-border&#39;]&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; v-for=&#34;(item,index) in cuIconList&#34; :key=&#34;index&#34; v-if=&#34;index&lt;gridCol*2&#34;&gt;
-3.  		&lt;view :class=&#34;[&#39;cuIcon-&#39; + item.cuIcon,&#39;text-&#39; + item.color]&#34;&gt;
-4.  			&lt;view class=&#34;cu-tag badge&#34; v-if=&#34;item.badge!=0&#34;&gt;
-5.  				&lt;block v-if=&#34;item.badge!=1&#34;&gt;{{item.badge&gt;99?&#39;99+&#39;:item.badge}}&lt;/block&gt;
-6.  			&lt;/view&gt;
-7.  		&lt;/view&gt;
-8.  		&lt;text&gt;{{item.name}}&lt;/text&gt;
-9.  	&lt;/view&gt;
-10.  &lt;/view&gt;
-
-12.  data() {
-13.  	return {
-14.  		cuIconList: [{cuIcon: &#39;cardboardfill&#39;,color: &#39;red&#39;,badge: 120,name: &#39;VR&#39;}, 
-15.  		{cuIcon: &#39;recordfill&#39;,color: &#39;orange&#39;,badge: 1,name: &#39;录像&#39;},
-16.  		{cuIcon: &#39;picfill&#39;,color: &#39;yellow&#39;,badge: 0,name: &#39;图像&#39;}, 
-17.  		{cuIcon: &#39;noticefill&#39;,color: &#39;olive&#39;,badge: 22,name: &#39;通知&#39;},
-18.  		{cuIcon: &#39;upstagefill&#39;,color: &#39;cyan&#39;,badge: 0,name: &#39;排行榜&#39;	}, 
-19.  		{cuIcon: &#39;clothesfill&#39;,color: &#39;blue&#39;,badge: 0,name: &#39;皮肤&#39;}, 
-20.  		{cuIcon: &#39;discoverfill&#39;,color: &#39;purple&#39;,badge: 0,name: &#39;发现&#39;}, 
-21.  		{cuIcon: &#39;questionfill&#39;,color: &#39;mauve&#39;,badge: 0,name: &#39;帮助&#39;},
-22.  		{cuIcon: &#39;commandfill&#39;,color: &#39;purple&#39;,badge: 0,name: &#39;问答&#39;}, 
-23.  		{cuIcon: &#39;brandfill&#39;,color: &#39;mauve&#39;,badge: 0,name: &#39;版权&#39;}],
-24.          gridCol: 3,
-25.  		gridBorder: false
-26.  	};
-27.  },
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-list grid&#34; :class=&#34;[&#39;col-&#39; + gridCol,gridBorder?&#39;&#39;:&#39;no-border&#39;]&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; v-for=&#34;(item,index) in cuIconList&#34; :key=&#34;index&#34; v-if=&#34;index&lt;gridCol*2&#34;&gt;
+		&lt;view :class=&#34;[&#39;cuIcon-&#39; + item.cuIcon,&#39;text-&#39; + item.color]&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34; v-if=&#34;item.badge!=0&#34;&gt;
+				&lt;block v-if=&#34;item.badge!=1&#34;&gt;{{item.badge&gt;99?&#39;99+&#39;:item.badge}}&lt;/block&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;text&gt;{{item.name}}&lt;/text&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+ 
+data() {
+	return {
+		cuIconList: [{cuIcon: &#39;cardboardfill&#39;,color: &#39;red&#39;,badge: 120,name: &#39;VR&#39;}, 
+		{cuIcon: &#39;recordfill&#39;,color: &#39;orange&#39;,badge: 1,name: &#39;录像&#39;},
+		{cuIcon: &#39;picfill&#39;,color: &#39;yellow&#39;,badge: 0,name: &#39;图像&#39;}, 
+		{cuIcon: &#39;noticefill&#39;,color: &#39;olive&#39;,badge: 22,name: &#39;通知&#39;},
+		{cuIcon: &#39;upstagefill&#39;,color: &#39;cyan&#39;,badge: 0,name: &#39;排行榜&#39;	}, 
+		{cuIcon: &#39;clothesfill&#39;,color: &#39;blue&#39;,badge: 0,name: &#39;皮肤&#39;}, 
+		{cuIcon: &#39;discoverfill&#39;,color: &#39;purple&#39;,badge: 0,name: &#39;发现&#39;}, 
+		{cuIcon: &#39;questionfill&#39;,color: &#39;mauve&#39;,badge: 0,name: &#39;帮助&#39;},
+		{cuIcon: &#39;commandfill&#39;,color: &#39;purple&#39;,badge: 0,name: &#39;问答&#39;}, 
+		{cuIcon: &#39;brandfill&#39;,color: &#39;mauve&#39;,badge: 0,name: &#39;版权&#39;}],
+        gridCol: 3,
+		gridBorder: false
+	};
+},
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>菜单列表</strong></p>
@@ -1509,111 +1391,103 @@
 </span><span class="lnt">93
 </span><span class="lnt">94
 </span><span class="lnt">95
-</span><span class="lnt">96
-</span><span class="lnt">97
-</span><span class="lnt">98
-</span><span class="lnt">99
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-list menu&#34; :class=&#34;[menuBorder?&#39;sm-border&#39;:&#39;&#39;,menuCard?&#39;card-menu margin-top&#39;:&#39;&#39;]&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-3.  		&lt;view class=&#34;content&#34;&gt;
-4.  			&lt;text class=&#34;cuIcon-circlefill text-grey&#34;&gt;&lt;/text&gt;
-5.  			&lt;text class=&#34;text-grey&#34;&gt;图标 + 标题&lt;/text&gt;
-6.  		&lt;/view&gt;
-7.  	&lt;/view&gt;
-8.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-9.  		&lt;view class=&#34;content&#34;&gt;
-10.  			&lt;image src=&#34;/static/logo.png&#34; class=&#34;png&#34; mode=&#34;aspectFit&#34;&gt;&lt;/image&gt;
-11.  			&lt;text class=&#34;text-grey&#34;&gt;图片 + 标题&lt;/text&gt;
-12.  		&lt;/view&gt;
-13.  	&lt;/view&gt;
-14.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-15.  		&lt;button class=&#34;cu-btn content&#34; open-type=&#34;contact&#34;&gt;
-16.  			&lt;text class=&#34;cuIcon-btn text-olive&#34;&gt;&lt;/text&gt;
-17.  			&lt;text class=&#34;text-grey&#34;&gt;Open-type 按钮&lt;/text&gt;
-18.  		&lt;/button&gt;
-19.  	&lt;/view&gt;
-20.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-21.  		&lt;navigator class=&#34;content&#34; hover-class=&#34;none&#34; url=&#34;../list/list&#34; open-type=&#34;redirect&#34;&gt;
-22.  			&lt;text class=&#34;cuIcon-discoverfill text-orange&#34;&gt;&lt;/text&gt;
-23.  			&lt;text class=&#34;text-grey&#34;&gt;Navigator 跳转&lt;/text&gt;
-24.  		&lt;/navigator&gt;
-25.  	&lt;/view&gt;
-26.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-27.  		&lt;view class=&#34;content&#34;&gt;
-28.  			&lt;text class=&#34;cuIcon-emojiflashfill text-pink&#34;&gt;&lt;/text&gt;
-29.  			&lt;text class=&#34;text-grey&#34;&gt;头像组&lt;/text&gt;
-30.  		&lt;/view&gt;
-31.  		&lt;view class=&#34;action&#34;&gt;
-32.  			&lt;view class=&#34;cu-avatar-group&#34;&gt;
-33.  				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);&#34;&gt;&lt;/view&gt;
-34.  				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);&#34;&gt;&lt;/view&gt;
-35.  				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);&#34;&gt;&lt;/view&gt;
-36.  				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);&#34;&gt;&lt;/view&gt;
-37.  			&lt;/view&gt;
-38.  			&lt;text class=&#34;text-grey text-sm&#34;&gt;4 人&lt;/text&gt;
-39.  		&lt;/view&gt;
-40.  	&lt;/view&gt;
-41.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-42.  		&lt;view class=&#34;content&#34;&gt;
-43.  			&lt;text class=&#34;cuIcon-btn text-green&#34;&gt;&lt;/text&gt;
-44.  			&lt;text class=&#34;text-grey&#34;&gt;按钮&lt;/text&gt;
-45.  		&lt;/view&gt;
-46.  		&lt;view class=&#34;action&#34;&gt;
-47.  			&lt;button class=&#34;cu-btn round bg-green shadow&#34;&gt;
-48.  				&lt;text class=&#34;cuIcon-upload&#34;&gt;&lt;/text&gt; 上传&lt;/button&gt;
-49.  		&lt;/view&gt;
-50.  	&lt;/view&gt;
-51.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-52.  		&lt;view class=&#34;content&#34;&gt;
-53.  			&lt;text class=&#34;cuIcon-tagfill text-red  margin-right-xs&#34;&gt;&lt;/text&gt;
-54.  			&lt;text class=&#34;text-grey&#34;&gt;标签&lt;/text&gt;
-55.  		&lt;/view&gt;
-56.  		&lt;view class=&#34;action&#34;&gt;
-57.  			&lt;view class=&#34;cu-tag round bg-orange light&#34;&gt;音乐&lt;/view&gt;
-58.  			&lt;view class=&#34;cu-tag round bg-olive light&#34;&gt;电影&lt;/view&gt;
-59.  			&lt;view class=&#34;cu-tag round bg-blue light&#34;&gt;旅行&lt;/view&gt;
-60.  		&lt;/view&gt;
-61.  	&lt;/view&gt;
-62.  	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
-63.  		&lt;view class=&#34;content&#34;&gt;
-64.  			&lt;text class=&#34;cuIcon-warn text-green&#34;&gt;&lt;/text&gt;
-65.  			&lt;text class=&#34;text-grey&#34;&gt;文本&lt;/text&gt;
-66.  		&lt;/view&gt;
-67.  		&lt;view class=&#34;action&#34;&gt;
-68.  			&lt;text class=&#34;text-grey text-sm&#34;&gt;小目标还没有实现！&lt;/text&gt;
-69.  		&lt;/view&gt;
-70.  	&lt;/view&gt;
-71.  	&lt;view class=&#34;cu-item&#34;&gt;
-72.  		&lt;view class=&#34;content padding-tb-sm&#34;&gt;
-73.  			&lt;view&gt;
-74.  				&lt;text class=&#34;cuIcon-clothesfill text-blue margin-right-xs&#34;&gt;&lt;/text&gt; 多行Item&lt;/view&gt;
-75.  			&lt;view class=&#34;text-gray text-sm&#34;&gt;
-76.  				&lt;text class=&#34;cuIcon-infofill margin-right-xs&#34;&gt;&lt;/text&gt; 小目标还没有实现！&lt;/view&gt;
-77.  		&lt;/view&gt;
-78.  		&lt;view class=&#34;action&#34;&gt;
-79.  			&lt;switch class=&#34;switch-sex&#34; @change=&#34;SwitchSex&#34; :class=&#34;skin?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;skin?true:false&#34;&gt;&lt;/switch&gt;
-80.  		&lt;/view&gt;
-81.  	&lt;/view&gt;
-82.  &lt;/view&gt;
-
-84.  &lt;script&gt;
-85.  	export default {
-86.  		data() {
-87.  			return {
-88.  				menuBorder: false,
-89.  				menuArrow: false,
-90.  				menuCard: false,
-91.  				skin: false
-92.  			};
-93.  		}
-94.  	}
-95.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-list menu&#34; :class=&#34;[menuBorder?&#39;sm-border&#39;:&#39;&#39;,menuCard?&#39;card-menu margin-top&#39;:&#39;&#39;]&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;text class=&#34;cuIcon-circlefill text-grey&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;图标 + 标题&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;image src=&#34;/static/logo.png&#34; class=&#34;png&#34; mode=&#34;aspectFit&#34;&gt;&lt;/image&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;图片 + 标题&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;button class=&#34;cu-btn content&#34; open-type=&#34;contact&#34;&gt;
+			&lt;text class=&#34;cuIcon-btn text-olive&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;Open-type 按钮&lt;/text&gt;
+		&lt;/button&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;navigator class=&#34;content&#34; hover-class=&#34;none&#34; url=&#34;../list/list&#34; open-type=&#34;redirect&#34;&gt;
+			&lt;text class=&#34;cuIcon-discoverfill text-orange&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;Navigator 跳转&lt;/text&gt;
+		&lt;/navigator&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;text class=&#34;cuIcon-emojiflashfill text-pink&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;头像组&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;cu-avatar-group&#34;&gt;
+				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);&#34;&gt;&lt;/view&gt;
+				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);&#34;&gt;&lt;/view&gt;
+				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);&#34;&gt;&lt;/view&gt;
+				&lt;view class=&#34;cu-avatar round sm&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);&#34;&gt;&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;text class=&#34;text-grey text-sm&#34;&gt;4 人&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;text class=&#34;cuIcon-btn text-green&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;按钮&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;button class=&#34;cu-btn round bg-green shadow&#34;&gt;
+				&lt;text class=&#34;cuIcon-upload&#34;&gt;&lt;/text&gt; 上传&lt;/button&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;text class=&#34;cuIcon-tagfill text-red  margin-right-xs&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;标签&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;cu-tag round bg-orange light&#34;&gt;音乐&lt;/view&gt;
+			&lt;view class=&#34;cu-tag round bg-olive light&#34;&gt;电影&lt;/view&gt;
+			&lt;view class=&#34;cu-tag round bg-blue light&#34;&gt;旅行&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;menuArrow?&#39;arrow&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;text class=&#34;cuIcon-warn text-green&#34;&gt;&lt;/text&gt;
+			&lt;text class=&#34;text-grey&#34;&gt;文本&lt;/text&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;text class=&#34;text-grey text-sm&#34;&gt;小目标还没有实现！&lt;/text&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;content padding-tb-sm&#34;&gt;
+			&lt;view&gt;
+				&lt;text class=&#34;cuIcon-clothesfill text-blue margin-right-xs&#34;&gt;&lt;/text&gt; 多行Item&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm&#34;&gt;
+				&lt;text class=&#34;cuIcon-infofill margin-right-xs&#34;&gt;&lt;/text&gt; 小目标还没有实现！&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;switch class=&#34;switch-sex&#34; @change=&#34;SwitchSex&#34; :class=&#34;skin?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;skin?true:false&#34;&gt;&lt;/switch&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				menuBorder: false,
+				menuArrow: false,
+				menuCard: false,
+				skin: false
+			};
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>消息列表</strong></p>
@@ -1622,28 +1496,20 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-list menu-avatar&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34;&gt;
-3.  		&lt;view class=&#34;cu-avatar&#34;&gt;头像&lt;/view&gt;
-4.  		&lt;view class=&#34;content&#34;&gt;消息内容&lt;/view&gt;
-5.  	&lt;/view&gt;
-6.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;cu-avatar&#34;&gt;头像&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;消息内容&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>具体实例请看下面的代码：</p>
@@ -1735,94 +1601,86 @@
 </span><span class="lnt">76
 </span><span class="lnt">77
 </span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-list menu-avatar&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34;&gt;
-3.  		&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);&#34;&gt;&lt;/view&gt;
-4.  		&lt;view class=&#34;content&#34;&gt;
-5.  			&lt;view class=&#34;text-grey&#34;&gt;凯尔&lt;/view&gt;
-6.  			&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
-7.  				&lt;view class=&#34;text-cut&#34;&gt;
-8.  					&lt;text class=&#34;cuIcon-infofill text-red  margin-right-xs&#34;&gt;&lt;/text&gt;
-9.  					我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
-10.  				&lt;/view&gt; &lt;/view&gt;
-11.  		&lt;/view&gt;
-12.  		&lt;view class=&#34;action&#34;&gt;
-13.  			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-14.  			&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
-15.  		&lt;/view&gt;
-16.  	&lt;/view&gt;
-17.  	&lt;view class=&#34;cu-item&#34;&gt;
-18.  		&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);&#34;&gt;
-19.  			&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;
-20.  		&lt;/view&gt;
-21.  		&lt;view class=&#34;content&#34;&gt;
-22.  			&lt;view class=&#34;text-grey&#34;&gt;
-23.  				&lt;view class=&#34;text-cut&#34;&gt;瓦洛兰之盾-塔里克&lt;/view&gt;
-24.  				&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;战士&lt;/view&gt;
-25.  			&lt;/view&gt;
-26.  			&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
-27.  				&lt;view class=&#34;text-cut&#34;&gt;
-28.  					塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。
-29.  				&lt;/view&gt;
-30.  			&lt;/view&gt;
-31.  		&lt;/view&gt;
-32.  		&lt;view class=&#34;action&#34;&gt;
-33.  			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-34.  			&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
-35.  		&lt;/view&gt;
-36.  	&lt;/view&gt;
-37.  	&lt;view class=&#34;cu-item &#34;&gt;
-38.  		&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);&#34;&gt;&lt;/view&gt;
-39.  		&lt;view class=&#34;content&#34;&gt;
-40.  			&lt;view class=&#34;text-pink&#34;&gt;&lt;view class=&#34;text-cut&#34;&gt;莫甘娜&lt;/view&gt;&lt;/view&gt;
-41.  			&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;view class=&#34;text-cut&#34;&gt;凯尔，你被自己的光芒变的盲目！&lt;/view&gt;&lt;/view&gt;
-42.  		&lt;/view&gt;
-43.  		&lt;view class=&#34;action&#34;&gt;
-44.  			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-45.  			&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
-46.  		&lt;/view&gt;
-47.  	&lt;/view&gt;
-48.  	&lt;view class=&#34;cu-item grayscale&#34;&gt;
-49.  		&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);&#34;&gt;&lt;/view&gt;
-50.  		&lt;view class=&#34;content&#34;&gt;
-51.  			&lt;view&gt;&lt;view class=&#34;text-cut&#34;&gt;伊泽瑞尔&lt;/view&gt;
-52.  				&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;断开连接...&lt;/view&gt;
-53.  			&lt;/view&gt;
-54.  			&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;view class=&#34;text-cut&#34;&gt; 等我回来一个打十个&lt;/view&gt;&lt;/view&gt;
-55.  		&lt;/view&gt;
-56.  		&lt;view class=&#34;action&#34;&gt;
-57.  			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-58.  			&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
-59.  		&lt;/view&gt;
-60.  	&lt;/view&gt;
-61.  	&lt;view class=&#34;cu-item cur&#34;&gt;
-62.  		&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);&#34;&gt;
-63.  			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-64.  		&lt;/view&gt;
-65.  		&lt;view class=&#34;content&#34;&gt;
-66.  			&lt;view&gt;
-67.  				&lt;view class=&#34;text-cut&#34;&gt;瓦罗兰大陆-睡衣守护者-新手保护营&lt;/view&gt;
-68.  				&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;6人&lt;/view&gt;
-69.  			&lt;/view&gt;
-70.  			&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
-71.  				&lt;view class=&#34;text-cut&#34;&gt; 伊泽瑞尔：&lt;text class=&#34;cuIcon-locationfill text-orange margin-right-xs&#34;&gt;&lt;/text&gt; 传送中...&lt;/view&gt;&lt;/view&gt;
-72.  		&lt;/view&gt;
-73.  		&lt;view class=&#34;action&#34;&gt;
-74.  			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-75.  			&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
-76.  		&lt;/view&gt;
-77.  	&lt;/view&gt;
-78.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view class=&#34;text-grey&#34;&gt;凯尔&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
+				&lt;view class=&#34;text-cut&#34;&gt;
+					&lt;text class=&#34;cuIcon-infofill text-red  margin-right-xs&#34;&gt;&lt;/text&gt;
+					我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
+				&lt;/view&gt; &lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+			&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view class=&#34;text-grey&#34;&gt;
+				&lt;view class=&#34;text-cut&#34;&gt;瓦洛兰之盾-塔里克&lt;/view&gt;
+				&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;战士&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
+				&lt;view class=&#34;text-cut&#34;&gt;
+					塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+			&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item &#34;&gt;
+		&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view class=&#34;text-pink&#34;&gt;&lt;view class=&#34;text-cut&#34;&gt;莫甘娜&lt;/view&gt;&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;view class=&#34;text-cut&#34;&gt;凯尔，你被自己的光芒变的盲目！&lt;/view&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+			&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item grayscale&#34;&gt;
+		&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view&gt;&lt;view class=&#34;text-cut&#34;&gt;伊泽瑞尔&lt;/view&gt;
+				&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;断开连接...&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;view class=&#34;text-cut&#34;&gt; 等我回来一个打十个&lt;/view&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+			&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item cur&#34;&gt;
+		&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);&#34;&gt;
+			&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view&gt;
+				&lt;view class=&#34;text-cut&#34;&gt;瓦罗兰大陆-睡衣守护者-新手保护营&lt;/view&gt;
+				&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;6人&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
+				&lt;view class=&#34;text-cut&#34;&gt; 伊泽瑞尔：&lt;text class=&#34;cuIcon-locationfill text-orange margin-right-xs&#34;&gt;&lt;/text&gt; 传送中...&lt;/view&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+			&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>列表左滑</strong></p>
@@ -1889,66 +1747,58 @@
 </span><span class="lnt">48
 </span><span class="lnt">49
 </span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-list menu-avatar&#34;&gt;
-2.  	&lt;view class=&#34;cu-item&#34; :class=&#34;modalName==&#39;move-box-&#39;+ index?&#39;move-cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 4&#34; :key=&#34;index&#34;
-3.  	 @touchstart=&#34;ListTouchStart&#34; @touchmove=&#34;ListTouchMove&#34; @touchend=&#34;ListTouchEnd&#34; :data-target=&#34;&#39;move-box-&#39; + index&#34;&gt;
-4.  		&lt;view class=&#34;cu-avatar round lg&#34; :style=&#34;[{backgroundImage:&#39;url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100&#39;+ (index+2) +&#39;.jpg)&#39;}]&#34;&gt;&lt;/view&gt;
-5.  		&lt;view class=&#34;content&#34;&gt;
-6.  			&lt;view class=&#34;text-grey&#34;&gt;文晓港&lt;/view&gt;
-7.  			&lt;view class=&#34;text-gray text-sm&#34;&gt;
-8.  				&lt;text class=&#34;cuIcon-infofill text-red  margin-right-xs&#34;&gt;&lt;/text&gt; 消息未送达&lt;/view&gt;
-9.  		&lt;/view&gt;
-10.  		&lt;view class=&#34;action&#34;&gt;
-11.  			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-12.  			&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
-13.  		&lt;/view&gt;
-14.  		&lt;view class=&#34;move&#34;&gt;
-15.  			&lt;view class=&#34;bg-grey&#34;&gt;置顶&lt;/view&gt;
-16.  			&lt;view class=&#34;bg-red&#34;&gt;删除&lt;/view&gt;
-17.  		&lt;/view&gt;
-18.  	&lt;/view&gt;
-19.  &lt;/view&gt;
-
-21.  &lt;script&gt;
-22.  	export default {
-23.  		data() {
-24.  			return {
-25.  				modalName: null,
-26.  				listTouchStart: 0,
-27.  				listTouchDirection: null,
-28.  			};
-29.  		},
-30.  		methods: {
-31.  			// ListTouch触摸开始，获取触摸点距盒子左侧的距离
-32.  			ListTouchStart(e) {
-33.  				this.listTouchStart = e.touches[0].pageX
-34.  			},
-35.  			// ListTouch计算方向，
-36.  			ListTouchMove(e) {
-37.  				this.listTouchDirection = e.touches[0].pageX - this.listTouchStart &gt; 0 ? &#39;right&#39; : &#39;left&#39;
-38.  			},
-39.  			// ListTouch计算滚动
-40.  			ListTouchEnd(e) {
-41.  				if (this.listTouchDirection == &#39;left&#39;) {
-42.  					this.modalName = e.currentTarget.dataset.target
-43.  				} else {
-44.  					this.modalName = null
-45.  				}
-46.  				this.listTouchDirection = null
-47.  			}
-48.  		}
-49.  	}
-50.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
+	&lt;view class=&#34;cu-item&#34; :class=&#34;modalName==&#39;move-box-&#39;+ index?&#39;move-cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in 4&#34; :key=&#34;index&#34;
+	 @touchstart=&#34;ListTouchStart&#34; @touchmove=&#34;ListTouchMove&#34; @touchend=&#34;ListTouchEnd&#34; :data-target=&#34;&#39;move-box-&#39; + index&#34;&gt;
+		&lt;view class=&#34;cu-avatar round lg&#34; :style=&#34;[{backgroundImage:&#39;url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100&#39;+ (index+2) +&#39;.jpg)&#39;}]&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view class=&#34;text-grey&#34;&gt;文晓港&lt;/view&gt;
+			&lt;view class=&#34;text-gray text-sm&#34;&gt;
+				&lt;text class=&#34;cuIcon-infofill text-red  margin-right-xs&#34;&gt;&lt;/text&gt; 消息未送达&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;action&#34;&gt;
+			&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+			&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;move&#34;&gt;
+			&lt;view class=&#34;bg-grey&#34;&gt;置顶&lt;/view&gt;
+			&lt;view class=&#34;bg-red&#34;&gt;删除&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				modalName: null,
+				listTouchStart: 0,
+				listTouchDirection: null,
+			};
+		},
+		methods: {
+			// ListTouch触摸开始，获取触摸点距盒子左侧的距离
+			ListTouchStart(e) {
+				this.listTouchStart = e.touches[0].pageX
+			},
+			// ListTouch计算方向，
+			ListTouchMove(e) {
+				this.listTouchDirection = e.touches[0].pageX - this.listTouchStart &gt; 0 ? &#39;right&#39; : &#39;left&#39;
+			},
+			// ListTouch计算滚动
+			ListTouchEnd(e) {
+				if (this.listTouchDirection == &#39;left&#39;) {
+					this.modalName = e.currentTarget.dataset.target
+				} else {
+					this.modalName = null
+				}
+				this.listTouchDirection = null
+			}
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>列表相关class</strong></p>
@@ -1997,42 +1847,34 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-card case&#34; :class=&#34;isCard?&#39;no-card&#39;:&#39;&#39;&#34;&gt;
-2.  	&lt;view class=&#34;cu-item shadow&#34;&gt;
-3.  		&lt;view class=&#34;image&#34;&gt;
-4.  			&lt;image src=&#34;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#34;
-5.  			 mode=&#34;widthFix&#34;&gt;&lt;/image&gt;
-6.  			&lt;view class=&#34;cu-tag bg-blue&#34;&gt;史诗&lt;/view&gt;
-7.  			&lt;view class=&#34;cu-bar bg-shadeBottom&#34;&gt; &lt;text class=&#34;text-cut&#34;&gt;我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。&lt;/text&gt;&lt;/view&gt;
-8.  		&lt;/view&gt;
-9.  		&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
-10.  			&lt;view class=&#34;cu-item&#34;&gt;
-11.  				&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;&lt;/view&gt;
-12.  				&lt;view class=&#34;content flex-sub&#34;&gt;
-13.  					&lt;view class=&#34;text-grey&#34;&gt;正义天使 凯尔&lt;/view&gt;
-14.  					&lt;view class=&#34;text-gray text-sm flex justify-between&#34;&gt;
-15.  						十天前
-16.  						&lt;view class=&#34;text-gray text-sm&#34;&gt;
-17.  							&lt;text class=&#34;cuIcon-attentionfill margin-lr-xs&#34;&gt;&lt;/text&gt; 10
-18.  							&lt;text class=&#34;cuIcon-appreciatefill margin-lr-xs&#34;&gt;&lt;/text&gt; 20
-19.  							&lt;text class=&#34;cuIcon-messagefill margin-lr-xs&#34;&gt;&lt;/text&gt; 30
-20.  						&lt;/view&gt;
-21.  					&lt;/view&gt;
-22.  				&lt;/view&gt;
-23.  			&lt;/view&gt;
-24.  		&lt;/view&gt;
-25.  	&lt;/view&gt;
-26.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-card case&#34; :class=&#34;isCard?&#39;no-card&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-item shadow&#34;&gt;
+		&lt;view class=&#34;image&#34;&gt;
+			&lt;image src=&#34;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#34;
+			 mode=&#34;widthFix&#34;&gt;&lt;/image&gt;
+			&lt;view class=&#34;cu-tag bg-blue&#34;&gt;史诗&lt;/view&gt;
+			&lt;view class=&#34;cu-bar bg-shadeBottom&#34;&gt; &lt;text class=&#34;text-cut&#34;&gt;我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。&lt;/text&gt;&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
+			&lt;view class=&#34;cu-item&#34;&gt;
+				&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;&lt;/view&gt;
+				&lt;view class=&#34;content flex-sub&#34;&gt;
+					&lt;view class=&#34;text-grey&#34;&gt;正义天使 凯尔&lt;/view&gt;
+					&lt;view class=&#34;text-gray text-sm flex justify-between&#34;&gt;
+						十天前
+						&lt;view class=&#34;text-gray text-sm&#34;&gt;
+							&lt;text class=&#34;cuIcon-attentionfill margin-lr-xs&#34;&gt;&lt;/text&gt; 10
+							&lt;text class=&#34;cuIcon-appreciatefill margin-lr-xs&#34;&gt;&lt;/text&gt; 20
+							&lt;text class=&#34;cuIcon-messagefill margin-lr-xs&#34;&gt;&lt;/text&gt; 30
+						&lt;/view&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>动态类卡片</strong></p>
@@ -2102,69 +1944,61 @@
 </span><span class="lnt">51
 </span><span class="lnt">52
 </span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-card dynamic&#34; :class=&#34;isCard?&#39;no-card&#39;:&#39;&#39;&#34;&gt;
-2.  	&lt;view class=&#34;cu-item shadow&#34;&gt;
-3.  		&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
-4.  			&lt;view class=&#34;cu-item&#34;&gt;
-5.  				&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;&lt;/view&gt;
-6.  				&lt;view class=&#34;content flex-sub&#34;&gt;
-7.  					&lt;view&gt;凯尔&lt;/view&gt;
-8.  					&lt;view class=&#34;text-gray text-sm flex justify-between&#34;&gt;
-9.  						2019年12月3日
-10.  					&lt;/view&gt;
-11.  				&lt;/view&gt;
-12.  			&lt;/view&gt;
-13.  		&lt;/view&gt;
-14.  		&lt;view class=&#34;text-content&#34;&gt;
-15.  			折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！
-16.  		&lt;/view&gt;
-17.  		&lt;view class=&#34;grid flex-sub padding-lr&#34; :class=&#34;isCard?&#39;col-3 grid-square&#39;:&#39;col-1&#39;&#34;&gt;
-18.  			&lt;view class=&#34;bg-img &#34; :class=&#34;isCard?&#39;&#39;:&#39;only-img&#39;&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;
-19.  			 v-for=&#34;(item,index) in isCard?9:1&#34; :key=&#34;index&#34;&gt;
-20.  			&lt;/view&gt;
-21.  		&lt;/view&gt;
-22.  		&lt;view class=&#34;text-gray text-sm text-right padding&#34;&gt;
-23.  			&lt;text class=&#34;cuIcon-attentionfill margin-lr-xs&#34;&gt;&lt;/text&gt; 10
-24.  			&lt;text class=&#34;cuIcon-appreciatefill margin-lr-xs&#34;&gt;&lt;/text&gt; 20
-25.  			&lt;text class=&#34;cuIcon-messagefill margin-lr-xs&#34;&gt;&lt;/text&gt; 30
-26.  		&lt;/view&gt;
-
-28.  		&lt;view class=&#34;cu-list menu-avatar comment solids-top&#34;&gt;
-29.  			&lt;view class=&#34;cu-item&#34;&gt;
-30.  				&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);&#34;&gt;&lt;/view&gt;
-31.  				&lt;view class=&#34;content&#34;&gt;
-32.  					&lt;view class=&#34;text-grey&#34;&gt;莫甘娜&lt;/view&gt;
-33.  					&lt;view class=&#34;text-gray text-content text-df&#34;&gt;
-34.  						凯尔，你被自己的光芒变的盲目。
-35.  					&lt;/view&gt;
-36.  					&lt;view class=&#34;bg-grey padding-sm radius margin-top-sm  text-sm&#34;&gt;
-37.  						&lt;view class=&#34;flex&#34;&gt;
-38.  							&lt;view&gt;凯尔：&lt;/view&gt;
-39.  							&lt;view class=&#34;flex-sub&#34;&gt;妹妹，你在帮他们给黑暗找借口吗?&lt;/view&gt;
-40.  						&lt;/view&gt;
-41.  					&lt;/view&gt;
-42.  					&lt;view class=&#34;margin-top-sm flex justify-between&#34;&gt;
-43.  						&lt;view class=&#34;text-gray text-df&#34;&gt;2018年12月4日&lt;/view&gt;
-44.  						&lt;view&gt;
-45.  							&lt;text class=&#34;cuIcon-appreciatefill text-red&#34;&gt;&lt;/text&gt;
-46.  							&lt;text class=&#34;cuIcon-messagefill text-gray margin-left-sm&#34;&gt;&lt;/text&gt;
-47.  						&lt;/view&gt;
-48.  					&lt;/view&gt;
-49.  				&lt;/view&gt;
-50.  			&lt;/view&gt;
-51.          &lt;/view&gt;
-52.      &lt;/view&gt;
-53.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-card dynamic&#34; :class=&#34;isCard?&#39;no-card&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-item shadow&#34;&gt;
+		&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
+			&lt;view class=&#34;cu-item&#34;&gt;
+				&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;&lt;/view&gt;
+				&lt;view class=&#34;content flex-sub&#34;&gt;
+					&lt;view&gt;凯尔&lt;/view&gt;
+					&lt;view class=&#34;text-gray text-sm flex justify-between&#34;&gt;
+						2019年12月3日
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;text-content&#34;&gt;
+			折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！
+		&lt;/view&gt;
+		&lt;view class=&#34;grid flex-sub padding-lr&#34; :class=&#34;isCard?&#39;col-3 grid-square&#39;:&#39;col-1&#39;&#34;&gt;
+			&lt;view class=&#34;bg-img &#34; :class=&#34;isCard?&#39;&#39;:&#39;only-img&#39;&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;
+			 v-for=&#34;(item,index) in isCard?9:1&#34; :key=&#34;index&#34;&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;text-gray text-sm text-right padding&#34;&gt;
+			&lt;text class=&#34;cuIcon-attentionfill margin-lr-xs&#34;&gt;&lt;/text&gt; 10
+			&lt;text class=&#34;cuIcon-appreciatefill margin-lr-xs&#34;&gt;&lt;/text&gt; 20
+			&lt;text class=&#34;cuIcon-messagefill margin-lr-xs&#34;&gt;&lt;/text&gt; 30
+		&lt;/view&gt;
+ 
+		&lt;view class=&#34;cu-list menu-avatar comment solids-top&#34;&gt;
+			&lt;view class=&#34;cu-item&#34;&gt;
+				&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);&#34;&gt;&lt;/view&gt;
+				&lt;view class=&#34;content&#34;&gt;
+					&lt;view class=&#34;text-grey&#34;&gt;莫甘娜&lt;/view&gt;
+					&lt;view class=&#34;text-gray text-content text-df&#34;&gt;
+						凯尔，你被自己的光芒变的盲目。
+					&lt;/view&gt;
+					&lt;view class=&#34;bg-grey padding-sm radius margin-top-sm  text-sm&#34;&gt;
+						&lt;view class=&#34;flex&#34;&gt;
+							&lt;view&gt;凯尔：&lt;/view&gt;
+							&lt;view class=&#34;flex-sub&#34;&gt;妹妹，你在帮他们给黑暗找借口吗?&lt;/view&gt;
+						&lt;/view&gt;
+					&lt;/view&gt;
+					&lt;view class=&#34;margin-top-sm flex justify-between&#34;&gt;
+						&lt;view class=&#34;text-gray text-df&#34;&gt;2018年12月4日&lt;/view&gt;
+						&lt;view&gt;
+							&lt;text class=&#34;cuIcon-appreciatefill text-red&#34;&gt;&lt;/text&gt;
+							&lt;text class=&#34;cuIcon-messagefill text-gray margin-left-sm&#34;&gt;&lt;/text&gt;
+						&lt;/view&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>文章类卡片</strong></p>
@@ -2197,32 +2031,24 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-card article&#34; :class=&#34;isCard?&#39;no-card&#39;:&#39;&#39;&#34;&gt;
-2.  	&lt;view class=&#34;cu-item shadow&#34;&gt;
-3.  		&lt;view class=&#34;title&#34;&gt;&lt;view class=&#34;text-cut&#34;&gt;无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。&lt;/view&gt;&lt;/view&gt;
-4.  		&lt;view class=&#34;content&#34;&gt;
-5.  			&lt;image src=&#34;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#34;
-6.  			 mode=&#34;aspectFill&#34;&gt;&lt;/image&gt;
-7.  			&lt;view class=&#34;desc&#34;&gt;
-8.  				&lt;view class=&#34;text-content&#34;&gt; 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！&lt;/view&gt;
-9.  				&lt;view&gt;
-10.  					&lt;view class=&#34;cu-tag bg-red light sm round&#34;&gt;正义天使&lt;/view&gt;
-11.  					&lt;view class=&#34;cu-tag bg-green light sm round&#34;&gt;史诗&lt;/view&gt;
-12.  				&lt;/view&gt;
-13.  			&lt;/view&gt;
-14.  		&lt;/view&gt;
-15.  	&lt;/view&gt;
-16.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-card article&#34; :class=&#34;isCard?&#39;no-card&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-item shadow&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;&lt;view class=&#34;text-cut&#34;&gt;无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。&lt;/view&gt;&lt;/view&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;image src=&#34;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#34;
+			 mode=&#34;aspectFill&#34;&gt;&lt;/image&gt;
+			&lt;view class=&#34;desc&#34;&gt;
+				&lt;view class=&#34;text-content&#34;&gt; 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！&lt;/view&gt;
+				&lt;view&gt;
+					&lt;view class=&#34;cu-tag bg-red light sm round&#34;&gt;正义天使&lt;/view&gt;
+					&lt;view class=&#34;cu-tag bg-green light sm round&#34;&gt;史诗&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>卡片相关class</strong></p>
@@ -2280,54 +2106,46 @@
 </span><span class="lnt">36
 </span><span class="lnt">37
 </span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;	
-2.      &lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-3.  		&lt;view class=&#34;title&#34;&gt;邮件&lt;/view&gt;
-4.  		&lt;input placeholder=&#34;两字短标题&#34; &gt;&lt;/input&gt;
-5.  	&lt;/view&gt;
-6.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-7.  		&lt;view class=&#34;title&#34;&gt;输入框&lt;/view&gt;
-8.  		&lt;input placeholder=&#34;三字标题&#34; &gt;&lt;/input&gt;
-9.  	&lt;/view&gt;
-10.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-11.  		&lt;view class=&#34;title&#34;&gt;收货地址&lt;/view&gt;
-12.  		&lt;input placeholder=&#34;统一标题的宽度&#34; &gt;&lt;/input&gt;
-13.  	&lt;/view&gt;
-14.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-15.  		&lt;view class=&#34;title&#34;&gt;收货地址&lt;/view&gt;
-16.  		&lt;input placeholder=&#34;输入框带个图标&#34; &gt;&lt;/input&gt;
-17.  		&lt;text class=&#39;cuIcon-locationfill text-orange&#39;&gt;&lt;/text&gt;
-18.  	&lt;/view&gt;
-19.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-20.  		&lt;view class=&#34;title&#34;&gt;验证码&lt;/view&gt;
-21.  		&lt;input placeholder=&#34;输入框带个按钮&#34; &gt;&lt;/input&gt;
-22.  		&lt;button class=&#39;cu-btn bg-green shadow&#39;&gt;验证码&lt;/button&gt;
-23.  	&lt;/view&gt;
-24.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-25.  		&lt;view class=&#34;title&#34;&gt;手机号码&lt;/view&gt;
-26.  		&lt;input placeholder=&#34;输入框带标签&#34; &gt;&lt;/input&gt;
-27.  		&lt;view class=&#34;cu-capsule radius&#34;&gt;
-28.  			&lt;view class=&#39;cu-tag bg-blue &#39;&gt;+86&lt;/view&gt;
-29.  			&lt;view class=&#34;cu-tag line-blue&#34;&gt;中国大陆&lt;/view&gt;
-30.  		&lt;/view&gt;
-31.  	&lt;/view&gt;
-32.  &lt;/form&gt;
-
-34.  &lt;style&gt;
-35.  	.cu-form-group .title {
-36.  		min-width: calc(4em + 15px);
-37.  	}
-38.  &lt;/style&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;	
+    &lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;邮件&lt;/view&gt;
+		&lt;input placeholder=&#34;两字短标题&#34; name=&#34;input&#34;&gt;&lt;/input&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;输入框&lt;/view&gt;
+		&lt;input placeholder=&#34;三字标题&#34; name=&#34;input&#34;&gt;&lt;/input&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;收货地址&lt;/view&gt;
+		&lt;input placeholder=&#34;统一标题的宽度&#34; name=&#34;input&#34;&gt;&lt;/input&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;收货地址&lt;/view&gt;
+		&lt;input placeholder=&#34;输入框带个图标&#34; name=&#34;input&#34;&gt;&lt;/input&gt;
+		&lt;text class=&#39;cuIcon-locationfill text-orange&#39;&gt;&lt;/text&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;验证码&lt;/view&gt;
+		&lt;input placeholder=&#34;输入框带个按钮&#34; name=&#34;input&#34;&gt;&lt;/input&gt;
+		&lt;button class=&#39;cu-btn bg-green shadow&#39;&gt;验证码&lt;/button&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;手机号码&lt;/view&gt;
+		&lt;input placeholder=&#34;输入框带标签&#34; name=&#34;input&#34;&gt;&lt;/input&gt;
+		&lt;view class=&#34;cu-capsule radius&#34;&gt;
+			&lt;view class=&#39;cu-tag bg-blue &#39;&gt;+86&lt;/view&gt;
+			&lt;view class=&#34;cu-tag line-blue&#34;&gt;中国大陆&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/form&gt;
+ 
+&lt;style&gt;
+	.cu-form-group .title {
+		min-width: calc(4em + 15px);
+	}
+&lt;/style&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>picker选择器</strong></p>
@@ -2390,62 +2208,54 @@
 </span><span class="lnt">44
 </span><span class="lnt">45
 </span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-3.  		&lt;view class=&#34;title&#34;&gt;普通选择&lt;/view&gt;
-4.  		&lt;picker @change=&#34;PickerChange&#34; :value=&#34;index&#34; :range=&#34;picker&#34;&gt;
-5.  			&lt;view class=&#34;picker&#34;&gt;
-6.  				{{index&gt;-1?picker[index]:&#39;禁止换行，超出容器部分会以 ... 方式截断&#39;}}
-7.  			&lt;/view&gt;
-8.  		&lt;/picker&gt;
-9.  	&lt;/view&gt;
-10.  	&lt;!-- #ifndef MP-ALIPAY --&gt;
-11.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-12.  		&lt;view class=&#34;title&#34;&gt;多列选择&lt;/view&gt;
-13.  		&lt;picker mode=&#34;multiSelector&#34; @change=&#34;MultiChange&#34; @columnchange=&#34;MultiColumnChange&#34; :value=&#34;multiIndex&#34; :range=&#34;multiArray&#34;&gt;
-14.  			&lt;view class=&#34;picker&#34;&gt;
-15.  				{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
-16.  			&lt;/view&gt;
-17.  		&lt;/picker&gt;
-18.  	&lt;/view&gt;
-19.  	&lt;!-- #endif --&gt;
-20.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-21.  		&lt;view class=&#34;title&#34;&gt;时间选择&lt;/view&gt;
-22.  		&lt;picker mode=&#34;time&#34; :value=&#34;time&#34; start=&#34;09:01&#34; end=&#34;21:01&#34; @change=&#34;TimeChange&#34;&gt;
-23.  			&lt;view class=&#34;picker&#34;&gt;
-24.  				{{time}}
-25.  			&lt;/view&gt;
-26.  		&lt;/picker&gt;
-27.  	&lt;/view&gt;
-28.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-29.  		&lt;view class=&#34;title&#34;&gt;日期选择&lt;/view&gt;
-30.  		&lt;picker mode=&#34;date&#34; :value=&#34;date&#34; start=&#34;2015-09-01&#34; end=&#34;2020-09-01&#34; @change=&#34;DateChange&#34;&gt;
-31.  			&lt;view class=&#34;picker&#34;&gt;
-32.  				{{date}}
-33.  			&lt;/view&gt;
-34.  		&lt;/picker&gt;
-35.  	&lt;/view&gt;
-36.  	&lt;!-- #ifndef H5 || APP-PLUS || MP-ALIPAY --&gt;
-37.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-38.  		&lt;view class=&#34;title&#34;&gt;地址选择&lt;/view&gt;
-39.  		&lt;picker mode=&#34;region&#34; @change=&#34;RegionChange&#34; :value=&#34;region&#34;&gt;
-40.  			&lt;view class=&#34;picker&#34;&gt;
-41.  				{{region[0]}}，{{region[1]}}，{{region[2]}}
-42.  			&lt;/view&gt;
-43.  		&lt;/picker&gt;
-44.  	&lt;/view&gt;
-45.  	&lt;!-- #endif --&gt;
-46.  &lt;/form&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;普通选择&lt;/view&gt;
+		&lt;picker @change=&#34;PickerChange&#34; :value=&#34;index&#34; :range=&#34;picker&#34;&gt;
+			&lt;view class=&#34;picker&#34;&gt;
+				{{index&gt;-1?picker[index]:&#39;禁止换行，超出容器部分会以 ... 方式截断&#39;}}
+			&lt;/view&gt;
+		&lt;/picker&gt;
+	&lt;/view&gt;
+	&lt;!-- #ifndef MP-ALIPAY --&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;多列选择&lt;/view&gt;
+		&lt;picker mode=&#34;multiSelector&#34; @change=&#34;MultiChange&#34; @columnchange=&#34;MultiColumnChange&#34; :value=&#34;multiIndex&#34; :range=&#34;multiArray&#34;&gt;
+			&lt;view class=&#34;picker&#34;&gt;
+				{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+			&lt;/view&gt;
+		&lt;/picker&gt;
+	&lt;/view&gt;
+	&lt;!-- #endif --&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;时间选择&lt;/view&gt;
+		&lt;picker mode=&#34;time&#34; :value=&#34;time&#34; start=&#34;09:01&#34; end=&#34;21:01&#34; @change=&#34;TimeChange&#34;&gt;
+			&lt;view class=&#34;picker&#34;&gt;
+				{{time}}
+			&lt;/view&gt;
+		&lt;/picker&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;日期选择&lt;/view&gt;
+		&lt;picker mode=&#34;date&#34; :value=&#34;date&#34; start=&#34;2015-09-01&#34; end=&#34;2020-09-01&#34; @change=&#34;DateChange&#34;&gt;
+			&lt;view class=&#34;picker&#34;&gt;
+				{{date}}
+			&lt;/view&gt;
+		&lt;/picker&gt;
+	&lt;/view&gt;
+	&lt;!-- #ifndef H5 || APP-PLUS || MP-ALIPAY --&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;地址选择&lt;/view&gt;
+		&lt;picker mode=&#34;region&#34; @change=&#34;RegionChange&#34; :value=&#34;region&#34;&gt;
+			&lt;view class=&#34;picker&#34;&gt;
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			&lt;/view&gt;
+		&lt;/picker&gt;
+	&lt;/view&gt;
+	&lt;!-- #endif --&gt;
+&lt;/form&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>switch开关</strong></p>
@@ -2488,42 +2298,34 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-3.  		&lt;view class=&#34;title&#34;&gt;开关选择&lt;/view&gt;
-4.  		&lt;switch @change=&#34;SwitchA&#34; :class=&#34;switchA?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchA?true:false&#34;&gt;&lt;/switch&gt;
-5.  	&lt;/view&gt;
-6.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-7.  		&lt;view class=&#34;title&#34;&gt;定义颜色&lt;/view&gt;
-8.  		&lt;!-- #ifdef MP-ALIPAY --&gt;
-9.  		&lt;switch class=&#39;red&#39; @change=&#34;SwitchB&#34; :class=&#34;switchB?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchB?true:false&#34; color=&#34;#e54d42&#34;&gt;&lt;/switch&gt;
-10.  		&lt;!-- #endif --&gt;
-
-12.  		&lt;!-- #ifndef MP-ALIPAY --&gt;
-13.  		&lt;switch class=&#39;red&#39; @change=&#34;SwitchB&#34; :class=&#34;switchB?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchB?true:false&#34;&gt;&lt;/switch&gt;
-14.  		&lt;!-- #endif --&gt;
-15.  	&lt;/view&gt;
-16.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-17.  		&lt;view class=&#34;title&#34;&gt;定义图标&lt;/view&gt;
-18.  		&lt;switch class=&#39;switch-sex&#39; @change=&#34;SwitchC&#34; :class=&#34;switchC?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchC?true:false&#34;&gt;&lt;/switch&gt;
-19.  	&lt;/view&gt;
-20.  	&lt;!-- #ifndef MP-ALIPAY --&gt;
-21.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-22.  		&lt;view class=&#34;title&#34;&gt;方形开关&lt;/view&gt;
-23.  		&lt;switch class=&#39;orange radius&#39; @change=&#34;SwitchD&#34; :class=&#34;switchD?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchD?true:false&#34;&gt;&lt;/switch&gt;
-24.  	&lt;/view&gt;
-25.  	&lt;!-- #endif --&gt;
-26.  &lt;/form&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;开关选择&lt;/view&gt;
+		&lt;switch @change=&#34;SwitchA&#34; :class=&#34;switchA?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchA?true:false&#34;&gt;&lt;/switch&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;定义颜色&lt;/view&gt;
+		&lt;!-- #ifdef MP-ALIPAY --&gt;
+		&lt;switch class=&#39;red&#39; @change=&#34;SwitchB&#34; :class=&#34;switchB?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchB?true:false&#34; color=&#34;#e54d42&#34;&gt;&lt;/switch&gt;
+		&lt;!-- #endif --&gt;
+ 
+		&lt;!-- #ifndef MP-ALIPAY --&gt;
+		&lt;switch class=&#39;red&#39; @change=&#34;SwitchB&#34; :class=&#34;switchB?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchB?true:false&#34;&gt;&lt;/switch&gt;
+		&lt;!-- #endif --&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;定义图标&lt;/view&gt;
+		&lt;switch class=&#39;switch-sex&#39; @change=&#34;SwitchC&#34; :class=&#34;switchC?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchC?true:false&#34;&gt;&lt;/switch&gt;
+	&lt;/view&gt;
+	&lt;!-- #ifndef MP-ALIPAY --&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;方形开关&lt;/view&gt;
+		&lt;switch class=&#39;orange radius&#39; @change=&#34;SwitchD&#34; :class=&#34;switchD?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;switchD?true:false&#34;&gt;&lt;/switch&gt;
+	&lt;/view&gt;
+	&lt;!-- #endif --&gt;
+&lt;/form&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>radio单选框</strong></p>
@@ -2568,37 +2370,29 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;radio-group class=&#34;block&#34; @change=&#34;RadioChange&#34;&gt;
-3.  		&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-4.  			&lt;view class=&#34;title&#34;&gt;单选操作(radio)&lt;/view&gt;
-5.  			&lt;radio :class=&#34;radio==&#39;A&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;A&#39;?true:false&#34; value=&#34;A&#34;&gt;&lt;/radio&gt;
-6.  		&lt;/view&gt;
-7.  		&lt;!-- #ifndef MP-ALIPAY --&gt;
-8.  		&lt;view class=&#34;cu-form-group&#34;&gt;
-9.  			&lt;view class=&#34;title&#34;&gt;定义样式&lt;/view&gt;
-10.  			&lt;radio class=&#39;radio&#39; :class=&#34;radio==&#39;B&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;B&#39;?true:false&#34; value=&#34;B&#34;&gt;&lt;/radio&gt;
-11.  		&lt;/view&gt;
-12.  		&lt;view class=&#34;cu-form-group&#34;&gt;
-13.  			&lt;view class=&#34;title&#34;&gt;定义颜色&lt;/view&gt;
-14.  			&lt;view&gt;
-15.  				&lt;radio class=&#39;blue radio&#39; :class=&#34;radio==&#39;C&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;C&#39;?true:false&#34; value=&#34;C&#34;&gt;&lt;/radio&gt;
-16.  				&lt;radio class=&#39;red margin-left-sm&#39; :class=&#34;radio==&#39;D&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;D&#39;?true:false&#34; value=&#34;D&#34;&gt;&lt;/radio&gt;
-17.  			&lt;/view&gt;
-18.  		&lt;/view&gt;
-19.  		&lt;!-- #endif --&gt;
-20.  	&lt;/radio-group&gt;
-21.  &lt;/form&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;radio-group class=&#34;block&#34; @change=&#34;RadioChange&#34;&gt;
+		&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+			&lt;view class=&#34;title&#34;&gt;单选操作(radio)&lt;/view&gt;
+			&lt;radio :class=&#34;radio==&#39;A&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;A&#39;?true:false&#34; value=&#34;A&#34;&gt;&lt;/radio&gt;
+		&lt;/view&gt;
+		&lt;!-- #ifndef MP-ALIPAY --&gt;
+		&lt;view class=&#34;cu-form-group&#34;&gt;
+			&lt;view class=&#34;title&#34;&gt;定义样式&lt;/view&gt;
+			&lt;radio class=&#39;radio&#39; :class=&#34;radio==&#39;B&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;B&#39;?true:false&#34; value=&#34;B&#34;&gt;&lt;/radio&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-form-group&#34;&gt;
+			&lt;view class=&#34;title&#34;&gt;定义颜色&lt;/view&gt;
+			&lt;view&gt;
+				&lt;radio class=&#39;blue radio&#39; :class=&#34;radio==&#39;C&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;C&#39;?true:false&#34; value=&#34;C&#34;&gt;&lt;/radio&gt;
+				&lt;radio class=&#39;red margin-left-sm&#39; :class=&#34;radio==&#39;D&#39;?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;D&#39;?true:false&#34; value=&#34;D&#34;&gt;&lt;/radio&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;!-- #endif --&gt;
+	&lt;/radio-group&gt;
+&lt;/form&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>checkbox复选框</strong></p>
@@ -2634,35 +2428,27 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;checkbox-group class=&#34;block&#34; @change=&#34;CheckboxChange&#34;&gt;
-3.  		&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-4.  			&lt;view class=&#34;title&#34;&gt;复选选操作(checkbox)&lt;/view&gt;
-5.  			&lt;checkbox :class=&#34;checkbox[0].checked?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;checkbox[0].checked?true:false&#34; value=&#34;A&#34;&gt;&lt;/checkbox&gt;
-6.  		&lt;/view&gt;
-7.  		&lt;!-- #ifndef MP-ALIPAY --&gt;
-8.  		&lt;view class=&#34;cu-form-group&#34;&gt;
-9.  			&lt;view class=&#34;title&#34;&gt;定义形状&lt;/view&gt;
-10.  			&lt;checkbox class=&#39;round&#39; :class=&#34;checkbox[1].checked?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;checkbox[1].checked?true:false&#34; value=&#34;B&#34;&gt;&lt;/checkbox&gt;
-11.  		&lt;/view&gt;
-12.  		&lt;view class=&#34;cu-form-group&#34;&gt;
-13.  			&lt;view class=&#34;title&#34;&gt;定义颜色&lt;/view&gt;
-14.  			&lt;checkbox class=&#39;round blue&#39; :class=&#34;checkbox[2].checked?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;checkbox[2].checked?true:false&#34;
-15.  			 value=&#34;C&#34;&gt;&lt;/checkbox&gt;
-16.  		&lt;/view&gt;
-17.  		&lt;!-- #endif --&gt;
-18.  	&lt;/checkbox-group&gt;
-19.  &lt;/form&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;checkbox-group class=&#34;block&#34; @change=&#34;CheckboxChange&#34;&gt;
+		&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+			&lt;view class=&#34;title&#34;&gt;复选选操作(checkbox)&lt;/view&gt;
+			&lt;checkbox :class=&#34;checkbox[0].checked?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;checkbox[0].checked?true:false&#34; value=&#34;A&#34;&gt;&lt;/checkbox&gt;
+		&lt;/view&gt;
+		&lt;!-- #ifndef MP-ALIPAY --&gt;
+		&lt;view class=&#34;cu-form-group&#34;&gt;
+			&lt;view class=&#34;title&#34;&gt;定义形状&lt;/view&gt;
+			&lt;checkbox class=&#39;round&#39; :class=&#34;checkbox[1].checked?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;checkbox[1].checked?true:false&#34; value=&#34;B&#34;&gt;&lt;/checkbox&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-form-group&#34;&gt;
+			&lt;view class=&#34;title&#34;&gt;定义颜色&lt;/view&gt;
+			&lt;checkbox class=&#39;round blue&#39; :class=&#34;checkbox[2].checked?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;checkbox[2].checked?true:false&#34;
+			 value=&#34;C&#34;&gt;&lt;/checkbox&gt;
+		&lt;/view&gt;
+		&lt;!-- #endif --&gt;
+	&lt;/checkbox-group&gt;
+&lt;/form&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>图片上传</strong></p>
@@ -2747,77 +2533,69 @@
 </span><span class="lnt">59
 </span><span class="lnt">60
 </span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;view class=&#34;cu-form-group&#34;&gt;
-3.  		&lt;view class=&#34;grid col-4 grid-square flex-sub&#34;&gt;
-4.  			&lt;view class=&#34;bg-img&#34; v-for=&#34;(item,index) in imgList&#34; :key=&#34;index&#34; @tap=&#34;ViewImage&#34; :data-url=&#34;imgList[index]&#34;&gt;
-5.  			 &lt;image :src=&#34;imgList[index]&#34; mode=&#34;aspectFill&#34;&gt;&lt;/image&gt;
-6.  				&lt;view class=&#34;cu-tag bg-red&#34; @tap.stop=&#34;DelImg&#34; :data-index=&#34;index&#34;&gt;
-7.  					&lt;text class=&#39;cuIcon-close&#39;&gt;&lt;/text&gt;
-8.  				&lt;/view&gt;
-9.  			&lt;/view&gt;
-10.  			&lt;view class=&#34;solids&#34; @tap=&#34;ChooseImage&#34; v-if=&#34;imgList.length&lt;4&#34;&gt;
-11.  				&lt;text class=&#39;cuIcon-cameraadd&#39;&gt;&lt;/text&gt;
-12.  			&lt;/view&gt;
-13.  		&lt;/view&gt;
-14.  	&lt;/view&gt;
-15.  &lt;/form&gt;
-
-17.  &lt;script&gt;
-18.  	export default {
-19.  		data() {
-20.  			return {
-21.  				index: -1,
-22.  				imgList: []
-23.  			};
-24.  		},
-25.  		methods: {
-26.  			ChooseImage() {
-27.  				uni.chooseImage({
-28.  					count: 4, //默认9
-29.  					sizeType: [&#39;original&#39;, &#39;compressed&#39;], //可以指定是原图还是压缩图，默认二者都有
-30.  					sourceType: [&#39;album&#39;], //从相册选择
-31.  					success: (res) =&gt; {
-32.  						if (this.imgList.length != 0) {
-33.  							this.imgList = this.imgList.concat(res.tempFilePaths)
-34.  						} else {
-35.  							this.imgList = res.tempFilePaths
-36.  						}
-37.  					}
-38.  				});
-39.  			},
-40.  			ViewImage(e) {
-41.  				uni.previewImage({
-42.  					urls: this.imgList,
-43.  					current: e.currentTarget.dataset.url
-44.  				});
-45.  			},
-46.  			DelImg(e) {
-47.  				uni.showModal({
-48.  					title: &#39;召唤师&#39;,
-49.  					content: &#39;确定要删除这段回忆吗？&#39;,
-50.  					cancelText: &#39;再看看&#39;,
-51.  					confirmText: &#39;再见&#39;,
-52.  					success: res =&gt; {
-53.  						if (res.confirm) {
-54.  							this.imgList.splice(e.currentTarget.dataset.index, 1)
-55.  						}
-56.  					}
-57.  				})
-58.  			}
-59.  		}
-60.  	}
-61.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;view class=&#34;cu-form-group&#34;&gt;
+		&lt;view class=&#34;grid col-4 grid-square flex-sub&#34;&gt;
+			&lt;view class=&#34;bg-img&#34; v-for=&#34;(item,index) in imgList&#34; :key=&#34;index&#34; @tap=&#34;ViewImage&#34; :data-url=&#34;imgList[index]&#34;&gt;
+			 &lt;image :src=&#34;imgList[index]&#34; mode=&#34;aspectFill&#34;&gt;&lt;/image&gt;
+				&lt;view class=&#34;cu-tag bg-red&#34; @tap.stop=&#34;DelImg&#34; :data-index=&#34;index&#34;&gt;
+					&lt;text class=&#39;cuIcon-close&#39;&gt;&lt;/text&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;solids&#34; @tap=&#34;ChooseImage&#34; v-if=&#34;imgList.length&lt;4&#34;&gt;
+				&lt;text class=&#39;cuIcon-cameraadd&#39;&gt;&lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/form&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				index: -1,
+				imgList: []
+			};
+		},
+		methods: {
+			ChooseImage() {
+				uni.chooseImage({
+					count: 4, //默认9
+					sizeType: [&#39;original&#39;, &#39;compressed&#39;], //可以指定是原图还是压缩图，默认二者都有
+					sourceType: [&#39;album&#39;], //从相册选择
+					success: (res) =&gt; {
+						if (this.imgList.length != 0) {
+							this.imgList = this.imgList.concat(res.tempFilePaths)
+						} else {
+							this.imgList = res.tempFilePaths
+						}
+					}
+				});
+			},
+			ViewImage(e) {
+				uni.previewImage({
+					urls: this.imgList,
+					current: e.currentTarget.dataset.url
+				});
+			},
+			DelImg(e) {
+				uni.showModal({
+					title: &#39;召唤师&#39;,
+					content: &#39;确定要删除这段回忆吗？&#39;,
+					cancelText: &#39;再看看&#39;,
+					confirmText: &#39;再见&#39;,
+					success: res =&gt; {
+						if (res.confirm) {
+							this.imgList.splice(e.currentTarget.dataset.index, 1)
+						}
+					}
+				})
+			}
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>头像</strong></p>
@@ -2834,28 +2612,20 @@
         title="表单头像" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-3.  		&lt;view class=&#34;title&#34;&gt;头像&lt;/view&gt;
-4.  		&lt;view class=&#34;cu-avatar radius bg-gray&#34;&gt;&lt;/view&gt;
-5.  	&lt;/view&gt;
-6.  &lt;/form&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;头像&lt;/view&gt;
+		&lt;view class=&#34;cu-avatar radius bg-gray&#34;&gt;&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/form&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>多行文本</strong></p>
@@ -2882,26 +2652,18 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;form&gt;
-2.  	&lt;!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 --&gt;
-3.  	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
-4.  		&lt;textarea maxlength=&#34;-1&#34; :disabled=&#34;modalName!=null&#34; @input=&#34;textareaAInput&#34; placeholder=&#34;多行文本输入框&#34;&gt;&lt;/textarea&gt;
-5.  	&lt;/view&gt;
-6.  	&lt;view class=&#34;cu-form-group align-start&#34;&gt;
-7.  		&lt;view class=&#34;title&#34;&gt;文本框&lt;/view&gt;
-8.  		&lt;textarea maxlength=&#34;-1&#34; :disabled=&#34;modalName!=null&#34; @input=&#34;textareaBInput&#34; placeholder=&#34;多行文本输入框&#34;&gt;&lt;/textarea&gt;
-9.  	&lt;/view&gt;
-10.  &lt;/form&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;form&gt;
+	&lt;!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 --&gt;
+	&lt;view class=&#34;cu-form-group margin-top&#34;&gt;
+		&lt;textarea maxlength=&#34;-1&#34; :disabled=&#34;modalName!=null&#34; @input=&#34;textareaAInput&#34; placeholder=&#34;多行文本输入框&#34;&gt;&lt;/textarea&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-form-group align-start&#34;&gt;
+		&lt;view class=&#34;title&#34;&gt;文本框&lt;/view&gt;
+		&lt;textarea maxlength=&#34;-1&#34; :disabled=&#34;modalName!=null&#34; @input=&#34;textareaBInput&#34; placeholder=&#34;多行文本输入框&#34;&gt;&lt;/textarea&gt;
+	&lt;/view&gt;
+&lt;/form&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>表单相关class</strong></p>
@@ -2921,32 +2683,24 @@
         title="时间轴1" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-timeline&#34;&gt;
-2.  	&lt;view class=&#34;cu-time&#34;&gt;06-17&lt;/view&gt;
-3.  	&lt;view class=&#34;cu-item&#34;&gt;
-4.  		&lt;view class=&#34;content&#34;&gt;
-5.  			&lt;text&gt;01:30&lt;/text&gt; 【喵星】 MX-12138 已揽收，准备发往银河系
-6.  		&lt;/view&gt;
-7.  	&lt;/view&gt;
-8.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-timeline&#34;&gt;
+	&lt;view class=&#34;cu-time&#34;&gt;06-17&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;text&gt;01:30&lt;/text&gt; 【喵星】 MX-12138 已揽收，准备发往银河系
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>多彩时间轴</strong></p>
@@ -2989,42 +2743,34 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-timeline&#34;&gt;
-2.  	&lt;view class=&#34;cu-time&#34;&gt;昨天&lt;/view&gt;
-3.  	&lt;view class=&#34;cu-item cur cuIcon-noticefill&#34;&gt;
-4.  		&lt;view class=&#34;content bg-green shadow-blur&#34;&gt;
-5.  			&lt;text&gt;22:22&lt;/text&gt; 【广州市】快件已到达地球
-6.  		&lt;/view&gt;
-7.  	&lt;/view&gt;
-8.  	&lt;view class=&#34;cu-item text-red cuIcon-attentionforbidfill&#34;&gt;
-9.  		&lt;view class=&#34;content bg-red shadow-blur&#34;&gt;
-10.  			这是第一次，我家的铲屎官走了这么久。久到足足有三天！！
-11.  		&lt;/view&gt;
-12.  	&lt;/view&gt;
-13.  	&lt;view class=&#34;cu-item text-grey cuIcon-evaluate_fill&#34;&gt;
-14.  		&lt;view class=&#34;content bg-grey shadow-blur&#34;&gt;
-15.  			这是第一次，我家的铲屎官走了这么久。
-16.  		&lt;/view&gt;
-17.  	&lt;/view&gt;
-18.  	&lt;view class=&#34;cu-item text-blue&#34;&gt;
-19.  		&lt;view class=&#34;bg-blue content&#34;&gt;
-20.  			&lt;text&gt;20:00&lt;/text&gt; 【月球】快件已到达月球，准备发往地球
-21.  		&lt;/view&gt;
-22.  		&lt;view class=&#34;bg-cyan content&#34;&gt;
-23.  			&lt;text&gt;10:00&lt;/text&gt; 【银河系】快件已到达银河系，准备发往月球
-24.  		&lt;/view&gt;
-25.  	&lt;/view&gt;
-26.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-timeline&#34;&gt;
+	&lt;view class=&#34;cu-time&#34;&gt;昨天&lt;/view&gt;
+	&lt;view class=&#34;cu-item cur cuIcon-noticefill&#34;&gt;
+		&lt;view class=&#34;content bg-green shadow-blur&#34;&gt;
+			&lt;text&gt;22:22&lt;/text&gt; 【广州市】快件已到达地球
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item text-red cuIcon-attentionforbidfill&#34;&gt;
+		&lt;view class=&#34;content bg-red shadow-blur&#34;&gt;
+			这是第一次，我家的铲屎官走了这么久。久到足足有三天！！
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item text-grey cuIcon-evaluate_fill&#34;&gt;
+		&lt;view class=&#34;content bg-grey shadow-blur&#34;&gt;
+			这是第一次，我家的铲屎官走了这么久。
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item text-blue&#34;&gt;
+		&lt;view class=&#34;bg-blue content&#34;&gt;
+			&lt;text&gt;20:00&lt;/text&gt; 【月球】快件已到达月球，准备发往地球
+		&lt;/view&gt;
+		&lt;view class=&#34;bg-cyan content&#34;&gt;
+			&lt;text&gt;10:00&lt;/text&gt; 【银河系】快件已到达银河系，准备发往月球
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>自定义</strong></p>
@@ -3087,62 +2833,54 @@
 </span><span class="lnt">44
 </span><span class="lnt">45
 </span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-timeline&#34;&gt;
-2.  	&lt;view class=&#34;cu-time&#34;&gt;06-17&lt;/view&gt;
-3.  	&lt;view class=&#34;cu-item&#34;&gt;
-4.  		&lt;view class=&#34;content&#34;&gt;
-5.  			&lt;view class=&#34;cu-capsule radius&#34;&gt;
-6.  				&lt;view class=&#34;cu-tag bg-cyan&#34;&gt;上午&lt;/view&gt;
-7.  				&lt;view class=&#34;cu-tag line-cyan&#34;&gt;10:00&lt;/view&gt;
-8.  			&lt;/view&gt;
-9.  			&lt;view class=&#34;margin-top&#34;&gt;这是第一次，我家的铲屎官走了这么久。久到足足有三天！！ 在听到他的脚步声响在楼梯间的那一刻，我简直想要破门而出，对着他狠狠地吼上10分钟，然后再看心情要不要他进门。&lt;/view&gt;
-10.  		&lt;/view&gt;
-11.  	&lt;/view&gt;
-12.  	&lt;view class=&#34;cu-item text-blue&#34;&gt;
-13.  		&lt;view class=&#34;bg-blue shadow-blur content&#34;&gt;
-14.  			&lt;view class=&#34;cu-list menu-avatar radius&#34;&gt;
-15.  				&lt;view class=&#34;cu-item&#34;&gt;
-16.  					&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;&lt;/view&gt;
-17.  					&lt;view class=&#34;content&#34;&gt;
-18.  						&lt;view class=&#34;text-grey&#34;&gt;文晓港&lt;/view&gt;
-19.  						&lt;view class=&#34;text-gray text-sm&#34;&gt;
-20.  							&lt;text class=&#34;cuIcon-infofill text-red&#34;&gt;&lt;/text&gt; 消息未送达&lt;/view&gt;
-21.  					&lt;/view&gt;
-22.  					&lt;view class=&#34;action&#34;&gt;
-23.  						&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-24.  						&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
-25.  					&lt;/view&gt;
-26.  				&lt;/view&gt;
-27.  				&lt;view class=&#34;cu-item&#34;&gt;
-28.  					&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;
-29.  						&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;
-30.  					&lt;/view&gt;
-31.  					&lt;view class=&#34;content&#34;&gt;
-32.  						&lt;view class=&#34;text-grey&#34;&gt;文晓港
-33.  							&lt;view class=&#34;cu-tag round orange sm&#34;&gt;SVIP&lt;/view&gt;
-34.  						&lt;/view&gt;
-35.  						&lt;view class=&#34;text-gray text-sm&#34;&gt;
-36.  							&lt;text class=&#34;cuIcon-redpacket_fill text-red&#34;&gt;&lt;/text&gt; 收到红包&lt;/view&gt;
-37.  					&lt;/view&gt;
-38.  					&lt;view class=&#34;action&#34;&gt;
-39.  						&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-40.  						&lt;text class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/text&gt;
-41.  					&lt;/view&gt;
-42.  				&lt;/view&gt;
-43.  			&lt;/view&gt;
-44.  		&lt;/view&gt;
-45.  	&lt;/view&gt;
-46.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-timeline&#34;&gt;
+	&lt;view class=&#34;cu-time&#34;&gt;06-17&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;content&#34;&gt;
+			&lt;view class=&#34;cu-capsule radius&#34;&gt;
+				&lt;view class=&#34;cu-tag bg-cyan&#34;&gt;上午&lt;/view&gt;
+				&lt;view class=&#34;cu-tag line-cyan&#34;&gt;10:00&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;margin-top&#34;&gt;这是第一次，我家的铲屎官走了这么久。久到足足有三天！！ 在听到他的脚步声响在楼梯间的那一刻，我简直想要破门而出，对着他狠狠地吼上10分钟，然后再看心情要不要他进门。&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item text-blue&#34;&gt;
+		&lt;view class=&#34;bg-blue shadow-blur content&#34;&gt;
+			&lt;view class=&#34;cu-list menu-avatar radius&#34;&gt;
+				&lt;view class=&#34;cu-item&#34;&gt;
+					&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;&lt;/view&gt;
+					&lt;view class=&#34;content&#34;&gt;
+						&lt;view class=&#34;text-grey&#34;&gt;文晓港&lt;/view&gt;
+						&lt;view class=&#34;text-gray text-sm&#34;&gt;
+							&lt;text class=&#34;cuIcon-infofill text-red&#34;&gt;&lt;/text&gt; 消息未送达&lt;/view&gt;
+					&lt;/view&gt;
+					&lt;view class=&#34;action&#34;&gt;
+						&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+						&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+				&lt;view class=&#34;cu-item&#34;&gt;
+					&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);&#34;&gt;
+						&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;
+					&lt;/view&gt;
+					&lt;view class=&#34;content&#34;&gt;
+						&lt;view class=&#34;text-grey&#34;&gt;文晓港
+							&lt;view class=&#34;cu-tag round orange sm&#34;&gt;SVIP&lt;/view&gt;
+						&lt;/view&gt;
+						&lt;view class=&#34;text-gray text-sm&#34;&gt;
+							&lt;text class=&#34;cuIcon-redpacket_fill text-red&#34;&gt;&lt;/text&gt; 收到红包&lt;/view&gt;
+					&lt;/view&gt;
+					&lt;view class=&#34;action&#34;&gt;
+						&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+						&lt;text class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/text&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>时间轴相关class</strong></p>
@@ -3193,44 +2931,36 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-chat&#34;&gt;
-2.  	&lt;view class=&#34;cu-item self&#34;&gt;
-3.  		&lt;view class=&#34;main&#34;&gt;
-4.  			&lt;view class=&#34;content bg-green shadow&#34;&gt;
-5.  				&lt;text&gt;喵喵喵！喵喵喵！喵喵喵！喵喵！喵喵！！喵！喵喵喵！&lt;/text&gt;
-6.  			&lt;/view&gt;
-7.  		&lt;/view&gt;
-8.  		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
-9.  		&lt;view class=&#34;date&#34;&gt;2018年3月23日 13:23&lt;/view&gt;
-10.  	&lt;/view&gt;
-11.  	&lt;view class=&#34;cu-info round&#34;&gt;对方撤回一条消息!&lt;/view&gt;
-12.  	&lt;view class=&#34;cu-item&#34;&gt;
-13.  		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg);&#34;&gt;&lt;/view&gt;
-14.  		&lt;view class=&#34;main&#34;&gt;
-15.  			&lt;view class=&#34;content shadow&#34;&gt;
-16.  				&lt;text&gt;喵喵喵！喵喵喵！&lt;/text&gt;
-17.  			&lt;/view&gt;
-18.  		&lt;/view&gt;
-19.  		&lt;view class=&#34;date &#34;&gt; 13:23&lt;/view&gt;
-20.  	&lt;/view&gt;
-21.  	&lt;view class=&#34;cu-info&#34;&gt;
-22.  		&lt;text class=&#34;cuIcon-roundclosefill text-red &#34;&gt;&lt;/text&gt; 对方拒绝了你的消息
-23.  	&lt;/view&gt;
-24.  	&lt;view class=&#34;cu-info&#34;&gt;
-25.  		对方开启了好友验证，你还不是他(她)的好友。请先发送好友验证请求，对方验证通过后，才能聊天。
-26.  		&lt;text class=&#34;text-blue&#34;&gt;发送好友验证&lt;/text&gt;
-27.  	&lt;/view&gt;
-28.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-chat&#34;&gt;
+	&lt;view class=&#34;cu-item self&#34;&gt;
+		&lt;view class=&#34;main&#34;&gt;
+			&lt;view class=&#34;content bg-green shadow&#34;&gt;
+				&lt;text&gt;喵喵喵！喵喵喵！喵喵喵！喵喵！喵喵！！喵！喵喵喵！&lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;date&#34;&gt;2018年3月23日 13:23&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-info round&#34;&gt;对方撤回一条消息!&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;main&#34;&gt;
+			&lt;view class=&#34;content shadow&#34;&gt;
+				&lt;text&gt;喵喵喵！喵喵喵！&lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;date &#34;&gt; 13:23&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-info&#34;&gt;
+		&lt;text class=&#34;cuIcon-roundclosefill text-red &#34;&gt;&lt;/text&gt; 对方拒绝了你的消息
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-info&#34;&gt;
+		对方开启了好友验证，你还不是他(她)的好友。请先发送好友验证请求，对方验证通过后，才能聊天。
+		&lt;text class=&#34;text-blue&#34;&gt;发送好友验证&lt;/text&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>其他聊天内容</strong></p>
@@ -3292,61 +3022,53 @@
 </span><span class="lnt">43
 </span><span class="lnt">44
 </span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-chat&#34;&gt;
-2.  	&lt;view class=&#34;cu-item self&#34;&gt;
-3.  		&lt;view class=&#34;main&#34;&gt;
-4.  			&lt;image src=&#34;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#34; class=&#34;radius&#34; mode=&#34;widthFix&#34;&gt;&lt;/image&gt;
-5.  		&lt;/view&gt;
-6.  		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
-7.  		&lt;view class=&#34;date&#34;&gt; 13:23&lt;/view&gt;
-8.  	&lt;/view&gt;
-9.  	&lt;view class=&#34;cu-item self&#34;&gt;
-10.  		&lt;view class=&#34;main&#34;&gt;
-11.  			&lt;view class=&#34;action text-bold text-grey&#34;&gt;
-12.  				3&#34;
-13.  			&lt;/view&gt;
-14.  			&lt;view class=&#34;content shadow&#34;&gt;
-15.  				&lt;text class=&#34;cuIcon-sound text-xxl padding-right-xl&#34;&gt; &lt;/text&gt;
-16.  			&lt;/view&gt;
-17.  		&lt;/view&gt;
-18.  		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
-19.  		&lt;view class=&#34;date&#34;&gt;13:23&lt;/view&gt;
-20.  	&lt;/view&gt;
-21.  	&lt;view class=&#34;cu-item self&#34;&gt;
-22.  		&lt;view class=&#34;main&#34;&gt;
-23.  			&lt;view class=&#34;action&#34;&gt;
-24.  				&lt;text class=&#34;cuIcon-locationfill text-orange text-xxl&#34;&gt;&lt;/text&gt;
-25.  			&lt;/view&gt;
-26.  			&lt;view class=&#34;content shadow&#34;&gt;
-27.  				喵星球，喵喵市
-28.  			&lt;/view&gt;
-29.  		&lt;/view&gt;
-30.  		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
-31.  		&lt;view class=&#34;date&#34;&gt;13:23&lt;/view&gt;
-32.  	&lt;/view&gt;
-33.  	&lt;view class=&#34;cu-item&#34;&gt;
-34.  		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg);&#34;&gt;&lt;/view&gt;
-35.  		&lt;view class=&#34;main&#34;&gt;
-36.  			&lt;view class=&#34;content shadow&#34;&gt;
-37.  				@#$^&amp;**
-38.  			&lt;/view&gt;
-39.  			&lt;view class=&#34;action text-grey&#34;&gt;
-40.  				&lt;text class=&#34;cuIcon-warnfill text-red text-xxl&#34;&gt;&lt;/text&gt; &lt;text class=&#34;text-sm margin-left-sm&#34;&gt;翻译错误&lt;/text&gt;
-41.  			&lt;/view&gt;
-42.  		&lt;/view&gt;
-43.  		&lt;view class=&#34;date&#34;&gt;13:23&lt;/view&gt;
-44.  	&lt;/view&gt;
-45.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-chat&#34;&gt;
+	&lt;view class=&#34;cu-item self&#34;&gt;
+		&lt;view class=&#34;main&#34;&gt;
+			&lt;image src=&#34;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#34; class=&#34;radius&#34; mode=&#34;widthFix&#34;&gt;&lt;/image&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;date&#34;&gt; 13:23&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item self&#34;&gt;
+		&lt;view class=&#34;main&#34;&gt;
+			&lt;view class=&#34;action text-bold text-grey&#34;&gt;
+				3&#34;
+			&lt;/view&gt;
+			&lt;view class=&#34;content shadow&#34;&gt;
+				&lt;text class=&#34;cuIcon-sound text-xxl padding-right-xl&#34;&gt; &lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;date&#34;&gt;13:23&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item self&#34;&gt;
+		&lt;view class=&#34;main&#34;&gt;
+			&lt;view class=&#34;action&#34;&gt;
+				&lt;text class=&#34;cuIcon-locationfill text-orange text-xxl&#34;&gt;&lt;/text&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;content shadow&#34;&gt;
+				喵星球，喵喵市
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;date&#34;&gt;13:23&lt;/view&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;cu-item&#34;&gt;
+		&lt;view class=&#34;cu-avatar radius&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg);&#34;&gt;&lt;/view&gt;
+		&lt;view class=&#34;main&#34;&gt;
+			&lt;view class=&#34;content shadow&#34;&gt;
+				@#$^&amp;**
+			&lt;/view&gt;
+			&lt;view class=&#34;action text-grey&#34;&gt;
+				&lt;text class=&#34;cuIcon-warnfill text-red text-xxl&#34;&gt;&lt;/text&gt; &lt;text class=&#34;text-sm margin-left-sm&#34;&gt;翻译错误&lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;date&#34;&gt;13:23&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>发送框</strong></p>
@@ -3374,27 +3096,19 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-bar foot input&#34; :style=&#34;[{bottom:InputBottom+&#39;px&#39;}]&#34;&gt;
-2.  	&lt;view class=&#34;action&#34;&gt;
-3.  		&lt;text class=&#34;cuIcon-sound text-grey&#34;&gt;&lt;/text&gt;
-4.  	&lt;/view&gt;
-5.  	&lt;input class=&#34;solid-bottom&#34; :adjust-position=&#34;false&#34; :focus=&#34;false&#34; maxlength=&#34;300&#34; cursor-spacing=&#34;10&#34;
-6.  	 @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34;&gt;&lt;/input&gt;
-7.  	&lt;view class=&#34;action&#34;&gt;
-8.  		&lt;text class=&#34;cuIcon-emojifill text-grey&#34;&gt;&lt;/text&gt;
-9.  	&lt;/view&gt;
-10.  	&lt;button class=&#34;cu-btn bg-green shadow&#34;&gt;发送&lt;/button&gt;
-11.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-bar foot input&#34; :style=&#34;[{bottom:InputBottom+&#39;px&#39;}]&#34;&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;text class=&#34;cuIcon-sound text-grey&#34;&gt;&lt;/text&gt;
+	&lt;/view&gt;
+	&lt;input class=&#34;solid-bottom&#34; :adjust-position=&#34;false&#34; :focus=&#34;false&#34; maxlength=&#34;300&#34; cursor-spacing=&#34;10&#34;
+	 @focus=&#34;InputFocus&#34; @blur=&#34;InputBlur&#34;&gt;&lt;/input&gt;
+	&lt;view class=&#34;action&#34;&gt;
+		&lt;text class=&#34;cuIcon-emojifill text-grey&#34;&gt;&lt;/text&gt;
+	&lt;/view&gt;
+	&lt;button class=&#34;cu-btn bg-green shadow&#34;&gt;发送&lt;/button&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>聊天相关class</strong></p>
@@ -3452,46 +3166,48 @@
 </span><span class="lnt">36
 </span><span class="lnt">37
 </span><span class="lnt">38
+</span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">1.  &lt;template&gt;
-2.  	&lt;view&gt;
-3.  		&lt;swiper class=&#34;screen-swiper&#34; :class=&#34;dotStyle?&#39;square-dot&#39;:&#39;round-dot&#39;&#34; :indicator-dots=&#34;true&#34; :circular=&#34;true&#34;
-4.  		 :autoplay=&#34;true&#34; interval=&#34;5000&#34; duration=&#34;500&#34;&gt;
-5.  			&lt;swiper-item v-for=&#34;(item,index) in swiperList&#34; :key=&#34;index&#34;&gt;
-6.  				&lt;image :src=&#34;item.url&#34; mode=&#34;aspectFill&#34; v-if=&#34;item.type==&#39;image&#39;&#34;&gt;&lt;/image&gt;
-7.  				&lt;video :src=&#34;item.url&#34; autoplay loop muted :show-play-btn=&#34;false&#34; :controls=&#34;false&#34; objectFit=&#34;cover&#34; v-if=&#34;item.type==&#39;video&#39;&#34;&gt;&lt;/video&gt;
-8.  			&lt;/swiper-item&gt;
-9.  		&lt;/swiper&gt;
-10.  	&lt;/view&gt;
-11.  &lt;/template&gt;
-
-13.  &lt;script&gt;
-14.  	export default {
-15.  		data() {
-16.  			return {
-17.  				swiperList: [{
-18.  					id: 0,
-19.  					type: &#39;image&#39;,
-20.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg&#39;
-21.  				}, {
-22.  					id: 1,
-23.  					type: &#39;image&#39;,
-24.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big37006.jpg&#39;,
-25.  				}, {
-26.  					id: 2,
-27.  					type: &#39;image&#39;,
-28.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg&#39;
-29.  				}, {
-30.  					id: 3,
-31.  					type: &#39;image&#39;,
-32.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg&#39;
-33.  				}],
-34.  				dotStyle: true
-35.  			};
-36.  		}
-37.  	}
-38.  &lt;/script&gt; 
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;template&gt;
+	&lt;view&gt;
+		&lt;swiper class=&#34;screen-swiper&#34; :class=&#34;dotStyle?&#39;square-dot&#39;:&#39;round-dot&#39;&#34; :indicator-dots=&#34;true&#34; :circular=&#34;true&#34;
+		 :autoplay=&#34;true&#34; interval=&#34;5000&#34; duration=&#34;500&#34;&gt;
+			&lt;swiper-item v-for=&#34;(item,index) in swiperList&#34; :key=&#34;index&#34;&gt;
+				&lt;image :src=&#34;item.url&#34; mode=&#34;aspectFill&#34; v-if=&#34;item.type==&#39;image&#39;&#34;&gt;&lt;/image&gt;
+				&lt;video :src=&#34;item.url&#34; autoplay loop muted :show-play-btn=&#34;false&#34; :controls=&#34;false&#34; objectFit=&#34;cover&#34; v-if=&#34;item.type==&#39;video&#39;&#34;&gt;&lt;/video&gt;
+			&lt;/swiper-item&gt;
+		&lt;/swiper&gt;
+	&lt;/view&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				swiperList: [{
+					id: 0,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg&#39;
+				}, {
+					id: 1,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big37006.jpg&#39;,
+				}, {
+					id: 2,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg&#39;
+				}, {
+					id: 3,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg&#39;
+				}],
+				dotStyle: true
+			};
+		}
+	}
+&lt;/script&gt;
+ 
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>卡片式轮播</strong></p>
@@ -3522,30 +3238,22 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;swiper class=&#34;card-swiper&#34; :class=&#34;dotStyle?&#39;square-dot&#39;:&#39;round-dot&#39;&#34; :indicator-dots=&#34;true&#34; :circular=&#34;true&#34;
-2.   :autoplay=&#34;true&#34; interval=&#34;5000&#34; duration=&#34;500&#34; @change=&#34;cardSwiper&#34; indicator-color=&#34;#8799a3&#34;
-3.   indicator-active-color=&#34;#0081ff&#34;&gt;
-4.  	&lt;swiper-item v-for=&#34;(item,index) in swiperList&#34; :key=&#34;index&#34; :class=&#34;cardCur==index?&#39;cur&#39;:&#39;&#39;&#34;&gt;
-5.  		&lt;view class=&#34;swiper-item&#34;&gt;
-6.  			&lt;image :src=&#34;item.url&#34; mode=&#34;aspectFill&#34; v-if=&#34;item.type==&#39;image&#39;&#34;&gt;&lt;/image&gt;
-7.  			&lt;video :src=&#34;item.url&#34; autoplay loop muted :show-play-btn=&#34;false&#34; :controls=&#34;false&#34; objectFit=&#34;cover&#34; v-if=&#34;item.type==&#39;video&#39;&#34;&gt;&lt;/video&gt;
-8.  		&lt;/view&gt;
-9.  	&lt;/swiper-item&gt;
-10.  &lt;/swiper&gt;
-
-12.  cardSwiper(e) {
-13.      this.cardCur = e.detail.current
-14.  },
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;swiper class=&#34;card-swiper&#34; :class=&#34;dotStyle?&#39;square-dot&#39;:&#39;round-dot&#39;&#34; :indicator-dots=&#34;true&#34; :circular=&#34;true&#34;
+ :autoplay=&#34;true&#34; interval=&#34;5000&#34; duration=&#34;500&#34; @change=&#34;cardSwiper&#34; indicator-color=&#34;#8799a3&#34;
+ indicator-active-color=&#34;#0081ff&#34;&gt;
+	&lt;swiper-item v-for=&#34;(item,index) in swiperList&#34; :key=&#34;index&#34; :class=&#34;cardCur==index?&#39;cur&#39;:&#39;&#39;&#34;&gt;
+		&lt;view class=&#34;swiper-item&#34;&gt;
+			&lt;image :src=&#34;item.url&#34; mode=&#34;aspectFill&#34; v-if=&#34;item.type==&#39;image&#39;&#34;&gt;&lt;/image&gt;
+			&lt;video :src=&#34;item.url&#34; autoplay loop muted :show-play-btn=&#34;false&#34; :controls=&#34;false&#34; objectFit=&#34;cover&#34; v-if=&#34;item.type==&#39;video&#39;&#34;&gt;&lt;/video&gt;
+		&lt;/view&gt;
+	&lt;/swiper-item&gt;
+&lt;/swiper&gt;
+ 
+cardSwiper(e) {
+    this.cardCur = e.detail.current
+},
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>堆叠式轮播</strong></p>
@@ -3682,129 +3390,121 @@
 </span><span class="lnt">111
 </span><span class="lnt">112
 </span><span class="lnt">113
-</span><span class="lnt">114
-</span><span class="lnt">115
-</span><span class="lnt">116
-</span><span class="lnt">117
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;template&gt;
-2.  	&lt;view&gt;
-3.  		&lt;view class=&#34;tower-swiper&#34; @touchmove=&#34;TowerMove&#34; @touchstart=&#34;TowerStart&#34; @touchend=&#34;TowerEnd&#34;&gt;
-4.  			&lt;view class=&#34;tower-item&#34; :class=&#34;item.zIndex==1?&#39;none&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in swiperList&#34; :key=&#34;index&#34; :style=&#34;[{&#39;--index&#39;: item.zIndex,&#39;--left&#39;:item.mLeft}]&#34; :data-direction=&#34;direction&#34;&gt;
-5.  				&lt;view class=&#34;swiper-item&#34;&gt;
-6.  					&lt;image :src=&#34;item.url&#34; mode=&#34;aspectFill&#34; v-if=&#34;item.type==&#39;image&#39;&#34;&gt;&lt;/image&gt;
-7.  					&lt;video :src=&#34;item.url&#34; autoplay loop muted :show-play-btn=&#34;false&#34; :controls=&#34;false&#34; objectFit=&#34;cover&#34; v-if=&#34;item.type==&#39;video&#39;&#34;&gt;&lt;/video&gt;
-8.  				&lt;/view&gt;
-9.  			&lt;/view&gt;
-10.  		&lt;/view&gt;
-11.  	&lt;/view&gt;
-12.  &lt;/template&gt;
-
-14.  &lt;script&gt;
-15.  	export default {
-16.  		data() {
-17.  			return {
-18.  				swiperList: [{
-19.  					id: 0,
-20.  					type: &#39;image&#39;,
-21.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg&#39;
-22.  				}, {
-23.  					id: 1,
-24.  					type: &#39;image&#39;,
-25.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big37006.jpg&#39;,
-26.  				}, {
-27.  					id: 2,
-28.  					type: &#39;image&#39;,
-29.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg&#39;
-30.  				}, {
-31.  					id: 3,
-32.  					type: &#39;image&#39;,
-33.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg&#39;
-34.  				}, {
-35.  					id: 4,
-36.  					type: &#39;image&#39;,
-37.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg&#39;
-38.  				}, {
-39.  					id: 5,
-40.  					type: &#39;image&#39;,
-41.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg&#39;
-42.  				}, {
-43.  					id: 6,
-44.  					type: &#39;image&#39;,
-45.  					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg&#39;
-46.  				}],
-47.  				towerStart: 0,
-48.  				direction: &#39;&#39;
-49.  			};
-50.  		},
-51.  		onLoad() {
-52.  			this.TowerSwiper(&#39;swiperList&#39;);
-53.                          this.direction = &#39;left&#39;;
-54.  			// 初始化towerSwiper 传已有的数组名即可
-55.  		}, 
-56.  		methods: {
-57.  			// 初始化towerSwiper
-58.  			TowerSwiper(name) {
-59.  				let list = this[name];
-60.  				console.log(list)
-61.  				for (let i = 0; i &lt; list.length; i++) {
-62.  					list[i].zIndex = parseInt(list.length / 2) + 1 - Math.abs(i - parseInt(list.length / 2))
-63.  					list[i].mLeft = i - parseInt(list.length / 2)
-64.  				}
-65.  				this.swiperList = list
-66.  			},
-67.  			// towerSwiper触摸开始
-68.  			TowerStart(e) {
-69.  				console.log(e)
-70.  				this.towerStart = e.touches[0].pageX
-71.  			},
-72.  			// towerSwiper计算方向
-73.  			TowerMove(e) {
-74.  				this.direction = e.touches[0].pageX - this.towerStart &gt; 0 ? &#39;right&#39; : &#39;left&#39;
-75.  			},
-76.  			// towerSwiper计算滚动
-77.  			TowerEnd(e) {
-78.  				let direction = this.direction;
-79.  				let list = this.swiperList;
-80.  				if (direction == &#39;right&#39;) {
-81.  					let mLeft = list[0].mLeft;
-82.  					console.log(list[0])
-83.  					let zIndex = list[0].zIndex;
-84.  					for (let i = 1; i &lt; this.swiperList.length; i++) {
-85.  						this.swiperList[i - 1].mLeft = this.swiperList[i].mLeft
-86.  						this.swiperList[i - 1].zIndex = this.swiperList[i].zIndex
-87.  					}
-88.  					this.swiperList[list.length - 1].mLeft = mLeft;
-89.  					this.swiperList[list.length - 1].zIndex = zIndex;
-90.  				} else {
-91.  					let mLeft = list[list.length - 1].mLeft;
-92.  					let zIndex = list[list.length - 1].zIndex;
-93.  					for (let i = this.swiperList.length - 1; i &gt; 0; i--) {
-94.  						this.swiperList[i].mLeft = this.swiperList[i - 1].mLeft
-95.  						this.swiperList[i].zIndex = this.swiperList[i - 1].zIndex
-96.  					}
-97.  					this.swiperList[0].mLeft = mLeft;
-98.  					this.swiperList[0].zIndex = zIndex;
-99.  				}
-100.  				this.direction = &#34;&#34;
-101.  				this.swiperList = this.swiperList
-102.  			},
-103.  		}
-104.  	}
-105.  &lt;/script&gt;
-
-107.  &lt;style&gt;
-108.  	.tower-swiper .tower-item {
-109.  		transform: scale(calc(0.5 + var(--index) / 10));
-110.  		margin-left: calc(var(--left) * 100upx - 150upx);
-111.  		z-index: var(--index);
-112.  	}
-113.  &lt;/style&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;template&gt;
+	&lt;view&gt;
+		&lt;view class=&#34;tower-swiper&#34; @touchmove=&#34;TowerMove&#34; @touchstart=&#34;TowerStart&#34; @touchend=&#34;TowerEnd&#34;&gt;
+			&lt;view class=&#34;tower-item&#34; :class=&#34;item.zIndex==1?&#39;none&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in swiperList&#34; :key=&#34;index&#34; :style=&#34;[{&#39;--index&#39;: item.zIndex,&#39;--left&#39;:item.mLeft}]&#34; :data-direction=&#34;direction&#34;&gt;
+				&lt;view class=&#34;swiper-item&#34;&gt;
+					&lt;image :src=&#34;item.url&#34; mode=&#34;aspectFill&#34; v-if=&#34;item.type==&#39;image&#39;&#34;&gt;&lt;/image&gt;
+					&lt;video :src=&#34;item.url&#34; autoplay loop muted :show-play-btn=&#34;false&#34; :controls=&#34;false&#34; objectFit=&#34;cover&#34; v-if=&#34;item.type==&#39;video&#39;&#34;&gt;&lt;/video&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				swiperList: [{
+					id: 0,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg&#39;
+				}, {
+					id: 1,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big37006.jpg&#39;,
+				}, {
+					id: 2,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg&#39;
+				}, {
+					id: 3,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg&#39;
+				}, {
+					id: 4,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg&#39;
+				}, {
+					id: 5,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg&#39;
+				}, {
+					id: 6,
+					type: &#39;image&#39;,
+					url: &#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg&#39;
+				}],
+				towerStart: 0,
+				direction: &#39;&#39;
+			};
+		},
+		onLoad() {
+			this.TowerSwiper(&#39;swiperList&#39;);
+                        this.direction = &#39;left&#39;;
+			// 初始化towerSwiper 传已有的数组名即可
+		}, 
+		methods: {
+			// 初始化towerSwiper
+			TowerSwiper(name) {
+				let list = this[name];
+				console.log(list)
+				for (let i = 0; i &lt; list.length; i++) {
+					list[i].zIndex = parseInt(list.length / 2) + 1 - Math.abs(i - parseInt(list.length / 2))
+					list[i].mLeft = i - parseInt(list.length / 2)
+				}
+				this.swiperList = list
+			},
+			// towerSwiper触摸开始
+			TowerStart(e) {
+				console.log(e)
+				this.towerStart = e.touches[0].pageX
+			},
+			// towerSwiper计算方向
+			TowerMove(e) {
+				this.direction = e.touches[0].pageX - this.towerStart &gt; 0 ? &#39;right&#39; : &#39;left&#39;
+			},
+			// towerSwiper计算滚动
+			TowerEnd(e) {
+				let direction = this.direction;
+				let list = this.swiperList;
+				if (direction == &#39;right&#39;) {
+					let mLeft = list[0].mLeft;
+					console.log(list[0])
+					let zIndex = list[0].zIndex;
+					for (let i = 1; i &lt; this.swiperList.length; i++) {
+						this.swiperList[i - 1].mLeft = this.swiperList[i].mLeft
+						this.swiperList[i - 1].zIndex = this.swiperList[i].zIndex
+					}
+					this.swiperList[list.length - 1].mLeft = mLeft;
+					this.swiperList[list.length - 1].zIndex = zIndex;
+				} else {
+					let mLeft = list[list.length - 1].mLeft;
+					let zIndex = list[list.length - 1].zIndex;
+					for (let i = this.swiperList.length - 1; i &gt; 0; i--) {
+						this.swiperList[i].mLeft = this.swiperList[i - 1].mLeft
+						this.swiperList[i].zIndex = this.swiperList[i - 1].zIndex
+					}
+					this.swiperList[0].mLeft = mLeft;
+					this.swiperList[0].zIndex = zIndex;
+				}
+				this.direction = &#34;&#34;
+				this.swiperList = this.swiperList
+			},
+		}
+	}
+&lt;/script&gt;
+ 
+&lt;style&gt;
+	.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100upx - 150upx);
+		z-index: var(--index);
+	}
+&lt;/style&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>轮播图相关class</strong></p>
@@ -3847,29 +3547,21 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;Modal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-2.  	&lt;view class=&#34;cu-dialog&#34;&gt;
-3.  		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
-4.  			&lt;view class=&#34;content&#34;&gt;Modal标题&lt;/view&gt;
-5.  			&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
-6.  				&lt;text class=&#34;cuIcon-close text-red&#34;&gt;&lt;/text&gt;
-7.  			&lt;/view&gt; 
-8.  		&lt;/view&gt;
-9.  		&lt;view class=&#34;padding-xl&#34;&gt;
-10.  			Modal 内容。
-11.  		&lt;/view&gt;
-12.  	&lt;/view&gt;
-13.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;Modal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34;&gt;
+		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
+			&lt;view class=&#34;content&#34;&gt;Modal标题&lt;/view&gt;
+			&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
+				&lt;text class=&#34;cuIcon-close text-red&#34;&gt;&lt;/text&gt;
+			&lt;/view&gt; 
+		&lt;/view&gt;
+		&lt;view class=&#34;padding-xl&#34;&gt;
+			Modal 内容。
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>底部窗口</strong></p>
@@ -3904,27 +3596,19 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-modal bottom-modal&#34; :class=&#34;modalName==&#39;bottomModal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-2.  	&lt;view class=&#34;cu-dialog&#34;&gt;
-3.  		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-4.  			&lt;view class=&#34;action text-green&#34;&gt;确定&lt;/view&gt;
-5.  			&lt;view class=&#34;action text-blue&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/view&gt;
-6.  		&lt;/view&gt;
-7.  		&lt;view class=&#34;padding-xl&#34;&gt;
-8.  			Modal 内容。
-9.  		&lt;/view&gt;
-10.  	&lt;/view&gt;
-11.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-modal bottom-modal&#34; :class=&#34;modalName==&#39;bottomModal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34;&gt;
+		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+			&lt;view class=&#34;action text-green&#34;&gt;确定&lt;/view&gt;
+			&lt;view class=&#34;action text-blue&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;padding-xl&#34;&gt;
+			Modal 内容。
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>对话窗口</strong></p>
@@ -3996,56 +3680,48 @@
 </span><span class="lnt">38
 </span><span class="lnt">39
 </span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  //示例一
-2.  &lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;DialogModal1&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-3.  	&lt;view class=&#34;cu-dialog&#34;&gt;
-4.  		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
-5.  			&lt;view class=&#34;content&#34;&gt;Modal标题&lt;/view&gt;
-6.  			&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
-7.  				&lt;text class=&#34;cuIcon-close text-red&#34;&gt;&lt;/text&gt;
-8.  			&lt;/view&gt;
-9.  		&lt;/view&gt;
-10.  		&lt;view class=&#34;padding-xl&#34;&gt;
-11.  			Modal 内容。
-12.  		&lt;/view&gt;
-13.  		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
-14.  			&lt;view class=&#34;action&#34;&gt;
-15.  				&lt;button class=&#34;cu-btn line-green text-green&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/button&gt;
-16.  				&lt;button class=&#34;cu-btn bg-green margin-left&#34; @tap=&#34;hideModal&#34;&gt;确定&lt;/button&gt;
-17.  			&lt;/view&gt;
-18.  		&lt;/view&gt;
-19.  	&lt;/view&gt;
-20.  &lt;/view&gt;
-21.  //示例二
-22.  &lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;DialogModal2&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-23.  	&lt;view class=&#34;cu-dialog&#34;&gt;
-24.  		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
-25.  			&lt;view class=&#34;content&#34;&gt;Modal标题&lt;/view&gt;
-26.  			&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
-27.  				&lt;text class=&#34;cuIcon-close text-red&#34;&gt;&lt;/text&gt;
-28.  			&lt;/view&gt;
-29.  		&lt;/view&gt;
-30.  		&lt;view class=&#34;padding-xl&#34;&gt;
-31.  			Modal 内容。
-32.  		&lt;/view&gt;
-33.  		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-34.  			&lt;view class=&#34;action margin-0 flex-sub text-green &#34; @tap=&#34;hideModal&#34;&gt;
-35.  				&lt;text class=&#34;cuIcon-moneybag&#34;&gt;&lt;/text&gt;微信支付&lt;/view&gt;
-36.  			&lt;view class=&#34;action margin-0 flex-sub text-green solid-left&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/view&gt;
-37.  			&lt;view class=&#34;action margin-0 flex-sub  solid-left&#34; @tap=&#34;hideModal&#34;&gt;确定&lt;/view&gt;
-38.  		&lt;/view&gt;
-39.  	&lt;/view&gt;
-40.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">//示例一
+&lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;DialogModal1&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34;&gt;
+		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
+			&lt;view class=&#34;content&#34;&gt;Modal标题&lt;/view&gt;
+			&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
+				&lt;text class=&#34;cuIcon-close text-red&#34;&gt;&lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;padding-xl&#34;&gt;
+			Modal 内容。
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
+			&lt;view class=&#34;action&#34;&gt;
+				&lt;button class=&#34;cu-btn line-green text-green&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/button&gt;
+				&lt;button class=&#34;cu-btn bg-green margin-left&#34; @tap=&#34;hideModal&#34;&gt;确定&lt;/button&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+//示例二
+&lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;DialogModal2&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34;&gt;
+		&lt;view class=&#34;cu-bar bg-white justify-end&#34;&gt;
+			&lt;view class=&#34;content&#34;&gt;Modal标题&lt;/view&gt;
+			&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
+				&lt;text class=&#34;cuIcon-close text-red&#34;&gt;&lt;/text&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;padding-xl&#34;&gt;
+			Modal 内容。
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+			&lt;view class=&#34;action margin-0 flex-sub text-green &#34; @tap=&#34;hideModal&#34;&gt;
+				&lt;text class=&#34;cuIcon-moneybag&#34;&gt;&lt;/text&gt;微信支付&lt;/view&gt;
+			&lt;view class=&#34;action margin-0 flex-sub text-green solid-left&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/view&gt;
+			&lt;view class=&#34;action margin-0 flex-sub  solid-left&#34; @tap=&#34;hideModal&#34;&gt;确定&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>图片窗口</strong></p>
@@ -4083,30 +3759,22 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;Image&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-2.  	&lt;view class=&#34;cu-dialog&#34;&gt;
-3.  		&lt;view class=&#34;bg-img&#34; style=&#34;background-image: url(&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg&#39;);height:200px;&#34;&gt;
-4.  			&lt;view class=&#34;cu-bar justify-end text-white&#34;&gt;
-5.  				&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
-6.  					&lt;text class=&#34;cuIcon-close &#34;&gt;&lt;/text&gt;
-7.  				&lt;/view&gt;
-8.  			&lt;/view&gt;
-9.  		&lt;/view&gt;
-10.  		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-11.  			&lt;view class=&#34;action margin-0 flex-sub  solid-left&#34; @tap=&#34;hideModal&#34;&gt;我知道了&lt;/view&gt;
-12.  		&lt;/view&gt;
-13.  	&lt;/view&gt;
-14.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;Image&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34;&gt;
+		&lt;view class=&#34;bg-img&#34; style=&#34;background-image: url(&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg&#39;);height:200px;&#34;&gt;
+			&lt;view class=&#34;cu-bar justify-end text-white&#34;&gt;
+				&lt;view class=&#34;action&#34; @tap=&#34;hideModal&#34;&gt;
+					&lt;text class=&#34;cuIcon-close &#34;&gt;&lt;/text&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+			&lt;view class=&#34;action margin-0 flex-sub  solid-left&#34; @tap=&#34;hideModal&#34;&gt;我知道了&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>单选窗口</strong></p>
@@ -4145,31 +3813,23 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;RadioModal&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
-2.  	&lt;view class=&#34;cu-dialog&#34; @tap.stop=&#34;&#34;&gt;
-3.  		&lt;radio-group class=&#34;block&#34; @change=&#34;RadioChange&#34;&gt;
-4.  			&lt;view class=&#34;cu-list menu text-left&#34;&gt;
-5.  				&lt;view class=&#34;cu-item&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34;&gt;
-6.  					&lt;label class=&#34;flex justify-between align-center flex-sub&#34;&gt;
-7.  						&lt;view class=&#34;flex-sub&#34;&gt;Item {{index +1}}&lt;/view&gt;
-8.  						&lt;radio class=&#34;round&#34; :class=&#34;radio==&#39;radio&#39; + index?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;radio&#39; + index?true:false&#34;
-9.  						 :value=&#34;&#39;radio&#39; + index&#34;&gt;&lt;/radio&gt;
-10.  					&lt;/label&gt;
-11.  				&lt;/view&gt;
-12.  			&lt;/view&gt;
-13.  		&lt;/radio-group&gt;
-14.  	&lt;/view&gt;
-15.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-modal&#34; :class=&#34;modalName==&#39;RadioModal&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34; @tap.stop=&#34;&#34;&gt;
+		&lt;radio-group class=&#34;block&#34; @change=&#34;RadioChange&#34;&gt;
+			&lt;view class=&#34;cu-list menu text-left&#34;&gt;
+				&lt;view class=&#34;cu-item&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34;&gt;
+					&lt;label class=&#34;flex justify-between align-center flex-sub&#34;&gt;
+						&lt;view class=&#34;flex-sub&#34;&gt;Item {{index +1}}&lt;/view&gt;
+						&lt;radio class=&#34;round&#34; :class=&#34;radio==&#39;radio&#39; + index?&#39;checked&#39;:&#39;&#39;&#34; :checked=&#34;radio==&#39;radio&#39; + index?true:false&#34;
+						 :value=&#34;&#39;radio&#39; + index&#34;&gt;&lt;/radio&gt;
+					&lt;/label&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/radio-group&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>多选窗口</strong></p>
@@ -4243,66 +3903,58 @@
 </span><span class="lnt">48
 </span><span class="lnt">49
 </span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;cu-modal bottom-modal&#34; :class=&#34;modalName==&#39;ChooseModal&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
-2.  	&lt;view class=&#34;cu-dialog&#34; @tap.stop=&#34;&#34;&gt;
-3.  		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
-4.  			&lt;view class=&#34;action text-blue&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/view&gt;
-5.  			&lt;view class=&#34;action text-green&#34; @tap=&#34;hideModal&#34;&gt;确定&lt;/view&gt;
-6.  		&lt;/view&gt;
-7.  		&lt;view class=&#34;grid col-3 padding-sm&#34;&gt;
-8.  			&lt;view v-for=&#34;(item,index) in checkbox&#34; class=&#34;padding-xs&#34; :key=&#34;index&#34;&gt;
-9.  				&lt;button class=&#34;cu-btn orange lg block&#34; :class=&#34;item.checked?&#39;bg-orange&#39;:&#39;line-orange&#39;&#34; @tap=&#34;ChooseCheckbox&#34;
-10.  				 :data-value=&#34;item.value&#34;&gt; {{item.name}}
-11.  					&lt;view class=&#34;cu-tag sm round&#34; :class=&#34;item.checked?&#39;bg-white text-orange&#39;:&#39;bg-orange&#39;&#34; v-if=&#34;item.hot&#34;&gt;HOT&lt;/view&gt;
-12.  				&lt;/button&gt;
-13.  			&lt;/view&gt;
-14.  		&lt;/view&gt;
-15.  	&lt;/view&gt;
-16.  &lt;/view&gt;
-17.  &lt;script&gt;
-18.  	export default {
-19.  		data() {
-20.  			return {
-21.  				modalName: null,
-22.  				checkbox: [{value: 0,name: &#39;10元&#39;,checked: false,hot: false,}, 
-23.                             {value: 1,name: &#39;20元&#39;,checked: true,hot: false,},
-24.                             {value: 2,name: &#39;30元&#39;,checked: true,hot: true,}, 
-25.                             {value: 3,name: &#39;60元&#39;,checked: false,hot: true,},
-26.                             {value: 4,name: &#39;80元&#39;,checked: false,hot: false,}, 
-27.                             {value: 5,name: &#39;100元&#39;,checked: false,hot: false,}
-28.                            ]
-29.  			};
-30.  		},
-31.  		methods: {
-32.  			showModal(e) {
-33.  				this.modalName = e.currentTarget.dataset.target
-34.  			},
-35.  			hideModal(e) {
-36.  				this.modalName = null
-37.  			},
-38.  			ChooseCheckbox(e) {
-39.  				let items = this.checkbox;
-40.  				let values = e.currentTarget.dataset.value;
-41.  				for (let i = 0, lenI = items.length; i &lt; lenI; ++i) {
-42.  					if (items[i].value == values) {
-43.  						items[i].checked = !items[i].checked;
-44.  						break
-45.  					}
-46.  				}
-47.  			}
-48.  		}
-49.  	}
-50.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;cu-modal bottom-modal&#34; :class=&#34;modalName==&#39;ChooseModal&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
+	&lt;view class=&#34;cu-dialog&#34; @tap.stop=&#34;&#34;&gt;
+		&lt;view class=&#34;cu-bar bg-white&#34;&gt;
+			&lt;view class=&#34;action text-blue&#34; @tap=&#34;hideModal&#34;&gt;取消&lt;/view&gt;
+			&lt;view class=&#34;action text-green&#34; @tap=&#34;hideModal&#34;&gt;确定&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;view class=&#34;grid col-3 padding-sm&#34;&gt;
+			&lt;view v-for=&#34;(item,index) in checkbox&#34; class=&#34;padding-xs&#34; :key=&#34;index&#34;&gt;
+				&lt;button class=&#34;cu-btn orange lg block&#34; :class=&#34;item.checked?&#39;bg-orange&#39;:&#39;line-orange&#39;&#34; @tap=&#34;ChooseCheckbox&#34;
+				 :data-value=&#34;item.value&#34;&gt; {{item.name}}
+					&lt;view class=&#34;cu-tag sm round&#34; :class=&#34;item.checked?&#39;bg-white text-orange&#39;:&#39;bg-orange&#39;&#34; v-if=&#34;item.hot&#34;&gt;HOT&lt;/view&gt;
+				&lt;/button&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				modalName: null,
+				checkbox: [{value: 0,name: &#39;10元&#39;,checked: false,hot: false,}, 
+                           {value: 1,name: &#39;20元&#39;,checked: true,hot: false,},
+                           {value: 2,name: &#39;30元&#39;,checked: true,hot: true,}, 
+                           {value: 3,name: &#39;60元&#39;,checked: false,hot: true,},
+                           {value: 4,name: &#39;80元&#39;,checked: false,hot: false,}, 
+                           {value: 5,name: &#39;100元&#39;,checked: false,hot: false,}
+                          ]
+			};
+		},
+		methods: {
+			showModal(e) {
+				this.modalName = e.currentTarget.dataset.target
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
+			ChooseCheckbox(e) {
+				let items = this.checkbox;
+				let values = e.currentTarget.dataset.value;
+				for (let i = 0, lenI = items.length; i &lt; lenI; ++i) {
+					if (items[i].value == values) {
+						items[i].checked = !items[i].checked;
+						break
+					}
+				}
+			}
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>侧边抽屉</strong></p>
@@ -4358,40 +4010,32 @@
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  //左侧抽屉
-2.  &lt;view class=&#34;cu-modal drawer-modal justify-start&#34; :class=&#34;modalName==&#39;DrawerModalL&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
-3.  	&lt;view class=&#34;cu-dialog basis-lg&#34; @tap.stop=&#34;&#34;&gt;
-4.  		&lt;view class=&#34;cu-list menu text-left&#34;&gt;
-5.  			&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34;&gt;
-6.  				&lt;view class=&#34;content&#34;&gt;
-7.  					&lt;view&gt;Item {{index +1}}&lt;/view&gt;
-8.  				&lt;/view&gt;
-9.  			&lt;/view&gt;
-10.  		&lt;/view&gt;
-11.  	&lt;/view&gt;
-12.  &lt;/view&gt;
-13.  //右侧抽屉
-14.  &lt;view class=&#34;cu-modal drawer-modal justify-end&#34; :class=&#34;modalName==&#39;DrawerModalR&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
-15.  	&lt;view class=&#34;cu-dialog basis-lg&#34; @tap.stop=&#34;&#34; &gt;
-16.  		&lt;view class=&#34;cu-list menu text-left&#34;&gt;
-17.  			&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34;&gt;
-18.  				&lt;view class=&#34;content&#34;&gt;
-19.  					&lt;view&gt;Item {{index +1}}&lt;/view&gt;
-20.  				&lt;/view&gt;
-21.  			&lt;/view&gt;
-22.  		&lt;/view&gt;
-23.  	&lt;/view&gt;
-24.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">//左侧抽屉
+&lt;view class=&#34;cu-modal drawer-modal justify-start&#34; :class=&#34;modalName==&#39;DrawerModalL&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
+	&lt;view class=&#34;cu-dialog basis-lg&#34; @tap.stop=&#34;&#34;&gt;
+		&lt;view class=&#34;cu-list menu text-left&#34;&gt;
+			&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34;&gt;
+				&lt;view class=&#34;content&#34;&gt;
+					&lt;view&gt;Item {{index +1}}&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+//右侧抽屉
+&lt;view class=&#34;cu-modal drawer-modal justify-end&#34; :class=&#34;modalName==&#39;DrawerModalR&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
+	&lt;view class=&#34;cu-dialog basis-lg&#34; @tap.stop=&#34;&#34; &gt;
+		&lt;view class=&#34;cu-list menu text-left&#34;&gt;
+			&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34;&gt;
+				&lt;view class=&#34;content&#34;&gt;
+					&lt;view&gt;Item {{index +1}}&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>模态框相关class</strong></p>
@@ -4441,43 +4085,35 @@
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;bg-white padding&#34;&gt;
-2.  	&lt;view class=&#34;cu-steps&#34;&gt;
-3.  		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;basics?&#39;&#39;:&#39;text-red&#39;&#34; v-for=&#34;(item,index) in basicsList&#34; :key=&#34;index&#34;&gt;
-4.  			&lt;text :class=&#34;&#39;cuIcon-&#39; + item.cuIcon&#34;&gt;&lt;/text&gt; {{item.name}}
-5.  		&lt;/view&gt;
-6.  	&lt;/view&gt;
-7.  &lt;/view&gt;
-
-9.  &lt;script&gt;
-10.  	export default {
-11.  		data() {
-12.  			return {
-13.  				basicsList: [{cuIcon: &#39;usefullfill&#39;,name: &#39;开始&#39;}, 
-14.                                      {cuIcon: &#39;radioboxfill&#39;,name: &#39;等待&#39;}, 
-15.                                      {cuIcon: &#39;roundclosefill&#39;,name: &#39;错误&#39;},
-16.                                      {cuIcon: &#39;roundcheckfill&#39;,name: &#39;完成&#39;
-17.  				}],
-18.  				basics: 0
-19.  			};
-20.  		},
-21.  		methods: {
-22.  			BasicsSteps() {
-23.  				this.basics= this.basics == this.basicsList.length - 1 ? 0 : this.basics + 1				
-24.  			}
-25.  		}
-26.  	}
-27.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;bg-white padding&#34;&gt;
+	&lt;view class=&#34;cu-steps&#34;&gt;
+		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;basics?&#39;&#39;:&#39;text-red&#39;&#34; v-for=&#34;(item,index) in basicsList&#34; :key=&#34;index&#34;&gt;
+			&lt;text :class=&#34;&#39;cuIcon-&#39; + item.cuIcon&#34;&gt;&lt;/text&gt; {{item.name}}
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				basicsList: [{cuIcon: &#39;usefullfill&#39;,name: &#39;开始&#39;}, 
+                                    {cuIcon: &#39;radioboxfill&#39;,name: &#39;等待&#39;}, 
+                                    {cuIcon: &#39;roundclosefill&#39;,name: &#39;错误&#39;},
+                                    {cuIcon: &#39;roundcheckfill&#39;,name: &#39;完成&#39;
+				}],
+				basics: 0
+			};
+		},
+		methods: {
+			BasicsSteps() {
+				this.basics= this.basics == this.basicsList.length - 1 ? 0 : this.basics + 1				
+			}
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -4493,30 +4129,22 @@
         title="步骤条2" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;bg-white padding margin-top-xs&#34;&gt;
-2.  	&lt;view class=&#34;cu-steps&#34;&gt;
-3.  		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;basics?&#39;&#39;:&#39;text-orange&#39;&#34; v-for=&#34;(item,index) in basicsList&#34; :key=&#34;index&#34;&gt;
-4.  			&lt;text :class=&#34;index&gt;basics?&#39;cuIcon-title&#39;:&#39;cuIcon-&#39; + item.cuIcon&#34;&gt;&lt;/text&gt; {{item.name}}
-5.  		&lt;/view&gt;
-6.  	&lt;/view&gt;
-7.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;bg-white padding margin-top-xs&#34;&gt;
+	&lt;view class=&#34;cu-steps&#34;&gt;
+		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;basics?&#39;&#39;:&#39;text-orange&#39;&#34; v-for=&#34;(item,index) in basicsList&#34; :key=&#34;index&#34;&gt;
+			&lt;text :class=&#34;index&gt;basics?&#39;cuIcon-title&#39;:&#39;cuIcon-&#39; + item.cuIcon&#34;&gt;&lt;/text&gt; {{item.name}}
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -4532,30 +4160,22 @@
         title="步骤条3" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;bg-white padding  margin-top-xs&#34;&gt;
-2.  	&lt;view class=&#34;cu-steps steps-arrow&#34;&gt;
-3.  		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;basics?&#39;&#39;:&#39;text-blue&#39;&#34; v-for=&#34;(item,index) in basicsList&#34; :key=&#34;index&#34;&gt;
-4.  			&lt;text :class=&#34;&#39;cuIcon-&#39; + item.cuIcon&#34;&gt;&lt;/text&gt; {{item.name}}
-5.  		&lt;/view&gt;
-6.  	&lt;/view&gt;
-7.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;bg-white padding  margin-top-xs&#34;&gt;
+	&lt;view class=&#34;cu-steps steps-arrow&#34;&gt;
+		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;basics?&#39;&#39;:&#39;text-blue&#39;&#34; v-for=&#34;(item,index) in basicsList&#34; :key=&#34;index&#34;&gt;
+			&lt;text :class=&#34;&#39;cuIcon-&#39; + item.cuIcon&#34;&gt;&lt;/text&gt; {{item.name}}
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>数字完成</strong></p>
@@ -4572,30 +4192,22 @@
         title="步骤条4" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;bg-white padding&#34;&gt;
-2.  	&lt;view class=&#34;cu-steps&#34;&gt;
-3.  		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;num?&#39;&#39;:&#39;text-blue&#39;&#34; v-for=&#34;(item,index) in numList&#34; :key=&#34;index&#34;&gt;
-4.  			&lt;text class=&#34;num&#34; :class=&#34;index==2?&#39;err&#39;:&#39;&#39;&#34; :data-index=&#34;index + 1&#34;&gt;&lt;/text&gt; {{item.name}}
-5.  		&lt;/view&gt;
-6.  	&lt;/view&gt;
-7.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;bg-white padding&#34;&gt;
+	&lt;view class=&#34;cu-steps&#34;&gt;
+		&lt;view class=&#34;cu-item&#34; :class=&#34;index&gt;num?&#39;&#39;:&#39;text-blue&#39;&#34; v-for=&#34;(item,index) in numList&#34; :key=&#34;index&#34;&gt;
+			&lt;text class=&#34;num&#34; :class=&#34;index==2?&#39;err&#39;:&#39;&#39;&#34; :data-index=&#34;index + 1&#34;&gt;&lt;/text&gt; {{item.name}}
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>多级显示</strong></p>
@@ -4640,37 +4252,29 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;scroll-view scroll-x class=&#34;bg-white padding response cu-steps steps-bottom&#34; :scroll-into-view=&#34;&#39;scroll-&#39; + scroll&#34;
-2.   scroll-with-animation&gt;
-3.  	&lt;view class=&#34;cu-item padding-lr-xl&#34; :class=&#34;index&gt;scroll?&#39;&#39;:&#39;text-blue&#39;&#34; v-for=&#34;(item,index) in 10&#34; :key=&#34;index&#34; :id=&#34;&#39;scroll-&#39; + index&#34;&gt;
-4.  		Level {{index + 1}} &lt;text class=&#34;num&#34; :data-index=&#34;index + 1&#34;&gt;&lt;/text&gt;
-5.  	&lt;/view&gt;
-6.  &lt;/scroll-view&gt;
-
-8.  &lt;script&gt;
-9.  	export default {
-10.  		data() {
-11.  			return {
-12.  				scroll: 0
-13.  			};
-14.  		},
-15.  		methods: {
-16.  			ScrollSteps() {
-17.  				this.scroll= this.scroll == 9 ? 0 : this.scroll + 1				
-18.  			}
-19.  		}
-20.  	}
-21.  &lt;/script&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;scroll-view scroll-x class=&#34;bg-white padding response cu-steps steps-bottom&#34; :scroll-into-view=&#34;&#39;scroll-&#39; + scroll&#34;
+ scroll-with-animation&gt;
+	&lt;view class=&#34;cu-item padding-lr-xl&#34; :class=&#34;index&gt;scroll?&#39;&#39;:&#39;text-blue&#39;&#34; v-for=&#34;(item,index) in 10&#34; :key=&#34;index&#34; :id=&#34;&#39;scroll-&#39; + index&#34;&gt;
+		Level {{index + 1}} &lt;text class=&#34;num&#34; :data-index=&#34;index + 1&#34;&gt;&lt;/text&gt;
+	&lt;/view&gt;
+&lt;/scroll-view&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				scroll: 0
+			};
+		},
+		methods: {
+			ScrollSteps() {
+				this.scroll= this.scroll == 9 ? 0 : this.scroll + 1				
+			}
+		}
+	}
+&lt;/script&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>步骤条相关class</strong></p>

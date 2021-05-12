@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6\/"
-        },"genre": "posts","keywords": "ColorUI","wordcount":  4642 ,
+        },"genre": "posts","keywords": "ColorUI","wordcount":  4030 ,
         "url": "https:\/\/hubu8.github.io\/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6\/","datePublished": "2021-05-12T02:08:31+08:00","dateModified": "2021-05-12T02:08:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">ColorUI扩展组件</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%89%8D%E7%AB%AF/"><i class="far fa-folder fa-fw"></i>前端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-12">2021-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4642 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/" class="leancloud_visitors" data-flag-title="ColorUI扩展组件">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-12">2021-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4030 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/" class="leancloud_visitors" data-flag-title="ColorUI扩展组件">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -353,216 +353,208 @@
 </span><span class="lnt">198
 </span><span class="lnt">199
 </span><span class="lnt">200
-</span><span class="lnt">201
-</span><span class="lnt">202
-</span><span class="lnt">203
-</span><span class="lnt">204
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;template&gt;
-2.  	&lt;view&gt;
-3.  		&lt;view class=&#34;cu-bar bg-white search fixed&#34;&gt;
-4.  			&lt;view class=&#34;search-form round&#34;&gt;
-5.  				&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
-6.  				&lt;input type=&#34;text&#34; placeholder=&#34;输入搜索的关键词&#34; confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
-7.  			&lt;/view&gt;
-8.  			&lt;view class=&#34;action&#34;&gt;
-9.  				&lt;button class=&#34;cu-btn bg-gradual-green shadow-blur round&#34;&gt;搜索&lt;/button&gt;
-10.  			&lt;/view&gt;
-11.  		&lt;/view&gt;
-12.  		&lt;scroll-view scroll-y class=&#34;indexes&#34; :scroll-into-view=&#34;&#39;indexes-&#39;+ listCurID&#34; :style=&#34;[{height:&#39;calc(100vh - 50px)&#39;}]&#34;
-13.  		 :scroll-with-animation=&#34;true&#34; :enable-back-to-top=&#34;true&#34;&gt;
-14.  			&lt;block v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34;&gt;
-15.  &lt;!-- 这个&#39;indexItem-&#39; + item.name类名，整个colorUI，我也没找到它的作用，删了也没发现什么影响--&gt;
-16.  				&lt;view :class=&#34;&#39;indexItem-&#39; + item.name&#34; :id=&#34;&#39;indexes-&#39; + item.name&#34; :data-index=&#34;item.name&#34;&gt;
-17.  					&lt;view class=&#34;padding&#34;&gt;{{item.name}}&lt;/view&gt;
-18.  					&lt;view class=&#34;cu-list menu-avatar no-padding&#34;&gt;
-19.  						&lt;view class=&#34;cu-item&#34; v-for=&#34;(items,sub) in 2&#34; :key=&#34;sub&#34;&gt;
-20.  							&lt;view class=&#34;cu-avatar round lg&#34;&gt;{{item.name}}&lt;/view&gt;
-21.  							&lt;view class=&#34;content&#34;&gt;
-22.  								&lt;view class=&#34;text-grey&#34;&gt;{{item.name}}&lt;text class=&#34;text-abc&#34;&gt;{{list[sub].name}}&lt;/text&gt;君&lt;/view&gt;
-23.  								&lt;view class=&#34;text-gray text-sm&#34;&gt;
-24.  									有{{sub+2}}个主子需要伺候
-25.  								&lt;/view&gt;
-26.  							&lt;/view&gt;
-27.  						&lt;/view&gt;
-28.  					&lt;/view&gt;
-29.  				&lt;/view&gt;
-30.  			&lt;/block&gt;
-31.  		&lt;/scroll-view&gt;
-32.  		&lt;view class=&#34;indexBar&#34; :style=&#34;[{height:&#39;calc(100vh - 50px)&#39;}]&#34;&gt;
-33.  			&lt;view class=&#34;indexBar-box&#34; @touchstart=&#34;tStart&#34; @touchend=&#34;tEnd&#34; @touchmove.stop=&#34;tMove&#34;&gt;
-34.  				&lt;view class=&#34;indexBar-item&#34; v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34; :id=&#34;index&#34; @touchstart=&#34;getCur&#34; @touchend=&#34;setCur&#34;&gt;
-35.  					{{item.name}}&lt;/view&gt;
-36.  			&lt;/view&gt;
-37.  		&lt;/view&gt;
-38.  		&lt;!--选择显示--&gt;
-39.  		&lt;view v-show=&#34;!hidden&#34; class=&#34;indexToast&#34;&gt;
-40.  			{{listCur}}
-41.  		&lt;/view&gt;
-42.  	&lt;/view&gt;
-43.  &lt;/template&gt;
-
-45.  &lt;script&gt;
-46.  	export default {
-47.  		data() {
-48.  			return {
-49.  				StatusBar: this.StatusBar,
-50.  				CustomBar: this.CustomBar,
-51.  				hidden: true,
-52.  				listCurID: &#39;&#39;,
-53.  				list: [],
-54.  				listCur: &#39;&#39;,
-55.  			};
-56.  		},
-57.  		onLoad() {
-58.  			let list = [{}];
-59.  			for (let i = 0; i &lt; 26; i++) {
-60.  				list[i] = {};
-61.  				list[i].name = String.fromCharCode(65 + i);
-62.  			}
-63.  			this.list = list;
-64.  			this.listCur = list[0];
-65.  		},
-66.  		onReady() {
-67.  			let that = this;
-68.  			//这两句大概知道什么意思，但是emmm,这个boxTop和barTop具体是什么数值，不是很理解
-69.  			uni.createSelectorQuery().select(&#39;.indexBar-box&#39;).boundingClientRect(function(res) {
-70.  				that.boxTop = res.top
-71.  			}).exec();
-72.  			uni.createSelectorQuery().select(&#39;.indexes&#39;).boundingClientRect(function(res) {
-73.  				that.barTop = res.top
-74.  			}).exec()
-75.  		},
-76.  		methods: {
-77.  			//获取文字信息
-78.  			getCur(e) {
-79.  				this.hidden = false;
-80.  				this.listCur = this.list[e.target.id].name;
-81.  			},
-82.  			setCur(e) {
-83.  				this.hidden = true;
-84.  				this.listCur = this.listCur
-85.  			},
-86.  			//滑动选择Item
-87.  			tMove(e) {
-88.  				console.log(this.boxTop)
-89.  				let y = e.touches[0].clientY,
-90.  					offsettop = this.boxTop,
-91.  					that = this;
-92.  				//判断选择区域,只有在选择区才会生效
-93.  				if (y &gt; offsettop) {
-94.  // 这个num计算结果怎么就是字母列表的下标呢，我没想明白，望大佬指教
-95.  					let num = parseInt((y - offsettop) / 20);
-96.  					this.listCur = that.list[num].name
-97.  				};
-98.  			},
-
-100.  			//触发全部开始选择
-101.  			tStart() {
-102.  				this.hidden = false
-103.  			},
-
-105.  			//触发结束选择
-106.  			tEnd() {
-107.  				this.hidden = true;
-108.  				this.listCurID = this.listCur
-109.  			},
-110.  //源码中有这个函数，但是这个页面中根本没有用到，删了没影响，我也不明白作者为什么写这个
-111.  			indexSelect(e) {
-112.  				let that = this;
-113.  				let barHeight = this.barHeight;
-114.  				let list = this.list;
-115.  				let scrollY = Math.ceil(list.length * e.detail.y / barHeight);
-116.  				for (let i = 0; i &lt; list.length; i++) {
-117.  					if (scrollY &lt; i + 1) {
-118.  						that.listCur = list[i].name;
-119.  						that.movableY = i * 20
-120.  						return false
-121.  					}
-122.  				}
-123.  			} 
-124.  		}
-125.  	}
-126.  &lt;/script&gt;
-
-128.  &lt;style&gt;
-129.  	page {
-130.  		padding-top: 100upx;
-131.  	}
-
-133.  	.indexes {
-134.  		position: relative;
-135.  	}
-
-137.  	.indexBar {
-138.  		position: fixed;
-139.  		right: 0px;
-140.  		bottom: 0px;
-141.  		padding: 20upx 20upx 20upx 60upx;
-142.  		display: flex;
-143.  		align-items: center;
-144.  	}
-
-146.  	.indexBar .indexBar-box {
-147.  		width: 40upx;
-148.  		height: auto;
-149.  		background: #fff;
-150.  		display: flex;
-151.  		flex-direction: column;
-152.  		box-shadow: 0 0 20upx rgba(0, 0, 0, 0.1);
-153.  		border-radius: 10upx;
-154.  	}
-
-156.  	.indexBar-item {
-157.  		flex: 1;
-158.  		width: 40upx;
-159.  		height: 40upx;
-160.  		display: flex;
-161.  		align-items: center;
-162.  		justify-content: center;
-163.  		font-size: 24upx;
-164.  		color: #888;
-165.  	}
-
-167.  	movable-view.indexBar-item {
-168.  		width: 40upx;
-169.  		height: 40upx;
-170.  		z-index: 9;
-171.  		position: relative;
-172.  	}
-
-174.  	movable-view.indexBar-item::before {
-175.  		content: &#34;&#34;;
-176.  		display: block;
-177.  		position: absolute;
-178.  		left: 0;
-179.  		top: 10upx;
-180.  		height: 20upx;
-181.  		width: 4upx;
-182.  		background-color: #f37b1d;
-183.  	}
-
-185.  	.indexToast {
-186.  		position: fixed;
-187.  		top: 0;
-188.  		right: 80upx;
-189.  		bottom: 0;
-190.  		background: rgba(0, 0, 0, 0.5);
-191.  		width: 100upx;
-192.  		height: 100upx;
-193.  		border-radius: 10upx;
-194.  		margin: auto;
-195.  		color: #fff;
-196.  		line-height: 100upx;
-197.  		text-align: center;
-198.  		font-size: 48upx;
-199.  	}
-200.  &lt;/style&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;template&gt;
+	&lt;view&gt;
+		&lt;view class=&#34;cu-bar bg-white search fixed&#34;&gt;
+			&lt;view class=&#34;search-form round&#34;&gt;
+				&lt;text class=&#34;cuIcon-search&#34;&gt;&lt;/text&gt;
+				&lt;input type=&#34;text&#34; placeholder=&#34;输入搜索的关键词&#34; confirm-type=&#34;search&#34;&gt;&lt;/input&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;action&#34;&gt;
+				&lt;button class=&#34;cu-btn bg-gradual-green shadow-blur round&#34;&gt;搜索&lt;/button&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;scroll-view scroll-y class=&#34;indexes&#34; :scroll-into-view=&#34;&#39;indexes-&#39;+ listCurID&#34; :style=&#34;[{height:&#39;calc(100vh - 50px)&#39;}]&#34;
+		 :scroll-with-animation=&#34;true&#34; :enable-back-to-top=&#34;true&#34;&gt;
+			&lt;block v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34;&gt;
+&lt;!-- 这个&#39;indexItem-&#39; + item.name类名，整个colorUI，我也没找到它的作用，删了也没发现什么影响--&gt;
+				&lt;view :class=&#34;&#39;indexItem-&#39; + item.name&#34; :id=&#34;&#39;indexes-&#39; + item.name&#34; :data-index=&#34;item.name&#34;&gt;
+					&lt;view class=&#34;padding&#34;&gt;{{item.name}}&lt;/view&gt;
+					&lt;view class=&#34;cu-list menu-avatar no-padding&#34;&gt;
+						&lt;view class=&#34;cu-item&#34; v-for=&#34;(items,sub) in 2&#34; :key=&#34;sub&#34;&gt;
+							&lt;view class=&#34;cu-avatar round lg&#34;&gt;{{item.name}}&lt;/view&gt;
+							&lt;view class=&#34;content&#34;&gt;
+								&lt;view class=&#34;text-grey&#34;&gt;{{item.name}}&lt;text class=&#34;text-abc&#34;&gt;{{list[sub].name}}&lt;/text&gt;君&lt;/view&gt;
+								&lt;view class=&#34;text-gray text-sm&#34;&gt;
+									有{{sub+2}}个主子需要伺候
+								&lt;/view&gt;
+							&lt;/view&gt;
+						&lt;/view&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/block&gt;
+		&lt;/scroll-view&gt;
+		&lt;view class=&#34;indexBar&#34; :style=&#34;[{height:&#39;calc(100vh - 50px)&#39;}]&#34;&gt;
+			&lt;view class=&#34;indexBar-box&#34; @touchstart=&#34;tStart&#34; @touchend=&#34;tEnd&#34; @touchmove.stop=&#34;tMove&#34;&gt;
+				&lt;view class=&#34;indexBar-item&#34; v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34; :id=&#34;index&#34; @touchstart=&#34;getCur&#34; @touchend=&#34;setCur&#34;&gt;
+					{{item.name}}&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/view&gt;
+		&lt;!--选择显示--&gt;
+		&lt;view v-show=&#34;!hidden&#34; class=&#34;indexToast&#34;&gt;
+			{{listCur}}
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				StatusBar: this.StatusBar,
+				CustomBar: this.CustomBar,
+				hidden: true,
+				listCurID: &#39;&#39;,
+				list: [],
+				listCur: &#39;&#39;,
+			};
+		},
+		onLoad() {
+			let list = [{}];
+			for (let i = 0; i &lt; 26; i++) {
+				list[i] = {};
+				list[i].name = String.fromCharCode(65 + i);
+			}
+			this.list = list;
+			this.listCur = list[0];
+		},
+		onReady() {
+			let that = this;
+			//这两句大概知道什么意思，但是emmm,这个boxTop和barTop具体是什么数值，不是很理解
+			uni.createSelectorQuery().select(&#39;.indexBar-box&#39;).boundingClientRect(function(res) {
+				that.boxTop = res.top
+			}).exec();
+			uni.createSelectorQuery().select(&#39;.indexes&#39;).boundingClientRect(function(res) {
+				that.barTop = res.top
+			}).exec()
+		},
+		methods: {
+			//获取文字信息
+			getCur(e) {
+				this.hidden = false;
+				this.listCur = this.list[e.target.id].name;
+			},
+			setCur(e) {
+				this.hidden = true;
+				this.listCur = this.listCur
+			},
+			//滑动选择Item
+			tMove(e) {
+				console.log(this.boxTop)
+				let y = e.touches[0].clientY,
+					offsettop = this.boxTop,
+					that = this;
+				//判断选择区域,只有在选择区才会生效
+				if (y &gt; offsettop) {
+// 这个num计算结果怎么就是字母列表的下标呢，我没想明白，望大佬指教
+					let num = parseInt((y - offsettop) / 20);
+					this.listCur = that.list[num].name
+				};
+			},
+ 
+			//触发全部开始选择
+			tStart() {
+				this.hidden = false
+			},
+ 
+			//触发结束选择
+			tEnd() {
+				this.hidden = true;
+				this.listCurID = this.listCur
+			},
+//源码中有这个函数，但是这个页面中根本没有用到，删了没影响，我也不明白作者为什么写这个
+			indexSelect(e) {
+				let that = this;
+				let barHeight = this.barHeight;
+				let list = this.list;
+				let scrollY = Math.ceil(list.length * e.detail.y / barHeight);
+				for (let i = 0; i &lt; list.length; i++) {
+					if (scrollY &lt; i + 1) {
+						that.listCur = list[i].name;
+						that.movableY = i * 20
+						return false
+					}
+				}
+			} 
+		}
+	}
+&lt;/script&gt;
+ 
+&lt;style&gt;
+	page {
+		padding-top: 100upx;
+	}
+ 
+	.indexes {
+		position: relative;
+	}
+ 
+	.indexBar {
+		position: fixed;
+		right: 0px;
+		bottom: 0px;
+		padding: 20upx 20upx 20upx 60upx;
+		display: flex;
+		align-items: center;
+	}
+ 
+	.indexBar .indexBar-box {
+		width: 40upx;
+		height: auto;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 0 20upx rgba(0, 0, 0, 0.1);
+		border-radius: 10upx;
+	}
+ 
+	.indexBar-item {
+		flex: 1;
+		width: 40upx;
+		height: 40upx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 24upx;
+		color: #888;
+	}
+ 
+	movable-view.indexBar-item {
+		width: 40upx;
+		height: 40upx;
+		z-index: 9;
+		position: relative;
+	}
+ 
+	movable-view.indexBar-item::before {
+		content: &#34;&#34;;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 10upx;
+		height: 20upx;
+		width: 4upx;
+		background-color: #f37b1d;
+	}
+ 
+	.indexToast {
+		position: fixed;
+		top: 0;
+		right: 80upx;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5);
+		width: 100upx;
+		height: 100upx;
+		border-radius: 10upx;
+		margin: auto;
+		color: #fff;
+		line-height: 100upx;
+		text-align: center;
+		font-size: 48upx;
+	}
+&lt;/style&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="微动画">微动画</h3>
@@ -607,44 +599,36 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;view class=&#34;margin radius bg-gradual-green shadow-blur&#34;&gt;
-2.  &lt;!-- 这个动图显示不出来，不知道是不是路径问题，还是源文件没了 --&gt;
-3.  	&lt;image src=&#34;https://image.weilanwl.com/gif/wave.gif&#34; mode=&#34;scaleToFill&#34; class=&#34;gif-black response&#34; style=&#34;height:100upx&#34;&gt;&lt;/image&gt;
-4.  &lt;/view&gt;
-5.  &lt;view class=&#34;margin flex&#34;&gt;
-6.  	&lt;view class=&#34;bg-black flex-sub margin-right radius shadow-lg&#34;&gt;
-7.  		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-black.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-black response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
-8.  	&lt;/view&gt;
-9.  	&lt;view class=&#34;bg-white flex-sub radius shadow-lg&#34;&gt;
-10.  		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-white.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-white response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
-11.  	&lt;/view&gt;
-12.  &lt;/view&gt;
-13.  &lt;view class=&#34;margin flex&#34;&gt;
-14.  	&lt;view class=&#34;bg-gradual-blue flex-sub margin-right radius shadow-lg&#34;&gt;
-15.  		&lt;image src=&#34;https://image.weilanwl.com/gif/rhomb-black.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-black response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
-16.  	&lt;/view&gt;
-17.  	&lt;view class=&#34;bg-white flex-sub radius shadow-lg&#34;&gt;
-18.  		&lt;image src=&#34;https://image.weilanwl.com/gif/rhomb-white.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-white response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
-19.  	&lt;/view&gt;
-20.  &lt;/view&gt;
-21.  &lt;view class=&#34;margin flex&#34;&gt;
-22.  	&lt;view class=&#34;bg-white flex-sub margin-right radius shadow-lg&#34;&gt;
-23.  		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-1.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-white response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
-24.  	&lt;/view&gt;
-25.  	&lt;view class=&#34;bg-black flex-sub radius shadow-lg&#34;&gt;
-26.  		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-2.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-black response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
-27.  	&lt;/view&gt;
-28.  &lt;/view&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;view class=&#34;margin radius bg-gradual-green shadow-blur&#34;&gt;
+&lt;!-- 这个动图显示不出来，不知道是不是路径问题，还是源文件没了 --&gt;
+	&lt;image src=&#34;https://image.weilanwl.com/gif/wave.gif&#34; mode=&#34;scaleToFill&#34; class=&#34;gif-black response&#34; style=&#34;height:100upx&#34;&gt;&lt;/image&gt;
+&lt;/view&gt;
+&lt;view class=&#34;margin flex&#34;&gt;
+	&lt;view class=&#34;bg-black flex-sub margin-right radius shadow-lg&#34;&gt;
+		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-black.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-black response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;bg-white flex-sub radius shadow-lg&#34;&gt;
+		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-white.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-white response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+&lt;view class=&#34;margin flex&#34;&gt;
+	&lt;view class=&#34;bg-gradual-blue flex-sub margin-right radius shadow-lg&#34;&gt;
+		&lt;image src=&#34;https://image.weilanwl.com/gif/rhomb-black.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-black response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;bg-white flex-sub radius shadow-lg&#34;&gt;
+		&lt;image src=&#34;https://image.weilanwl.com/gif/rhomb-white.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-white response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
+&lt;view class=&#34;margin flex&#34;&gt;
+	&lt;view class=&#34;bg-white flex-sub margin-right radius shadow-lg&#34;&gt;
+		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-1.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-white response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
+	&lt;/view&gt;
+	&lt;view class=&#34;bg-black flex-sub radius shadow-lg&#34;&gt;
+		&lt;image src=&#34;https://image.weilanwl.com/gif/loading-2.gif&#34; mode=&#34;aspectFit&#34; class=&#34;gif-black response&#34; style=&#34;height:240upx&#34;&gt;&lt;/image&gt;
+	&lt;/view&gt;
+&lt;/view&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>微动画相关class</strong></p>
@@ -844,190 +828,182 @@
 </span><span class="lnt">172
 </span><span class="lnt">173
 </span><span class="lnt">174
-</span><span class="lnt">175
-</span><span class="lnt">176
-</span><span class="lnt">177
-</span><span class="lnt">178
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;template&gt;
-2.  	&lt;view class=&#34;bg-gradual-blue&#34;&gt;
-3.  //全屏主体页面
-4.  		&lt;scroll-view scroll-y class=&#34;DrawerPage&#34; :class=&#34;modalName==&#39;viewModal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-5.  			&lt;cu-custom bgColor=&#34;bg-gradual-blue&#34; :isBack=&#34;true&#34;&gt;&lt;block slot=&#34;backText&#34;&gt;返回&lt;/block&gt;
-6.  				&lt;block slot=&#34;content&#34;&gt;全屏抽屉&lt;/block&gt;
-7.  			&lt;/cu-custom&gt;			
-8.  			&lt;view class=&#39;padding margin text-center&#39;&gt;
-9.  				&lt;view class=&#39;cu-btn bg-green lg block shadow radius margin-xl&#39; @tap=&#34;showModal&#34; data-target=&#34;viewModal&#34;&gt;
-10.  					打开抽屉
-11.  				&lt;/view&gt;
-12.  			&lt;/view&gt;
-13.  			&lt;view class=&#34;cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg&#34;&gt;
-14.  				&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 20&#34; :key=&#34;index&#34;&gt;
-15.  					&lt;view class=&#34;content&#34;&gt;
-16.  						&lt;text class=&#34;cuIcon-github text-grey&#34;&gt;&lt;/text&gt;
-17.  						&lt;text class=&#34;text-grey&#34;&gt;{{index +1}}&lt;/text&gt;
-18.  					&lt;/view&gt;
-19.  				&lt;/view&gt;
-20.  			&lt;/view&gt;
-21.  			&lt;view class=&#39;padding margin text-center&#39;&gt;
-22.  				&lt;view class=&#39;cu-btn bg-green lg block shadow radius margin-xl&#39; @tap=&#34;showModal&#34; data-target=&#34;viewModal&#34;&gt;
-23.  					打开抽屉
-24.  				&lt;/view&gt;
-25.  			&lt;/view&gt;
-26.  		&lt;/scroll-view&gt;
-27.  //关闭部分		
-28.  		&lt;view class=&#34;DrawerClose&#34; :class=&#34;modalName==&#39;viewModal&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
-29.  			&lt;text class=&#34;cuIcon-pullright&#34;&gt;&lt;/text&gt;
-30.  		&lt;/view&gt;
-31.  //抽屉部分		
-32.  		&lt;scroll-view scroll-y class=&#34;DrawerWindow&#34; :class=&#34;modalName==&#39;viewModal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
-33.  			&lt;view class=&#34;cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg&#34;&gt;
-34.  				&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 20&#34; :key=&#34;index&#34;&gt;
-35.  					&lt;view class=&#34;content&#34;&gt;
-36.  						&lt;text class=&#34;cuIcon-github text-grey&#34;&gt;&lt;/text&gt;
-37.  						&lt;text class=&#34;text-grey&#34;&gt;{{index +1}}&lt;/text&gt;
-38.  					&lt;/view&gt;
-39.  				&lt;/view&gt;
-40.  			&lt;/view&gt;
-41.  		&lt;/scroll-view&gt;
-42.  	&lt;/view&gt;
-43.  &lt;/template&gt;
-
-45.  &lt;script&gt;
-46.  	export default {
-47.  		data() {
-48.  			return {
-49.  				modalName:null
-50.  			};
-51.  		},
-52.  		methods: {
-53.  			showModal(e) {
-54.  				console.log(e)
-55.  				this.modalName = e.currentTarget.dataset.target
-56.  			},
-57.  			hideModal(e) {
-58.  				this.modalName = null
-59.  			},
-60.  //这个函数没用到，我也不知道为什么源码作者写了
-61.  			tabSelect(e) {
-62.  				this.TabCur = e.currentTarget.dataset.id;
-63.  				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
-64.  			}
-65.  		},
-66.  	}
-67.  &lt;/script&gt;
-
-69.  &lt;style&gt;
-70.  	page {
-71.  		background-image: var(--gradualBlue);
-72.  		width: 100vw;
-73.  		overflow: hidden;
-74.  	}
-
-76.  	.DrawerPage {
-77.  		position: fixed;
-78.  		width: 100vw;
-79.  		height: 100vh;
-80.  		left: 0vw;
-81.  		background-color: #f1f1f1;
-82.  		transition: all 0.4s;
-83.  	}
-
-85.  	.DrawerPage.show {
-86.  		transform: scale(0.9, 0.9);
-87.  		left: 85vw;
-88.  		box-shadow: 0 0 60upx rgba(0, 0, 0, 0.2);
-89.  		transform-origin: 0;
-90.  	}
-
-92.  	.DrawerWindow {
-93.  		position: absolute;
-94.  		width: 85vw;
-95.  		height: 100vh;
-96.  		left: 0;
-97.  		top: 0;
-98.  		transform: scale(0.9, 0.9) translateX(-100%);
-99.  		opacity: 0;
-100.  		pointer-events: none;
-101.  		transition: all 0.4s;
-102.  		padding: 100upx 0;
-103.  	}
-
-105.  	.DrawerWindow.show {
-106.  		transform: scale(1, 1) translateX(0%);
-107.  		opacity: 1;
-108.  		pointer-events: all;
-109.  	}
-
-111.  	.DrawerClose {
-112.  		position: absolute;
-113.  		width: 40vw;
-114.  		height: 100vh;
-115.  		right: 0;
-116.  		top: 0;
-117.  		color: transparent;
-118.  		padding-bottom: 30upx;
-119.  		display: flex;
-120.  		align-items: flex-end;
-121.  		justify-content: center;
-122.  		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6));
-123.  		letter-spacing: 5px;
-124.  		font-size: 50upx;
-125.  		opacity: 0;
-126.  		pointer-events: none;
-127.  		transition: all 0.4s;
-128.  	}
-
-130.  	.DrawerClose.show {
-131.  		opacity: 1;
-132.  		pointer-events: all;
-133.  		width: 15vw;
-134.  		color: #fff;
-135.  	}
-
-137.  	.DrawerPage .cu-bar.tabbar .action button.cuIcon {
-138.  		width: 64upx;
-139.  		height: 64upx;
-140.  		line-height: 64upx;
-141.  		margin: 0;
-142.  		display: inline-block;
-143.  	}
-
-145.  	.DrawerPage .cu-bar.tabbar .action .cu-avatar {
-146.  		margin: 0;
-147.  	}
-
-149.  	.DrawerPage .nav {
-150.  		flex: 1;
-151.  	}
-
-153.  	.DrawerPage .nav .cu-item.cur {
-154.  		border-bottom: 0;
-155.  		position: relative;
-156.  	}
-
-158.  	.DrawerPage .nav .cu-item.cur::after {
-159.  		content: &#34;&#34;;
-160.  		width: 10upx;
-161.  		height: 10upx;
-162.  		background-color: currentColor;
-163.  		position: absolute;
-164.  		bottom: 10upx;
-165.  		border-radius: 10upx;
-166.  		left: 0;
-167.  		right: 0;
-168.  		margin: auto;
-169.  	}
-
-171.  	.DrawerPage .cu-bar.tabbar .action {
-172.  		flex: initial;
-173.  	}
-174.  &lt;/style&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;template&gt;
+	&lt;view class=&#34;bg-gradual-blue&#34;&gt;
+//全屏主体页面
+		&lt;scroll-view scroll-y class=&#34;DrawerPage&#34; :class=&#34;modalName==&#39;viewModal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+			&lt;cu-custom bgColor=&#34;bg-gradual-blue&#34; :isBack=&#34;true&#34;&gt;&lt;block slot=&#34;backText&#34;&gt;返回&lt;/block&gt;
+				&lt;block slot=&#34;content&#34;&gt;全屏抽屉&lt;/block&gt;
+			&lt;/cu-custom&gt;			
+			&lt;view class=&#39;padding margin text-center&#39;&gt;
+				&lt;view class=&#39;cu-btn bg-green lg block shadow radius margin-xl&#39; @tap=&#34;showModal&#34; data-target=&#34;viewModal&#34;&gt;
+					打开抽屉
+				&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#34;cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg&#34;&gt;
+				&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 20&#34; :key=&#34;index&#34;&gt;
+					&lt;view class=&#34;content&#34;&gt;
+						&lt;text class=&#34;cuIcon-github text-grey&#34;&gt;&lt;/text&gt;
+						&lt;text class=&#34;text-grey&#34;&gt;{{index +1}}&lt;/text&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+			&lt;view class=&#39;padding margin text-center&#39;&gt;
+				&lt;view class=&#39;cu-btn bg-green lg block shadow radius margin-xl&#39; @tap=&#34;showModal&#34; data-target=&#34;viewModal&#34;&gt;
+					打开抽屉
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/scroll-view&gt;
+//关闭部分		
+		&lt;view class=&#34;DrawerClose&#34; :class=&#34;modalName==&#39;viewModal&#39;?&#39;show&#39;:&#39;&#39;&#34; @tap=&#34;hideModal&#34;&gt;
+			&lt;text class=&#34;cuIcon-pullright&#34;&gt;&lt;/text&gt;
+		&lt;/view&gt;
+//抽屉部分		
+		&lt;scroll-view scroll-y class=&#34;DrawerWindow&#34; :class=&#34;modalName==&#39;viewModal&#39;?&#39;show&#39;:&#39;&#39;&#34;&gt;
+			&lt;view class=&#34;cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg&#34;&gt;
+				&lt;view class=&#34;cu-item arrow&#34; v-for=&#34;(item,index) in 20&#34; :key=&#34;index&#34;&gt;
+					&lt;view class=&#34;content&#34;&gt;
+						&lt;text class=&#34;cuIcon-github text-grey&#34;&gt;&lt;/text&gt;
+						&lt;text class=&#34;text-grey&#34;&gt;{{index +1}}&lt;/text&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/view&gt;
+		&lt;/scroll-view&gt;
+	&lt;/view&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				modalName:null
+			};
+		},
+		methods: {
+			showModal(e) {
+				console.log(e)
+				this.modalName = e.currentTarget.dataset.target
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
+//这个函数没用到，我也不知道为什么源码作者写了
+			tabSelect(e) {
+				this.TabCur = e.currentTarget.dataset.id;
+				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
+			}
+		},
+	}
+&lt;/script&gt;
+ 
+&lt;style&gt;
+	page {
+		background-image: var(--gradualBlue);
+		width: 100vw;
+		overflow: hidden;
+	}
+ 
+	.DrawerPage {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		left: 0vw;
+		background-color: #f1f1f1;
+		transition: all 0.4s;
+	}
+ 
+	.DrawerPage.show {
+		transform: scale(0.9, 0.9);
+		left: 85vw;
+		box-shadow: 0 0 60upx rgba(0, 0, 0, 0.2);
+		transform-origin: 0;
+	}
+ 
+	.DrawerWindow {
+		position: absolute;
+		width: 85vw;
+		height: 100vh;
+		left: 0;
+		top: 0;
+		transform: scale(0.9, 0.9) translateX(-100%);
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.4s;
+		padding: 100upx 0;
+	}
+ 
+	.DrawerWindow.show {
+		transform: scale(1, 1) translateX(0%);
+		opacity: 1;
+		pointer-events: all;
+	}
+ 
+	.DrawerClose {
+		position: absolute;
+		width: 40vw;
+		height: 100vh;
+		right: 0;
+		top: 0;
+		color: transparent;
+		padding-bottom: 30upx;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6));
+		letter-spacing: 5px;
+		font-size: 50upx;
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.4s;
+	}
+ 
+	.DrawerClose.show {
+		opacity: 1;
+		pointer-events: all;
+		width: 15vw;
+		color: #fff;
+	}
+ 
+	.DrawerPage .cu-bar.tabbar .action button.cuIcon {
+		width: 64upx;
+		height: 64upx;
+		line-height: 64upx;
+		margin: 0;
+		display: inline-block;
+	}
+ 
+	.DrawerPage .cu-bar.tabbar .action .cu-avatar {
+		margin: 0;
+	}
+ 
+	.DrawerPage .nav {
+		flex: 1;
+	}
+ 
+	.DrawerPage .nav .cu-item.cur {
+		border-bottom: 0;
+		position: relative;
+	}
+ 
+	.DrawerPage .nav .cu-item.cur::after {
+		content: &#34;&#34;;
+		width: 10upx;
+		height: 10upx;
+		background-color: currentColor;
+		position: absolute;
+		bottom: 10upx;
+		border-radius: 10upx;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+ 
+	.DrawerPage .cu-bar.tabbar .action {
+		flex: initial;
+	}
+&lt;/style&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="垂直导航">垂直导航</h3>
@@ -1271,243 +1247,235 @@
 </span><span class="lnt">225
 </span><span class="lnt">226
 </span><span class="lnt">227
-</span><span class="lnt">228
-</span><span class="lnt">229
-</span><span class="lnt">230
-</span><span class="lnt">231
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-1.  &lt;template&gt;
-2.  	&lt;view&gt;
-3.  		&lt;view class=&#34;fixed&#34;&gt;
-4.  			&lt;cu-custom :isBack=&#34;true&#34; bgColor=&#34;bg-shadeTop text-white&#34;&gt;
-5.  				&lt;block slot=&#34;backText&#34;&gt;返回&lt;/block&gt;
-6.  				&lt;block slot=&#34;content&#34;&gt;垂直导航&lt;/block&gt;
-7.  			&lt;/cu-custom&gt;
-8.  		&lt;/view&gt;
-9.  		&lt;swiper class=&#34;screen-swiper round-dot&#34; :indicator-dots=&#34;true&#34; :circular=&#34;true&#34; :autoplay=&#34;true&#34; interval=&#34;5000&#34;
-10.  		 duration=&#34;500&#34;&gt;
-11.  			&lt;swiper-item v-for=&#34;(item,index) in 4&#34; :key=&#34;index&#34;&gt;
-12.  				&lt;image :src=&#34;&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big3900&#39;+index+ &#39;.jpg&#39;&#34; mode=&#34;aspectFill&#34;&gt;&lt;/image&gt;
-13.  			&lt;/swiper-item&gt;
-14.  		&lt;/swiper&gt;
-15.  		&lt;view class=&#34;VerticalBox&#34;&gt;
-16.  			&lt;scroll-view class=&#34;VerticalNav nav&#34; scroll-y scroll-with-animation :scroll-top=&#34;verticalNavTop&#34; style=&#34;height:calc(100vh - 375upx)&#34;&gt;
-17.  				&lt;view class=&#34;cu-item&#34; :class=&#34;index==tabCur?&#39;text-green cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34; @tap=&#34;TabSelect&#34;
-18.  				 :data-id=&#34;index&#34;&gt;
-19.  					Tab-{{item.name}}
-20.  				&lt;/view&gt;
-21.  			&lt;/scroll-view&gt;
-22.  			&lt;scroll-view class=&#34;VerticalMain&#34; scroll-y scroll-with-animation style=&#34;height:calc(100vh - 375upx)&#34;
-23.  			 :scroll-into-view=&#34;&#39;main-&#39;+mainCur&#34; @scroll=&#34;VerticalMain&#34;&gt;
-24.  				&lt;view class=&#34;padding-top padding-lr&#34; v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34; :id=&#34;&#39;main-&#39;+index&#34;&gt;
-25.  					&lt;view class=&#34;cu-bar solid-bottom bg-white&#34;&gt;
-26.  						&lt;view class=&#34;action&#34;&gt;
-27.  							&lt;text class=&#34;cuIcon-title text-green&#34;&gt;&lt;/text&gt; Tab-{{item.name}}&lt;/view&gt;
-28.  					&lt;/view&gt;
-29.  					&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
-30.  						&lt;view class=&#34;cu-item&#34;&gt;
-31.  							&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);&#34;&gt;&lt;/view&gt;
-32.  							&lt;view class=&#34;content&#34;&gt;
-33.  								&lt;view class=&#34;text-grey&#34;&gt;凯尔&lt;/view&gt;
-34.  								&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
-35.  									&lt;text class=&#34;text-cut&#34;&gt;
-36.  										&lt;text class=&#34;cuIcon-infofill text-red  margin-right-xs&#34;&gt;&lt;/text&gt;
-37.  										我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
-38.  									&lt;/text&gt; &lt;/view&gt;
-39.  							&lt;/view&gt;
-40.  							&lt;view class=&#34;action&#34;&gt;
-41.  								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-42.  								&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
-43.  							&lt;/view&gt;
-44.  						&lt;/view&gt;
-45.  						&lt;view class=&#34;cu-item&#34;&gt;
-46.  							&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);&#34;&gt;
-47.  								&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;
-48.  							&lt;/view&gt;
-49.  							&lt;view class=&#34;content&#34;&gt;
-50.  								&lt;view class=&#34;text-grey&#34;&gt;
-51.  									&lt;text class=&#34;text-cut&#34;&gt;瓦洛兰之盾-塔里克&lt;/text&gt;
-52.  									&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;战士&lt;/view&gt;
-53.  								&lt;/view&gt;
-54.  								&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
-55.  									&lt;text class=&#34;text-cut&#34;&gt;
-56.  										塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。
-57.  									&lt;/text&gt;
-58.  								&lt;/view&gt;
-59.  							&lt;/view&gt;
-60.  							&lt;view class=&#34;action&#34;&gt;
-61.  								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-62.  								&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
-63.  							&lt;/view&gt;
-64.  						&lt;/view&gt;
-65.  						&lt;view class=&#34;cu-item &#34;&gt;
-66.  							&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);&#34;&gt;&lt;/view&gt;
-67.  							&lt;view class=&#34;content&#34;&gt;
-68.  								&lt;view class=&#34;text-pink&#34;&gt;&lt;text class=&#34;text-cut&#34;&gt;莫甘娜&lt;/text&gt;&lt;/view&gt;
-69.  								&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;text class=&#34;text-cut&#34;&gt;凯尔，你被自己的光芒变的盲目！&lt;/text&gt;&lt;/view&gt;
-70.  							&lt;/view&gt;
-71.  							&lt;view class=&#34;action&#34;&gt;
-72.  								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-73.  								&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
-74.  							&lt;/view&gt;
-75.  						&lt;/view&gt;
-76.  						&lt;view class=&#34;cu-item grayscale&#34;&gt;
-77.  							&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);&#34;&gt;&lt;/view&gt;
-78.  							&lt;view class=&#34;content&#34;&gt;
-79.  								&lt;view&gt;&lt;text class=&#34;text-cut&#34;&gt;伊泽瑞尔&lt;/text&gt;
-80.  									&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;断开连接...&lt;/view&gt;
-81.  								&lt;/view&gt;
-82.  								&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;text class=&#34;text-cut&#34;&gt; 等我回来一个打十个&lt;/text&gt;&lt;/view&gt;
-83.  							&lt;/view&gt;
-84.  							&lt;view class=&#34;action&#34;&gt;
-85.  								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-86.  								&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
-87.  							&lt;/view&gt;
-88.  						&lt;/view&gt;
-89.  						&lt;view class=&#34;cu-item cur&#34;&gt;
-90.  							&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);&#34;&gt;
-91.  								&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
-92.  							&lt;/view&gt;
-93.  							&lt;view class=&#34;content&#34;&gt;
-94.  								&lt;view&gt;
-95.  									&lt;text class=&#34;text-cut&#34;&gt;瓦罗兰大陆-睡衣守护者-新手保护营&lt;/text&gt;
-96.  									&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;6人&lt;/view&gt;
-97.  								&lt;/view&gt;
-98.  								&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
-99.  									&lt;text class=&#34;text-cut&#34;&gt; 伊泽瑞尔：&lt;text class=&#34;cuIcon-locationfill text-orange margin-right-xs&#34;&gt;&lt;/text&gt; 传送中...&lt;/text&gt;&lt;/view&gt;
-100.  							&lt;/view&gt;
-101.  							&lt;view class=&#34;action&#34;&gt;
-102.  								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
-103.  								&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
-104.  							&lt;/view&gt;
-105.  						&lt;/view&gt;
-106.  					&lt;/view&gt;
-107.  				&lt;/view&gt;
-108.  			&lt;/scroll-view&gt;
-109.  		&lt;/view&gt;
-110.  	&lt;/view&gt;
-111.  &lt;/template&gt;
-
-113.  &lt;script&gt;
-114.  	export default {
-115.  		data() {
-116.  			return {
-117.  				list: [],
-118.  				tabCur: 0,
-119.  				mainCur: 0,
-120.  				verticalNavTop: 0,
-121.  				load: true
-122.  			};
-123.  		},
-124.  		onLoad() {
-125.  			uni.showLoading({
-126.  				title: &#39;加载中...&#39;,
-127.  				mask: true
-128.  			});
-129.  			let list = [{}];
-130.  			for (let i = 0; i &lt; 26; i++) {
-131.  				list[i] = {};
-132.  				list[i].name = String.fromCharCode(65 + i);
-133.  				list[i].id = i;
-134.  			}
-135.  			this.list = list;
-136.  			this.listCur = list[0];
-137.  		},
-138.  		onReady() {
-139.  			uni.hideLoading()
-140.  		},
-141.  		methods: {
-142.  			TabSelect(e) {
-143.  				this.tabCur = e.currentTarget.dataset.id;
-144.  				this.mainCur = e.currentTarget.dataset.id;
-145.  				this.verticalNavTop = (e.currentTarget.dataset.id - 1) * 50
-146.  			},
-147.  //希望有大佬给我讲解一下这个双向联动函数
-148.  			VerticalMain(e) {
-149.  				// #ifdef MP-ALIPAY
-150.  				   return false  //支付宝小程序暂时不支持双向联动 
-151.  				// #endif
-152.  				let that = this;
-153.  				let tabHeight = 0;
-154.  				if (this.load) {
-155.  					for (let i = 0; i &lt; this.list.length; i++) {
-156.  						let view = uni.createSelectorQuery().select(&#34;#main-&#34; + this.list[i].id);
-157.  						view.fields({
-158.  							size: true
-159.  						}, data =&gt; {
-160.  							this.list[i].top = tabHeight;
-161.  							tabHeight = tabHeight + data.height;
-162.  							this.list[i].bottom = tabHeight;
-163.  						}).exec();
-164.  					}
-165.  					this.load = false
-166.  				}
-167.  				let scrollTop = e.detail.scrollTop + 10;
-168.  				for (let i = 0; i &lt; this.list.length; i++) {
-169.  					if (scrollTop &gt; this.list[i].top &amp;&amp; scrollTop &lt; this.list[i].bottom) {
-170.  						this.verticalNavTop = (this.list[i].id - 1) * 50
-171.  						this.tabCur = this.list[i].id
-172.  						console.log(scrollTop)
-173.  						return false
-174.  					}
-175.  				}
-176.  			}
-177.  		},
-178.  	}
-179.  &lt;/script&gt;
-
-181.  &lt;style&gt;
-182.  	.fixed {
-183.  		position: fixed;
-184.  		z-index: 99;
-185.  	}
-
-187.  	.VerticalNav.nav {
-188.  		width: 200upx;
-189.  		white-space: initial;
-190.  	}
-
-192.  	.VerticalNav.nav .cu-item {
-193.  		width: 100%;
-194.  		text-align: center;
-195.  		background-color: #fff;
-196.  		margin: 0;
-197.  		border: none;
-198.  		height: 50px;
-199.  		position: relative;
-200.  	}
-
-202.  	.VerticalNav.nav .cu-item.cur {
-203.  		background-color: #f1f1f1;
-204.  	}
-
-206.  	.VerticalNav.nav .cu-item.cur::after {
-207.  		content: &#34;&#34;;
-208.  		width: 8upx;
-209.  		height: 30upx;
-210.  		border-radius: 10upx 0 0 10upx;
-211.  		position: absolute;
-212.  		background-color: currentColor;
-213.  		top: 0;
-214.  		right: 0upx;
-215.  		bottom: 0;
-216.  		margin: auto;
-217.  	}
-
-219.  	.VerticalBox {
-220.  		display: flex;
-221.  	}
-
-223.  	.VerticalMain {
-224.  		background-color: #f1f1f1;
-225.  		flex: 1;
-226.  	}
-227.  &lt;/style&gt;
-
-
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;template&gt;
+	&lt;view&gt;
+		&lt;view class=&#34;fixed&#34;&gt;
+			&lt;cu-custom :isBack=&#34;true&#34; bgColor=&#34;bg-shadeTop text-white&#34;&gt;
+				&lt;block slot=&#34;backText&#34;&gt;返回&lt;/block&gt;
+				&lt;block slot=&#34;content&#34;&gt;垂直导航&lt;/block&gt;
+			&lt;/cu-custom&gt;
+		&lt;/view&gt;
+		&lt;swiper class=&#34;screen-swiper round-dot&#34; :indicator-dots=&#34;true&#34; :circular=&#34;true&#34; :autoplay=&#34;true&#34; interval=&#34;5000&#34;
+		 duration=&#34;500&#34;&gt;
+			&lt;swiper-item v-for=&#34;(item,index) in 4&#34; :key=&#34;index&#34;&gt;
+				&lt;image :src=&#34;&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big3900&#39;+index+ &#39;.jpg&#39;&#34; mode=&#34;aspectFill&#34;&gt;&lt;/image&gt;
+			&lt;/swiper-item&gt;
+		&lt;/swiper&gt;
+		&lt;view class=&#34;VerticalBox&#34;&gt;
+			&lt;scroll-view class=&#34;VerticalNav nav&#34; scroll-y scroll-with-animation :scroll-top=&#34;verticalNavTop&#34; style=&#34;height:calc(100vh - 375upx)&#34;&gt;
+				&lt;view class=&#34;cu-item&#34; :class=&#34;index==tabCur?&#39;text-green cur&#39;:&#39;&#39;&#34; v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34; @tap=&#34;TabSelect&#34;
+				 :data-id=&#34;index&#34;&gt;
+					Tab-{{item.name}}
+				&lt;/view&gt;
+			&lt;/scroll-view&gt;
+			&lt;scroll-view class=&#34;VerticalMain&#34; scroll-y scroll-with-animation style=&#34;height:calc(100vh - 375upx)&#34;
+			 :scroll-into-view=&#34;&#39;main-&#39;+mainCur&#34; @scroll=&#34;VerticalMain&#34;&gt;
+				&lt;view class=&#34;padding-top padding-lr&#34; v-for=&#34;(item,index) in list&#34; :key=&#34;index&#34; :id=&#34;&#39;main-&#39;+index&#34;&gt;
+					&lt;view class=&#34;cu-bar solid-bottom bg-white&#34;&gt;
+						&lt;view class=&#34;action&#34;&gt;
+							&lt;text class=&#34;cuIcon-title text-green&#34;&gt;&lt;/text&gt; Tab-{{item.name}}&lt;/view&gt;
+					&lt;/view&gt;
+					&lt;view class=&#34;cu-list menu-avatar&#34;&gt;
+						&lt;view class=&#34;cu-item&#34;&gt;
+							&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);&#34;&gt;&lt;/view&gt;
+							&lt;view class=&#34;content&#34;&gt;
+								&lt;view class=&#34;text-grey&#34;&gt;凯尔&lt;/view&gt;
+								&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
+									&lt;text class=&#34;text-cut&#34;&gt;
+										&lt;text class=&#34;cuIcon-infofill text-red  margin-right-xs&#34;&gt;&lt;/text&gt;
+										我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
+									&lt;/text&gt; &lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;action&#34;&gt;
+								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+								&lt;view class=&#34;cu-tag round bg-grey sm&#34;&gt;5&lt;/view&gt;
+							&lt;/view&gt;
+						&lt;/view&gt;
+						&lt;view class=&#34;cu-item&#34;&gt;
+							&lt;view class=&#34;cu-avatar round lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);&#34;&gt;
+								&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;content&#34;&gt;
+								&lt;view class=&#34;text-grey&#34;&gt;
+									&lt;text class=&#34;text-cut&#34;&gt;瓦洛兰之盾-塔里克&lt;/text&gt;
+									&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;战士&lt;/view&gt;
+								&lt;/view&gt;
+								&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
+									&lt;text class=&#34;text-cut&#34;&gt;
+										塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。
+									&lt;/text&gt;
+								&lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;action&#34;&gt;
+								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+								&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
+							&lt;/view&gt;
+						&lt;/view&gt;
+						&lt;view class=&#34;cu-item &#34;&gt;
+							&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);&#34;&gt;&lt;/view&gt;
+							&lt;view class=&#34;content&#34;&gt;
+								&lt;view class=&#34;text-pink&#34;&gt;&lt;text class=&#34;text-cut&#34;&gt;莫甘娜&lt;/text&gt;&lt;/view&gt;
+								&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;text class=&#34;text-cut&#34;&gt;凯尔，你被自己的光芒变的盲目！&lt;/text&gt;&lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;action&#34;&gt;
+								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+								&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
+							&lt;/view&gt;
+						&lt;/view&gt;
+						&lt;view class=&#34;cu-item grayscale&#34;&gt;
+							&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);&#34;&gt;&lt;/view&gt;
+							&lt;view class=&#34;content&#34;&gt;
+								&lt;view&gt;&lt;text class=&#34;text-cut&#34;&gt;伊泽瑞尔&lt;/text&gt;
+									&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;断开连接...&lt;/view&gt;
+								&lt;/view&gt;
+								&lt;view class=&#34;text-gray text-sm flex&#34;&gt; &lt;text class=&#34;text-cut&#34;&gt; 等我回来一个打十个&lt;/text&gt;&lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;action&#34;&gt;
+								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+								&lt;view class=&#34;cu-tag round bg-red sm&#34;&gt;5&lt;/view&gt;
+							&lt;/view&gt;
+						&lt;/view&gt;
+						&lt;view class=&#34;cu-item cur&#34;&gt;
+							&lt;view class=&#34;cu-avatar radius lg&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);&#34;&gt;
+								&lt;view class=&#34;cu-tag badge&#34;&gt;&lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;content&#34;&gt;
+								&lt;view&gt;
+									&lt;text class=&#34;text-cut&#34;&gt;瓦罗兰大陆-睡衣守护者-新手保护营&lt;/text&gt;
+									&lt;view class=&#34;cu-tag round bg-orange sm&#34;&gt;6人&lt;/view&gt;
+								&lt;/view&gt;
+								&lt;view class=&#34;text-gray text-sm flex&#34;&gt;
+									&lt;text class=&#34;text-cut&#34;&gt; 伊泽瑞尔：&lt;text class=&#34;cuIcon-locationfill text-orange margin-right-xs&#34;&gt;&lt;/text&gt; 传送中...&lt;/text&gt;&lt;/view&gt;
+							&lt;/view&gt;
+							&lt;view class=&#34;action&#34;&gt;
+								&lt;view class=&#34;text-grey text-xs&#34;&gt;22:20&lt;/view&gt;
+								&lt;view class=&#34;cuIcon-notice_forbid_fill text-gray&#34;&gt;&lt;/view&gt;
+							&lt;/view&gt;
+						&lt;/view&gt;
+					&lt;/view&gt;
+				&lt;/view&gt;
+			&lt;/scroll-view&gt;
+		&lt;/view&gt;
+	&lt;/view&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+	export default {
+		data() {
+			return {
+				list: [],
+				tabCur: 0,
+				mainCur: 0,
+				verticalNavTop: 0,
+				load: true
+			};
+		},
+		onLoad() {
+			uni.showLoading({
+				title: &#39;加载中...&#39;,
+				mask: true
+			});
+			let list = [{}];
+			for (let i = 0; i &lt; 26; i++) {
+				list[i] = {};
+				list[i].name = String.fromCharCode(65 + i);
+				list[i].id = i;
+			}
+			this.list = list;
+			this.listCur = list[0];
+		},
+		onReady() {
+			uni.hideLoading()
+		},
+		methods: {
+			TabSelect(e) {
+				this.tabCur = e.currentTarget.dataset.id;
+				this.mainCur = e.currentTarget.dataset.id;
+				this.verticalNavTop = (e.currentTarget.dataset.id - 1) * 50
+			},
+//希望有大佬给我讲解一下这个双向联动函数
+			VerticalMain(e) {
+				// #ifdef MP-ALIPAY
+				   return false  //支付宝小程序暂时不支持双向联动 
+				// #endif
+				let that = this;
+				let tabHeight = 0;
+				if (this.load) {
+					for (let i = 0; i &lt; this.list.length; i++) {
+						let view = uni.createSelectorQuery().select(&#34;#main-&#34; + this.list[i].id);
+						view.fields({
+							size: true
+						}, data =&gt; {
+							this.list[i].top = tabHeight;
+							tabHeight = tabHeight + data.height;
+							this.list[i].bottom = tabHeight;
+						}).exec();
+					}
+					this.load = false
+				}
+				let scrollTop = e.detail.scrollTop + 10;
+				for (let i = 0; i &lt; this.list.length; i++) {
+					if (scrollTop &gt; this.list[i].top &amp;&amp; scrollTop &lt; this.list[i].bottom) {
+						this.verticalNavTop = (this.list[i].id - 1) * 50
+						this.tabCur = this.list[i].id
+						console.log(scrollTop)
+						return false
+					}
+				}
+			}
+		},
+	}
+&lt;/script&gt;
+ 
+&lt;style&gt;
+	.fixed {
+		position: fixed;
+		z-index: 99;
+	}
+ 
+	.VerticalNav.nav {
+		width: 200upx;
+		white-space: initial;
+	}
+ 
+	.VerticalNav.nav .cu-item {
+		width: 100%;
+		text-align: center;
+		background-color: #fff;
+		margin: 0;
+		border: none;
+		height: 50px;
+		position: relative;
+	}
+ 
+	.VerticalNav.nav .cu-item.cur {
+		background-color: #f1f1f1;
+	}
+ 
+	.VerticalNav.nav .cu-item.cur::after {
+		content: &#34;&#34;;
+		width: 8upx;
+		height: 30upx;
+		border-radius: 10upx 0 0 10upx;
+		position: absolute;
+		background-color: currentColor;
+		top: 0;
+		right: 0upx;
+		bottom: 0;
+		margin: auto;
+	}
+ 
+	.VerticalBox {
+		display: flex;
+	}
+ 
+	.VerticalMain {
+		background-color: #f1f1f1;
+		flex: 1;
+	}
+&lt;/style&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>colorUI的简易教程差不多就到这了，欢迎各位大佬的指教！！！</p></div><div class="post-footer" id="post-footer">

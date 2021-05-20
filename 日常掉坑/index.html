@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>JPA实现动态SQL - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="JPA实现动态SQL" />
+        <title>日常掉坑 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="日常掉坑" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-15T12:03:18&#43;08:00" />
-<meta property="article:modified_time" content="2021-05-15T12:03:18&#43;08:00" />
+<meta property="og:url" content="https://hubu8.github.io/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-19T23:05:48&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-19T23:05:48&#43;08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
 
-<meta name="twitter:title" content="JPA实现动态SQL"/>
+<meta name="twitter:title" content="日常掉坑"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="Eccentric&#39;s Note">
 <meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" /><link rel="prev" href="https://hubu8.github.io/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/" /><link rel="next" href="https://hubu8.github.io/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" /><link rel="prev" href="https://hubu8.github.io/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" /><link rel="next" href="https://hubu8.github.io/https%E9%85%8D%E7%BD%AE/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "JPA实现动态SQL",
+        "headline": "日常掉坑",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql\/"
-        },"genre": "posts","keywords": "JPA","wordcount":  947 ,
-        "url": "https:\/\/hubu8.github.io\/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql\/","datePublished": "2021-05-15T12:03:18+08:00","dateModified": "2021-05-15T12:03:18+08:00","publisher": {
+            "@id": "https:\/\/hubu8.github.io\/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91\/"
+        },"genre": "posts","wordcount":  67 ,
+        "url": "https:\/\/hubu8.github.io\/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91\/","datePublished": "2021-05-19T23:05:48+08:00","dateModified": "2021-05-19T23:05:48+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -104,10 +104,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">JPA实现动态SQL</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw"></i>数据库</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-15">2021-05-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 947 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" class="leancloud_visitors" data-flag-title="JPA实现动态SQL">
+        </div><article class="page single"><h1 class="single-title animated flipInX">日常掉坑</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw"></i>运维</a>&nbsp;<a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw"></i>Java后端</a>&nbsp;<a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw"></i>数据库</a>&nbsp;<a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a>&nbsp;<a href="/categories/%E5%89%8D%E7%AB%AF/"><i class="far fa-folder fa-fw"></i>前端</a>&nbsp;<a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-19">2021-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 67 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" class="leancloud_visitors" data-flag-title="日常掉坑">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -115,160 +115,17 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#jpa-基本查询">JPA 基本查询</a></li>
-    <li><a href="#jpa-多条件查询参数为空判断语句">JPA 多条件查询（参数为空判断）语句</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h2 id="jpa-基本查询">JPA 基本查询</h2>
-<p>Spring Data JPA提供的一个查询规范，查询语句关键字，简单的SQL可根据方法命名来即可，省略了写sql语句</p>
-<table>
-<thead>
-<tr>
-<th>关键字</th>
-<th>方法命名</th>
-<th>sql where字句</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>And</td>
-<td>findByNameAndPwd</td>
-<td>where name= ? and pwd =?</td>
-</tr>
-<tr>
-<td>Or</td>
-<td>findByNameOrSex</td>
-<td>where name= ? or sex=?</td>
-</tr>
-<tr>
-<td>Is,Equals</td>
-<td>findById,findByIdEquals</td>
-<td>where id= ?</td>
-</tr>
-<tr>
-<td>Between</td>
-<td>findByIdBetween</td>
-<td>where id between ? and ?</td>
-</tr>
-<tr>
-<td>LessThan</td>
-<td>findByIdLessThan</td>
-<td>where id &lt; ?</td>
-</tr>
-<tr>
-<td>LessThanEquals</td>
-<td>findByIdLessThanEquals</td>
-<td>where id &lt;= ?</td>
-</tr>
-<tr>
-<td>GreaterThan</td>
-<td>findByIdGreaterThan</td>
-<td>where id &gt; ?</td>
-</tr>
-<tr>
-<td>GreaterThanEquals</td>
-<td>findByIdGreaterThanEquals</td>
-<td>where id &gt; = ?</td>
-</tr>
-<tr>
-<td>After</td>
-<td>findByIdAfter</td>
-<td>where id &gt; ?</td>
-</tr>
-<tr>
-<td>Before</td>
-<td>findByIdBefore</td>
-<td>where id &lt; ?</td>
-</tr>
-<tr>
-<td>IsNull</td>
-<td>findByNameIsNull</td>
-<td>where name is null</td>
-</tr>
-<tr>
-<td>isNotNull,NotNull</td>
-<td>findByNameNotNull</td>
-<td>where name is not null</td>
-</tr>
-<tr>
-<td>Like</td>
-<td>findByNameLike</td>
-<td>where name like ?</td>
-</tr>
-<tr>
-<td>NotLike</td>
-<td>findByNameNotLike</td>
-<td>where name not like ?</td>
-</tr>
-<tr>
-<td>StartingWith</td>
-<td>findByNameStartingWith</td>
-<td>where name like ‘?%’</td>
-</tr>
-<tr>
-<td>EndingWith</td>
-<td>findByNameEndingWith</td>
-<td>where name like ‘%?’</td>
-</tr>
-<tr>
-<td>Containing</td>
-<td>findByNameContaining</td>
-<td>where name like ‘%?%’</td>
-</tr>
-<tr>
-<td>OrderBy</td>
-<td>findByIdOrderByXDesc</td>
-<td>where id=? order by x desc</td>
-</tr>
-<tr>
-<td>Not</td>
-<td>findByNameNot</td>
-<td>where name &lt;&gt; ?</td>
-</tr>
-<tr>
-<td>In</td>
-<td>findByIdIn(Collection&lt;?&gt; c)</td>
-<td>where id in (?)</td>
-</tr>
-<tr>
-<td>NotIn</td>
-<td>findByIdNotIn(Collection&lt;?&gt; c)</td>
-<td>where id not in (?)</td>
-</tr>
-<tr>
-<td>True</td>
-<td>findByAaaTue</td>
-<td>where aaa = true</td>
-</tr>
-<tr>
-<td>False</td>
-<td>findByAaaFalse</td>
-<td>where aaa = false</td>
-</tr>
-<tr>
-<td>IgnoreCase</td>
-<td>findByNameIgnoreCase</td>
-<td>where UPPER(name)=UPPER(?)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="jpa-多条件查询参数为空判断语句">JPA 多条件查询（参数为空判断）语句</h2>
-<p>工作中遇到一个多条件查询的需求，需要根据名字，性别，年龄以及序号查询数据，名字需要模糊查询，参数有可能为空。</p>
-<div class="highlight"><div class="chroma">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Query</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;select * from people where if(?1 !=&#39;&#39;,name like concat(&#39;%&#39;,?1,&#39;%&#39;),1=1) and if(?2 !=&#39;&#39;,sex=?2,1=1)&#34;</span><span class="o">+</span>
-<span class="s">&#34; and if(IFNULL(?3,&#39;&#39;) !=&#39;&#39;,age=?3,1=1) and if(IFNULL(?4,&#39;&#39;) !=&#39;&#39;,num=?4,1=1) &#34;</span><span class="o">,</span><span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">People</span><span class="o">&gt;</span> <span class="nf">find</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span><span class="n">String</span> <span class="n">sex</span><span class="o">,</span><span class="n">Integer</span> <span class="n">age</span><span class="o">,</span><span class="n">Integer</span> <span class="n">num</span><span class="o">);</span>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run --name postNginx -v /work/html:/usr/share/nginx/html -v /work/nginx:/etc/nginx nginx
 </code></pre></td></tr></table>
 </div>
-</div><p>同理：</p>
+</div><p>2021/05/19 14:46:05 [emerg] 1#1: open() &ldquo;/etc/nginx/nginx.conf&rdquo; failed (2: No such file or directory)
+nginx: [emerg] open() &ldquo;/etc/nginx/nginx.conf&rdquo; failed (2: No such file or directory)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -277,35 +134,29 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="nd">@Query</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;select * from post_timer where if(IFNULL(?1,&#39;&#39;) !=&#39;&#39;,is_send=?1,1=1) and if(IFNULL(?2,&#39;&#39;) !=&#39;&#39;,typa=?2,1=1) and if(IFNULL(?3,&#39;&#39;) !=&#39;&#39;,status=?3,1=1) and if(?4 !=&#39;&#39;,content like concat(&#39;%&#39;,?4,&#39;%&#39;),1=1) &#34;</span><span class="o">+</span>
-            <span class="s">&#34;order by create_time DESC limit ?5,?6&#34;</span><span class="o">,</span><span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">PostTimer</span><span class="o">&gt;</span> <span class="nf">findlike</span><span class="o">(</span><span class="n">Integer</span> <span class="n">isSend</span><span class="o">,</span><span class="n">Integer</span> <span class="n">typa</span><span class="o">,</span><span class="n">Integer</span> <span class="n">status</span><span class="o">,</span><span class="n">String</span> <span class="n">likeString</span><span class="o">,</span><span class="n">Integer</span> <span class="n">page</span><span class="o">,</span><span class="n">Integer</span> <span class="n">limit</span><span class="o">);</span>
-
-    <span class="nd">@Query</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;select count(*) from post_timer where if(IFNULL(?1,&#39;&#39;) !=&#39;&#39;,is_send=?1,1=1) and if(IFNULL(?2,&#39;&#39;) !=&#39;&#39;,typa=?2,1=1) and if(IFNULL(?3,&#39;&#39;) !=&#39;&#39;,status=?3,1=1) and if(?4 !=&#39;&#39;,content like concat(&#39;%&#39;,?4,&#39;%&#39;),1=1) &#34;</span><span class="o">,</span><span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-    <span class="n">Integer</span> <span class="nf">countlike</span><span class="o">(</span><span class="n">Integer</span> <span class="n">isSend</span><span class="o">,</span><span class="n">Integer</span> <span class="n">typa</span><span class="o">,</span><span class="n">Integer</span> <span class="n">status</span><span class="o">,</span><span class="n">String</span> <span class="n">likeString</span><span class="o">);</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">docker run --name<span class="o">=</span>mynginx -p 80:80 -p 443:443 <span class="se">\
+</span><span class="se"></span>        --restart<span class="o">=</span>always <span class="se">\
+</span><span class="se"></span>        -v /work/nginx/nginx.conf:/etc/nginx/nginx.conf <span class="se">\
+</span><span class="se"></span>    -v /work/nginx/conf.d:/etc/nginx/conf.d <span class="se">\
+</span><span class="se"></span>    -v /work/nginx/www:/usr/share/nginx/html <span class="se">\
+</span><span class="se"></span>    -v /work/nginx/logs:/var/log/nginx -v /work/nginx/cart:/etc/nginx/cart <span class="se">\
+</span><span class="se"></span>    -d nginx
 </code></pre></td></tr></table>
 </div>
-</div><p>PS：</p>
-<ol>
-<li><strong>nativeQuery = true</strong> 的含义是使用原生SQL，即注解中的SQL语句会生效，false的话就不会生效。</li>
-<li>SQL语句中 ?1、?2、?3、?4 的意思是代表方法中的第几个参数。</li>
-<li>SQL中模糊查询的写法为 like concat('%', ?1, &lsquo;%')</li>
-<li><strong>if(?1 !='',name like concat('%&rsquo;,?1,'%'),1=1)</strong> 代表传入的参数name如果不为&quot;&quot;（Spring类型空是&quot;&ldquo;而不是null）将参数传入name，如果为空时显示1=1 代表参数为真，对查询结果不产生作用。IF 的语法满足mysql的基本语法，IF(expr1,expr2,expr3)， 如果 expr1 为真(expr1 &lt;&gt; 0 以及 expr1 &lt;&gt; NULL)，那么 IF() 返回 expr2，否则返回expr3</li>
-<li><strong>if(IFNULL(?3,'') !='',age=?3,1=1)</strong> 表示如果传入的年龄是null，则替换成空字符串，然后判断是否为空，不为空则将参数传入age，否则忽略不对查询结果产生影响。IFNULL 是mysql中的一个函数，这个函数一般用来替换 NULL 值的。IFNULL(value1,value2)，判断value1是否为null，如果为null则用value2替换。</li>
-<li>**参数定义时，定义数值，应使用Integer，**如果用int定义，当入参为NULL时，程序会报空指针错误。原因是JAVA 中 int 是值类型，非对象，不可以设置为 NULL，integer 是对象类型，可以设置为NULL</li>
-</ol></div><div class="post-footer" id="post-footer">
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-05-15</span>
+                <span>更新于 2021-05-19</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -314,14 +165,14 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/jpa/">JPA</a></section>
+        <section class="post-tags"></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/" class="prev" rel="prev" title="ColorUI交互组件"><i class="fas fa-angle-left fa-fw"></i>ColorUI交互组件</a>
-            <a href="/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" class="next" rel="next" title="日常掉坑">日常掉坑<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" class="prev" rel="prev" title="JPA实现动态SQL"><i class="fas fa-angle-left fa-fw"></i>JPA实现动态SQL</a>
+            <a href="/https%E9%85%8D%E7%BD%AE/" class="next" rel="next" title="Https配置">Https配置<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

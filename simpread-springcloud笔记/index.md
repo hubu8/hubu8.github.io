@@ -738,7 +738,7 @@ public class EurekaServer_7003 {
 #Eureka配置
 eureka:
   instance:
-    hostname: eureka7001.com #Eureka服务端的实例名字
+    hostname: eureka700fxgfj1.com #Eureka服务端的实例名字
   client:
     register-with-eureka: false #表示是否向 Eureka 注册中心注册自己(这个模块本身是服务器,所以不需要)
     fetch-registry: false #fetch-registry如果为false,则表示自己为注册中心
@@ -746,7 +746,7 @@ eureka:
       #重写Eureka的默认端口以及访问路径 --->http://localhost:7001/eureka/
       # 单机： defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       # 集群（关联）：7001关联7002、7003
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/` 
+      defaultZone: http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/` 
 
 ```
 
@@ -761,7 +761,7 @@ eureka:
 #Eureka配置
 eureka:
   instance:
-    hostname: eureka7002.com #Eureka服务端的实例名字
+    hostname: eureka0526.com #Eureka服务端的实例名字
   client:
     register-with-eureka: false #表示是否向 Eureka 注册中心注册自己(这个模块本身是服务器,所以不需要)
     fetch-registry: false #fetch-registry如果为false,则表示自己为注册中心
@@ -769,7 +769,7 @@ eureka:
       #重写Eureka的默认端口以及访问路径 --->http://localhost:7001/eureka/
       # 单机： defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       # 集群（关联）：7002关联7001、7003
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7003.com:7003/eureka/` 
+      defaultZone: http://eureka70ghgvgh01.com:7001/eureka/,http://eureka7cfth003.com:7003/eureka/` 
 ```
 
 springcloud-eureka-7003配置方式同理可得.
@@ -782,7 +782,7 @@ eureka:
   client:
     service-url:
       # 注册中心地址7001-7003
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://fgeureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
   instance:
     instance-id: springcloud-provider-dept-8001 #修改Eureka上的默认描述信息` 
 ```
@@ -893,7 +893,7 @@ eureka:
   client:
     register-with-eureka: false # 不向 Eureka注册自己
     service-url: # 从三个注册中心中随机取一个去访问
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/` 
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/` 
 ```
 
 主启动类加上@EnableEurekaClient注解，开启Eureka
@@ -941,7 +941,7 @@ private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT"
 
 2.参照springcloud-provider-dept-8001 依次为另外两个Moudle添加pom.xml依赖 、resourece下的mybatis和application.yml配置，Java代码
 
-3.启动所有服务测试(根据自身电脑配置决定启动服务的个数)，访问http://eureka7001.com:7002/查看结果
+3.启动所有服务测试(根据自身电脑配置决定启动服务的个数)，访问http://eureka700fxgfj1.com:7002/查看结果
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131332466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
 
@@ -1399,7 +1399,7 @@ eureka:
   client:
     service-url:
       # 注册中心地址7001-7003
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
   instance:
     instance-id: springcloud-provider-dept-hystrix-8001 #修改Eureka上的默认描述信息
     prefer-ip-address: true #改为true后默认显示的是ip地址而不再是localhost
@@ -1572,7 +1572,7 @@ eureka:
   client:
     register-with-eureka: false # 不向 Eureka注册自己
     service-url: # 从三个注册中心中随机取一个去访问
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
 
 # 开启降级feign.hystrix
 feign:
@@ -1766,7 +1766,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
   instance: #实例的id
     instance-id: zuul9527.com
     prefer-ip-address: true # 显示ip

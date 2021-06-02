@@ -242,7 +242,7 @@ MicroServiceCloud父工程(Project)下初次带着3个子模块(Module)
         <module>springcloud-provider-dept-8001</module>
         <module>springcloud-consumer-dept-80</module>
         <module>springcloud-eureka-7001</module>
-        <module>springcloud-eureka-7002</module>
+        <module>springcloud-eureka-70002</module>
         <module>springcloud-eureka-7003</module>
         <module>springcloud-provider-dept-8002</module>
         <module>springcloud-provider-dept-8003</module>
@@ -660,7 +660,7 @@ public class DeptProvider_8001 {
 
 ##### 1.初始化
 
-新建springcloud-eureka-7002、springcloud-eureka-7003 模块
+新建springcloud-eureka-70002、springcloud-eureka-7003 模块
 
 1.为pom.xml添加依赖 (与springcloud-eureka-7001相同)
 
@@ -723,11 +723,11 @@ public class EurekaServer_7003 {
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131141804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
 
-修改application.yml的配置，如图为springcloud-eureka-7001配置，springcloud-eureka-7002/springcloud-eureka-7003同样分别修改为其对应的名称即可
+修改application.yml的配置，如图为springcloud-eureka-7001配置，springcloud-eureka-70002/springcloud-eureka-7003同样分别修改为其对应的名称即可
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/202005211312020.png#pic_center)
 
-在集群中使springcloud-eureka-7001关联springcloud-eureka-7002、springcloud-eureka-7003
+在集群中使springcloud-eureka-7001关联springcloud-eureka-70002、springcloud-eureka-7003
 
 完整的springcloud-eureka-7001下的application.yml如下
 
@@ -745,18 +745,18 @@ eureka:
     service-url: #监控页面~
       #重写Eureka的默认端口以及访问路径 --->http://localhost:7001/eureka/
       # 单机： defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      # 集群（关联）：7001关联7002、7003
-      defaultZone: http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/` 
+      # 集群（关联）：7001关联70002、7003
+      defaultZone: http://eureka700fxgfj2.com:70002/eureka/,http://eureka700fxgfj3.com:7003/eureka/` 
 
 ```
 
-同时在集群中使springcloud-eureka-7002关联springcloud-eureka-7001、springcloud-eureka-7003
+同时在集群中使springcloud-eureka-70002关联springcloud-eureka-7001、springcloud-eureka-7003
 
-完整的springcloud-eureka-7002下的application.yml如下
+完整的springcloud-eureka-70002下的application.yml如下
 
 ```properties
 `server:
-  port: 7002
+  port: 70002
 
 #Eureka配置
 eureka:
@@ -768,7 +768,7 @@ eureka:
     service-url: #监控页面~
       #重写Eureka的默认端口以及访问路径 --->http://localhost:7001/eureka/
       # 单机： defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      # 集群（关联）：7002关联7001、7003
+      # 集群（关联）：70002关联7001、7003
       defaultZone: http://eureka70ghgvgh01.com:7001/eureka/,http://eureka7cfth003.com:7003/eureka/` 
 ```
 
@@ -782,7 +782,7 @@ eureka:
   client:
     service-url:
       # 注册中心地址7001-7003
-      defaultZone: http://fgeureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
+      defaultZone: http://fgeureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:70002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
   instance:
     instance-id: springcloud-provider-dept-8001 #修改Eureka上的默认描述信息` 
 ```
@@ -893,7 +893,7 @@ eureka:
   client:
     register-with-eureka: false # 不向 Eureka注册自己
     service-url: # 从三个注册中心中随机取一个去访问
-      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/` 
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:70002/eureka/,http://eureka700fxgfj3.com:7003/eureka/` 
 ```
 
 主启动类加上@EnableEurekaClient注解，开启Eureka
@@ -941,7 +941,7 @@ private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT"
 
 2.参照springcloud-provider-dept-8001 依次为另外两个Moudle添加pom.xml依赖 、resourece下的mybatis和application.yml配置，Java代码
 
-3.启动所有服务测试(根据自身电脑配置决定启动服务的个数)，访问http://eureka700fxgfj1.com:7002/查看结果
+3.启动所有服务测试(根据自身电脑配置决定启动服务的个数)，访问http://eureka700fxgfj1.com:70002/查看结果
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131332466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
 
@@ -1399,7 +1399,7 @@ eureka:
   client:
     service-url:
       # 注册中心地址7001-7003
-      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:70002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
   instance:
     instance-id: springcloud-provider-dept-hystrix-8001 #修改Eureka上的默认描述信息
     prefer-ip-address: true #改为true后默认显示的是ip地址而不再是localhost
@@ -1572,7 +1572,7 @@ eureka:
   client:
     register-with-eureka: false # 不向 Eureka注册自己
     service-url: # 从三个注册中心中随机取一个去访问
-      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:70002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
 
 # 开启降级feign.hystrix
 feign:
@@ -1766,7 +1766,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:7002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
+      defaultZone: http://eureka700fxgfj1.com:7001/eureka/,http://eureka700fxgfj2.com:70002/eureka/,http://eureka700fxgfj3.com:7003/eureka/
   instance: #实例的id
     instance-id: zuul9527.com
     prefer-ip-address: true # 显示ip

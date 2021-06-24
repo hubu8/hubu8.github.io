@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91\/"
-        },"genre": "posts","keywords": "docker 掉坑","wordcount":  255 ,
+        },"genre": "posts","keywords": "docker 掉坑","wordcount":  521 ,
         "url": "https:\/\/hubu8.github.io\/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91\/","datePublished": "2021-05-19T23:05:48+08:00","dateModified": "2021-05-19T23:05:48+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">日常掉坑</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-19">2021-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 255 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" class="leancloud_visitors" data-flag-title="日常掉坑">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-19">2021-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 521 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%97%A5%E5%B8%B8%E6%8E%89%E5%9D%91/" class="leancloud_visitors" data-flag-title="日常掉坑">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -120,6 +120,11 @@
     <li>
       <ul>
         <li><a href="#nginx启动报错">nginx启动报错</a></li>
+        <li><a href="#nginx代理转发错误">nginx代理转发错误</a>
+          <ul>
+            <li><a href="#解决">解决：</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -158,7 +163,161 @@ nginx: [emerg] open() &ldquo;/etc/nginx/nginx.conf&rdquo; failed (2: No such fil
 </code></pre></td></tr></table>
 </div>
 </div><p>第二种解决办法：</p>
-<p>​	都提示了是没有权限造成的，那就排查下权限。看看宿主机本地的<code>nginx.conf</code>对<code>other</code>用户是否有读权限，再排查下该配置文件的所有父级目录是否有访问权限。或者像一楼说的用<code>docker run --privileged=true</code>启动容器，这样就是使用<code>root</code>用户权限了。</p></div><div class="post-footer" id="post-footer">
+<p>​	都提示了是没有权限造成的，那就排查下权限。看看宿主机本地的<code>nginx.conf</code>对<code>other</code>用户是否有读权限，再排查下该配置文件的所有父级目录是否有访问权限。或者像一楼说的用<code>docker run --privileged=true</code>启动容器，这样就是使用<code>root</code>用户权限了。</p>
+<h3 id="nginx代理转发错误">nginx代理转发错误</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> connect<span class="o">()</span> failed <span class="o">(</span>111: Connection refused<span class="o">)</span> <span class="k">while</span> connecting to upstream, client: 202.114.144.231, server: 111.47.28.118, request: <span class="s2">&#34;POST /prd-api/authorization-server/oauth/token?username=admin&amp;password=password&amp;grant_type=password&amp;scope=read HTTP/1.1&#34;</span>, upstream: <span class="s2">&#34;http://111.47.28.118:7181/authorization-server/oauth/token?username=admin&amp;password=password&amp;grant_type=password&amp;scope=read&#34;</span>, host: <span class="s2">&#34;111.47.28.118:7191&#34;</span>, referrer: <span class="s2">&#34;http://111.47.28.118:7191/&#34;</span>
+ 
+202.114.144.231 - test_client <span class="o">[</span>10/Jun/2021:09:53:55 +0000<span class="o">]</span> <span class="s2">&#34;POST /prd-api/authorization-server/oauth/token?username=admin&amp;password=password&amp;grant_type=password&amp;scope=read HTTP/1.1&#34;</span> <span class="m">502</span> <span class="m">494</span> <span class="s2">&#34;http://111.47.28.118:7191/&#34;</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 Edg/91.0.864.41&#34;</span> <span class="s2">&#34;-&#34;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>目前nginx配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">server {
+    listen       80;
+    listen  [::]:80;
+    server_name  111.47.28.118;
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+   
+    location / {
+        root   /usr/share/nginx/html/AAMS;
+        index  index.html index.htm;
+    }
+    
+    location /prd-api {
+        rewrite  ^/prd-api/(.*)$ /$1 break;
+        proxy_pass  http://111.47.28.118:7181;
+        proxy_set_header Authorization $http_authorization;
+    }
+ 
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>nginx.conf配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log notice;
+pid        /var/run/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;
+                      &#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;
+                      &#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+    underscores_in_headers on;
+    add_header Access-Control-Allow-Headers Authorization;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="解决">解决：</h4></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

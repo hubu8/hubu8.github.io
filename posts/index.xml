@@ -4,7 +4,14 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 28 May 2021 22:09:55 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 24 Jun 2021 20:23:56 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>期末知识点</title>
+    <link>https://hubu8.github.io/%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+    <pubDate>Thu, 24 Jun 2021 20:23:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>观察者模式</title>
     <link>https://hubu8.github.io/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Fri, 28 May 2021 22:09:55 &#43;0800</pubDate>
@@ -66,13 +73,6 @@
     <pubDate>Sun, 09 May 2021 08:08:18 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/stanford-corenlp/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>桥接模式</title>
-    <link>https://hubu8.github.io/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Wed, 05 May 2021 11:34:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

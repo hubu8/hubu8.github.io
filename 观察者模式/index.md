@@ -5,7 +5,7 @@
 
 ## 模式动机
 
-![image-20210528221149138](images/image-20210528221149138.png)
+![image-20210528221149138](desigh_images/image-20210528221149138.png)
 
 - 软件系统：一个对象的状态或行为的变化将导致其他对象的状态或行为也发生改变，它们之间将产生联动
 - 观察者模式：
@@ -20,7 +20,117 @@
 - 观察者模式又叫做发布-订阅（Publish/Subscribe）模式、模型-视图（Model/View）模式、源-监听器（Source/Listener）模式或从属者（Dependents）模式
 - 观察者模式是一种对象行为型模式
 
-![image-20210528221445289](images/image-20210528221445289.png)
+![image-20210528221445289](desigh_images/image-20210528221445289.png)
+
+代码：
+
+```java
+//抽象观察者
+public interface Observer {
+	public void update(Subject subject);
+}
+```
+
+```java
+public class ConcreteObserver implements Observer {
+	private String observername;	//观察者名称
+	private String observerstate;	//观察者状态
+		
+	public ConcreteObserver(String observername) {
+		this.observername = observername;
+	}
+
+	@Override
+	public void update(Subject subject) {
+		// TODO Auto-generated method stub
+		observerstate="观察者 "+observername+" 的当前状态是："+subject.getState();
+		System.out.println(observerstate);
+	}
+
+}
+```
+
+```java
+//抽象观察目标
+public abstract class Subject {
+	private String state;	//状态
+	protected ArrayList observers=new ArrayList();	//观察者集合
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		System.out.println("观察目标的状态变为："+state);
+	}
+	
+	public void attach(Observer observer)
+	{
+		observers.add(observer);
+	}
+	
+	public void detach(Observer observer)
+	{
+		observers.remove(observer);
+	}
+	
+	public abstract void notifyObservers();
+}
+
+```
+
+```java
+public class ConcreteSubject extends Subject {
+
+	@Override
+	public void notifyObservers() {
+		// TODO Auto-generated method stub
+		System.out.println("具体观察目标：通知所有观察者");
+		for(Object obj:observers)
+		{
+			Observer observer=(Observer)obj;
+			observer.update(this);
+		}
+	}
+
+}
+
+```
+
+```java
+public class Client {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Subject subject=new ConcreteSubject();
+		Observer obsA=new ConcreteObserver("obsA");
+		Observer obsB=new ConcreteObserver("obsB");
+		subject.attach(obsA);
+		subject.attach(obsB);
+
+		System.out.println("--------------------");
+		subject.setState("״̬1");
+		subject.notifyObservers();
+		
+		System.out.println("--------------------");
+		subject.setState("״̬2");
+		subject.notifyObservers();
+
+		System.out.println("--------------------");
+		Observer obsC=new ConcreteObserver("obsC");
+		subject.attach(obsC);
+		subject.setState("״̬3");
+		subject.notifyObservers();
+
+		System.out.println("--------------------");
+		subject.detach(obsB);
+		subject.setState("״̬4");
+		subject.notifyObservers();
+	}
+
+}
+```
 
 
 
@@ -52,7 +162,7 @@
 
 假设猫是老鼠和狗的观察目标，老鼠和狗是观察者，猫叫老鼠跑，狗也跟着叫，使用观察者模式描述该过程。
 
-![image-20210528221944335](images/image-20210528221944335.png)
+![image-20210528221944335](desigh_images/image-20210528221944335.png)
 
 抽象目标类
 

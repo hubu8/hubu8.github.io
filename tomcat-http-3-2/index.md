@@ -92,13 +92,13 @@ web资源：
 
 它指的是客户端——服务器的方式。其中C代表着Client，S代表着服务器。C/S结构的系统设计图如下：
 
-![CS结构图](images/CS结构图.jpg)
+![CS结构图](/实训/tomcat/CS结构图.jpg)
 
 ### 1.3.3 B/S结构
 
 它指的是浏览器——服务器的方式。其中B代表着Browser，S代表着服务器。B/S结构的系统设计图如下：
 
-![BS结构图](images/BS结构图.jpg)
+![BS结构图](/实训/tomcat/BS结构图.jpg)
 
 ### 1.3.4 两种结构的区别及优略
 
@@ -167,13 +167,13 @@ web资源：
 
 [Tomcat官网下载地址](http://tomcat.apache.org/)
 
-![tomcat官网](images/tomcat官网.png)
+![tomcat官网](/实训/tomcat/tomcat官网.png)
 
 ### 2.1.3 Tomcat各版本所需支持
 
 > JDK8 + tomcat9
 
-![Tomcat各版本使用技术支持](images/Tomcat各版本使用技术支持.png)
+![Tomcat各版本使用技术支持](/实训/tomcat/Tomcat各版本使用技术支持.png)
 
 
 
@@ -181,11 +181,11 @@ web资源：
 
 ### 2.1.4 Tomcat目录结构详解
 
-![tomcat目录结构详解](images/tomcat目录结构详解.png)
+![tomcat目录结构详解](/实训/tomcat/tomcat目录结构详解.png)
 
 ### 小结：（记住）
 
-![image-20201025105529130](images/image-20201025105529130.png)
+![image-20201025105529130](/实训/tomcat/image-20201025105529130.png)
 
 
 
@@ -201,9 +201,9 @@ web资源：
 
 #### 1）启动和停止
 
-Tomcat服务器的启动文件在二进制文件目录中：![1574762703742](images/1574762703742.png)，这两个文件就是Tomcat的启动文件。
+Tomcat服务器的启动文件在二进制文件目录中：![1574762703742](/实训/tomcat/1574762703742.png)，这两个文件就是Tomcat的启动文件。
 
-Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135](images/1574762805135.png)，这两个文件就是Tomcat的停止文件。
+Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135](/实训/tomcat/1574762805135.png)，这两个文件就是Tomcat的停止文件。
 
 其中`.bat`文件是针对`windows`系统的运行程序，`.sh`文件是针对`linux`系统的运行程序。
 
@@ -225,7 +225,7 @@ Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135](
 
 **第二个：Address already in use : JVM_Bind**
 
-![image-20201025110010847](images/image-20201025110010847.png)
+![image-20201025110010847](/实训/tomcat/image-20201025110010847.png)
 
 原因：端口被占用
 
@@ -235,7 +235,7 @@ Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135](
 
 ​                    进程很重要：修改自己的端口号。修改的是Tomcat目录下`\conf\server.xml`中的配置。
 
-​			![1574768222804](images/1574768222804.png)
+​			![1574768222804](/实训/tomcat/1574768222804.png)
 
 
 
@@ -271,19 +271,19 @@ Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135](
 
 **第一步**
 
-![IDEA配置Tomcat1](images/IDEA配置Tomcat1.png)
+![IDEA配置Tomcat1](/实训/tomcat/IDEA配置Tomcat1.png)
 
 **第二步**
 
-![IDEA配置Tomcat2](images/IDEA配置Tomcat2.png)
+![IDEA配置Tomcat2](/实训/tomcat/IDEA配置Tomcat2.png)
 
 **第三步**
 
-![IDEA配置Tomcat3](images/IDEA配置Tomcat3.png)
+![IDEA配置Tomcat3](/实训/tomcat/IDEA配置Tomcat3.png)
 
 **第四步**
 
-![IDEA配置Tomcat4](images/IDEA配置Tomcat4.png)
+![IDEA配置Tomcat4](/实训/tomcat/IDEA配置Tomcat4.png)
 
 
 
@@ -293,7 +293,7 @@ Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135](
 
 参考**2.1.2小节的《Tomcat下载与安装》**进入Tomcat官网，找到对应版本点击`download`进入下载页面，如下图：
 
-![Linux版Tomcat](images/Linux版Tomcat.png)
+![Linux版Tomcat](/实训/tomcat/Linux版Tomcat.png)
 
 **第二步：上传到linux**
 
@@ -371,7 +371,7 @@ Web应用开发好后，若想供外界访问，需要把web应用所在目录�
 
 ### 2.3.2 JavaWeb应用目录结构详解
 
-![1574768644245](images/1574768644245.png)
+![1574768644245](/实训/tomcat/1574768644245.png)
 
 ```
 myapp--------------应用名称
@@ -392,19 +392,19 @@ myapp--------------应用名称
 
 **第一步**
 
-![IDEA创建Javaweb工程](images/IDEA创建Javaweb工程.png)
+![IDEA创建Javaweb工程](/实训/tomcat/IDEA创建Javaweb工程.png)
 
 **第二步**
 
-![image-20201025120129047](images/image-20201025120129047.png)
+![image-20201025120129047](/实训/tomcat/image-20201025120129047.png)
 
 **第三步**
 
-![创建Javaweb工程3](images/创建Javaweb工程3.png)
+![创建Javaweb工程3](/实训/tomcat/创建Javaweb工程3.png)
 
 **第四步**
 
-![image-20201025142645862](images/image-20201025142645862.png)
+![image-20201025142645862](/实训/tomcat/image-20201025142645862.png)
 
 
 
@@ -420,19 +420,19 @@ myapp--------------应用名称
 
 **第一步**
 
-![IDEA发布工程1](images/IDEA发布工程1.png)
+![IDEA发布工程1](/实训/tomcat/IDEA发布工程1.png)
 
 **第二步**
 
-<img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201025144026745.png" alt="image-20201025144026745" style="zoom:80%;" />
+<img src="/实训/tomcat/image-20201025144026745.png" alt="image-20201025144026745" style="zoom:80%;" />
 
 
 
-![IDEA发布工程2](images/IDEA发布工程2.png)
+![IDEA发布工程2](/实训/tomcat/IDEA发布工程2.png)
 
 **第三步**
 
-![IDEA发布工程3-启动服务](images/IDEA发布工程3-启动服务.png)
+![IDEA发布工程3-启动服务](/实训/tomcat/IDEA发布工程3-启动服务.png)
 
 
 
@@ -442,23 +442,23 @@ myapp--------------应用名称
 
 **第一步：使用<b>`jar -cvf war` <font color='blue'>包的名称</font>  <font color='purple'>当前目录中哪些资源要打入war</font></b>**
 
-![jar命令](images/jar命令.png)
+![jar命令](/实训/tomcat/jar命令.png)
 
-![war包](images/war包.png)
+![war包](/实训/tomcat/war包.png)
 
 **第二步：把打好的war拷贝到tomcat的webapps目录中**
 
-![拷贝war包到webapps](images/拷贝war包到webapps.png)
+![拷贝war包到webapps](/实训/tomcat/拷贝war包到webapps.png)
 
 **第三步：启动服务时，tomcat会自动解压。**
 
-![启动Tomcat自动解压war包](images/启动Tomcat自动解压war包.png)
+![启动Tomcat自动解压war包](/实训/tomcat/启动Tomcat自动解压war包.png)
 
 
 
 ##### tomcat的webapps目录的作用：
 
-![image-20201025144851129](images/image-20201025144851129.png)
+![image-20201025144851129](/实训/tomcat/image-20201025144851129.png)
 
 
 
@@ -510,12 +510,12 @@ Tomcat的默认端口是<b><font color='red'>8080</font></b>。
 有两种方式配置默认应用。
 第一种：把要作为默认应用的应用，名称改为`ROOT`。放到`webapps`目录中。
 
-![默认应用1](images/默认应用1.png)
+![默认应用1](/实训/tomcat/默认应用1.png)
 
 第二种：写一个独立的配置文件，文件名称为`ROOT.xml`。
 ​				注意：`ROOT`必须大写。当使用了独立的`ROOT.xml`文件时，`webapps`下`ROOT`应用就不是默认应用了。
 
-![默认应用2](images/默认应用2.png)
+![默认应用2](/实训/tomcat/默认应用2.png)
 
 
 
@@ -579,7 +579,7 @@ HTTP协议概念是客户浏览器和服务器一种一问一答的规则，那�
 请求消息头： 从第二行开始，到第一个空行结束
 请求的正文： 从第一个空行后开始，到正文的结束
 
-![请求部分](images/请求部分-1574824553003.jpg)
+![请求部分](/实训/tomcat/请求部分-1574824553003.jpg)
 
 
 
@@ -593,7 +593,7 @@ HTTP协议概念是客户浏览器和服务器一种一问一答的规则，那�
 响应消息头： 从第二行开始，到第一个空行结束
 响应的正文： 从第一个空行后开始，到正文的结束
 
-![响应部分](images/响应部分-1574824560809.jpg)
+![响应部分](/实训/tomcat/响应部分-1574824560809.jpg)
 
 ### 3.3.3 消息头的共性分析
 
@@ -800,27 +800,27 @@ HTTP协议概念是客户浏览器和服务器一种一问一答的规则，那�
 
 **第一步：创建工程并选择使用的Tomcat版本**
 
-![静态资源工程1](images/静态资源工程1.png)
+![静态资源工程1](/实训/tomcat/静态资源工程1.png)
 
-![静态资源工程2](images/静态资源工程2.png)
+![静态资源工程2](/实训/tomcat/静态资源工程2.png)
 
 **第二步：拷贝资源到工程的web目录中**
 
-![静态资源工程3](images/静态资源工程3.png)
+![静态资源工程3](/实训/tomcat/静态资源工程3.png)
 
 **第三步：在web.xml中配置默认主页**
 
-![静态资源工程4](images/静态资源工程4.png)
+![静态资源工程4](/实训/tomcat/静态资源工程4.png)
 
 **第四步：部署工程到Tomcat服务器**
 
-![静态资源工程5](images/静态资源工程5.png)
+![静态资源工程5](/实训/tomcat/静态资源工程5.png)
 
 **第五步：测试浏览器访问**
 
-![静态资源工程6](images/静态资源工程6.png)
+![静态资源工程6](/实训/tomcat/静态资源工程6.png)
 
-![静态资源工程7](images/静态资源工程7.png)
+![静态资源工程7](/实训/tomcat/静态资源工程7.png)
 
 
 
@@ -852,21 +852,21 @@ HTTP协议概念是客户浏览器和服务器一种一问一答的规则，那�
 
 **第一步：创建工程**
 
-![动态资源工程](images/动态资源工程.png)
+![动态资源工程](/实训/tomcat/动态资源工程.png)
 
-![动态资源工程1](images/动态资源工程1.png)
+![动态资源工程1](/实训/tomcat/动态资源工程1.png)
 
 **第二步：拷贝资源**
 
-![动态资源工程2](images/动态资源工程2.png)
+![动态资源工程2](/实训/tomcat/动态资源工程2.png)
 
 **第三步：配置默认主页**
 
-![动态资源工程4](images/动态资源工程4.png)
+![动态资源工程4](/实训/tomcat/动态资源工程4.png)
 
 **第四步：部署项目**
 
-![动态资源工程3](images/动态资源工程3.png)
+![动态资源工程3](/实训/tomcat/动态资源工程3.png)
 
 
 
@@ -896,25 +896,25 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 
 
 
-![image-20210623092633117](../../../../../../Users/jianwei/Library/Application Support/typora-user-images/image-20210623092633117.png)
+![image-20210623092633117](/实训/tomcat/image-20210623092633117.png)
 
 #### 2） 按步骤编写Servlet
 
 **前期准备：在IDEA创建Javaweb工程**
 
-![前期准备](images/前期准备.png)
+![前期准备](/实训/tomcat/前期准备.png)
 
 **第一步：编写一个普通类实现Servlet接口或者继承GenericServlet类或者继承HttpServlet**
 
-![编写Servlet](images/编写Servlet.png)
+![编写Servlet](/实训/tomcat/编写Servlet.png)
 
 **第二步：重写service方法，输出一句话**
 
-![重写Service方法](images/重写Service方法.png)
+![重写Service方法](/实训/tomcat/重写Service方法.png)
 
 **第三步：在web.xml配置Servlet**
 
-![配置Servlet](images/配置Servlet.png)
+![配置Servlet](/实训/tomcat/配置Servlet.png)
 
 **第四步：启动tomcat服务器测试**
 
@@ -922,7 +922,7 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 
 #### 3）测试访问
 
-![测试访问结果](images/测试访问结果.png)
+![测试访问结果](/实训/tomcat/测试访问结果.png)
 
 
 
@@ -934,7 +934,7 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 
 ##### 1. servlet的实现步骤：
 
-![image-20201026103052174](images/image-20201026103052174.png)
+![image-20201026103052174](/实训/tomcat/image-20201026103052174.png)
 
 
 
@@ -944,11 +944,11 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 
 **方式1：注解形式：**
 
-<img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201026104504241.png" alt="image-20201026104504241" style="zoom:80%;" />
+<img src="/实训/tomcat/image-20201026104504241.png" alt="image-20201026104504241" style="zoom:80%;" />
 
 **方式2：web.xml形式：**
 
-<img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201026104426028.png" alt="image-20201026104426028" style="zoom:80%;" />
+<img src="/实训/tomcat/image-20201026104426028.png" alt="image-20201026104426028" style="zoom:80%;" />
 
 
 
@@ -970,7 +970,7 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 
 #### **0.web模块说明及tomcat配置：**
 
-![image-20201025183917439](images/image-20201025183917439.png)
+![image-20201025183917439](/实训/tomcat/image-20201025183917439.png)
 
 
 
@@ -1030,7 +1030,7 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 6. 尝试完成补充的登录案例；
 7. ==预习servlet==
 
-![image-20210316183215261](images/image-20210316183215261.png)
+![image-20210316183215261](/实训/tomcat/image-20210316183215261.png)
 
 
 
@@ -1048,7 +1048,7 @@ Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范�
 
 #### 1.**实现不重启tomcat，修改页面立即生效**：
 
-<img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201025151811338.png" alt="image-20201025151811338" style="zoom:80%;" />
+<img src="/实训/tomcat/image-20201025151811338.png" alt="image-20201025151811338" style="zoom:80%;" />
 
 
 

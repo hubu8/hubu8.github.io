@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/tomcat-http-3-2\/"
-        },"genre": "posts","wordcount":  7206 ,
+        },"genre": "posts","wordcount":  9586 ,
         "url": "https:\/\/hubu8.github.io\/tomcat-http-3-2\/","datePublished": "2021-07-17T19:59:34+08:00","dateModified": "2021-07-17T19:59:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Tomcat&amp;Http</h1><h2 class="single-subtitle">大三下学期实训</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw"></i>大三下实训笔记</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-17">2021-07-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7206 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;<span id="/tomcat-http-3-2/" class="leancloud_visitors" data-flag-title="Tomcat&amp;Http">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-17">2021-07-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 9586 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 20 分钟&nbsp;<span id="/tomcat-http-3-2/" class="leancloud_visitors" data-flag-title="Tomcat&amp;Http">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -211,6 +211,71 @@
       </ul>
     </li>
   </ul>
+
+  <ul>
+    <li><a href="#41-静态资源案例-门户类网站的部署和访问">4.1 静态资源案例-门户类网站的部署和访问</a>
+      <ul>
+        <li><a href="#411-案例介绍">4.1.1 案例介绍</a></li>
+        <li><a href="#412-实现步骤">4.1.2 实现步骤</a></li>
+      </ul>
+    </li>
+    <li><a href="#42-动态资源的案例-学生管理系统的部署和访问">4.2 动态资源的案例-学生管理系统的部署和访问</a>
+      <ul>
+        <li><a href="#421-案例介绍">4.2.1 案例介绍</a></li>
+        <li><a href="#422-实现步骤">4.2.2 实现步骤</a>
+          <ul>
+            <li><a href="#注意细节">注意细节：</a></li>
+          </ul>
+        </li>
+        <li><a href="#432-创建案例中的动态资源-servlet">4.3.2 创建案例中的动态资源-Servlet</a>
+          <ul>
+            <li><a href="#1-servlet简介">1） Servlet简介</a></li>
+            <li><a href="#2-按步骤编写servlet">2） 按步骤编写Servlet</a></li>
+            <li><a href="#3测试访问">3）测试访问</a></li>
+          </ul>
+        </li>
+        <li><a href="#小结-1">小结：</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#1-servlet的实现步骤">1. servlet的实现步骤：</a></li>
+                <li><a href="#2servlet的执行顺序">2.servlet的执行顺序</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#0web模块说明及tomcat配置"><strong>0.web模块说明及tomcat配置：</strong></a></li>
+            <li><a href="#1-请求分成几部分"><strong>1. 请求分成几部分：</strong></a></li>
+            <li><a href="#2-get和post的区别"><strong>2. get和post的区别：</strong></a></li>
+            <li><a href="#3-响应状态码"><strong>3. 响应状态码：</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1实现不重启tomcat修改页面立即生效">1.<strong>实现不重启tomcat，修改页面立即生效</strong>：</a></li>
+            <li><a href="#2index的特殊含义">2.index的特殊含义：</a></li>
+            <li><a href="#3在案例1的基础上实现登录功能">3.在案例1的基础上，实现登录功能：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="tomcathttp-web服务器-重要">Tomcat&amp;Http （web服务器-重要）</h1>
 <h1 id="0今日学习目标">0.今日学习目标：</h1>
@@ -264,20 +329,20 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg, /%e5%ae%9e%e8%ae%ad/tomcat/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 2x"
+        data-src="images/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg"
+        data-srcset="images/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg, images/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 1.5x, images/CS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/CS结构图.jpg"
+        alt="images/CS结构图.jpg"
         title="CS结构图" /></p>
 <h3 id="133-bs结构">1.3.3 B/S结构</h3>
 <p>它指的是浏览器——服务器的方式。其中B代表着Browser，S代表着服务器。B/S结构的系统设计图如下：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg, /%e5%ae%9e%e8%ae%ad/tomcat/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 2x"
+        data-src="images/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg"
+        data-srcset="images/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg, images/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 1.5x, images/BS%e7%bb%93%e6%9e%84%e5%9b%be.jpg 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/BS结构图.jpg"
+        alt="images/BS结构图.jpg"
         title="BS结构图" /></p>
 <h3 id="134-两种结构的区别及优略">1.3.4 两种结构的区别及优略</h3>
 <p><strong>两种结构的区别</strong></p>
@@ -332,10 +397,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e5%ae%98%e7%bd%91.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e5%ae%98%e7%bd%91.png, /%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e5%ae%98%e7%bd%91.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e5%ae%98%e7%bd%91.png 2x"
+        data-src="images/tomcat%e5%ae%98%e7%bd%91.png"
+        data-srcset="images/tomcat%e5%ae%98%e7%bd%91.png, images/tomcat%e5%ae%98%e7%bd%91.png 1.5x, images/tomcat%e5%ae%98%e7%bd%91.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/tomcat官网.png"
+        alt="images/tomcat官网.png"
         title="tomcat官网" /></p>
 <h3 id="213-tomcat各版本所需支持">2.1.3 Tomcat各版本所需支持</h3>
 <blockquote>
@@ -344,28 +409,28 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png, /%e5%ae%9e%e8%ae%ad/tomcat/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png 2x"
+        data-src="images/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png"
+        data-srcset="images/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png, images/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png 1.5x, images/Tomcat%e5%90%84%e7%89%88%e6%9c%ac%e4%bd%bf%e7%94%a8%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/Tomcat各版本使用技术支持.png"
+        alt="images/Tomcat各版本使用技术支持.png"
         title="Tomcat各版本使用技术支持" /></p>
 <h3 id="214-tomcat目录结构详解">2.1.4 Tomcat目录结构详解</h3>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png, /%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png 2x"
+        data-src="images/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png"
+        data-srcset="images/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png, images/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png 1.5x, images/tomcat%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e8%af%a6%e8%a7%a3.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/tomcat目录结构详解.png"
+        alt="images/tomcat目录结构详解.png"
         title="tomcat目录结构详解" /></p>
 <h3 id="小结记住">小结：（记住）</h3>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025105529130.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025105529130.png, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025105529130.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025105529130.png 2x"
+        data-src="images/image-20201025105529130.png"
+        data-srcset="images/image-20201025105529130.png, images/image-20201025105529130.png 1.5x, images/image-20201025105529130.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/image-20201025105529130.png"
+        alt="images/image-20201025105529130.png"
         title="image-20201025105529130" /></p>
 <h2 id="22-tomcat基本使用">2.2 Tomcat基本使用</h2>
 <h3 id="221-tomcat启动和停止及问题分析解决理解">2.2.1 Tomcat启动和停止及问题分析解决（理解）</h3>
@@ -373,18 +438,18 @@
 <p>Tomcat服务器的启动文件在二进制文件目录中：<img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/1574762703742.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/1574762703742.png, /%e5%ae%9e%e8%ae%ad/tomcat/1574762703742.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/1574762703742.png 2x"
+        data-src="images/1574762703742.png"
+        data-srcset="images/1574762703742.png, images/1574762703742.png 1.5x, images/1574762703742.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/1574762703742.png"
+        alt="images/1574762703742.png"
         title="1574762703742" />，这两个文件就是Tomcat的启动文件。</p>
 <p>Tomcat服务器的停止文件也在二进制文件目录中：<img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/1574762805135.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/1574762805135.png, /%e5%ae%9e%e8%ae%ad/tomcat/1574762805135.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/1574762805135.png 2x"
+        data-src="images/1574762805135.png"
+        data-srcset="images/1574762805135.png, images/1574762805135.png 1.5x, images/1574762805135.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/1574762805135.png"
+        alt="images/1574762805135.png"
         title="1574762805135" />，这两个文件就是Tomcat的停止文件。</p>
 <p>其中<code>.bat</code>文件是针对<code>windows</code>系统的运行程序，<code>.sh</code>文件是针对<code>linux</code>系统的运行程序。</p>
 <h4 id="2启动问题">2）启动问题</h4>
@@ -395,10 +460,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025110010847.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025110010847.png, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025110010847.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025110010847.png 2x"
+        data-src="images/image-20201025110010847.png"
+        data-srcset="images/image-20201025110010847.png, images/image-20201025110010847.png 1.5x, images/image-20201025110010847.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/image-20201025110010847.png"
+        alt="images/image-20201025110010847.png"
         title="image-20201025110010847" /></p>
 <p>原因：端口被占用</p>
 <p>解决办法：找到占用该端口的应用</p>
@@ -407,10 +472,10 @@
 <p>​			<img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/1574768222804.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/1574768222804.png, /%e5%ae%9e%e8%ae%ad/tomcat/1574768222804.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/1574768222804.png 2x"
+        data-src="images/1574768222804.png"
+        data-srcset="images/1574768222804.png, images/1574768222804.png 1.5x, images/1574768222804.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/1574768222804.png"
+        alt="images/1574768222804.png"
         title="1574768222804" /></p>
 <p><strong>第三个：启动产生很多异常，但能正常启动</strong></p>
 <p>原因：Tomcat中部署着很多项目，每次启动这些项目都会启动。而这些项目中有启动报异常的。</p>
@@ -428,37 +493,37 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat1.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat1.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat1.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat1.png 2x"
+        data-src="images/IDEA%e9%85%8d%e7%bd%aeTomcat1.png"
+        data-srcset="images/IDEA%e9%85%8d%e7%bd%aeTomcat1.png, images/IDEA%e9%85%8d%e7%bd%aeTomcat1.png 1.5x, images/IDEA%e9%85%8d%e7%bd%aeTomcat1.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA配置Tomcat1.png"
+        alt="images/IDEA配置Tomcat1.png"
         title="IDEA配置Tomcat1" /></p>
 <p><strong>第二步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat2.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat2.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat2.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat2.png 2x"
+        data-src="images/IDEA%e9%85%8d%e7%bd%aeTomcat2.png"
+        data-srcset="images/IDEA%e9%85%8d%e7%bd%aeTomcat2.png, images/IDEA%e9%85%8d%e7%bd%aeTomcat2.png 1.5x, images/IDEA%e9%85%8d%e7%bd%aeTomcat2.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA配置Tomcat2.png"
+        alt="images/IDEA配置Tomcat2.png"
         title="IDEA配置Tomcat2" /></p>
 <p><strong>第三步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat3.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat3.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat3.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat3.png 2x"
+        data-src="images/IDEA%e9%85%8d%e7%bd%aeTomcat3.png"
+        data-srcset="images/IDEA%e9%85%8d%e7%bd%aeTomcat3.png, images/IDEA%e9%85%8d%e7%bd%aeTomcat3.png 1.5x, images/IDEA%e9%85%8d%e7%bd%aeTomcat3.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA配置Tomcat3.png"
+        alt="images/IDEA配置Tomcat3.png"
         title="IDEA配置Tomcat3" /></p>
 <p><strong>第四步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat4.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat4.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat4.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e9%85%8d%e7%bd%aeTomcat4.png 2x"
+        data-src="images/IDEA%e9%85%8d%e7%bd%aeTomcat4.png"
+        data-srcset="images/IDEA%e9%85%8d%e7%bd%aeTomcat4.png, images/IDEA%e9%85%8d%e7%bd%aeTomcat4.png 1.5x, images/IDEA%e9%85%8d%e7%bd%aeTomcat4.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA配置Tomcat4.png"
+        alt="images/IDEA配置Tomcat4.png"
         title="IDEA配置Tomcat4" /></p>
 <h3 id="223-linux系统安装tomcat课下了解">2.2.3 Linux系统安装Tomcat（课下了解）</h3>
 <p><strong>第一步：下载tomcat</strong></p>
@@ -466,10 +531,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/Linux%e7%89%88Tomcat.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/Linux%e7%89%88Tomcat.png, /%e5%ae%9e%e8%ae%ad/tomcat/Linux%e7%89%88Tomcat.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/Linux%e7%89%88Tomcat.png 2x"
+        data-src="images/Linux%e7%89%88Tomcat.png"
+        data-srcset="images/Linux%e7%89%88Tomcat.png, images/Linux%e7%89%88Tomcat.png 1.5x, images/Linux%e7%89%88Tomcat.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/Linux版Tomcat.png"
+        alt="images/Linux版Tomcat.png"
         title="Linux版Tomcat" /></p>
 <p><strong>第二步：上传到linux</strong></p>
 <p>在crt上 使用 alt+p
@@ -571,10 +636,10 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/1574768644245.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/1574768644245.png, /%e5%ae%9e%e8%ae%ad/tomcat/1574768644245.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/1574768644245.png 2x"
+        data-src="images/1574768644245.png"
+        data-srcset="images/1574768644245.png, images/1574768644245.png 1.5x, images/1574768644245.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/1574768644245.png"
+        alt="images/1574768644245.png"
         title="1574768644245" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -607,37 +672,37 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png 2x"
+        data-src="images/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png"
+        data-srcset="images/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png, images/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png 1.5x, images/IDEA%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA创建Javaweb工程.png"
+        alt="images/IDEA创建Javaweb工程.png"
         title="IDEA创建Javaweb工程" /></p>
 <p><strong>第二步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025120129047.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025120129047.png, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025120129047.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025120129047.png 2x"
+        data-src="images/image-20201025120129047.png"
+        data-srcset="images/image-20201025120129047.png, images/image-20201025120129047.png 1.5x, images/image-20201025120129047.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/image-20201025120129047.png"
+        alt="images/image-20201025120129047.png"
         title="image-20201025120129047" /></p>
 <p><strong>第三步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png, /%e5%ae%9e%e8%ae%ad/tomcat/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png 2x"
+        data-src="images/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png"
+        data-srcset="images/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png, images/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png 1.5x, images/%e5%88%9b%e5%bb%baJavaweb%e5%b7%a5%e7%a8%8b3.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/创建Javaweb工程3.png"
+        alt="images/创建Javaweb工程3.png"
         title="创建Javaweb工程3" /></p>
 <p><strong>第四步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025142645862.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025142645862.png, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025142645862.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025142645862.png 2x"
+        data-src="images/image-20201025142645862.png"
+        data-srcset="images/image-20201025142645862.png, images/image-20201025142645862.png 1.5x, images/image-20201025142645862.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/image-20201025142645862.png"
+        alt="images/image-20201025142645862.png"
         title="image-20201025142645862" /></p>
 <h3 id="234-javaweb应用的部署">2.3.4 JavaWeb应用的部署</h3>
 <h4 id="1idea部署">1）IDEA部署</h4>
@@ -645,74 +710,74 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png 2x"
+        data-src="images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png"
+        data-srcset="images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png, images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png 1.5x, images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b1.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA发布工程1.png"
+        alt="images/IDEA发布工程1.png"
         title="IDEA发布工程1" /></p>
 <p><strong>第二步</strong></p>
-<p><img src="/实训/tomcat/image-20201025144026745.png" alt="image-20201025144026745" style="zoom:80%;" /></p>
+<p><img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201025144026745.png" alt="image-20201025144026745" style="zoom:80%;" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png 2x"
+        data-src="images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png"
+        data-srcset="images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png, images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png 1.5x, images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b2.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA发布工程2.png"
+        alt="images/IDEA发布工程2.png"
         title="IDEA发布工程2" /></p>
 <p><strong>第三步</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png 2x"
+        data-src="images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png"
+        data-srcset="images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png, images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png 1.5x, images/IDEA%e5%8f%91%e5%b8%83%e5%b7%a5%e7%a8%8b3-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/IDEA发布工程3-启动服务.png"
+        alt="images/IDEA发布工程3-启动服务.png"
         title="IDEA发布工程3-启动服务" /></p>
 <h4 id="2war包发布暂时不用以后使用maven">2）war包发布(暂时不用，以后使用maven)</h4>
 <p><strong>第一步：使用<b><code>jar -cvf war</code> <font color='blue'>包的名称</font>  <font color='purple'>当前目录中哪些资源要打入war</font></b></strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/jar%e5%91%bd%e4%bb%a4.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/jar%e5%91%bd%e4%bb%a4.png, /%e5%ae%9e%e8%ae%ad/tomcat/jar%e5%91%bd%e4%bb%a4.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/jar%e5%91%bd%e4%bb%a4.png 2x"
+        data-src="images/jar%e5%91%bd%e4%bb%a4.png"
+        data-srcset="images/jar%e5%91%bd%e4%bb%a4.png, images/jar%e5%91%bd%e4%bb%a4.png 1.5x, images/jar%e5%91%bd%e4%bb%a4.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/jar命令.png"
+        alt="images/jar命令.png"
         title="jar命令" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/war%e5%8c%85.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/war%e5%8c%85.png, /%e5%ae%9e%e8%ae%ad/tomcat/war%e5%8c%85.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/war%e5%8c%85.png 2x"
+        data-src="images/war%e5%8c%85.png"
+        data-srcset="images/war%e5%8c%85.png, images/war%e5%8c%85.png 1.5x, images/war%e5%8c%85.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/war包.png"
+        alt="images/war包.png"
         title="war包" /></p>
 <p><strong>第二步：把打好的war拷贝到tomcat的webapps目录中</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png, /%e5%ae%9e%e8%ae%ad/tomcat/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png 2x"
+        data-src="images/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png"
+        data-srcset="images/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png, images/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png 1.5x, images/%e6%8b%b7%e8%b4%9dwar%e5%8c%85%e5%88%b0webapps.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/拷贝war包到webapps.png"
+        alt="images/拷贝war包到webapps.png"
         title="拷贝war包到webapps" /></p>
 <p><strong>第三步：启动服务时，tomcat会自动解压。</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png, /%e5%ae%9e%e8%ae%ad/tomcat/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png 2x"
+        data-src="images/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png"
+        data-srcset="images/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png, images/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png 1.5x, images/%e5%90%af%e5%8a%a8Tomcat%e8%87%aa%e5%8a%a8%e8%a7%a3%e5%8e%8bwar%e5%8c%85.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/启动Tomcat自动解压war包.png"
+        alt="images/启动Tomcat自动解压war包.png"
         title="启动Tomcat自动解压war包" /></p>
 <h5 id="tomcat的webapps目录的作用">tomcat的webapps目录的作用：</h5>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025144851129.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/image-20201025144851129.png, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025144851129.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/image-20201025144851129.png 2x"
+        data-src="images/image-20201025144851129.png"
+        data-srcset="images/image-20201025144851129.png, images/image-20201025144851129.png 1.5x, images/image-20201025144851129.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/image-20201025144851129.png"
+        alt="images/image-20201025144851129.png"
         title="image-20201025144851129" /></p>
 <h2 id="24-tomcat配置">2.4 tomcat配置：</h2>
 <h3 id="241-tomcat配置虚拟目录-目前了解">2.4.1 Tomcat配置虚拟目录 (目前了解)</h3>
@@ -744,20 +809,20 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png, /%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png 2x"
+        data-src="images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png"
+        data-srcset="images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png, images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png 1.5x, images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a81.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/默认应用1.png"
+        alt="images/默认应用1.png"
         title="默认应用1" /></p>
 <p>第二种：写一个独立的配置文件，文件名称为<code>ROOT.xml</code>。
 ​				注意：<code>ROOT</code>必须大写。当使用了独立的<code>ROOT.xml</code>文件时，<code>webapps</code>下<code>ROOT</code>应用就不是默认应用了。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png, /%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png 2x"
+        data-src="images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png"
+        data-srcset="images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png, images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png 1.5x, images/%e9%bb%98%e8%ae%a4%e5%ba%94%e7%94%a82.png 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/默认应用2.png"
+        alt="images/默认应用2.png"
         title="默认应用2" /></p>
 <h1 id="3-http协议">3 HTTP协议</h1>
 <h2 id="31-http协议概述">3.1 HTTP协议概述</h2>
@@ -823,10 +888,10 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg, /%e5%ae%9e%e8%ae%ad/tomcat/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg 2x"
+        data-src="images/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg"
+        data-srcset="images/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg, images/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg 1.5x, images/%e8%af%b7%e6%b1%82%e9%83%a8%e5%88%86-1574824553003.jpg 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/请求部分-1574824553003.jpg"
+        alt="images/请求部分-1574824553003.jpg"
         title="请求部分" /></p>
 <h3 id="322-响应部分">3.2.2 响应部分</h3>
 <p>响应行： 永远位于响应的第一行
@@ -835,10 +900,10 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg"
-        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg, /%e5%ae%9e%e8%ae%ad/tomcat/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg 2x"
+        data-src="images/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg"
+        data-srcset="images/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg, images/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg 1.5x, images/%e5%93%8d%e5%ba%94%e9%83%a8%e5%88%86-1574824560809.jpg 2x"
         data-sizes="auto"
-        alt="/实训/tomcat/响应部分-1574824560809.jpg"
+        alt="images/响应部分-1574824560809.jpg"
         title="响应部分" /></p>
 <h3 id="333-消息头的共性分析">3.3.3 消息头的共性分析</h3>
 <p>消息头名称首字母大写，多个单词每个单词的首字母都大写。
@@ -1119,7 +1184,421 @@ tar -xvf apache-tomcat-8.5.32.tar.gz
 <p>304： 资源有缓存；</p>
 <p>404： 资源未找到（请求路径有误）</p>
 <p>500： 服务器内部错误（java代码有误）</p>
-</blockquote></div><div class="post-footer" id="post-footer">
+</blockquote>
+<h1 id="4-综合案例-tomcat的具体应用">4 综合案例-Tomcat的具体应用</h1>
+<h2 id="41-静态资源案例-门户类网站的部署和访问">4.1 静态资源案例-门户类网站的部署和访问</h2>
+<h3 id="411-案例介绍">4.1.1 案例介绍</h3>
+<p><strong>需求：</strong></p>
+<p>​		在浏览器中输入地址，访问静态HTML页面。</p>
+<p><strong>细节说明：</strong></p>
+<p>​		把<code>HTML</code>和<code>CSS</code>课程中制作的页面加入到<code>JavaWeb</code>工程中，在Tomcat中部署工程，然后启动Tomcat服务器，并使用浏览器访问。</p>
+<h3 id="412-实现步骤">4.1.2 实现步骤</h3>
+<p><strong>第一步：创建工程并选择使用的Tomcat版本</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程1.png"
+        title="静态资源工程1" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程2.png"
+        title="静态资源工程2" /></p>
+<p><strong>第二步：拷贝资源到工程的web目录中</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程3.png"
+        title="静态资源工程3" /></p>
+<p><strong>第三步：在web.xml中配置默认主页</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程4.png"
+        title="静态资源工程4" /></p>
+<p><strong>第四步：部署工程到Tomcat服务器</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b5.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b5.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b5.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b5.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程5.png"
+        title="静态资源工程5" /></p>
+<p><strong>第五步：测试浏览器访问</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b6.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b6.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b6.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b6.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程6.png"
+        title="静态资源工程6" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b7.png"
+        data-srcset="images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b7.png, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b7.png 1.5x, images/%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b7.png 2x"
+        data-sizes="auto"
+        alt="images/静态资源工程7.png"
+        title="静态资源工程7" /></p>
+<hr>
+<h2 id="42-动态资源的案例-学生管理系统的部署和访问">4.2 动态资源的案例-学生管理系统的部署和访问</h2>
+<h3 id="421-案例介绍">4.2.1 案例介绍</h3>
+<p><strong>需求：</strong></p>
+<p>​		把JavaSE进阶阶段的学生管理系统的服务器改用Tomcat实现。</p>
+<p><strong>细节说明：</strong></p>
+<p>​		把学生管理系统涉及的HTML和样式以及图片文件拷贝到JavaWeb工程中，在Tomcat中部署工程，然后启动Tomcat服务器，并使用浏览器访问。</p>
+<h3 id="422-实现步骤">4.2.2 实现步骤</h3>
+<p><strong>第一步：创建工程</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b.png"
+        data-srcset="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b.png, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b.png 1.5x, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b.png 2x"
+        data-sizes="auto"
+        alt="images/动态资源工程.png"
+        title="动态资源工程" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png"
+        data-srcset="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png 1.5x, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b1.png 2x"
+        data-sizes="auto"
+        alt="images/动态资源工程1.png"
+        title="动态资源工程1" /></p>
+<p><strong>第二步：拷贝资源</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png"
+        data-srcset="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png 1.5x, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b2.png 2x"
+        data-sizes="auto"
+        alt="images/动态资源工程2.png"
+        title="动态资源工程2" /></p>
+<p><strong>第三步：配置默认主页</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png"
+        data-srcset="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png 1.5x, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b4.png 2x"
+        data-sizes="auto"
+        alt="images/动态资源工程4.png"
+        title="动态资源工程4" /></p>
+<p><strong>第四步：部署项目</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png"
+        data-srcset="images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png 1.5x, images/%e5%8a%a8%e6%80%81%e8%b5%84%e6%ba%90%e5%b7%a5%e7%a8%8b3.png 2x"
+        data-sizes="auto"
+        alt="images/动态资源工程3.png"
+        title="动态资源工程3" /></p>
+<h4 id="注意细节">注意细节：</h4>
+<blockquote>
+<p>注意在idea中的tomcat的配置中添加虚拟访问路径： /crm</p>
+</blockquote>
+<h3 id="432-创建案例中的动态资源-servlet">4.3.2 创建案例中的动态资源-Servlet</h3>
+<h4 id="1-servlet简介">1） Servlet简介</h4>
+<p>Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范，称为Servlet规范。Servlet规范是JavaEE规范中的一部分。我们可以通过查阅JavaEE规范的API来了解Servlet的基本概念。通过点击<a href="https://javaee.github.io/javaee-spec/javadocs/" target="_blank" rel="noopener noreffer">JavaEE8官方文档</a>，就可以看到关于Servlet的内容介绍。</p>
+<blockquote>
+<p>servlet是 运行在客户端和服务器端的一个小程序！</p>
+<p>JDK只定义接口规范，并没有实现；</p>
+<p>具体的实现在服务器tomcat中！</p>
+</blockquote>
+<p>![image-20210623092633117](../../../../../../Users/jianwei/Library/Application Support/typora-user-images/image-20210623092633117.png)</p>
+<h4 id="2-按步骤编写servlet">2） 按步骤编写Servlet</h4>
+<p><strong>前期准备：在IDEA创建Javaweb工程</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e5%89%8d%e6%9c%9f%e5%87%86%e5%a4%87.png"
+        data-srcset="images/%e5%89%8d%e6%9c%9f%e5%87%86%e5%a4%87.png, images/%e5%89%8d%e6%9c%9f%e5%87%86%e5%a4%87.png 1.5x, images/%e5%89%8d%e6%9c%9f%e5%87%86%e5%a4%87.png 2x"
+        data-sizes="auto"
+        alt="images/前期准备.png"
+        title="前期准备" /></p>
+<p><strong>第一步：编写一个普通类实现Servlet接口或者继承GenericServlet类或者继承HttpServlet</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e7%bc%96%e5%86%99Servlet.png"
+        data-srcset="images/%e7%bc%96%e5%86%99Servlet.png, images/%e7%bc%96%e5%86%99Servlet.png 1.5x, images/%e7%bc%96%e5%86%99Servlet.png 2x"
+        data-sizes="auto"
+        alt="images/编写Servlet.png"
+        title="编写Servlet" /></p>
+<p><strong>第二步：重写service方法，输出一句话</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%87%8d%e5%86%99Service%e6%96%b9%e6%b3%95.png"
+        data-srcset="images/%e9%87%8d%e5%86%99Service%e6%96%b9%e6%b3%95.png, images/%e9%87%8d%e5%86%99Service%e6%96%b9%e6%b3%95.png 1.5x, images/%e9%87%8d%e5%86%99Service%e6%96%b9%e6%b3%95.png 2x"
+        data-sizes="auto"
+        alt="images/重写Service方法.png"
+        title="重写Service方法" /></p>
+<p><strong>第三步：在web.xml配置Servlet</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e9%85%8d%e7%bd%aeServlet.png"
+        data-srcset="images/%e9%85%8d%e7%bd%aeServlet.png, images/%e9%85%8d%e7%bd%aeServlet.png 1.5x, images/%e9%85%8d%e7%bd%aeServlet.png 2x"
+        data-sizes="auto"
+        alt="images/配置Servlet.png"
+        title="配置Servlet" /></p>
+<p><strong>第四步：启动tomcat服务器测试</strong></p>
+<p>在地址栏输入：http://localhost:8585/crm/studentServlet 测试访问结果</p>
+<h4 id="3测试访问">3）测试访问</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/%e6%b5%8b%e8%af%95%e8%ae%bf%e9%97%ae%e7%bb%93%e6%9e%9c.png"
+        data-srcset="images/%e6%b5%8b%e8%af%95%e8%ae%bf%e9%97%ae%e7%bb%93%e6%9e%9c.png, images/%e6%b5%8b%e8%af%95%e8%ae%bf%e9%97%ae%e7%bb%93%e6%9e%9c.png 1.5x, images/%e6%b5%8b%e8%af%95%e8%ae%bf%e9%97%ae%e7%bb%93%e6%9e%9c.png 2x"
+        data-sizes="auto"
+        alt="images/测试访问结果.png"
+        title="测试访问结果" /></p>
+<h3 id="小结-1">小结：</h3>
+<h5 id="1-servlet的实现步骤">1. servlet的实现步骤：</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/image-20201026103052174.png"
+        data-srcset="images/image-20201026103052174.png, images/image-20201026103052174.png 1.5x, images/image-20201026103052174.png 2x"
+        data-sizes="auto"
+        alt="images/image-20201026103052174.png"
+        title="image-20201026103052174" /></p>
+<h5 id="2servlet的执行顺序">2.servlet的执行顺序</h5>
+<blockquote>
+<p>注意： 两种配置以后使用一种即可 （自己选择）</p>
+</blockquote>
+<p><strong>方式1：注解形式：</strong></p>
+<p><img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201026104504241.png" alt="image-20201026104504241" style="zoom:80%;" /></p>
+<p><strong>方式2：web.xml形式：</strong></p>
+<p><img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201026104426028.png" alt="image-20201026104426028" style="zoom:80%;" /></p>
+<hr>
+<h1 id="今日总结">【今日总结：】</h1>
+<h4 id="0web模块说明及tomcat配置"><strong>0.web模块说明及tomcat配置：</strong></h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/image-20201025183917439.png"
+        data-srcset="images/image-20201025183917439.png, images/image-20201025183917439.png 1.5x, images/image-20201025183917439.png 2x"
+        data-sizes="auto"
+        alt="images/image-20201025183917439.png"
+        title="image-20201025183917439" /></p>
+<h4 id="1-请求分成几部分"><strong>1. 请求分成几部分：</strong></h4>
+<blockquote>
+<pre><code>                      1. 请求行 ---- get  www.baidu.com   
+                      2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
+                      3. 请求空行  ----- 什么都没有（空白）
+                      4. 请求体   ----- （get没有请求体， post有请求体）
+</code></pre>
+</blockquote>
+<blockquote>
+<p>响应分成几部分：</p>
+<p>​		同上，4部分</p>
+</blockquote>
+<h4 id="2-get和post的区别"><strong>2. get和post的区别：</strong></h4>
+<ol>
+<li>参数的位置不同</li>
+<li>是否有请求体</li>
+<li>相对安全性</li>
+<li>参数的长度： （post参数可以传递更多）</li>
+</ol>
+<h4 id="3-响应状态码"><strong>3. 响应状态码：</strong></h4>
+<blockquote>
+<p>200 代表成功</p>
+<p>302 重定向</p>
+<p>304 代表浏览器缓存（此请求没有真正访问资源）</p>
+<p>404 请求路径有误（资源访问不到）</p>
+<p>500 后台服务器内部错误（java程序有异常）</p>
+</blockquote>
+<h1 id="今日作业安排">【今日作业安排】</h1>
+<ol>
+<li>完成tomcat的安装（能正常启动，并访问看到tomcat猫）</li>
+<li>能够说清楚tomcat解压文件夹下的常用的5个分别是什么？</li>
+<li>能够将idea集成tomcat；</li>
+<li>写下常见的响应状态码，及其含义；</li>
+<li>能够部署静态页面项目 （参考4.1）</li>
+<li>尝试完成补充的登录案例；</li>
+<li>==预习servlet==</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/image-20210316183215261.png"
+        data-srcset="images/image-20210316183215261.png, images/image-20210316183215261.png 1.5x, images/image-20210316183215261.png 2x"
+        data-sizes="auto"
+        alt="images/image-20210316183215261.png"
+        title="image-20210316183215261" /></p>
+<h1 id="补充">【补充】</h1>
+<h4 id="1实现不重启tomcat修改页面立即生效">1.<strong>实现不重启tomcat，修改页面立即生效</strong>：</h4>
+<p><img src="D:/learn_space/learn-大三   下/实训/实训/assets/image-20201025151811338.png" alt="image-20201025151811338" style="zoom:80%;" /></p>
+<h4 id="2index的特殊含义">2.index的特殊含义：</h4>
+<blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">在web项目中， index名字是有特殊含义的（代表首页）
+访问到包含有index名的网页时， 不用补全路径的！
+优先级 .html &gt; .jsp
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h4 id="3在案例1的基础上实现登录功能">3.在案例1的基础上，实现登录功能：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> *   servlet快速入门：
+</span><span class="cm"> *          1. 实现servlet接口；
+</span><span class="cm"> *          2. 重写方法；
+</span><span class="cm"> *          3. 配置servlet
+</span><span class="cm"> *                  xml配置：
+</span><span class="cm"> *                  注解配置:  @WebServlet(&#34;/userServlet&#34;)
+</span><span class="cm"> *
+</span><span class="cm"> *
+</span><span class="cm"> *    用户登录的servlet：
+</span><span class="cm"> *          1.可以在service方法中，接收用户提交的用户名和密码；
+</span><span class="cm"> *          2.判断用户名和密码是否正确；
+</span><span class="cm"> *          3.如果正确，提示登录成功，
+</span><span class="cm"> *              如果不正确，提示登录失败；
+</span><span class="cm"> */</span>
+
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">&#34;/userLoginServlet&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserLoginServlet</span> <span class="kd">implements</span> <span class="n">Servlet</span><span class="o">{</span>
+
+
+    <span class="cm">/**
+</span><span class="cm">        1.service方法何时执行？
+</span><span class="cm">            --- 每次访问servlet时，service方法都会执行！
+</span><span class="cm">
+</span><span class="cm">        2.service方法中如何获取请求的参数？
+</span><span class="cm">            --- request.getparameter(&#34;参数名&#34;)
+</span><span class="cm">
+</span><span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">ServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">// 0.指定字符集，防止乱码：
+</span><span class="c1"></span>        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">&#34;text/html;charset=utf-8&#34;</span><span class="o">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;----------------------servlet的service方法执行了 ......&#34;</span><span class="o">);</span>
+        <span class="c1">// 1.获取请求的参数：
+</span><span class="c1"></span>        <span class="c1">//获取用户名：
+</span><span class="c1"></span>        <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
+        <span class="c1">//获取密码：
+</span><span class="c1"></span>        <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;password&#34;</span><span class="o">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------------用户提交的用户名为：&#34;</span> <span class="o">+</span><span class="n">username</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------------用户提交的密码为：&#34;</span> <span class="o">+</span> <span class="n">password</span><span class="o">);</span>
+
+        <span class="c1">// 2.判断用户名和密码是否正确；   --------以后可以去数据库查询用户名和密码是否正确！ （目前写死）
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="s">&#34;lisi&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">username</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;123456&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">password</span><span class="o">)){</span>
+            <span class="c1">//登录成功
+</span><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----------登录成功~~~&#34;</span><span class="o">);</span>
+
+            <span class="c1">// 3.1 成功：
+</span><span class="c1"></span>            <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;欢迎&#34;</span><span class="o">+</span><span class="n">username</span><span class="o">+</span><span class="s">&#34;, 登录成功！ &#34;</span><span class="o">);</span>
+
+        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// 登录失败
+</span><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----------登录失败~~~&#34;</span><span class="o">);</span>
+            <span class="c1">// 3.2 失败：
+</span><span class="c1"></span>            <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;您的用户名密码有误，请重新输入!&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+  
+  <span class="n">ccleaner</span>
+
+
+<span class="c1">//    ==========其他4个方法，明天详细讲解=============================
+</span><span class="c1">// ...
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

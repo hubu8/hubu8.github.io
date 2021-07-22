@@ -4,9 +4,23 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 21 Jul 2021 21:18:05 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HashMap</title>
+    <link>https://hubu8.github.io/hashmap/</link>
+    <pubDate>Wed, 21 Jul 2021 21:18:05 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/hashmap/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Collection -01</title>
+    <link>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</link>
+    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</guid>
+    <description><![CDATA[Collection-List]]></description>
+</item><item>
     <title>Collection -02</title>
     <link>https://hubu8.github.io/day08%E9%9B%86%E5%90%8802/</link>
     <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
@@ -27,13 +41,6 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/day10%E9%9B%86%E5%90%8804/</guid>
     <description><![CDATA[可变参数-Stream流]]></description>
-</item><item>
-    <title>Collection-01</title>
-    <link>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</guid>
-    <description><![CDATA[Collection-List]]></description>
 </item><item>
     <title>javaWeb 六</title>
     <link>https://hubu8.github.io/javaweb%E5%85%AD/</link>
@@ -68,13 +75,6 @@
     <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/%E5%AE%B9%E5%99%A8%E4%BA%8C/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>对象拷贝 五</title>
-    <link>https://hubu8.github.io/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D%E4%BA%94/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D%E4%BA%94/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

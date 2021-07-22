@@ -386,6 +386,17 @@ public class TreeSetDemo01 {
   }
   ```
 
+```
+结果：
+Student{name='lisi', age=27}
+Student{name='zhangsan', age=28}
+Student{name='zhaoliu', age=28}
+Student{name='wangwu', age=29}
+Student{name='qianqi', age=30}
+```
+
+
+
 ### 3.4比较器排序Comparator的使用【应用】
 
 - 案例需求
@@ -478,6 +489,16 @@ public class TreeSetDemo01 {
       }
   }
   ```
+
+```
+结果：
+Teacher{name='lisi', age=22}
+Teacher{name='zhangsan', age=23}
+Teacher{name='wangwu', age=24}
+Teacher{name='zhaoliu', age=24}
+```
+
+
 
 ### 3.5两种比较方式总结【理解】
 

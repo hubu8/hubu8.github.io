@@ -4,7 +4,21 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sat, 24 Jul 2021 19:59:34 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>JDBC-01</title>
+    <link>https://hubu8.github.io/jdbc-01/</link>
+    <pubDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/jdbc-01/</guid>
+    <description><![CDATA[JDBC工具类]]></description>
+</item><item>
+    <title>session &amp; jsp &amp; mysql</title>
+    <link>https://hubu8.github.io/%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AFsessionjspmysql%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Wed, 28 Jul 2021 19:59:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AFsessionjspmysql%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[会话技术session&jsp&mysql-随堂笔记]]></description>
+</item><item>
     <title>request &amp; response</title>
     <link>https://hubu8.github.io/web%E6%A0%B8%E5%BF%83-requestresponse/</link>
     <pubDate>Sat, 24 Jul 2021 19:59:34 &#43;0800</pubDate>
@@ -59,20 +73,6 @@
     <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97%E4%B8%80/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>反射 四</title>
-    <link>https://hubu8.github.io/%E5%8F%8D%E5%B0%84%E5%9B%9B/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%8F%8D%E5%B0%84%E5%9B%9B/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>多线程 三</title>
-    <link>https://hubu8.github.io/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%89/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%89/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

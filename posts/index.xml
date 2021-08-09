@@ -4,7 +4,14 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 06 Aug 2021 09:31:12 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Springsecurity</title>
+    <link>https://hubu8.github.io/springsecurity/</link>
+    <pubDate>Fri, 06 Aug 2021 09:31:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/springsecurity/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>JDBC-01</title>
     <link>https://hubu8.github.io/jdbc-01/</link>
     <pubDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/javaweb%E5%85%AD/</guid>
     <description><![CDATA[本文由 简悦 SimpRead 转码， 原文地址 blog.csdn.net Java 208 道面试题 · Java Web 64. jsp 和 servlet 有什么区别？ jsp经编译后就变成了Servlet.（JSP的本质就是Servlet，J]]></description>
-</item><item>
-    <title>Java基础 一</title>
-    <link>https://hubu8.github.io/%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97%E4%B8%80/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97%E4%B8%80/</guid>
-    <description><![CDATA[]]></description>
 </item></channel>
 </rss>

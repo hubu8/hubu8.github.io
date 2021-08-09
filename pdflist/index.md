@@ -52,11 +52,16 @@ PDF文章列表
 | [Exin DevOps Master WhitePaper_V1.5_CN.pdf](https://hubu.buzz/pdf/web/viewer.html?file=Exin_DevOps_Master_WhitePaper_V1.5_CN.pdf) | DevOps Master 白皮书<br/>企业DevOps的成功之路 |
 | [Devops之基于Jenkins的CI与CD(1).pdf](https://hubu.buzz/pdf/web/viewer.html?file=Devops之基于Jenkins的CI与CD(1).pdf) | Devops之基于Jenkins的CI与CD                   |
 | [Jenkins与Gitlab.pdf](https://hubu.buzz/pdf/web/viewer.html?file=Jenkins与Gitlab-markdown.pdf) |                                               |
+| [Jenkins持续集成从入门到精通.pdf](https://hubu.buzz/pdf/web/viewer.html?file=Jenkins持续集成从入门到精通.pdf) |                                               |
 | [2021阿里巴巴Java面试手册](https://hubu.buzz/pdf/web/viewer.html?file=2021阿里巴巴Java面试手册.pdf) |                                               |
 | [剑指OFFER名企面试官精讲典型编程题_第2版](https://hubu.buzz/pdf/web/viewer.html?file=剑指OFFER名企面试官精讲典型编程题_第2版.pdf) | 剑指OFFER                                     |
 | [机器学习](https://hubu.buzz/pdf/web/viewer.html?file=MLY-zh-cn.pdf) | 机器学习                                      |
 |                                                              |                                               |
 | [python 学习笔记](https://hubu.buzz/pdf/web/viewer.html?file=python学习笔记.pdf) | python 学习笔记                               |
+
+
+
+
 
 
 

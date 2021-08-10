@@ -9,11 +9,11 @@ https://nmap.org/download.html
 
 安装完成后可能需要npcap的依赖，不懂为啥，安装了就对了https://nmap.org/npcap/
 
-![image-20210810161014079](images/image-20210810161014079.png)
+![image-20210810161014079](/common_images/image-20210810161014079.png)
 
 查看version
 
-![image-20210810161044439](images/image-20210810161044439.png)
+![image-20210810161044439](/common_images/image-20210810161044439.png)
 
 # 使用
 

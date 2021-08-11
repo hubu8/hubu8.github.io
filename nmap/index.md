@@ -150,7 +150,7 @@ Nmap done: 1 IP address (1 host up) scanned in 2.05 seconds
 
 
 
-## **4、指定端口 nmap -p80,443 (*ip)**
+## 4、指定端口 nmap -p80,443 (*ip)
 
 命令语法：nmap -p(port1,port2,…) <*target IP*>
 
@@ -190,7 +190,7 @@ Other addresses for www.baidu.com (not scanned): 180.101.49.12
 Nmap done: 1 IP address (1 host up) scanned in 0.92 seconds
 ```
 
-## **6、nmap 路由跟踪**
+## 6、nmap 路由跟踪
 
 路由器追踪功能，能够帮助网络管理员了解网络通行情况，同时也是网络管理人员很好的辅助工具，通过路由器追踪可以轻松的查处从我们电脑所在地到目的地之间所经常的网络节点，并可以看到通过各个结点所花费的时间
 
@@ -223,7 +223,7 @@ HOP RTT       ADDRESS
 Nmap done: 1 IP address (1 host up) scanned in 18.61 seconds
 ```
 
-## **7、nmap设置扫描一个网段下的ip**
+## 7、nmap设置扫描一个网段下的ip
 
 命令语法：
 nmap -sP <*network address*> <*/CIDR*>
@@ -232,7 +232,7 @@ nmap -sP <*network address*> <*/CIDR*>
 
 例子：nmap -sP 10.1.1.0 /24
 
-## **8、nmap 操作系统类型的探测**
+## 8、nmap 操作系统类型的探测
 
 命令语法：
 nmap -0 <*target IP*>
@@ -280,7 +280,7 @@ Nmap done: 1 IP address (1 host up) scanned in 2.18 seconds
 
 
 
-## **9、nmap万能开关**
+## 9、nmap万能开关
 
 包含了1-10000端口ping扫描，操作系统扫描，脚本扫描，路由跟踪，服务探测
 
@@ -456,7 +456,7 @@ Nmap done: 1 IP address (1 host up) scanned in 94.94 seconds
 
 
 
-## **10、nmap命令混合式扫描**
+## 10、nmap命令混合式扫描
 
 可以做到类似参数-A所完成的功能，但又能细化我们的需求要求
 

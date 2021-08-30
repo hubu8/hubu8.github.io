@@ -120,29 +120,29 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/20200418205525161.jpg"
-        data-srcset="images/20200418205525161.jpg, images/20200418205525161.jpg 1.5x, images/20200418205525161.jpg 2x"
+        data-src="/java_images/20200418205525161.jpg"
+        data-srcset="/java_images/20200418205525161.jpg, /java_images/20200418205525161.jpg 1.5x, /java_images/20200418205525161.jpg 2x"
         data-sizes="auto"
-        alt="images/20200418205525161.jpg"
-        title="images/20200418205525161.jpg" /></p>
+        alt="/java_images/20200418205525161.jpg"
+        title="/java_images/20200418205525161.jpg" /></p>
 <p>我们需要知道TCP工作在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP 在第二层——Data Link层;在第二层上的数据，我们把它叫Frame，在第三层上的数据叫Packet，第四层的数 据叫Segment。 同时，我们需要简单的知道，数据从应用层发下来，会在每一层都会加上头部信息，进行 封装，然后再发送到数据接收端。这个基本的流程你需要知道，就是每个数据都会经过数据的封装和解封 装的过程。 在OSI七层模型中，每一层的作用和对应的协议如下：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/20200418205556366.jpg"
-        data-srcset="images/20200418205556366.jpg, images/20200418205556366.jpg 1.5x, images/20200418205556366.jpg 2x"
+        data-src="/java_images/20200418205556366.jpg"
+        data-srcset="/java_images/20200418205556366.jpg, /java_images/20200418205556366.jpg 1.5x, /java_images/20200418205556366.jpg 2x"
         data-sizes="auto"
-        alt="images/20200418205556366.jpg"
-        title="images/20200418205556366.jpg" /></p>
+        alt="/java_images/20200418205556366.jpg"
+        title="/java_images/20200418205556366.jpg" /></p>
 <p>TCP是一个协议，那这个协议是如何定义的，它的数据格式是什么样子的呢?要进行更深层次的剖析，就 需要了解，甚至是熟记TCP协议中每个字段的含义。哦，来吧。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/20200418205617508.jpg"
-        data-srcset="images/20200418205617508.jpg, images/20200418205617508.jpg 1.5x, images/20200418205617508.jpg 2x"
+        data-src="/java_images/20200418205617508.jpg"
+        data-srcset="/java_images/20200418205617508.jpg, /java_images/20200418205617508.jpg 1.5x, /java_images/20200418205617508.jpg 2x"
         data-sizes="auto"
-        alt="images/20200418205617508.jpg"
-        title="images/20200418205617508.jpg" /></p>
+        alt="/java_images/20200418205617508.jpg"
+        title="/java_images/20200418205617508.jpg" /></p>
 <p>上面就是TCP协议头部的格式，由于它太重要了，是理解其它内容的基础，下面就将每个字段的信息都详 细的说明一下。</p>
 <p>Source Port和Destination Port:分别占用16位，表示源端口号和目的端口号;用于区别主机中的不同进程， 而IP地址是用来区分不同的主机的，源端口号和目的端口号配合上IP首部中的源IP地址和目的IP地址就能唯一 的确定一个TCP连接;</p>
 <p>Sequence Number:用来标识从TCP发端向TCP收端发送的数据字节流，它表示在这个报文段中的的第一个数据 字节在数据流中的序号;主要用来解决网络报乱序的问题;</p>
@@ -162,11 +162,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="images/20200418205646818.jpg"
-        data-srcset="images/20200418205646818.jpg, images/20200418205646818.jpg 1.5x, images/20200418205646818.jpg 2x"
+        data-src="/java_images/20200418205646818.jpg"
+        data-srcset="/java_images/20200418205646818.jpg, /java_images/20200418205646818.jpg 1.5x, /java_images/20200418205646818.jpg 2x"
         data-sizes="auto"
-        alt="images/20200418205646818.jpg"
-        title="images/20200418205646818.jpg" /></p>
+        alt="/java_images/20200418205646818.jpg"
+        title="/java_images/20200418205646818.jpg" /></p>
 <p>多么清晰的一张图，当然了，也不是我画的，我也只是引用过来说明问题了。</p>
 <p>1.第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x;然后，客户端进入SYN_SEND状态，等待服务器的确认;</p>
 <p>2.第二次握手：服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为x+1(Sequence Number+1);同时，自己自己还要发送SYN请求信息，将SYN位置为1，Sequence Number为y;服务器端将上述所有信息放到一个报文段(即SYN+ACK报文段)中，一并发送给客户端，此时服务器进入SYN_RECV状态;</p>

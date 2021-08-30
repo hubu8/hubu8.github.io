@@ -45,7 +45,7 @@ PDF文章列表
 | [38、ElasticSearch.pdf](https://hubu.buzz/pdf/web/viewer.html?file=38、ElasticSearch.pdf) |                                               |
 | [40、Docker.pdf](https://hubu.buzz/pdf/web/viewer.html?file=40、Docker.pdf) | docker 基础                                   |
 | [41、Docker下.pdf](https://hubu.buzz/pdf/web/viewer.html?file=41、Docker下.pdf) | compose、swarm                                |
-|                                                              |                                               |
+| [java数据结构与算法.pdf](https://hubu.buzz/pdf/web/viewer.html?file=java数据结构与算法.pdf) |                                               |
 |                                                              |                                               |
 |                                                              |                                               |
 |                                                              |                                               |

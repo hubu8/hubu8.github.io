@@ -4,7 +4,21 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 11 Aug 2021 16:28:22 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>TCP协议</title>
+    <link>https://hubu8.github.io/tcp%E5%8D%8F%E8%AE%AE/</link>
+    <pubDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/tcp%E5%8D%8F%E8%AE%AE/</guid>
+    <description><![CDATA[TCP(Transmission Control Protocol 传输控制协议)是一种面向连接(连接导向)的、可靠的、 基于IP的传输层协议。TCP在IP报文的协议号是6。TCP是一个超级麻烦的协议，而]]></description>
+</item><item>
+    <title>JPA</title>
+    <link>https://hubu8.github.io/jpa/</link>
+    <pubDate>Thu, 26 Aug 2021 15:49:24 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/jpa/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Maven拉取私库JAR</title>
     <link>https://hubu8.github.io/maven%E6%8B%89%E5%8F%96%E7%A7%81%E5%BA%93jar/</link>
     <pubDate>Wed, 11 Aug 2021 16:28:22 &#43;0800</pubDate>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</guid>
     <description><![CDATA[Collection-List]]></description>
-</item><item>
-    <title>Collection -02</title>
-    <link>https://hubu8.github.io/day08%E9%9B%86%E5%90%8802/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/day08%E9%9B%86%E5%90%8802/</guid>
-    <description><![CDATA[泛型-Set-TreeSet]]></description>
-</item><item>
-    <title>Collection -03</title>
-    <link>https://hubu8.github.io/day09%E9%9B%86%E5%90%8803/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/day09%E9%9B%86%E5%90%8803/</guid>
-    <description><![CDATA[红黑树-HashSet-Map-HashMap-TreeMap]]></description>
 </item></channel>
 </rss>

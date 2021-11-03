@@ -4,7 +4,14 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 02 Sep 2021 21:37:56 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Cloud</title>
+    <link>https://hubu8.github.io/cloud/</link>
+    <pubDate>Thu, 02 Sep 2021 21:37:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/cloud/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>TCP协议</title>
     <link>https://hubu8.github.io/tcp%E5%8D%8F%E8%AE%AE/</link>
     <pubDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/hashmap/</guid>
     <description><![CDATA[享学hashmap]]></description>
-</item><item>
-    <title>Collection -01</title>
-    <link>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/day07%E9%9B%86%E5%90%8801/</guid>
-    <description><![CDATA[Collection-List]]></description>
 </item></channel>
 </rss>

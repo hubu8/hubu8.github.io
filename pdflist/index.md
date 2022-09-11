@@ -61,10 +61,16 @@ PDF文章列表
 
 
 
+阿里系Java开发相关
 
-
-
-
-
+| 名称                                                         | 备注 |
+| ------------------------------------------------------------ | ---- |
+| [轻松玩转docker.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=轻松玩转docker.pdf) |      |
+| [Nacos架构&原理.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=Nacos架构&原理.pdf) |      |
+| [Elasticsearch全观测技术解析与应用（构建日志、指标、APM统一观测平台）.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=Elasticsearch全观测技术解析与应用（构建日志、指标、APM统一观测平台）.pdf) |      |
+| [技术人的百宝黑皮书.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=技术人的百宝黑皮书.pdf) |      |
+| [阿里低代码引擎白皮书.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=阿里低代码引擎白皮书.pdf) |      |
+| [java开发手册嵩山版.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=java开发手册嵩山版.pdf) |      |
+| [java开发手册泰山版.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=java开发手册泰山版.pdf) |      |
 
 

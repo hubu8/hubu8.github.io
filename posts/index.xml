@@ -4,7 +4,15 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 11 Sep 2022 22:33:21 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 12 Sep 2022 17:15:31 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Jenkins&#43;Docker一键自动化部署SpringBoot项目</title>
+    <link>https://hubu8.github.io/jenkins-docker%E4%B8%80%E9%94%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE/</link>
+    <pubDate>Mon, 12 Sep 2022 17:15:31 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/jenkins-docker%E4%B8%80%E9%94%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>自定义注解</title>
     <link>https://hubu8.github.io/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
     <pubDate>Sun, 11 Sep 2022 22:33:21 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/springsecurity/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>JDBC-01</title>
-    <link>https://hubu8.github.io/jdbc-01/</link>
-    <pubDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/jdbc-01/</guid>
-    <description><![CDATA[JDBC工具类]]></description>
 </item>
 </channel>
 </rss>

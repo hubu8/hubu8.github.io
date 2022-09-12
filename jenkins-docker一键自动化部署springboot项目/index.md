@@ -86,7 +86,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 - 查看密码：`cat /var/lib/jenkins/secrets/initialAdminPassword`
 - 复制密码到输入框里面
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyyshvRoBvJ6QbJZRw9wic7gibylV1cJicxOJVWg0Hg0qFhXyT5ug0Pbn2g/640?wx_fmt=png&random=0.7236724850345728&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/640)
 
 图片
 
@@ -94,7 +94,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 
 选择第一个：安装推荐的插件
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyMwucPYZb9ZmW27xZl3IpQicZBrWqCThp7LRphtnib2wsLdFYynHaGyPw/640?wx_fmt=png&random=0.7501449915729308&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6401)
 
 图片
 
@@ -110,7 +110,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 
 搜索以下需要安装的插件，点击安装即可。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyLaNAM4xbaWaBeNHPvGhm6Iu9ZmvgOiaIdOo11Q8PiacAhj15uA2123KA/640?wx_fmt=png&random=0.42899086065774017&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6402)
 
 图片
 
@@ -122,7 +122,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 
 进入【首页】–【系统管理】–【全局配置】，拉到最下面maven–maven安装
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyeQqIcfic8kVBoDHjoEsicYTdibGicicO1BvkHTib1QQV7bAd77VxCDZRKsAQ/640?wx_fmt=png&random=0.8667036553651208&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6403)
 
 图片
 
@@ -132,7 +132,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 
 点击【新建任务】，输入任务名称，点击构建一个自由风格的软件项目
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyxUKZsCZOoXUv7lpBxm9mqId7Iq3icoPjictqTTle4zjxjoD4RxNW7yKQ/640?wx_fmt=png&random=0.2006864959409247&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6404)
 
 图片
 
@@ -140,11 +140,11 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 
 点击【源码管理】–【Git】，输入仓库地址，添加凭证，选择好凭证即可。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyzdO3Iy629MrSsiavFlicfFsgmbWQlIAIIaGyIrYw5533BhMbR5kjuHiaQ/640?wx_fmt=png&random=0.7056154241642933&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6405)
 
 图片
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyKrRuvzhCrdKe6RsUMoIe5Iic9wCNSCtJ1OP6YJgdvCG54XFNkv86ARA/640?wx_fmt=png&random=0.09957022906412849&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6406)
 
 图片
 
@@ -152,7 +152,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 
 点击【构建触发器】–【构建】–【增加构建步骤】–【调用顶层Maven目标】–【填写配置】–【保存】
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cy2wofUQHqbcQHwtQOeib2RuDvbCeH7rfhPbUuDpRV6k3ZSOicFibhzs7Vg/640?wx_fmt=png&random=0.317058323396312&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6407)
 
 图片
 
@@ -162,7 +162,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 clean install -Dmaven.test.skip=true
 ```
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyPoU6XbhmLmERPP6FwKHDkAhb2ibD3pLO1mbibYgSIN0qu2SOIvW9ft3A/640?wx_fmt=png&random=0.37942360753709004&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6408)
 
 图片
 
@@ -178,7 +178,7 @@ clean install -Dmaven.test.skip=true
 
 点击构建按钮
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyCFytG38bLww3MnGCY4ISQ2ITic8Hia0IKtt3tn7TslPF7AyebeBJPtqg/640?wx_fmt=png&random=0.09550435108069477&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6409)
 
 图片
 
@@ -186,13 +186,13 @@ clean install -Dmaven.test.skip=true
 
 点击正在构建的任务，或者点击任务名称，进入详情页面，查看控制台输出，看是否能成功打成jar包。
 
-该处日志第一次可能下载依赖jar包失败，再次点击构建即可成功。![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyCFytG38bLww3MnGCY4ISQ2ITic8Hia0IKtt3tn7TslPF7AyebeBJPtqg/640?wx_fmt=png&random=0.29831465950283786&wxfrom=5&wx_lazy=1&wx_co=1)
+该处日志第一次可能下载依赖jar包失败，再次点击构建即可成功。![图片](/docker_image/64006)
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cy5Fz6qyDTiaGgDg1qicb3xfu2ouFVIHcG7PibvUJpG8hjcXIibtpzWR2DEg/640?wx_fmt=png&random=0.027020731370377638&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/6400)
 
 图片
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyRldXjpOewRsSTXjGSibAfPcVeI2srVPRzRcWtAWpKeKAsdDuUXmb8Hw/640?wx_fmt=png&random=0.60444221647061&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/64001)
 
 图片
 
@@ -219,13 +219,13 @@ ENTRYPOINT ["Bash","-DBash.security.egd=file:/dev/./urandom","-jar","/app.jar","
 
 #### 2. 修改jenkins任务配置
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cyUQbZA4dtxoREHicOaMriceUfIaBMBg103vF8sM6JtoFkrxN5niaibkwEjA/640?wx_fmt=png&random=0.48763975710440555&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/64002)
 
 图片
 
 配置如下：
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cy7l2piaPZ1zMmFiahjcwQzHrbOKX3UIOuia2veMS9DtkiaZc0B2344WrgLQ/640?wx_fmt=png&random=0.2645517507663635&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/64003)
 
 图片
 
@@ -254,7 +254,7 @@ docker run -d -p 8888:8888 --name zx-order zx-order:latest
 
 查看jenkins控制台输出，输出如下，证明成功！
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/knmrNHnmCLFvhCbhGzOibqxc75RyoJ6cy1GoXDD0TNOia3KNZeJ97FB5YBibFeFaMSdbY6xfy4RuKP9UPxlatmDdQ/640?wx_fmt=png&random=0.7296276906655683&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/docker_image/64007)
 
 图片
 

@@ -4,7 +4,23 @@
         <link>https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/</link>
         <description>Java后端 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 03 Oct 2022 16:00:30 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 05 Oct 2022 16:00:30 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>Ruoyi框架之导入导出</title>
+    <link>https://hubu8.github.io/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</link>
+    <pubDate>Wed, 05 Oct 2022 16:00:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Ruoyi框架之文件上传</title>
+    <link>https://hubu8.github.io/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</link>
+    <pubDate>Wed, 05 Oct 2022 16:00:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Ruoyi框架之数据权限</title>
     <link>https://hubu8.github.io/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90/</link>
     <pubDate>Mon, 03 Oct 2022 16:00:30 &#43;0800</pubDate>
@@ -67,22 +83,6 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/stanford-corenlp/</guid>
     <description><![CDATA[时光邮局---词云分析---Stanford Nlp]]></description>
-</item>
-<item>
-    <title>SpringCloud</title>
-    <link>https://hubu8.github.io/simpread-springcloud%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Sat, 17 Apr 2021 20:47:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/simpread-springcloud%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>maven常用命令</title>
-    <link>https://hubu8.github.io/mvn/</link>
-    <pubDate>Sun, 11 Apr 2021 11:01:40 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/mvn/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

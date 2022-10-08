@@ -3,6 +3,8 @@
 
 <!--more-->
 
+## 使用ElementUI自带的action
+
 ### Vue前端界面元素
 
 ```vue
@@ -161,4 +163,105 @@ public class RemoteFileFallbackFactory implements FallbackFactory<RemoteFileServ
 ![image-20221005212728565](/java_images/image-20221005212728565.png)
 
 ![image-20221005212812923](/java_images/image-20221005212812923.png)
+
+## 使用自定义http-request
+
+​	不使用action定义文件上传接口，而是通过用户自定义方法实现对文件的上传，例如，更具不同的文件类型上传到不同的接口，相比较与以上方法灵活性更高。
+
+![image-20221008210221195](/java_images/image-20221008210221195.png)
+
+### vue自定义http-request
+
+```vue
+<el-upload
+            ref="upload_img"
+            :limit="1"
+            accept=".jpg, .png"
+            :action="upload.url"
+            :headers="upload.headers"
+            :file-list="upload.fileList"
+            :on-progress="handleFileUploadProgress"
+            :on-success="handleFileSuccess"
+            :http-request="uploadSectionFile"
+            :auto-upload="true">
+            <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+            <el-button style="margin-left: 10px;" size="small" type="success" :loading="upload.isUploading" @click="submitUpload">上传到服务器</el-button>
+            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+```
+
+### 自定义方法
+
+```js
+uploadSectionFile(params){
+      // 自定义上传方法
+      console.log(params)
+      var that = this
+      var file = params.file  //获取上传的文件
+      let formData = new FormData();
+      formData.append("file",params.file)
+      console.log(formData.get("file"))
+      var fileType = file.type   //获取文件类型
+      var isImage = fileType.indexOf('image') != -1  // 判断是否是图片类型
+      var file_url = that.$refs.upload_img.uploadFiles[0].url;
+      // console.log(file,fileType,isImage,file_url,that.$refs.upload_img);
+      var isLt2M = file.size / 1024 / 1024 < 10;
+      if (!isLt2M) {  // 判断大小
+        alert("上传图片的大小不能超过 2MB!");
+        that.$refs.upload_img.uploadFiles = [];  //不符合就清空已选择的图片
+        return;
+      }
+      if(!isImage){  // 文件格式
+        alert("请选择图片文件！");
+        that.$refs.upload_img.uploadFiles = [];   //不符合就清空已选择的图片
+        return;
+      }
+      that.uploadFile(file);
+
+    },
+    uploadFile(file) {   // 上传的函数
+      var that = this
+      var formData = new FormData();
+      formData.append("file", file);
+      uploadQrcode(formData)
+        .then(function (res) {
+          console.log(res);
+          if(res.code == 200){  //成功的话将数据插入data中
+            that.upload.fileList[0]=res.data;
+            // that.file_list[0]=res.data.data.img;
+          }else{
+            // 上传失败，清除已选择 内容 ，并提示失败原因
+            that.$refs.upload_img.uploadFiles = [];
+            that.$alert('图片上传异常，原因：'+res.data.data, '', {
+              showConfirmButton: false,
+              callback: action => {}
+            });
+          }
+        })
+    }
+```
+
+### 定义API接口
+
+```js
+export function uploadQrcode(formData) {
+  return request({
+    url: '/pay/qrcodes/qrcode/upload',
+    method: 'post',
+    headers: {
+      'Content-Type': 'multipart/form-data', //设置请求头请求格式form
+    },
+    data: formData,
+
+  })
+}
+```
+
+### 请求
+
+![image-20221008222722627](/java_images/image-20221008222722627.png)
+
+![image-20221008222735061](/java_images/image-20221008222735061.png)
+
+![image-20221008222751855](/java_images/image-20221008222751855.png)
 

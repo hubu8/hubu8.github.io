@@ -560,11 +560,15 @@ PRIMARY KEY(ID)
 
 ```xml
 <dependency>
-    <groupId>com.github.wujun234</groupId>
-    <artifactId>uid-generator-spring-boot-starter</artifactId>
-    <version>${uid-generator.version}</version>
+    <groupId>com.baidu.fsg</groupId>
+    <artifactId>uid-generator</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 </dependency>
-
+<dependency>
+    <groupId>commons-lang</groupId>
+    <artifactId>commons-lang</artifactId>
+    <version>2.6</version>
+</dependency>
 ```
 
 #### 配置文件application.yml里引入自定义配置
@@ -587,6 +591,166 @@ uid:
     boostPower: 3
   # 指定何时向RingBuffer中填充UID, 取值为百分比(0, 100), 默认为50
     paddingFactor: 50
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://12.168.120.3:3307/hubu_test?serverTimezone=GMT%2B8&useSSL=true
+    username: root
+    password: 1234567
+#mybatis-plus����mapperɨ�� �ص�
+mybatis:
+  mapper-locations: classpath:/mapper/**/*Mapper.xml,classpath:/mapper/WORKER_NODE.xml
+
+```
+
+#### resource目录创建mapper文件
+
+**WORKER_NODE.xml**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baidu.fsg.uid.worker.dao.WorkerNodeDAO">
+	<resultMap id="workerNodeRes"
+			   type="com.baidu.fsg.uid.worker.entity.WorkerNodeEntity">
+		<id column="ID" jdbcType="BIGINT" property="id" />
+		<result column="HOST_NAME" jdbcType="VARCHAR" property="hostName" />
+		<result column="PORT" jdbcType="VARCHAR" property="port" />
+		<result column="TYPE" jdbcType="INTEGER" property="type" />
+		<result column="LAUNCH_DATE" jdbcType="DATE" property="launchDate" />
+		<result column="MODIFIED" jdbcType="TIMESTAMP" property="modified" />
+		<result column="CREATED" jdbcType="TIMESTAMP" property="created" />
+	</resultMap>
+
+	<insert id="addWorkerNode" useGeneratedKeys="true" keyProperty="id"
+		parameterType="com.baidu.fsg.uid.worker.entity.WorkerNodeEntity">
+		INSERT INTO WORKER_NODE
+		(HOST_NAME,
+		PORT,
+		TYPE,
+		LAUNCH_DATE,
+		MODIFIED,
+		CREATED)
+		VALUES (
+		#{hostName},
+		#{port},
+		#{type},
+		#{launchDate},
+		NOW(),
+		NOW())
+	</insert>
+
+	<select id="getWorkerNodeByHostPort" resultMap="workerNodeRes">
+		SELECT
+		ID,
+		HOST_NAME,
+		PORT,
+		TYPE,
+		LAUNCH_DATE,
+		MODIFIED,
+		CREATED
+		FROM
+		WORKER_NODE
+		WHERE
+		HOST_NAME = #{host} AND PORT = #{port}
+	</select>
+</mapper>
+```
+
+#### Uid配置类注入
+
+```java
+package com.jindong.dailytest.config;
+
+
+import com.baidu.fsg.uid.buffer.RejectedPutBufferHandler;
+import com.baidu.fsg.uid.buffer.RejectedTakeBufferHandler;
+import com.baidu.fsg.uid.buffer.RingBuffer;
+import com.baidu.fsg.uid.impl.CachedUidGenerator;
+import com.baidu.fsg.uid.impl.DefaultUidGenerator;
+import com.baidu.fsg.uid.worker.DisposableWorkerIdAssigner;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * 两种生成策略注入Bean
+ *
+ * @author Administrator
+ */
+@Configuration
+public class UidGeneratorConfiguration {
+
+    /**
+     * RingBuffer size扩容参数, 可提高UID生成的吞吐量. -->
+     * 默认:3， 原bufferSize=8192, 扩容后bufferSize= 8192 << 3 = 65536
+     * CachedUidGenerator 参数{@link UidGeneratorConfiguration#cachedUidGenerator()}
+     */
+    private int boostPower = 3;
+    /**
+     * 指定何时向RingBuffer中填充UID, 取值为百分比(0, 100), 默认为50 -->
+     * 举例: bufferSize=1024, paddingFactor=50 -> threshold=1024 * 50 / 100 = 512.
+     * 当环上可用UID数量 < 512时, 将自动对RingBuffer进行填充补全
+     */
+    private int paddingFactor = 50;
+    /**
+     * 另外一种RingBuffer填充时机, 在Schedule线程中, 周期性检查填充
+     * 默认:不配置此项, 即不实用Schedule线程. 如需使用, 请指定Schedule线程时间间隔, 单位:秒
+     */
+    private Long scheduleInterval;
+    /**
+     * 拒绝策略: 当环已满, 无法继续填充时 -->
+     * 默认无需指定, 将丢弃Put操作, 仅日志记录. 如有特殊需求, 请实现RejectedPutBufferHandler接口(支持Lambda表达式)
+     */
+    private RejectedPutBufferHandler rejectedPutBufferHandler;
+    /**
+     * 拒绝策略: 当环已空, 无法继续获取时 -->
+     * 默认无需指定, 将记录日志, 并抛出UidGenerateException异常. 如有特殊需求, 请实现RejectedTakeBufferHandler接口(支持Lambda表达式)
+     */
+    private RejectedTakeBufferHandler rejectedTakeBufferHandler;
+    /**
+     * 暂时不知道
+     */
+    private RingBuffer ringBuffer;
+
+    @Bean(name = "cachedUidGenerator")
+    public CachedUidGenerator cachedUidGenerator(){
+        CachedUidGenerator cachedUidGenerator = new CachedUidGenerator();
+        cachedUidGenerator.setWorkerIdAssigner(disposableWorkerIdAssigner());
+        return cachedUidGenerator;
+    }
+
+    @Bean(name = "disposableWorkerIdAssigner")
+    public DisposableWorkerIdAssigner disposableWorkerIdAssigner(){
+        return new DisposableWorkerIdAssigner();
+    }
+
+
+    /**
+     * # 时间位, 默认:28
+     */
+    private int timeBits;
+    /**
+     * # 机器位, 默认:22
+     */
+    private int workerBits;
+    /**
+     * # 序列号, 默认:13
+     */
+    private int seqBits;
+    /**
+     * # 初始时间, 默认:"2016-05-20"
+     */
+    @Value("${uid.epochStr}")
+    private String epochStr;
+
+    @Bean(name = "defaultUidGenerator")
+    public DefaultUidGenerator defaultUidGenerator(){
+        DefaultUidGenerator defaultUidGenerator = new DefaultUidGenerator();
+        defaultUidGenerator.setWorkerIdAssigner(disposableWorkerIdAssigner());
+        return defaultUidGenerator;
+    }
+}
 ```
 
 #### IdGenerator.java工具类
@@ -594,9 +758,17 @@ uid:
 这边我们使用`CachedUidGenerato`
 
 ```java
+package com.jindong.dailytest.utils;
+
+import com.baidu.fsg.uid.impl.CachedUidGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+
 @Component
 public class IdGenerator {
-    @Autowired
+    @Resource(name = "cachedUidGenerator")
     private CachedUidGenerator cachedUidGenerator;
 
     /**
@@ -620,4 +792,90 @@ public class IdGenerator {
 }
 ```
 
+#### Defgenerator.java工具类
+
+```java
+package com.jindong.dailytest.utils;
+
+
+import com.baidu.fsg.uid.impl.DefaultUidGenerator;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+
+/**
+ * 默认的生成器策略
+ *
+ * @author Administrator
+ */
+@Component
+public class DefGenerator {
+
+    @Resource(name = "defaultUidGenerator")
+    private DefaultUidGenerator defaultUidGenerator;
+
+    /**
+     * 获取uid
+     *
+     * @return
+     */
+    public long nextId() {
+        return defaultUidGenerator.getUID();
+    }
+
+    /**
+     * 格式化传入的uid，方便查看其实际含义
+     *
+     * @param uid
+     * @return
+     */
+    public String parse(long uid) {
+        return defaultUidGenerator.parseUID(uid);
+    }
+}
+```
+
+#### Springboot主类加包扫描
+
+```java
+@SpringBootApplication
+@MapperScan({"com.baidu.fsg"})
+public class DailytestApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DailytestApplication.class, args);
+	}
+
+}
+```
+
+#### 测试接口
+
+```java
+@RestController
+@RequestMapping("test")
+public class TestController {
+
+    @Resource
+    IdGenerator idGenerator;
+
+
+    @RequestMapping("demo")
+    public String index() {
+        return "hello,world";
+    }
+
+    @RequestMapping("getlongID")
+    public String longToString() {
+        long l = idGenerator.nextId();
+        String parse = idGenerator.parse(l);
+        return l+"\n"+parse;
+    }
+
+}
+```
+
+#### 测试
+
+![image-20221204151831970](/common_images/image-20221204151831970.png)
 

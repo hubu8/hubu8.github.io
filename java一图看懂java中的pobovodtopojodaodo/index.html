@@ -4,32 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>虚拟机网络配置 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="虚拟机网络配置" />
+        <title>【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-12-02T13:57:12+08:00" />
-<meta property="article:modified_time" content="2022-12-02T13:57:12+08:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="og:url" content="https://hubu8.github.io/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-09T11:05:23+08:00" />
+<meta property="article:modified_time" content="2022-12-09T11:05:23+08:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
 
-<meta name="twitter:title" content="虚拟机网络配置"/>
+<meta name="twitter:title" content="【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" /><link rel="prev" href="https://hubu8.github.io/docker%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92tips/" /><link rel="next" href="https://hubu8.github.io/%E7%99%BE%E5%BA%A6uidgenerator%E9%9B%86%E6%88%90/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo/" /><link rel="prev" href="https://hubu8.github.io/springboot%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "虚拟机网络配置",
+        "headline": "【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE\/"
-        },"genre": "posts","keywords": "网络","wordcount":  247 ,
-        "url": "https:\/\/hubu8.github.io\/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE\/","datePublished": "2022-12-02T13:57:12+08:00","dateModified": "2022-12-02T13:57:12+08:00","publisher": {
+            "@id": "https:\/\/hubu8.github.io\/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo\/"
+        },"genre": "posts","wordcount":  1274 ,
+        "url": "https:\/\/hubu8.github.io\/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo\/","datePublished": "2022-12-09T11:05:23+08:00","dateModified": "2022-12-09T11:05:23+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -101,10 +101,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">虚拟机网络配置</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BD%91%E7%BB%9C/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>网络</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-02">2022-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 247 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="虚拟机网络配置">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a>&nbsp;<a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a>&nbsp;<a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a>&nbsp;<a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>算法</a>&nbsp;<a href="/categories/%E5%89%8D%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>前端</a>&nbsp;<a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>设计模式</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-09">2022-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1274 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo/" class="leancloud_visitors" data-flag-title="【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -112,68 +112,92 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>虚拟机网络一般配置为net模式</p>
-<p>要求：虚拟机网段与客户端网段不需要在同一网段内，所以没什么关系</p>
-<p>上截图</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ens33: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
-</span></span><span class="line"><span class="cl">        inet 12.168.120.3  netmask 255.255.255.0  broadcast 12.168.120.255
-</span></span><span class="line"><span class="cl">        inet6 fe80::9e98:31b8:51e:9ffb  prefixlen <span class="m">64</span>  scopeid 0x20&lt;link&gt;
-</span></span><span class="line"><span class="cl">        ether 00:0c:29:8c:87:3f  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        RX packets <span class="m">113</span>  bytes <span class="m">15203</span> <span class="o">(</span>14.8 KiB<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
-</span></span><span class="line"><span class="cl">        TX packets <span class="m">120</span>  bytes <span class="m">14794</span> <span class="o">(</span>14.4 KiB<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">lo: <span class="nv">flags</span><span class="o">=</span>73&lt;UP,LOOPBACK,RUNNING&gt;  mtu <span class="m">65536</span>
-</span></span><span class="line"><span class="cl">        inet 127.0.0.1  netmask 255.0.0.0
-</span></span><span class="line"><span class="cl">        inet6 ::1  prefixlen <span class="m">128</span>  scopeid 0x10&lt;host&gt;
-</span></span><span class="line"><span class="cl">        loop  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Local Loopback<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        RX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span>0.0 B<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
-</span></span><span class="line"><span class="cl">        TX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span>0.0 B<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>1、虚拟机IP：12.168.120.3 		网络掩码：255.255.255.0   	网关：12.168.120.2</p>
-<p>客户端只需要设置VMnet8虚拟网络参数</p>
-<p><img
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#popersistant-object---持久化对象">PO（Persistant Object - 持久化对象）</a></li>
+        <li><a href="#bobusiness-object---业务对象">BO（Business Object - 业务对象）</a></li>
+        <li><a href="#dodomain-object---领域对象">DO（Domain Object - 领域对象）</a></li>
+        <li><a href="#vovalue-objectview-object---值对象视图对象">VO（Value Object/View Object - 值对象/视图对象）</a></li>
+        <li><a href="#dtodata-transfer-object---数据传输对象">DTO（Data Transfer Object - 数据传输对象）</a></li>
+        <li><a href="#daodata-access-object---数据访问对象">DAO（Data Access Object - 数据访问对象）</a></li>
+        <li><a href="#pojoplain-ordinary-java-object---简单无规则java对象">POJO（Plain Ordinary Java Object - 简单无规则Java对象）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/common_images/image-20221202140945052.png"
-        data-srcset="/common_images/image-20221202140945052.png, /common_images/image-20221202140945052.png 1.5x, /common_images/image-20221202140945052.png 2x"
+        data-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp"
+        data-srcset="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp, https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp 1.5x, https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp 2x"
         data-sizes="auto"
-        alt="/common_images/image-20221202140945052.png"
-        title="image-20221202140945052" /></p></div><div class="post-footer" id="post-footer">
+        alt="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp"
+        title="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp" /></p>
+<h3 id="popersistant-object---持久化对象">PO（Persistant Object - 持久化对象）</h3>
+<blockquote>
+<p>该概念随着ORM产生，可以看成是与数据库中的表相映射的Java对象。通常就是对应数据库中某个表中的一条记录。PO仅仅用于表示数据，没有任何数据操作。通常遵守Java Bean的规范，拥有 getter/setter方法。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>PO的生命周期</strong>：是向数据库中添加新数据时创建，删除数据库中数据时削除的。并且它只能存活在一个数据库连接中，断开连接即被销毁。</p>
+</li>
+<li>
+<p><strong>PO的作用</strong>：可以把数据表中一条记录作为一个对象处理，可以方便的转为其它对象。PO是有状态的，每个属性代表其当前的状态。使用它，可以使我们的程序与物理数据解耦，并且可以简化对象数据与物理数据之间的转换。</p>
+</li>
+<li>
+<p>PO的特点</p>
+<p>：</p>
+<ul>
+<li>PO的属性是跟数据库表的字段一一对应的</li>
+<li>PO对象需要实现序列化接口</li>
+<li>一个POJO持久化后就是PO</li>
+</ul>
+</li>
+</ul>
+<h3 id="bobusiness-object---业务对象">BO（Business Object - 业务对象）</h3>
+<blockquote>
+<p>BO用于表示一个业务对象，它包括了业务逻辑，常常封装了对DAO和RPC等的调用，可以进行PO与VO/DTO之间的转换。</p>
+<p>BO通常位于业务层，要区别于直接对外提供服务的服务层：BO提供了基本业务单元的基本业务操作，在设计上属于被服务层业务流程调用的对象，一个业务流程可能需要调用多个BO来完成。</p>
+</blockquote>
+<h3 id="dodomain-object---领域对象">DO（Domain Object - 领域对象）</h3>
+<blockquote>
+<p>领域对象就是从现实世界中抽象出来的有形或无形的业务实体。通常位于业务层中。</p>
+</blockquote>
+<h3 id="vovalue-objectview-object---值对象视图对象">VO（Value Object/View Object - 值对象/视图对象）</h3>
+<blockquote>
+<p>Value Object，值对象，也称为业务对象，是存活在业务层的，是业务逻辑使用的，它存活的目的就是为数据提供一个生存的地方（实际上跟DO有点类似）。</p>
+<p>VO的属性是根据当前业务的不同而不同的，也就是说，它的每一个属性都一一对应当前业务逻辑所需要的数据的名称。</p>
+<p>VO通常用于业务层之间的数据传递，其仅仅包含数据。但应是抽象出的业务对象。根据业务的需要，其可以和表对应或者不。用new关键字创建，由GC进行回收。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>View Object，视图对象，用于展示层，它的作用是把某个指定页面（或组件）的所有数据封装起来，对应整个界面的值</p>
+</blockquote>
+<h3 id="dtodata-transfer-object---数据传输对象">DTO（Data Transfer Object - 数据传输对象）</h3>
+<blockquote>
+<p>DTO概念来源于J2EE的设计模式，原来的目的是为了EJB的分布式应用提供粗粒度的数据实体，以减少分布式调用的次数，从而提高分布式调用的性能和降低网络负载。</p>
+<p>DTO用于表示一个数据传输对象，通常用于不同服务或服务不同分层之间的数据传输。</p>
+<p>DTO与VO与类似，但也有一些不同，这个不同主要是设计理念上的，比如API服务需要使用的是DTO，而用于展示层页面的使用的是VO。例如，为了展示方便，在VO的性别字段存的是男和女，而在DTO中存的是1或者2这样的代码。</p>
+</blockquote>
+<h3 id="daodata-access-object---数据访问对象">DAO（Data Access Object - 数据访问对象）</h3>
+<blockquote>
+<p>DAO是SUN公司的一个标准J2EE设计模式，这个模式中有个接口就是 DAO，负责持久层的操作并为业务层提供接口。此对象用于访问数据库。通常和PO结合使用。</p>
+<p>DAO中包含了各种数据库的操作方法。通过它的方法结合PO对数据库进行CRUD的操作。</p>
+</blockquote>
+<h3 id="pojoplain-ordinary-java-object---简单无规则java对象">POJO（Plain Ordinary Java Object - 简单无规则Java对象）</h3>
+<blockquote>
+<p>POJO表示一个简单Java对象。PO、VO、DTO都是典型的POJO。</p>
+</blockquote></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-12-02</span>
+                <span>更新于 2022-12-09</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -182,14 +206,13 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a></section>
+        <section class="post-tags"></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/docker%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92tips/" class="prev" rel="prev" title="Docker容器编排TIPS"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Docker容器编排TIPS</a>
-            <a href="/%E7%99%BE%E5%BA%A6uidgenerator%E9%9B%86%E6%88%90/" class="next" rel="next" title="springboot集成UidGenerator最佳指南">springboot集成UidGenerator最佳指南<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/springboot%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/" class="prev" rel="prev" title="Springboot事务代码实践"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Springboot事务代码实践</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

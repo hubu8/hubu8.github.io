@@ -5,6 +5,14 @@
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
             <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>github action实现自动编译发布githubPages</title>
+    <link>https://hubu8.github.io/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</link>
+    <pubDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>No1.java面向对象有那些特征</title>
     <link>https://hubu8.github.io/no1.java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%9C%89%E9%82%A3%E4%BA%9B%E7%89%B9%E5%BE%81/</link>
     <pubDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Docker容器编排TIPS</title>
-    <link>https://hubu8.github.io/docker%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92tips/</link>
-    <pubDate>Tue, 29 Nov 2022 12:02:54 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/docker%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92tips/</guid>
-    <description><![CDATA[Docker compose  &  Docker Swarm]]></description>
 </item>
 </channel>
 </rss>

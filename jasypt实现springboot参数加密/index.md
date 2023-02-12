@@ -129,4 +129,12 @@ spring:
 
 在项目启动时加入加密启动参数-Djasypt.encryptor.password=test
 
+```shell
+-Djasypt.encryptor.password=testtest
+-Djasypt.encryptor.property.prefix=ENCRYPT[
+-Djasypt.encryptor.property.suffix:]
+```
+
+
+
 ![image-20221228202513257](/spring/image-20221228202513257.png)

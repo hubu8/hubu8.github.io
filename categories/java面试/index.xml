@@ -4,7 +4,31 @@
         <link>https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/</link>
         <description>java面试 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 13 Feb 2023 15:33:18 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 19 Feb 2023 13:59:50 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
+    <title>No5.Java中抽象类和接口有什么区别</title>
+    <link>https://hubu8.github.io/no5.java%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Sun, 19 Feb 2023 13:59:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/no5.java%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>No4.JDK1.8的新特性有哪些</title>
+    <link>https://hubu8.github.io/no4.jdk1.8%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B/</link>
+    <pubDate>Sun, 19 Feb 2023 13:59:09 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/no4.jdk1.8%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>No3.高并发中的集合有哪些问题</title>
+    <link>https://hubu8.github.io/no3.%E9%AB%98%E5%B9%B6%E5%8F%91%E4%B8%AD%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%89%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Sun, 19 Feb 2023 13:57:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/no3.%E9%AB%98%E5%B9%B6%E5%8F%91%E4%B8%AD%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%89%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>No2.ArrayList和LinkedList的区别？</title>
     <link>https://hubu8.github.io/no2.arraylist%E5%92%8Clinkedlist%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
     <pubDate>Mon, 13 Feb 2023 15:33:18 &#43;0800</pubDate>
@@ -58,22 +82,6 @@
     <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%89/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>反射 四</title>
-    <link>https://hubu8.github.io/%E5%8F%8D%E5%B0%84%E5%9B%9B/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%8F%8D%E5%B0%84%E5%9B%9B/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>容器 二</title>
-    <link>https://hubu8.github.io/%E5%AE%B9%E5%99%A8%E4%BA%8C/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%AE%B9%E5%99%A8%E4%BA%8C/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

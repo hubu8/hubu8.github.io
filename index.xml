@@ -4,9 +4,17 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 05 Mar 2023 16:37:43 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 15 Mar 2023 09:00:59 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Promise与Async/Await的区别</title>
+    <link>https://hubu8.github.io/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C-%E5%89%AF%E6%9C%AC/</link>
+    <pubDate>Wed, 15 Mar 2023 09:00:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C-%E5%89%AF%E6%9C%AC/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Excel去除单元格保护</title>
     <link>https://hubu8.github.io/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</link>
     <pubDate>Sun, 05 Mar 2023 16:37:43 &#43;0800</pubDate>
@@ -76,14 +84,6 @@
     <pubDate>Sat, 03 Dec 2022 12:02:54 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/%E7%99%BE%E5%BA%A6uidgenerator%E9%9B%86%E6%88%90/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>虚拟机网络配置</title>
-    <link>https://hubu8.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
-    <pubDate>Fri, 02 Dec 2022 13:57:12 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -7,7 +7,7 @@
 
 ### 1、组件代码
 
-![image-20230407150253966](/前端/image-20230407150253966.png)
+![](https://raw.githubusercontent.com/hubu8/hubu8.github.io/static_picture/hugo/image-20230407150253966.png)
 
 #### 1.1、Vue代码
 

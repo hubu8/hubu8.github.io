@@ -5,7 +5,7 @@
 
 ### 0、最终实现效果
 
-![image-20230407091148921](/前端/image-20230407091148921.png)
+![](https://raw.githubusercontent.com/hubu8/hubu8.github.io/static_picture/hugo/image-20230407091148921.png)
 
 ### 1、组件代码
 

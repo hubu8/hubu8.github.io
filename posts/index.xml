@@ -4,7 +4,15 @@
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 11 May 2023 17:28:02 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 24 May 2023 10:58:05 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ThreadLocal多值应用</title>
+    <link>https://hubu8.github.io/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</link>
+    <pubDate>Wed, 24 May 2023 10:58:05 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Docker之mysql数据备份</title>
     <link>https://hubu8.github.io/docker%E4%B9%8Bmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/</link>
     <pubDate>Thu, 11 May 2023 17:28:02 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <pubDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Java面试</title>
-    <link>https://hubu8.github.io/java%E9%9D%A2%E8%AF%95/</link>
-    <pubDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/java%E9%9D%A2%E8%AF%95/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

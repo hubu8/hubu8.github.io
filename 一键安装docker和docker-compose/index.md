@@ -1,0 +1,61 @@
+# 一键安装docker和docker Compose
+
+
+<!--more-->
+
+1.复制下面命令至文件并保存
+
+```sh
+#!/bin/bash
+
+sudo systemctl stop docker.socket
+
+#删除原有docker
+sudo yum remove docker docker-ce docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine
+echo "=======删除 docker 完成======="
+
+#删除镜像、容器、配置文件等内容
+sudo rm -rf /var/lib/docker
+sudo rm -rf /etc/systemd/system/docker.service.d
+sudo rm -rf /var/run/docker
+echo "=======删除 docker 完成======="
+
+
+#安装 docker
+sudo curl -sSL https://get.daocloud.io/docker | sh
+#启动 docker
+systemctl start docker
+docker -v
+echo "=======安装 docker 完成======="
+#设置 docker仓库为国内仓库
+touch /etc/docker/daemon.json
+cat > /etc/docker/daemon.json <<EOF
+{
+  "registry-mirrors": ["https://nrbewqda.mirror.aliyuncs.com","https://dmmxhzvq.mirror.aliyuncs.com","https://registry.docker-cn.com"]
+}
+EOF
+
+
+#启动 docker
+systemctl daemon-reload
+systemctl restart docker
+
+
+echo "=======开始安装 docker-compose 完成======="
+
+
+#安装 docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+echo "=======安装 docker-compose 完成======="
+```
+
+2.给文件添加执行权限
+
+```sh
+chmod +x  install-docker.sh
+```
+
+

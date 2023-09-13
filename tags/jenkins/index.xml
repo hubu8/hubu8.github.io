@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>jenkins - 标签 - Eccentric&#39;s Note</title>
+        <link>https://hubu8.github.io/tags/jenkins/</link>
+        <description>jenkins - 标签 - Eccentric&#39;s Note</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/jenkins/" rel="self" type="application/rss+xml" /><item>
+    <title>jenkins安装</title>
+    <link>https://hubu8.github.io/jenkins%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/jenkins%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[安装Jenkins 预先安装docker、docker-compose环境 拉取Jenkins镜像，运行容器： 1 docker run --name myjenkins -p 9980:8080 -p 50000:50000 -v /var/jenkins_home jenkin]]></description>
+</item>
+<item>
+    <title>Jenkins持续集成入门到精通</title>
+    <link>https://hubu8.github.io/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/</link>
+    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/</guid>
+    <description><![CDATA[EditPreview 《Jenkins持续集成入门到精通》 1 、持续集成及Jenkins介绍 2 、Jenkins安装和持续集成环境配置 3 、Jenkins构建Mave]]></description>
+</item>
+</channel>
+</rss>

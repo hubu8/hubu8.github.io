@@ -76,5 +76,13 @@
     <guid>https://hubu8.github.io/docker%E5%9F%BA%E7%A1%80/</guid>
     <description><![CDATA[docker概述 从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力 原：jar&mdash;&mdash;]]></description>
 </item>
+<item>
+    <title>jenkins安装</title>
+    <link>https://hubu8.github.io/jenkins%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/jenkins%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[安装Jenkins 预先安装docker、docker-compose环境 拉取Jenkins镜像，运行容器： 1 docker run --name myjenkins -p 9980:8080 -p 50000:50000 -v /var/jenkins_home jenkin]]></description>
+</item>
 </channel>
 </rss>

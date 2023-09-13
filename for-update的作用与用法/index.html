@@ -4,32 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>一键安装docker和docker Compose - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="一键安装docker和docker Compose" />
-<meta property="og:description" content="" />
+        <title>for update的作用与用法 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="for update的作用与用法" />
+<meta property="og:description" content="for update定义 ​ for update是一种行级锁，又叫排它锁，一旦用户对某个行施加了行级加锁，则该用户可以查询也可以更新被加锁的数据行，其它用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-05-29T15:02:52+08:00" />
-<meta property="article:modified_time" content="2023-05-29T15:02:52+08:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="og:url" content="https://hubu8.github.io/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-12T16:00:30+08:00" />
+<meta property="article:modified_time" content="2023-09-12T16:00:30+08:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
 
-<meta name="twitter:title" content="一键安装docker和docker Compose"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="for update的作用与用法"/>
+<meta name="twitter:description" content="for update定义 ​ for update是一种行级锁，又叫排它锁，一旦用户对某个行施加了行级加锁，则该用户可以查询也可以更新被加锁的数据行，其它用"/>
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" /><link rel="prev" href="https://hubu8.github.io/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/" /><link rel="next" href="https://hubu8.github.io/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/" /><link rel="prev" href="https://hubu8.github.io/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" /><link rel="next" href="https://hubu8.github.io/date-formatting%E4%B8%ADyyyy%E4%B8%8Eyyyy%E7%9A%84%E5%8C%BA%E5%88%AB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "一键安装docker和docker Compose",
+        "headline": "for update的作用与用法",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose\/"
-        },"genre": "posts","keywords": "docker","wordcount":  356 ,
-        "url": "https:\/\/hubu8.github.io\/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose\/","datePublished": "2023-05-29T15:02:52+08:00","dateModified": "2023-05-29T15:02:52+08:00","publisher": {
+            "@id": "https:\/\/hubu8.github.io\/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95\/"
+        },"genre": "posts","keywords": "for update","wordcount":  1408 ,
+        "url": "https:\/\/hubu8.github.io\/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95\/","datePublished": "2023-09-12T16:00:30+08:00","dateModified": "2023-09-12T16:00:30+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -101,10 +101,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">一键安装docker和docker Compose</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-29">2023-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 356 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" class="leancloud_visitors" data-flag-title="一键安装docker和docker Compose">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">for update的作用与用法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-12">2023-09-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1408 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/" class="leancloud_visitors" data-flag-title="for update的作用与用法">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -112,120 +112,89 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>1.复制下面命令至文件并保存</p>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#for-update定义">for update定义</a></li>
+        <li><a href="#概念和用法">概念和用法</a></li>
+        <li><a href="#什么时候需要使用for-update">什么时候需要使用for update？</a></li>
+        <li><a href="#for-update悲观锁">for update悲观锁</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="for-update定义">for update定义</h3>
+<p>​	for update是一种行级锁，又叫排它锁，一旦用户对某个行施加了行级加锁，则该用户可以查询也可以更新被加锁的数据行，其它用户只能查询但不能更新被加锁的数据行．如果其它用户想更新该表中的数据行，则也必须对该表施加行级锁．即使多个用户对一个表均使用了共享更新，但也不允许两个事务同时对一个表进行更新，真正对表进行更新时，是以独占方式锁表，一直到提交或复原该事务为止。行锁永远是独占方式锁。</p>
+<p>只有当出现如下之一的条件，才会释放共享更新锁：
+1.执行提交（COMMIT）语句
+2.退出数据库（LOG　OFF）
+3.程序停止运行</p>
+<h3 id="概念和用法">概念和用法</h3>
+<p>通常情况下，select语句是不会对数据加锁，妨碍影响其他的DML和DDL操作。同时，在多版本一致读机制的支持下，select语句也不会被其他类型语句所阻碍。</p>
+<p>而select … for update 语句是我们经常使用手工加锁语句。在数据库中执行select … for update ,大家会发现会对数据库中的表或某些行数据进行锁表，在mysql中，如果查询条件带有主键、索引，会锁行数据，如果没有，会锁表。</p>
+<p>由于InnoDB预设是Row-Level Lock，所以只有「明确」的指定主键，MySQL才会执行Row lock (只锁住被选取的资料例) ，否则MySQL将会执行Table Lock (将整个资料表单给锁住)。</p>
+<p>【举例说明】假设有张表user ，里面有 id 和 name 两列，id是主键。</p>
+<p>例1: (明确指定主键，并且数据真实存在，row lock)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl">sudo systemctl stop docker.socket
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#删除原有docker</span>
-</span></span><span class="line"><span class="cl">sudo yum remove docker docker-ce docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======删除 docker 完成=======&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#删除镜像、容器、配置文件等内容</span>
-</span></span><span class="line"><span class="cl">sudo rm -rf /var/lib/docker
-</span></span><span class="line"><span class="cl">sudo rm -rf /etc/systemd/system/docker.service.d
-</span></span><span class="line"><span class="cl">sudo rm -rf /var/run/docker
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======删除 docker 完成=======&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#安装 docker</span>
-</span></span><span class="line"><span class="cl">sudo curl -sSL https://get.daocloud.io/docker <span class="p">|</span> sh
-</span></span><span class="line"><span class="cl"><span class="c1">#启动 docker</span>
-</span></span><span class="line"><span class="cl">systemctl start docker
-</span></span><span class="line"><span class="cl">docker -v
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======安装 docker 完成=======&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#设置 docker仓库为国内仓库</span>
-</span></span><span class="line"><span class="cl">touch /etc/docker/daemon.json
-</span></span><span class="line"><span class="cl">cat &gt; /etc/docker/daemon.json <span class="s">&lt;&lt;EOF
-</span></span></span><span class="line"><span class="cl"><span class="s">{
-</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;registry-mirrors&#34;: [&#34;https://nrbewqda.mirror.aliyuncs.com&#34;,&#34;https://dmmxhzvq.mirror.aliyuncs.com&#34;,&#34;https://registry.docker-cn.com&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="s">}
-</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#启动 docker</span>
-</span></span><span class="line"><span class="cl">systemctl daemon-reload
-</span></span><span class="line"><span class="cl">systemctl restart docker
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======开始安装 docker-compose 完成=======&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#安装 docker-compose</span>
-</span></span><span class="line"><span class="cl">sudo curl -L <span class="s2">&#34;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&#34;</span> -o /usr/local/bin/docker-compose
-</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/docker-compose
-</span></span><span class="line"><span class="cl">docker-compose --version
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======安装 docker-compose 完成=======&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">3</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">3</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Tom&#39;</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>2.给文件添加执行权限</p>
+</div><p>例2: (明确指定主键，但数据不存在，无lock)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">chmod +x  install-docker.sh
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><p>例3: (主键不明确，table lock)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">&lt;&gt;</span><span class="mi">3</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%3%&#39;</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>例4: (无主键，table lock)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="err">‘</span><span class="n">Tom</span><span class="err">’</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：
+1.FOR UPDATE仅适用于InnoDB，且必须在事务处理模块(BEGIN/COMMIT)中才能生效。</p>
+<p>2.要测试锁定的状况，可以利用MySQL的Command Mode(命令模式) ，开两个视窗来做测试。</p>
+<p>3.Myisam 只支持表级锁，InnerDB支持行级锁 添加了(行级锁/表级锁)锁的数据不能被其它事务再锁定，也不被其它事务修改。是表级锁时，不管是否查询到记录，都会锁定表。</p>
+<p>4.<strong>有普通索引或者唯一索引的情况下，也会进行行锁，情况与走主键一样</strong></p>
+<h3 id="什么时候需要使用for-update">什么时候需要使用for update？</h3>
+<p>借助for update语句，我们可以在应用程序的层面手工实现数据加锁保护操作。就是那些需要业务层面数据独占时，可以考虑使用for update。
+场景上，比如火车票订票，在屏幕上显示有票，而真正进行出票时，需要重新确定一下这个数据没有被其他客户端修改。所以，在这个确认过程中，可以使用for update。</p>
+<h3 id="for-update悲观锁">for update悲观锁</h3>
+<p>悲观锁：总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会阻塞直到它解锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁。就像for update，再比如Java里面的同步原语synchronized关键字的实现也是悲观锁。</p>
+<p>乐观锁：顾名思义，就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。乐观锁适用于多读的应用类型，这样可以提高吞吐量，像数据库提供的类似于write_condition机制，其实都是提供的乐观锁。</p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2023-05-29</span>
+                <span>更新于 2023-09-12</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -234,14 +203,14 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/docker/">docker</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/for-update/">for update</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/" class="prev" rel="prev" title="ThreadLocal多值应用"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>ThreadLocal多值应用</a>
-            <a href="/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/" class="next" rel="next" title="for update的作用与用法">for update的作用与用法<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" class="prev" rel="prev" title="一键安装docker和docker Compose"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>一键安装docker和docker Compose</a>
+            <a href="/date-formatting%E4%B8%ADyyyy%E4%B8%8Eyyyy%E7%9A%84%E5%8C%BA%E5%88%AB/" class="next" rel="next" title="Date Formatting中YYYY与yyyy的区别">Date Formatting中YYYY与yyyy的区别<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

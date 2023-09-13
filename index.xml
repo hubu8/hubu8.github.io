@@ -4,9 +4,25 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 29 May 2023 15:02:52 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 12 Sep 2023 16:00:30 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Date Formatting中YYYY与yyyy的区别</title>
+    <link>https://hubu8.github.io/date-formatting%E4%B8%ADyyyy%E4%B8%8Eyyyy%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Tue, 12 Sep 2023 16:00:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/date-formatting%E4%B8%ADyyyy%E4%B8%8Eyyyy%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[写在最前面 测试代码展示YYYY与yyyy的区别： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 public class Test { public static void main(String[] args) { SimpleDateFormat sdf = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); String dateStr = &#34;2023-12-31 23:59:59&#34;; try { Date date = sdf.parse(dateStr); String]]></description>
+</item>
+<item>
+    <title>for update的作用与用法</title>
+    <link>https://hubu8.github.io/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/</link>
+    <pubDate>Tue, 12 Sep 2023 16:00:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/</guid>
+    <description><![CDATA[for update定义 ​ for update是一种行级锁，又叫排它锁，一旦用户对某个行施加了行级加锁，则该用户可以查询也可以更新被加锁的数据行，其它用]]></description>
+</item>
+<item>
     <title>一键安装docker和docker Compose</title>
     <link>https://hubu8.github.io/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/</link>
     <pubDate>Mon, 29 May 2023 15:02:52 &#43;0800</pubDate>
@@ -68,22 +84,6 @@
     <pubDate>Mon, 20 Mar 2023 13:43:08 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/vue%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Promise与Async/Await的区别</title>
-    <link>https://hubu8.github.io/promise%E4%B8%8Easyncawait%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-    <pubDate>Wed, 15 Mar 2023 09:00:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/promise%E4%B8%8Easyncawait%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Excel去除单元格保护</title>
-    <link>https://hubu8.github.io/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</link>
-    <pubDate>Sun, 05 Mar 2023 16:37:43 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

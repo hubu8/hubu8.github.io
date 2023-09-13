@@ -8,6 +8,7 @@
 {{< friend name="Elementui" url="https://element.eleme.io/#/zh-CN" logo="https://element.eleme.io/static/guide.0a8462c.png" word="网站快速成型工具" >}}
 {{< friend name="React" url="https://react.dev/" logo="https://www.runoob.com/wp-content/uploads/2016/02/react.png" word="构建用户界面的JavaScript库" >}}
 {{< friend name="Vue" url="https://cn.vuejs.org/" logo="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" word="构建用户界面的渐进式框架" >}}
+{{< friend name="RuoYi" url="http://www.ruoyi.vip/" logo="http://www.ruoyi.vip/images/ruoyi_vue.png" word="构建web应用程序" >}}
 
 {{< friend name="Docker" url="https://www.docker.com/" logo="https://www.runoob.com/wp-content/uploads/2016/04/docker01.png" word="开源容器引擎" >}}
 

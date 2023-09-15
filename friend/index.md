@@ -12,3 +12,5 @@
 
 {{< friend name="Docker" url="https://www.docker.com/" logo="https://www.runoob.com/wp-content/uploads/2016/04/docker01.png" word="开源容器引擎" >}}
 
+{{< friend name="廖雪峰的官方网站" url="https://www.liaoxuefeng.com/" logo="" word="廖雪峰的官方网站" >}}
+

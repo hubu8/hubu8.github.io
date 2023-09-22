@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>TCP - 标签 - Eccentric&#39;s Note</title>
+        <link>https://hubu8.github.io/tags/tcp/</link>
+        <description>TCP - 标签 - Eccentric&#39;s Note</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/tcp/" rel="self" type="application/rss+xml" /><item>
+    <title>TCP协议</title>
+    <link>https://hubu8.github.io/tcp%E5%8D%8F%E8%AE%AE/</link>
+    <pubDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/tcp%E5%8D%8F%E8%AE%AE/</guid>
+    <description><![CDATA[TCP(Transmission Control Protocol 传输控制协议)是一种面向连接(连接导向)的、可靠的、 基于IP的传输层协议。TCP在IP报文的协议号是6。TCP是一个超级麻烦的协议，而]]></description>
+</item>
+</channel>
+</rss>

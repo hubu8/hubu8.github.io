@@ -2,16 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hubu8.github.io/categories/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/posts/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/tags/rhino%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/tags/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hubu8.github.io/categories/git/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://hubu8.github.io/tags/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://hubu8.github.io/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://hubu8.github.io/categories/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/tags/nashorn%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/posts/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/tags/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/tags/rhino%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://hubu8.github.io/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://hubu8.github.io/categories/git/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://hubu8.github.io/tags/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://hubu8.github.io/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://hubu8.github.io/tags/mysql%E4%BA%8B%E5%8A%A1/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

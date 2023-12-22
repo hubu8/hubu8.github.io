@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6\/"
-        },"genre": "posts","keywords": "PDM","wordcount":  64 ,
+        },"genre": "posts","keywords": "PDM","wordcount":  560 ,
         "url": "https:\/\/hubu8.github.io\/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6\/","datePublished": "2023-12-21T08:59:26+08:00","dateModified": "2023-12-21T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL生成PDM文件</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-21">2023-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 64 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="SQL生成PDM文件">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-21">2023-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 560 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="SQL生成PDM文件">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -118,6 +118,16 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#基础操作设置">基础操作设置</a>
+          <ul>
+            <li><a href="#修改namecode同步修改操作不便">修改name,code同步修改，操作不便</a>
+              <ul>
+                <li><a href="#版本在166之下">版本在16.6之下</a></li>
+                <li><a href="#版本是166以及之上">版本是16.6以及之上</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="#sql逆向生成pdm">SQL逆向生成PDM</a>
           <ul>
             <li><a href="#第一步file--reverse-engineer--database">第一步：File &gt; Reverse Engineer &gt; Database</a></li>
@@ -125,12 +135,43 @@
             <li><a href="#第三步选择sql文件">第三步：选择sql文件</a></li>
           </ul>
         </li>
-        <li><a href="#不同类型数据库脚本ddl如何互相翻译">不同类型数据库脚本DDL如何互相翻译</a></li>
+        <li><a href="#生成的pdm将coments同步至name字段">生成的PDM将coments同步至name字段</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="sql逆向生成pdm">SQL逆向生成PDM</h3>
+            </div><div class="content" id="content"><h3 id="基础操作设置">基础操作设置</h3>
+<h4 id="修改namecode同步修改操作不便">修改name,code同步修改，操作不便</h4>
+<h5 id="版本在166之下">版本在16.6之下</h5>
+<p>工具栏 Tools -&gt; 常规选项 general Options -&gt; Dialog 下 Name to Code mirroring 取消勾选</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/common_images/image-20231222141450298.png"
+        data-srcset="/common_images/image-20231222141450298.png, /common_images/image-20231222141450298.png 1.5x, /common_images/image-20231222141450298.png 2x"
+        data-sizes="auto"
+        alt="/common_images/image-20231222141450298.png"
+        title="image-20231222141450298" /></p>
+<h5 id="版本是166以及之上">版本是16.6以及之上</h5>
+<p>工具栏 Tools -&gt; 常规选项 general Options -&gt; Respository 下 Display 取消 <strong>Name to Code mirroring</strong> 勾选</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/common_images/594c7ad4eed94cb792f2717b3b9883bb.png"
+        data-srcset="/common_images/594c7ad4eed94cb792f2717b3b9883bb.png, /common_images/594c7ad4eed94cb792f2717b3b9883bb.png 1.5x, /common_images/594c7ad4eed94cb792f2717b3b9883bb.png 2x"
+        data-sizes="auto"
+        alt="/common_images/594c7ad4eed94cb792f2717b3b9883bb.png"
+        title="在这里插入图片描述" /></p>
+<p>工具栏 Tools -&gt; Modeal Options -&gt; Naming Convention  -&gt; Synchronize code</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/common_images/1ae53767bda24667bbd5898be8634f71.png"
+        data-srcset="/common_images/1ae53767bda24667bbd5898be8634f71.png, /common_images/1ae53767bda24667bbd5898be8634f71.png 1.5x, /common_images/1ae53767bda24667bbd5898be8634f71.png 2x"
+        data-sizes="auto"
+        alt="/common_images/1ae53767bda24667bbd5898be8634f71.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="sql逆向生成pdm">SQL逆向生成PDM</h3>
 <h4 id="第一步file--reverse-engineer--database">第一步：File &gt; Reverse Engineer &gt; Database</h4>
 <p><img
         class="lazyload"
@@ -158,7 +199,177 @@
         data-sizes="auto"
         alt="/common_images/image-20231221143333237.png"
         title="image-20231221143333237" /></p>
-<h3 id="不同类型数据库脚本ddl如何互相翻译">不同类型数据库脚本DDL如何互相翻译</h3></div><div class="post-footer" id="post-footer">
+<h3 id="生成的pdm将coments同步至name字段">生成的PDM将coments同步至name字段</h3>
+<p>Open PDM&ndash;Tools&ndash;Execute Commands&ndash;Run Script</p>
+<p>脚本1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Option   Explicit 
+</span></span><span class="line"><span class="cl"><span class="nv">ValidationMode</span>   <span class="o">=</span>   True 
+</span></span><span class="line"><span class="cl"><span class="nv">InteractiveMode</span>   <span class="o">=</span>   im_Batch 
+</span></span><span class="line"><span class="cl">Dim   mdl    
+</span></span><span class="line"><span class="cl">Set   <span class="nv">mdl</span>   <span class="o">=</span>   ActiveModel 
+</span></span><span class="line"><span class="cl">If   <span class="o">(</span>mdl   Is   Nothing<span class="o">)</span>   Then 
+</span></span><span class="line"><span class="cl">        MsgBox   <span class="s2">&#34;There   is   no   current   Model&#34;</span> 
+</span></span><span class="line"><span class="cl">ElseIf   Not   mdl.IsKindOf<span class="o">(</span>PdPDM.cls_Model<span class="o">)</span>   Then 
+</span></span><span class="line"><span class="cl">        MsgBox   <span class="s2">&#34;The   current   model   is   not   an   Physical   Data   model.&#34;</span> 
+</span></span><span class="line"><span class="cl">Else 
+</span></span><span class="line"><span class="cl">        ProcessFolder   mdl 
+</span></span><span class="line"><span class="cl">End   If 
+</span></span><span class="line"><span class="cl">Private   sub   ProcessFolder<span class="o">(</span>folder<span class="o">)</span> 
+</span></span><span class="line"><span class="cl">        Dim   Tab 
+</span></span><span class="line"><span class="cl">        <span class="k">for</span>   each   Tab   in   folder.tables 
+</span></span><span class="line"><span class="cl">              <span class="k">if</span>   not   tab.isShortcut   <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    tab.name<span class="o">=</span>tab.comment
+</span></span><span class="line"><span class="cl">                    Dim   col
+</span></span><span class="line"><span class="cl">                    <span class="k">for</span>   each   col   in   tab.columns
+</span></span><span class="line"><span class="cl">                        col.name<span class="o">=</span>col.comment 
+</span></span><span class="line"><span class="cl">                    next 
+</span></span><span class="line"><span class="cl">              end   <span class="k">if</span>           
+</span></span><span class="line"><span class="cl">        next
+</span></span><span class="line"><span class="cl">end   sub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本2</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="s1">&#39;------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;脚本功能：
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>    PowerDesigner中****完成后，将数据库中comment脚本
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;    赋值到PDM的name
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>执行方法：
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;    Open PDM--Tools--Execute Commands--Run Script
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="s1">Option Explicit  
+</span></span></span><span class="line"><span class="cl"><span class="s1">ValidationMode = True  
+</span></span></span><span class="line"><span class="cl"><span class="s1">InteractiveMode = im_Batch
+</span></span></span><span class="line"><span class="cl"><span class="s1">Dim mdl &#39;</span>the current model   
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;get the current active model  
+</span></span></span><span class="line"><span class="cl"><span class="s1">Set mdl = ActiveModel  
+</span></span></span><span class="line"><span class="cl"><span class="s1">If (mdl Is Nothing) Then  
+</span></span></span><span class="line"><span class="cl"><span class="s1">    MsgBox &#34;There is no current Model&#34; 
+</span></span></span><span class="line"><span class="cl"><span class="s1">ElseIf Not mdl.IsKindOf(PdPDM.cls_Model) Then  
+</span></span></span><span class="line"><span class="cl"><span class="s1">    MsgBox &#34;The current model is not an Physical Data model.&#34; 
+</span></span></span><span class="line"><span class="cl"><span class="s1">Else  
+</span></span></span><span class="line"><span class="cl"><span class="s1">    ProcessFolder mdl  
+</span></span></span><span class="line"><span class="cl"><span class="s1">End If  
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>------------------------------------------------------------
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;This routine copy name into code for each table, each column  
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>and each view of the current folder
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="s1">Private sub ProcessFolder(folder)  
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Dim Tab &#39;</span>running table  
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> each Tab in folder.tables  
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> not tab.isShortcut <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> len<span class="o">(</span>tab.comment<span class="o">)</span> &lt;&gt; <span class="m">0</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">                tab.name <span class="o">=</span> tab.comment  
+</span></span><span class="line"><span class="cl">            end <span class="k">if</span>  
+</span></span><span class="line"><span class="cl">            On Error Resume Next  
+</span></span><span class="line"><span class="cl">            Dim col <span class="s1">&#39;running column
+</span></span></span><span class="line"><span class="cl"><span class="s1">            Dim b
+</span></span></span><span class="line"><span class="cl"><span class="s1">            for each col in tab.columns
+</span></span></span><span class="line"><span class="cl"><span class="s1">                b = Split(col.comment,&#34;;&#34;) 
+</span></span></span><span class="line"><span class="cl"><span class="s1">                if len(b(0)) &lt;&gt;0 then  
+</span></span></span><span class="line"><span class="cl"><span class="s1">                    col.name = b(0)
+</span></span></span><span class="line"><span class="cl"><span class="s1">                end if  
+</span></span></span><span class="line"><span class="cl"><span class="s1">                if ubound(b) &gt;0 then  
+</span></span></span><span class="line"><span class="cl"><span class="s1">                    col.comment = b(1)
+</span></span></span><span class="line"><span class="cl"><span class="s1">                else
+</span></span></span><span class="line"><span class="cl"><span class="s1">                    col.comment = &#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s1">                end if  
+</span></span></span><span class="line"><span class="cl"><span class="s1">                On Error Resume Next  
+</span></span></span><span class="line"><span class="cl"><span class="s1">            next  
+</span></span></span><span class="line"><span class="cl"><span class="s1">        end if  
+</span></span></span><span class="line"><span class="cl"><span class="s1">    next  
+</span></span></span><span class="line"><span class="cl"><span class="s1">end sub 
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span>------------------------------------------------------------
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

@@ -2,18 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hubu8.github.io/categories/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/tags/nashorn%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/posts/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/tags/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/tags/rhino%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://hubu8.github.io/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://hubu8.github.io/categories/git/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://hubu8.github.io/tags/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://hubu8.github.io/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://hubu8.github.io/categories/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/tags/pdm/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/posts/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/tags/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/categories/%E8%BF%90%E7%BB%B4/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://hubu8.github.io/tags/nashorn%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://hubu8.github.io/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-23T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://hubu8.github.io/tags/rhino%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</loc><lastmod>2023-11-02T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/categories/git/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/tags/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hubu8.github.io/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/tags/mysql%E4%BA%8B%E5%8A%A1/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -29,7 +32,6 @@
             <loc>https://hubu8.github.io/tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/</loc><lastmod>2023-09-12T16:00:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/tags/docker/</loc><lastmod>2023-05-29T15:02:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/</loc><lastmod>2023-05-29T15:02:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hubu8.github.io/categories/%E8%BF%90%E7%BB%B4/</loc><lastmod>2023-05-29T15:02:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/tags/threadlocal/</loc><lastmod>2023-05-24T10:58:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</loc><lastmod>2023-05-24T10:58:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/docker%E4%B9%8Bmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/</loc><lastmod>2023-05-11T17:28:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

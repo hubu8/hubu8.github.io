@@ -41,6 +41,8 @@
 
 Open PDM--Tools--Execute Commands--Run Script
 
+脚本语法参考 Microsoft VBScript 脚本语法
+
 脚本1
 
 ```vbscript

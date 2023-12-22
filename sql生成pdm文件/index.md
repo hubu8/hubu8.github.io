@@ -179,22 +179,22 @@ Private sub ProcessFolder(folder)
                 else
                     col.comment = ""
                 end if
-dataType = col.DataType
-		if InStr(dataType,"bpchar(1)") then
-			col.DataType = "char(1)"
-			col.DefaultValue = "''"
-			col.Mandatory = true
-		elseif InStr(dataType,"timestamp") then
-			col.DataType = "datetime"
-			col.Mandatory = false
-		elseif InStr(dataType,"int8") then
-			col.DataType = "bigint"
-			col.DefaultValue = 0
-			col.Mandatory = true
-		elseif InStr(dataType,"varchar") then
-			col.DefaultValue = "''"
-			col.Mandatory = true
-		end if
+				dataType = col.DataType
+				if InStr(dataType,"bpchar(1)") then
+					col.DataType = "char(1)"
+					col.DefaultValue = "''"
+					col.Mandatory = true
+				elseif InStr(dataType,"timestamp") then
+					col.DataType = "datetime"
+					col.Mandatory = false
+				elseif InStr(dataType,"int8") then
+					col.DataType = "bigint"
+					col.DefaultValue = 0
+					col.Mandatory = true
+				elseif InStr(dataType,"varchar") then
+					col.DefaultValue = "''"
+					col.Mandatory = true
+				end if
                 On Error Resume Next  
             next  
         end if  

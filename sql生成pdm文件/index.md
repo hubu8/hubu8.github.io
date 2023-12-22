@@ -43,7 +43,7 @@ Open PDM--Tools--Execute Commands--Run Script
 
 脚本1
 
-```bash
+```vbscript
 Option   Explicit 
 ValidationMode   =   True 
 InteractiveMode   =   im_Batch 
@@ -72,7 +72,7 @@ end   sub
 
 脚本2
 
-```bash
+```vbscript
 '------------------------------------------------------------
 '
 '脚本功能：
@@ -127,3 +127,80 @@ Private sub ProcessFolder(folder)
 end sub 
 '------------------------------------------------------------
 ```
+
+kingdee脚本
+
+```vbscript
+'------------------------------------------------------------
+'
+'脚本功能：
+'    PowerDesigner中****完成后，将数据库中comment脚本
+'    赋值到PDM的name
+'执行方法：
+'    Open PDM--Tools--Execute Commands--Run Script
+'
+'------------------------------------------------------------
+Option Explicit  
+ValidationMode = True  
+InteractiveMode = im_Batch
+Dim mdl 'the current model   
+'get the current active model  
+Set mdl = ActiveModel  
+If (mdl Is Nothing) Then  
+    MsgBox "There is no current Model" 
+ElseIf Not mdl.IsKindOf(PdPDM.cls_Model) Then  
+    MsgBox "The current model is not an Physical Data model." 
+Else  
+    ProcessFolder mdl  
+End If  
+'------------------------------------------------------------
+'This routine copy name into code for each table, each column  
+'and each view of the current folder
+
+'------------------------------------------------------------
+Private sub ProcessFolder(folder)  
+    Dim Tab 'running table  
+    for each Tab in folder.tables  
+        if not tab.isShortcut then  
+            if len(tab.comment) <> 0 then  
+                tab.name = tab.comment  
+            end if  
+            On Error Resume Next  
+            Dim col 'running column
+            Dim b
+			Dim dataType
+            for each col in tab.columns
+                b = Split(col.comment,";") 
+                if len(b(0)) <>0 then  
+                    col.name = b(0)
+                end if  
+                if ubound(b) >0 then  
+                    col.comment = b(1)
+                else
+                    col.comment = ""
+                end if
+dataType = col.DataType
+		if InStr(dataType,"bpchar(1)") then
+			col.DataType = "char(1)"
+			col.DefaultValue = "''"
+			col.Mandatory = true
+		elseif InStr(dataType,"timestamp") then
+			col.DataType = "datetime"
+			col.Mandatory = false
+		elseif InStr(dataType,"int8") then
+			col.DataType = "bigint"
+			col.DefaultValue = 0
+			col.Mandatory = true
+		elseif InStr(dataType,"varchar") then
+			col.DefaultValue = "''"
+			col.Mandatory = true
+		end if
+                On Error Resume Next  
+            next  
+        end if  
+    next  
+end sub 
+'------------------------------------------------------------
+```
+
+

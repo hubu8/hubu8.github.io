@@ -2,10 +2,12 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hubu8.github.io/categories/</loc><lastmod>2023-12-25T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/</loc><lastmod>2023-12-25T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/categories/</loc><lastmod>2023-12-26T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/</loc><lastmod>2023-12-26T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/posts/</loc><lastmod>2023-12-26T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/specified-key-was-too-long/</loc><lastmod>2023-12-26T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc><lastmod>2023-12-26T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hubu8.github.io/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%82%B9/</loc><lastmod>2023-12-25T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hubu8.github.io/posts/</loc><lastmod>2023-12-25T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hubu8.github.io/categories/%E5%89%8D%E7%AB%AF/</loc><lastmod>2023-12-25T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hubu8.github.io/tags/pdm/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hubu8.github.io/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/</loc><lastmod>2023-12-21T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -21,7 +23,6 @@
             <loc>https://hubu8.github.io/git%E8%BF%9B%E9%98%B6/</loc><lastmod>2023-10-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/tags/mysql%E4%BA%8B%E5%8A%A1/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc><lastmod>2023-09-27T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/tags/email/</loc><lastmod>2023-09-13T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/tags/https/</loc><lastmod>2023-09-13T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hubu8.github.io/https%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8http%E8%B5%84%E6%BA%90/</loc><lastmod>2023-09-13T08:59:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

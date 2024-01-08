@@ -4,7 +4,15 @@
         <link>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
         <description>数据库 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 26 Dec 2023 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 08 Jan 2024 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+    <title>Row size too large. The maximum row size</title>
+    <link>https://hubu8.github.io/row-size-too-large/</link>
+    <pubDate>Mon, 08 Jan 2024 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/row-size-too-large/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Specified key was too long; max key length is 3072 bytes</title>
     <link>https://hubu8.github.io/specified-key-was-too-long/</link>
     <pubDate>Tue, 26 Dec 2023 08:59:26 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/simpread-mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Redis</title>
-    <link>https://hubu8.github.io/redis%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/redis%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[一、Nosql概述 为什么使用Nosql 1、单机Mysql时代 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出]]></description>
 </item>
 </channel>
 </rss>

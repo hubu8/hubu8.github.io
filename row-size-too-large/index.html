@@ -131,8 +131,8 @@
 </nav></div>
             </div><div class="content" id="content"><h4 id="row-size-too-large-the-maximum-row-size-for-the-used-table-type-not-counting-blobs-is-65535-this-includes-storage-overhead-check-the-manual-you-have-to-change-some-columns-to-text-or-blobs">Row size too large. The maximum row size for the used table type, not counting BLOBs, is 65535. This includes storage overhead, check the manual. You have to change some columns to TEXT or BLOBs</h4>
 <p>这个还真没遇到过，但是发现这个65535，感觉不是Excel行数的问题吗，咋MySQL里还会报这个问题？</p>
-<p>仔细看看这个错误，应该是说行大小超了，然后百度了下这个错误
-看网上的介绍说是，MySQL建表有个长度限制，一个行的定义长度不能超过65535；</p>
+<p>仔细看看这个错误，应该是说行大小超了，然后百度了下这个错误</p>
+<p>看网上的介绍说是，MySQL建表有个长度限制，一个行的定义长度不能超过65535；</p>
 <p>原来如此，这个主要和表中的varchar类型有关，我么可以把长文本修改为Text，这个是不限制的。</p>
 <p><img
         class="lazyload"
@@ -150,10 +150,10 @@
 <li>编码规则</li>
 </ul>
 <blockquote>
-<p>不同字符集下，占用空间不一样
-gbk编码中，1个字符占用2个字节
-utf8编码（默认）中，1个字符占用3个字节
-utf8mb4编码中，1个字符占用4个字节</p>
+<p>不同字符集下，占用空间不一样</p>
+<p>gbk编码中，1个字符占用2个字节</p>
+<p>utf8编码（默认）中，1个字符占用3个字节</p>
+<p>utf8mb4编码中，1个字符占用4个字节</p>
 </blockquote>
 <ul>
 <li>存储规则</li>
@@ -186,26 +186,26 @@ utf8mb4编码中，1个字符占用4个字节</p>
         data-sizes="auto"
         alt="/mysql/08c115444d9e41728377dfeb10c241e9.png"
         title="在这里插入图片描述" /></p>
-<p>计算规则=（65535-4-2-1）/3=21,842.66666666667，<a href="https://so.csdn.net/so/search?q=%e5%90%91%e4%b8%8b%e5%8f%96%e6%95%b4&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreffer">向下取整</a>，就是21842
-<code>说明：int占用4个字节，varchar的长度和是否为NULL占用3个字节，使用了utf8编码，1个字符占用3个字节</code></p>
+<p>计算规则=（65535-4-2-1）/3=21,842.66666666667，<a href="https://so.csdn.net/so/search?q=%e5%90%91%e4%b8%8b%e5%8f%96%e6%95%b4&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreffer">向下取整</a>，就是21842</p>
+<p><code>说明：int占用4个字节，varchar的长度和是否为NULL占用3个字节，使用了utf8编码，1个字符占用3个字节</code></p>
 <h4 id="解决方案">解决方案</h4>
 <ul>
 <li>如果长度需要加长，将字段类型改为TEXT或BLOB</li>
 <li>如果只是想设置一个最大值，那可以根据计算规则进行调整</li>
 </ul>
 <p>拓展
-1、为什么我们经常使用varchar(255)，不使用varchar(256)？
-首先我们使用的varchar，除了存储字符内容，还需要额外存储长度和是否为NULL
-因为varchar类型的字段长度在超过255后，需要2个字节来存储长度，因为1个字节=8位，可以表示的长度为255，2个字节=16位，可以表示的长度为65535
-所以varchar(256)会比varchar(255)多占用1个字节来存储长度</p>
-<p>2、MySQL列数限制
-MySQL 对每个表有 4096 列的硬性限制，但对于给定的表，有效最大值可能会更少，因为表的最大行大小限制了列的数量</p>
+1、为什么我们经常使用varchar(255)，不使用varchar(256)？</p>
+<p>首先我们使用的varchar，除了存储字符内容，还需要额外存储长度和是否为NULL</p>
+<p>因为varchar类型的字段长度在超过255后，需要2个字节来存储长度，因为1个字节=8位，可以表示的长度为255，2个字节=16位，可以表示的长度为65535</p>
+<p>所以varchar(256)会比varchar(255)多占用1个字节来存储长度</p>
+<p>2、MySQL列数限制</p>
+<p>MySQL 对每个表有 4096 列的硬性限制，但对于给定的表，有效最大值可能会更少，因为表的最大行大小限制了列的数量</p>
 <p>3、int类型的占用空间的大小范围</p>
-<p>4、验证NULL占用1个字节
-我们定义两个字段，tinyint和varchar
-tinyint占用1个字节、varchar的长度和是否为NULL占用3个字节</p>
-<p>计算规则：65535-1-3=65531/3=21,843.66666666667，向下取整，最多只能21843
-所以长度设为21844就会报错，如下：</p>
+<p>4、验证NULL占用1个字节</p>
+<p>我们定义两个字段，tinyint和varchar</p>
+<p>tinyint占用1个字节、varchar的长度和是否为NULL占用3个字节</p>
+<p>计算规则：65535-1-3=65531/3=21,843.66666666667，向下取整，最多只能21843</p>
+<p>所以长度设为21844就会报错，如下：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"

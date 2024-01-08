@@ -1,4 +1,4 @@
-# Row size too large. The maximum row size
+# Row size too large. The maximum row size(Mysql行长度超过65535)
 
 
 <!--more-->

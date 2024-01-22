@@ -136,6 +136,81 @@ echo -e "*****************> 完成备份 ${dateBackup} 数据<*****************\
 cat ${dir}/backup.log>>./backup/backup.log
 ```
 
+升级脚本，可以按照数据库的表，分表备份
+
+```sh
+#!/bin/bash
+# -v ./mysql/backup:/opt/backup
+# 此文件同放在与backup同级
+dockerMysqlName=ruoyi-mysql-single
+mysqlUser=root
+mysqlPassword=password
+mysqlHost=192.168.120.129
+mysqlPort=3309
+dateBackup=$(date +%Y-%m-%d_%H_%M_%S)
+dir=./backup/${dateBackup}
+# 宿主机新建目录，通过挂载会自动添加到容器 这里是每次的log文件
+if [ ! -d ${dir} ];
+then
+		mkdir ${dir}
+		echo "*****************> 开始备份 ${dateBackup} 数据<*****************" >> ${dir}/backup.log
+		echo "创建文件夹 ${dir} 成功" >> ${dir}/backup.log
+else
+  echo "-----------------> 开始备份 ${dateBackup} 数据<-----------------" >> ${dir}/backup.log
+		echo "创建文件夹 ${dir} 失败，文件夹已存在" >> ${dir}/backup.log
+fi
+# 需要备份的数据库名
+dbNames=(ry-cloud)
+for dbName in ${dbNames[@]}
+do
+	dbTables=(gen_table gen_table_column sys_config sys_dept sys_dict_data sys_dict_type sys_job sys_job_log sys_logininfor sys_menu sys_notice sys_oper_log sys_post sys_role sys_role_dept sys_role_menu sys_user sys_user_post sys_user_role t_cms_contact t_cms_nuxt_html t_email_tpl t_front_user t_pay_goods t_pay_goods_type t_pay_pretrade t_pay_pretrade_result t_pay_query_result t_sys_script)
+
+	echo "-----------------> 备份 ${dbName} 数据库 start<-----------------" >> ${dir}/backup.log
+	docker exec -i ${dockerMysqlName} sh -c "mkdir -p /opt/backup/${dateBackup}/table"
+	docker exec -i ${dockerMysqlName} sh -c "mkdir -p /opt/backup/${dateBackup}/data"
+	echo "USE \`${dbName}\`;" >> ./backup/${dateBackup}/${dbName}-0all.sql
+	docker exec -i ${dockerMysqlName} sh -c "mysqldump --opt -u${mysqlUser} -p${mysqlPassword} -h${mysqlHost} -P${mysqlPort} ${dbName} 1>> /opt/backup/${dateBackup}/${dbName}-0all.sql 2>> /opt/backup/${dateBackup}/error.log"
+	echo "    1、    ---------> 备份 ${dbName} 数据库 表结构 <---------        " >> ${dir}/backup.log
+	echo "USE \`${dbName}\`;" >> ./backup/${dateBackup}/table/${dbName}-1dbschema.sql
+	docker exec -i ${dockerMysqlName} sh -c "mysqldump -d -u${mysqlUser} -p${mysqlPassword} -h${mysqlHost} -P${mysqlPort} ${dbName} 1>> /opt/backup/${dateBackup}/table/${dbName}-1dbschema.sql 2>> /opt/backup/${dateBackup}/table/error.log"
+
+	echo "    2、    ---------> 备份 ${dbName} 数据库 数据 <---------        " >> ${dir}/backup.log
+	echo -n "USE \`${dbName}\`;" >> ./backup/${dateBackup}/data/${dbName}-2dbdata.sql
+	docker exec -i ${dockerMysqlName} sh -c "mysqldump -t -u${mysqlUser} -p${mysqlPassword} -h${mysqlHost} -P${mysqlPort} ${dbName} 1>> /opt/backup/${dateBackup}/data/${dbName}-2dbdata.sql 2>> /opt/backup/${dateBackup}/data/error.log"
+
+	echo "-----------------> 备份 ${dbName} 数据库 end<-----------------" >> ${dir}/backup.log
+	
+	for dbTable in ${dbTables[@]}
+	do
+		echo "-----------------> 备份 ${dbName} 数据库 start<-----------------" >> ${dir}/backup.log
+		docker exec -i ${dockerMysqlName} sh -c "mkdir -p /opt/backup/${dateBackup}/db_table"
+
+		echo "    1、    ---------> 备份 ${dbName}的${dbTable} 数据库 表结构 <---------        " >> ${dir}/backup.log
+		echo "USE \`${dbName}\`;" >> ./backup/${dateBackup}/db_table/${dbName}-${dbTable}-tabledata.sql
+		docker exec -i ${dockerMysqlName} sh -c "mysqldump -u${mysqlUser} -p${mysqlPassword} -h${mysqlHost} -P${mysqlPort} ${dbName} ${dbTable} 1>> /opt/backup/${dateBackup}/db_table/${dbName}-${dbTable}-tabledata.sql 2>> /opt/backup/${dateBackup}/db_table/error.log"
+
+		echo "-----------------> 备份 ${dbName} 数据库 end<-----------------" >> ${dir}/backup.log
+	done
+done
+echo "-----------------> 压缩今日备份数据目录：${dir} <-----------------" >> ${dir}/backup.log
+tar -czvf ${dir}.tar.gz ${dir}
+
+echo "----------------> 删除过期文件 <---------------------------" >> ${dir}/backup.log
+# 判断文件夹数量是否大于7，防止程序意外停止，删除所有备份
+dirCount=`ls -l ./backup/|grep "^d"|wc -l`
+if [ ${dirCount} -gt 7 ]
+then
+	# 删除超过七天的带"_"的目录
+	find ./backup/ -type d -mtime +6 -name "*_*" -exec rm -rf {} \;
+	echo -e "删除过期文件成功" >> ${dir}/backup.log
+else
+	echo "删除过期文件失败，文件数量小于 7 " >> ${dir}/backup.log
+fi
+
+echo -e "*****************> 完成备份 ${dateBackup} 数据<*****************\n\n" >> ${dir}/backup.log
+cat ${dir}/backup.log>>./backup/backup.log
+```
+
 同时可以通过定时任务实现定时执行
 
 #### 3、文件异地备份

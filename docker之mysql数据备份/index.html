@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/docker%E4%B9%8Bmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD\/"
-        },"genre": "posts","keywords": "mysql数据备份","wordcount":  1746 ,
+        },"genre": "posts","keywords": "mysql数据备份","wordcount":  2618 ,
         "url": "https:\/\/hubu8.github.io\/docker%E4%B9%8Bmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD\/","datePublished": "2023-05-11T17:28:02+08:00","dateModified": "2023-05-11T17:28:02+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Docker之mysql数据备份</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-11">2023-05-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1746 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/docker%E4%B9%8Bmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="leancloud_visitors" data-flag-title="Docker之mysql数据备份">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-11">2023-05-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2618 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/docker%E4%B9%8Bmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" class="leancloud_visitors" data-flag-title="Docker之mysql数据备份">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -347,6 +347,153 @@
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;    2、    ---------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 数据 &lt;---------        &#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
 </span></span><span class="line"><span class="cl">      docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mysqldump -t -u</span><span class="si">${</span><span class="nv">mysqlUser</span><span class="si">}</span><span class="s2"> -p</span><span class="si">${</span><span class="nv">mysqlPassword</span><span class="si">}</span><span class="s2"> -h</span><span class="si">${</span><span class="nv">mysqlHost</span><span class="si">}</span><span class="s2"> -P</span><span class="si">${</span><span class="nv">mysqlPort</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 1&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/data/</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">-dbdata.sql 2&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/data/error.log&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 end&lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 压缩今日备份数据目录：</span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2"> &lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">tar -czvf <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>.tar.gz <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;----------------&gt; 删除过期文件 &lt;---------------------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl"><span class="c1"># 判断文件夹数量是否大于7，防止程序意外停止，删除所有备份</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dirCount</span><span class="o">=</span><span class="sb">`</span>ls -l ./backup/<span class="p">|</span>grep <span class="s2">&#34;^d&#34;</span><span class="p">|</span>wc -l<span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="si">${</span><span class="nv">dirCount</span><span class="si">}</span> -gt <span class="m">7</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 删除超过七天的带&#34;_&#34;的目录</span>
+</span></span><span class="line"><span class="cl">	find ./backup/ -type d -mtime +6 -name <span class="s2">&#34;*_*&#34;</span> -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> -e <span class="s2">&#34;删除过期文件成功&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;删除过期文件失败，文件数量小于 7 &#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;*****************&gt; 完成备份 </span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2"> 数据&lt;*****************\n\n&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">cat <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log&gt;&gt;./backup/backup.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>升级脚本，可以按照数据库的表，分表备份</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># -v ./mysql/backup:/opt/backup</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 此文件同放在与backup同级</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dockerMysqlName</span><span class="o">=</span>ruoyi-mysql-single
+</span></span><span class="line"><span class="cl"><span class="nv">mysqlUser</span><span class="o">=</span>root
+</span></span><span class="line"><span class="cl"><span class="nv">mysqlPassword</span><span class="o">=</span>password
+</span></span><span class="line"><span class="cl"><span class="nv">mysqlHost</span><span class="o">=</span>192.168.120.129
+</span></span><span class="line"><span class="cl"><span class="nv">mysqlPort</span><span class="o">=</span><span class="m">3309</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dateBackup</span><span class="o">=</span><span class="k">$(</span>date +%Y-%m-%d_%H_%M_%S<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dir</span><span class="o">=</span>./backup/<span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 宿主机新建目录，通过挂载会自动添加到容器 这里是每次的log文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -d <span class="si">${</span><span class="nv">dir</span><span class="si">}</span> <span class="o">]</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">		mkdir <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;*****************&gt; 开始备份 </span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2"> 数据&lt;*****************&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;创建文件夹 </span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2"> 成功&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 开始备份 </span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2"> 数据&lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;创建文件夹 </span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2"> 失败，文件夹已存在&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 需要备份的数据库名</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dbNames</span><span class="o">=(</span>ry-cloud<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> dbName in <span class="si">${</span><span class="nv">dbNames</span><span class="p">[@]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">dbTables</span><span class="o">=(</span>gen_table gen_table_column sys_config sys_dept sys_dict_data sys_dict_type sys_job sys_job_log sys_logininfor sys_menu sys_notice sys_oper_log sys_post sys_role sys_role_dept sys_role_menu sys_user sys_user_post sys_user_role t_cms_contact t_cms_nuxt_html t_email_tpl t_front_user t_pay_goods t_pay_goods_type t_pay_pretrade t_pay_pretrade_result t_pay_query_result t_sys_script<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 start&lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">	docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mkdir -p /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/table&#34;</span>
+</span></span><span class="line"><span class="cl">	docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mkdir -p /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/data&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;USE \`</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">\`;&#34;</span> &gt;&gt; ./backup/<span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span>/<span class="si">${</span><span class="nv">dbName</span><span class="si">}</span>-0all.sql
+</span></span><span class="line"><span class="cl">	docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mysqldump --opt -u</span><span class="si">${</span><span class="nv">mysqlUser</span><span class="si">}</span><span class="s2"> -p</span><span class="si">${</span><span class="nv">mysqlPassword</span><span class="si">}</span><span class="s2"> -h</span><span class="si">${</span><span class="nv">mysqlHost</span><span class="si">}</span><span class="s2"> -P</span><span class="si">${</span><span class="nv">mysqlPort</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 1&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">-0all.sql 2&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/error.log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;    1、    ---------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 表结构 &lt;---------        &#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;USE \`</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">\`;&#34;</span> &gt;&gt; ./backup/<span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span>/table/<span class="si">${</span><span class="nv">dbName</span><span class="si">}</span>-1dbschema.sql
+</span></span><span class="line"><span class="cl">	docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mysqldump -d -u</span><span class="si">${</span><span class="nv">mysqlUser</span><span class="si">}</span><span class="s2"> -p</span><span class="si">${</span><span class="nv">mysqlPassword</span><span class="si">}</span><span class="s2"> -h</span><span class="si">${</span><span class="nv">mysqlHost</span><span class="si">}</span><span class="s2"> -P</span><span class="si">${</span><span class="nv">mysqlPort</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 1&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/table/</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">-1dbschema.sql 2&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/table/error.log&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;    2、    ---------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 数据 &lt;---------        &#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> -n <span class="s2">&#34;USE \`</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">\`;&#34;</span> &gt;&gt; ./backup/<span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span>/data/<span class="si">${</span><span class="nv">dbName</span><span class="si">}</span>-2dbdata.sql
+</span></span><span class="line"><span class="cl">	docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mysqldump -t -u</span><span class="si">${</span><span class="nv">mysqlUser</span><span class="si">}</span><span class="s2"> -p</span><span class="si">${</span><span class="nv">mysqlPassword</span><span class="si">}</span><span class="s2"> -h</span><span class="si">${</span><span class="nv">mysqlHost</span><span class="si">}</span><span class="s2"> -P</span><span class="si">${</span><span class="nv">mysqlPort</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 1&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/data/</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">-2dbdata.sql 2&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/data/error.log&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 end&lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> dbTable in <span class="si">${</span><span class="nv">dbTables</span><span class="p">[@]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">do</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 start&lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">		docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mkdir -p /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/db_table&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;    1、    ---------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">的</span><span class="si">${</span><span class="nv">dbTable</span><span class="si">}</span><span class="s2"> 数据库 表结构 &lt;---------        &#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;USE \`</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">\`;&#34;</span> &gt;&gt; ./backup/<span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span>/db_table/<span class="si">${</span><span class="nv">dbName</span><span class="si">}</span>-<span class="si">${</span><span class="nv">dbTable</span><span class="si">}</span>-tabledata.sql
+</span></span><span class="line"><span class="cl">		docker <span class="nb">exec</span> -i <span class="si">${</span><span class="nv">dockerMysqlName</span><span class="si">}</span> sh -c <span class="s2">&#34;mysqldump -u</span><span class="si">${</span><span class="nv">mysqlUser</span><span class="si">}</span><span class="s2"> -p</span><span class="si">${</span><span class="nv">mysqlPassword</span><span class="si">}</span><span class="s2"> -h</span><span class="si">${</span><span class="nv">mysqlHost</span><span class="si">}</span><span class="s2"> -P</span><span class="si">${</span><span class="nv">mysqlPort</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">dbTable</span><span class="si">}</span><span class="s2"> 1&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/db_table/</span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">dbTable</span><span class="si">}</span><span class="s2">-tabledata.sql 2&gt;&gt; /opt/backup/</span><span class="si">${</span><span class="nv">dateBackup</span><span class="si">}</span><span class="s2">/db_table/error.log&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 备份 </span><span class="si">${</span><span class="nv">dbName</span><span class="si">}</span><span class="s2"> 数据库 end&lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
+</span></span><span class="line"><span class="cl">	<span class="k">done</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;-----------------&gt; 压缩今日备份数据目录：</span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2"> &lt;-----------------&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>/backup.log
 </span></span><span class="line"><span class="cl">tar -czvf <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>.tar.gz <span class="si">${</span><span class="nv">dir</span><span class="si">}</span>

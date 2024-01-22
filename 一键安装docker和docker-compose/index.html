@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose\/"
-        },"genre": "posts","keywords": "docker","wordcount":  356 ,
+        },"genre": "posts","keywords": "docker","wordcount":  546 ,
         "url": "https:\/\/hubu8.github.io\/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose\/","datePublished": "2023-05-29T15:02:52+08:00","dateModified": "2023-05-29T15:02:52+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">一键安装docker和docker Compose</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-29">2023-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 356 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" class="leancloud_visitors" data-flag-title="一键安装docker和docker Compose">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-29">2023-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 546 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker%E5%92%8Cdocker-compose/" class="leancloud_visitors" data-flag-title="一键安装docker和docker Compose">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -162,6 +162,7 @@
 </span><span class="lnt">42
 </span><span class="lnt">43
 </span><span class="lnt">44
+</span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
@@ -170,17 +171,18 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#删除原有docker</span>
 </span></span><span class="line"><span class="cl">sudo yum remove docker docker-ce docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======删除 docker 完成=======&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======删除 docker服务 完成=======&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#删除镜像、容器、配置文件等内容</span>
 </span></span><span class="line"><span class="cl">sudo rm -rf /var/lib/docker
 </span></span><span class="line"><span class="cl">sudo rm -rf /etc/systemd/system/docker.service.d
 </span></span><span class="line"><span class="cl">sudo rm -rf /var/run/docker
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======删除 docker 完成=======&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=======删除 docker文件夹 完成=======&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#安装 docker</span>
-</span></span><span class="line"><span class="cl">sudo curl -sSL https://get.daocloud.io/docker <span class="p">|</span> sh
+</span></span><span class="line"><span class="cl"><span class="c1">#sudo curl -sSL https://get.daocloud.io/docker | sh</span>
+</span></span><span class="line"><span class="cl">sudo curl -sSL https://get.docker.com <span class="p">|</span> sh
 </span></span><span class="line"><span class="cl"><span class="c1">#启动 docker</span>
 </span></span><span class="line"><span class="cl">systemctl start docker
 </span></span><span class="line"><span class="cl">docker -v
@@ -217,6 +219,17 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">chmod +x  install-docker.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3./bin/bash^M: 坏的解释器: 没有那个文件或目录</p>
+<p>​	我们的脚本文件在windows下编辑过，windows下每一行的结尾是\n\r，而在linux下文件的结尾是\n，那么在windows下编辑过的文件在linux下打开看的时候每一行的结尾就会多出来一个字符\r,当在linux下查看时，\r会被替换为^M</p>
+<p>我们使用这个命令来/r结束的字符换成空白</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/\r$//&#39;</span> xxx.sh
 </span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">

@@ -12,17 +12,18 @@ sudo systemctl stop docker.socket
 
 #删除原有docker
 sudo yum remove docker docker-ce docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine
-echo "=======删除 docker 完成======="
+echo "=======删除 docker服务 完成======="
 
 #删除镜像、容器、配置文件等内容
 sudo rm -rf /var/lib/docker
 sudo rm -rf /etc/systemd/system/docker.service.d
 sudo rm -rf /var/run/docker
-echo "=======删除 docker 完成======="
+echo "=======删除 docker文件夹 完成======="
 
 
 #安装 docker
-sudo curl -sSL https://get.daocloud.io/docker | sh
+#sudo curl -sSL https://get.daocloud.io/docker | sh
+sudo curl -sSL https://get.docker.com | sh
 #启动 docker
 systemctl start docker
 docker -v
@@ -56,6 +57,16 @@ echo "=======安装 docker-compose 完成======="
 
 ```sh
 chmod +x  install-docker.sh
+```
+
+3./bin/bash^M: 坏的解释器: 没有那个文件或目录
+
+​	我们的脚本文件在windows下编辑过，windows下每一行的结尾是\n\r，而在linux下文件的结尾是\n，那么在windows下编辑过的文件在linux下打开看的时候每一行的结尾就会多出来一个字符\r,当在linux下查看时，\r会被替换为^M
+
+我们使用这个命令来/r结束的字符换成空白
+
+```sh
+sed -i 's/\r$//' xxx.sh
 ```
 
 

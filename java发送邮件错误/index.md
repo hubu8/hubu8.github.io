@@ -1,4 +1,4 @@
-# javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)
+# javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错
 
 
 <!--more-->
@@ -161,3 +161,14 @@ docker cp ./java.security e61b6e572d86:/usr/local/openjdk-8/lib/security/java.se
 ```sh
 docker restart e61b6e572d86
 ```
+
+### 从容器入手
+
+修改容器的java.security文件, 目前还未验证
+
+```sh
+RUN sed -i 's/jdk.tls.disabledAlgorithms=SSLv3, TLSv1, TLSv1.1/jdk.tls.disabledAlgorithms=SSLv3/g' /opt/java/openjdk/lib/security/java.security
+# 核心也是修改java.security文件中的jdk.tls.disabledAlgorithms配置，删除掉TLSv1&TLSv1.1
+```
+
+

@@ -13,6 +13,75 @@
 
 ​		2、更新中间表（同步资源余量表）
 
+### 代码
+
+```java
+public class AbstractResourceDetailLockOp extends AbstractOperationServicePlugIn {
+
+    protected List<DLock> resourceLockList = Lists.newArrayList();
+
+    protected static final long DEFAULT_LOCK_TIME = 30000L;
+
+    @Override
+    public void beforeExecuteOperationTransaction(BeforeOperationArgs e) {
+        DynamicObject[] dataEntities = e.getDataEntities();
+        String operationKey = e.getOperationKey();
+
+        if (!opKeySet().contains(operationKey)){
+            return;
+        }
+
+        Set<String> lockKeySet = generateLockKeySet(dataEntities);
+        if (CollectionUtils.isEmpty(lockKeySet)){
+            return;
+        }
+        for (String lockKey : lockKeySet){
+            DLock resourceLock = DLock.createReentrant(lockKey, lockKey).fastMode();
+            boolean tryLock = resourceLock.tryLock(getLockTime());
+            if (!tryLock) {
+                throw new KDBizException(String.format(ResManager.loadKDString("获取库存锁失败，请稍后再试。lock_key:%s", "InventoryDLockOp_0", "ec-ecma-opplugin", new Object[0]), lockKey));
+            }
+            this.resourceLockList.add(resourceLock);
+        }
+    }
+
+    /**
+     * 生成互斥锁Key
+     *
+     * 根据实际情况生成，如项目ID_单位工程ID_资源ID
+     */
+    protected Set<String> generateLockKeySet(DynamicObject[] dataEntities){
+        return Sets.newHashSet();
+    }
+
+    /**
+     * 操作代码列表
+     */
+    protected Set<String> opKeySet(){
+        return Sets.newHashSet();
+    }
+
+    /**
+     * 获取加锁时间
+     */
+    protected Long getLockTime(){
+        return DEFAULT_LOCK_TIME;
+    }
+
+    @Override
+    public void onReturnOperation(ReturnOperationArgs e) {
+        super.onReturnOperation(e);
+        if (CollectionUtils.isEmpty(this.resourceLockList)){
+            return;
+        }
+        this.resourceLockList.forEach(DLock::unlock);
+        this.resourceLockList.clear();
+    }
+}
+```
+
+
+
 ### 耗时查询
 
 ```

@@ -138,4 +138,26 @@ includes：排除项目中所有的 jar
 当前项目config目录下 > 当前项目根目录下 > 类路径config目录下 > 类路径根目录下
 因此只需要
 
-**打包：`clean package`**
+**打包命令：`clean package`**
+
+
+
+以上打包出来的工程jar包分为两部分，依赖包和主程序
+
+```sh
+target
+	/lib
+	ruoyi-admin.jar
+	...
+```
+
+**但是上述打包分离出来了yml/properties/xml等配置文件，需要在jar的同级创建config目录放置配置文件**
+
+```
+xxxx
+	/lib
+	/config
+	ruoyi-admin.jar
+```
+
+

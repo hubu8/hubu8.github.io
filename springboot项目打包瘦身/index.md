@@ -138,7 +138,7 @@ includes：排除项目中所有的 jar
 当前项目config目录下 > 当前项目根目录下 > 类路径config目录下 > 类路径根目录下
 因此只需要
 
-**打包命令：`clean package`**
+**打包命令：`mvn clean package`**
 
 
 

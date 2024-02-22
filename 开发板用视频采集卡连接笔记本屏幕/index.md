@@ -37,3 +37,15 @@
 如果画面异常，菜单-打开-设备设置，确认一下是USB Video之类的。没问题的话，重启树莓派。开机不快，会黑屏/彩条一会，中间会出现一次树莓标，正常就是上图↑的桌面。
 
 备注：potplayer只能看到开发板桌面信息，不能通过系统操作桌面，可以在开发板插入鼠标和键盘来控制开发板。
+
+
+
+
+
+开发板网站集锦：
+
+Banana Pi ： https://wiki.banana-pi.org/
+
+Banana Pi BPI-M4 Zero： [Banana Pi BPI-M4 Zero - Banana Pi Wiki (banana-pi.org)](https://wiki.banana-pi.org/Banana_Pi_BPI-M4_Zero)
+
+raspberrypi：https://www.raspberrypi.org/

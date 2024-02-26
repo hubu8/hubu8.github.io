@@ -15,3 +15,7 @@
 只有wiringPi 引脚编号下的1脚（BCM下的18脚） 支持PWM输出
 
 ![image-20240226110925511](/pi/image-20240226110925511.png)
+
+### 2.香蕉派
+
+[Banana Pi BPI-M4 Zero - Banana Pi Wiki (banana-pi.org)](https://wiki.banana-pi.org/Banana_Pi_BPI-M4_Zero#BPI-M4_Zero_40-pin_header)

@@ -129,11 +129,11 @@
             <li><a href="#数字输入输出引脚">数字输入/输出引脚</a></li>
             <li><a href="#串行通信模块">串行通信模块</a>
               <ul>
-                <li><a href="#uart引脚"><strong>UART引脚</strong></a></li>
-                <li><a href="#spi通信引脚"><strong>SPI通信引脚</strong></a></li>
-                <li><a href="#i2c通信引脚"><strong>I2C通信引脚</strong></a></li>
-                <li><a href="#pwm-gpio引脚"><strong>PWM GPIO引脚</strong></a></li>
-                <li><a href="#sdio引脚"><strong>SDIO引脚</strong></a></li>
+                <li><a href="#uart引脚">UART引脚</a></li>
+                <li><a href="#spi通信引脚">SPI通信引脚</a></li>
+                <li><a href="#i2c通信引脚">I2C通信引脚</a></li>
+                <li><a href="#pwm-gpio引脚">PWM GPIO引脚</a></li>
+                <li><a href="#sdio引脚">SDIO引脚</a></li>
               </ul>
             </li>
             <li><a href="#规格特性">规格特性</a></li>
@@ -228,7 +228,7 @@
 </ul>
 <p>树莓派4中的所有GPIO引脚不仅用于输入输出功能。每个GPIO引脚都可以用作其它功能，这将通过编程来指定。</p>
 <h4 id="串行通信模块">串行通信模块</h4>
-<h5 id="uart引脚"><strong>UART引脚</strong></h5>
+<h5 id="uart引脚">UART引脚</h5>
 <p>​	串行通信有很多种，UART就是其中之一。它因其简单的通信系统和对大多数软件的依赖而颇受欢迎。树莓派4中有多个UART通信引脚，如下所示:</p>
 <ul>
 <li>TXD1-GPI014-引脚8</li>
@@ -242,7 +242,7 @@
 <li>TXD5-GPIO12-引脚32</li>
 <li>RXD5-GPI013-引脚33</li>
 </ul>
-<h5 id="spi通信引脚"><strong>SPI通信引脚</strong></h5>
+<h5 id="spi通信引脚">SPI通信引脚</h5>
 <p>​	有些设备使用SP|协议，它可以帮助控制设备使用单根数据传输线控制多个设备。在树莓派4中有多个SP|引脚可用于SPI通信。树莓派4的SPI引脚如下:</p>
 <ul>
 <li>SPI3 CEO N-GPIO0-引脚27</li>
@@ -268,7 +268,7 @@
 <li>SPI6 MOSI-GPIO20-引脚38</li>
 <li>SPI6 SCLK-GPIO21-引脚40</li>
 </ul>
-<h5 id="i2c通信引脚"><strong>I2C通信引脚</strong></h5>
+<h5 id="i2c通信引脚">I2C通信引脚</h5>
 <p>树莓派4还支持I2C协议，它是一些传感器和电机用于通信的串行通信类型。在Pi中，GPIO引脚还提供I2C支持。所有这些引脚如下:</p>
 <ul>
 <li>SDA0/SDA6-GPI00-引脚27</li>
@@ -288,7 +288,7 @@
 <li>SDA6-GPI022-引脚15</li>
 <li>SCL6-GPIO23-引脚16</li>
 </ul>
-<h5 id="pwm-gpio引脚"><strong>PWM GPIO引脚</strong></h5>
+<h5 id="pwm-gpio引脚">PWM GPIO引脚</h5>
 <p>为了生成所需的脉冲输出信号，树莓派4有一些PWM引脚，这些引脚可以直接与任何低压外部设备一起使用来获取该信号。要首先生成信号，引脚应首先获取指令。所有PWM引脚如下:</p>
 <ul>
 <li>PWMO-GPI012-引脚32</li>
@@ -296,7 +296,7 @@
 <li>PWMO-GPIO18-引脚12</li>
 <li>PWM1-GPIO19-引脚35</li>
 </ul>
-<h5 id="sdio引脚"><strong>SDIO引脚</strong></h5>
+<h5 id="sdio引脚">SDIO引脚</h5>
 <p>树莓派4中有一个SD卡插槽，但GPIO引脚也支持SD卡兼容性。如果需要，设备上的SDIO引脚可用于SD卡:</p>
 <ul>
 <li>SDOCLK/SD1 CLK-GPIO22-引脚15</li>

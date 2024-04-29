@@ -4,7 +4,15 @@
         <link>https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/</link>
         <description>Java后端 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 25 Jan 2024 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 28 Apr 2024 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>ruoyi自定义实现前后端traceid加密校验</title>
+    <link>https://hubu8.github.io/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/</link>
+    <pubDate>Sun, 28 Apr 2024 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>SpringBoot项目打包瘦身</title>
     <link>https://hubu8.github.io/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</link>
     <pubDate>Thu, 25 Jan 2024 08:59:26 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <pubDate>Wed, 28 Dec 2022 20:05:36 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/jasypt%E5%AE%9E%E7%8E%B0springboot%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>【Java】一图看懂Java中的PO,BO,VO,DTO,POJO,DAO,DO</title>
-    <link>https://hubu8.github.io/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo/</link>
-    <pubDate>Fri, 09 Dec 2022 11:05:23 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/java%E4%B8%80%E5%9B%BE%E7%9C%8B%E6%87%82java%E4%B8%AD%E7%9A%84pobovodtopojodaodo/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

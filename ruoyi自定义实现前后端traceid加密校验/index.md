@@ -378,4 +378,29 @@ export function DES_Encrypt_BySys(word) {
 }
 ```
 
+Why:
+
+ ```java
+     /**
+      * 对称解密
+      */
+     public static String desDecrypt(String source) throws Exception {
+         byte[] src = hex2byte(source.getBytes(StandardCharsets.UTF_8));
+         DESKeySpec desKeySpec = getDesKeySpec(source);
+         // desKeySpec: [80, 97, 115, 115, 119, 48, 114, 100]   Passw0rd
+         SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
+         SecretKey secretKey = keyFactory.generateSecret(desKeySpec);
+         // secretKey: [81, 97, 115, 115, 118, 49, 115, 100]  Qassv1sd
+         // IV : [80, 97, 115, 115, 119, 48, 114, 100]  Passw0rd
+         cipher.init(Cipher.DECRYPT_MODE, secretKey, IV);
+         byte[] retByte = cipher.doFinal(src);
+         return new String(retByte);
+     }
+ // 所以对应的加密key为Qassv1sd
+ 
+ // Qassv1sd：4b3c638aa9ea4f3843575ccc90078d05
+ // Qassw0rd：4b3c638aa9ea4f3843575ccc90078d05
+ // 加密结果一样
+ ```
+
 

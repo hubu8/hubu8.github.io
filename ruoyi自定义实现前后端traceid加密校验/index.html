@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C\/"
-        },"genre": "posts","keywords": "ruoyi","wordcount":  2334 ,
+        },"genre": "posts","keywords": "ruoyi","wordcount":  2870 ,
         "url": "https:\/\/hubu8.github.io\/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C\/","datePublished": "2024-04-28T08:59:26+08:00","dateModified": "2024-04-28T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ruoyi自定义实现前后端traceid加密校验</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a>&nbsp;<a href="/categories/ruoyi/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ruoyi</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-28">2024-04-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2334 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/" class="leancloud_visitors" data-flag-title="ruoyi自定义实现前后端traceid加密校验">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-28">2024-04-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2870 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/" class="leancloud_visitors" data-flag-title="ruoyi自定义实现前后端traceid加密校验">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -892,9 +892,16 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 加密结果一样
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>原因是：DES 秘钥采用，每字节取前七位为有效位，第八位为奇偶校验位，所以只要每字节去前七比特位一样，秘钥就是等效的；</p>
+</div><p><a href="https://www.jianshu.com/p/860d1f59b7f9" target="_blank" rel="noopener noreffer">来源</a>原因是：DES 秘钥采用，每字节取前七位为有效位，第八位为奇偶校验位，所以只要每字节去前七比特位一样，秘钥就是等效的；</p>
 <p>就是说上面采用等效（或一样）的秘钥</p>
-<p><a href="https://www.jianshu.com/p/860d1f59b7f9" target="_blank" rel="noopener noreffer">来源</a></p></div><div class="post-footer" id="post-footer">
+<p>DES（数据加密标准）作为一种对称加密算法，其特点是使用相同的密钥进行加密和解密。然而，您提到的情况——不同的密钥加密同一明文得到相同密文——在理论上是不可能发生的，因为DES算法设计上确保了密钥的任何微小变化都应导致加密结果的显著不同。这是基于DES算法的混淆和扩散原则，目的是为了实现加密过程的非线性及对密文的随机化，从而保证加密的安全性。</p>
+<p>如果观察到不同密钥加密同一明文得到相同密文，可能的原因包括但不限于以下几点误解或错误配置：</p>
+<ol>
+<li>编码问题：加密前的数据如果因为字符编码不同（如UTF-8与其他编码），导致虽然看起来是相同的明文，但实际上二进制表示不同，这不会是因为密钥的问题，而是输入本身就不一致。</li>
+<li>加密模式或初始化向量（IV）问题：在某些加密模式下（如CBC、CFB等），相同的明文和密钥可能因为使用了相同的IV而产生相同的密文。但DES本身不直接使用IV，这更可能是使用了如DESede（3DES）或某种模式下的误配。</li>
+<li>软件实现错误：使用的加密库或自行编写的加密代码可能存在错误，没有正确地使用密钥，或者在密钥管理和密钥调度上出现了问题。</li>
+<li>特定的密钥对：极为罕见的情况下，可能存在数学上的异常或特定的密钥对，但这违背了DES算法的安全属性，且在实际应用中几乎不可能遇到。</li>
+</ol></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

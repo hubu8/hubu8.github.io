@@ -1401,10 +1401,10 @@
 </div>
 </div><h2 id="3总结">3.总结</h2>
 <p>以上全部就是本期关于数据脱敏知识点的总结介绍啦。 首先介绍了数据脱敏需求的背景、概念和重要性，紧接着我们逐步探讨实现方案，权衡利弊了相关实现选择，最终选择<code>Spring Boot</code>的自带的<code>jackson</code>自定义序列化实现，它的实现原来其实就是在json进行序列化渲染给前端时，进行脱敏，这样可以有效降低性能损耗，并且也不会侵入系统业务层逻辑这样可以保证我们的业务逻辑不会因为数据脱敏出现逻辑错误。与此同时也强调了<strong>动态灵活可配置</strong>的脱敏信息配置，我们通过拦截器实现脱敏信息上下文设置，在上面思路我们进行代码实现剖析和实操，借助于<code>Hutool</code>工具类提供的脱敏功能，完美实现了字段脱敏。</p>
-<p>作者：Shepherd
-链接：https://juejin.cn/post/7329141961092186164
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></div><div class="post-footer" id="post-footer">
+<p>作者：Shepherd</p>
+<p>链接：https://juejin.cn/post/7329141961092186164</p>
+<p>来源：稀土掘金</p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

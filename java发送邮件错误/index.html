@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E9%94%99%E8%AF%AF\/"
-        },"genre": "posts","keywords": "java发送邮件","wordcount":  1102 ,
+        },"genre": "posts","keywords": "java发送邮件","wordcount":  3374 ,
         "url": "https:\/\/hubu8.github.io\/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E9%94%99%E8%AF%AF\/","datePublished": "2024-01-23T08:59:26+08:00","dateModified": "2024-01-23T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-23">2024-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1102 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E9%94%99%E8%AF%AF/" class="leancloud_visitors" data-flag-title="javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-23">2024-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3374 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E9%94%99%E8%AF%AF/" class="leancloud_visitors" data-flag-title="javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -119,9 +119,19 @@
     <li>
       <ul>
         <li><a href="#问题原因">问题原因</a></li>
-        <li><a href="#解决问题">解决问题</a></li>
-        <li><a href="#衍生命令">衍生命令</a></li>
-        <li><a href="#从容器入手">从容器入手</a></li>
+        <li><a href="#解决问题--从jdk入手">解决问题- 从JDK入手</a>
+          <ul>
+            <li><a href="#衍生命令">衍生命令</a></li>
+            <li><a href="#从容器入手">从容器入手</a></li>
+          </ul>
+        </li>
+        <li><a href="#解决问题-从代码入手">解决问题-从代码入手</a>
+          <ul>
+            <li><a href="#方案一">方案一</a></li>
+            <li><a href="#方案二">方案二</a></li>
+            <li><a href="#方案三">方案三</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -321,9 +331,529 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="问题原因">问题原因</h3>
-<p>jdk1.8版本导致SSL调用权限上有问题，新电脑装的jdk是jdk1.8.0_291，版本比较高。搜到的解决方法是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.ruoyi.common.email.util</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.hutool.extra.mail.Mail</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.hutool.extra.mail.MailAccount</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.hutool.extra.mail.MailUtil</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.constant.CacheConstants</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.core.redis.RedisCache</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.email.EmailConfig</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.email.EmailVO</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.exception.GlobalException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.exception.tool.EmailConfigException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.exception.tool.EmailSendException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.utils.EncryptUtils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.utils.StringUtils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.utils.spring.SpringUtils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.sun.mail.util.MailSSLSocketFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.activation.DataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.net.URLConnection</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.security.GeneralSecurityException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSendUtil</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">EmailSendUtil</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_HOST</span> <span class="o">=</span> <span class="s">&#34;email.config.host&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_PORT</span> <span class="o">=</span> <span class="s">&#34;email.config.port&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_USER</span> <span class="o">=</span> <span class="s">&#34;email.config.user&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_PASS</span> <span class="o">=</span> <span class="s">&#34;email.config.pass&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_FROM_USER</span> <span class="o">=</span> <span class="s">&#34;email.config.fromUser&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取邮件配置信息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">EmailConfig</span> <span class="nf">getEmailConfig</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">EmailConfig</span> <span class="n">emailConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmailConfig</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setHost</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_HOST</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setPort</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_PORT</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_USER</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setPass</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_PASS</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setFromUser</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_FROM_USER</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">emailConfig</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取邮件账户信息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">MailAccount</span> <span class="nf">getMailAccount</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">EmailConfig</span> <span class="n">emailConfig</span> <span class="o">=</span> <span class="n">getEmailConfig</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 封装
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 设置用户
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">user</span> <span class="o">=</span> <span class="n">emailConfig</span><span class="o">.</span><span class="na">getFromUser</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;@&#34;</span><span class="o">)[</span><span class="n">0</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setHost</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getHost</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setPort</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getPort</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setAuth</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setPass</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getPass</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//方案一：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// SSL 握手失败可能与协议版本协商不稳定有关，需在代码中强制指定 TLSv1.2：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setSslProtocols</span><span class="o">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 方案二：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 补充 SSL SocketFactory 相关参数，避免因缺少证书信任导致握手失败：添加 SSL 安全套接字工厂配置
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        MailSSLSocketFactory sf = null;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        try {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf = new MailSSLSocketFactory();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        } catch (GeneralSecurityException e) {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            throw new RuntimeException(e);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// ssl方式发送
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setSslEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 使用STARTTLS安全连接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setStarttlsEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getUser</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setFrom</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getFromUser</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">account</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 单个收件人
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送邮件 ，不包含照片主体
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param to
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">to</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">to</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 多个收件人
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param tos
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendTos</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">tos</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">tos</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送邮件， 可发送图片
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param to
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param imageStrMap
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">to</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imageStrMap</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">InputStream</span><span class="o">&gt;</span> <span class="n">imageMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imagesKeys</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">imagesKey</span> <span class="o">:</span> <span class="n">imagesKeys</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">String</span> <span class="n">imageurl</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">imageurl</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="n">imageurl</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 从 inputStream 中读取文件流并进行处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">imageMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">inputStream</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;图片Url获取数据，出错的是：%s:%s&#34;</span><span class="o">,</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">imageurl</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">to</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">imageMap</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送多人， 可发送图片
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param tos
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param imageStrMap
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendTos</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">tos</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imageStrMap</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">InputStream</span><span class="o">&gt;</span> <span class="n">imageMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imagesKeys</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">imagesKey</span> <span class="o">:</span> <span class="n">imagesKeys</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">String</span> <span class="n">imageurl</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">imageurl</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="n">imageurl</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 从 inputStream 中读取文件流并进行处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">imageMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">inputStream</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;图片Url获取数据，出错的是：%s:%s&#34;</span><span class="o">,</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">imageurl</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">tos</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">imageMap</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送邮件
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param emailVo
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param emailConfig
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">EmailVO</span> <span class="n">emailVo</span><span class="o">,</span> <span class="n">EmailConfig</span> <span class="n">emailConfig</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">emailConfig</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">emailConfig</span> <span class="o">=</span> <span class="n">getEmailConfig</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">emailConfig</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">EmailConfigException</span><span class="o">(</span><span class="s">&#34;Email参数设置为空，请检查参数设置&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getContent</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 发送
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getTos</span><span class="o">().</span><span class="na">size</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Mail</span> <span class="n">mail</span> <span class="o">=</span> <span class="n">Mail</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">account</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mail</span><span class="o">.</span><span class="na">setTos</span><span class="o">(</span><span class="n">emailVo</span><span class="o">.</span><span class="na">getTos</span><span class="o">().</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">size</span><span class="o">]))</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">emailVo</span><span class="o">.</span><span class="na">getSubject</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="n">content</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setHtml</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span> <span class="n">attachments</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getAttachments</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">attachments</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">attachments</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mail</span><span class="o">.</span><span class="na">setAttachments</span><span class="o">(</span><span class="n">attachments</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">DataSource</span><span class="o">[]{}));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">File</span><span class="o">&gt;</span> <span class="n">files</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getFiles</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">files</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">files</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mail</span><span class="o">.</span><span class="na">setFiles</span><span class="o">(</span><span class="n">files</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">[]{}));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">mail</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//关闭session
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="o">.</span><span class="na">setUseGlobalSession</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">send</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">EmailSendException</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 设置cache key
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param configKey 参数键
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return 缓存键key
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getCacheKey</span><span class="o">(</span><span class="n">String</span> <span class="n">configKey</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">CacheConstants</span><span class="o">.</span><span class="na">SYS_CONFIG_KEY</span> <span class="o">+</span> <span class="n">configKey</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取缓存值
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param configKey
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getCacheValue</span><span class="o">(</span><span class="n">String</span> <span class="n">configKey</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(!</span><span class="n">configKey</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">CacheConstants</span><span class="o">.</span><span class="na">SYS_CONFIG_KEY</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">configKey</span> <span class="o">=</span> <span class="n">getCacheKey</span><span class="o">(</span><span class="n">configKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">SpringUtils</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="n">RedisCache</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">getCacheObject</span><span class="o">(</span><span class="n">configKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">value</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">EmailConfigException</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;未找到email相关参数，请检查%s参数设置并同步到redis缓存。&#34;</span><span class="o">,</span><span class="n">configKey</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>jdk1.8版本导致SSL调用权限上有问题，新电脑装的jdk是jdk1.8.0_291，版本比较高。搜到的解决方法是：</p>
 <p><strong>找到jdk 1.8安装目录，找到C:\Program Files\Java\jre里面的lib\security 下面有个java.security。找到对应的SSLv3，删除掉，重启项目就好了。（删掉SSLv3就是允许SSL调用）</strong></p>
-<h3 id="解决问题">解决问题</h3>
+<h3 id="解决问题--从jdk入手">解决问题- 从JDK入手</h3>
 <p>我找到Java安装目录下D:\Java\jdk1.8.0_291\jre\lib\security中的java.security文件，将对应的SSLv3删掉了，但运行还是出错。最后发现SSLv3后面有两个和它后缀一样的算法，将它们一起删掉后重启项目，成功解决问题。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -370,7 +900,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># processing in JSSE implementation.</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="衍生命令">衍生命令</h3>
+</div><h4 id="衍生命令">衍生命令</h4>
 <p>docker中Java安装目录为: <strong>/usr/local/openjdk-8</strong></p>
 <p>复制容器中的java.security文件到宿主机</p>
 <div class="highlight"><div class="chroma">
@@ -408,7 +938,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker restart e61b6e572d86
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="从容器入手">从容器入手</h3>
+</div><h4 id="从容器入手">从容器入手</h4>
 <p>修改容器的java.security文件, 目前还未验证</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -420,7 +950,115 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 核心也是修改java.security文件中的jdk.tls.disabledAlgorithms配置，删除掉TLSv1&amp;TLSv1.1</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h3 id="解决问题-从代码入手">解决问题-从代码入手</h3>
+<p>之前是错误实例，修改jdk是不明智的操作</p>
+<h4 id="方案一">方案一</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">/</span><span class="n">方案一</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// SSL 握手失败可能与协议版本协商不稳定有关，需在代码中强制指定 TLSv1.2：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setSslProtocols</span><span class="o">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 方案二：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 补充 SSL SocketFactory 相关参数，避免因缺少证书信任导致握手失败：添加 SSL 安全套接字工厂配置
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        MailSSLSocketFactory sf = null;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        try {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf = new MailSSLSocketFactory();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        } catch (GeneralSecurityException e) {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            throw new RuntimeException(e);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="方案二">方案二</h4>
+<p>1.换个不用ssl端口的邮件服务器，相应调整代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="na">setSslEnable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="na">setStarttlsEnable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果比较着急，并且对邮件安全要求不高，可以这样，也能解决。</p>
+<h4 id="方案三">方案三</h4>
+<p>手动指定为TLSv1.2协议
+百度发现，可能是本地jar包与服务器jar包版本不一致，才一个成功一个失败；默认用TLSv1.1协议，但是新jar包认为这个协议不安全，就会报错无法链接邮件服务器。</p>
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ssl启用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">account</span><span class="o">.</span><span class="na">setSslEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// STARTTLS启用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">account</span><span class="o">.</span><span class="na">setStarttlsEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 解决连接smtp服务失败问题，升级了hutool版本才有这个方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">MailSSLSocketFactory</span> <span class="n">sf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailSSLSocketFactory</span><span class="o">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//信任所有host
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">sf</span><span class="o">.</span><span class="na">setTrustAllHosts</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//自定义设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">account</span><span class="o">.</span><span class="na">setCustomProperty</span><span class="o">(</span><span class="s">&#34;mail.smtp.ssl.socketFactory&#34;</span><span class="o">,</span> <span class="n">sf</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">account</span><span class="o">.</span><span class="na">setCustomProperty</span><span class="o">(</span><span class="s">&#34;mail.smtp.ssl.protocols&#34;</span><span class="o">,</span> <span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">GeneralSecurityException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意，如果是老版本hutool的jar包，有可能没有setCustomProperty方法，需要换成新版本hutool的jar包才有（已测试5.3.4版本没有，5.7.19有）：</p>
+<pre><code>    &lt;dependency&gt;
+        &lt;groupId&gt;cn.hutool&lt;/groupId&gt;
+        &lt;artifactId&gt;hutool-all&lt;/artifactId&gt;
+        &lt;version&gt;5.7.19&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -451,7 +1089,7 @@
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

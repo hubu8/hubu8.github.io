@@ -16,4 +16,6 @@
 {{< friend name="廖雪峰的官方网站" url="https://www.liaoxuefeng.com/" logo="https://www.liaoxuefeng.com/files/attachments/1259577026801664/l" word="廖雪峰的官方网站" >}}
 {{< friend name="processon" url="https://www.processon.com/" logo="https://www.processon.com/assets/imgs/logo_small.svg" word="processon" >}}
 {{< friend name="stackoverflow" url="https://stackoverflow.com/" logo="https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg" word="Stack Overflow is a community of 21.9 million programmers, just like you, helping each other." >}}
+{{< friend name="javaguide" url="https://javaguide.cn/" logo="https://javaguide.cn/logo.svg" word="「Java学习 + 面试指南」涵盖 Java 程序员需要掌握的核心知识" >}}
+
 

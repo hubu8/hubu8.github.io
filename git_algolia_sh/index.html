@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/git_algolia_sh\/"
-        },"genre": "posts","keywords": "shell, hugo","wordcount":  910 ,
+        },"genre": "posts","keywords": "shell, hugo","wordcount":  927 ,
         "url": "https:\/\/hubu8.github.io\/git_algolia_sh\/","datePublished": "2021-04-13T20:00:31+08:00","dateModified": "2021-04-13T20:00:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git_algolia_sh git_bat升级版本</h1><h2 class="single-subtitle">git自动化上传blog与public仓库，algolia索引更新</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/windows/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Windows</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-13">2021-04-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 910 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-13">2021-04-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 927 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/git_algolia_sh/" class="leancloud_visitors" data-flag-title="Git_algolia_sh git_bat升级版本">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -130,8 +130,9 @@
         <li><a href="#31-首先安装-npm这里不介绍">3.1 首先安装 npm，这里不介绍</a></li>
         <li><a href="#32-安装-atomic-algolia">3.2 安装 atomic-algolia</a></li>
         <li><a href="#33-创建-env-文件存放-algolia-配置">3.3 创建 .env 文件存放 algolia 配置</a></li>
-        <li><a href="#34-修改根目录下的-packagejson-文件没有就新建在-scripts-下添加-algolia-atomic-algolia">3.4 修改根目录下的 <code>package.json</code> 文件（没有就新建），在 <code>scripts</code> 下添加 <code>&quot;algolia&quot;: &quot;atomic-algolia&quot;</code></a></li>
-        <li><a href="#35-上传索引的命令-你可以本地执行-npm-run-algolia-查看运行效果">3.5 上传索引的命令 你可以本地执行 <code>npm run algolia</code> 查看运行效果</a></li>
+        <li><a href="#34-可能影响环境变量的githu设置">3.4 可能影响环境变量的githu设置</a></li>
+        <li><a href="#35-修改根目录下的-packagejson-文件没有就新建在-scripts-下添加-algolia-atomic-algolia">3.5 修改根目录下的 <code>package.json</code> 文件（没有就新建），在 <code>scripts</code> 下添加 <code>&quot;algolia&quot;: &quot;atomic-algolia&quot;</code></a></li>
+        <li><a href="#36-上传索引的命令-你可以本地执行-npm-run-algolia-查看运行效果">3.6 上传索引的命令 你可以本地执行 <code>npm run algolia</code> 查看运行效果</a></li>
       </ul>
     </li>
     <li><a href="#4-定制化脚本">4 定制化脚本</a></li>
@@ -240,7 +241,16 @@
 </span></span><span class="line"><span class="cl">ALGOLIA_INDEX_FILE=&#34;public/index.json&#34;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="34-修改根目录下的-packagejson-文件没有就新建在-scripts-下添加-algolia-atomic-algolia">3.4 修改根目录下的 <code>package.json</code> 文件（没有就新建），在 <code>scripts</code> 下添加 <code>&quot;algolia&quot;: &quot;atomic-algolia&quot;</code></h3>
+</div><h3 id="34-可能影响环境变量的githu设置">3.4 可能影响环境变量的githu设置</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/common_images/image-20250517145608220.png"
+        data-srcset="/common_images/image-20250517145608220.png, /common_images/image-20250517145608220.png 1.5x, /common_images/image-20250517145608220.png 2x"
+        data-sizes="auto"
+        alt="/common_images/image-20250517145608220.png"
+        title="image-20250517145608220" /></p>
+<h3 id="35-修改根目录下的-packagejson-文件没有就新建在-scripts-下添加-algolia-atomic-algolia">3.5 修改根目录下的 <code>package.json</code> 文件（没有就新建），在 <code>scripts</code> 下添加 <code>&quot;algolia&quot;: &quot;atomic-algolia&quot;</code></h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -259,7 +269,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="35-上传索引的命令-你可以本地执行-npm-run-algolia-查看运行效果">3.5 上传索引的命令 你可以本地执行 <code>npm run algolia</code> 查看运行效果</h3>
+</div><h3 id="36-上传索引的命令-你可以本地执行-npm-run-algolia-查看运行效果">3.6 上传索引的命令 你可以本地执行 <code>npm run algolia</code> 查看运行效果</h3>
 <h2 id="4-定制化脚本">4 定制化脚本</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

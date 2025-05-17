@@ -65,7 +65,12 @@ ALGOLIA_INDEX_NAME="hugo"
 ALGOLIA_INDEX_FILE="public/index.json"
 ```
 
-### 3.4 修改根目录下的 `package.json` 文件（没有就新建），在 `scripts` 下添加 `"algolia": "atomic-algolia"`
+### 3.4 可能影响环境变量的githu设置
+
+![image-20250517145608220](/common_images/image-20250517145608220.png)
+
+
+### 3.5 修改根目录下的 `package.json` 文件（没有就新建），在 `scripts` 下添加 `"algolia": "atomic-algolia"`
 
 ```json
 {
@@ -77,7 +82,7 @@ ALGOLIA_INDEX_FILE="public/index.json"
 
 ```
 
-### 3.5 上传索引的命令 你可以本地执行 `npm run algolia` 查看运行效果
+### 3.6 上传索引的命令 你可以本地执行 `npm run algolia` 查看运行效果
 
 ## 4 定制化脚本
 

@@ -18,4 +18,6 @@
 {{< friend name="stackoverflow" url="https://stackoverflow.com/" logo="https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg" word="Stack Overflow is a community of 21.9 million programmers, just like you, helping each other." >}}
 {{< friend name="javaguide" url="https://javaguide.cn/" logo="https://javaguide.cn/logo.svg" word="「Java学习 + 面试指南」涵盖 Java 程序员需要掌握的核心知识" >}}
 
+{{< friend name="美团技术团队" url="https://tech.meituan.com/" logo="https://s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:1040877d/favicon-mt.ico" word="涵盖了前端（Web、iOS和Android）、后台、系统、算法、测试、运维、大数据等技术领域" >}}
+
 

@@ -26,7 +26,7 @@
     absoluteURL = false
     [params.search.algolia]
       index = "hugo"
-      appID = "CTZ67PPVA3"
+      appID = "CT9HNMDY0J"
       searchKey = "你的搜索密钥"
 ```
 
@@ -59,7 +59,7 @@ npm -g install atomic-algolia --save
 ### 3.3 创建 .env 文件存放 algolia 配置
 
 ```
-ALGOLIA_APP_ID="CTZ67PPVA3"
+ALGOLIA_APP_ID="CT9HNMDY0J"
 ALGOLIA_ADMIN_KEY="你的超级管理员密钥，上传json"
 ALGOLIA_INDEX_NAME="hugo"
 ALGOLIA_INDEX_FILE="public/index.json"
@@ -191,3 +191,4 @@ esac
  algolia 的索引:
 
 ![image-20210413223145848](/common_images/image-20210413223145848.png)
+

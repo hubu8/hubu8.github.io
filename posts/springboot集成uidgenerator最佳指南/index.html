@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>springboot集成UidGenerator最佳指南 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="springboot集成UidGenerator最佳指南" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/springboot%E9%9B%86%E6%88%90uidgenerator%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-03T12:02:54+08:00" />
+<meta property="article:modified_time" content="2022-12-03T12:02:54+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="springboot集成UidGenerator最佳指南"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/springboot%E9%9B%86%E6%88%90uidgenerator%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/" /><link rel="prev" href="https://hubu8.github.io/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" /><link rel="next" href="https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "springboot集成UidGenerator最佳指南",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/springboot%E9%9B%86%E6%88%90uidgenerator%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97\/"
+        },"genre": "posts","keywords": "分布式ID, Snowflake, Long精度丢失","wordcount":  6403 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/springboot%E9%9B%86%E6%88%90uidgenerator%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97\/","datePublished": "2022-12-03T12:02:54+08:00","dateModified": "2022-12-03T12:02:54+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">springboot集成UidGenerator最佳指南</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 6403 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 13 分钟&nbsp;<span id="/posts/springboot%E9%9B%86%E6%88%90uidgenerator%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/" class="leancloud_visitors" data-flag-title="springboot集成UidGenerator最佳指南">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#uidgenerator">UidGenerator</a>
+          <ul>
+            <li><a href="#0概述">0概述</a>
+              <ul>
+                <li><a href="#uidgenerator改进后的snowflake算法">UidGenerator改进后的SnowFlake算法</a></li>
+                <li><a href="#uidgenerator的具体代码实现分析">UidGenerator的具体代码实现分析</a>
+                  <ul>
+                    <li><a href="#defaultuidgenerator"><strong>DefaultUidGenerator</strong></a></li>
+                    <li><a href="#cacheduidgenerator"><strong>CachedUidGenerator</strong></a></li>
+                    <li><a href="#小结一下"><strong>小结一下</strong></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#打包">打包</a></li>
+            <li><a href="#加入依赖">加入依赖</a></li>
+            <li><a href="#执行worker_node表脚本">执行WORKER_NODE表脚本</a></li>
+            <li><a href="#maven中加入依赖">maven中加入依赖</a></li>
+            <li><a href="#配置文件applicationyml里引入自定义配置">配置文件application.yml里引入自定义配置</a></li>
+            <li><a href="#resource目录创建mapper文件">resource目录创建mapper文件</a></li>
+            <li><a href="#uid配置类注入">Uid配置类注入</a></li>
+            <li><a href="#idgeneratorjava工具类">IdGenerator.java工具类</a></li>
+            <li><a href="#defgeneratorjava工具类">Defgenerator.java工具类</a></li>
+            <li><a href="#springboot主类加包扫描">Springboot主类加包扫描</a></li>
+            <li><a href="#测试接口">测试接口</a></li>
+            <li><a href="#测试">测试</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="uidgenerator">UidGenerator</h3>
+<h4 id="0概述">0概述</h4>
+<p>UidGenerator是百度开源的Java语言实现，基于Snowflake算法的唯一ID生成器。
+它是<a href="https://so.csdn.net/so/search?q=%e5%88%86%e5%b8%83%e5%bc%8f&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreffer">分布式</a>的，并克服了雪花算法的并发限制。
+<a href="https://blog.csdn.net/qq_29917503/article/details/128039707" target="_blank" rel="noopener noreffer">单个实例的QPS能超过6000000。</a>
+需要的环境：JDK8+，MySQL（用于分配WorkerId）</p>
+<p>但是百度对这些组成部分稍微调整了一下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/20200910221235690.jpeg"
+        data-srcset="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/20200910221235690.jpeg, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/20200910221235690.jpeg 1.5x, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/20200910221235690.jpeg 2x"
+        data-sizes="auto"
+        alt="/posts/java/basic/百度UidGenerator集成/20200910221235690.jpeg"
+        title="20200910221235690.jpeg" /></p>
+<p>由上图可知，UidGenerator的时间部分只有28位，这就意味着UidGenerator默认只能承受8.5年（2^28-1/86400/365）
+也可以根据你业务的需求，UidGenerator可以适当调整delta seconds、worker node id和sequence占用位数。</p>
+<p>对于分布式的业务系统来说，SnowFlake算法的优缺点如下。</p>
+<p>► 优点：</p>
+<blockquote>
+<p>1）毫秒数在高位，自增序列在低位，整个ID都是趋势递增的；</p>
+<p>2）不依赖数据库等第三方系统，以服务的方式部署，稳定性更高，生成ID的性能也是非常高的；</p>
+<p>3）可以根据自身业务特性分配bit位，非常灵活。</p>
+</blockquote>
+<p>► 缺点：</p>
+<blockquote>
+<p>强依赖机器时钟，如果机器上时钟回拨，会导致发号重复或者服务会处于不可用状态。</p>
+</blockquote>
+<h5 id="uidgenerator改进后的snowflake算法">UidGenerator改进后的SnowFlake算法</h5>
+<p>通过上节，我们知道了原版SnowFlake算法的基本构成。</p>
+<p>具体是，原版SnowFlake算法核心组成：</p>
+<p>原版SnowFlake算法各字段的具体意义是：</p>
+<blockquote>
+<p>1）1位sign标识位；</p>
+<p>2）41位时间戳；</p>
+<p>3）10位workId（即5位数据中心id+5位工作机器id）；</p>
+<p>4）12位自增序列。</p>
+</blockquote>
+<p>而UidGenerator改进后的SnowFlake算法核心组成如下图：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://p8.itc.cn/q_70/images03/20210524/905ce523d73f422caf4b336870d898c6.png"
+        data-srcset="https://p8.itc.cn/q_70/images03/20210524/905ce523d73f422caf4b336870d898c6.png, https://p8.itc.cn/q_70/images03/20210524/905ce523d73f422caf4b336870d898c6.png 1.5x, https://p8.itc.cn/q_70/images03/20210524/905ce523d73f422caf4b336870d898c6.png 2x"
+        data-sizes="auto"
+        alt="https://p8.itc.cn/q_70/images03/20210524/905ce523d73f422caf4b336870d898c6.png"
+        title="img" /></p>
+<p>简单来说，UidGenerator能保证“ 指定机器 &amp; 同一时刻 &amp; 某一并发序列 ”，是唯一，并据此生成一个64 bits的唯一ID（long），且默认采用上图字节分配方式。</p>
+<p>与原版的snowflake算法不同，UidGenerator还支持自定义时间戳、工作机器id和序列号等各部分的位数，以应用于不同场景（详见源码实现）。</p>
+<p>如上图所示，UidGenerator默认ID中各数据位的含义如下：</p>
+<ul>
+<li>1）sign(1bit)： 固定1bit符号标识，即生成的UID为正数。</li>
+<li>2）delta seconds (28 bits)： 当前时间，相对于时间基点&quot;2016-05-20&quot;的增量值，单位：秒，最多可支持约8.7年（注意：(a)这里的单位是秒，而不是毫秒！(b)注意这里的用词，是“最多”可支持8.7年，为什么是“最多”，后面会讲）。</li>
+<li>3）worker id (22 bits)： 机器id，最多可支持约420w次机器启动。内置实现为在启动时由数据库分配，默认分配策略为用后即弃，后续可提供复用策略。</li>
+<li>4）sequence (13 bits)： 每秒下的并发序列，13 bits可支持每秒8192个并发（注意下这个地方，默认支持qps最大为8192个）。</li>
+</ul>
+<h5 id="uidgenerator的具体代码实现分析">UidGenerator的具体代码实现分析</h5>
+<p>通过阅读UidGenerator的源码可知，UidGenerator的具体实现有两种选择，即 DefaultUidGenerator 和 CachedUidGenerator。我们分别来看看这两个具体代码实现的精妙之处。</p>
+<h6 id="defaultuidgenerator"><strong>DefaultUidGenerator</strong></h6>
+<p>DefaultUidGenerator 的源码很清楚的说明了几个生成ID的关键位的实现逻辑。</p>
+<p>1）delta seconds（28 bits）：</p>
+<p>这个值是指当前时间与epoch时间的时间差，且单位为秒。epoch时间就是指集成DefaultUidGenerator生成分布式ID服务第一次上线的时间，可配置，也一定要根据你的上线时间进行配置，因为默认的epoch时间可是2016-09-20，不配置的话，会浪费好几年的可用时间。</p>
+<p>2）worker id（22bits）：</p>
+<p>接下来说一下DefaultUidGenerator是如何给worker id赋值的，搭建DefaultUidGenerator的话，需要创建一个表。</p>
+<p>3）sequence（13bits）：</p>
+<p>核心代码如下，几个实现的关键点：</p>
+<blockquote>
+<p>a. synchronized保证线程安全；</p>
+<p>b. 如果时间有任何的回拨，那么直接抛出异常；</p>
+<p>c. 如果当前时间和上一次是同一秒时间，那么sequence自增。如果同一秒内自增值超过2^13-1，那么就会自旋等待下一秒（getNextSecond）；</p>
+<p>d. 如果是新的一秒，那么sequence重新从0开始。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://p9.itc.cn/q_70/images03/20210524/e60ae0662e734951b9e9409a13c76fd1.png"
+        data-srcset="https://p9.itc.cn/q_70/images03/20210524/e60ae0662e734951b9e9409a13c76fd1.png, https://p9.itc.cn/q_70/images03/20210524/e60ae0662e734951b9e9409a13c76fd1.png 1.5x, https://p9.itc.cn/q_70/images03/20210524/e60ae0662e734951b9e9409a13c76fd1.png 2x"
+        data-sizes="auto"
+        alt="https://p9.itc.cn/q_70/images03/20210524/e60ae0662e734951b9e9409a13c76fd1.png"
+        title="img" /></p>
+<p>（ 上述源码节选自：DefaultUidGenerator 类中的 nextId 方法）</p>
+<p>4）小结：</p>
+<p>通过DefaultUidGenerator的实现可知，它对时钟回拨的处理比较简单粗暴。另外如果使用UidGenerator的DefaultUidGenerator方式生成分布式ID，一定要根据你的业务的情况和特点，调整各个字段占用的位数：</p>
+<!-- Specified bits & epoch as your demand. No specified the default value will be used -->
+<p>&lt; propertyname= &ldquo;timeBits&quot;value= &ldquo;29&rdquo;/&gt;</p>
+<p>&lt; propertyname= &ldquo;workerBits&quot;value= &ldquo;21&rdquo;/&gt;</p>
+<p>&lt; propertyname= &ldquo;seqBits&quot;value= &ldquo;13&rdquo;/&gt;</p>
+<p>&lt; propertyname= &ldquo;epochStr&quot;value= &ldquo;2016-09-20&rdquo;/&gt;</p>
+<h6 id="cacheduidgenerator"><strong>CachedUidGenerator</strong></h6>
+<p>CachedUidGenerator是DefaultUidGenerator的重要改进实现。它的核心利用了RingBuffer，它本质上是一个数组，数组中每个项被称为slot。CachedUidGenerator设计了两个RingBuffer，一个保存唯一ID，一个保存flag。RingBuffer的尺寸是2^n，n必须是正整数。</p>
+<p>以下是CachedUidGenerator中的RingBuffer原理示意图：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://p2.itc.cn/q_70/images03/20210524/1c486c9f5a5541c4a0afeb241137d3ac.png"
+        data-srcset="https://p2.itc.cn/q_70/images03/20210524/1c486c9f5a5541c4a0afeb241137d3ac.png, https://p2.itc.cn/q_70/images03/20210524/1c486c9f5a5541c4a0afeb241137d3ac.png 1.5x, https://p2.itc.cn/q_70/images03/20210524/1c486c9f5a5541c4a0afeb241137d3ac.png 2x"
+        data-sizes="auto"
+        alt="https://p2.itc.cn/q_70/images03/20210524/1c486c9f5a5541c4a0afeb241137d3ac.png"
+        title="img" /></p>
+<p>扩展知识：什么是RingBuffer？</p>
+<blockquote>
+<p>Ring Buffer的概念，其实来自于Linux内核（Maybe），是为解决某些特殊情况下的竞争问题提供了一种免锁的方法。这种特殊的情况就是当生产者和消费者都只有一个，而在其它情况下使用它也是必须要加锁的。</p>
+<p>环形缓冲区通常有一个读指针和一个写指针。读指针指向环形缓冲区中可读的数据，写指针指向环形缓冲区中可写的缓冲区。通过移动读指针和写指针就可以实现缓冲区的数据读取和写入。在通常情况下，环形缓冲区的读用户仅仅会影响读指针，而写用户仅仅会影响写指针。如果仅仅有一个读用户和一个写用户，那么不需要添加互斥保护机制就可以保证数据的正确性。如果有多个读写用户访问环形缓冲区，那么必须添加互斥保护机制来确保多个用户互斥访问环形缓冲区。</p>
+</blockquote>
+<p>Tail指针、Cursor指针用于环形数组上读写slot：</p>
+<ul>
+<li>Tail指针 表示Producer生产的最大序号(此序号从0开始，持续递增)。Tail不能超过Cursor，即生产者不能覆盖未消费的slot。当Tail已赶上curosr，此时可通过rejectedPutBufferHandler指定PutRejectPolicy</li>
+<li>Cursor指针 表示Consumer消费到的最小序号(序号序列与Producer序列相同)。Cursor不能超过Tail，即不能消费未生产的slot。当Cursor已赶上tail，此时可通过rejectedTakeBufferHandler指定TakeRejectPolicy</li>
+</ul>
+<p>CachedUidGenerator采用了双RingBuffer，Uid-RingBuffer用于存储Uid、Flag-RingBuffer用于存储Uid状态(是否可填充、是否可消费)</p>
+<p>由于数组元素在内存中是连续分配的，可最大程度利用CPU cache以提升性能。但同时会带来「伪共享」FalseSharing问题，为此在Tail、Cursor指针、Flag-RingBuffer中采用了CacheLine 补齐方式。</p>
+<p>RingBuffer填充时机</p>
+<ul>
+<li>初始化预填充 RingBuffer初始化时，预先填充满整个RingBuffer.</li>
+<li>即时填充 Take消费时，即时检查剩余可用slot量(tail - cursor)，如小于设定阈值，则补全空闲slots。阈值可通过paddingFactor来进行配置，请参考Quick Start中CachedUidGenerator配置</li>
+<li>周期填充 通过Schedule线程，定时补全空闲slots。可通过scheduleInterval配置，以应用定时填充功能，并指定Schedule时间间隔</li>
+</ul>
+<p>更多具体的 CachedUidGenerator 的代码实现，有兴趣可以仔细读一读，也可以前往百度uid-generator工程的说明页看看具体的算法原理，这里就不再赘述。</p>
+<p>简要的小结一下，CachedUidGenerator方式主要通过采取如下一些措施和方案规避了时钟回拨问题和增强唯一性：</p>
+<ul>
+<li>1）自增列：CachedUidGenerator的workerId在实例每次重启时初始化，且就是数据库的自增ID，从而完美的实现每个实例获取到的workerId不会有任何冲突；</li>
+<li>2）RingBuffer：CachedUidGenerator不再在每次取ID时都实时计算分布式ID，而是利用RingBuffer数据结构预先生成若干个分布式ID并保存；</li>
+<li></li>
+</ul>
+<h6 id="小结一下"><strong>小结一下</strong></h6>
+<p>CachedUidGenerator通过缓存的方式预先生成一批唯一ID列表，可以解决唯一ID获取时候的耗时。但这种方式也有不好点，一方面需要耗费内存来缓存这部分数据，另外如果访问量不大的情况下，提前生成的UID中的时间戳可能是很早之前的。而对于大部分的场景来说，DefaultUidGenerator 就可以满足相关的需求了，没必要来凑CachedUidGenerator这个热闹。</p>
+<p>另外，关于UidGenerator比特位分配的建议：</p>
+<blockquote>
+<p>对于并发数要求不高、期望长期使用的应用, 可增加timeBits位数, 减少seqBits位数. 例如节点采取用完即弃的WorkerIdAssigner策略, 重启频率为12次/天, 那么配置成{&ldquo;workerBits&rdquo;:23,&ldquo;timeBits&rdquo;:31,&ldquo;seqBits&rdquo;:9}时, 可支持28个节点以整体并发量14400 UID/s的速度持续运行68年.</p>
+<p>对于节点重启频率频繁、期望长期使用的应用, 可增加workerBits和timeBits位数, 减少seqBits位数. 例如节点采取用完即弃的WorkerIdAssigner策略, 重启频率为24*12次/天, 那么配置成{&ldquo;workerBits&rdquo;:27,&ldquo;timeBits&rdquo;:30,&ldquo;seqBits&rdquo;:6}时, 可支持37个节点以整体并发量2400 UID/s的速度持续运行34年.</p>
+</blockquote>
+<p>官方没有官方的jar包，所以使用需要自己打包，加入maven依赖</p>
+<h4 id="打包">打包</h4>
+<p>先去<a href="https://github.com/baidu/uid-generator" target="_blank" rel="noopener noreffer">仓库拉取代码</a></p>
+<p>拖进IDEA打包（需要先点击禁止按钮，跳过打包测试，否则会报错，因为这个包需要连接数据库创建对象）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202160251439.png"
+        data-srcset="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202160251439.png, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202160251439.png 1.5x, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202160251439.png 2x"
+        data-sizes="auto"
+        alt="/posts/java/basic/百度UidGenerator集成/image-20221202160251439.png"
+        title="image-20221202160251439.png" /></p>
+<h4 id="加入依赖">加入依赖</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mvn install:install-file -Dfile<span class="o">=</span>E:<span class="se">\w</span>ork<span class="se">\j</span>ar<span class="se">\u</span>id-generator-1.0.0-SNAPSHOT.jar -DgroupId<span class="o">=</span>com.baidu.fsg -DartifactId<span class="o">=</span>uid-generator -Dversion<span class="o">=</span>1.0.0-SNAPSHOT -Dpackaging<span class="o">=</span>jar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>-Dfile=</strong> 后边填写你的jar包具体位置
+<strong>-DgroupId=</strong> 后边对应pom中<em>groupId</em>中的名称
+<strong>-DartifactId=</strong> 后边对应pom中artifactId中名称
+<strong>-Dversion=</strong> 后边对应pom中version中名称</p>
+<p>pom文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;name&gt;</span>UID-Generator<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;description&gt;</span>An unique id generator<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;groupId&gt;</span>com.baidu.fsg<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;artifactId&gt;</span>uid-generator<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202161144279.png"
+        data-srcset="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202161144279.png, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202161144279.png 1.5x, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221202161144279.png 2x"
+        data-sizes="auto"
+        alt="/posts/java/basic/百度UidGenerator集成/image-20221202161144279.png"
+        title="image-20221202161144279.png" /></p>
+<p>也可以在全局安装jar包</p>
+<p>pom加入依赖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;dependency&gt;
+</span></span><span class="line"><span class="cl">    &lt;groupId&gt;com.baidu.fsg&lt;/groupId&gt;
+</span></span><span class="line"><span class="cl">    &lt;artifactId&gt;uid-generator&lt;/artifactId&gt;
+</span></span><span class="line"><span class="cl">    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+</span></span><span class="line"><span class="cl">&lt;/dependency&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="执行worker_node表脚本">执行WORKER_NODE表脚本</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">WORKER_NODE</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">WORKER_NODE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ID</span><span class="w"> </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;auto increment id&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">HOST_NAME</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;host name&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">PORT</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;port&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">TYPE</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;node type: CONTAINER(1), ACTUAL(2), FAKE(3)&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">LAUNCH_DATE</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;launch date&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">MODIFIED</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;modified time&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">CREATED</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;created time&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">ID</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">COMMENT</span><span class="o">=</span><span class="s1">&#39;DB WorkerID Assigner for UID Generator&#39;</span><span class="p">,</span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INNODB</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="maven中加入依赖">maven中加入依赖</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.baidu.fsg<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>uid-generator<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>commons-lang<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>commons-lang<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.6<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="配置文件applicationyml里引入自定义配置">配置文件application.yml里引入自定义配置</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># UidGenerator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 初始时间, 默认:&#34;2019-02-20&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">uid</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">epochStr</span><span class="p">:</span><span class="w"> </span><span class="ld">2020-05-08</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 时间位, 默认:30</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">timeBits</span><span class="p">:</span><span class="w"> </span><span class="m">41</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 机器位, 默认:16</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">workerBits</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 序列号, 默认:7</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">seqBits</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 是否容忍时钟回拨, 默认:true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enableBackward</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># RingBuffer size扩容参数, 可提高UID生成的吞吐量, 默认:3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">CachedUidGenerator</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">boostPower</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 指定何时向RingBuffer中填充UID, 取值为百分比(0, 100), 默认为50</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">paddingFactor</span><span class="p">:</span><span class="w"> </span><span class="m">50</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l">com.mysql.cj.jdbc.Driver</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">jdbc:mysql://12.168.120.3:3307/hubu_test?serverTimezone=GMT%2B8&amp;useSSL=true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="m">1234567</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#mybatis-plus����mapperɨ�� �ص�</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">mybatis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mapper-locations</span><span class="p">:</span><span class="w"> </span><span class="l">classpath:/mapper/**/*Mapper.xml,classpath:/mapper/WORKER_NODE.xml</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="resource目录创建mapper文件">resource目录创建mapper文件</h4>
+<p><strong>WORKER_NODE.xml</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE mapper PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34; &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&#34;com.baidu.fsg.uid.worker.dao.WorkerNodeDAO&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;resultMap</span> <span class="na">id=</span><span class="s">&#34;workerNodeRes&#34;</span>
+</span></span><span class="line"><span class="cl">			   <span class="na">type=</span><span class="s">&#34;com.baidu.fsg.uid.worker.entity.WorkerNodeEntity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;id</span> <span class="na">column=</span><span class="s">&#34;ID&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;BIGINT&#34;</span> <span class="na">property=</span><span class="s">&#34;id&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;result</span> <span class="na">column=</span><span class="s">&#34;HOST_NAME&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;VARCHAR&#34;</span> <span class="na">property=</span><span class="s">&#34;hostName&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;result</span> <span class="na">column=</span><span class="s">&#34;PORT&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;VARCHAR&#34;</span> <span class="na">property=</span><span class="s">&#34;port&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;result</span> <span class="na">column=</span><span class="s">&#34;TYPE&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;INTEGER&#34;</span> <span class="na">property=</span><span class="s">&#34;type&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;result</span> <span class="na">column=</span><span class="s">&#34;LAUNCH_DATE&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;DATE&#34;</span> <span class="na">property=</span><span class="s">&#34;launchDate&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;result</span> <span class="na">column=</span><span class="s">&#34;MODIFIED&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;TIMESTAMP&#34;</span> <span class="na">property=</span><span class="s">&#34;modified&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;result</span> <span class="na">column=</span><span class="s">&#34;CREATED&#34;</span> <span class="na">jdbcType=</span><span class="s">&#34;TIMESTAMP&#34;</span> <span class="na">property=</span><span class="s">&#34;created&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/resultMap&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;insert</span> <span class="na">id=</span><span class="s">&#34;addWorkerNode&#34;</span> <span class="na">useGeneratedKeys=</span><span class="s">&#34;true&#34;</span> <span class="na">keyProperty=</span><span class="s">&#34;id&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="na">parameterType=</span><span class="s">&#34;com.baidu.fsg.uid.worker.entity.WorkerNodeEntity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">		INSERT INTO WORKER_NODE
+</span></span><span class="line"><span class="cl">		(HOST_NAME,
+</span></span><span class="line"><span class="cl">		PORT,
+</span></span><span class="line"><span class="cl">		TYPE,
+</span></span><span class="line"><span class="cl">		LAUNCH_DATE,
+</span></span><span class="line"><span class="cl">		MODIFIED,
+</span></span><span class="line"><span class="cl">		CREATED)
+</span></span><span class="line"><span class="cl">		VALUES (
+</span></span><span class="line"><span class="cl">		#{hostName},
+</span></span><span class="line"><span class="cl">		#{port},
+</span></span><span class="line"><span class="cl">		#{type},
+</span></span><span class="line"><span class="cl">		#{launchDate},
+</span></span><span class="line"><span class="cl">		NOW(),
+</span></span><span class="line"><span class="cl">		NOW())
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/insert&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;getWorkerNodeByHostPort&#34;</span> <span class="na">resultMap=</span><span class="s">&#34;workerNodeRes&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">		SELECT
+</span></span><span class="line"><span class="cl">		ID,
+</span></span><span class="line"><span class="cl">		HOST_NAME,
+</span></span><span class="line"><span class="cl">		PORT,
+</span></span><span class="line"><span class="cl">		TYPE,
+</span></span><span class="line"><span class="cl">		LAUNCH_DATE,
+</span></span><span class="line"><span class="cl">		MODIFIED,
+</span></span><span class="line"><span class="cl">		CREATED
+</span></span><span class="line"><span class="cl">		FROM
+</span></span><span class="line"><span class="cl">		WORKER_NODE
+</span></span><span class="line"><span class="cl">		WHERE
+</span></span><span class="line"><span class="cl">		HOST_NAME = #{host} AND PORT = #{port}
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/select&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/mapper&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="uid配置类注入">Uid配置类注入</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.jindong.dailytest.config</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.buffer.RejectedPutBufferHandler</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.buffer.RejectedTakeBufferHandler</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.buffer.RingBuffer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.impl.CachedUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.impl.DefaultUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.worker.DisposableWorkerIdAssigner</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 两种生成策略注入Bean
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @author Administrator
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UidGeneratorConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * RingBuffer size扩容参数, 可提高UID生成的吞吐量. --&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 默认:3， 原bufferSize=8192, 扩容后bufferSize= 8192 &lt;&lt; 3 = 65536
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * CachedUidGenerator 参数{@link UidGeneratorConfiguration#cachedUidGenerator()}
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boostPower</span> <span class="o">=</span> <span class="n">3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 指定何时向RingBuffer中填充UID, 取值为百分比(0, 100), 默认为50 --&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 举例: bufferSize=1024, paddingFactor=50 -&gt; threshold=1024 * 50 / 100 = 512.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 当环上可用UID数量 &lt; 512时, 将自动对RingBuffer进行填充补全
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">paddingFactor</span> <span class="o">=</span> <span class="n">50</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 另外一种RingBuffer填充时机, 在Schedule线程中, 周期性检查填充
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 默认:不配置此项, 即不实用Schedule线程. 如需使用, 请指定Schedule线程时间间隔, 单位:秒
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Long</span> <span class="n">scheduleInterval</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 拒绝策略: 当环已满, 无法继续填充时 --&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 默认无需指定, 将丢弃Put操作, 仅日志记录. 如有特殊需求, 请实现RejectedPutBufferHandler接口(支持Lambda表达式)
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RejectedPutBufferHandler</span> <span class="n">rejectedPutBufferHandler</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 拒绝策略: 当环已空, 无法继续获取时 --&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 默认无需指定, 将记录日志, 并抛出UidGenerateException异常. 如有特殊需求, 请实现RejectedTakeBufferHandler接口(支持Lambda表达式)
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RejectedTakeBufferHandler</span> <span class="n">rejectedTakeBufferHandler</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 暂时不知道
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RingBuffer</span> <span class="n">ringBuffer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;cachedUidGenerator&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">CachedUidGenerator</span> <span class="nf">cachedUidGenerator</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CachedUidGenerator</span> <span class="n">cachedUidGenerator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CachedUidGenerator</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">setWorkerIdAssigner</span><span class="o">(</span><span class="n">disposableWorkerIdAssigner</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">setTimeBits</span><span class="o">(</span><span class="n">timeBits</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">setWorkerBits</span><span class="o">(</span><span class="n">workerBits</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">setSeqBits</span><span class="o">(</span><span class="n">seqBits</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">setEpochStr</span><span class="o">(</span><span class="n">epochStr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">setBoostPower</span><span class="o">(</span><span class="n">boostPower</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">cachedUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;disposableWorkerIdAssigner&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DisposableWorkerIdAssigner</span> <span class="nf">disposableWorkerIdAssigner</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">DisposableWorkerIdAssigner</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * # 时间位, 默认:28
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${uid.timeBits}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">timeBits</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * # 机器位, 默认:22
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${uid.workerBits}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">workerBits</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * # 序列号, 默认:13
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${uid.seqBits}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">seqBits</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * # 初始时间, 默认:&#34;2016-05-20&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${uid.epochStr}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">epochStr</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;defaultUidGenerator&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DefaultUidGenerator</span> <span class="nf">defaultUidGenerator</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DefaultUidGenerator</span> <span class="n">defaultUidGenerator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultUidGenerator</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">setWorkerIdAssigner</span><span class="o">(</span><span class="n">disposableWorkerIdAssigner</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">setTimeBits</span><span class="o">(</span><span class="n">timeBits</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">setWorkerBits</span><span class="o">(</span><span class="n">workerBits</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">setSeqBits</span><span class="o">(</span><span class="n">seqBits</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">setEpochStr</span><span class="o">(</span><span class="n">epochStr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">defaultUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="idgeneratorjava工具类">IdGenerator.java工具类</h4>
+<p>这边我们使用<code>CachedUidGenerato</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.jindong.dailytest.utils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.impl.CachedUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.annotation.Resource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Component</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IdGenerator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;cachedUidGenerator&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">CachedUidGenerator</span> <span class="n">cachedUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取uid
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">nextId</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">getUID</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 格式化传入的uid，方便查看其实际含义
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param uid
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">parse</span><span class="o">(</span><span class="kt">long</span> <span class="n">uid</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">cachedUidGenerator</span><span class="o">.</span><span class="na">parseUID</span><span class="o">(</span><span class="n">uid</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="defgeneratorjava工具类">Defgenerator.java工具类</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.jindong.dailytest.utils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.baidu.fsg.uid.impl.DefaultUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.annotation.Resource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 默认的生成器策略
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @author Administrator
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Component</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefGenerator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;defaultUidGenerator&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">DefaultUidGenerator</span> <span class="n">defaultUidGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取uid
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">nextId</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">getUID</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 格式化传入的uid，方便查看其实际含义
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param uid
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">parse</span><span class="o">(</span><span class="kt">long</span> <span class="n">uid</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">defaultUidGenerator</span><span class="o">.</span><span class="na">parseUID</span><span class="o">(</span><span class="n">uid</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="springboot主类加包扫描">Springboot主类加包扫描</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@MapperScan</span><span class="o">({</span><span class="s">&#34;com.baidu.fsg&#34;</span><span class="o">})</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DailytestApplication</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">DailytestApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="测试接口">测试接口</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;test&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestController</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Resource</span>
+</span></span><span class="line"><span class="cl">    <span class="n">IdGenerator</span> <span class="n">idGenerator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;demo&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">index</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s">&#34;hello,world&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;getlongID&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">longToString</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">idGenerator</span><span class="o">.</span><span class="na">nextId</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">parse</span> <span class="o">=</span> <span class="n">idGenerator</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">l</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">l</span><span class="o">+</span><span class="s">&#34;\n&#34;</span><span class="o">+</span><span class="n">parse</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="测试">测试</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221204151831970.png"
+        data-srcset="/posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221204151831970.png, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221204151831970.png 1.5x, /posts/java/basic/%e7%99%be%e5%ba%a6UidGenerator%e9%9b%86%e6%88%90/image-20221204151831970.png 2x"
+        data-sizes="auto"
+        alt="/posts/java/basic/百度UidGenerator集成/image-20221204151831970.png"
+        title="image-20221204151831970.png" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-12-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/springboot%E9%9B%86%E6%88%90uidgenerator%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8Fid/">分布式ID</a>,&nbsp;<a href="/tags/snowflake/">Snowflake</a>,&nbsp;<a href="/tags/long%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1/">Long精度丢失</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="prev" rel="prev" title="虚拟机网络配置"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>虚拟机网络配置</a>
+            <a href="/posts/springboot%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0/" class="next" rel="next" title="Springboot事务概述">Springboot事务概述<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

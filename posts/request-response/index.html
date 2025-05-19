@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>request &amp; response - Eccentric&#39;s Note</title><meta name="Description" content="请求响应对象"><meta property="og:title" content="request &amp; response" />
+<meta property="og:description" content="请求响应对象" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/request-response/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-24T19:59:34+08:00" />
+<meta property="article:modified_time" content="2021-07-24T19:59:34+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="request &amp; response"/>
+<meta name="twitter:description" content="请求响应对象"/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/request-response/" /><link rel="prev" href="https://hubu8.github.io/posts/hashmap/" /><link rel="next" href="https://hubu8.github.io/posts/session-jsp-mysql/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "request \u0026 response",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/request-response\/"
+        },"genre": "posts","wordcount":  4246 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/request-response\/","datePublished": "2021-07-24T19:59:34+08:00","dateModified": "2021-07-24T19:59:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": "请求响应对象"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">request &amp; response</h1><h2 class="single-subtitle">大三下学期实训</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>大三下实训笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-07-24">2021-07-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4246 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/posts/request-response/" class="leancloud_visitors" data-flag-title="request &amp; response">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一今日重点">一.今日重点：</a></li>
+    <li><a href="#二前置案例">二.前置案例：</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1请求方式与servlet的方法对应关系">1.请求方式与servlet的方法对应关系：</a></li>
+            <li><a href="#2请求对象与响应对象的快速入门">2.请求对象与响应对象的快速入门：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#三request请求对象">三.request请求对象</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1请求路径理解">1.请求路径：（理解）</a>
+              <ul>
+                <li><a href="#小结">小结：</a></li>
+              </ul>
+            </li>
+            <li><a href="#2请求参数的获取重要">2.请求参数的获取：（重要）</a></li>
+            <li><a href="#1获取请求参数">1）获取请求参数</a>
+              <ul>
+                <li><a href="#小结-1"><strong>小结：</strong></a></li>
+              </ul>
+            </li>
+            <li><a href="#3请求参数的封装掌握">3.请求参数的封装：（掌握）</a>
+              <ul>
+                <li><a href="#小结-2">小结：</a></li>
+              </ul>
+            </li>
+            <li><a href="#4请求乱码问题的解决掌握">4.请求乱码问题的解决：（掌握）</a>
+              <ul>
+                <li><a href="#问题展示">问题展示：</a></li>
+                <li><a href="#解决方案">解决方案：</a></li>
+              </ul>
+            </li>
+            <li><a href="#5域对象-理解">5.域对象 （理解）</a>
+              <ul>
+                <li><a href="#小结-3">小结：</a></li>
+              </ul>
+            </li>
+            <li><a href="#6请求转发forward-掌握">6.请求转发：forward （掌握）</a>
+              <ul>
+                <li><a href="#如何使用">如何使用：</a></li>
+                <li><a href="#请求转发的特点"><strong>请求转发的特点：</strong></a></li>
+                <li><a href="#请求转发执行的顺序">请求转发执行的顺序：</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#四response响应对象">四.response响应对象：</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1常见状态码记住">1.常见状态码：（记住）</a></li>
+            <li><a href="#2响应数据到浏览器重要">2.响应数据到浏览器：（重要）</a>
+              <ul>
+                <li><a href="#响应文本数据">响应文本数据</a></li>
+              </ul>
+            </li>
+            <li><a href="#3设置响应消息头定时刷新">3.设置响应消息头定时刷新</a>
+              <ul>
+                <li><a href="#小结-4">小结：</a></li>
+              </ul>
+            </li>
+            <li><a href="#4重定向redirect重要">4.重定向：redirect（重要）</a>
+              <ul>
+                <li><a href="#如何使用-1">如何使用：</a></li>
+                <li><a href="#重定向执行顺序">重定向执行顺序：</a></li>
+                <li><a href="#重定向和转发的区别面试常问">重定向和转发的区别：（面试常问）</a></li>
+              </ul>
+            </li>
+            <li><a href="#5响应和消息头组合应用-文件下载">5.响应和消息头组合应用-文件下载</a>
+              <ul>
+                <li><a href="#小结-5">小结：</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="web核心-请求响应对象-随堂笔记">【web核心-请求响应对象-随堂笔记】</h1>
+<h2 id="一今日重点">一.今日重点：</h2>
+<ol>
+<li>请求对象-request （请求对象的api）
+<ul>
+<li>请求参数的获取</li>
+<li>请求乱码的处理</li>
+<li>请求转发</li>
+</ul>
+</li>
+<li>响应对象-response (响应对象的api)
+<ul>
+<li>常见响应状态码</li>
+<li>服务器数据响应到浏览器</li>
+<li>响应乱码的处理</li>
+<li>请求重定向</li>
+</ul>
+</li>
+</ol>
+<h2 id="二前置案例">二.前置案例：</h2>
+<h4 id="1请求方式与servlet的方法对应关系">1.请求方式与servlet的方法对应关系：</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103018918.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103018918.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103018918.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103018918.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028103018918.png"
+        title="image-20201028103018918.png" /></p>
+<h4 id="2请求对象与响应对象的快速入门">2.请求对象与响应对象的快速入门：</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103055987.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103055987.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103055987.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028103055987.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028103055987.png"
+        title="image-20201028103055987.png" /></p>
+<h2 id="三request请求对象">三.request请求对象</h2>
+<h4 id="1请求路径理解">1.请求路径：（理解）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 请求对象的各种信息获取
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @author 黑马程序员
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @Company http://www.itheima.com
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RequestDemo1</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//本机地址：服务器地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">localAddr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getLocalAddr</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//本机名称：服务器名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">localName</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getLocalName</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//本机端口：服务器端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">localPort</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getLocalPort</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//来访者ip
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">remoteAddr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRemoteAddr</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//来访者主机
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">remoteHost</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRemoteHost</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//来访者端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">remotePort</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRemotePort</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//统一资源标识符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURI</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//统一资源定位符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">URL</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURL</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取查询字符串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">queryString</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getQueryString</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取Servlet映射路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">servletPath</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getServletPath</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//输出内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getLocalAddr() is :&#34;</span><span class="o">+</span><span class="n">localAddr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getLocalName() is :&#34;</span><span class="o">+</span><span class="n">localName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getLocalPort() is :&#34;</span><span class="o">+</span><span class="n">localPort</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getRemoteAddr() is :&#34;</span><span class="o">+</span><span class="n">remoteAddr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getRemoteHost() is :&#34;</span><span class="o">+</span><span class="n">remoteHost</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getRemotePort() is :&#34;</span><span class="o">+</span><span class="n">remotePort</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getRequestURI() is :&#34;</span><span class="o">+</span><span class="n">URI</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getRequestURL() is :&#34;</span><span class="o">+</span><span class="n">URL</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getQueryString() is :&#34;</span><span class="o">+</span><span class="n">queryString</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getServletPath() is :&#34;</span><span class="o">+</span><span class="n">servletPath</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">doGet</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>	
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="小结">小结：</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028112941570.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028112941570.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028112941570.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028112941570.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028112941570.png"
+        title="image-20201028112941570.png" /></p>
+<h4 id="2请求参数的获取重要">2.请求参数的获取：（重要）</h4>
+<h4 id="1获取请求参数">1）获取请求参数</h4>
+<p><strong>getParameter()方法的示例代码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 获取请求正文，一个名称对应一个值。								没有使用确认密码
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param request
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param response
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws ServletException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws IOException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">test1</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//1.获取请求正文
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;password&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">gender</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;gender&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">username</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">password</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">gender</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>getParameterValues()方法的示例代码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 获取请求正文，一个名称可能对应多个值									使用了确认密码
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param request
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param response
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws ServletException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws IOException
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">test2</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//1.获取请求正文
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span><span class="o">[]</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="s">&#34;password&#34;</span><span class="o">);</span><span class="c1">//当表单中有多个名称是一样时，得到是一个字符串数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">gender</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;gender&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">username</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">password</span><span class="o">)+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">gender</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>login to request demo 4<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;/day10_1122_requestresponse/RequestDemo4&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&#34;multipart/form-data&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	用户名：<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	密码：<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	确认密码：<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	性别：<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;gender&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">checked</span><span class="p">&gt;</span>男
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;gender&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;0&#34;</span><span class="p">&gt;</span>女
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;注册&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>getParameterNames()方法的示例代码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 获取请求正文，一个名称一个值。但是先要获取正文名称的枚举（key的枚举）				没有使用确认密码
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param request
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param response
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws ServletException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws IOException
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">test3</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//1.获取请求正文名称的枚举
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Enumeration</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterNames</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//2.遍历正文名称的枚举
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="o">(</span><span class="n">names</span><span class="o">.</span><span class="na">hasMoreElements</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">nextElement</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;:&#34;</span><span class="o">+</span><span class="n">value</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="小结-1"><strong>小结：</strong></h5>
+<p>​	以上三个方法可以获取表单提交过来的请求参数。</p>
+<p>​	参数的名称是一个字符串，参数的值可能是一个字符串，也可能是一个字符串数组。</p>
+<blockquote>
+<p>掌握两种：</p>
+<p>a: 单个获取：   request.getParameter(&ldquo;username&rdquo;);</p>
+<p>b: 批量获取：   request.getParameterMap();  // 获取所有提交的参数，封装到一个map集合中     &mdash;&gt; 推荐使用</p>
+</blockquote>
+<h4 id="3请求参数的封装掌握">3.请求参数的封装：（掌握）</h4>
+<p><strong>第一种：最简单直接的封装方式</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 封装请求正文到User对象中									没有使用确认密码
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param request
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param response
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws ServletException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws IOException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">test4</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//1.获取请求正文
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;password&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">gender</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;gender&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//2.创建一个User对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;封装前：&#34;</span><span class="o">+</span><span class="n">user</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//3.把请求正文封装到user对象中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">user</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">password</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user</span><span class="o">.</span><span class="na">setGender</span><span class="o">(</span><span class="n">gender</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;封装后：&#34;</span><span class="o">+</span><span class="n">user</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时，帮我们写好这段封装代码的是apache软件基金会，我们前面学习的tomcat也是它提供的。它里面有一个开源工具包集合commons，里面有很多开源工具类，今天我们就来讲解第一个：<font color='red'><b>commons-beanutils</b></font>。</p>
+<p><strong>第二种：使用apache的commons-beanutils实现封装</strong></p>
+<p>实现代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 终极方法：使用beanutils实现请求正文封装到javabean中				使用了确认密码
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 要想使用beanutils，需要先导包
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param request
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param response
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws ServletException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @throws IOException
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">test8</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Users</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Users</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;封装前：&#34;</span><span class="o">+</span><span class="n">user</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">BeanUtils</span><span class="o">.</span><span class="na">populate</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterMap</span><span class="o">());</span><span class="c1">//就这一句话
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;封装后：&#34;</span><span class="o">+</span><span class="n">user</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="小结-2">小结：</h5>
+<blockquote>
+<p>掌握两种：</p>
+<p>​		a. 手动封装     （user.setXxx）</p>
+<p>​		b. 工具类封装（BeanUtils.populate）  &mdash; &gt; 推荐使用</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028143019748.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028143019748.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028143019748.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028143019748.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028143019748.png"
+        title="image-20201028143019748.png" /></p>
+<h4 id="4请求乱码问题的解决掌握">4.请求乱码问题的解决：（掌握）</h4>
+<blockquote>
+<p>在tomcat7及以前，不管get/ post请求参数包含中文时，都是有乱码的， 但是从tomcat8开始，默认编码采用了utf-8，所以get请求就没有乱码了！</p>
+<p>但是我们我们还是需要处理post请求的中文乱码！</p>
+</blockquote>
+<h5 id="问题展示">问题展示：</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028144606133.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028144606133.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028144606133.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028144606133.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028144606133.png"
+        title="image-20201028144606133.png" /></p>
+<h5 id="解决方案">解决方案：</h5>
+<blockquote>
+<p>因为post默认不是u8编码，所以需要在获取参数前，设置编码！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">&#34;UTF-8&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028145243276.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028145243276.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028145243276.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028145243276.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028145243276.png"
+        title="image-20201028145243276.png" /></p>
+<h4 id="5域对象-理解">5.域对象 （理解）</h4>
+<blockquote>
+<p>【回顾域对象】：</p>
+<p>什么是域对象？  &mdash; 可以共享数据的对象！</p>
+<p>servletContext : 最大的域对象， 整个web项目就一个， 可以在整个项目范围内都可以存取数据。  &mdash; ==共享范围： 整个项目的每个servlet每次请求都共享==</p>
+</blockquote>
+<p><strong>域对象的存取值方法：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 所有的域对象都有这三个方法，分别对应是 数据的存 、 取、 删除
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">.</span><span class="na">setAttribute</span><span class="o">();</span>   <span class="c1">// 设置  和 修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">.</span><span class="na">getAttribute</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">removeAttribute</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>**request对象本身其实也是一个域对象，也可以用于在一次请求范围内存取数据！   &mdash;&ndash;  **==共享范围： 一次请求==</p>
+<blockquote>
+<p>什么叫一次请求：   从客户端发起的一个表单提交、一次页面刷新，都可以是一次请求 （如果再次访问，都是一个新的请求）；</p>
+</blockquote>
+<h5 id="小结-3">小结：</h5>
+<blockquote>
+<p><strong>域对象目前学了有：</strong></p>
+<p><strong>servletContext</strong> ： 只有一个；   &mdash; ==共享范围： 整个项目==</p>
+<p>​					&mdash;eg:    servlet01 存， 其他servlet都能取到；</p>
+<p><strong>request</strong>：  有无数个，每一次请求都是一个新的request；   &mdash;&ndash;  ==共享范围： 一次请求==</p>
+<p>​					&mdash;-eg:    servlet01 存，只有 servlet01能取， 其他servlet都不能取到；  （请求转发例外）</p>
+</blockquote>
+<h4 id="6请求转发forward-掌握">6.请求转发：forward （掌握）</h4>
+<blockquote>
+<p>一次请求的作用范围很小， 默认来说，一次请求只能让一个servlet执行，只能当前servlet获取到参数；</p>
+<p>转发可以实现： 一次请求，让两个甚至多个servlet执行， 并且参数是可以共享的！</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028161235467.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028161235467.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028161235467.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028161235467.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028161235467.png"
+        title="image-20201028161235467.png" /></p>
+<h5 id="如何使用">如何使用：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="c1">// 实现请求转发：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">req</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">&#34;/testRequest05&#34;</span><span class="o">).</span><span class="na">forward</span><span class="o">(</span><span class="n">req</span><span class="o">,</span><span class="n">resp</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="请求转发的特点"><strong>请求转发的特点：</strong></h5>
+<ul>
+<li>浏览器地址栏不变</li>
+<li>request域对象中的数据不丢失， 可以共享</li>
+<li>如果在转发中有多个response进行响应，以最后一个被转发的response为准（后面的）</li>
+</ul>
+<h5 id="请求转发执行的顺序">请求转发执行的顺序：</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028160307721.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028160307721.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028160307721.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028160307721.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028160307721.png"
+        title="image-20201028160307721.png" /></p>
+<img src="/实训/req/image-20201028160415972.png" alt="image-20201028160415972" style="zoom:80%;" />
+<h2 id="四response响应对象">四.response响应对象：</h2>
+<h4 id="1常见状态码记住">1.常见状态码：（记住）</h4>
+<img src="/实训/req/image-20201028163203249.png" alt="image-20201028163203249" style="zoom:80%;" />
+<h4 id="2响应数据到浏览器重要">2.响应数据到浏览器：（重要）</h4>
+<h5 id="响应文本数据">响应文本数据</h5>
+<p><strong>如何使用：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="c1">// 响应一句话到浏览器：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;你好 ~~ hello ~~ 123&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>如何避免中文乱码问题：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="c1">//解决响应中文乱码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">&#34;text/html; charset=utf-8&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028165211930.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028165211930.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028165211930.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028165211930.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028165211930.png"
+        title="image-20201028165211930.png" /></p>
+<h4 id="3设置响应消息头定时刷新">3.设置响应消息头定时刷新</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 设置响应消息头：
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 通过定时刷新演示添加消息头
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @author 黑马程序员
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @Company http://www.itheima.com
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ResponseDemo5</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;用户名和密码不匹配，2秒后转向登录页面...&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">&#34;text/html;charset=UTF-8&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//定时刷新，其实就是设置一个响应消息头
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;Refresh&#34;</span><span class="o">,</span> <span class="s">&#34;2;URL=/login.html&#34;</span><span class="o">);</span><span class="c1">//Refresh设置的时间单位是秒，如果刷新到其他地址，需要在时间后面拼接上地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">doGet</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo5.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo5.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo5.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo5.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/ResponseDemo5.png"
+        title="ResponseDemo5.png" /></p>
+<h5 id="小结-4">小结：</h5>
+<blockquote>
+<p>定时刷新，后期可以结合js一起完成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">*       resp.setContentType: 告诉客户端浏览器，以何种方式解析内容；
+</span></span><span class="line"><span class="cl">*
+</span></span><span class="line"><span class="cl">*       resp.setHeader: 设置响应头，告诉浏览器应该做什么
+</span></span><span class="line"><span class="cl">*
+</span></span><span class="line"><span class="cl">*       resp.setHeader(&#34;Refresh&#34;,&#34;10;URL=/index.html&#34;);  //告诉浏览器，在10秒后，自动请求URL指定的资源
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h4 id="4重定向redirect重要">4.重定向：redirect（重要）</h4>
+<blockquote>
+<p><strong>思考：</strong></p>
+<p>​		重定向后， 请求次数有几次？</p>
+<p>​		重定向后，携带的参数是否可以共享？</p>
+<p>​        重定向后，浏览器的地址栏是否有变化？</p>
+</blockquote>
+<p>浏览器端-》servlet1-》servlet2</p>
+<h5 id="如何使用-1">如何使用：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="c1">// 重定向 到项目内部 testRedirect02
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="s">&#34;testRedirect02&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="c1">// 演示跨服务器: 重定向到百度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="s">&#34;https://www.baidu.com/&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="重定向执行顺序">重定向执行顺序：</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028190727467.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028190727467.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028190727467.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028190727467.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028190727467.png"
+        title="image-20201028190727467.png" /></p>
+<h5 id="重定向和转发的区别面试常问">重定向和转发的区别：（面试常问）</h5>
+<ul>
+<li>请求次数</li>
+<li>参数是否共享</li>
+<li>地址栏是否变化</li>
+<li>是否可以跨服务器</li>
+</ul>
+<h4 id="5响应和消息头组合应用-文件下载">5.响应和消息头组合应用-文件下载</h4>
+<p>首先，在工程的web目录下新建一个目录uploads，并且拷贝一张图片到目录中，如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e7%9a%84%e5%9b%be%e7%89%87.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e7%9a%84%e5%9b%be%e7%89%87.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e7%9a%84%e5%9b%be%e7%89%87.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e7%9a%84%e5%9b%be%e7%89%87.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/文件下载的图片.png"
+        title="文件下载的图片.png" /></p>
+<p>文件下载的Servlet代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 文件下载
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ResponseDemo8</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 文件下载的思路：
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 		1.获取文件路径
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 		2.把文件读到字节输入流中
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 		3.告知浏览器，以下载的方式打开（告知浏览器下载文件的MIME类型）
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 		4.使用响应对象的字节输出流输出到浏览器上
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//1.获取文件路径（绝对路径）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">ServletContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getServletContext</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">filePath</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getRealPath</span><span class="o">(</span><span class="s">&#34;/uploads/6.jpg&#34;</span><span class="o">);</span><span class="c1">//通过文件的虚拟路径，获取文件的绝对路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//2.通过文件路径构建一个字节输入流
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">InputStream</span> <span class="n">in</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">filePath</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//3.设置响应消息头
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;Content-Type&#34;</span><span class="o">,</span> <span class="s">&#34;application/octet-stream&#34;</span><span class="o">);</span><span class="c1">//注意下载的时候，设置响应正文的MIME类型，用application/octet-stream
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="o">,</span> <span class="s">&#34;attachment;filename=1.jpg&#34;</span><span class="o">);</span><span class="c1">//告知浏览器以下载的方式打开
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//4.使用响应对象的字节输出流输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">OutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">byte</span><span class="o">[]</span> <span class="n">by</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">1024</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">by</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">by</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">doGet</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo8.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo8.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo8.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/ResponseDemo8.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/ResponseDemo8.png"
+        title="ResponseDemo8.png" /></p>
+<h5 id="小结-5">小结：</h5>
+<blockquote>
+<p>在做下载时，如果时浏览器识别的类型，会默认打开，需要指定响应头 attachment，标识为以附件形式下载；</p>
+<p>如果是浏览不支持打开的类型，默认其实就是下载！</p>
+<p>所以，以后做下载：</p>
+<p>1.使用响应输出字节流；</p>
+<p>2.直接超链接指定资源，也可以完成下载；</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>文件下载:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/download/Mojito%20-%20周杰伦.mp4&#34;</span><span class="p">&gt;</span>Mojito高清MV下载<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/download/最新阿凡达3D.zip&#34;</span><span class="p">&gt;</span> 高清无码最新阿凡达3D<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="今日任务安排">今日任务安排：</h1>
+<ol>
+<li>练习今天标注的重点代码</li>
+<li>理解今天标了重要和掌握的内容</li>
+<li>预习后面的内容：</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028192622769.png"
+        data-srcset="/posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028192622769.png, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028192622769.png 1.5x, /posts/%e5%ae%9e%e8%ae%ad%e7%ac%94%e8%ae%b0/web%e6%a0%b8%e5%bf%83-request&amp;response/image-20201028192622769.png 2x"
+        data-sizes="auto"
+        alt="/posts/实训笔记/web核心-request&amp;response/image-20201028192622769.png"
+        title="image-20201028192622769.png" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-07-24</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/request-response/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/hashmap/" class="prev" rel="prev" title="HashMap"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>HashMap</a>
+            <a href="/posts/session-jsp-mysql/" class="next" rel="next" title="session &amp; jsp &amp; mysql">session &amp; jsp &amp; mysql<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

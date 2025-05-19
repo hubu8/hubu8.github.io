@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Git进阶 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="Git进阶" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/git%E8%BF%9B%E9%98%B6/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-27T08:59:26+08:00" />
+<meta property="article:modified_time" content="2023-10-27T08:59:26+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Git进阶"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/git%E8%BF%9B%E9%98%B6/" /><link rel="prev" href="https://hubu8.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/" /><link rel="next" href="https://hubu8.github.io/posts/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git进阶",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/git%E8%BF%9B%E9%98%B6\/"
+        },"genre": "posts","keywords": "Git进阶","wordcount":  3981 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/git%E8%BF%9B%E9%98%B6\/","datePublished": "2023-10-27T08:59:26+08:00","dateModified": "2023-10-27T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git进阶</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Git</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-27">2023-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3981 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/posts/git%E8%BF%9B%E9%98%B6/" class="leancloud_visitors" data-flag-title="Git进阶">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#stash">stash</a>
+      <ul>
+        <li><a href="#描述">描述</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+        <li><a href="#命令使用">命令使用</a></li>
+        <li><a href="#相关命令">相关命令</a></li>
+        <li><a href="#vscode-集成">vscode 集成</a></li>
+      </ul>
+    </li>
+    <li><a href="#reset---soft">reset &ndash;soft</a>
+      <ul>
+        <li><a href="#描述-1">描述</a></li>
+        <li><a href="#应用场景-1">应用场景</a></li>
+        <li><a href="#命令使用-1">命令使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#cherry-pick">cherry-pick</a>
+      <ul>
+        <li><a href="#描述-2">描述</a></li>
+        <li><a href="#应用场景-2">应用场景</a></li>
+        <li><a href="#命令使用-2">命令使用</a></li>
+        <li><a href="#cherry-pick-代码冲突">cherry-pick 代码冲突</a></li>
+      </ul>
+    </li>
+    <li><a href="#revert">revert</a>
+      <ul>
+        <li><a href="#描述-3">描述</a></li>
+        <li><a href="#应用场景-3">应用场景</a></li>
+        <li><a href="#命令使用-3">命令使用</a></li>
+        <li><a href="#revert-合并提交">revert 合并提交</a></li>
+        <li><a href="#revert-合并提交后再次合并分支会失效">revert 合并提交后，再次合并分支会失效</a></li>
+      </ul>
+    </li>
+    <li><a href="#reflog">reflog</a>
+      <ul>
+        <li><a href="#描述-4">描述</a></li>
+        <li><a href="#应用场景-4">应用场景</a></li>
+        <li><a href="#命令使用-4">命令使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置-git-短命令">设置 Git 短命令</a>
+      <ul>
+        <li><a href="#方式一">方式一</a></li>
+        <li><a href="#方式二">方式二</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>使用 Git 作为代码版本管理，早已是现在开发工程师必备的技能。可大多数工程师还是只会最基本的保存、拉取、推送，遇到一些commit管理的问题就束手无策，或者用一些不优雅的方式解决。</p>
+<p>本文分享我在开发工作中实践过的实用命令。这些都能够大大提高工作效率，还能解决不少疑难场景。下面会介绍命令，列出应用场景，手摸手教学使用，让同学们看完即学会。</p>
+<h2 id="stash">stash</h2>
+<h3 id="描述">描述</h3>
+<p>官方解释：当您想记录工作目录和索引的当前状态，但又想返回一个干净的工作目录时，请使用git stash。该命令将保存本地修改，并恢复工作目录以匹配头部提交。</p>
+<p>stash 命令能够将还未 commit 的代码存起来，让你的工作目录变得干净。</p>
+<h3 id="应用场景">应用场景</h3>
+<p>我猜你心里一定在想：为什么要变干净？</p>
+<p>应用场景：某一天你正在 feature 分支开发新需求，突然产品经理跑过来说线上有bug，必须马上修复。而此时你的功能开发到一半，于是你急忙想切到 master 分支，然后你就会看到以下报错：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/image-20231027143723573.png"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/image-20231027143723573.png, /posts/git/Git%e8%bf%9b%e9%98%b6/image-20231027143723573.png 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/image-20231027143723573.png 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/image-20231027143723573.png"
+        title="image-20231027143723573.png" /></p>
+<p>因为当前有文件更改了，需要提交commit保持工作区干净才能切分支。由于情况紧急，你只有急忙 commit 上去，commit 信息也随便写了个“暂存代码”，于是该分支提交记录就留了一条黑历史…(真人真事，看过这种提交)</p>
+<h3 id="命令使用">命令使用</h3>
+<p>如果你学会 stash，就不用那么狼狈了。你只需要：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git stash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就这么简单，代码就被存起来了。</p>
+<p>当你修复完线上问题，切回 feature 分支，想恢复代码也只需要：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git stash apply
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="相关命令">相关命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 保存当前未commit的代码
+</span></span><span class="line"><span class="cl">git stash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 保存当前未commit的代码并添加备注
+</span></span><span class="line"><span class="cl">git stash save &#34;备注的内容&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 列出stash的所有记录
+</span></span><span class="line"><span class="cl">git stash list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 删除stash的所有记录
+</span></span><span class="line"><span class="cl">git stash clear
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 应用最近一次的stash
+</span></span><span class="line"><span class="cl">git stash apply
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 应用最近一次的stash，随后删除该记录
+</span></span><span class="line"><span class="cl">git stash pop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 删除最近的一次stash
+</span></span><span class="line"><span class="cl">git stash drop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当有多条 stash，可以指定操作stash，首先使用stash list 列出所有记录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git stash list
+</span></span><span class="line"><span class="cl">stash@{0}: WIP on ...
+</span></span><span class="line"><span class="cl">stash@{1}: WIP on ...
+</span></span><span class="line"><span class="cl">stash@{2}: On ...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>应用第二条记录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git stash apply stash@{1}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>pop，drop 同理。</p>
+<h3 id="vscode-集成">vscode 集成</h3>
+<p>stash 代码</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/452542"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/452542, /posts/git/Git%e8%bf%9b%e9%98%b6/452542 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/452542 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/452542"
+        title="452542" /></p>
+<p>填写备注内容，也可以不填直接Enter</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/64024242"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/64024242, /posts/git/Git%e8%bf%9b%e9%98%b6/64024242 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/64024242 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/64024242"
+        title="64024242" /></p>
+<p>在STASHES菜单中可以看到保存的stash</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/64045245"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/64045245, /posts/git/Git%e8%bf%9b%e9%98%b6/64045245 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/64045245 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/64045245"
+        title="64045245" /></p>
+<p>先点击stash记录旁的小箭头，再点击 apply 或者 pop 都可恢复 stash</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/4527825785278"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/4527825785278, /posts/git/Git%e8%bf%9b%e9%98%b6/4527825785278 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/4527825785278 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/4527825785278"
+        title="4527825785278" /></p>
+<h2 id="reset---soft">reset &ndash;soft</h2>
+<h3 id="描述-1">描述</h3>
+<p>完全不接触索引文件或工作树（但会像所有模式一样，将头部重置为）。这使您的所有更改的文件更改为“要提交的更改”。</p>
+<p>回退你已提交的 commit，并将 commit 的修改内容放回到暂存区。</p>
+<p>一般我们在使用 reset 命令时，<code>git reset --hard</code>会被提及的比较多，它能让 commit 记录强制回溯到某一个节点。而<code>git reset --soft</code>的作用正如其名，<code>--soft</code>(柔软的) 除了回溯节点外，还会保留节点的修改内容。</p>
+<h3 id="应用场景-1">应用场景</h3>
+<p>回溯节点，为什么要保留修改内容？</p>
+<p>应用场景1：有时候手滑不小心把不该提交的内容 commit 了，这时想改回来，只能再 commit 一次，又多一条“黑历史”。</p>
+<p>应用场景2：规范些的团队，一般对于 commit 的内容要求职责明确，颗粒度要细，便于后续出现问题排查。本来属于两块不同功能的修改，一起 commit 上去，这种就属于不规范。这次恰好又手滑了，一次性 commit 上去。</p>
+<h3 id="命令使用-1">命令使用</h3>
+<p>学会<code>reset --soft</code>之后，你只需要：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 恢复最近一次 commit
+</span></span><span class="line"><span class="cl">git reset --soft HEAD^
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>reset --soft</code>相当于后悔药，给你重新改过的机会。对于上面的场景，就可以再次修改重新提交，保持干净的 commit 记录。</p>
+<p>以上说的是还未 push 的commit。对于已经 push 的 commit，也可以使用该命令，不过再次 push 时，由于远程分支和本地分支有差异，需要强制推送<code>git push -f</code>来覆盖被 reset 的 commit。</p>
+<p>还有一点需要注意，在<code>reset --soft</code>指定 commit 号时，会将该 commit 到最近一次 commit 的所有修改内容全部恢复，而不是只针对该 commit。</p>
+<p>举个例子：</p>
+<p>commit 记录有 c、b、a。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640452452452452"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640452452452452, /posts/git/Git%e8%bf%9b%e9%98%b6/640452452452452 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640452452452452 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640452452452452"
+        title="640452452452452" /></p>
+<p>reset 到 a。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git reset --soft 1a900ac29eba73ce817bf959f82ffcb0bfa38f75
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时的 HEAD 到了 a，而 b、c 的修改内容都回到了暂存区。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640452452"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640452452, /posts/git/Git%e8%bf%9b%e9%98%b6/640452452 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640452452 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640452452"
+        title="640452452" /></p>
+<h2 id="cherry-pick">cherry-pick</h2>
+<h3 id="描述-2">描述</h3>
+<p>给定一个或多个现有提交，应用每个提交引入的更改，为每个提交记录一个新的提交。这需要您的工作树清洁（没有从头提交的修改）。</p>
+<p>将已经提交的 commit，复制出新的 commit 应用到分支里</p>
+<h3 id="应用场景-2">应用场景</h3>
+<p>commit 都提交了，为什么还要复制新的出来？</p>
+<p>应用场景1：有时候版本的一些优化需求开发到一半，可能其中某一个开发完的需求要临时上，或者某些原因导致待开发的需求卡住了已开发完成的需求上线。这时候就需要把 commit 抽出来，单独处理。</p>
+<p>应用场景2：有时候开发分支中的代码记录被污染了，导致开发分支合到线上分支有问题，这时就需要拉一条干净的开发分支，再从旧的开发分支中，把 commit 复制到新分支。</p>
+<h3 id="命令使用-2">命令使用</h3>
+<p><strong>复制单个</strong></p>
+<p>现在有一条feature分支，commit 记录如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/64045245245"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/64045245245, /posts/git/Git%e8%bf%9b%e9%98%b6/64045245245 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/64045245245 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/64045245245"
+        title="64045245245" /></p>
+<p>需要把 b 复制到另一个分支，首先把 commitHash 复制下来，然后切到 master 分支。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640452452452"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640452452452, /posts/git/Git%e8%bf%9b%e9%98%b6/640452452452 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640452452452 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640452452452"
+        title="640452452452" /></p>
+<p>当前 master 最新的记录是 a，使用<code>cherry-pick</code>把 b 应用到当前分支。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640452540210"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640452540210, /posts/git/Git%e8%bf%9b%e9%98%b6/640452540210 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640452540210 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640452540210"
+        title="640452540210" /></p>
+<p>完成后看下最新的 log，b 已经应用到 master，作为最新的 commit 了。可以看到 commitHash 和之前的不一样，但是提交时间还是保留之前的。</p>
+<p><strong>复制多个</strong></p>
+<p>以上是单个 commit 的复制，下面再来看看 cherry-pick 多个 commit 要如何操作。</p>
+<ul>
+<li>一次转移多个提交：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git cherry-pick commit1 commit2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的命令将 commit1 和 commit2 两个提交应用到当前分支。</p>
+<ul>
+<li>多个连续的commit，也可区间复制：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git cherry-pick commit1^..commit2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的命令将 commit1 到 commit2 这个区间的 commit 都应用到当前分支（包含commit1、commit2），commit1 是最早的提交。</p>
+<h3 id="cherry-pick-代码冲突">cherry-pick 代码冲突</h3>
+<p>在<code>cherry-pick</code>多个commit时，可能会遇到代码冲突，这时<code>cherry-pick</code>会停下来，让用户决定如何继续操作。下面看看怎么解决这种场景。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6400410245245"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6400410245245, /posts/git/Git%e8%bf%9b%e9%98%b6/6400410245245 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6400410245245 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6400410245245"
+        title="6400410245245" /></p>
+<p>还是 feature 分支，现在需要把 c、d、e 都复制到 master 分支上。先把起点c和终点e的 commitHash 记下来。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/64042450"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/64042450, /posts/git/Git%e8%bf%9b%e9%98%b6/64042450 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/64042450 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/64042450"
+        title="64042450" /></p>
+<p>切到 master 分支，使用区间的<code>cherry-pick</code>。可以看到 c 被成功复制，当进行到 d 时，发现代码冲突，<code>cherry-pick</code>中断了。这时需要解决代码冲突，重新提交到暂存区。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/64078969"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/64078969, /posts/git/Git%e8%bf%9b%e9%98%b6/64078969 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/64078969 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/64078969"
+        title="64078969" /></p>
+<p>然后使用<code>cherry-pick --continue</code>让<code>cherry-pick</code>继续进行下去。最后 e 也被复制进来，整个流程就完成了。</p>
+<p>以上是完整的流程，但有时候可能需要在代码冲突后，放弃或者退出流程：</p>
+<ul>
+<li>放弃 cherry-pick：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git cherry-pick --abort
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>回到操作前的样子，就像什么都没发生过。</p>
+<ul>
+<li>退出 cherry-pick：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git cherry-pick --quit
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不回到操作前的样子。即保留已经<code>cherry-pick</code>成功的 commit，并退出<code>cherry-pick</code>流程。</p>
+<h2 id="revert">revert</h2>
+<h3 id="描述-3">描述</h3>
+<p>给定一个或多个现有提交，恢复相关提交引入的更改，并记录一些这些更改的新提交。这就要求你的工作树是干净的（没有来自头部的修改）。</p>
+<p>将现有的提交还原，恢复提交的内容，并生成一条还原记录。</p>
+<h3 id="应用场景-3">应用场景</h3>
+<p>应用场景：有一天测试突然跟你说，你开发上线的功能有问题，需要马上撤回，否则会影响到系统使用。这时可能会想到用 reset 回退，可是你看了看分支上最新的提交还有其他同事的代码，用 reset 会把这部分代码也撤回了。由于情况紧急，又想不到好方法，还是任性的使用 reset，然后再让同事把他的代码合一遍（同事听到想打人），于是你的技术形象在同事眼里一落千丈。</p>
+<h3 id="命令使用-3">命令使用</h3>
+<p><strong>revert 普通提交</strong></p>
+<p>学会 revert 之后，立马就可以拯救这种尴尬的情况。</p>
+<p>现在 master 记录如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640563653"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640563653, /posts/git/Git%e8%bf%9b%e9%98%b6/640563653 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640563653 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640563653"
+        title="640563653" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git revert 21dcd937fe555f58841b17466a99118deb489212
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>revert 掉自己提交的 commit。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6403432645"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6403432645, /posts/git/Git%e8%bf%9b%e9%98%b6/6403432645 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6403432645 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6403432645"
+        title="6403432645" /></p>
+<p>因为 revert 会生成一条新的提交记录，这时会让你编辑提交信息，编辑完后 :wq 保存退出就好了。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/64063436"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/64063436, /posts/git/Git%e8%bf%9b%e9%98%b6/64063436 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/64063436 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/64063436"
+        title="64063436" /></p>
+<p>再来看下最新的 log，生成了一条 revert 记录，虽然自己之前的提交记录还是会保留着，但你修改的代码内容已经被撤回了。</p>
+<h3 id="revert-合并提交">revert 合并提交</h3>
+<p>在 git 的 commit 记录里，还有一种类型是合并提交，想要 revert 合并提交，使用上会有些不一样。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6403431"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6403431, /posts/git/Git%e8%bf%9b%e9%98%b6/6403431 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6403431 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6403431"
+        title="6403431" /></p>
+<p>现在的 master 分支里多了条合并提交。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6403654363"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6403654363, /posts/git/Git%e8%bf%9b%e9%98%b6/6403654363 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6403654363 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6403654363"
+        title="6403654363" /></p>
+<p>使用刚刚同样的 revert 方法，会发现命令行报错了。为什么会这样？在官方文档中有解释。</p>
+<p>通常无法 revert 合并，因为您不知道合并的哪一侧应被视为主线。此选项指定主线的父编号（从1开始），并允许 revert 反转相对于指定父编号的更改</p>
+<p>我的理解是因为合并提交是两条分支的交集节点，而 git 不知道需要撤销的哪一条分支，需要添加参数 -m 指定主线分支，保留主线分支的代码，另一条则被撤销。</p>
+<p>-m 后面要跟一个 parent number 标识出&quot;主线&quot;，一般使用 1 保留主分支代码。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git revert -m 1 &lt;commitHash&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="revert-合并提交后再次合并分支会失效">revert 合并提交后，再次合并分支会失效</h3>
+<p>还是上面的场景，在 master 分支 revert 合并提交后，然后切到 feature 分支修复好 bug，再合并到 master 分支时，会发现之前被 revert 的修改内容没有重新合并进来。</p>
+<p>因为使用 revert 后， feature 分支的 commit 还是会保留在 master 分支的记录中，当你再次合并进去时，git 判断有相同的 commitHash，就忽略了相关 commit 修改的内容。</p>
+<p>这时就需要 revert 掉之前 revert 的合并提交，有点拗口，接下来看操作吧。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6403643643"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6403643643, /posts/git/Git%e8%bf%9b%e9%98%b6/6403643643 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6403643643 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6403643643"
+        title="6403643643" /></p>
+<p>现在 master 的记录是这样的。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6404364363"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6404364363, /posts/git/Git%e8%bf%9b%e9%98%b6/6404364363 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6404364363 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6404364363"
+        title="6404364363" /></p>
+<p>再次使用 revert，之前被 revert 的修改内容就又回来了。</p>
+<h2 id="reflog">reflog</h2>
+<h3 id="描述-4">描述</h3>
+<p>此命令管理重录中记录的信息。</p>
+<p>如果说<code>reset --soft</code>是后悔药，那 reflog 就是强力后悔药。它记录了所有的 commit 操作记录，便于错误操作后找回记录。</p>
+<h3 id="应用场景-4">应用场景</h3>
+<p>应用场景：某天你眼花，发现自己在其他人分支提交了代码还推到远程分支，这时因为分支只有你的最新提交，就想着使用<code>reset --hard</code>，结果紧张不小心记错了 commitHash，reset 过头，把同事的 commit 搞没了。没办法，<code>reset --hard</code>是强制回退的，找不到 commitHash 了，只能让同事从本地分支再推一次（同事瞬间拳头就硬了，怎么又是你）。于是，你的技术形象又一落千丈。</p>
+<h3 id="命令使用-4">命令使用</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6406356353"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6406356353, /posts/git/Git%e8%bf%9b%e9%98%b6/6406356353 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6406356353 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6406356353"
+        title="6406356353" /></p>
+<p>分支记录如上，想要 reset 到 b。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/6403656365"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/6403656365, /posts/git/Git%e8%bf%9b%e9%98%b6/6403656365 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/6403656365 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/6403656365"
+        title="6403656365" /></p>
+<p>误操作 reset 过头，b 没了，最新的只剩下 a。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640536563653"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640536563653, /posts/git/Git%e8%bf%9b%e9%98%b6/640536563653 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640536563653 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640536563653"
+        title="640536563653" /></p>
+<p>这时用<code>git reflog</code>查看历史记录，把错误提交的那次 commitHash 记下。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/git/Git%e8%bf%9b%e9%98%b6/640365353"
+        data-srcset="/posts/git/Git%e8%bf%9b%e9%98%b6/640365353, /posts/git/Git%e8%bf%9b%e9%98%b6/640365353 1.5x, /posts/git/Git%e8%bf%9b%e9%98%b6/640365353 2x"
+        data-sizes="auto"
+        alt="/posts/git/Git进阶/640365353"
+        title="640365353" /></p>
+<p>再次 reset 回去，就会发现 b 回来了。</p>
+<h2 id="设置-git-短命令">设置 Git 短命令</h2>
+<p>对我这种喜欢敲命令而不用图形化工具的爱好者来说，设置短命令可以很好的提高效率。下面介绍两种设置短命令的方式。</p>
+<h3 id="方式一">方式一</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global alias.ps push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="方式二">方式二</h3>
+<p>打开全局配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vim ~/.gitconfig
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>写入内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[alias] 
+</span></span><span class="line"><span class="cl">        co = checkout
+</span></span><span class="line"><span class="cl">        ps = push
+</span></span><span class="line"><span class="cl">        pl = pull
+</span></span><span class="line"><span class="cl">        mer = merge --no-ff
+</span></span><span class="line"><span class="cl">        cp = cherry-pick
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用">使用</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 等同于 git cherry-pick &lt;commitHash&gt;
+</span></span><span class="line"><span class="cl">git cp &lt;commitHash&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<p>本文主要分享了5个在开发中实用的 Git 命令和设置短命令的方式。</p>
+<ul>
+<li><code>stash</code>：存储临时代码。</li>
+<li><code>reset --soft</code>：软回溯，回退 commit 的同时保留修改内容。</li>
+<li><code>cherry-pick</code>：复制 commit。</li>
+<li><code>revert</code>：撤销 commit 的修改内容。</li>
+<li><code>reflog</code>：记录了 commit 的历史操作。</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-10-27</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/git%E8%BF%9B%E9%98%B6/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git%E8%BF%9B%E9%98%B6/">Git进阶</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/" class="prev" rel="prev" title="Mysql事务处理原理"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Mysql事务处理原理</a>
+            <a href="/posts/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/" class="next" rel="next" title="Rhino脚本引擎框架">Rhino脚本引擎框架<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

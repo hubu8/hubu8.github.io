@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Tomcat&amp;Http - Eccentric&#39;s Note</title><meta name="Description" content="Tomcat服务器使用与常用网络知识"><meta property="og:title" content="Tomcat&amp;Http" />
+<meta property="og:description" content="Tomcat服务器使用与常用网络知识" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/tomcathttp/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-17T19:59:34+08:00" />
+<meta property="article:modified_time" content="2021-07-17T19:59:34+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Tomcat&amp;Http"/>
+<meta name="twitter:description" content="Tomcat服务器使用与常用网络知识"/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/tomcathttp/" /><link rel="prev" href="https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://hubu8.github.io/posts/file-io-%E4%B8%80/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Tomcat\u0026Http",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/tomcathttp\/"
+        },"genre": "posts","wordcount":  12440 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/tomcathttp\/","datePublished": "2021-07-17T19:59:34+08:00","dateModified": "2021-07-17T19:59:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": "Tomcat服务器使用与常用网络知识"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tomcat&amp;Http</h1><h2 class="single-subtitle">大三下学期实训</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>大三下实训笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-07-17">2021-07-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12440 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 25 分钟&nbsp;<span id="/posts/tomcathttp/" class="leancloud_visitors" data-flag-title="Tomcat&amp;Http">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-javaee规范">1.1 JavaEE规范</a></li>
+    <li><a href="#12-web概述">1.2 Web概述</a>
+      <ul>
+        <li><a href="#小结">小结：</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-系统结构">1.3 系统结构</a>
+      <ul>
+        <li><a href="#131-系统结构简介">1.3.1 系统结构简介</a></li>
+        <li><a href="#132-cs结构">1.3.2 C/S结构</a></li>
+        <li><a href="#133-bs结构">1.3.3 B/S结构</a></li>
+        <li><a href="#134-两种结构的区别及优略">1.3.4 两种结构的区别及优略</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#21-tomcat介绍">2.1 Tomcat介绍</a>
+      <ul>
+        <li><a href="#211-关于服务器">2.1.1 关于服务器</a></li>
+        <li><a href="#212-tomcat下载与安装">2.1.2 Tomcat下载与安装</a></li>
+        <li><a href="#213-tomcat各版本所需支持">2.1.3 Tomcat各版本所需支持</a></li>
+        <li><a href="#214-tomcat目录结构详解">2.1.4 Tomcat目录结构详解</a></li>
+        <li><a href="#小结记住">小结：（记住）</a></li>
+      </ul>
+    </li>
+    <li><a href="#22-tomcat基本使用">2.2 Tomcat基本使用</a>
+      <ul>
+        <li><a href="#221-tomcat启动和停止及问题分析解决理解">2.2.1 Tomcat启动和停止及问题分析解决（理解）</a>
+          <ul>
+            <li><a href="#1启动和停止">1）启动和停止</a></li>
+            <li><a href="#2启动问题">2）启动问题</a></li>
+          </ul>
+        </li>
+        <li><a href="#222-idea集成tomcat服务器重要">2.2.2 IDEA集成Tomcat服务器（重要）</a></li>
+        <li><a href="#223-linux系统安装tomcat课下了解">2.2.3 Linux系统安装Tomcat（课下了解）</a></li>
+      </ul>
+    </li>
+    <li><a href="#23-tomcat发布应用-javaweb应用">2.3 Tomcat发布应用-JavaWeb应用</a>
+      <ul>
+        <li><a href="#231-javaweb工程概述">2.3.1 JavaWeb工程概述</a></li>
+        <li><a href="#232-javaweb应用目录结构详解">2.3.2 JavaWeb应用目录结构详解</a></li>
+        <li><a href="#233-javaweb应用的创建">2.3.3 JavaWeb应用的创建</a></li>
+        <li><a href="#234-javaweb应用的部署">2.3.4 JavaWeb应用的部署</a>
+          <ul>
+            <li><a href="#1idea部署">1）IDEA部署</a></li>
+            <li><a href="#2war包发布暂时不用以后使用maven">2）war包发布(暂时不用，以后使用maven)</a>
+              <ul>
+                <li><a href="#tomcat的webapps目录的作用">tomcat的webapps目录的作用：</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#24-tomcat配置">2.4 tomcat配置：</a>
+      <ul>
+        <li><a href="#241-tomcat配置虚拟目录-目前了解">2.4.1 Tomcat配置虚拟目录 (目前了解)</a></li>
+        <li><a href="#242-tomcat默认项配置">2.4.2 Tomcat默认项配置</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#31-http协议概述">3.1 HTTP协议概述</a>
+      <ul>
+        <li><a href="#311-http协议概念">3.1.1 HTTP协议概念</a></li>
+        <li><a href="#312-http协议版本">3.1.2 HTTP协议版本</a></li>
+        <li><a href="#313-http协议相关说明">3.1.3 HTTP协议相关说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#32-http协议组成">3.2 HTTP协议组成</a>
+      <ul>
+        <li><a href="#321请求部分">3.2.1请求部分</a></li>
+        <li><a href="#322-响应部分">3.2.2 响应部分</a></li>
+        <li><a href="#333-消息头的共性分析">3.3.3 消息头的共性分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#33-请求部分详解-后面花一天讲解">3.3 请求部分详解 （后面花一天讲解）</a>
+      <ul>
+        <li><a href="#331-请求行详解">3.3.1 请求行详解</a></li>
+        <li><a href="#332-请求消息头详解">3.3.2 请求消息头详解</a></li>
+        <li><a href="#333-请求正文详解">3.3.3 请求正文详解</a></li>
+      </ul>
+    </li>
+    <li><a href="#34-响应部分详解">3.4 响应部分详解</a>
+      <ul>
+        <li><a href="#341-响应行详解">3.4.1 响应行详解</a></li>
+        <li><a href="#342-响应消息头详解">3.4.2 响应消息头详解</a></li>
+        <li><a href="#343-响应正文详解">3.4.3 响应正文详解</a></li>
+        <li><a href="#小结记忆">小结：（记忆）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#41-静态资源案例-门户类网站的部署和访问">4.1 静态资源案例-门户类网站的部署和访问</a>
+      <ul>
+        <li><a href="#411-案例介绍">4.1.1 案例介绍</a></li>
+        <li><a href="#412-实现步骤">4.1.2 实现步骤</a></li>
+      </ul>
+    </li>
+    <li><a href="#42-动态资源的案例-学生管理系统的部署和访问">4.2 动态资源的案例-学生管理系统的部署和访问</a>
+      <ul>
+        <li><a href="#421-案例介绍">4.2.1 案例介绍</a></li>
+        <li><a href="#422-实现步骤">4.2.2 实现步骤</a>
+          <ul>
+            <li><a href="#注意细节">注意细节：</a></li>
+          </ul>
+        </li>
+        <li><a href="#432-创建案例中的动态资源-servlet">4.3.2 创建案例中的动态资源-Servlet</a>
+          <ul>
+            <li><a href="#1-servlet简介">1） Servlet简介</a></li>
+            <li><a href="#2-按步骤编写servlet">2） 按步骤编写Servlet</a></li>
+            <li><a href="#3测试访问">3）测试访问</a></li>
+          </ul>
+        </li>
+        <li><a href="#小结-1">小结：</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#1-servlet的实现步骤">1. servlet的实现步骤：</a></li>
+                <li><a href="#2servlet的执行顺序">2.servlet的执行顺序</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#0web模块说明及tomcat配置"><strong>0.web模块说明及tomcat配置：</strong></a></li>
+            <li><a href="#1-请求分成几部分"><strong>1. 请求分成几部分：</strong></a></li>
+            <li><a href="#2-get和post的区别"><strong>2. get和post的区别：</strong></a></li>
+            <li><a href="#3-响应状态码"><strong>3. 响应状态码：</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1实现不重启tomcat修改页面立即生效">1.<strong>实现不重启tomcat，修改页面立即生效</strong>：</a></li>
+            <li><a href="#2index的特殊含义">2.index的特殊含义：</a></li>
+            <li><a href="#3在案例1的基础上实现登录功能">3.在案例1的基础上，实现登录功能：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="tomcathttp-web服务器-重要">Tomcat&amp;Http （web服务器-重要）</h1>
+<h1 id="0今日学习目标">0.今日学习目标：</h1>
+<ul>
+<li>能够理解cs架构和bs架构的区别</li>
+<li>能够安装tomcat</li>
+<li>能够启动tomcat</li>
+<li>能够在idea中集成tomcat，并访问到web项目</li>
+<li>能够知晓常见状态码及其含义</li>
+</ul>
+<h1 id="1-企业开发简介">1 企业开发简介</h1>
+<h2 id="11-javaee规范">1.1 JavaEE规范</h2>
+<p><code>JavaEE</code>规范是<code>J2EE</code>规范的新名称，早期被称为<code>J2EE</code>规范，其全称是<code>Java 2 Platform Enterprise Edition</code>，它是由SUN公司领导、各厂家共同制定并得到广泛认可的工业标准（<code>JCP</code>组织成员）。之所以改名为<code>JavaEE</code>，目的还是让大家清楚<code>J2EE</code>只是<code>Java</code>企业应用。在2004年底中国软件技术大会<code>Ioc</code>微容器(也就是<code>Jdon</code>框架的实现原理)演讲中指出：我们需要一个跨<code>J2SE/WEB/EJB</code>的微容器，保护我们的业务核心组件，以延续它的生命力，而不是依赖<code>J2SE/J2EE</code>版本.此次<code>J2EE</code>改名为<code>Java EE</code>，实际也反映出业界这种共同心声。</p>
+<p><code>JavaEE</code>规范是很多<code>Java</code>开发技术的总称。这些技术规范都是沿用自<code>J2EE</code>的。一共包括了13个技术规范。例如：<code>jsp/servlet</code>，<code>jndi</code>，<code>jaxp</code>，<code>jdbc</code>，<code>jni</code>，<code>jaxb</code>，<code>jmf</code>，<code>jta</code>，<code>jpa</code>，<code>EJB</code>等。</p>
+<p>其中，<code>JCP</code>组织的全称是<code>Java Community Process</code>。它是一个开放的国际组织，主要由<code>Java</code>开发者以及被授权者组成，职能是发展和更新。成立于1998年。官网是：<a href="https://jcp.org/en/home/index" target="_blank" rel="noopener noreffer">JCP</a></p>
+<p><code>JavaEE</code>的版本是延续了<code>J2EE</code>的版本，但是没有继续采用其命名规则。<code>J2EE</code>的版本从1.0开始到1.4结束，而<code>JavaEE</code>版本是从<code>JavaEE 5</code>版本开始，目前最主流的版本是<code>JavaEE 8</code>。</p>
+<p>详情请参考：<a href="https://www.oracle.com/technetwork/cn/java/javaee/overview/index.html" target="_blank" rel="noopener noreffer">JavaEE8规范概览</a></p>
+<h2 id="12-web概述">1.2 Web概述</h2>
+<p>Web在英文中的含义是网状物，网络。在计算机领域，它通常指的是后者，即<b>网络</b>。像我们前面接触的<code>WWW</code>，它是由3个单词组成的，即：<code>World Wide Web </code>，中文含义是<b>万维网</b>。而我们前面学的<code>HTML</code>，<code>CSS</code>和<code>JS</code>的参考文档《<code>W3School</code>全套教程》中的<code>W3C</code>就是万维网联盟。他们的出现都是为了让我们在网络的世界中获取资源，这些资源的存放之处，我们称之为<b><font color='red'>网站</font></b>。我们通过输入网站的地址（即：网址），就可以访问网站中提供的资源。在网上我们能访问到的内容全是资源（不区分局域网还是广域网）。只不过，不同类型的资源展示的效果不一样。</p>
+<p>首先，我们先来介绍资源的分类，它分为静态资源和动态资源。其中：</p>
+<p>静态资源指的是，网站中提供给人们展示的资源是一成不变的，也就是说不同人或者在不同时间，看到的内容都是一样的。例如：我们看到的新闻，网站的使用手册，网站功能说明文档等等。而作为开发者，我们编写的<code>html</code>,<code>css</code>,<code>js</code>,图片，多媒体等等都可以称为静态资源。</p>
+<p>动态资源它指的是，网站中提供给人们展示的资源是由程序产生的，在不同的时间或者用不同的人员由于身份的不同，所看到的内容是不一样的。例如：我们在12306上购买火车票，火车票的余票数由于时间的变化，会逐渐的减少，直到最后没有余票。还有，我们在<code>CSDN</code>上下载资料，只有登录成功后，且积分足够时才能下载。否则就不能下载，这就是访客身份和会员身份的区别。作为开发人员，我们编写的<code>JSP</code>，<code>servlet</code>，<code>php</code>，<code>ASP</code>等都是动态资源。</p>
+<p>关于广域网和局域网的划分，广域网指的就是万维网，也就是我们说的互联网。局域网是指的是在一定范围之内可以访问的网络，出了这个范围，就不能再使用的网络。</p>
+<h3 id="小结">小结：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">web资源：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">静态资源： html / css /js / img图片....
+</span></span><span class="line"><span class="cl">动态资源： jsp  、 servlet （每次请求都会经过服务器，不同的用户查看到的数据可能是不一样的）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>端游 ： 客户端</p>
+<p>页游： 不用下载（浏览器）</p>
+<h2 id="13-系统结构">1.3 系统结构</h2>
+<h3 id="131-系统结构简介">1.3.1 系统结构简介</h3>
+<p>在我们前面课程的学习中，开发的都是<code>Java</code>工程。这些工程在企业中称之为项目或者产品。项目也好，产品也罢，它是有系统架构的，系统架构的划分有很多种方式。我们今天讨论的是基础结构上的划分。除此之外，还有技术选型划分，部署方式划分等等。</p>
+<p>==基础结构划分：<strong>C/S</strong>架构，<strong>B/S</strong>架构两类。==</p>
+<p>技术选型划分：Model1模型，Model2模型，MVC模型和三层架构+MVC模型。</p>
+<p>部署方式划分：一体化架构，垂直拆分架构，分布式架构，流动计算架构，微服务架构。</p>
+<p>一体化架构是将应用各层（表示层、业务逻辑层、数据访问、应用集成逻辑）打成一个包来部署。</p>
+<p>垂直拆分是将同样的系统按照**应用场景(调用方)**进行拆分 。比如支付模块分为商家支付和用户支付</p>
+<h3 id="132-cs结构">1.3.2 C/S结构</h3>
+<p>它指的是客户端——服务器的方式。其中C代表着Client，S代表着服务器。C/S结构的系统设计图如下：</p>
+<p>![CS结构图.jpg](/posts/实训笔记/Tomcat &amp; Http 3-2/CS结构图.jpg)</p>
+<h3 id="133-bs结构">1.3.3 B/S结构</h3>
+<p>它指的是浏览器——服务器的方式。其中B代表着Browser，S代表着服务器。B/S结构的系统设计图如下：</p>
+<p>![BS结构图.jpg](/posts/实训笔记/Tomcat &amp; Http 3-2/BS结构图.jpg)</p>
+<h3 id="134-两种结构的区别及优略">1.3.4 两种结构的区别及优略</h3>
+<p><strong>两种结构的区别</strong></p>
+<p>第一：硬件环境不同，C/S通常是建立在专用的网络或小范围的网络环境上（即局域网），且必须要安装客户端。而B/S是建立在广域网上的，适应范围强，通常有操作系统和浏览器就行。</p>
+<p>第二：C/S结构比B/S结构更安全，因为用户群相对固定，对信息的保护更强。</p>
+<p>第三：B/S结构维护升级比较简单，而C/S结构维护升级相对困难。</p>
+<p><strong>优略</strong></p>
+<p>1 C/S：是能充分发挥客户端PC的处理能力，很多工作可以在客户端处理后再提交给服务器。对应的优点就是客户端响应速度快。</p>
+<p>2 B/S：总体拥有成本低、维护方便、 分布性强、开发简单，可以不用安装任何专门的软件就能 实现在任何地方进行操作，客户端零维护，系统的扩展非常容易，只要有一台能上网的电脑就能使用。</p>
+<p><strong>关于课程中结构的选择</strong></p>
+<p><b><font color='red'>我们的课程中涉及的系统结构都是是基于B/S结构。</font></b></p>
+<h1 id="2-tomcat">2 Tomcat</h1>
+<h2 id="21-tomcat介绍">2.1 Tomcat介绍</h2>
+<blockquote>
+<p>tomcat是一个免费的开源的 web应用服务器 的 软件！</p>
+<p>IOE：</p>
+<p>​	ibm  &ndash; 服务器硬件</p>
+<p>​	oracle &ndash; 数据库</p>
+<p>​	emc  &mdash; 存储</p>
+</blockquote>
+<h3 id="211-关于服务器">2.1.1 关于服务器</h3>
+<p>服务器的概念非常的广泛，它可以指代一台特殊的计算机（相比普通计算机运行更快、负载更高、价格更贵），也可以指代用于部署网站的应用。我们这里说的服务器，其实是web服务器，或者应用服务器。它本质就是一个软件，一个应用。作用就是发布我们的应用（工程），让用户可以通过浏览器访问我们的应用。</p>
+<p>常见的应用服务器，请看下表：</p>
+<table>
+<thead>
+<tr>
+<th>服务器名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>weblogic</td>
+<td>实现了javaEE规范，重量级服务器，又称为javaEE容器（oracle）</td>
+</tr>
+<tr>
+<td>websphere</td>
+<td>实现了javaEE规范，重量级服务器。（ibm）</td>
+</tr>
+<tr>
+<td>JBOSS</td>
+<td>实现了JavaEE规范，重量级服务器。免费的。</td>
+</tr>
+<tr>
+<td>==Tomcat==</td>
+<td>实现了jsp/servlet规范，是一个==轻量级服务器，开源免费。==</td>
+</tr>
+</tbody>
+</table>
+<h3 id="212-tomcat下载与安装">2.1.2 Tomcat下载与安装</h3>
+<p><a href="http://tomcat.apache.org/" target="_blank" rel="noopener noreffer">Tomcat官网下载地址</a></p>
+<p>![tomcat官网.png](/posts/实训笔记/Tomcat &amp; Http 3-2/tomcat官网.png)</p>
+<h3 id="213-tomcat各版本所需支持">2.1.3 Tomcat各版本所需支持</h3>
+<blockquote>
+<p>JDK8 + tomcat9</p>
+</blockquote>
+<p>![Tomcat各版本使用技术支持.png](/posts/实训笔记/Tomcat &amp; Http 3-2/Tomcat各版本使用技术支持.png)</p>
+<h3 id="214-tomcat目录结构详解">2.1.4 Tomcat目录结构详解</h3>
+<p>![tomcat目录结构详解.png](/posts/实训笔记/Tomcat &amp; Http 3-2/tomcat目录结构详解.png)</p>
+<h3 id="小结记住">小结：（记住）</h3>
+<p>![image-20201025105529130.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201025105529130.png)</p>
+<h2 id="22-tomcat基本使用">2.2 Tomcat基本使用</h2>
+<h3 id="221-tomcat启动和停止及问题分析解决理解">2.2.1 Tomcat启动和停止及问题分析解决（理解）</h3>
+<h4 id="1启动和停止">1）启动和停止</h4>
+<p>Tomcat服务器的启动文件在二进制文件目录中：![1574762703742.png](/posts/实训笔记/Tomcat &amp; Http 3-2/1574762703742.png)，这两个文件就是Tomcat的启动文件。</p>
+<p>Tomcat服务器的停止文件也在二进制文件目录中：![1574762805135.png](/posts/实训笔记/Tomcat &amp; Http 3-2/1574762805135.png)，这两个文件就是Tomcat的停止文件。</p>
+<p>其中<code>.bat</code>文件是针对<code>windows</code>系统的运行程序，<code>.sh</code>文件是针对<code>linux</code>系统的运行程序。</p>
+<h4 id="2启动问题">2）启动问题</h4>
+<p><strong>第一个问题：启动一闪而过</strong></p>
+<p>原因：没有配置JDK环境变量。</p>
+<p>解决办法：配置上JAVA_HOME环境变量</p>
+<p><strong>第二个：Address already in use : JVM_Bind</strong></p>
+<p>![image-20201025110010847.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201025110010847.png)</p>
+<p>原因：端口被占用</p>
+<p>解决办法：找到占用该端口的应用</p>
+<p>​                    进程不重要：使用cmd命令：netstat -a -o 查看pid  在任务管理器中结束占用端口的进程。</p>
+<p>​                    进程很重要：修改自己的端口号。修改的是Tomcat目录下<code>\conf\server.xml</code>中的配置。</p>
+<p>​			![1574768222804.png](/posts/实训笔记/Tomcat &amp; Http 3-2/1574768222804.png)</p>
+<p><strong>第三个：启动产生很多异常，但能正常启动</strong></p>
+<p>原因：Tomcat中部署着很多项目，每次启动这些项目都会启动。而这些项目中有启动报异常的。</p>
+<p>解决办法：</p>
+<p>​			能找到报异常的项目，就把它从发布目录中移除。</p>
+<p>​			不能确定报异常的项目，就重新解压一个新的Tomcat。</p>
+<p><strong>第四个：其它问题</strong></p>
+<p>例如：启动产生异常，但是不能正常启动。此时就需要解压一个新的Tomcat启动，来确定是系统问题，还是Tomcat的问题。</p>
+<p>所以，此时就需要具体问题，具体分析，然后再对症解决。</p>
+<blockquote>
+<p>如果是中文乱码： 可以改配置文件中的字符集：gbk (可以不配置)</p>
+</blockquote>
+<h3 id="222-idea集成tomcat服务器重要">2.2.2 IDEA集成Tomcat服务器（重要）</h3>
+<p><strong>第一步</strong></p>
+<p>![IDEA配置Tomcat1.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA配置Tomcat1.png)</p>
+<p><strong>第二步</strong></p>
+<p>![IDEA配置Tomcat2.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA配置Tomcat2.png)</p>
+<p><strong>第三步</strong></p>
+<p>![IDEA配置Tomcat3.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA配置Tomcat3.png)</p>
+<p><strong>第四步</strong></p>
+<p>![IDEA配置Tomcat4.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA配置Tomcat4.png)</p>
+<h3 id="223-linux系统安装tomcat课下了解">2.2.3 Linux系统安装Tomcat（课下了解）</h3>
+<p><strong>第一步：下载tomcat</strong></p>
+<p>参考**2.1.2小节的《Tomcat下载与安装》**进入Tomcat官网，找到对应版本点击<code>download</code>进入下载页面，如下图：</p>
+<p>![Linux版Tomcat.png](/posts/实训笔记/Tomcat &amp; Http 3-2/Linux版Tomcat.png)</p>
+<p><strong>第二步：上传到linux</strong></p>
+<p>在crt上 使用 alt+p
+将windows上的软件拖进去即可(root目录)</p>
+<p><strong>第三步：在 /usr/local 新建一个文件夹tomcat</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir /usr/local/tomcat
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第四步：移动 tomcat&hellip;tar.gz 到 /usr/local/tomcat</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mv apache-tomcat-8.5.32.tar.gz /usr/local/tomcat/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第五步：进入/usr/local/tomcat目录,解压Tomcat</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/local/tomcat
+</span></span><span class="line"><span class="cl">tar -xvf apache-tomcat-8.5.32.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第六步：进入 /usr/local/tomcat/apache-tomcat-8.5.32/bin</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /usr/local/tomcat/apache-tomcat-8.5.32/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第七步：启动tomcat</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">方式1:
+</span></span><span class="line"><span class="cl">	sh startup.sh
+</span></span><span class="line"><span class="cl">方式2:
+</span></span><span class="line"><span class="cl">	./startup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>**第八步：修改防火墙的规则 **</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">方式1:service iptables stop  关闭防火墙(不建议); 用到哪一个端口号就放行哪一个(80,8080,3306...)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">方式2:放行8080 端口
+</span></span><span class="line"><span class="cl">	修改配置文件
+</span></span><span class="line"><span class="cl">		cd /etc/sysconfig
+</span></span><span class="line"><span class="cl">		vi iptables
+</span></span><span class="line"><span class="cl">			复制(yy , p)	
+</span></span><span class="line"><span class="cl">				-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+</span></span><span class="line"><span class="cl">			改成
+</span></span><span class="line"><span class="cl">				-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+</span></span><span class="line"><span class="cl">		重启加载防火墙或者重启防火墙
+</span></span><span class="line"><span class="cl">			service iptables reload  
+</span></span><span class="line"><span class="cl">			或者
+</span></span><span class="line"><span class="cl">			service iptables restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-tomcat发布应用-javaweb应用">2.3 Tomcat发布应用-JavaWeb应用</h2>
+<h3 id="231-javaweb工程概述">2.3.1 JavaWeb工程概述</h3>
+<p><code>JavaWeb</code>应用是一个全新的应用种类。这类应用程序指供浏览器访问的程序，通常也简称为web应用。</p>
+<p>一个web应用由多个静态web资源和动态web资源组成，例如：html、css、js文件，jsp文件、java程序、支持jar包、工程配置文件、图片、音视频等等。</p>
+<p>Web应用开发好后，若想供外界访问，需要把web应用所在目录交给Web服务器管理（Tomcat就是Web服务器之一），这个过程称之为虚似目录的映射。</p>
+<h3 id="232-javaweb应用目录结构详解">2.3.2 JavaWeb应用目录结构详解</h3>
+<p>![1574768644245.png](/posts/实训笔记/Tomcat &amp; Http 3-2/1574768644245.png)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">myapp--------------应用名称
+</span></span><span class="line"><span class="cl">    1.html
+</span></span><span class="line"><span class="cl">    css/css.css
+</span></span><span class="line"><span class="cl">    js/demo.js
+</span></span><span class="line"><span class="cl">	WEB-INF--------如果有web.xml或者.class文件时，该目录必须存在，且严格区分大小写。
+</span></span><span class="line"><span class="cl">		   --------该目录下的资源，客户端是无法直接访问的。
+</span></span><span class="line"><span class="cl">           --------目录中内容如下：
+</span></span><span class="line"><span class="cl">        classes目录----------------web应用的class文件（加载顺序：我们的class，lib目录中的jar包，tomcat的lib目录中的jar包。优先级依次降低）
+</span></span><span class="line"><span class="cl">        lib目录--------------------web应用所需的jar包（tomcat的lib目录下jar为所有应用共享）
+</span></span><span class="line"><span class="cl">        web.xml-------------------web应用的主配置文件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="233-javaweb应用的创建">2.3.3 JavaWeb应用的创建</h3>
+<p><strong>第一步</strong></p>
+<p>![IDEA创建Javaweb工程.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA创建Javaweb工程.png)</p>
+<p><strong>第二步</strong></p>
+<p>![image-20201025120129047.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201025120129047.png)</p>
+<p><strong>第三步</strong></p>
+<p>![创建Javaweb工程3.png](/posts/实训笔记/Tomcat &amp; Http 3-2/创建Javaweb工程3.png)</p>
+<p><strong>第四步</strong></p>
+<p>![image-20201025142645862.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201025142645862.png)</p>
+<h3 id="234-javaweb应用的部署">2.3.4 JavaWeb应用的部署</h3>
+<h4 id="1idea部署">1）IDEA部署</h4>
+<p><strong>第一步</strong></p>
+<p>![IDEA发布工程1.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA发布工程1.png)</p>
+<p><strong>第二步</strong></p>
+<img src="/实训/tomcat/image-20201025144026745.png" alt="image-20201025144026745" style="zoom:80%;" />
+<p>![IDEA发布工程2.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA发布工程2.png)</p>
+<p><strong>第三步</strong></p>
+<p>![IDEA发布工程3-启动服务.png](/posts/实训笔记/Tomcat &amp; Http 3-2/IDEA发布工程3-启动服务.png)</p>
+<h4 id="2war包发布暂时不用以后使用maven">2）war包发布(暂时不用，以后使用maven)</h4>
+<p><strong>第一步：使用<b><code>jar -cvf war</code> <font color='blue'>包的名称</font>  <font color='purple'>当前目录中哪些资源要打入war</font></b></strong></p>
+<p>![jar命令.png](/posts/实训笔记/Tomcat &amp; Http 3-2/jar命令.png)</p>
+<p>![war包.png](/posts/实训笔记/Tomcat &amp; Http 3-2/war包.png)</p>
+<p><strong>第二步：把打好的war拷贝到tomcat的webapps目录中</strong></p>
+<p>![拷贝war包到webapps.png](/posts/实训笔记/Tomcat &amp; Http 3-2/拷贝war包到webapps.png)</p>
+<p><strong>第三步：启动服务时，tomcat会自动解压。</strong></p>
+<p>![启动Tomcat自动解压war包.png](/posts/实训笔记/Tomcat &amp; Http 3-2/启动Tomcat自动解压war包.png)</p>
+<h5 id="tomcat的webapps目录的作用">tomcat的webapps目录的作用：</h5>
+<p>![image-20201025144851129.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201025144851129.png)</p>
+<h2 id="24-tomcat配置">2.4 tomcat配置：</h2>
+<h3 id="241-tomcat配置虚拟目录-目前了解">2.4.1 Tomcat配置虚拟目录 (目前了解)</h3>
+<p>虚拟目录的配置，支持两种方式。第一种是通过在主配置文件中添加标签实现。第二种是通过写一个独立配置文件实现。</p>
+<p>第一种方式：在<code>server.xml</code>的<code>&lt;Host&gt;</code>元素中加一个<code>&lt;Context path=&quot;&quot; docBase=&quot;&quot;/&gt;</code>元素。
+​					 <code>path</code>：访问资源URI。URI名称可以随便起，但是必须在前面加上一个/
+​					<code>docBase</code>：资源所在的磁盘物理地址。
+第二种方式：是写一个独立的<code>xml</code>文件，该文件名可以随便起。在文件内写一个<code>&lt;Context/&gt;</code>元素。
+​					该文件要放在Tomcat目录中的<code>conf\Catalina\localhost\</code>目录下。
+需要注意的是，在使用了独立的配置文件之后，访问资源URI就变成了<b><font color='red'>/+文件的名称</font></b>。而<code>Context</code>的<code>path</code>属性就失效了。</p>
+<h3 id="242-tomcat默认项配置">2.4.2 Tomcat默认项配置</h3>
+<p><strong>配置默认端口</strong></p>
+<p>Tomcat的默认端口是<b><font color='red'>8080</font></b>。</p>
+<blockquote>
+<p>http：的默认端口 80 ， 80是可以省略！</p>
+</blockquote>
+<p>配置方式如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Connector</span> <span class="na">port=</span><span class="s">&#34;80&#34;</span> <span class="na">protocol=</span><span class="s">&#34;HTTP/1.1&#34;</span> <span class="na">connectionTimeout=</span><span class="s">&#34;20000&#34;</span> <span class="na">redirectPort=</span><span class="s">&#34;8443&#34;</span> <span class="nt">/&gt;</span>		
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>配置默认应用</strong></p>
+<p>有两种方式配置默认应用。
+第一种：把要作为默认应用的应用，名称改为<code>ROOT</code>。放到<code>webapps</code>目录中。</p>
+<p>![默认应用1.png](/posts/实训笔记/Tomcat &amp; Http 3-2/默认应用1.png)</p>
+<p>第二种：写一个独立的配置文件，文件名称为<code>ROOT.xml</code>。
+​				注意：<code>ROOT</code>必须大写。当使用了独立的<code>ROOT.xml</code>文件时，<code>webapps</code>下<code>ROOT</code>应用就不是默认应用了。</p>
+<p>![默认应用2.png](/posts/实训笔记/Tomcat &amp; Http 3-2/默认应用2.png)</p>
+<h1 id="3-http协议">3 HTTP协议</h1>
+<h2 id="31-http协议概述">3.1 HTTP协议概述</h2>
+<h3 id="311-http协议概念">3.1.1 HTTP协议概念</h3>
+<p>HTTP的全称是：Hyper Text Transfer Protocol，意为 超文本传输协议。它指的是服务器和客户端之间交互必须遵循的一问一答的规则。形容这个规则：问答机制、握手机制。</p>
+<p>==HTTP==规范了==请求==和==响应==内容的类型和格式。</p>
+<p>HTTP协议是由<code>W3C</code>组织管理和维护的。</p>
+<h3 id="312-http协议版本">3.1.2 HTTP协议版本</h3>
+<p>目前HTTP协议主要是1.0版本和1.1版本。这两个版本的区别主要是两个方面。</p>
+<p>第一：HTTP1.1版本比1.0版本多了一些消息头。</p>
+<p>第二：HTTP1.1版本和1.0版本的执行过程不一样。执行过程如下：</p>
+<table>
+<thead>
+<tr>
+<th>创建连接（TCP/IP）</th>
+<th>创建连接（TCP/IP）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP1.0</td>
+<td>HTTP1.1</td>
+</tr>
+<tr>
+<td>发送请求</td>
+<td>发送请求1</td>
+</tr>
+<tr>
+<td>得到响应</td>
+<td>得到响应1</td>
+</tr>
+<tr>
+<td>关闭连接</td>
+<td>发送请求2</td>
+</tr>
+<tr>
+<td>创建连接（TCP/IP）</td>
+<td>得到响应2</td>
+</tr>
+<tr>
+<td>发送请求</td>
+<td>&hellip;&hellip;.</td>
+</tr>
+<tr>
+<td>得到响应</td>
+<td>&hellip;&hellip;.</td>
+</tr>
+<tr>
+<td>关闭连接</td>
+<td>连接超时或手动关闭连接</td>
+</tr>
+</tbody>
+</table>
+<h3 id="313-http协议相关说明">3.1.3 HTTP协议相关说明</h3>
+<p>HTTP协议概念是客户浏览器和服务器一种一问一答的规则，那么必须要有问有答，而且要先问后答。
+但是我们使用<code>&lt;script&gt;</code>,<code>&lt;link&gt;</code>和<code>&lt;img&gt;</code>标签，没有手动发起请求，但是仍然能从服务器端拿到数据，原因就是：<strong>在浏览器遇到<code>&lt;script&gt;</code>,<code>&lt;link&gt;</code>,<code>&lt;img&gt;</code>标签时会自动发出请求。</strong></p>
+<h2 id="32-http协议组成">3.2 HTTP协议组成</h2>
+<p>由HTTP协议的概念可知，它分为问和答两部分。其中问指的就是请求部分，而答指的就是响应部分。</p>
+<h3 id="321请求部分">3.2.1请求部分</h3>
+<p>请求行： 永远位于请求的第一行
+请求消息头： 从第二行开始，到第一个空行结束
+请求的正文： 从第一个空行后开始，到正文的结束</p>
+<p>![请求部分-1574824553003.jpg](/posts/实训笔记/Tomcat &amp; Http 3-2/请求部分-1574824553003.jpg)</p>
+<h3 id="322-响应部分">3.2.2 响应部分</h3>
+<p>响应行： 永远位于响应的第一行
+响应消息头： 从第二行开始，到第一个空行结束
+响应的正文： 从第一个空行后开始，到正文的结束</p>
+<p>![响应部分-1574824560809.jpg](/posts/实训笔记/Tomcat &amp; Http 3-2/响应部分-1574824560809.jpg)</p>
+<h3 id="333-消息头的共性分析">3.3.3 消息头的共性分析</h3>
+<p>消息头名称首字母大写，多个单词每个单词的首字母都大写。
+多个单词用<b><font color='red'>-</font></b>分隔
+名称和值之间用<b><font color='red'>冒号加空格</font></b>分隔
+多个值之间用<b><font color='red'>逗号加空格</font></b>分隔
+两个头之间用<b><font color='red'>回车</font></b>分隔</p>
+<h2 id="33-请求部分详解-后面花一天讲解">3.3 请求部分详解 （后面花一天讲解）</h2>
+<h3 id="331-请求行详解">3.3.1 请求行详解</h3>
+<p>请求行：<code>GET /myapp/2.html HTTP/1.1</code></p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>请求的方式。（还有POST）</td>
+</tr>
+<tr>
+<td>/myapp/2.html</td>
+<td>请求的资源。</td>
+</tr>
+<tr>
+<td>HTTP/1.1</td>
+<td>使用的协议，及协议的版本。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="332-请求消息头详解">3.3.2 请求消息头详解</h3>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td>告知服务器，客户浏览器所支持的MIME类型。</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>告知服务器，客户浏览器所支持的压缩编码格式。最常用的就是gzip压缩。</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>告知服务器，客户浏览器所支持的语言。一般都是zh_CN或en_US等。</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td>告知服务器，当前请求的来源。<br/>只有当前请求有来源的时候，才有这个消息头。从地址栏输入的没有来源。<br/>作用：1 投放广告  2 防盗链</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>告知服务器，请求正文的MIME类型。</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>告知服务器，请求正文的长度。</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>浏览器相关信息</td>
+</tr>
+<tr>
+<td>Connection: Keep-Alive</td>
+<td>连接的状态：保持连接</td>
+</tr>
+<tr>
+<td>If-Modified-Since</td>
+<td>告知服务器，客户浏览器缓存文件的最后修改时间。</td>
+</tr>
+<tr>
+<td>Cookie（********）</td>
+<td>会话管理相关，非常的重要。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="333-请求正文详解">3.3.3 请求正文详解</h3>
+<p>第一：只有post请求方式，才有请求的正文。get方式的正文是在地址栏中的。
+第二：表单的输入域有name属性的才会被提交。不分get和post的请求方式。
+第三：表单的enctype属性取值决定了请求正文的体现形式。概述的含义是：请求正文的MIME编码类型。</p>
+<table>
+<thead>
+<tr>
+<th>enctype取值</th>
+<th>请求正文体现形式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-www-form-urlencoded</td>
+<td>key=value&amp;key=value</td>
+<td>username=test&amp;password=1234</td>
+</tr>
+<tr>
+<td>multipart/form-data</td>
+<td>此时变成了多部分表单数据。多部分是靠分隔符分隔的。</td>
+<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;username&rdquo;<br/><br/>test<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;password&rdquo;<br/><br/>1234<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;headfile&rdquo;; filename=&ldquo;C:\Users\zhy\Desktop\请求部分.jpg&rdquo;<br/>Content-Type: image/pjpeg<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210</td>
+</tr>
+</tbody>
+</table>
+<h2 id="34-响应部分详解">3.4 响应部分详解</h2>
+<h3 id="341-响应行详解">3.4.1 响应行详解</h3>
+<p>响应行：<code>HTTP/1.1 200 OK</code></p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP/1.1</td>
+<td>使用协议的版本。</td>
+</tr>
+<tr>
+<td>200</td>
+<td>响应状态码</td>
+</tr>
+<tr>
+<td>OK</td>
+<td>状态码描述</td>
+</tr>
+</tbody>
+</table>
+<p>常用状态码介绍：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>一切都OK</td>
+</tr>
+<tr>
+<td>302/307</td>
+<td>请求重定向(客户端行为，两次请求，地址栏发生改变)</td>
+</tr>
+<tr>
+<td>304</td>
+<td>请求资源未发生变化，使用缓存</td>
+</tr>
+<tr>
+<td>404</td>
+<td>请求资源未找到</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器错误</td>
+</tr>
+</tbody>
+</table>
+<h3 id="342-响应消息头详解">3.4.2 响应消息头详解</h3>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>请求重定向的地址，常与302,307配合使用。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息头</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>服务器相关信息。</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>告知客户浏览器，响应正文的MIME类型。application/json   text/html</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>告知客户浏览器，响应正文的长度。</td>
+</tr>
+<tr>
+<td>Content-Encoding</td>
+<td>告知客户浏览器，响应正文使用的压缩编码格式。常用的gzip压缩。</td>
+</tr>
+<tr>
+<td>Content-Language</td>
+<td>告知客户浏览器，响应正文的语言。zh_CN或en_US等等。</td>
+</tr>
+<tr>
+<td>Content-Disposition</td>
+<td>告知客户浏览器，以下载的方式打开响应正文。</td>
+</tr>
+<tr>
+<td>Refresh</td>
+<td>定时刷新</td>
+</tr>
+<tr>
+<td>Last-Modified</td>
+<td>服务器资源的最后修改时间。</td>
+</tr>
+<tr>
+<td>Set-Cookie（*******）</td>
+<td>会话管理相关，非常的重要</td>
+</tr>
+<tr>
+<td>Expires:-1</td>
+<td>服务器资源到客户浏览器后的缓存时间</td>
+</tr>
+<tr>
+<td>Catch-Control: no-catch</td>
+<td>不要缓存，//针对http协议1.1版本</td>
+</tr>
+<tr>
+<td>Pragma:no-catch</td>
+<td>不要缓存，//针对http协议1.0版本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="343-响应正文详解">3.4.3 响应正文详解</h3>
+<p>就和我们在浏览器上右键查看源文件看到的内容是一样的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;css.css&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;demo.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;1.jpg&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="小结记忆">小结：（记忆）</h3>
+<p><strong>1. 请求分成几部分：</strong></p>
+<blockquote>
+<pre><code>  					1. 请求行 ---- get  www.baidu.com   http/1.1
+  					2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
+  					3. 请求空行  ----- 什么都没有（空白）
+  					4. 请求体   ----- （get没有请求体， post有请求体）
+</code></pre>
+</blockquote>
+<blockquote>
+<p>响应分成几部分：</p>
+<p>​		同上，4部分</p>
+</blockquote>
+<p><strong>2. get和post的区别：</strong></p>
+<blockquote>
+<p>a. 请求的参数位置：</p>
+<p>b. 请求的参数的容量是否有限制：</p>
+<p>c. 是否有请求体：</p>
+<p>d. 安全性：</p>
+</blockquote>
+<p><strong>3. 响应状态码：</strong></p>
+<blockquote>
+<p>200： 成功</p>
+<p>302： 重定向</p>
+<p>304： 资源有缓存；</p>
+<p>404： 资源未找到（请求路径有误）</p>
+<p>500： 服务器内部错误（java代码有误）</p>
+</blockquote>
+<h1 id="4-综合案例-tomcat的具体应用">4 综合案例-Tomcat的具体应用</h1>
+<h2 id="41-静态资源案例-门户类网站的部署和访问">4.1 静态资源案例-门户类网站的部署和访问</h2>
+<h3 id="411-案例介绍">4.1.1 案例介绍</h3>
+<p><strong>需求：</strong></p>
+<p>​		在浏览器中输入地址，访问静态HTML页面。</p>
+<p><strong>细节说明：</strong></p>
+<p>​		把<code>HTML</code>和<code>CSS</code>课程中制作的页面加入到<code>JavaWeb</code>工程中，在Tomcat中部署工程，然后启动Tomcat服务器，并使用浏览器访问。</p>
+<h3 id="412-实现步骤">4.1.2 实现步骤</h3>
+<p><strong>第一步：创建工程并选择使用的Tomcat版本</strong></p>
+<p>![静态资源工程1.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程1.png)</p>
+<p>![静态资源工程2.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程2.png)</p>
+<p><strong>第二步：拷贝资源到工程的web目录中</strong></p>
+<p>![静态资源工程3.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程3.png)</p>
+<p><strong>第三步：在web.xml中配置默认主页</strong></p>
+<p>![静态资源工程4.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程4.png)</p>
+<p><strong>第四步：部署工程到Tomcat服务器</strong></p>
+<p>![静态资源工程5.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程5.png)</p>
+<p><strong>第五步：测试浏览器访问</strong></p>
+<p>![静态资源工程6.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程6.png)</p>
+<p>![静态资源工程7.png](/posts/实训笔记/Tomcat &amp; Http 3-2/静态资源工程7.png)</p>
+<hr>
+<h2 id="42-动态资源的案例-学生管理系统的部署和访问">4.2 动态资源的案例-学生管理系统的部署和访问</h2>
+<h3 id="421-案例介绍">4.2.1 案例介绍</h3>
+<p><strong>需求：</strong></p>
+<p>​		把JavaSE进阶阶段的学生管理系统的服务器改用Tomcat实现。</p>
+<p><strong>细节说明：</strong></p>
+<p>​		把学生管理系统涉及的HTML和样式以及图片文件拷贝到JavaWeb工程中，在Tomcat中部署工程，然后启动Tomcat服务器，并使用浏览器访问。</p>
+<h3 id="422-实现步骤">4.2.2 实现步骤</h3>
+<p><strong>第一步：创建工程</strong></p>
+<p>![动态资源工程.png](/posts/实训笔记/Tomcat &amp; Http 3-2/动态资源工程.png)</p>
+<p>![动态资源工程1.png](/posts/实训笔记/Tomcat &amp; Http 3-2/动态资源工程1.png)</p>
+<p><strong>第二步：拷贝资源</strong></p>
+<p>![动态资源工程2.png](/posts/实训笔记/Tomcat &amp; Http 3-2/动态资源工程2.png)</p>
+<p><strong>第三步：配置默认主页</strong></p>
+<p>![动态资源工程4.png](/posts/实训笔记/Tomcat &amp; Http 3-2/动态资源工程4.png)</p>
+<p><strong>第四步：部署项目</strong></p>
+<p>![动态资源工程3.png](/posts/实训笔记/Tomcat &amp; Http 3-2/动态资源工程3.png)</p>
+<h4 id="注意细节">注意细节：</h4>
+<blockquote>
+<p>注意在idea中的tomcat的配置中添加虚拟访问路径： /crm</p>
+</blockquote>
+<h3 id="432-创建案例中的动态资源-servlet">4.3.2 创建案例中的动态资源-Servlet</h3>
+<h4 id="1-servlet简介">1） Servlet简介</h4>
+<p>Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范，称为Servlet规范。Servlet规范是JavaEE规范中的一部分。我们可以通过查阅JavaEE规范的API来了解Servlet的基本概念。通过点击<a href="https://javaee.github.io/javaee-spec/javadocs/" target="_blank" rel="noopener noreffer">JavaEE8官方文档</a>，就可以看到关于Servlet的内容介绍。</p>
+<blockquote>
+<p>servlet是 运行在客户端和服务器端的一个小程序！</p>
+<p>JDK只定义接口规范，并没有实现；</p>
+<p>具体的实现在服务器tomcat中！</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%e5%ae%9e%e8%ae%ad/tomcat/image-20210623092633117.png"
+        data-srcset="/%e5%ae%9e%e8%ae%ad/tomcat/image-20210623092633117.png, /%e5%ae%9e%e8%ae%ad/tomcat/image-20210623092633117.png 1.5x, /%e5%ae%9e%e8%ae%ad/tomcat/image-20210623092633117.png 2x"
+        data-sizes="auto"
+        alt="/实训/tomcat/image-20210623092633117.png"
+        title="image-20210623092633117" /></p>
+<h4 id="2-按步骤编写servlet">2） 按步骤编写Servlet</h4>
+<p><strong>前期准备：在IDEA创建Javaweb工程</strong></p>
+<p>![前期准备.png](/posts/实训笔记/Tomcat &amp; Http 3-2/前期准备.png)</p>
+<p><strong>第一步：编写一个普通类实现Servlet接口或者继承GenericServlet类或者继承HttpServlet</strong></p>
+<p>![编写Servlet.png](/posts/实训笔记/Tomcat &amp; Http 3-2/编写Servlet.png)</p>
+<p><strong>第二步：重写service方法，输出一句话</strong></p>
+<p>![重写Service方法.png](/posts/实训笔记/Tomcat &amp; Http 3-2/重写Service方法.png)</p>
+<p><strong>第三步：在web.xml配置Servlet</strong></p>
+<p>![配置Servlet.png](/posts/实训笔记/Tomcat &amp; Http 3-2/配置Servlet.png)</p>
+<p><strong>第四步：启动tomcat服务器测试</strong></p>
+<p>在地址栏输入：http://localhost:8585/crm/studentServlet 测试访问结果</p>
+<h4 id="3测试访问">3）测试访问</h4>
+<p>![测试访问结果.png](/posts/实训笔记/Tomcat &amp; Http 3-2/测试访问结果.png)</p>
+<h3 id="小结-1">小结：</h3>
+<h5 id="1-servlet的实现步骤">1. servlet的实现步骤：</h5>
+<p>![image-20201026103052174.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201026103052174.png)</p>
+<h5 id="2servlet的执行顺序">2.servlet的执行顺序</h5>
+<blockquote>
+<p>注意： 两种配置以后使用一种即可 （自己选择）</p>
+</blockquote>
+<p><strong>方式1：注解形式：</strong></p>
+<img src="/实训/tomcat/image-20201026104504241.png" alt="image-20201026104504241" style="zoom:80%;" />
+<p><strong>方式2：web.xml形式：</strong></p>
+<img src="/实训/tomcat/image-20201026104426028.png" alt="image-20201026104426028" style="zoom:80%;" />
+<hr>
+<h1 id="今日总结">【今日总结：】</h1>
+<h4 id="0web模块说明及tomcat配置"><strong>0.web模块说明及tomcat配置：</strong></h4>
+<p>![image-20201025183917439.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20201025183917439.png)</p>
+<h4 id="1-请求分成几部分"><strong>1. 请求分成几部分：</strong></h4>
+<blockquote>
+<pre><code>  					1. 请求行 ---- get  www.baidu.com   
+  					2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
+  					3. 请求空行  ----- 什么都没有（空白）
+  					4. 请求体   ----- （get没有请求体， post有请求体）
+</code></pre>
+</blockquote>
+<blockquote>
+<p>响应分成几部分：</p>
+<p>​		同上，4部分</p>
+</blockquote>
+<h4 id="2-get和post的区别"><strong>2. get和post的区别：</strong></h4>
+<ol>
+<li>参数的位置不同</li>
+<li>是否有请求体</li>
+<li>相对安全性</li>
+<li>参数的长度： （post参数可以传递更多）</li>
+</ol>
+<h4 id="3-响应状态码"><strong>3. 响应状态码：</strong></h4>
+<blockquote>
+<p>200 代表成功</p>
+<p>302 重定向</p>
+<p>304 代表浏览器缓存（此请求没有真正访问资源）</p>
+<p>404 请求路径有误（资源访问不到）</p>
+<p>500 后台服务器内部错误（java程序有异常）</p>
+</blockquote>
+<h1 id="今日作业安排">【今日作业安排】</h1>
+<ol>
+<li>完成tomcat的安装（能正常启动，并访问看到tomcat猫）</li>
+<li>能够说清楚tomcat解压文件夹下的常用的5个分别是什么？</li>
+<li>能够将idea集成tomcat；</li>
+<li>写下常见的响应状态码，及其含义；</li>
+<li>能够部署静态页面项目 （参考4.1）</li>
+<li>尝试完成补充的登录案例；</li>
+<li>==预习servlet==</li>
+</ol>
+<p>![image-20210316183215261.png](/posts/实训笔记/Tomcat &amp; Http 3-2/image-20210316183215261.png)</p>
+<h1 id="补充">【补充】</h1>
+<h4 id="1实现不重启tomcat修改页面立即生效">1.<strong>实现不重启tomcat，修改页面立即生效</strong>：</h4>
+<img src="/实训/tomcat/image-20201025151811338.png" alt="image-20201025151811338" style="zoom:80%;" />
+<h4 id="2index的特殊含义">2.index的特殊含义：</h4>
+<blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">在web项目中， index名字是有特殊含义的（代表首页）
+</span></span><span class="line"><span class="cl">访问到包含有index名的网页时， 不用补全路径的！
+</span></span><span class="line"><span class="cl">优先级 .html &gt; .jsp
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h4 id="3在案例1的基础上实现登录功能">3.在案例1的基础上，实现登录功能：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *   servlet快速入门：
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *          1. 实现servlet接口；
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *          2. 重写方法；
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *          3. 配置servlet
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *                  xml配置：
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *                  注解配置:  @WebServlet(&#34;/userServlet&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *    用户登录的servlet：
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *          1.可以在service方法中，接收用户提交的用户名和密码；
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *          2.判断用户名和密码是否正确；
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *          3.如果正确，提示登录成功，
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *              如果不正确，提示登录失败；
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">&#34;/userLoginServlet&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserLoginServlet</span> <span class="kd">implements</span> <span class="n">Servlet</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">        1.service方法何时执行？
+</span></span></span><span class="line"><span class="cl"><span class="cm">            --- 每次访问servlet时，service方法都会执行！
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">        2.service方法中如何获取请求的参数？
+</span></span></span><span class="line"><span class="cl"><span class="cm">            --- request.getparameter(&#34;参数名&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">ServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 0.指定字符集，防止乱码：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">&#34;text/html;charset=utf-8&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;----------------------servlet的service方法执行了 ......&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 1.获取请求的参数：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//获取用户名：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取密码：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;password&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------------用户提交的用户名为：&#34;</span> <span class="o">+</span><span class="n">username</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------------用户提交的密码为：&#34;</span> <span class="o">+</span> <span class="n">password</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 2.判断用户名和密码是否正确；   --------以后可以去数据库查询用户名和密码是否正确！ （目前写死）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="s">&#34;lisi&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">username</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;123456&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">password</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//登录成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----------登录成功~~~&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 3.1 成功：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;欢迎&#34;</span><span class="o">+</span><span class="n">username</span><span class="o">+</span><span class="s">&#34;, 登录成功！ &#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 登录失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----------登录失败~~~&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 3.2 失败：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;您的用户名密码有误，请重新输入!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">ccleaner</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//    ==========其他4个方法，明天详细讲解=============================
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-07-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/tomcathttp/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="观察者模式"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>观察者模式</a>
+            <a href="/posts/file-io-%E4%B8%80/" class="next" rel="next" title="File &amp; IO 一">File &amp; IO 一<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

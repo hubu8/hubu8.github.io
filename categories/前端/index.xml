@@ -6,82 +6,82 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
             <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 25 Dec 2023 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
     <title>JavaScript基础语法</title>
-    <link>https://hubu8.github.io/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%82%B9/</link>
+    <link>https://hubu8.github.io/posts/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
     <pubDate>Mon, 25 Dec 2023 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%82%B9/</guid>
+    <guid>https://hubu8.github.io/posts/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>https站点无法使用http资源</title>
-    <link>https://hubu8.github.io/https%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8http%E8%B5%84%E6%BA%90/</link>
+    <link>https://hubu8.github.io/posts/https%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8http%E8%B5%84%E6%BA%90/</link>
     <pubDate>Wed, 13 Sep 2023 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/https%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8http%E8%B5%84%E6%BA%90/</guid>
+    <guid>https://hubu8.github.io/posts/https%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8http%E8%B5%84%E6%BA%90/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Echarts之liquidFill球状图封装</title>
-    <link>https://hubu8.github.io/echarts%E4%B9%8Bliquidfill%E7%90%83%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</link>
+    <link>https://hubu8.github.io/posts/echarts%E4%B9%8Bliquidfill%E7%90%83%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</link>
     <pubDate>Fri, 07 Apr 2023 09:09:42 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/echarts%E4%B9%8Bliquidfill%E7%90%83%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</guid>
+    <guid>https://hubu8.github.io/posts/echarts%E4%B9%8Bliquidfill%E7%90%83%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Echarts之3D柱之圆形柱状图封装</title>
-    <link>https://hubu8.github.io/echarts%E4%B9%8B3d%E6%9F%B1%E4%B9%8B%E5%9C%86%E5%BD%A2%E6%9F%B1%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</link>
+    <link>https://hubu8.github.io/posts/echarts%E4%B9%8B3d%E6%9F%B1%E4%B9%8B%E5%9C%86%E5%BD%A2%E6%9F%B1%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</link>
     <pubDate>Fri, 07 Apr 2023 09:09:03 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/echarts%E4%B9%8B3d%E6%9F%B1%E4%B9%8B%E5%9C%86%E5%BD%A2%E6%9F%B1%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</guid>
+    <guid>https://hubu8.github.io/posts/echarts%E4%B9%8B3d%E6%9F%B1%E4%B9%8B%E5%9C%86%E5%BD%A2%E6%9F%B1%E7%8A%B6%E5%9B%BE%E5%B0%81%E8%A3%85/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Echarts之3D柱状图组件封装</title>
-    <link>https://hubu8.github.io/echarts%E4%B9%8B3d%E6%9F%B1%E7%8A%B6%E5%9B%BE%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/</link>
+    <link>https://hubu8.github.io/posts/echarts%E4%B9%8B3d%E6%9F%B1%E7%8A%B6%E5%9B%BE%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/</link>
     <pubDate>Fri, 07 Apr 2023 09:07:12 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/echarts%E4%B9%8B3d%E6%9F%B1%E7%8A%B6%E5%9B%BE%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/</guid>
+    <guid>https://hubu8.github.io/posts/echarts%E4%B9%8B3d%E6%9F%B1%E7%8A%B6%E5%9B%BE%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Vue中的表单校验</title>
-    <link>https://hubu8.github.io/vue%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</link>
+    <link>https://hubu8.github.io/posts/vue%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</link>
     <pubDate>Mon, 20 Mar 2023 13:43:08 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/vue%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</guid>
+    <guid>https://hubu8.github.io/posts/vue%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Promise与Async/Await的区别</title>
-    <link>https://hubu8.github.io/promise%E4%B8%8Easyncawait%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <link>https://hubu8.github.io/posts/promise%E4%B8%8Easync/await%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
     <pubDate>Wed, 15 Mar 2023 09:00:59 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/promise%E4%B8%8Easyncawait%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <guid>https://hubu8.github.io/posts/promise%E4%B8%8Easync/await%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ColorUI简易教程</title>
-    <link>https://hubu8.github.io/%E5%B0%8F%E7%A8%8B%E5%BA%8Fcolorui%E4%BD%BF%E7%94%A8%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</link>
+    <link>https://hubu8.github.io/posts/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</link>
     <pubDate>Wed, 12 May 2021 02:08:31 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%B0%8F%E7%A8%8B%E5%BA%8Fcolorui%E4%BD%BF%E7%94%A8%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</guid>
+    <guid>https://hubu8.github.io/posts/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ColorUI交互组件</title>
-    <link>https://hubu8.github.io/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/</link>
+    <link>https://hubu8.github.io/posts/colorui%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/</link>
     <pubDate>Wed, 12 May 2021 02:08:31 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/</guid>
+    <guid>https://hubu8.github.io/posts/colorui%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ColorUI扩展组件</title>
-    <link>https://hubu8.github.io/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/</link>
+    <link>https://hubu8.github.io/posts/colorui%E6%89%A9%E5%B1%95%E7%BB%84%E4%BB%B6/</link>
     <pubDate>Wed, 12 May 2021 02:08:31 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/colorui%E7%BB%84%E4%BB%B6%E5%BA%93%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%E4%B9%8B%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6/</guid>
+    <guid>https://hubu8.github.io/posts/colorui%E6%89%A9%E5%B1%95%E7%BB%84%E4%BB%B6/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

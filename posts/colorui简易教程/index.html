@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ColorUI简易教程 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="ColorUI简易教程" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-12T02:08:31+08:00" />
+<meta property="article:modified_time" content="2021-05-12T02:08:31+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="ColorUI简易教程"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://hubu8.github.io/posts/colorui%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/" /><link rel="next" href="https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ColorUI简易教程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B\/"
+        },"genre": "posts","keywords": "ColorUI","wordcount":  9251 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B\/","datePublished": "2021-05-12T02:08:31+08:00","dateModified": "2021-05-12T02:08:31+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ColorUI简易教程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%89%8D%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>前端</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-05-12">2021-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 9251 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 19 分钟&nbsp;<span id="/posts/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/" class="leancloud_visitors" data-flag-title="ColorUI简易教程">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用uniapp开发">使用UniApp开发</a>
+      <ul>
+        <li><a href="#开始">开始</a></li>
+        <li><a href="#使用自定义导航栏">使用自定义导航栏</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用原生小程序开发">使用原生小程序开发</a>
+      <ul>
+        <li><a href="#从现有项目开始">从现有项目开始</a></li>
+        <li><a href="#从新项目开始">从新项目开始</a></li>
+        <li><a href="#使用自定义导航栏-1">使用自定义导航栏</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#基础元素">基础元素</a>
+      <ul>
+        <li><a href="#layout布局">layout布局</a></li>
+        <li><a href="#background背景">Background背景 </a></li>
+        <li><a href="#text文字">Text文字</a></li>
+        <li><a href="#icon图标">Icon图标</a></li>
+        <li><a href="#button按钮">Button按钮</a></li>
+        <li><a href="#tag标签">Tag标签</a></li>
+        <li><a href="#avatar头像">Avatar头像</a></li>
+        <li><a href="#progress进度条">Progress进度条 </a></li>
+        <li><a href="#bordershadow边框阴影">Border&amp;Shadow边框阴影 </a></li>
+        <li><a href="#loading加载">Loading加载</a></li>
+      </ul>
+    </li>
+    <li><a href="#交互组件">交互组件</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文由 <a href="http://ksria.com/simpread/" target="_blank" rel="noopener noreffer">简悦 SimpRead</a> 转码， 原文地址 <a href="https://blog.csdn.net/miao_yf/article/details/102971767?spm=1001.2014.3001.5501" target="_blank" rel="noopener noreffer">blog.csdn.net</a></p>
+</blockquote>
+<p><strong>本教程配合<a href="https://github.com/weilanwl/ColorUI" target="_blank" rel="noopener noreffer">官方示例</a>食用更佳！！！</strong></p>
+<p><strong>目录</strong></p>
+<p>[TOC]</p>
+<hr>
+<h1 id="前言">前言</h1>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191108134813292.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191108134813292.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191108134813292.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191108134813292.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191108134813292.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="colorUI组件" /></p>
+<p>ColorUI是一个css库！！！在你引入样式后可以根据class来调用组件 </p>
+<hr>
+<h1 id="快速上手">快速上手</h1>
+<h2 id="使用uniapp开发">使用UniApp开发</h2>
+<h3 id="开始">开始</h3>
+<p><a href="https://github.com/weilanwl/ColorUI" target="_blank" rel="noopener noreffer">下载源码</a>解压获得<code>/Colorui-UniApp</code>文件夹，复制目录下的 <code>/colorui</code> 文件夹到你的项目根目录</p>
+<p><code>App.vue</code> 引入关键Css <code>main.css</code> <code>icon.css</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;style&gt;
+</span></span><span class="line"><span class="cl">@import &#34;colorui/main.css&#34;;
+</span></span><span class="line"><span class="cl">@import &#34;colorui/icon.css&#34;;
+</span></span><span class="line"><span class="cl">@import &#34;app.css&#34;; /* 你的项目css */
+</span></span><span class="line"><span class="cl">....
+</span></span><span class="line"><span class="cl">&lt;/style&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用自定义导航栏">使用自定义导航栏</h3>
+<p>导航栏作为常用组件有做简单封装，当然你也可以直接复制代码结构自己修改，达到个性化目的。</p>
+<p><code>App.vue</code> 获得系统信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">onLaunch: function() {
+</span></span><span class="line"><span class="cl">	uni.getSystemInfo({
+</span></span><span class="line"><span class="cl">		success: function(e) {
+</span></span><span class="line"><span class="cl">			// #ifndef MP
+</span></span><span class="line"><span class="cl">			Vue.prototype.StatusBar = e.statusBarHeight;
+</span></span><span class="line"><span class="cl">			if (e.platform == &#39;android&#39;) {
+</span></span><span class="line"><span class="cl">				Vue.prototype.CustomBar = e.statusBarHeight + 50;
+</span></span><span class="line"><span class="cl">			} else {
+</span></span><span class="line"><span class="cl">				Vue.prototype.CustomBar = e.statusBarHeight + 45;
+</span></span><span class="line"><span class="cl">			};
+</span></span><span class="line"><span class="cl">			// #endif
+</span></span><span class="line"><span class="cl">			// #ifdef MP-WEIXIN
+</span></span><span class="line"><span class="cl">			Vue.prototype.StatusBar = e.statusBarHeight;
+</span></span><span class="line"><span class="cl">			let custom = wx.getMenuButtonBoundingClientRect();
+</span></span><span class="line"><span class="cl">			Vue.prototype.Custom = custom;
+</span></span><span class="line"><span class="cl">			Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+</span></span><span class="line"><span class="cl">			// #endif		
+</span></span><span class="line"><span class="cl">			// #ifdef MP-ALIPAY
+</span></span><span class="line"><span class="cl">			Vue.prototype.StatusBar = e.statusBarHeight;
+</span></span><span class="line"><span class="cl">			Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
+</span></span><span class="line"><span class="cl">			// #endif
+</span></span><span class="line"><span class="cl">		}
+</span></span><span class="line"><span class="cl">	})
+</span></span><span class="line"><span class="cl">},
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages.json</code> 配置取消系统导航栏</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;globalStyle&#34;: {
+</span></span><span class="line"><span class="cl">	&#34;navigationStyle&#34;: &#34;custom&#34;
+</span></span><span class="line"><span class="cl">},
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>复制代码结构可以直接使用，注意全局变量的获取。</p>
+<p>使用封装,在<code>main.js</code> 引入 <code>cu-custom</code> 组件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">import cuCustom from &#39;./colorui/components/cu-custom.vue&#39;
+</span></span><span class="line"><span class="cl">Vue.component(&#39;cu-custom&#39;,cuCustom)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>page.vue</code> 页面可以直接调用了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;cu-custom bgColor=&#34;bg-gradual-blue&#34; :isBack=&#34;true&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;block slot=&#34;backText&#34;&gt;返回&lt;/block&gt;
+</span></span><span class="line"><span class="cl">	&lt;block slot=&#34;content&#34;&gt;导航栏&lt;/block&gt;
+</span></span><span class="line"><span class="cl">&lt;/cu-custom&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table><thead><tr><th>参数</th><th>作用</th><th>类型</th><th>默认值</th></tr></thead><tbody><tr><td>bgColor</td><td>背景颜色类名</td><td>String</td><td>''</td></tr><tr><td>isBack</td><td>是否开启返回</td><td>Boolean</td><td>false</td></tr><tr><td>bgImage</td><td>背景图片路径</td><td>String</td><td>''</td></tr></tbody></table><table><thead><tr><th>slot块</th><th>作用</th></tr></thead><tbody><tr><td>backText</td><td>返回时的文字</td></tr><tr><td>content</td><td>中间区域</td></tr><tr><td>right</td><td>右侧区域(小程序端可使用范围很窄！)</td></tr></tbody></table>
+<h2 id="使用原生小程序开发">使用原生小程序开发</h2>
+<h3 id="从现有项目开始">从现有项目开始</h3>
+<p><a href="https://github.com/weilanwl/ColorUI" target="_blank" rel="noopener noreffer">下载源码</a>解压获得<code>/demo</code>，复制目录下的 <code>/colorui</code> 文件夹到你的项目根目录</p>
+<p><code>App.wxss</code> 引入关键Css <code>main.wxss</code> <code>icon.wxss</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@import &#34;colorui/main.wxss&#34;;
+</span></span><span class="line"><span class="cl">@import &#34;colorui/icon.wxss&#34;;
+</span></span><span class="line"><span class="cl">@import &#34;app.css&#34;; /* 你的项目css */
+</span></span><span class="line"><span class="cl">....
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="从新项目开始">从新项目开始</h3>
+<p>下载源码解压获得<code>/template</code>，复制<code>/template</code>并重命名为你的项目，导入到小程序开发工具既可以开始你的新项目了</p>
+<h3 id="使用自定义导航栏-1">使用自定义导航栏</h3>
+<p>导航栏作为常用组件有做简单封装，当然你也可以直接复制代码结构自己修改，达到个性化目的。</p>
+<p><code>App.js</code> 获得系统信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> onLaunch: function() {
+</span></span><span class="line"><span class="cl">    wx.getSystemInfo({
+</span></span><span class="line"><span class="cl">      success: e =&gt; {
+</span></span><span class="line"><span class="cl">        this.globalData.StatusBar = e.statusBarHeight;
+</span></span><span class="line"><span class="cl">        let custom = wx.getMenuButtonBoundingClientRect();
+</span></span><span class="line"><span class="cl">        this.globalData.Custom = custom;  
+</span></span><span class="line"><span class="cl">        this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+</span></span><span class="line"><span class="cl">      }
+</span></span><span class="line"><span class="cl">    })
+</span></span><span class="line"><span class="cl">},
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>App.json</code> 配置取消系统导航栏,并全局引入组件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;window&#34;: {
+</span></span><span class="line"><span class="cl">	&#34;navigationStyle&#34;: &#34;custom&#34;
+</span></span><span class="line"><span class="cl">},
+</span></span><span class="line"><span class="cl">&#34;usingComponents&#34;: {
+</span></span><span class="line"><span class="cl">    &#34;cu-custom&#34;:&#34;/colorui/components/cu-custom&#34;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>page.wxml</code> 页面可以直接调用了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;cu-custom bgColor=&#34;bg-gradual-pink&#34; isBack=&#34;{{true}}&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view slot=&#34;backText&#34;&gt;返回&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view slot=&#34;content&#34;&gt;导航栏&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/cu-custom&gt;
+</span></span><span class="line"><span class="cl"> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table><thead><tr><th>参数</th><th>作用</th><th>类型</th><th>默认值</th></tr></thead><tbody><tr><td>bgColor</td><td>背景颜色类名</td><td>String</td><td>''</td></tr><tr><td>isBack</td><td>是否开启返回</td><td>Boolean</td><td>false</td></tr><tr><td>isCustom</td><td>是否开启左侧胶囊</td><td>Boolean</td><td>false</td></tr><tr><td>bgImage</td><td>背景图片路径</td><td>String</td><td>''</td></tr></tbody></table><table><thead><tr><th>slot块</th><th>作用</th></tr></thead><tbody><tr><td>backText</td><td>返回时的文字</td></tr><tr><td>content</td><td>中间区域</td></tr><tr><td>right</td><td>右侧区域(小程序端可使用范围很窄！)</td></tr></tbody></table>
+<hr>
+<h1 id="组件">组件</h1>
+<h2 id="基础元素">基础元素</h2>
+<h3 id="layout布局">layout布局</h3>
+<p><strong>Flex布局</strong></p>
+<blockquote>
+<p>父级添加class名flex</p>
+</blockquote>
+<ul>
+<li>固定尺寸</li>
+</ul>
+<blockquote>
+<p>通过添加class名basic-{{options}}来设置分栏大小，options可以取五个值，分别为xs、sm、df、lg、xl</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="固定尺寸" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex flex-wrap&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-xs bg-grey margin-xs padding-sm radius&#34;&gt;xs(20%)&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-df&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-sm bg-grey margin-xs padding-sm radius&#34;&gt;sm(40%)&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-df&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-df bg-grey margin-xs padding-sm radius&#34;&gt;df(50%)&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-lg bg-grey margin-xs padding-sm radius&#34;&gt;lg(60%)&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;basis-xl bg-grey margin-xs padding-sm radius&#34;&gt;xl(80%)&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>比例布局</li>
+</ul>
+<blockquote>
+<p>通过添加class名flex-{{options}}来设置分栏大小，options可以取值sub、twice、treble，分别代表占比1，2，3</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191108160308488.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191108160308488.png, https://img-blog.csdnimg.cn/20191108160308488.png 1.5x, https://img-blog.csdnimg.cn/20191108160308488.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191108160308488.png"
+        title="比例布局" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-sub bg-grey padding-sm margin-xs radius&#34;&gt;1&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-sub bg-grey padding-sm margin-xs radius&#34;&gt;1&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-sub bg-grey padding-sm margin-xs radius&#34;&gt;1&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-twice bg-grey padding-sm margin-xs radius&#34;&gt;2&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-sub bg-grey padding-sm margin-xs radius&#34;&gt;1&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-twice bg-grey padding-sm margin-xs radius&#34;&gt;2&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;flex-treble bg-grey padding-sm margin-xs radius&#34;&gt;3&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>水平对齐（justify）</li>
+</ul>
+<blockquote>
+<p>通过添加class名justify-{{options}}来设置盒子水平对齐方式，options可以取值start、end、center、between、around，效果可以参考flex布局布局中的容器属性justify-content（<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool%29" target="_blank" rel="noopener noreffer">Flex布局教程</a>）</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="水平对齐" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding justify-start&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;start&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;start&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding justify-end&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;end&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;end&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding justify-center&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;center&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;center&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding justify-between&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;between&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;between&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding justify-around&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;around&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;around&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>垂直对齐（align）</li>
+</ul>
+<blockquote>
+<p>通过添加class名align-{{options}}来设置盒子垂直对齐方式，options可以取值start、end、center，效果可以参考flex布局布局中的容器属性align-item（<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool%29" target="_blank" rel="noopener noreffer">Flex布局教程</a>）</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="垂直对齐" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding align-start&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-lg margin-xs radius&#34;&gt;ColorUi&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;start&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding align-end&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-lg margin-xs radius&#34;&gt;ColorUi&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;end&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex solid-bottom padding align-center&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-lg margin-xs radius&#34;&gt;ColorUi&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-grey padding-sm margin-xs radius&#34;&gt;center&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Grid布局</strong></p>
+<blockquote>
+<p>父级添加class名grid</p>
+</blockquote>
+<ul>
+<li>等分列</li>
+</ul>
+<blockquote>
+<p>通过添加class名col-{{options}}来实现栅格布局，options可以取值1、2、3、4、5</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="等分列" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;bg-white padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;grid margin-bottom text-center&#34; v-for=&#34;(item,index) in 5&#34; :key=&#34;index&#34; :class=&#34;&#39;col-&#39; + (index+1)&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding&#34; :class=&#34;indexs%2==0?&#39;bg-cyan&#39;:&#39;bg-blue&#39;&#34; v-for=&#34;(item,indexs) in (index+1)&#34; :key=&#34;indexs&#34;&gt;{{index+1}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>等高</li>
+</ul>
+<blockquote>
+<p>通过添加class名grid-square设置盒子内容等高，添加col-{{options}}来设置分栏个数，options可以取值1、2、3、4、5，将盒子等分</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191108162002771.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191108162002771.png, https://img-blog.csdnimg.cn/20191108162002771.png 1.5x, https://img-blog.csdnimg.cn/20191108162002771.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191108162002771.png"
+        title="等高" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;bg-white padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;grid col-4 grid-square&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-img&#34; v-for=&#34;(item,index) in avatar&#34; :key=&#34;index&#34; :style=&#34;[{ backgroundImage:&#39;url(&#39; + avatar[index] + &#39;)&#39; }]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">----------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">data() {
+</span></span><span class="line"><span class="cl">	return {
+</span></span><span class="line"><span class="cl">		avatar: [&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg&#39;,
+</span></span><span class="line"><span class="cl">			&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg&#39;,
+</span></span><span class="line"><span class="cl">			&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg&#39;,
+</span></span><span class="line"><span class="cl">			&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg&#39;
+</span></span><span class="line"><span class="cl">		],
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">},
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>布局相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th style="width:212px;">class</th><th style="width:328px;">说明</th><th style="width:416px;">可选值</th></tr></thead><tbody><tr><td style="width:212px;">flex</td><td style="width:328px;">flex布局必选值</td><td style="width:416px;">——</td></tr><tr><td style="width:212px;">basic-{{options}}</td><td style="width:328px;">设置分栏大小</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">flex-{{options}}</td><td style="width:328px;">以比例设置分栏大小</td><td style="width:416px;">sub/twice/treble</td></tr><tr><td style="width:212px;">justify-{{options}}</td><td style="width:328px;">水平对齐方式</td><td style="width:416px;">start/end/center/between/around</td></tr><tr><td style="width:212px;">align-{{options}}</td><td style="width:328px;">垂直对齐方式</td><td style="width:416px;">start/end/center</td></tr><tr><td style="width:212px;">grid</td><td style="width:328px;">grid布局必选值</td><td style="width:416px;">——</td></tr><tr><td style="width:212px;">col-{{options}}</td><td style="width:328px;">栅格布局</td><td style="width:416px;">1/2/3/4/5</td></tr><tr><td style="width:212px;">grid-square</td><td style="width:328px;">等高</td><td style="width:416px;">——</td></tr><tr><td style="width:212px;">fl</td><td style="width:328px;">左浮</td><td style="width:416px;">——</td></tr><tr><td style="width:212px;">fr</td><td style="width:328px;">右浮</td><td style="width:416px;">——</td></tr><tr><td style="width:212px;">margin-{{options}}</td><td style="width:328px;">外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-{{options}}</td><td style="width:328px;">内边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">margin-lr-{{options}}</td><td style="width:328px;">水平方向外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-lr-{{options}}</td><td style="width:328px;">水平方向内边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">margin-tb-{{options}}</td><td style="width:328px;">垂直方向外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-tb-{{options}}</td><td style="width:328px;">垂直方向内边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">margin-top-{{options}}</td><td style="width:328px;">上外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-top-{{options}}</td><td style="width:328px;">上内边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">margin-right-{{options}}</td><td style="width:328px;">右外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-right-{{options}}</td><td style="width:328px;">右内边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">margin-bottom-{{options}}</td><td style="width:328px;">下外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-bottom-{{options}}</td><td style="width:328px;">下内边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">margin-left-{{options}}</td><td style="width:328px;">左外边距</td><td style="width:416px;">xs/sm/df/lg/xl</td></tr><tr><td style="width:212px;">padding-left-{{options}}</td><td style="width:328px;">左内边距</td><td style="width:416px;"><p>xs/sm/df/lg/xl</p></td></tr></tbody></table>
+<p> 注：lr，left-right；tb，top-bottom； </p>
+<h3 id="background背景">Background背景 </h3>
+<p><strong>颜色背景</strong></p>
+<ul>
+<li>深色 </li>
+</ul>
+<blockquote>
+<p> 通过添加class名bg-{{options}}设置背景</p>
+</blockquote>
+<p> <img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="深色背景" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-3 padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding radius text-center shadow-blur&#34; :class=&#34;&#39;bg-&#39; + item.name&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;{{item.title}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;{{item.name}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>浅色</li>
+</ul>
+<blockquote>
+<p> 通过添加class名bg-{{options}}设置背景颜色，添加class名light表示相应的浅色</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="浅色背景" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-3 bg-white padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34; v-if=&#34;index&lt;12&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding radius text-center light&#34; :class=&#34;&#39;bg-&#39; + item.name&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;{{item.title}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;{{item.name}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li> 渐变</li>
+</ul>
+<blockquote>
+<p>通过添加class名bg-gradual-{{options}}设置渐变背景颜色</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="渐变背景" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-2 padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-gradual-red padding radius text-center shadow-blur&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;魅红&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;#f43f3b - #ec008c&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-gradual-orange padding radius text-center shadow-blur&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;鎏金&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;#ff9700 - #ed1c24&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-gradual-green padding radius text-center shadow-blur&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;翠柳&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;#39b54a - #8dc63f&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-gradual-blue padding radius text-center shadow-blur&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;靛青&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;#0081ff - #1cbbb4&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-gradual-purple padding radius text-center shadow-blur&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;惑紫&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;#9000ff - #5e00ff&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-gradual-pink padding radius text-center shadow-blur&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;text-lg&#34;&gt;霞彩&lt;/view&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;margin-top-sm text-Abc&#34;&gt;#ec008c - #6739b6&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>图片背景</strong></p>
+<ul>
+<li>透明背景（文字层）</li>
+</ul>
+<blockquote>
+<p>通过bg-img设置图片背景，bg-mask设置透明遮罩层</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111094642351.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111094642351.png, https://img-blog.csdnimg.cn/20191111094642351.png 1.5x, https://img-blog.csdnimg.cn/20191111094642351.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111094642351.png"
+        title="透明背景" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;bg-img bg-mask flex align-center&#34; style=&#34;background-image: url(&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg&#39;);height: 414upx;&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl text-white&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding-xs text-xxl text-bold&#34;&gt;
+</span></span><span class="line"><span class="cl">			钢铁之翼
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding-xs text-lg&#34;&gt;
+</span></span><span class="line"><span class="cl">			Only the guilty need fear me.
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p> 通过bg-shadeTop设置遮罩层上阴影，bg-shadeBottom设置遮罩层下阴影</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-2&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;bg-img padding-bottom-xl&#34; style=&#34;background-image: url(&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10007.jpg&#39;);height: 207upx;&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-shadeTop padding padding-bottom-xl&#34;&gt;
+</span></span><span class="line"><span class="cl">			上面开始
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;bg-img padding-top-xl flex align-end&#34; style=&#34;background-image: url(&#39;https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg&#39;);height: 207upx;&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-shadeBottom padding padding-top-xl flex-sub&#34;&gt;
+</span></span><span class="line"><span class="cl">			下面开始
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>背景相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th style="width:161px;">class</th><th style="width:293px;">说明</th><th style="width:395px;">可选值</th></tr></thead><tbody><tr><td style="width:161px;">bg-{{options}}</td><td style="width:293px;">设置背景色</td><td style="width:395px;"><p>red/orange/yellow/olive/green/cyan/blue/purple/mauve/pink/</p><p>brown/grey/gray/black/white</p></td></tr><tr><td style="width:161px;">light</td><td style="width:293px;">浅色背景，配合bg-{{options}}使用，取值前12个</td><td style="width:395px;">——</td></tr><tr><td style="width:161px;">bg-gradual-{{options}}</td><td style="width:293px;">渐变色背景</td><td style="width:395px;">red/orange/green/blue/purple/pink</td></tr><tr><td style="width:161px;">bg-img</td><td style="width:293px;">图片背景</td><td style="width:395px;">——</td></tr><tr><td style="width:161px;">bg-mask</td><td style="width:293px;">遮罩层</td><td style="width:395px;">——</td></tr><tr><td style="width:161px;">bg-shadeTop</td><td style="width:293px;">遮罩层上阴影</td><td style="width:395px;">——</td></tr><tr><td style="width:161px;">bg-shadeBottom</td><td style="width:293px;">遮罩层下阴影</td><td style="width:395px;">——</td></tr><tr><td style="width:161px;">shadow-blur</td><td style="width:293px;">外阴影</td><td style="width:395px;">——</td></tr></tbody></table>
+<h3 id="text文字">Text文字</h3>
+<p><strong>文字大小</strong></p>
+<blockquote>
+<p>通过添加class名text-{{size}}设置文字大小，size取值xs、sm、df、lg、xl、xxl、sl、xsl</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2019111113350672.png"
+        data-srcset="https://img-blog.csdnimg.cn/2019111113350672.png, https://img-blog.csdnimg.cn/2019111113350672.png 1.5x, https://img-blog.csdnimg.cn/2019111113350672.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2019111113350672.png"
+        title="1" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111133527559.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111133527559.png, https://img-blog.csdnimg.cn/20191111133527559.png 1.5x, https://img-blog.csdnimg.cn/20191111133527559.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111133527559.png"
+        title="2" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111133559775.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111133559775.png, https://img-blog.csdnimg.cn/20191111133559775.png 1.5x, https://img-blog.csdnimg.cn/20191111133559775.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111133559775.png"
+        title="https://img-blog.csdnimg.cn/20191111133559775.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111133648383.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111133648383.png, https://img-blog.csdnimg.cn/20191111133648383.png 1.5x, https://img-blog.csdnimg.cn/20191111133648383.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111133648383.png"
+        title="4" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111133703940.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111133703940.png, https://img-blog.csdnimg.cn/20191111133703940.png 1.5x, https://img-blog.csdnimg.cn/20191111133703940.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111133703940.png"
+        title="5" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111133717338.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111133717338.png, https://img-blog.csdnimg.cn/20191111133717338.png 1.5x, https://img-blog.csdnimg.cn/20191111133717338.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111133717338.png"
+        title="6" /> </p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2019111113373618.png"
+        data-srcset="https://img-blog.csdnimg.cn/2019111113373618.png, https://img-blog.csdnimg.cn/2019111113373618.png 1.5x, https://img-blog.csdnimg.cn/2019111113373618.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2019111113373618.png"
+        title="7" /></p>
+<p><strong>文字颜色</strong></p>
+<blockquote>
+<p>通过添加class名text-{{color}}设置文字颜色，color取值red、orange、yellow、olive、green、cyan、blue、purple、mauve、brown、grey、gray、black、white</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111134530426.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111134530426.png, https://img-blog.csdnimg.cn/20191111134530426.png 1.5x, https://img-blog.csdnimg.cn/20191111134530426.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111134530426.png"
+        title="文字颜色" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-5 padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;text-center&#34; :class=&#34;&#39;text-&#39; + item.name&#34;&gt;
+</span></span><span class="line"><span class="cl">			{{item.title}}
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>文字阴影</strong></p>
+<blockquote>
+<p>通过添加class名text-shadow设置文字阴影</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111134737509.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111134737509.png, https://img-blog.csdnimg.cn/20191111134737509.png 1.5x, https://img-blog.csdnimg.cn/20191111134737509.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111134737509.png"
+        title="文字阴影" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-5 padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-sm&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;text-center text-shadow&#34; :class=&#34;&#39;text-&#39; + item.name&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;cuIcon-ellipse text-xxl&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>文字截断</strong></p>
+<blockquote>
+<p>通过添加class名text-cut设置文字长度溢出显示省略号</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111134948425.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111134948425.png, https://img-blog.csdnimg.cn/20191111134948425.png 1.5x, https://img-blog.csdnimg.cn/20191111134948425.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111134948425.png"
+        title="文字截断" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;text-cut padding bg-grey radius&#34; style=&#34;width:220px&#34;&gt;我于杀戮之中绽放 ,亦如黎明中的花朵&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>文字对齐</strong></p>
+<blockquote>
+<p>通过添加class名text-{{position}}设置文字长度溢出显示省略号，position取值left、center、right</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111135201781.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111135201781.png, https://img-blog.csdnimg.cn/20191111135201781.png 1.5x, https://img-blog.csdnimg.cn/20191111135201781.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111135201781.png"
+        title="文字对齐" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;text-left padding&#34;&gt;我于杀戮之中绽放 ,亦如黎明中的花朵&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;text-center padding&#34;&gt;我于杀戮之中绽放 ,亦如黎明中的花朵&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;text-right padding&#34;&gt;我于杀戮之中绽放 ,亦如黎明中的花朵&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> <strong>特殊文字</strong></p>
+<blockquote>
+<p>通过添加class名text-price表示价格，会显示￥符号，text-Abc设置英文首字母大写，text-ABC设置英文大写，text-abc设置英文小写</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111135548406.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111135548406.png, https://img-blog.csdnimg.cn/20191111135548406.png 1.5x, https://img-blog.csdnimg.cn/20191111135548406.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111135548406.png"
+        title="价格" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111135609974.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111135609974.png, https://img-blog.csdnimg.cn/20191111135609974.png 1.5x, https://img-blog.csdnimg.cn/20191111135609974.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111135609974.png"
+        title="首字母大写" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111135632717.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111135632717.png, https://img-blog.csdnimg.cn/20191111135632717.png 1.5x, https://img-blog.csdnimg.cn/20191111135632717.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111135632717.png"
+        title="大写" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111135646227.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111135646227.png, https://img-blog.csdnimg.cn/20191111135646227.png 1.5x, https://img-blog.csdnimg.cn/20191111135646227.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111135646227.png"
+        title="小写" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding text-center&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-lr bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;solid-bottom padding&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;text class=&#34;text-price&#34;&gt;80.00&lt;/text&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding&#34;&gt;价格文本，利用伪元素添加&#34;¥&#34;符号&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-lr bg-white margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;solid-bottom padding&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;text class=&#34;text-Abc&#34;&gt;color Ui&lt;/text&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding&#34;&gt;英文单词首字母大写&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-lr bg-white margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;solid-bottom padding&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;text class=&#34;text-ABC&#34;&gt;color Ui&lt;/text&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding&#34;&gt;全部字母大写&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-lr bg-white margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;solid-bottom padding&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;text class=&#34;text-abc&#34;&gt;color Ui&lt;/text&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;padding&#34;&gt;全部字母小写&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>文字相关class</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app/%e5%b0%8f%e7%a8%8b%e5%ba%8fColorUI%e4%bd%bf%e7%94%a8%e7%ae%80%e6%98%93%e6%95%99%e7%a8%8b/image-20210512214923077.png"
+        data-srcset="/posts/uni-app/%e5%b0%8f%e7%a8%8b%e5%ba%8fColorUI%e4%bd%bf%e7%94%a8%e7%ae%80%e6%98%93%e6%95%99%e7%a8%8b/image-20210512214923077.png, /posts/uni-app/%e5%b0%8f%e7%a8%8b%e5%ba%8fColorUI%e4%bd%bf%e7%94%a8%e7%ae%80%e6%98%93%e6%95%99%e7%a8%8b/image-20210512214923077.png 1.5x, /posts/uni-app/%e5%b0%8f%e7%a8%8b%e5%ba%8fColorUI%e4%bd%bf%e7%94%a8%e7%ae%80%e6%98%93%e6%95%99%e7%a8%8b/image-20210512214923077.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app/小程序ColorUI使用简易教程/image-20210512214923077.png"
+        title="image-20210512214923077.png" /></p>
+<h3 id="icon图标">Icon图标</h3>
+<blockquote>
+<p>通过添加class名cuIcon-{{iconName}}，直接设置图标</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141543306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141543306.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141543306.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141543306.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141543306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="1" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141622936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141622936.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141622936.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141622936.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141622936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="2" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141647695.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141647695.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141647695.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141647695.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141647695.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="3" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141704933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141704933.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141704933.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141704933.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141704933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="4" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141716215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141716215.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141716215.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141716215.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141716215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="5" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141728688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141728688.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141728688.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141728688.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141728688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="6" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141739263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141739263.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141739263.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141739263.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141739263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="7" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141748739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141748739.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141748739.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141748739.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141748739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="8" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141806229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141806229.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141806229.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141806229.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141806229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="9" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141816359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141816359.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141816359.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141816359.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141816359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="10" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141832215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141832215.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141832215.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141832215.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141832215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="11" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141842653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141842653.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141842653.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141842653.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141842653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="12" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141853726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141853726.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141853726.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141853726.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141853726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="13" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141903501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141903501.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191111141903501.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191111141903501.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141903501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="14" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111141913914.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111141913914.png, https://img-blog.csdnimg.cn/20191111141913914.png 1.5x, https://img-blog.csdnimg.cn/20191111141913914.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111141913914.png"
+        title="15" /></p>
+<h3 id="button按钮">Button按钮</h3>
+<blockquote>
+<p>按钮必选class cu-btn</p>
+</blockquote>
+<p><strong>按钮形状</strong></p>
+<blockquote>
+<p>通过添加class名设置按钮不同形状，默认只需要添加cu-btn，round为圆角，cuIcon为圆形用来包裹图标</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111165212978.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111165212978.png, https://img-blog.csdnimg.cn/20191111165212978.png 1.5x, https://img-blog.csdnimg.cn/20191111165212978.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111165212978.png"
+        title="按钮大小" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding flex flex-wrap justify-between align-center bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn&#34;&gt;默认&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn round&#34;&gt;圆角&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn cuIcon&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;cuIcon-goodsfill&#34;&gt;&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/button&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>按钮尺寸</strong></p>
+<blockquote>
+<p>sm小尺寸，lg大尺寸</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111165433741.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111165433741.png, https://img-blog.csdnimg.cn/20191111165433741.png 1.5x, https://img-blog.csdnimg.cn/20191111165433741.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111165433741.png"
+        title="按钮尺寸" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding flex flex-wrap justify-between align-center bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn round sm&#34;&gt;小尺寸&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn round&#34;&gt;默认&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn round lg&#34;&gt;大尺寸&lt;/button&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>按钮颜色</strong></p>
+<blockquote>
+<p>添加背景class名就可以，用法参考背景组件的介绍</p>
+</blockquote>
+<p> <img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191111165859113.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191111165859113.png, https://img-blog.csdnimg.cn/20191111165859113.png 1.5x, https://img-blog.csdnimg.cn/20191111165859113.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191111165859113.png"
+        title="按钮颜色" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-5 padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;margin-tb-sm text-center&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;button class=&#34;cu-btn round&#34; :class=&#34;&#39;bg-&#39; + item.name &#34;&gt;{{item.title}}&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>幽灵按钮</strong></p>
+<blockquote>
+<p>通过line-{{color}}或者lines-{{color}}设置镂空的幽灵按钮</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191112093523337.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191112093523337.png, https://img-blog.csdnimg.cn/20191112093523337.png 1.5x, https://img-blog.csdnimg.cn/20191112093523337.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191112093523337.png"
+        title="youling" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;grid col-5 padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;margin-tb-sm text-center&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34; v-if=&#34;item.name!=&#39;white&#39;&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;button class=&#34;cu-btn round&#34; :class=&#34;&#39;line-&#39; + item.name&#34;&gt;{{item.title}}&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>禁用按钮</strong></p>
+<blockquote>
+<p>添加disabled禁用按钮</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113095716624.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113095716624.png, https://img-blog.csdnimg.cn/20191113095716624.png 1.5x, https://img-blog.csdnimg.cn/20191113095716624.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113095716624.png"
+        title="禁用按钮" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn block bg-blue margin-tb-sm lg&#34; disabled type=&#34;&#34;&gt;无效状态&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn block line-blue margin-tb-sm lg&#34; disabled&gt;无效状态&lt;/button&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>自定义图标按钮</strong></p>
+<blockquote>
+<p>可以直接在button标签class内添加图标名，或者在text等其他标签内添加class，其他标签要包裹在button标签内</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113095733628.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113095733628.png, https://img-blog.csdnimg.cn/20191113095733628.png 1.5x, https://img-blog.csdnimg.cn/20191113095733628.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113095733628.png"
+        title="图标按钮" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding-xl&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn block line-orange lg cuIcon-upload&#34;&gt;&lt;text class=&#34;cuIcon-upload&#34;&gt;&lt;/text&gt; 图标&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn block bg-blue margin-tb-sm lg&#34;&gt;&lt;text class=&#34;cuIcon-loading2 cuIconfont-spin&#34;&gt;&lt;/text&gt; 加载&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn block bg-black margin-tb-sm lg&#34; loading&gt; 原生加载&lt;/button&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>按钮相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>class</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>cu-btn</td><td>按钮必选值</td><td>——</td></tr><tr><td>round</td><td>圆角按钮</td><td>——</td></tr><tr><td>cuIcon</td><td>圆形</td><td>——</td></tr><tr><td>sm</td><td>小尺寸按钮</td><td>——</td></tr><tr><td>lg</td><td>大尺寸按钮</td><td>——</td></tr><tr><td>line-{{color}}</td><td>幽灵按钮，细边框</td><td>参考背景色</td></tr><tr><td>lines-{{color}}</td><td>幽灵按钮，粗边框</td><td>参考背景色</td></tr><tr><td>disabled</td><td>禁用</td><td>——</td></tr></tbody></table>
+<h3 id="tag标签">Tag标签</h3>
+<blockquote>
+<p>标签必选class cu-tag </p>
+</blockquote>
+<p><strong>标签形状</strong></p>
+<blockquote>
+<p>通过添加class名设置标签不同形状，默认只需要添加cu-tag，round为椭圆，radius为圆角</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113105209689.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113105209689.png, https://img-blog.csdnimg.cn/20191113105209689.png 1.5x, https://img-blog.csdnimg.cn/20191113105209689.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113105209689.png"
+        title="标签形状" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white solid-bottom&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-tag&#39;&gt;默认&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-tag round&#39;&gt;椭圆&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-tag radius&#39;&gt;圆角&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> <strong>标签尺寸</strong></p>
+<blockquote>
+<p>sm小尺寸</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113110743846.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113110743846.png, https://img-blog.csdnimg.cn/20191113110743846.png 1.5x, https://img-blog.csdnimg.cn/20191113110743846.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113110743846.png"
+        title="标签尺寸" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-tag radius sm&#39;&gt;小尺寸&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-tag radius&#39;&gt;普通尺寸&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> <strong>标签颜色</strong></p>
+<blockquote>
+<p>添加背景class名就可以，用法参考背景组件的介绍</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113111823368.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113111823368.png, https://img-blog.csdnimg.cn/20191113111823368.png 1.5x, https://img-blog.csdnimg.cn/20191113111823368.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113111823368.png"
+        title="标签颜色" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#39;padding-sm flex flex-wrap&#39;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xs&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34; v-if=&#34;item.name!=&#39;gray&#39;&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag&#39; :class=&#34;&#39;bg-&#39; + item.name&#34;&gt;{{item.title}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xs&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34; v-if=&#34;item.name!=&#39;gray&#39; &amp;&amp; item.name!=&#39;black&#39; &amp;&amp; item.name!=&#39;white&#39;&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag light&#39; :class=&#34;&#39;bg-&#39; + item.name&#34;&gt;{{item.title}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>幽灵标签</strong></p>
+<blockquote>
+<p>通过line-{{color}}设置镂空的幽灵按钮</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113111934479.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113111934479.png, https://img-blog.csdnimg.cn/20191113111934479.png 1.5x, https://img-blog.csdnimg.cn/20191113111934479.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113111934479.png"
+        title="幽灵标签" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#39;padding-sm flex flex-wrap&#39;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xs&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34; v-if=&#34;item.name!=&#39;white&#39;&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag&#39; :class=&#34;&#39;line-&#39; + item.name&#34;&gt;{{item.title}}&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>胶囊样式</strong></p>
+<blockquote>
+<p>通过cu-capsule设置为胶囊样式，内部设置自己想要的样式</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113113252320.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113113252320.png, https://img-blog.csdnimg.cn/20191113113252320.png 1.5x, https://img-blog.csdnimg.cn/20191113113252320.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113113252320.png"
+        title="胶囊样式" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-capsule&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag bg-red&#39;&gt;&lt;text class=&#39;cuIcon-likefill&#39;&gt;&lt;/text&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-tag line-red&#34;&gt;12&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-capsule round&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag bg-blue &#39;&gt;&lt;text class=&#39;cuIcon-likefill&#39;&gt;&lt;/text&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-tag line-blue&#34;&gt;23&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-capsule round&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag bg-blue &#39;&gt;说明&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-tag line-blue&#34;&gt;123&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-capsule radius&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag bg-grey &#39;&gt;&lt;text class=&#39;cuIcon-likefill&#39;&gt;&lt;/text&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-tag line-grey&#34;&gt;23&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-capsule radius&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag bg-brown sm&#39;&gt;&lt;text class=&#39;cuIcon-likefill&#39;&gt;&lt;/text&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-tag line-brown sm&#34;&gt;23&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>数字标签</strong></p>
+<blockquote>
+<p> 通过badge设置角标</p>
+</blockquote>
+<p> <img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2019111311364981.png"
+        data-srcset="https://img-blog.csdnimg.cn/2019111311364981.png, https://img-blog.csdnimg.cn/2019111311364981.png 1.5x, https://img-blog.csdnimg.cn/2019111311364981.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2019111311364981.png"
+        title="数字标签" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding flex justify-between align-center&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-avatar xl radius&#39;&gt;港&lt;view class=&#34;cu-tag badge&#34;&gt;99+&lt;/view&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-avatar xl radius&#39; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag badge&#39;&gt;9&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-avatar xl radius&#39;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag badge&#39;&gt;99&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#39;cuIcon-people&#39;&gt;&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#39;cu-avatar xl radius&#39;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#39;cu-tag badge&#39;&gt;99+&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>标签相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>class</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>cu-tag</td><td>标签必选值</td><td>——</td></tr><tr><td>round</td><td>椭圆</td><td>——</td></tr><tr><td>radius</td><td>圆角</td><td>——</td></tr><tr><td>sm</td><td>小尺寸标签</td><td>——</td></tr><tr><td>line-{{color}}</td><td>幽灵标签</td><td>参考背景色</td></tr><tr><td>cu-capsule</td><td>胶囊标签</td><td>——</td></tr><tr><td>badge</td><td>数字角标</td><td>——</td></tr></tbody></table>
+<h3 id="avatar头像">Avatar头像</h3>
+<blockquote>
+<p>头像必选class cu-avatar</p>
+</blockquote>
+<p><strong>头像形状</strong></p>
+<blockquote>
+<p>通过round和radius设置头像形状</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113165047125.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113165047125.png, https://img-blog.csdnimg.cn/20191113165047125.png 1.5x, https://img-blog.csdnimg.cn/20191113165047125.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113165047125.png"
+        title="头像形状" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar round&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar radius margin-left&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>头像尺寸</strong></p>
+<blockquote>
+<p>通过sm 、lg、xl设置不同大小的头像</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113165147527.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113165147527.png, https://img-blog.csdnimg.cn/20191113165147527.png 1.5x, https://img-blog.csdnimg.cn/20191113165147527.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113165147527.png"
+        title="头像尺寸" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar sm round margin-left&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar round margin-left&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar lg round margin-left&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar xl round margin-left&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar sm round margin-left bg-red&#34;&gt; 蔚&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar round margin-left bg-red&#34;&gt;蓝&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar lg round margin-left bg-red&#34;&gt;&lt;text&gt;wl&lt;/text&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar xl round margin-left bg-red&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;avatar-text&#34;&gt;网络&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>内嵌文字</strong></p>
+<blockquote>
+<p>头像内部不仅仅是图片，也可以是自定义文字和图标等</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113165402123.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113165402123.png, https://img-blog.csdnimg.cn/20191113165402123.png 1.5x, https://img-blog.csdnimg.cn/20191113165402123.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113165402123.png"
+        title="内嵌文字" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar radius&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;cuIcon-people&#34;&gt;&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar radius margin-left&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;text&gt;港&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> <strong>头像颜色</strong></p>
+<blockquote>
+<p>设置背景色即可</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113165654604.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113165654604.png, https://img-blog.csdnimg.cn/20191113165654604.png 1.5x, https://img-blog.csdnimg.cn/20191113165654604.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113165654604.png"
+        title="头像颜色" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding-sm&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar round lg margin-xs&#34; :class=&#34;&#39;bg-&#39; + item.name&#34; v-for=&#34;(item,index) in ColorList&#34; :key=&#34;index&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;avatar-text&#34;&gt;{{item.name}}&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>头像组</strong></p>
+<blockquote>
+<p>设置了cu-avatar外部的盒子添加cu-avatar-group的class</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113165955393.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113165955393.png, https://img-blog.csdnimg.cn/20191113165955393.png 1.5x, https://img-blog.csdnimg.cn/20191113165955393.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113165955393.png"
+        title="头像组" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar-group&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-avatar round lg&#34; v-for=&#34;(item,index) in avatar&#34; :key=&#34;index&#34; :style=&#34;[{ backgroundImage:&#39;url(&#39; + avatar[index] + &#39;)&#39; }]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>头像标签</strong></p>
+<blockquote>
+<p>在头像标签内部添加数字标签的角标即可</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191113170127235.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191113170127235.png, https://img-blog.csdnimg.cn/20191113170127235.png 1.5x, https://img-blog.csdnimg.cn/20191113170127235.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191113170127235.png"
+        title="头像标签" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-avatar round lg margin-left&#34;  v-for=&#34;(item,index) in avatar&#34; :key=&#34;index&#34; :style=&#34;[{ backgroundImage:&#39;url(&#39; + avatar[index] + &#39;)&#39; }]&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-tag badge&#34; :class=&#34;index%2==0?&#39;cuIcon-female bg-pink&#39;:&#39;cuIcon-male bg-blue&#39;&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>头像相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>class</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>cu-avatar</td><td>头像必选值</td><td>——</td></tr><tr><td>cu-avatar-group</td><td>头像组，包裹cu-avatar</td><td>——</td></tr><tr><td>round</td><td>圆形</td><td>——</td></tr><tr><td>radius</td><td>圆角</td><td>——</td></tr><tr><td>sm</td><td>小尺寸头像</td><td>——</td></tr><tr><td>lg</td><td>大尺寸头像</td><td>——</td></tr><tr><td>xl</td><td>超大尺寸头像</td><td>——</td></tr></tbody></table>
+<h3 id="progress进度条">Progress进度条 </h3>
+<blockquote>
+<p>进度条必须值为cu-progress</p>
+</blockquote>
+<p><strong>进度条形状</strong></p>
+<blockquote>
+<p>进度条默认为方形，radius为圆角，round为圆形；代码中loading只是一个变量，初始值为false，页面初始化时赋值为true，即给进度条赋值，使进度条有一个动画效果。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114145356523.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114145356523.png, https://img-blog.csdnimg.cn/20191114145356523.png 1.5x, https://img-blog.csdnimg.cn/20191114145356523.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114145356523.png"
+        title="进度条形状" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; style=&#34;width:61.8%&#34;&gt;61.8%&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress radius margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; :style=&#34;[{ width:loading?&#39;61.8%&#39;:&#39;&#39;}]&#34;&gt;61.8%&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; :style=&#34;[{ width:loading?&#39;61.8%&#39;:&#39;&#39;}]&#34;&gt;61.8%&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条尺寸</strong></p>
+<blockquote>
+<p>sm为小尺寸，xs为超小尺寸 </p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114145626765.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114145626765.png, https://img-blog.csdnimg.cn/20191114145626765.png 1.5x, https://img-blog.csdnimg.cn/20191114145626765.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114145626765.png"
+        title="进度条尺寸" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; :style=&#34;[{ width:loading?&#39;61.8%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round margin-top sm&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; :style=&#34;[{ width:loading?&#39;61.8%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round margin-top xs&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; :style=&#34;[{ width:loading?&#39;61.8%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条颜色</strong></p>
+<blockquote>
+<p>添加背景色即可</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114152225684.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114152225684.png, https://img-blog.csdnimg.cn/20191114152225684.png 1.5x, https://img-blog.csdnimg.cn/20191114152225684.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114152225684.png"
+        title="进度条颜色" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding&#34; :class=&#34;color==&#39;white&#39;?&#39;bg-grey&#39;:&#39;bg-white&#39;&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view :class=&#34;&#39;bg-&#39; + color&#34; :style=&#34;[{ width:loading?&#39;61.8%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条条纹</strong></p>
+<blockquote>
+<p>添加striped设置条纹样式，active设置条纹动态效果</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114155705759.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114155705759.png, https://img-blog.csdnimg.cn/20191114155705759.png 1.5x, https://img-blog.csdnimg.cn/20191114155705759.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114155705759.png"
+        title="进度条条纹" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round sm striped active&#34; &gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-green&#34; :style=&#34;[{ width:loading?&#39;60%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress round sm margin-top-sm striped&#34; &gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-black&#34; :style=&#34;[{ width:loading?&#39;40%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条比例</strong></p>
+<blockquote>
+<p>在给定class为cu-progress的标签内按需放置元素并进行分段设计即可</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114160101242.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114160101242.png, https://img-blog.csdnimg.cn/20191114160101242.png 1.5x, https://img-blog.csdnimg.cn/20191114160101242.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114160101242.png"
+        title="进度条比例" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;cu-progress radius striped active&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-red&#34; :style=&#34;[{ width:loading?&#39;30%&#39;:&#39;&#39;}]&#34;&gt;30%&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-olive&#34; :style=&#34;[{ width:loading?&#39;45%&#39;:&#39;&#39;}]&#34;&gt;45%&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;bg-cyan&#34; :style=&#34;[{ width:loading?&#39;25%&#39;:&#39;&#39;}]&#34;&gt;25%&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条布局</strong></p>
+<blockquote>
+<p>结合布局、图标等内容，可根据个人所需可以设置不同进度显示的样式</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114160359906.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114160359906.png, https://img-blog.csdnimg.cn/20191114160359906.png 1.5x, https://img-blog.csdnimg.cn/20191114160359906.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114160359906.png"
+        title="进度条布局" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding bg-white &#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-progress round&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;bg-green&#34; :style=&#34;[{ width:loading?&#39;100%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;cuIcon-roundcheckfill text-green margin-left-sm&#34;&gt;&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;flex margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view class=&#34;cu-progress round&#34;&gt;
+</span></span><span class="line"><span class="cl">			&lt;view class=&#34;bg-green&#34; :style=&#34;[{ width:loading?&#39;80%&#39;:&#39;&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;/view&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;margin-left&#34;&gt;80%&lt;/text&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>class</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>cu-progress</td><td>进度条必选值</td><td>——</td></tr><tr><td>radius</td><td>圆角</td><td>——</td></tr><tr><td>round&nbsp;</td><td>圆形</td><td>——</td></tr><tr><td>sm</td><td>小尺寸</td><td>——</td></tr><tr><td>xs</td><td>超小尺寸</td><td>——</td></tr><tr><td>striped</td><td>条纹</td><td>——</td></tr><tr><td>active&nbsp;</td><td>结合striped使用，设置动态条纹效果</td><td>——</td></tr></tbody></table>
+<h3 id="bordershadow边框阴影">Border&amp;Shadow边框阴影 </h3>
+<blockquote>
+<p>默认shadow是根据背景色设置的阴影，shadow-lg为长阴影，但是我肉眼没看出来二者的区别，真是在下愚钝，shadow-warp为翘边阴影（在下愚钝，它翘一点？？？），shadow-blur根据背景图片设置的阴影，有点意思，挺好。关于边框border没什么好展开的，直接看下面表格class说明就好。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="阴影1" /><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="阴影2" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;padding text-center&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl radius shadow bg-white&#34;&gt;默认阴影&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl radius shadow bg-gradual-red margin-top&#34;&gt;根据背景颜色而改变的阴影&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl radius shadow shadow-lg bg-white margin-top&#34;&gt;长阴影&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl radius shadow shadow-lg bg-blue margin-top&#34;&gt;长阴影&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl radius shadow-warp bg-white margin-top&#34;&gt;翘边阴影&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;padding-xl radius shadow-blur bg-red margin-top bg-img&#34; style=&#34;background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91005.jpg);&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;view&gt;根据背景图而改变的阴影&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>边框阴影相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>class</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>solid/solids</td><td>实线四周边框，solid为细边框 ，solids为粗边框</td><td>——</td></tr><tr><td>solid/solids-{{options}}</td><td>不同方向的边框(上下左右)</td><td>top/right/bottom/left</td></tr><tr><td>shadow</td><td>默认阴影（根据背景色变化）</td><td>——</td></tr><tr><td>shadow-lg</td><td>长阴影</td><td>——</td></tr><tr><td>shadow-wrap</td><td>翘边阴影</td><td>——</td></tr><tr><td>shadow-blur</td><td>根据背景图片变化的阴影</td><td>&nbsp;</td></tr></tbody></table>
+<h3 id="loading加载">Loading加载</h3>
+<blockquote>
+<p>加载必选值cu-load</p>
+</blockquote>
+<p><strong>加载状态</strong></p>
+<blockquote>
+<p>loading正在加载中，over加载完成，erro加载失败</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114165750120.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114165750120.png, https://img-blog.csdnimg.cn/20191114165750120.png 1.5x, https://img-blog.csdnimg.cn/20191114165750120.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114165750120.png"
+        title="加载中" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114165807766.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114165807766.png, https://img-blog.csdnimg.cn/20191114165807766.png 1.5x, https://img-blog.csdnimg.cn/20191114165807766.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114165807766.png"
+        title="加载完成" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191114165846401.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191114165846401.png, https://img-blog.csdnimg.cn/20191114165846401.png 1.5x, https://img-blog.csdnimg.cn/20191114165846401.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191114165846401.png"
+        title="加载失败" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;cu-load bg-blue loading&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;view class=&#34;cu-load bg-blue over&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;view class=&#34;cu-load bg-red erro&#34;&gt;&lt;/view&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>弹框加载</strong></p>
+<blockquote>
+<p>设置按钮，弹出弹框，显示加载状态，弹框模板设置load-modal</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70"
+        title="弹框加载" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;cu-bar bg-white margin-top&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;action&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;text class=&#34;cuIcon-title text-blue&#34;&gt;&lt;/text&gt;弹框加载
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;action&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;button class=&#34;cu-btn bg-green shadow&#34; @tap=&#34;LoadModal&#34;&gt;
+</span></span><span class="line"><span class="cl">			点我
+</span></span><span class="line"><span class="cl">		&lt;/button&gt;
+</span></span><span class="line"><span class="cl">	&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;view class=&#34;cu-load load-modal&#34; v-if=&#34;loadModal&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;image src=&#34;/static/logo.png&#34; mode=&#34;aspectFit&#34;&gt;&lt;/image&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;gray-text&#34;&gt;加载中...&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">&lt;script&gt;
+</span></span><span class="line"><span class="cl">	export default {
+</span></span><span class="line"><span class="cl">		data() {
+</span></span><span class="line"><span class="cl">			return {
+</span></span><span class="line"><span class="cl">				loadModal: false
+</span></span><span class="line"><span class="cl">			};
+</span></span><span class="line"><span class="cl">		},
+</span></span><span class="line"><span class="cl">		methods: {
+</span></span><span class="line"><span class="cl">			LoadModal(e) {
+</span></span><span class="line"><span class="cl">				this.loadModal = true;
+</span></span><span class="line"><span class="cl">				setTimeout(() =&gt; {
+</span></span><span class="line"><span class="cl">					this.loadModal = false;
+</span></span><span class="line"><span class="cl">				}, 2000)
+</span></span><span class="line"><span class="cl">			}
+</span></span><span class="line"><span class="cl">		}
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">&lt;/script&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>进度条加载</strong></p>
+<blockquote>
+<p>设置进度条加载时需要添加load-progress，变量loadProgress为加载进度条的进度，load-progress-bar代表加载中进度条样式，load-progress-spinner代表加载中旋转的圆圈样式</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20191115101626286.png"
+        data-srcset="https://img-blog.csdnimg.cn/20191115101626286.png, https://img-blog.csdnimg.cn/20191115101626286.png 1.5x, https://img-blog.csdnimg.cn/20191115101626286.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20191115101626286.png"
+        title="进度条加载" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;view class=&#34;action&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;button class=&#34;cu-btn bg-green shadow&#34; @tap=&#34;LoadProgress&#34;&gt;
+</span></span><span class="line"><span class="cl">		点我
+</span></span><span class="line"><span class="cl">	&lt;/button&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;view class=&#34;load-progress&#34; :class=&#34;loadProgress!=0?&#39;show&#39;:&#39;hide&#39;&#34; style=&#34;top:100px&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;load-progress-bar bg-green&#34; :style=&#34;[{transform: &#39;translate3d(-&#39; + (100-loadProgress) + &#39;%, 0px, 0px)&#39;}]&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">	&lt;view class=&#34;load-progress-spinner text-green&#34;&gt;&lt;/view&gt;
+</span></span><span class="line"><span class="cl">&lt;/view&gt;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">&lt;script&gt;
+</span></span><span class="line"><span class="cl">    export default{
+</span></span><span class="line"><span class="cl">        data(){
+</span></span><span class="line"><span class="cl">            return{
+</span></span><span class="line"><span class="cl">                loadProgress:0
+</span></span><span class="line"><span class="cl">            }
+</span></span><span class="line"><span class="cl">        },
+</span></span><span class="line"><span class="cl">        methods:{
+</span></span><span class="line"><span class="cl">            LoadProgress(e) {
+</span></span><span class="line"><span class="cl">				this.loadProgress = this.loadProgress + 3;
+</span></span><span class="line"><span class="cl">				if (this.loadProgress &lt; 100) {
+</span></span><span class="line"><span class="cl">					setTimeout(() =&gt; {
+</span></span><span class="line"><span class="cl">						this.LoadProgress();
+</span></span><span class="line"><span class="cl">					}, 100)
+</span></span><span class="line"><span class="cl">				} else {
+</span></span><span class="line"><span class="cl">					this.loadProgress = 0;
+</span></span><span class="line"><span class="cl">				}
+</span></span><span class="line"><span class="cl">			}
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">&lt;/script&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>加载相关class</strong></p>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>class</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>cu-load</td><td>加载必选值（除了进度条加载）</td><td>——</td></tr><tr><td>loading</td><td>加载中</td><td>——</td></tr><tr><td>over</td><td>加载完成</td><td>——</td></tr><tr><td>erro</td><td>加载失败</td><td>——</td></tr><tr><td>load-modal</td><td>弹框加载</td><td>——</td></tr><tr><td>load-progress</td><td>设置进度条加载</td><td>——</td></tr><tr><td>load-progress-bar</td><td>进度条加载样式</td><td>——</td></tr><tr><td>load-progress-spinner</td><td>旋转加载样式</td><td>——</td></tr><tr><td>hide</td><td>隐藏</td><td>——</td></tr><tr><td>show</td><td>显示</td><td>——</td></tr></tbody></table>
+<h2 id="交互组件">交互组件</h2>
+<p>这篇博客太长了，交互组件的介绍就另写一篇吧，<a href="https://blog.csdn.net/miao_yf/article/details/103081988" target="_blank" rel="noopener noreffer">ColorUI组件库简易教程之交互组件</a></p>
+<p>这只是个人的理解写的，有什么不足，望大佬指教，及时更正！</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-05-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/colorui%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/colorui/">ColorUI</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/colorui%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/" class="prev" rel="prev" title="ColorUI交互组件"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>ColorUI交互组件</a>
+            <a href="/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/" class="next" rel="next" title="JPA实现动态SQL">JPA实现动态SQL<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-23T08:59:26+08:00" />
+<meta property="article:modified_time" content="2024-01-23T08:59:26+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99/" /><link rel="prev" href="https://hubu8.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E9%A2%97%E7%B2%92%E5%BA%A6%E5%B0%8F%E8%AE%B0--%E5%8A%A0%E9%94%81%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF/" /><link rel="next" href="https://hubu8.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99\/"
+        },"genre": "posts","keywords": "java发送邮件","wordcount":  3374 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99\/","datePublished": "2024-01-23T08:59:26+08:00","dateModified": "2024-01-23T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-23">2024-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3374 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99/" class="leancloud_visitors" data-flag-title="javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#问题原因">问题原因</a></li>
+        <li><a href="#解决问题--从jdk入手">解决问题- 从JDK入手</a>
+          <ul>
+            <li><a href="#衍生命令">衍生命令</a></li>
+            <li><a href="#从容器入手">从容器入手</a></li>
+          </ul>
+        </li>
+        <li><a href="#解决问题-从代码入手">解决问题-从代码入手</a>
+          <ul>
+            <li><a href="#方案一">方案一</a></li>
+            <li><a href="#方案二">方案二</a></li>
+            <li><a href="#方案三">方案三</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">java.net.MalformedURLException
+</span></span><span class="line"><span class="cl">        at java.net.URL.&lt;init&gt;<span class="o">(</span>URL.java:645<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.net.URL.&lt;init&gt;<span class="o">(</span>URL.java:508<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.net.URL.&lt;init&gt;<span class="o">(</span>URL.java:457<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.common.email.util.EmailSendUtil.send<span class="o">(</span>EmailSendUtil.java:74<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.scripts.Script<span class="nv">$4</span>$<span class="se">\^</span>eval<span class="se">\_</span>.:program<span class="o">(</span>&lt;eval&gt;:56<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptFunctionData.invoke<span class="o">(</span>ScriptFunctionData.java:637<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptFunction.invoke<span class="o">(</span>ScriptFunction.java:494<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptRuntime.apply<span class="o">(</span>ScriptRuntime.java:393<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:449<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:406<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:402<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.eval<span class="o">(</span>NashornScriptEngine.java:155<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.script.AbstractScriptEngine.eval<span class="o">(</span>AbstractScriptEngine.java:264<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.NashornScriptInvokeUtil.invokeAllScript<span class="o">(</span>NashornScriptInvokeUtil.java:17<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.ScriptInvokeUtil.invokeMethod<span class="o">(</span>ScriptInvokeUtil.java:28<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.JobInvokeUtil.invokeMethod<span class="o">(</span>JobInvokeUtil.java:44<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.QuartzDisallowConcurrentExecution.doExecute<span class="o">(</span>QuartzDisallowConcurrentExecution.java:23<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.AbstractQuartzJob.execute<span class="o">(</span>AbstractQuartzJob.java:52<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.quartz.core.JobRunShell.run<span class="o">(</span>JobRunShell.java:202<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.quartz.simpl.SimpleThreadPool<span class="nv">$WorkerThread</span>.run<span class="o">(</span>SimpleThreadPool.java:573<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Caused by: java.lang.NullPointerException
+</span></span><span class="line"><span class="cl">06:24:50.653 <span class="o">[</span>quartzScheduler_Worker-5<span class="o">]</span> ERROR c.r.q.u.AbstractQuartzJob - <span class="o">[</span>execute,58<span class="o">]</span> - 任务执行异常  - ：
+</span></span><span class="line"><span class="cl">cn.hutool.extra.mail.MailException: MessagingException: Could not connect to SMTP host: smtp.163.com, port: <span class="m">465</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.Mail.send<span class="o">(</span>Mail.java:398<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:416<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:349<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:329<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:312<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.common.email.util.EmailSendUtil.send<span class="o">(</span>EmailSendUtil.java:84<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.scripts.Script<span class="nv">$4</span>$<span class="se">\^</span>eval<span class="se">\_</span>.:program<span class="o">(</span>&lt;eval&gt;:56<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptFunctionData.invoke<span class="o">(</span>ScriptFunctionData.java:637<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptFunction.invoke<span class="o">(</span>ScriptFunction.java:494<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptRuntime.apply<span class="o">(</span>ScriptRuntime.java:393<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:449<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:406<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:402<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.eval<span class="o">(</span>NashornScriptEngine.java:155<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.script.AbstractScriptEngine.eval<span class="o">(</span>AbstractScriptEngine.java:264<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.NashornScriptInvokeUtil.invokeAllScript<span class="o">(</span>NashornScriptInvokeUtil.java:17<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.ScriptInvokeUtil.invokeMethod<span class="o">(</span>ScriptInvokeUtil.java:28<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.JobInvokeUtil.invokeMethod<span class="o">(</span>JobInvokeUtil.java:44<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.QuartzDisallowConcurrentExecution.doExecute<span class="o">(</span>QuartzDisallowConcurrentExecution.java:23<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.AbstractQuartzJob.execute<span class="o">(</span>AbstractQuartzJob.java:52<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.quartz.core.JobRunShell.run<span class="o">(</span>JobRunShell.java:202<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.quartz.simpl.SimpleThreadPool<span class="nv">$WorkerThread</span>.run<span class="o">(</span>SimpleThreadPool.java:573<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Caused by: javax.mail.MessagingException: Could not connect to SMTP host: smtp.163.com, port: <span class="m">465</span>
+</span></span><span class="line"><span class="cl">        at com.sun.mail.smtp.SMTPTransport.openServer<span class="o">(</span>SMTPTransport.java:1961<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.sun.mail.smtp.SMTPTransport.protocolConnect<span class="o">(</span>SMTPTransport.java:654<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.mail.Service.connect<span class="o">(</span>Service.java:317<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.mail.Service.connect<span class="o">(</span>Service.java:176<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.mail.Service.connect<span class="o">(</span>Service.java:125<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.mail.Transport.send0<span class="o">(</span>Transport.java:194<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.mail.Transport.send<span class="o">(</span>Transport.java:124<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.Mail.doSend<span class="o">(</span>Mail.java:412<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.Mail.send<span class="o">(</span>Mail.java:390<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        ... <span class="m">21</span> common frames omitted
+</span></span><span class="line"><span class="cl">Caused by: javax.net.ssl.SSLHandshakeException: No appropriate protocol <span class="o">(</span>protocol is disabled or cipher suites are inappropriate<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at sun.security.ssl.HandshakeContext.&lt;init&gt;<span class="o">(</span>HandshakeContext.java:171<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at sun.security.ssl.ClientHandshakeContext.&lt;init&gt;<span class="o">(</span>ClientHandshakeContext.java:103<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at sun.security.ssl.TransportContext.kickstart<span class="o">(</span>TransportContext.java:220<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at sun.security.ssl.SSLSocketImpl.startHandshake<span class="o">(</span>SSLSocketImpl.java:428<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.sun.mail.util.SocketFetcher.configureSSLSocket<span class="o">(</span>SocketFetcher.java:549<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.sun.mail.util.SocketFetcher.createSocket<span class="o">(</span>SocketFetcher.java:354<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.sun.mail.util.SocketFetcher.getSocket<span class="o">(</span>SocketFetcher.java:211<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.sun.mail.smtp.SMTPTransport.openServer<span class="o">(</span>SMTPTransport.java:1927<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        ... <span class="m">29</span> common frames omitted
+</span></span><span class="line"><span class="cl">06:24:50.655 <span class="o">[</span>quartzScheduler_Worker-5<span class="o">]</span> DEBUG c.r.q.m.S.insertJobLog - <span class="o">[</span>debug,137<span class="o">]</span> - <span class="o">==</span>&gt;  Preparing: insert into sys_job_log<span class="o">(</span> job_name, job_group, invoke_target, job_message, status, exception_info, create_time <span class="o">)</span>values<span class="o">(</span> ?, ?, ?, ?, ?, ?, sysdate<span class="o">()</span> <span class="o">)</span>
+</span></span><span class="line"><span class="cl">06:24:50.655 <span class="o">[</span>quartzScheduler_Worker-5<span class="o">]</span> DEBUG c.r.q.m.S.insertJobLog - <span class="o">[</span>debug,137<span class="o">]</span> - <span class="o">==</span>&gt; Parameters: 定时任务_获取乔安云监控数据<span class="o">(</span>String<span class="o">)</span>, DEFAULT<span class="o">(</span>String<span class="o">)</span>, ryTask.ryNoParams<span class="o">(</span>String<span class="o">)</span>, 定时任务_获取乔安云监控数据 总共耗时：10547毫秒<span class="o">(</span>String<span class="o">)</span>, 1<span class="o">(</span>String<span class="o">)</span>, cn.hutool.extra.mail.MailException: MessagingException: Could not connect to SMTP host: smtp.163.com, port: <span class="m">465</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.Mail.send<span class="o">(</span>Mail.java:398<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:416<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:349<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:329<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at cn.hutool.extra.mail.MailUtil.send<span class="o">(</span>MailUtil.java:312<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.common.email.util.EmailSendUtil.send<span class="o">(</span>EmailSendUtil.java:84<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.scripts.Script<span class="nv">$4</span>$<span class="se">\^</span>eval<span class="se">\_</span>.:program<span class="o">(</span>&lt;eval&gt;:56<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptFunctionData.invoke<span class="o">(</span>ScriptFunctionData.java:637<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptFunction.invoke<span class="o">(</span>ScriptFunction.java:494<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.internal.runtime.ScriptRuntime.apply<span class="o">(</span>ScriptRuntime.java:393<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:449<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:406<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl<span class="o">(</span>NashornScriptEngine.java:402<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at jdk.nashorn.api.scripting.NashornScriptEngine.eval<span class="o">(</span>NashornScriptEngine.java:155<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at javax.script.AbstractScriptEngine.eval<span class="o">(</span>AbstractScriptEngine.java:264<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.NashornScriptInvokeUtil.invokeAllScript<span class="o">(</span>NashornScriptInvokeUtil.java:17<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.ScriptInvokeUtil.invokeMethod<span class="o">(</span>ScriptInvokeUtil.java:28<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.JobInvokeUtil.invokeMethod<span class="o">(</span>JobInvokeUtil.java:44<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.QuartzDisallowConcurrentExecution.doExecute<span class="o">(</span>QuartzDisallowConcurrentExecution.java:23<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at com.ruoyi.quartz.util.AbstractQuartzJob.execute<span class="o">(</span>AbstractQuartzJob.java:52<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.quartz.core.JobRunShell.run<span class="o">(</span>JobRunShell.java:202<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.quartz.simpl.SimpleThreadPool<span class="nv">$WorkerThread</span>.run<span class="o">(</span>SimpleThreadPool.java:573<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Caused by: javax.mail.MessagingException: Could not connect to SMTP host: smtp.163.com, port: 465<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  nested exception is:
+</span></span><span class="line"><span class="cl">        javax.net.ssl.SSLHandshakeException: No appropriate protocol <span class="o">(</span>protocol is disa<span class="o">(</span>String<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="问题原因">问题原因</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.ruoyi.common.email.util</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.hutool.extra.mail.Mail</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.hutool.extra.mail.MailAccount</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.hutool.extra.mail.MailUtil</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.constant.CacheConstants</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.core.redis.RedisCache</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.email.EmailConfig</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.email.EmailVO</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.exception.GlobalException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.exception.tool.EmailConfigException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.exception.tool.EmailSendException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.utils.EncryptUtils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.utils.StringUtils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.ruoyi.common.utils.spring.SpringUtils</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.sun.mail.util.MailSSLSocketFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.activation.DataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.net.URLConnection</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.security.GeneralSecurityException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSendUtil</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">EmailSendUtil</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_HOST</span> <span class="o">=</span> <span class="s">&#34;email.config.host&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_PORT</span> <span class="o">=</span> <span class="s">&#34;email.config.port&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_USER</span> <span class="o">=</span> <span class="s">&#34;email.config.user&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_PASS</span> <span class="o">=</span> <span class="s">&#34;email.config.pass&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EMAIL_CONFIG_FROM_USER</span> <span class="o">=</span> <span class="s">&#34;email.config.fromUser&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取邮件配置信息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">EmailConfig</span> <span class="nf">getEmailConfig</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">EmailConfig</span> <span class="n">emailConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmailConfig</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setHost</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_HOST</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setPort</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_PORT</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_USER</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setPass</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_PASS</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailConfig</span><span class="o">.</span><span class="na">setFromUser</span><span class="o">(</span><span class="n">getCacheValue</span><span class="o">(</span><span class="n">EMAIL_CONFIG_FROM_USER</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">emailConfig</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取邮件账户信息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">MailAccount</span> <span class="nf">getMailAccount</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">EmailConfig</span> <span class="n">emailConfig</span> <span class="o">=</span> <span class="n">getEmailConfig</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 封装
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 设置用户
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">user</span> <span class="o">=</span> <span class="n">emailConfig</span><span class="o">.</span><span class="na">getFromUser</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;@&#34;</span><span class="o">)[</span><span class="n">0</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setHost</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getHost</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setPort</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getPort</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setAuth</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setPass</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getPass</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//方案一：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// SSL 握手失败可能与协议版本协商不稳定有关，需在代码中强制指定 TLSv1.2：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setSslProtocols</span><span class="o">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 方案二：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 补充 SSL SocketFactory 相关参数，避免因缺少证书信任导致握手失败：添加 SSL 安全套接字工厂配置
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        MailSSLSocketFactory sf = null;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        try {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf = new MailSSLSocketFactory();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        } catch (GeneralSecurityException e) {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            throw new RuntimeException(e);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// ssl方式发送
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setSslEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 使用STARTTLS安全连接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setStarttlsEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getUser</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">account</span><span class="o">.</span><span class="na">setFrom</span><span class="o">(</span><span class="n">emailConfig</span><span class="o">.</span><span class="na">getFromUser</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">account</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 单个收件人
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送邮件 ，不包含照片主体
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param to
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">to</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">to</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 多个收件人
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param tos
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendTos</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">tos</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">tos</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送邮件， 可发送图片
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param to
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param imageStrMap
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">to</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imageStrMap</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">InputStream</span><span class="o">&gt;</span> <span class="n">imageMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imagesKeys</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">imagesKey</span> <span class="o">:</span> <span class="n">imagesKeys</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">String</span> <span class="n">imageurl</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">imageurl</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="n">imageurl</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 从 inputStream 中读取文件流并进行处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">imageMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">inputStream</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;图片Url获取数据，出错的是：%s:%s&#34;</span><span class="o">,</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">imageurl</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">to</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">imageMap</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送多人， 可发送图片
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param tos
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param content
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param imageStrMap
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param isHtml
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param files
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendTos</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">tos</span><span class="o">,</span> <span class="n">String</span> <span class="n">subject</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imageStrMap</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">File</span><span class="o">...</span> <span class="n">files</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">InputStream</span><span class="o">&gt;</span> <span class="n">imageMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imagesKeys</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">imagesKey</span> <span class="o">:</span> <span class="n">imagesKeys</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">String</span> <span class="n">imageurl</span> <span class="o">=</span> <span class="n">imageStrMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">imageurl</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="n">imageurl</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">URLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 从 inputStream 中读取文件流并进行处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">imageMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">inputStream</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;图片Url获取数据，出错的是：%s:%s&#34;</span><span class="o">,</span><span class="n">imagesKey</span><span class="o">,</span><span class="n">imageurl</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">send</span> <span class="o">=</span> <span class="n">MailUtil</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">account</span><span class="o">,</span> <span class="n">tos</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">imageMap</span><span class="o">,</span> <span class="n">isHtml</span><span class="o">,</span> <span class="n">files</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;邮件发送返回结果：%s&#34;</span><span class="o">,</span><span class="n">send</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 发送邮件
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param emailVo
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param emailConfig
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">EmailVO</span> <span class="n">emailVo</span><span class="o">,</span> <span class="n">EmailConfig</span> <span class="n">emailConfig</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">emailConfig</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">emailConfig</span> <span class="o">=</span> <span class="n">getEmailConfig</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">emailConfig</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">EmailConfigException</span><span class="o">(</span><span class="s">&#34;Email参数设置为空，请检查参数设置&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="n">getMailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getContent</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 发送
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getTos</span><span class="o">().</span><span class="na">size</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Mail</span> <span class="n">mail</span> <span class="o">=</span> <span class="n">Mail</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">account</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mail</span><span class="o">.</span><span class="na">setTos</span><span class="o">(</span><span class="n">emailVo</span><span class="o">.</span><span class="na">getTos</span><span class="o">().</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">size</span><span class="o">]))</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">emailVo</span><span class="o">.</span><span class="na">getSubject</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="n">content</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setHtml</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span> <span class="n">attachments</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getAttachments</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">attachments</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">attachments</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mail</span><span class="o">.</span><span class="na">setAttachments</span><span class="o">(</span><span class="n">attachments</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">DataSource</span><span class="o">[]{}));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">File</span><span class="o">&gt;</span> <span class="n">files</span> <span class="o">=</span> <span class="n">emailVo</span><span class="o">.</span><span class="na">getFiles</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">files</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">files</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mail</span><span class="o">.</span><span class="na">setFiles</span><span class="o">(</span><span class="n">files</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">[]{}));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">mail</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//关闭session
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="o">.</span><span class="na">setUseGlobalSession</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">send</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">EmailSendException</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 设置cache key
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param configKey 参数键
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return 缓存键key
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getCacheKey</span><span class="o">(</span><span class="n">String</span> <span class="n">configKey</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">CacheConstants</span><span class="o">.</span><span class="na">SYS_CONFIG_KEY</span> <span class="o">+</span> <span class="n">configKey</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取缓存值
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param configKey
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getCacheValue</span><span class="o">(</span><span class="n">String</span> <span class="n">configKey</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(!</span><span class="n">configKey</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">CacheConstants</span><span class="o">.</span><span class="na">SYS_CONFIG_KEY</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">configKey</span> <span class="o">=</span> <span class="n">getCacheKey</span><span class="o">(</span><span class="n">configKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">SpringUtils</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="n">RedisCache</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">getCacheObject</span><span class="o">(</span><span class="n">configKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">value</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">EmailConfigException</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;未找到email相关参数，请检查%s参数设置并同步到redis缓存。&#34;</span><span class="o">,</span><span class="n">configKey</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>jdk1.8版本导致SSL调用权限上有问题，新电脑装的jdk是jdk1.8.0_291，版本比较高。搜到的解决方法是：</p>
+<p><strong>找到jdk 1.8安装目录，找到C:\Program Files\Java\jre里面的lib\security 下面有个java.security。找到对应的SSLv3，删除掉，重启项目就好了。（删掉SSLv3就是允许SSL调用）</strong></p>
+<h3 id="解决问题--从jdk入手">解决问题- 从JDK入手</h3>
+<p>我找到Java安装目录下D:\Java\jdk1.8.0_291\jre\lib\security中的java.security文件，将对应的SSLv3删掉了，但运行还是出错。最后发现SSLv3后面有两个和它后缀一样的算法，将它们一起删掉后重启项目，成功解决问题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Example:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   jdk.tls.disabledAlgorithms=MD5, SSLv3, DSA, RSA keySize &lt; 2048</span>
+</span></span><span class="line"><span class="cl">jdk.tls.disabledAlgorithms<span class="o">=</span>SSLv3, TLSv1, TLSv1.1,RC4, DES, MD5withRSA, <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    DH keySize &lt; 1024, EC keySize &lt; 224, 3DES_EDE_CBC, anon, NULL, <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    include jdk.disabled.namedCurves
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Legacy algorithms for Secure Socket Layer/Transport Layer Security (SSL/TLS)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># processing in JSSE implementation.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>删除后的文件如下图所示。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Example:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   jdk.tls.disabledAlgorithms=MD5, SSLv3, DSA, RSA keySize &lt; 2048</span>
+</span></span><span class="line"><span class="cl">jdk.tls.disabledAlgorithms<span class="o">=</span>RC4, DES, MD5withRSA, <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    DH keySize &lt; 1024, EC keySize &lt; 224, 3DES_EDE_CBC, anon, NULL, <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    include jdk.disabled.namedCurves
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Legacy algorithms for Secure Socket Layer/Transport Layer Security (SSL/TLS)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># processing in JSSE implementation.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="衍生命令">衍生命令</h4>
+<p>docker中Java安装目录为: <strong>/usr/local/openjdk-8</strong></p>
+<p>复制容器中的java.security文件到宿主机</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker cp e61b6e572d86:/usr/local/openjdk-8/lib/security/java.security ./java.security
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用宿主机的vi命令修改文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vi java.security
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>复制宿主机到容器中的java.security文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker cp ./java.security e61b6e572d86:/usr/local/openjdk-8/lib/security/java.security
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启容器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker restart e61b6e572d86
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="从容器入手">从容器入手</h4>
+<p>修改容器的java.security文件, 目前还未验证</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">RUN sed -i <span class="s1">&#39;s/jdk.tls.disabledAlgorithms=SSLv3, TLSv1, TLSv1.1/jdk.tls.disabledAlgorithms=SSLv3/g&#39;</span> /opt/java/openjdk/lib/security/java.security
+</span></span><span class="line"><span class="cl"><span class="c1"># 核心也是修改java.security文件中的jdk.tls.disabledAlgorithms配置，删除掉TLSv1&amp;TLSv1.1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="解决问题-从代码入手">解决问题-从代码入手</h3>
+<p>之前是错误实例，修改jdk是不明智的操作</p>
+<h4 id="方案一">方案一</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">/</span><span class="n">方案一</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// SSL 握手失败可能与协议版本协商不稳定有关，需在代码中强制指定 TLSv1.2：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">account</span><span class="o">.</span><span class="na">setSslProtocols</span><span class="o">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 方案二：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 补充 SSL SocketFactory 相关参数，避免因缺少证书信任导致握手失败：添加 SSL 安全套接字工厂配置
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        MailSSLSocketFactory sf = null;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        try {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf = new MailSSLSocketFactory();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        } catch (GeneralSecurityException e) {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            throw new RuntimeException(e);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="方案二">方案二</h4>
+<p>1.换个不用ssl端口的邮件服务器，相应调整代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="na">setSslEnable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="na">setStarttlsEnable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果比较着急，并且对邮件安全要求不高，可以这样，也能解决。</p>
+<h4 id="方案三">方案三</h4>
+<p>手动指定为TLSv1.2协议
+百度发现，可能是本地jar包与服务器jar包版本不一致，才一个成功一个失败；默认用TLSv1.1协议，但是新jar包认为这个协议不安全，就会报错无法链接邮件服务器。</p>
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MailAccount</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailAccount</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ssl启用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">account</span><span class="o">.</span><span class="na">setSslEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// STARTTLS启用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">account</span><span class="o">.</span><span class="na">setStarttlsEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 解决连接smtp服务失败问题，升级了hutool版本才有这个方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">MailSSLSocketFactory</span> <span class="n">sf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailSSLSocketFactory</span><span class="o">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//信任所有host
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">sf</span><span class="o">.</span><span class="na">setTrustAllHosts</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//自定义设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">account</span><span class="o">.</span><span class="na">setCustomProperty</span><span class="o">(</span><span class="s">&#34;mail.smtp.ssl.socketFactory&#34;</span><span class="o">,</span> <span class="n">sf</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">account</span><span class="o">.</span><span class="na">setCustomProperty</span><span class="o">(</span><span class="s">&#34;mail.smtp.ssl.protocols&#34;</span><span class="o">,</span> <span class="s">&#34;TLSv1.2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">GeneralSecurityException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意，如果是老版本hutool的jar包，有可能没有setCustomProperty方法，需要换成新版本hutool的jar包才有（已测试5.3.4版本没有，5.7.19有）：</p>
+<pre><code>    &lt;dependency&gt;
+        &lt;groupId&gt;cn.hutool&lt;/groupId&gt;
+        &lt;artifactId&gt;hutool-all&lt;/artifactId&gt;
+        &lt;version&gt;5.7.19&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-01-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/">java发送邮件</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E9%A2%97%E7%B2%92%E5%BA%A6%E5%B0%8F%E8%AE%B0--%E5%8A%A0%E9%94%81%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF/" class="prev" rel="prev" title="分布式锁颗粒度小记--加锁时间过长"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>分布式锁颗粒度小记--加锁时间过长</a>
+            <a href="/posts/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/" class="next" rel="next" title="SpringBoot项目打包瘦身">SpringBoot项目打包瘦身<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

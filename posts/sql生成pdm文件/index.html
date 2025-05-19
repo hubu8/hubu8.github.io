@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>SQL生成PDM文件 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="SQL生成PDM文件" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-21T08:59:26+08:00" />
+<meta property="article:modified_time" content="2023-12-21T08:59:26+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="SQL生成PDM文件"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/" /><link rel="prev" href="https://hubu8.github.io/posts/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/" /><link rel="next" href="https://hubu8.github.io/posts/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SQL生成PDM文件",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6\/"
+        },"genre": "posts","keywords": "PDM","wordcount":  927 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6\/","datePublished": "2023-12-21T08:59:26+08:00","dateModified": "2023-12-21T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL生成PDM文件</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-21">2023-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 927 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/posts/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="SQL生成PDM文件">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基础操作设置">基础操作设置</a>
+          <ul>
+            <li><a href="#修改namecode同步修改操作不便">修改name,code同步修改，操作不便</a>
+              <ul>
+                <li><a href="#版本在166之下">版本在16.6之下</a></li>
+                <li><a href="#版本是166以及之上">版本是16.6以及之上</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#sql逆向生成pdm">SQL逆向生成PDM</a>
+          <ul>
+            <li><a href="#第一步file--reverse-engineer--database">第一步：File &gt; Reverse Engineer &gt; Database</a></li>
+            <li><a href="#第二步设置dbms参数">第二步：设置DBMS参数</a></li>
+            <li><a href="#第三步选择sql文件">第三步：选择sql文件</a></li>
+          </ul>
+        </li>
+        <li><a href="#生成的pdm将coments同步至name字段">生成的PDM将coments同步至name字段</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="基础操作设置">基础操作设置</h3>
+<h4 id="修改namecode同步修改操作不便">修改name,code同步修改，操作不便</h4>
+<h5 id="版本在166之下">版本在16.6之下</h5>
+<p>工具栏 Tools -&gt; 常规选项 general Options -&gt; Dialog 下 Name to Code mirroring 取消勾选</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231222141450298.png"
+        data-srcset="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231222141450298.png, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231222141450298.png 1.5x, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231222141450298.png 2x"
+        data-sizes="auto"
+        alt="/posts/MySQL/SQL生成PDM文件/image-20231222141450298.png"
+        title="image-20231222141450298.png" /></p>
+<h5 id="版本是166以及之上">版本是16.6以及之上</h5>
+<p>工具栏 Tools -&gt; 常规选项 general Options -&gt; Respository 下 Display 取消 <strong>Name to Code mirroring</strong> 勾选</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/594c7ad4eed94cb792f2717b3b9883bb.png"
+        data-srcset="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/594c7ad4eed94cb792f2717b3b9883bb.png, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/594c7ad4eed94cb792f2717b3b9883bb.png 1.5x, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/594c7ad4eed94cb792f2717b3b9883bb.png 2x"
+        data-sizes="auto"
+        alt="/posts/MySQL/SQL生成PDM文件/594c7ad4eed94cb792f2717b3b9883bb.png"
+        title="594c7ad4eed94cb792f2717b3b9883bb.png" /></p>
+<p>工具栏 Tools -&gt; Modeal Options -&gt; Naming Convention  -&gt; Synchronize code</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/1ae53767bda24667bbd5898be8634f71.png"
+        data-srcset="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/1ae53767bda24667bbd5898be8634f71.png, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/1ae53767bda24667bbd5898be8634f71.png 1.5x, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/1ae53767bda24667bbd5898be8634f71.png 2x"
+        data-sizes="auto"
+        alt="/posts/MySQL/SQL生成PDM文件/1ae53767bda24667bbd5898be8634f71.png"
+        title="1ae53767bda24667bbd5898be8634f71.png" /></p>
+<h3 id="sql逆向生成pdm">SQL逆向生成PDM</h3>
+<h4 id="第一步file--reverse-engineer--database">第一步：File &gt; Reverse Engineer &gt; Database</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143024791.png"
+        data-srcset="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143024791.png, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143024791.png 1.5x, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143024791.png 2x"
+        data-sizes="auto"
+        alt="/posts/MySQL/SQL生成PDM文件/image-20231221143024791.png"
+        title="image-20231221143024791.png" /></p>
+<h4 id="第二步设置dbms参数">第二步：设置DBMS参数</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143237554.png"
+        data-srcset="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143237554.png, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143237554.png 1.5x, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143237554.png 2x"
+        data-sizes="auto"
+        alt="/posts/MySQL/SQL生成PDM文件/image-20231221143237554.png"
+        title="image-20231221143237554.png" /></p>
+<h4 id="第三步选择sql文件">第三步：选择sql文件</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143333237.png"
+        data-srcset="/posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143333237.png, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143333237.png 1.5x, /posts/MySQL/SQL%e7%94%9f%e6%88%90PDM%e6%96%87%e4%bb%b6/image-20231221143333237.png 2x"
+        data-sizes="auto"
+        alt="/posts/MySQL/SQL生成PDM文件/image-20231221143333237.png"
+        title="image-20231221143333237.png" /></p>
+<h3 id="生成的pdm将coments同步至name字段">生成的PDM将coments同步至name字段</h3>
+<p>Open PDM&ndash;Tools&ndash;Execute Commands&ndash;Run Script</p>
+<p>脚本语法参考 Microsoft VBScript 脚本语法</p>
+<p>脚本1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Option   Explicit 
+</span></span><span class="line"><span class="cl">ValidationMode   =   True 
+</span></span><span class="line"><span class="cl">InteractiveMode   =   im_Batch 
+</span></span><span class="line"><span class="cl">Dim   mdl    
+</span></span><span class="line"><span class="cl">Set   mdl   =   ActiveModel 
+</span></span><span class="line"><span class="cl">If   (mdl   Is   Nothing)   Then 
+</span></span><span class="line"><span class="cl">        MsgBox   &#34;There   is   no   current   Model&#34; 
+</span></span><span class="line"><span class="cl">ElseIf   Not   mdl.IsKindOf(PdPDM.cls_Model)   Then 
+</span></span><span class="line"><span class="cl">        MsgBox   &#34;The   current   model   is   not   an   Physical   Data   model.&#34; 
+</span></span><span class="line"><span class="cl">Else 
+</span></span><span class="line"><span class="cl">        ProcessFolder   mdl 
+</span></span><span class="line"><span class="cl">End   If 
+</span></span><span class="line"><span class="cl">Private   sub   ProcessFolder(folder) 
+</span></span><span class="line"><span class="cl">        Dim   Tab 
+</span></span><span class="line"><span class="cl">        for   each   Tab   in   folder.tables 
+</span></span><span class="line"><span class="cl">              if   not   tab.isShortcut   then
+</span></span><span class="line"><span class="cl">                    tab.name=tab.comment
+</span></span><span class="line"><span class="cl">                    Dim   col
+</span></span><span class="line"><span class="cl">                    for   each   col   in   tab.columns
+</span></span><span class="line"><span class="cl">                        col.name=col.comment 
+</span></span><span class="line"><span class="cl">                    next 
+</span></span><span class="line"><span class="cl">              end   if           
+</span></span><span class="line"><span class="cl">        next
+</span></span><span class="line"><span class="cl">end   sub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本2</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">&#39;
+</span></span><span class="line"><span class="cl">&#39;脚本功能：
+</span></span><span class="line"><span class="cl">&#39;    PowerDesigner中****完成后，将数据库中comment脚本
+</span></span><span class="line"><span class="cl">&#39;    赋值到PDM的name
+</span></span><span class="line"><span class="cl">&#39;执行方法：
+</span></span><span class="line"><span class="cl">&#39;    Open PDM--Tools--Execute Commands--Run Script
+</span></span><span class="line"><span class="cl">&#39;
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">Option Explicit  
+</span></span><span class="line"><span class="cl">ValidationMode = True  
+</span></span><span class="line"><span class="cl">InteractiveMode = im_Batch
+</span></span><span class="line"><span class="cl">Dim mdl &#39;the current model   
+</span></span><span class="line"><span class="cl">&#39;get the current active model  
+</span></span><span class="line"><span class="cl">Set mdl = ActiveModel  
+</span></span><span class="line"><span class="cl">If (mdl Is Nothing) Then  
+</span></span><span class="line"><span class="cl">    MsgBox &#34;There is no current Model&#34; 
+</span></span><span class="line"><span class="cl">ElseIf Not mdl.IsKindOf(PdPDM.cls_Model) Then  
+</span></span><span class="line"><span class="cl">    MsgBox &#34;The current model is not an Physical Data model.&#34; 
+</span></span><span class="line"><span class="cl">Else  
+</span></span><span class="line"><span class="cl">    ProcessFolder mdl  
+</span></span><span class="line"><span class="cl">End If  
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">&#39;This routine copy name into code for each table, each column  
+</span></span><span class="line"><span class="cl">&#39;and each view of the current folder
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">Private sub ProcessFolder(folder)  
+</span></span><span class="line"><span class="cl">    Dim Tab &#39;running table  
+</span></span><span class="line"><span class="cl">    for each Tab in folder.tables  
+</span></span><span class="line"><span class="cl">        if not tab.isShortcut then  
+</span></span><span class="line"><span class="cl">            if len(tab.comment) &lt;&gt; 0 then  
+</span></span><span class="line"><span class="cl">                tab.name = tab.comment  
+</span></span><span class="line"><span class="cl">            end if  
+</span></span><span class="line"><span class="cl">            On Error Resume Next  
+</span></span><span class="line"><span class="cl">            Dim col &#39;running column
+</span></span><span class="line"><span class="cl">            Dim b
+</span></span><span class="line"><span class="cl">            for each col in tab.columns
+</span></span><span class="line"><span class="cl">                b = Split(col.comment,&#34;;&#34;) 
+</span></span><span class="line"><span class="cl">                if len(b(0)) &lt;&gt;0 then  
+</span></span><span class="line"><span class="cl">                    col.name = b(0)
+</span></span><span class="line"><span class="cl">                end if  
+</span></span><span class="line"><span class="cl">                if ubound(b) &gt;0 then  
+</span></span><span class="line"><span class="cl">                    col.comment = b(1)
+</span></span><span class="line"><span class="cl">                else
+</span></span><span class="line"><span class="cl">                    col.comment = &#34;&#34;
+</span></span><span class="line"><span class="cl">                end if  
+</span></span><span class="line"><span class="cl">                On Error Resume Next  
+</span></span><span class="line"><span class="cl">            next  
+</span></span><span class="line"><span class="cl">        end if  
+</span></span><span class="line"><span class="cl">    next  
+</span></span><span class="line"><span class="cl">end sub 
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>kingdee脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">&#39;
+</span></span><span class="line"><span class="cl">&#39;脚本功能：
+</span></span><span class="line"><span class="cl">&#39;    PowerDesigner中****完成后，将数据库中comment脚本
+</span></span><span class="line"><span class="cl">&#39;    赋值到PDM的name
+</span></span><span class="line"><span class="cl">&#39;执行方法：
+</span></span><span class="line"><span class="cl">&#39;    Open PDM--Tools--Execute Commands--Run Script
+</span></span><span class="line"><span class="cl">&#39;
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">Option Explicit  
+</span></span><span class="line"><span class="cl">ValidationMode = True  
+</span></span><span class="line"><span class="cl">InteractiveMode = im_Batch
+</span></span><span class="line"><span class="cl">Dim mdl &#39;the current model   
+</span></span><span class="line"><span class="cl">&#39;get the current active model  
+</span></span><span class="line"><span class="cl">Set mdl = ActiveModel  
+</span></span><span class="line"><span class="cl">If (mdl Is Nothing) Then  
+</span></span><span class="line"><span class="cl">    MsgBox &#34;There is no current Model&#34; 
+</span></span><span class="line"><span class="cl">ElseIf Not mdl.IsKindOf(PdPDM.cls_Model) Then  
+</span></span><span class="line"><span class="cl">    MsgBox &#34;The current model is not an Physical Data model.&#34; 
+</span></span><span class="line"><span class="cl">Else  
+</span></span><span class="line"><span class="cl">    ProcessFolder mdl  
+</span></span><span class="line"><span class="cl">End If  
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">&#39;This routine copy name into code for each table, each column  
+</span></span><span class="line"><span class="cl">&#39;and each view of the current folder
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span><span class="line"><span class="cl">Private sub ProcessFolder(folder)  
+</span></span><span class="line"><span class="cl">    Dim Tab &#39;running table  
+</span></span><span class="line"><span class="cl">    for each Tab in folder.tables  
+</span></span><span class="line"><span class="cl">        if not tab.isShortcut then  
+</span></span><span class="line"><span class="cl">            if len(tab.comment) &lt;&gt; 0 then  
+</span></span><span class="line"><span class="cl">                tab.name = tab.comment  
+</span></span><span class="line"><span class="cl">            end if  
+</span></span><span class="line"><span class="cl">            On Error Resume Next  
+</span></span><span class="line"><span class="cl">            Dim col &#39;running column
+</span></span><span class="line"><span class="cl">            Dim b
+</span></span><span class="line"><span class="cl">			Dim dataType
+</span></span><span class="line"><span class="cl">            for each col in tab.columns
+</span></span><span class="line"><span class="cl">                b = Split(col.comment,&#34;;&#34;) 
+</span></span><span class="line"><span class="cl">                if len(b(0)) &lt;&gt;0 then  
+</span></span><span class="line"><span class="cl">                    col.name = b(0)
+</span></span><span class="line"><span class="cl">                end if  
+</span></span><span class="line"><span class="cl">                if ubound(b) &gt;0 then  
+</span></span><span class="line"><span class="cl">                    col.comment = b(1)
+</span></span><span class="line"><span class="cl">                else
+</span></span><span class="line"><span class="cl">                    col.comment = &#34;&#34;
+</span></span><span class="line"><span class="cl">                end if
+</span></span><span class="line"><span class="cl">				dataType = col.DataType
+</span></span><span class="line"><span class="cl">				if InStr(dataType,&#34;bpchar(1)&#34;) then
+</span></span><span class="line"><span class="cl">					col.DataType = &#34;char(1)&#34;
+</span></span><span class="line"><span class="cl">					col.DefaultValue = &#34;&#39;&#39;&#34;
+</span></span><span class="line"><span class="cl">					col.Mandatory = true
+</span></span><span class="line"><span class="cl">				elseif InStr(dataType,&#34;timestamp&#34;) then
+</span></span><span class="line"><span class="cl">					col.DataType = &#34;datetime&#34;
+</span></span><span class="line"><span class="cl">					col.Mandatory = false
+</span></span><span class="line"><span class="cl">				elseif InStr(dataType,&#34;int8&#34;) then
+</span></span><span class="line"><span class="cl">					col.DataType = &#34;bigint&#34;
+</span></span><span class="line"><span class="cl">					col.DefaultValue = 0
+</span></span><span class="line"><span class="cl">					col.Mandatory = true
+</span></span><span class="line"><span class="cl">				elseif InStr(dataType,&#34;varchar&#34;) then
+</span></span><span class="line"><span class="cl">					col.DefaultValue = &#34;&#39;&#39;&#34;
+</span></span><span class="line"><span class="cl">					col.Mandatory = true
+</span></span><span class="line"><span class="cl">				end if
+</span></span><span class="line"><span class="cl">                On Error Resume Next  
+</span></span><span class="line"><span class="cl">            next  
+</span></span><span class="line"><span class="cl">        end if  
+</span></span><span class="line"><span class="cl">    next  
+</span></span><span class="line"><span class="cl">end sub 
+</span></span><span class="line"><span class="cl">&#39;------------------------------------------------------------
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-12-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/sql%E7%94%9F%E6%88%90pdm%E6%96%87%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/pdm/">PDM</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/" class="prev" rel="prev" title="Nashorn脚本引擎框架"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Nashorn脚本引擎框架</a>
+            <a href="/posts/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="next" rel="next" title="JavaScript基础语法">JavaScript基础语法<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

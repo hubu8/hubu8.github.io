@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ruoyi框架之分页解析 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="ruoyi框架之分页解析" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%88%86%E9%A1%B5%E8%A7%A3%E6%9E%90/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-30T16:00:30+08:00" />
+<meta property="article:modified_time" content="2023-01-30T16:00:30+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="ruoyi框架之分页解析"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%88%86%E9%A1%B5%E8%A7%A3%E6%9E%90/" /><link rel="prev" href="https://hubu8.github.io/posts/jasypt%E5%AE%9E%E7%8E%B0springboot%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/" /><link rel="next" href="https://hubu8.github.io/posts/java%E9%9D%A2%E8%AF%95/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ruoyi框架之分页解析",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%88%86%E9%A1%B5%E8%A7%A3%E6%9E%90\/"
+        },"genre": "posts","keywords": "ruoyi","wordcount":  3612 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%88%86%E9%A1%B5%E8%A7%A3%E6%9E%90\/","datePublished": "2023-01-30T16:00:30+08:00","dateModified": "2023-01-30T16:00:30+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ruoyi框架之分页解析</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a>&nbsp;<a href="/categories/ruoyi/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ruoyi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-30">2023-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3612 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/posts/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%88%86%E9%A1%B5%E8%A7%A3%E6%9E%90/" class="leancloud_visitors" data-flag-title="ruoyi框架之分页解析">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#分页实现">分页实现</a>
+      <ul>
+        <li><a href="#httpdocruoyivipruoyidocumenthtschtml前端调用实现前端调用实现"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E5%89%8D%E7%AB%AF%E8%B0%83%E7%94%A8%E5%AE%9E%E7%8E%B0">#</a>前端调用实现</a></li>
+        <li><a href="#httpdocruoyivipruoyidocumenthtschtml后台逻辑实现后台逻辑实现"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E5%90%8E%E5%8F%B0%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0">#</a>后台逻辑实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现原理">实现原理</a></li>
+    <li><a href="#mybatis使用pagehelper分析">mybatis使用pageHelper分析</a>
+      <ul>
+        <li><a href="#设置分页dialectskipms-parameter-rowbounds"><strong>设置分页：dialect.skip(ms, parameter, rowBounds)</strong></a></li>
+        <li><a href="#统计数量dialectbeforecountms-parameter-rowbounds"><strong>统计数量：dialect.beforeCount(ms, parameter, rowBounds)</strong></a></li>
+        <li><a href="#分页executorutilpagequery"><strong>分页：ExecutorUtil.pageQuery</strong></a></li>
+        <li><a href="#非分页executorquery"><strong>非分页：executor.query</strong></a></li>
+        <li><a href="#清除theadlocal"><strong>清除TheadLocal</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#小结"><strong>小结</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="ruoyi框架分页原理">ruoyi框架分页原理</h1>
+<h2 id="分页实现">分页实现</h2>
+<ul>
+<li>前端采用基于<code>bootstrap</code>的轻量级表格插件<a href="https://github.com/wenzhixin/bootstrap-table" target="_blank" rel="noopener noreffer">bootstrap-table(opens new window)</a></li>
+<li>后端采用基于<code>mybatis</code>的轻量级分页插件<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener noreffer">pageHelper(opens new window)</a></li>
+</ul>
+<p>提示</p>
+<p>前后端分页实现流程</p>
+<h3 id="httpdocruoyivipruoyidocumenthtschtml前端调用实现前端调用实现"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%e5%89%8d%e7%ab%af%e8%b0%83%e7%94%a8%e5%ae%9e%e7%8e%b0" target="_blank" rel="noopener noreffer">#</a>前端调用实现</h3>
+<p>1、前端定义分页流程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 一般在查询参数中定义分页变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">queryParams</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pageNum</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pageSize</span><span class="o">:</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 页面添加分页组件，传入分页变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="nx">pagination</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">v</span><span class="o">-</span><span class="nx">show</span><span class="o">=</span><span class="s2">&#34;total&gt;0&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">:</span><span class="nx">total</span><span class="o">=</span><span class="s2">&#34;total&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">:</span><span class="nx">page</span><span class="p">.</span><span class="nx">sync</span><span class="o">=</span><span class="s2">&#34;queryParams.pageNum&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">:</span><span class="nx">limit</span><span class="p">.</span><span class="nx">sync</span><span class="o">=</span><span class="s2">&#34;queryParams.pageSize&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="nx">pagination</span><span class="o">=</span><span class="s2">&#34;getList&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="err">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用后台方法，传入参数 获取结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">listUser</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">queryParams</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">userList</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">rows</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">total</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="httpdocruoyivipruoyidocumenthtschtml后台逻辑实现后台逻辑实现"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%e5%90%8e%e5%8f%b0%e9%80%bb%e8%be%91%e5%ae%9e%e7%8e%b0" target="_blank" rel="noopener noreffer">#</a>后台逻辑实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/list&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@ResponseBody</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">TableDataInfo</span> <span class="nf">list</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">startPage</span><span class="o">();</span>  <span class="c1">// 此方法配合前端完成自动分页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">selectUserList</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">getDataTable</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>常见坑点1：<code>selectPostById</code>莫名其妙的分页。例如下面这段代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">startPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">selectUserList</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">selectPostById</span><span class="o">(</span><span class="n">1L</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">getDataTable</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>原因分析：这种情况下由于<code>user</code>存在<code>null</code>的情况，就会导致<code>pageHelper</code>生产了一个分页参数，但是没有被消费，这个参数就会一直保留在这个线程上。 当这个线程再次被使用时，就可能导致不该分页的方法去消费这个分页参数，这就产生了莫名其妙的分页。
+上面这个代码，应该写成下面这个样子才能保证安全。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">	<span class="n">startPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">selectUserList</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">selectPostById</span><span class="o">(</span><span class="n">1L</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">getDataTable</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>常见坑点2：添加了<code>startPage</code>方法。也没有正常分页。例如下面这段代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">startPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">selectPostById</span><span class="o">(</span><span class="n">1L</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">selectUserList</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">getDataTable</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>原因分析：只对该语句以后的第一个查询<code>（Select）</code>语句得到的数据进行分页。
+上面这个代码，应该写成下面这个样子才能正常分页。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">selectPostById</span><span class="o">(</span><span class="n">1L</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">startPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">selectUserList</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">getDataTable</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意</p>
+<p>如果改为其他数据库需修改配置<code>application.yml</code>文件中的属性<code>helperDialect=你的数据库</code></p>
+<h2 id="实现原理">实现原理</h2>
+<p>1、所有的controller继承自BaseController,而在BaseController中实现了分页方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BaseController</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 设置请求分页数据
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">startPage</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PageUtils</span><span class="o">.</span><span class="na">startPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2、在PageUtils中设置分页参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PageUtils</span> <span class="kd">extends</span> <span class="n">PageHelper</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 设置请求分页数据
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">startPage</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PageDomain</span> <span class="n">pageDomain</span> <span class="o">=</span> <span class="n">TableSupport</span><span class="o">.</span><span class="na">buildPageRequest</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Integer</span> <span class="n">pageNum</span> <span class="o">=</span> <span class="n">pageDomain</span><span class="o">.</span><span class="na">getPageNum</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Integer</span> <span class="n">pageSize</span> <span class="o">=</span> <span class="n">pageDomain</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">orderBy</span> <span class="o">=</span> <span class="n">SqlUtil</span><span class="o">.</span><span class="na">escapeOrderBySql</span><span class="o">(</span><span class="n">pageDomain</span><span class="o">.</span><span class="na">getOrderBy</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Boolean</span> <span class="n">reasonable</span> <span class="o">=</span> <span class="n">pageDomain</span><span class="o">.</span><span class="na">getReasonable</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PageHelper</span><span class="o">.</span><span class="na">startPage</span><span class="o">(</span><span class="n">pageNum</span><span class="o">,</span> <span class="n">pageSize</span><span class="o">,</span> <span class="n">orderBy</span><span class="o">).</span><span class="na">setReasonable</span><span class="o">(</span><span class="n">reasonable</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 清理分页的线程变量
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">clearPage</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PageHelper</span><span class="o">.</span><span class="na">clearPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3、TableSupport中获取对应的分页参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TableSupport</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 当前记录起始索引
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PAGE_NUM</span> <span class="o">=</span> <span class="s">&#34;pageNum&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 每页显示记录数
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PAGE_SIZE</span> <span class="o">=</span> <span class="s">&#34;pageSize&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 排序列
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ORDER_BY_COLUMN</span> <span class="o">=</span> <span class="s">&#34;orderByColumn&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 排序的方向 &#34;desc&#34; 或者 &#34;asc&#34;.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">IS_ASC</span> <span class="o">=</span> <span class="s">&#34;isAsc&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 分页参数合理化
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">REASONABLE</span> <span class="o">=</span> <span class="s">&#34;reasonable&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 封装分页对象
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">PageDomain</span> <span class="nf">getPageDomain</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PageDomain</span> <span class="n">pageDomain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageDomain</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//分页默认第一页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">pageDomain</span><span class="o">.</span><span class="na">setPageNum</span><span class="o">(</span><span class="n">Convert</span><span class="o">.</span><span class="na">toInt</span><span class="o">(</span><span class="n">ServletUtils</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="n">PAGE_NUM</span><span class="o">),</span> <span class="n">1</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//页大小10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">pageDomain</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">Convert</span><span class="o">.</span><span class="na">toInt</span><span class="o">(</span><span class="n">ServletUtils</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="n">PAGE_SIZE</span><span class="o">),</span> <span class="n">10</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//排序列
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">pageDomain</span><span class="o">.</span><span class="na">setOrderByColumn</span><span class="o">(</span><span class="n">ServletUtils</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="n">ORDER_BY_COLUMN</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//升序降序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">pageDomain</span><span class="o">.</span><span class="na">setIsAsc</span><span class="o">(</span><span class="n">ServletUtils</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="n">IS_ASC</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//分页对象合理化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">pageDomain</span><span class="o">.</span><span class="na">setReasonable</span><span class="o">(</span><span class="n">ServletUtils</span><span class="o">.</span><span class="na">getParameterToBool</span><span class="o">(</span><span class="n">REASONABLE</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">pageDomain</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">PageDomain</span> <span class="nf">buildPageRequest</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">getPageDomain</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4、解析PageHelper.startPage(pageNum, pageSize, orderBy).setReasonable(reasonable);</p>
+<ul>
+<li>pageNum：页数</li>
+<li>pageSize：每页数据量</li>
+<li>orderBy：排序</li>
+<li>reasonable：分页合理化，对于不合理的分页参数自动处理，比如传递pageNum是小于0，会默认设置为1.</li>
+</ul>
+<p>继续跟踪，连续点击startpage构造方法到达如下位置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 开始分页
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param pageNum      页码
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param pageSize     每页显示数量
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param count        是否进行count查询
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param reasonable   分页合理化,null时用默认配置
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param pageSizeZero true且pageSize=0时返回全部结果，false时分页,null时用默认配置
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="nf">startPage</span><span class="o">(</span><span class="kt">int</span> <span class="n">pageNum</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pageSize</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">count</span><span class="o">,</span> <span class="n">Boolean</span> <span class="n">reasonable</span><span class="o">,</span> <span class="n">Boolean</span> <span class="n">pageSizeZero</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Page</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">page</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;(</span><span class="n">pageNum</span><span class="o">,</span> <span class="n">pageSize</span><span class="o">,</span> <span class="n">count</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="na">setReasonable</span><span class="o">(</span><span class="n">reasonable</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="na">setPageSizeZero</span><span class="o">(</span><span class="n">pageSizeZero</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1、获取本地分页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Page</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">oldPage</span> <span class="o">=</span> <span class="n">getLocalPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">oldPage</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">oldPage</span><span class="o">.</span><span class="na">isOrderByOnly</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">page</span><span class="o">.</span><span class="na">setOrderBy</span><span class="o">(</span><span class="n">oldPage</span><span class="o">.</span><span class="na">getOrderBy</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">// 2、设置本地分页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">setLocalPage</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">page</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到达终点位置了，分别是：<code>getLocalPage()</code>和<code>setLocalPage(page)</code>，分别来看下：</p>
+<p>getLocalPage()</p>
+<p>进入方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 获取 Page 参数
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getLocalPage</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">LOCAL_PAGE</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>看看常量<code>LOCAL_PAGE</code>是个什么路数？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">protected</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">Page</span><span class="o">&gt;</span> <span class="n">LOCAL_PAGE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">Page</span><span class="o">&gt;();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>好家伙，是<code>ThreadLocal</code>，学过java基础的都知道吧，独属于每个线程的本地缓存对象。</p>
+<p>当一个请求来的时候，会获取持有当前请求的线程的ThreadLocal，调用<code>LOCAL_PAGE.get()</code>，查看当前线程是否有未执行的分页配置。</p>
+<p>setLocalPage(page)</p>
+<p>此方法显而易见，设置线程的分页配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">protected</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setLocalPage</span><span class="o">(</span><span class="n">Page</span> <span class="n">page</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LOCAL_PAGE</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mybatis使用pagehelper分析">mybatis使用pageHelper分析</h2>
+<p>我们需要关注的就是mybatis在何时使用的这个ThreadLocal，也就是何时将分页餐数获取到的。</p>
+<p>前面提到过，通过PageHelper的<code>startPage()</code>方法进行page缓存的设置，当程序执行sql接口mapper的方法时，就会被拦截器<code>PageInterceptor</code>拦截到。</p>
+<p>PageHelper其实就是mybatis的分页插件，其实现原理就是通过拦截器的方式，pageHelper通<code>PageInterceptor</code>实现分页效果，我们只关注<code>intercept</code>方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Object</span> <span class="nf">intercept</span><span class="o">(</span><span class="n">Invocation</span> <span class="n">invocation</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Object</span><span class="o">[]</span> <span class="n">args</span> <span class="o">=</span> <span class="n">invocation</span><span class="o">.</span><span class="na">getArgs</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MappedStatement</span> <span class="n">ms</span> <span class="o">=</span> <span class="o">(</span><span class="n">MappedStatement</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="n">0</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Object</span> <span class="n">parameter</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="n">1</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">RowBounds</span> <span class="n">rowBounds</span> <span class="o">=</span> <span class="o">(</span><span class="n">RowBounds</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="n">2</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ResultHandler</span> <span class="n">resultHandler</span> <span class="o">=</span> <span class="o">(</span><span class="n">ResultHandler</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="n">3</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Executor</span> <span class="n">executor</span> <span class="o">=</span> <span class="o">(</span><span class="n">Executor</span><span class="o">)</span> <span class="n">invocation</span><span class="o">.</span><span class="na">getTarget</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CacheKey</span> <span class="n">cacheKey</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">BoundSql</span> <span class="n">boundSql</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 由于逻辑关系，只会进入一次
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">4</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//4 个参数时
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">boundSql</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="na">getBoundSql</span><span class="o">(</span><span class="n">parameter</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cacheKey</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="na">createCacheKey</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//6 个参数时
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">cacheKey</span> <span class="o">=</span> <span class="o">(</span><span class="n">CacheKey</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="n">4</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">boundSql</span> <span class="o">=</span> <span class="o">(</span><span class="n">BoundSql</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="n">5</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">checkDialectExists</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//对 boundSql 的拦截处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">dialect</span> <span class="k">instanceof</span> <span class="n">BoundSqlInterceptor</span><span class="o">.</span><span class="na">Chain</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">boundSql</span> <span class="o">=</span> <span class="o">((</span><span class="n">BoundSqlInterceptor</span><span class="o">.</span><span class="na">Chain</span><span class="o">)</span> <span class="n">dialect</span><span class="o">).</span><span class="na">doBoundSql</span><span class="o">(</span><span class="n">BoundSqlInterceptor</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ORIGINAL</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">,</span> <span class="n">cacheKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span> <span class="n">resultList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//调用方法判断是否需要进行分页，如果不需要，直接返回结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(!</span><span class="n">dialect</span><span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//判断是否需要进行 count 查询
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="o">(</span><span class="n">dialect</span><span class="o">.</span><span class="na">beforeCount</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//查询总数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">Long</span> <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">(</span><span class="n">executor</span><span class="o">,</span> <span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//处理查询总数，返回 true 时继续分页查询，false 时直接返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">if</span> <span class="o">(!</span><span class="n">dialect</span><span class="o">.</span><span class="na">afterCount</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//当查询总数为 0 时，直接返回空的结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="k">return</span> <span class="n">dialect</span><span class="o">.</span><span class="na">afterPage</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">(),</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">resultList</span> <span class="o">=</span> <span class="n">ExecutorUtil</span><span class="o">.</span><span class="na">pageQuery</span><span class="o">(</span><span class="n">dialect</span><span class="o">,</span> <span class="n">executor</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultHandler</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">,</span> <span class="n">cacheKey</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//rowBounds用参数值，不使用分页插件处理时，仍然支持默认的内存分页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">resultList</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultHandler</span><span class="o">,</span> <span class="n">cacheKey</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">dialect</span><span class="o">.</span><span class="na">afterPage</span><span class="o">(</span><span class="n">resultList</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">dialect</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dialect</span><span class="o">.</span><span class="na">afterAll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如上所示是intecept的全部代码，我们下面只关注几个终点位置：</p>
+<h3 id="设置分页dialectskipms-parameter-rowbounds"><strong>设置分页：dialect.skip(ms, parameter, rowBounds)</strong></h3>
+<p>此处的<code>skip方法</code>进行设置分页参数，内部调用方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Page</span> <span class="nx">page</span> <span class="p">=</span> <span class="nx">pageParams</span><span class="p">.</span><span class="nf">getPage</span><span class="p">(</span><span class="nx">parameterObject</span><span class="p">,</span> <span class="nx">rowBounds</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>继续跟踪<code>getPage()</code>，发现此方法的第一行就获取了ThreadLocal的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Page</span> <span class="nx">page</span> <span class="p">=</span> <span class="nx">PageHelper</span><span class="p">.</span><span class="nf">getLocalPage</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="统计数量dialectbeforecountms-parameter-rowbounds"><strong>统计数量：dialect.beforeCount(ms, parameter, rowBounds)</strong></h3>
+<p>我们都知道，分页需要获取记录总数，所以，这个拦截器会在分页前先进行count操作。</p>
+<p>如果count为0，则直接返回，不进行分页：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//处理查询总数，返回 true 时继续分页查询，false 时直接返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="o">(!</span><span class="n">dialect</span><span class="o">.</span><span class="na">afterCount</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//当查询总数为 0 时，直接返回空的结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">dialect</span><span class="o">.</span><span class="na">afterPage</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">(),</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>afterPage其实是对分页结果的封装方法，即使不分页，也会执行，只不过返回空列表。</p>
+<h3 id="分页executorutilpagequery"><strong>分页：ExecutorUtil.pageQuery</strong></h3>
+<p>在处理完count方法后，就是真正的进行分页了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">resultList</span> <span class="o">=</span> <span class="n">ExecutorUtil</span><span class="o">.</span><span class="na">pageQuery</span><span class="o">(</span><span class="n">dialect</span><span class="o">,</span> <span class="n">executor</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultHandler</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">,</span> <span class="n">cacheKey</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此方法在执行分页之前，会判断是否执行分页，依据就是前面我们通过ThreadLocal的获取的page。</p>
+<p>当然，不分页的查询，以及新增和更新不会走到这个方法当中。</p>
+<h3 id="非分页executorquery"><strong>非分页：executor.query</strong></h3>
+<p>而是会走到下面的这个分支：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">resultList</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultHandler</span><span class="o">,</span> <span class="n">cacheKey</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>我们可以思考一下，如果ThreadLoad在使用后没有被清除，当执行非分页的方法时，那么就会将Limit拼接到sql后面。</strong></p>
+<p>为什么不分也得也会拼接？我们回头看下前面提到的<code>dialect.skip(ms, parameter, rowBounds)</code>:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/img_convert/1f4f6d4d80e9c5420c2a33145b248f18.jpeg"
+        data-srcset="https://img-blog.csdnimg.cn/img_convert/1f4f6d4d80e9c5420c2a33145b248f18.jpeg, https://img-blog.csdnimg.cn/img_convert/1f4f6d4d80e9c5420c2a33145b248f18.jpeg 1.5x, https://img-blog.csdnimg.cn/img_convert/1f4f6d4d80e9c5420c2a33145b248f18.jpeg 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/img_convert/1f4f6d4d80e9c5420c2a33145b248f18.jpeg"
+        title="1f4f6d4d80e9c5420c2a33145b248f18.jpeg" /></p>
+<p>图片</p>
+<p>如上所示，只要page被获取到了，那么这个sql，就会走前面提到的<code>ExecutorUtil.pageQuery</code>分页逻辑，最终导致出现不可预料的情况。</p>
+<p>其实PageHelper对于分页后的ThreaLocal是有清除处理的。</p>
+<h3 id="清除theadlocal"><strong>清除TheadLocal</strong></h3>
+<p>在intercept方法的最后，会在sql方法执行完成后，清理page缓存：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">dialect</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dialect</span><span class="o">.</span><span class="na">afterAll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>看看这个<code>afterAll()</code>方法:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterAll</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//这个方法即使不分页也会被执行，所以要判断 null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">AbstractHelperDialect</span> <span class="n">delegate</span> <span class="o">=</span> <span class="n">autoDialect</span><span class="o">.</span><span class="na">getDelegate</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">delegate</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">delegate</span><span class="o">.</span><span class="na">afterAll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">autoDialect</span><span class="o">.</span><span class="na">clearDelegate</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clearPage</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>只关注 <code>clearPage()</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 移除本地变量
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">clearPage</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LOCAL_PAGE</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="小结"><strong>小结</strong></h2>
+<p>到此为止，关于PageHelper的使用方式就讲解完了。</p>
+<p>整体看下来，似乎不会存在什么问题，但是我们可以考虑集中极端情况：</p>
+<ul>
+<li>如果使用了<code>startPage()</code>，但是没有执行对应的sql，那么就表明，当前线程ThreadLocal被设置了分页参数，可是没有被使用，当下一个使用此线程的请求来时，就会出现问题。</li>
+<li>如果程序在执行sql前，发生异常了，就没办法执行finally当中的<code>clearPage()</code>方法，也会造成线程的ThreadLocal被污染。</li>
+</ul>
+<p>所以，官方给我们的建议，在<strong>使用PageHelper进行分页时，执行sql的代码要紧跟startPage()方法</strong>。</p>
+<p>除此之外，我们可以<strong>手动调用<code>clearPage()</code>方法</strong>，在存在问题的方法之前。</p>
+<p>需要注意：<strong>不要分页的方法前手动调用clearPage，将会导致你的分页出现问题</strong>。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-01-30</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/ruoyi%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%88%86%E9%A1%B5%E8%A7%A3%E6%9E%90/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ruoyi/">ruoyi</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/jasypt%E5%AE%9E%E7%8E%B0springboot%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/" class="prev" rel="prev" title="Jasypt实现springboot参数加密"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Jasypt实现springboot参数加密</a>
+            <a href="/posts/java%E9%9D%A2%E8%AF%95/" class="next" rel="next" title="Java面试">Java面试<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

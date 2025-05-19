@@ -6,82 +6,82 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
             <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 02 Aug 2024 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
     <title>使用有向无环图表示任务的依赖关系</title>
-    <link>https://hubu8.github.io/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</link>
+    <link>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</link>
     <pubDate>Fri, 02 Aug 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</guid>
+    <guid>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>数据脱敏实现：想在哪脱就在哪脱，想脱谁就脱谁！！！</title>
-    <link>https://hubu8.github.io/%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E5%AE%9E%E7%8E%B0%E6%83%B3%E5%9C%A8%E5%93%AA%E8%84%B1%E5%B0%B1%E5%9C%A8%E5%93%AA%E8%84%B1%E6%83%B3%E8%84%B1%E8%B0%81%E5%B0%B1%E8%84%B1%E8%B0%81/</link>
+    <link>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E5%AE%9E%E7%8E%B0%E6%83%B3%E5%9C%A8%E5%93%AA%E8%84%B1%E5%B0%B1%E5%9C%A8%E5%93%AA%E8%84%B1%E6%83%B3%E8%84%B1%E8%B0%81%E5%B0%B1%E8%84%B1%E8%B0%81/</link>
     <pubDate>Tue, 14 May 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E5%AE%9E%E7%8E%B0%E6%83%B3%E5%9C%A8%E5%93%AA%E8%84%B1%E5%B0%B1%E5%9C%A8%E5%93%AA%E8%84%B1%E6%83%B3%E8%84%B1%E8%B0%81%E5%B0%B1%E8%84%B1%E8%B0%81/</guid>
+    <guid>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E5%AE%9E%E7%8E%B0%E6%83%B3%E5%9C%A8%E5%93%AA%E8%84%B1%E5%B0%B1%E5%9C%A8%E5%93%AA%E8%84%B1%E6%83%B3%E8%84%B1%E8%B0%81%E5%B0%B1%E8%84%B1%E8%B0%81/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Spring Boot如何优雅实现数据加密存储、模糊匹配和脱敏</title>
-    <link>https://hubu8.github.io/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E5%92%8C%E8%84%B1%E6%95%8F/</link>
+    <link>https://hubu8.github.io/posts/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E5%92%8C%E8%84%B1%E6%95%8F/</link>
     <pubDate>Mon, 13 May 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E5%92%8C%E8%84%B1%E6%95%8F/</guid>
+    <guid>https://hubu8.github.io/posts/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E5%92%8C%E8%84%B1%E6%95%8F/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Spring Boot如何优雅提高接口数据安全性</title>
-    <link>https://hubu8.github.io/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7/</link>
+    <link>https://hubu8.github.io/posts/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7/</link>
     <pubDate>Mon, 13 May 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7/</guid>
+    <guid>https://hubu8.github.io/posts/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ruoyi自定义实现前后端traceid加密校验</title>
-    <link>https://hubu8.github.io/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/</link>
+    <link>https://hubu8.github.io/posts/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/</link>
     <pubDate>Sun, 28 Apr 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/</guid>
+    <guid>https://hubu8.github.io/posts/ruoyi%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%89%8D%E5%90%8E%E7%AB%AFtraceid%E5%8A%A0%E5%AF%86%E6%A0%A1%E9%AA%8C/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>SpringBoot项目打包瘦身</title>
-    <link>https://hubu8.github.io/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</link>
+    <link>https://hubu8.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</link>
     <pubDate>Thu, 25 Jan 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</guid>
+    <guid>https://hubu8.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disa(String)----发送邮件报错</title>
-    <link>https://hubu8.github.io/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E9%94%99%E8%AF%AF/</link>
+    <link>https://hubu8.github.io/posts/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99/</link>
     <pubDate>Tue, 23 Jan 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E9%94%99%E8%AF%AF/</guid>
+    <guid>https://hubu8.github.io/posts/javax.net.ssl.sslhandshakeexception-no-appropriate-protocol-protocol-is-disastring----%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E6%8A%A5%E9%94%99/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>如何优雅地避免重复提交</title>
-    <link>https://hubu8.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</link>
+    <link>https://hubu8.github.io/posts/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</link>
     <pubDate>Wed, 03 Jan 2024 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</guid>
+    <guid>https://hubu8.github.io/posts/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Nashorn脚本引擎框架</title>
-    <link>https://hubu8.github.io/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</link>
+    <link>https://hubu8.github.io/posts/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</link>
     <pubDate>Thu, 23 Nov 2023 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</guid>
+    <guid>https://hubu8.github.io/posts/nashorn%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Rhino脚本引擎框架</title>
-    <link>https://hubu8.github.io/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</link>
+    <link>https://hubu8.github.io/posts/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</link>
     <pubDate>Thu, 02 Nov 2023 08:59:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hubu8.github.io/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</guid>
+    <guid>https://hubu8.github.io/posts/rhino%E8%84%9A%E6%9C%AC%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

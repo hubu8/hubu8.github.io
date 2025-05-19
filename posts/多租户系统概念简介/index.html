@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>多租户系统概念简介 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="多租户系统概念简介" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-17T08:59:26+08:00" />
+<meta property="article:modified_time" content="2024-01-17T08:59:26+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="多租户系统概念简介"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/" /><link rel="prev" href="https://hubu8.github.io/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/" /><link rel="next" href="https://hubu8.github.io/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E9%A2%97%E7%B2%92%E5%BA%A6%E5%B0%8F%E8%AE%B0--%E5%8A%A0%E9%94%81%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "多租户系统概念简介",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B\/"
+        },"genre": "posts","wordcount":  10301 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B\/","datePublished": "2024-01-17T08:59:26+08:00","dateModified": "2024-01-17T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">多租户系统概念简介</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>后端</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-17">2024-01-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 10301 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 21 分钟&nbsp;<span id="/posts/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/" class="leancloud_visitors" data-flag-title="多租户系统概念简介">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#写作目的">写作目的</a></li>
+    <li><a href="#xaas一切即服务">XaaS（一切即服务）</a>
+      <ul>
+        <li><a href="#iaas基础架构即服务">IaaS（基础架构即服务）</a></li>
+        <li><a href="#paas平台即服务">PaaS（平台即服务）</a></li>
+        <li><a href="#saas软件即服务">SaaS（软件即服务）</a>
+          <ul>
+            <li><a href="#小结">小结</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#单租户">单租户</a></li>
+    <li><a href="#多租户">多租户</a>
+      <ul>
+        <li><a href="#隔离方案">隔离方案</a>
+          <ul>
+            <li><a href="#独立数据库">独立数据库</a></li>
+            <li><a href="#共享数据库独立schema">共享数据库、独立Schema</a></li>
+            <li><a href="#共享数据库共享schema共享表">共享数据库、共享Schema、共享表</a></li>
+            <li><a href="#小结-1">小结</a></li>
+          </ul>
+        </li>
+        <li><a href="#实践">实践</a>
+          <ul>
+            <li><a href="#mybatis-plus实现">Mybatis-Plus实现</a>
+              <ul>
+                <li><a href="#分页">分页</a></li>
+                <li><a href="#插入">插入</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>什么是多租户？举个例子：马云、马化腾和刘强东三个人去租房子，他们因为家里经济困难所以勤工俭学，三个人决定合租一套三室一厅的房子，虽然每个人有自己的房间，但是家里的水电、厨房、卫生间和热水器都是大家一起公用的。隐私性肯定是没有单独自己租房子来的高。</p>
+<h2 id="写作目的">写作目的</h2>
+<p>本文写作的目的是探索XaaS（IaaS、PaaS和SaaS）三种模式的概念及区别？多租户是什么？多租户可以用来干什么？有哪些租户隔离方案？这些方案的适用场景有哪些，它们各有什么优缺点？带着这些疑问，我们最后看下如何具体实现一个多租户系统。</p>
+<h2 id="xaas一切即服务">XaaS（一切即服务）</h2>
+<p>在讲解多租户之前，我们先来了解一下云计算的三种主要模式：IaaS、PaaS和SaaS。</p>
+<ul>
+<li>IaaS(Infrastructure as a Service)，基础设施即服务。提供基于云的虚拟化计算和存储服务。</li>
+<li>PaaS(Platform as a Service)，平台即服务。除了提供基础设施以外，PaaS还提供了基于云的操作系统、数据库和开发工具。</li>
+<li>SaaS(Software as a Service)，软件即服务。在PaaS的基础之上，SaaS可以为任何能够联网的设备提供软件服务。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152304383.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152304383.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152304383.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152304383.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152304383.png"
+        title="image-20240117152304383.png" /></p>
+<h3 id="iaas基础架构即服务">IaaS（基础架构即服务）</h3>
+<p>IaaS通过即用即付的方式为用户提供网络、存储和计算等基础设施资源。用户只需要购买和配置应用程序及系统所需的资源，然后自己负责部署、维护和开发应用程序。可以把IaaS简单理解为基于云的虚拟化硬件服务提供商，购买了IaaS的服务你就拥有了能随时随地联网的服务器。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152347716.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152347716.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152347716.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152347716.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152347716.png"
+        title="image-20240117152347716.png" /></p>
+<h3 id="paas平台即服务">PaaS（平台即服务）</h3>
+<p>当用户购买了“硬件资源”之后，当然是想要在自己的硬件设备上安装操作系统、中间件和开发工具。PaaS可以为用户提供安装操作系统、中间件和开发工具的一站式运维服务，用户需要考虑的只是编写代码和测试应用程序。用户开发完应用程序以后，PaaS会负责应用程序后续的生命周期如构建、部署、托管以及更新。</p>
+<p>在控制成本方面，PaaS也是非常灵活的。用户可以根据应用的客户体量和使用效期来决定购买合适的资源。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152410229.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152410229.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152410229.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152410229.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152410229.png"
+        title="image-20240117152410229.png" /></p>
+<h3 id="saas软件即服务">SaaS（软件即服务）</h3>
+<p>SaaS近几年一直是产品的风口行业。但是早在上世纪90年代，软件就作为一种服务来销售，用户按月缴纳费用，当时将这种模式称作按需服务（on-demand），它是SaaS模式的雏形。</p>
+<p>SaaS最早的实践者一般认为是Salesforce的CEO兼创始人马克·贝尼奥夫(Marc Benioff)。他认为“一定有一种方式，让购买软件更加方便和便宜”。用户只需要订阅和付费，不需要经历漫长的开发、安装和维护周期。并且在现在这个高度信息化的时代，多端访问和数据同步已经是很多用户的刚需，用户希望无论何时何地都可以通过浏览器或者手机访问自己的应用。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152433387.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152433387.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152433387.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152433387.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152433387.png"
+        title="image-20240117152433387.png" /></p>
+<p>关于SaaS的演进过程，这里打个比方。30年前，家家户户炒菜洗澡的气都装在煤气罐里，煤气用完了就通知煤气工人来回收并换一罐煤气。这个煤气罐就可以理解为以前的私有化部署服务。这种模式需要定时维护更新。</p>
+<p>20年前，家家户户住上了商品房，换煤气罐上下楼太不方便，人们使用天然气直接从天然气公司订购每月缴费，按需购买，天然气公司集中供气并管理各家天然气管道。这种模式不再是私有化服务，节约了用户的使用成本和天然气公司的管理成本。我们可以将这种模式称之为“供气即服务”。</p>
+<p>10年前，移动互联网兴起，人们不再需要去天然气公司上门缴费。手机上动动手指头，然后带着天然气卡去物业圈存即可。这就使得“供气即服务”的信息化得到进一步加强。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152449137.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152449137.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152449137.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152449137.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152449137.png"
+        title="image-20240117152449137.png" /></p>
+<p>SaaS模式可以简单理解为用户授权，将IT设备、软件和运维统统外包给SaaS服务提供商。用户以租户的形式使用SaaS厂商提供的服务。</p>
+<p>SaaS厂商一般不会自己去做IaaS，但SaaS和PaaS之间的定义还存在争论。PaaS除了提供操作系统开发工具以外，还可以向SaaS提供公共工具，如组织架构、权限管理和计费等。对于初创期的中小企业不具备这样的技术能力。大多数SaaS厂商的侧重点应在于应用的业务实现，而不是平台的技术能力。</p>
+<h4 id="小结">小结</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IaaS</th>
+<th>PaaS</th>
+<th>SaaS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名称含义</td>
+<td>基础架构即服务(Infrastructure as a Service)</td>
+<td>平台即服务(Platform as a Service)</td>
+<td>软件即服务(Software as a Service)</td>
+</tr>
+<tr>
+<td>平台提供</td>
+<td>虚拟化的硬件计算、存储</td>
+<td>虚拟化的硬件计算、存储操作系统、管理和开发工具</td>
+<td>虚拟化的硬件计算、存储操作系统、管理和开发工具云应用程序</td>
+</tr>
+<tr>
+<td>用户实现</td>
+<td>操作系统、管理和开发工具云应用程序</td>
+<td>云应用程序</td>
+<td>/</td>
+</tr>
+<tr>
+<td>用户群体</td>
+<td>* IT运营商</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>DevOps团队</li>
+<li>系统和数据库管理员</li>
+<li>全栈开发人员 | * 有开发能力但考虑运维成本的企业</li>
+<li>开发人员或程序员           | 没有开发能力的企业                             | | 优点   | * 可以灵活扩展资源</li>
+<li>节省成本                       | * 技术门槛低</li>
+<li>快速开发。可配置的框架和工具</li>
+<li>管理简单。可伸缩的资源 | * 没有技术门槛</li>
+<li>快速部署，管理简单</li>
+<li>收费模式灵活，适用于中小企业 | | 缺点   | * 无法控制基础设施</li>
+<li>技术门槛高</li>
+<li>不可控的安全级别，可能存在安全漏洞  | * 灵活性降低。</li>
+<li>依赖于厂商的可靠性和稳定性               | * 不可控的安全级别，可能存在安全漏洞</li>
+<li>灵活性有限。无法定制需求    | | 适用场景 | 适合对计算资源要求灵活、可扩展的企业                      | 适合快速部署，专注于开发的企业                        | 适合无技术，需要控制成本按需购买，定制功能要求不多的中小企业        | | 具体案例 | AWS、阿里云、华为云等                            | 京东云擎JAE、百度BAE、新浪SAE                    | 企业微信、钉钉                               |</li>
+</ul>
+<p>前面花了大段篇幅讲解了关于XaaS特别是SaaS模式的概念及演进过程，目的是想告诉大家SaaS的概念是在什么样的历史背景下演变而来的。下面我们从SaaS单租户和多租户两种架构开始讲解。</p>
+<h2 id="单租户">单租户</h2>
+<p>在单租户的架构里，每个租户都有自己的一套服务器、基础设施和数据库，租户之间从硬件到软件都是完全隔离的。租户可以根据自己的需要做一些定制化的需求。</p>
+<p>举个栗子，马云、马化腾和刘强东三个人去租房子，他们各自租了一间房，房间的水电、厨房、热水器等等都是各自一套，相互之间没有共用。</p>
+<p>在外租过房子的童鞋都知道，自己单租房间的缺点是成本更高，优点则是只用考虑个人的租房需求来找房子，一个人住隐私安全性也更高。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152512883.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152512883.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152512883.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152512883.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152512883.png"
+        title="image-20240117152512883.png" /></p>
+<h2 id="多租户">多租户</h2>
+<p>在多租户的架构里，多个租户共享相同的服务器、基础设施，数据库可以是共享的也可以是隔离的，由于多租户必定在用户规模上比单租户来的大，所以多租户一般会有多个实例，共用一套实例代码。租户之间的数据隔离往往采用逻辑隔离的方式，即在代码和数据库层面隔离，所以安全性远没有单租户来的高。</p>
+<p>还是举上面的栗子，马云、马化腾和刘强东三个人去租房子，他们因为家里经济困难所以勤工俭学，三个人决定合租一套三室一厅的房子，虽然每个人有自己的房间，但是家里的水电、厨房、卫生间和热水器都是大家一起公用的。隐私性肯定是没有单独自己租房子来的高。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152526622.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152526622.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152526622.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152526622.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152526622.png"
+        title="image-20240117152526622.png" /></p>
+<p>总结一下单租户和多租户的差异，有如下几点：</p>
+<ul>
+<li>安全性和成本不同。单租户拥有独立的软硬件环境，数据库只存储单租户的数据；多租户则共享资源。</li>
+<li>备份和还原的复杂度不同。单租户数据备份和还原简单；多租户因为公用一个数据库甚至公用一个表，所以备份和还原时都有可能影响到其他的租户。</li>
+<li>定制灵活度不同。单租户适合为每个租户量身定制不同的功能，扩展灵活的高；多租户为了节约成本，也考虑到开发难度，更多的以通用配置为主，尽可能将各租户的功能抽象出来共享使用。</li>
+<li>系统升级策略不同。单租户需要对每个租户单独升级，升级时间依各租户自己的需求而定；多租户只需要升级一次，但是为了不影响租户的使用，一般会在深夜升级系统。</li>
+</ul>
+<p>所以单租户适合用在对安全管控、法律合规要求更高的中大型企业，且这些企业的需求相对更加复杂，所以更适合定制化开发；而多租户更适合对安全没有太高要求，但是希望控制成本，应用的需求相对通用简单的中小微企业。</p>
+<p>由于多租户的架构成本更少，开发和运维的复杂度更低，所以多租户更适合企业向外复制自己的产品，也是目前比较主流的SaaS架构。但是这并不代表单租户模式没有用武之地，医院、警务、政法委、银行等对安全隐私要求更高的环境，单租户是必然的选择。</p>
+<p>本文后面主要是以介绍多租户的实现为主。而多租户意味着要在云端集中式管理多个用户，这里的用户主要指的是面向企业或者政府，当然也有面向个人的场景。所以，要做到在同一套程序下，满足多个不同用户群体的使用，最关键的就是保证用户间数据的隔离性。</p>
+<h3 id="隔离方案">隔离方案</h3>
+<p>多租户在数据隔离存储方案上，一般有三种实施方案：</p>
+<ul>
+<li>独立数据库</li>
+<li>共享数据库、独立Schema</li>
+<li>共享数据库、共享Schema、共享表</li>
+</ul>
+<h4 id="独立数据库">独立数据库</h4>
+<p>每个租户使用独立的数据库，这种方案类似于传统的部署，其区别在于多租户的实现是将每个租户的数据库都统一管理起来。这种一租户一数据库的方案优缺点都很明显：</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>数据隔离性好，安全级别高；</li>
+<li>数据库表不需要额外的字段来区分租户；</li>
+<li>需求扩展独立性好，不影响其他租户的使用；</li>
+<li>出现故障时，恢复数据简单。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>增加了数据库的安装数量和安装成本；</li>
+<li>支持租户的数量有限；</li>
+<li>跨租户统计数据较困难；</li>
+<li>新增租户需要重启服务。</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<p>适用于定价高，安全级别要求高的租户。例如，银行、医院等对数据隔离性有严格要求的租户。这些租户的特点是租户较少，数据规模大，数据隔离性强。</p>
+<h4 id="共享数据库独立schema">共享数据库、独立Schema</h4>
+<p>每个租户共享同一个数据库，但使用的是不同的Schema。像Oracle和PgSql都支持一个数据库下多个Schema。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>数据隔离性较好。为每个租户提供了一定程度上的逻辑隔离；</li>
+<li>相较于独立数据库方案，可以支持的租户数量更多；</li>
+<li>安装成本相对较低。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>跨租户统计数据较困难；</li>
+<li>各个租户的数据库sql需要带上Schema名称。</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<p>适用于数据规模中等，租户数量中等的项目。</p>
+<h4 id="共享数据库共享schema共享表">共享数据库、共享Schema、共享表</h4>
+<p>每个租户共享同一个数据库，同一个Schema，甚至是同一张表。每个表里都有一个tenant_id字段用来区分表里的记录是来自于哪一个租户。这种多租户方案是三个方案里隔离级别最低但是共享程度最高的一个。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>安装成本最低；</li>
+<li>支持的租户数量最多；</li>
+<li>添加租户不需要重启服务；</li>
+<li>跨租户统计较容易。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>安全性最差，隔离级别最低；</li>
+<li>维护成本最高。其成本体现在表设计需要额外字段，sql代码需要额外查询条件，故障后数据恢复需要额外操作；</li>
+<li>每个租户的数据量规模不宜较大。</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<p>适用于低成本，租户数量多，租户数据量小，对安全性和隔离级别要求低的产品。例如一些To C的产品。</p>
+<h4 id="小结-1">小结</h4>
+<p>了解了不同的多租户隔离方案以后，我们大致的明白了想要实现多租户，就应该在数据的安全性、成本、开发量以及租户的规模等因素入手，找出它们的平衡点。实际的产品功能更多，产品架构设计要考虑的因素更多，可能还会出现多种设计方案的结合使用。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152541695.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152541695.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152541695.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152541695.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152541695.png"
+        title="image-20240117152541695.png" /></p>
+<ul>
+<li><strong>成本</strong>。
+<ul>
+<li>隔离性越高，成本越高；</li>
+<li>共享性越高，成本越低；</li>
+</ul>
+</li>
+<li><strong>安全</strong>。
+<ul>
+<li>隔离性越高，安全级别越高；</li>
+<li>共享性越高，安全性越低；</li>
+</ul>
+</li>
+<li><strong>数据规模</strong>。在不考虑成本和安全因素的情况下：
+<ul>
+<li>租户数量越多，越倾向于共享；</li>
+<li>单个租户的数据量越多，越倾向于隔离；</li>
+<li>单个租户同时在线人数越多，越倾向于隔离；</li>
+<li>对数据备份和恢复的要求越多，越倾向于隔离；</li>
+</ul>
+</li>
+<li><strong>技术要求</strong>。
+<ul>
+<li>隔离性越高，技术要求越低；</li>
+<li>共享性越高，技术要求越高；</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>独立数据库</th>
+<th>共享数据库、独立schema</th>
+<th>共享数据库、共享数据架构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发成本</td>
+<td>低</td>
+<td>一般</td>
+<td>高</td>
+</tr>
+<tr>
+<td>运维成本</td>
+<td>高</td>
+<td>一般</td>
+<td>低</td>
+</tr>
+<tr>
+<td>隔离性/安全性</td>
+<td>高</td>
+<td>一般</td>
+<td>低</td>
+</tr>
+<tr>
+<td>租户间交互能力</td>
+<td>低</td>
+<td>一般</td>
+<td>高</td>
+</tr>
+<tr>
+<td>定制化空间</td>
+<td>高</td>
+<td>一般</td>
+<td>低</td>
+</tr>
+<tr>
+<td>可支持的最大租户数量</td>
+<td>低</td>
+<td>一般</td>
+<td>高</td>
+</tr>
+</tbody>
+</table>
+<h3 id="实践">实践</h3>
+<p>前面讲了这么长的理论知识，下面我们实现一个共享表的多租户小示例。后面如果有时间我也会写一个通过ShardingJdbc实现的示例，大家可以先关注我，文章发布出来可以第一时间学习。</p>
+<h4 id="mybatis-plus实现">Mybatis-Plus实现</h4>
+<p>首先要导入maven依赖。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl">XML复制代码<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.baomidou<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>3.4.1<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 mybatis 拦截器，并设置租户拦截器 MyTenantLineHandler</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyBatisConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">MybatisPlusInterceptor</span> <span class="nf">mybatisPlusInterceptor</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MybatisPlusInterceptor</span> <span class="n">interceptor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MybatisPlusInterceptor</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">interceptor</span><span class="o">.</span><span class="na">addInnerInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="n">TenantLineInnerInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="n">MyTenantLineHandler</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">interceptor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>租户拦截器 MyTenantLineHandler 代码。实现 mybatis 自带的租户 Handler，实现 getTenantId() 方法，mybatis 执行sql 时会通过此方法将得到的租户id条件插入到sql里。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码public</span> <span class="kd">class</span> <span class="nc">MyTenantLineHandler</span> <span class="kd">implements</span> <span class="n">TenantLineHandler</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Expression</span> <span class="nf">getTenantId</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">StringValue</span><span class="o">(</span><span class="n">TenantContext</span><span class="o">.</span><span class="na">getCurrentTenant</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTenantIdColumn</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//这里对应的是数据库的列名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="s">&#34;tenant_id&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ignoreTable</span><span class="o">(</span><span class="n">String</span> <span class="n">tableName</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//如果那些表不需要做租户隔离的，在这里配置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>租户上下文代码。租户上下文会保存当前请求线程里从请求头获取的租户id。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码public</span> <span class="kd">class</span> <span class="nc">TenantContext</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">tenantId</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">currentTenant</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InheritableThreadLocal</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getCurrentTenant</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">currentTenant</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setCurrentTenant</span><span class="o">(</span><span class="n">String</span> <span class="n">tenantId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currentTenant</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">tenantId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">clear</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currentTenant</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置过滤器，过滤器负责将请求头传过来的租户id放入租户上下文。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Order</span><span class="o">(</span><span class="n">1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TenantFilter</span> <span class="kd">implements</span> <span class="n">Filter</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doFilter</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">servletRequest</span><span class="o">,</span> <span class="n">ServletResponse</span> <span class="n">servletResponse</span><span class="o">,</span> <span class="n">FilterChain</span> <span class="n">filterChain</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">ServletException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TenantContext</span><span class="o">.</span><span class="na">setCurrentTenant</span><span class="o">(</span><span class="n">getHeaderOrParam</span><span class="o">(</span><span class="n">servletRequest</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">filterChain</span><span class="o">.</span><span class="na">doFilter</span><span class="o">(</span><span class="n">servletRequest</span><span class="o">,</span> <span class="n">servletResponse</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getHeaderOrParam</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">HttpServletRequest</span> <span class="n">httpRequest</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpServletRequest</span><span class="o">)</span> <span class="n">request</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">httpRequest</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">&#34;tenant_id&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加过滤器规则</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FilterConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">FilterRegistrationBean</span> <span class="nf">registrationBean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FilterRegistrationBean</span> <span class="n">reg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterRegistrationBean</span><span class="o">(</span><span class="k">new</span> <span class="n">TenantFilter</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reg</span><span class="o">.</span><span class="na">addUrlPatterns</span><span class="o">(</span><span class="s">&#34;/tenant/*&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">reg</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建两张表，并插入数据。每张表都需要带有租户id字段，这里我们取名是 tenant_id，和 MyTenantLineHandler 的 getTenantIdColumn() 方法设置的一样。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sql复制代码</span><span class="c1">-- 公司表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">company</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;主键ID&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;租户ID&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">company_name</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;公司&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">company</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">company_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">company</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">company_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00002&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;阿里&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 员工表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;主键ID&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;租户ID&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;员工id&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;员工名称&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;马化腾&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张小龙&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00002&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;马云&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00002&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;蔡崇信&#39;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>公司表数据，如图所示</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tenant_id</th>
+<th>company_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>00001</td>
+<td>腾讯</td>
+</tr>
+<tr>
+<td>2</td>
+<td>00002</td>
+<td>阿里</td>
+</tr>
+</tbody>
+</table>
+<p>员工表数据，如图所示</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tenant_id</th>
+<th>staff_id</th>
+<th>staff_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>00001</td>
+<td>1</td>
+<td>马化腾</td>
+</tr>
+<tr>
+<td>2</td>
+<td>00001</td>
+<td>2</td>
+<td>张小龙</td>
+</tr>
+<tr>
+<td>3</td>
+<td>00002</td>
+<td>1</td>
+<td>马云</td>
+</tr>
+<tr>
+<td>4</td>
+<td>00002</td>
+<td>2</td>
+<td>蔡崇信</td>
+</tr>
+</tbody>
+</table>
+<p>我们现在写一个Mapper用来查询员工信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码public</span> <span class="kd">interface</span> <span class="nc">StaffMapper</span> <span class="kd">extends</span> <span class="n">BaseMapper</span><span class="o">&lt;</span><span class="n">Staff</span><span class="o">&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Staff</span><span class="o">&gt;</span> <span class="nf">findStaff</span><span class="o">(</span><span class="nd">@Param</span><span class="o">(</span><span class="s">&#34;staffName&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">staffName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>sql如下。公司表通过租户id关联员工表。可以通过员工姓名查询。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl">XML复制代码<span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;findStaff&#34;</span> <span class="na">resultMap=</span><span class="s">&#34;BaseResultMap&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    select b.*, a.company_name
+</span></span><span class="line"><span class="cl">    from company a
+</span></span><span class="line"><span class="cl">    join staff b on a.tenant_id = b.tenant_id
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;where&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;if</span> <span class="na">test=</span><span class="s">&#34;staffName != null and staffName != &#39;&#39;&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            and b.staff_name = #{staffName}
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/if&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/where&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/select&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在我们可以发送请求，并带上请求头。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152930183.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152930183.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152930183.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152930183.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152930183.png"
+        title="image-20240117152930183.png" /></p>
+<p>返回结果如下。可见已经按照我们预期的只查询出来了腾讯这家公司的员工信息，和我们在请求头里传递的租户id保持一致。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152943473.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152943473.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152943473.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117152943473.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117152943473.png"
+        title="image-20240117152943473.png" /></p>
+<p>我们把sql日志打印出来看一下。和我们自己原始的sql比较一下发现，最终的sql不仅在 where 条件里加入了 “a.tenant_id = &lsquo;00001&rsquo;” 这个条件，还在关联表时on关键字后加了一个 “AND b.tenant_id = &lsquo;00001&rsquo; ” 条件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sql复制代码SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">company_name</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">company</span><span class="w"> </span><span class="n">a</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w"> </span><span class="n">staff</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="分页">分页</h5>
+<p>分页查询是我们经常会用到的一个场景，由于之前初始的数据太少，不方便看到分页的效果，所以我们造多增加几个员工信息，sql如下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sql复制代码INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯员工5&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯员工6&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯员工7&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯员工8&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;9&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯员工9&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">tenant</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">staff</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">tenant_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_id</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">staff_name</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯员工10&#39;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在腾讯公司发展壮大以后，员工数量加了好几倍，如图所示。</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tenant_id</th>
+<th>staff_id</th>
+<th>staff_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>00001</td>
+<td>1</td>
+<td>马化腾</td>
+</tr>
+<tr>
+<td>2</td>
+<td>00001</td>
+<td>2</td>
+<td>张小龙</td>
+</tr>
+<tr>
+<td>3</td>
+<td>00002</td>
+<td>1</td>
+<td>马云</td>
+</tr>
+<tr>
+<td>4</td>
+<td>00002</td>
+<td>2</td>
+<td>蔡崇信</td>
+</tr>
+<tr>
+<td>5</td>
+<td>00001</td>
+<td>5</td>
+<td>腾讯员工5</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td>腾讯员工10</td>
+</tr>
+</tbody>
+</table>
+<p>pom文件里我们需要加上分页插件的依赖。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl">XML复制代码<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;groupId&gt;</span>com.github.pagehelper<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;artifactId&gt;</span>pagehelper-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;version&gt;</span>1.2.13<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 mybatis 拦截器配置里加上分页的拦截器。这里需要避开一个坑，拦截器的配置顺序必须是租户拦截器在前面，分页拦截器在后面。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyBatisConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MybatisPlusInterceptor</span> <span class="nf">mybatisPlusInterceptor</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MybatisPlusInterceptor</span> <span class="n">interceptor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MybatisPlusInterceptor</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">interceptor</span><span class="o">.</span><span class="na">addInnerInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="n">TenantLineInnerInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="n">MyTenantLineHandler</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">interceptor</span><span class="o">.</span><span class="na">addInnerInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="n">PaginationInnerInterceptor</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">interceptor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Service层的代码添加分页的逻辑。可以看到我们现在要查询第1页的数据，每页5条数据，根据 id 倒序。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StaffServiceImpl</span> <span class="kd">extends</span> <span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">StaffMapper</span><span class="o">,</span> <span class="n">Staff</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">StaffService</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Staff</span><span class="o">&gt;</span> <span class="nf">findStaff</span><span class="o">(</span><span class="n">String</span> <span class="n">staffName</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">(</span><span class="n">Page</span><span class="o">&lt;</span><span class="n">Staff</span><span class="o">&gt;</span> <span class="n">pg</span> <span class="o">=</span> <span class="n">PageHelper</span><span class="o">.</span><span class="na">startPage</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="s">&#34;id desc&#34;</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">Staff</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">getBaseMapper</span><span class="o">().</span><span class="na">findStaff</span><span class="o">(</span><span class="n">staffName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Staff</span><span class="o">&gt;</span> <span class="n">pageInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageInfo</span><span class="o">&lt;&gt;(</span><span class="n">list</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">pageInfo</span><span class="o">.</span><span class="na">getList</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查询结果如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">javascript复制代码</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;data&#34;</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;tenantId&#34;</span><span class="o">:</span> <span class="s2">&#34;00001&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffId&#34;</span><span class="o">:</span> <span class="s2">&#34;10&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯员工10&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;companyName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;tenantId&#34;</span><span class="o">:</span> <span class="s2">&#34;00001&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffId&#34;</span><span class="o">:</span> <span class="s2">&#34;9&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯员工9&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;companyName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;tenantId&#34;</span><span class="o">:</span> <span class="s2">&#34;00001&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffId&#34;</span><span class="o">:</span> <span class="s2">&#34;8&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯员工8&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;companyName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;tenantId&#34;</span><span class="o">:</span> <span class="s2">&#34;00001&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffId&#34;</span><span class="o">:</span> <span class="s2">&#34;7&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯员工7&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;companyName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;tenantId&#34;</span><span class="o">:</span> <span class="s2">&#34;00001&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffId&#34;</span><span class="o">:</span> <span class="s2">&#34;6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;staffName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯员工6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;companyName&#34;</span><span class="o">:</span> <span class="s2">&#34;腾讯&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;code&#34;</span><span class="o">:</span> <span class="s2">&#34;200&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;msg&#34;</span><span class="o">:</span> <span class="s2">&#34;服务调用成功&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;details&#34;</span><span class="o">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>打印sql看下，多了 “ORDER BY id DESC ” 和 “LIMIT 5”</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sql复制代码SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">company_name</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">company</span><span class="w"> </span><span class="n">a</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w"> </span><span class="n">staff</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">DESC</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="插入">插入</h5>
+<p>插入数据时，同样不需要在参数里传入租户id，Service代码如下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">saveStaff</span><span class="o">(</span><span class="n">Staff</span> <span class="n">staff</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">staff</span><span class="o">.</span><span class="na">setStaffId</span><span class="o">(</span><span class="n">IdUtil</span><span class="o">.</span><span class="na">simpleUUID</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">save</span><span class="o">(</span><span class="n">staff</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>postman传参如图。我们并没有在参数体里传租户id，而是和查询时一样将租户id放在了请求头。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0d572cd749f49cd9af67f23f5eb3719~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp"
+        data-srcset="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0d572cd749f49cd9af67f23f5eb3719~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp, https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0d572cd749f49cd9af67f23f5eb3719~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp 1.5x, https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0d572cd749f49cd9af67f23f5eb3719~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp 2x"
+        data-sizes="auto"
+        alt="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0d572cd749f49cd9af67f23f5eb3719~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp"
+        title="img" /></p>
+<p>腾讯又增加了一名叫“腾讯果果”的员工。</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tenant_id</th>
+<th>staff_id</th>
+<th>staff_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>00001</td>
+<td>1</td>
+<td>马化腾</td>
+</tr>
+<tr>
+<td>2</td>
+<td>00001</td>
+<td>2</td>
+<td>张小龙</td>
+</tr>
+<tr>
+<td>3</td>
+<td>00002</td>
+<td>1</td>
+<td>马云</td>
+</tr>
+<tr>
+<td>4</td>
+<td>00002</td>
+<td>2</td>
+<td>蔡崇信</td>
+</tr>
+<tr>
+<td>5</td>
+<td>00001</td>
+<td>5</td>
+<td>腾讯员工5</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td>腾讯员工10</td>
+</tr>
+<tr>
+<td>11</td>
+<td>00001</td>
+<td>11</td>
+<td>腾讯果果</td>
+</tr>
+</tbody>
+</table>
+<p>打印sql日志如下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sql复制代码INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">staff</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">staff_id</span><span class="p">,</span><span class="w"> </span><span class="n">staff_name</span><span class="p">,</span><span class="w"> </span><span class="n">tenant_id</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="w"> </span><span class="s1">&#39;d743a712a0ca40e79632492aa86389ff&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;腾讯果果&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新</p>
+<p>Service层代码如下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">java复制代码</span><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">updateStaff</span><span class="o">(</span><span class="n">Staff</span> <span class="n">staff</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">updateById</span><span class="o">(</span><span class="n">staff</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>postman传参如图。我们把插入时新加入的腾讯员工“腾讯果果”改名成“腾讯大石榴”。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117153431832.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117153431832.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117153431832.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/image-20240117153431832.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/image-20240117153431832.png"
+        title="image-20240117153431832.png" /></p>
+<p>此时报了一个错误提示</p>
+<blockquote>
+<p>java.lang.NoSuchMethodError: net.sf.jsqlparser.statement.update.Update.getTable()Lnet/sf/jsqlparser/schema/Table;</p>
+</blockquote>
+<p>如图所示。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/6e6616848e4f4385831e3893.png"
+        data-srcset="/posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/6e6616848e4f4385831e3893.png, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/6e6616848e4f4385831e3893.png 1.5x, /posts/mservice/%e5%a4%9a%e7%a7%9f%e6%88%b7%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e7%ae%80%e4%bb%8b/6e6616848e4f4385831e3893.png 2x"
+        data-sizes="auto"
+        alt="/posts/mservice/多租户系统概念简介/6e6616848e4f4385831e3893.png"
+        title="6e6616848e4f4385831e3893.png" /></p>
+<p>这是由于分页插件pagehelper-spring-boot-starter和mybatis-plus的包有冲突导致的，我们可以将分页插件的maven依赖添加一个排除。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl">XML复制代码<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;groupId&gt;</span>com.github.pagehelper<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;artifactId&gt;</span>pagehelper-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;version&gt;</span>1.2.13<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;exclusions&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;artifactId&gt;</span>jsqlparser<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;groupId&gt;</span>com.github.jsqlparser<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;/exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再试一次更新接口，返回成功。</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tenant_id</th>
+<th>staff_id</th>
+<th>staff_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>00001</td>
+<td>1</td>
+<td>马化腾</td>
+</tr>
+<tr>
+<td>2</td>
+<td>00001</td>
+<td>2</td>
+<td>张小龙</td>
+</tr>
+<tr>
+<td>3</td>
+<td>00002</td>
+<td>1</td>
+<td>马云</td>
+</tr>
+<tr>
+<td>4</td>
+<td>00002</td>
+<td>2</td>
+<td>蔡崇信</td>
+</tr>
+<tr>
+<td>5</td>
+<td>00001</td>
+<td>5</td>
+<td>腾讯员工5</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td>腾讯员工10</td>
+</tr>
+<tr>
+<td>11</td>
+<td>00001</td>
+<td>11</td>
+<td>腾讯大石榴</td>
+</tr>
+</tbody>
+</table>
+<p>打印日志看下。同样是自动加上了租户条件“tenant_id = &lsquo;00001&rsquo;”</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sql复制代码UPDATE</span><span class="w"> </span><span class="n">staff</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SET</span><span class="w"> </span><span class="n">staff_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;腾讯大石榴&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">tenant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;00001&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<ul>
+<li>XaaS（IaaS、PaaS和SaaS）三种模式的概念及区别？</li>
+<li>多租户是什么？</li>
+<li>多租户可以用来干什么？</li>
+<li>有哪些租户隔离方案？</li>
+<li>这些方案的适用场景有哪些，它们各有什么优缺点？</li>
+</ul>
+<p><strong>XaaS（IaaS、PaaS和SaaS）三种模式的概念及区别？</strong></p>
+<blockquote>
+<p>IaaS（Infrastructure as a Service），中文名叫基础架构即服务。通过即用即付的方式为用户提供网络、存储和计算等基础设施资源。IaaS可以节约用户成本，也更加灵活易扩展，适合全栈开发者。</p>
+<p>PaaS（Platform as a Service），中文名叫平台即服务。除了为用户提供基础设施资源，PaaS还可以为用户提供操作系统、中间件和开发工具等。PaaS适合有一定开发能力但运维成本有限的用户。</p>
+<p>SaaS（Software as a Service），中文名叫软件即服务。SaaS模式可以简单理解为用户授权，将IT设备、软件和运维统统外包给SaaS服务提供商。用户以租户的形式使用SaaS厂商提供的服务。SaaS适合没有开发能力，想要快速部署的用户。</p>
+</blockquote>
+<p><strong>多租户是什么？</strong></p>
+<blockquote>
+<p>在多租户的架构里，多个租户共享相同的服务器、基础设施，数据库可以是共享的也可以是隔离的，由于多租户必定在用户规模上比单租户来的大，所以多租户一般会有多个实例，共用一套实例代码。租户之间的数据隔离往往采用逻辑隔离的方式，即在代码和数据库层面隔离，所以安全性远没有单租户来的高。</p>
+</blockquote>
+<p><strong>多租户可以用来干什么？</strong></p>
+<blockquote>
+<p>多租户可以让用户买到便宜并且部署快速、方便的软件服务。</p>
+</blockquote>
+<p><strong>有哪些租户隔离方案？</strong></p>
+<blockquote>
+<p>独立数据库</p>
+<p>共享数据库、独立Schema</p>
+<p>共享数据库、共享Schema、共享表</p>
+</blockquote>
+<p><strong>这些方案的适用场景有哪些，它们各有什么优缺点？</strong></p>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>独立数据库</th>
+<th>共享数据库、独立schema</th>
+<th>共享数据库、共享数据架构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发成本</td>
+<td>低</td>
+<td>一般</td>
+<td>高</td>
+</tr>
+<tr>
+<td>运维成本</td>
+<td>高</td>
+<td>一般</td>
+<td>低</td>
+</tr>
+<tr>
+<td>隔离性/安全性</td>
+<td>高</td>
+<td>一般</td>
+<td>低</td>
+</tr>
+<tr>
+<td>租户间交互能力</td>
+<td>低</td>
+<td>一般</td>
+<td>高</td>
+</tr>
+<tr>
+<td>定制化空间</td>
+<td>高</td>
+<td>一般</td>
+<td>低</td>
+</tr>
+<tr>
+<td>可支持的最大租户数量</td>
+<td>低</td>
+<td>一般</td>
+<td>高</td>
+</tr>
+</tbody>
+</table>
+<p>作者：IT果果日记
+链接：https://juejin.cn/post/7321049383569948681
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-01-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/" class="prev" rel="prev" title="Row size too large. The maximum row size(Mysql行长度超过65535)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Row size too large. The maximum row size(Mysql行长度超过65535)</a>
+            <a href="/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E9%A2%97%E7%B2%92%E5%BA%A6%E5%B0%8F%E8%AE%B0--%E5%8A%A0%E9%94%81%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF/" class="next" rel="next" title="分布式锁颗粒度小记--加锁时间过长">分布式锁颗粒度小记--加锁时间过长<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>maven常用命令 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="maven常用命令" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-11T11:01:40+08:00" />
+<meta property="article:modified_time" content="2021-04-11T11:01:40+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="maven常用命令"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" /><link rel="prev" href="https://hubu8.github.io/posts/%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0/" /><link rel="next" href="https://hubu8.github.io/posts/docker-compose%E4%B9%8Benv_file%E5%BA%94%E7%94%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "maven常用命令",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/"
+        },"genre": "posts","keywords": "maven","wordcount":  1661 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/","datePublished": "2021-04-11T11:01:40+08:00","dateModified": "2021-04-11T11:01:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">maven常用命令</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1661 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/posts/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="leancloud_visitors" data-flag-title="maven常用命令">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mvn-命令参数">mvn 命令参数</a></li>
+        <li><a href="#mvn-常用命令">mvn 常用命令</a></li>
+        <li><a href="#mvn-常用命令-2">mvn 常用命令 2</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>抽了点时间，整理了一些 maven 常用命令参数，以便参考；</p>
+<h3 id="mvn-命令参数">mvn 命令参数</h3>
+<p><strong>mvn -v</strong>, &ndash;version 显示版本信息;</p>
+<p><strong>mvn -V</strong>, &ndash;show-version 显示版本信息后继续执行 Maven 其他目标;</p>
+<p><strong>mvn -h</strong>, &ndash;help 显示帮助信息;</p>
+<p><strong>mvn -e</strong>, &ndash;errors 控制 Maven 的日志级别, 产生执行错误相关消息;</p>
+<p><strong>mvn -X</strong>, &ndash;debug 控制 Maven 的日志级别, 产生执行调试信息;</p>
+<p><strong>mvn -q</strong>, &ndash;quiet 控制 Maven 的日志级别, 仅仅显示错误;</p>
+<p><strong>mvn -P</strong>xxx 激活 id 为 xxx 的 profile (如有多个，用逗号隔开);</p>
+<p><strong>mvn -D</strong>xxx=yyy 指定 java 全局属性;</p>
+<p><strong>mvn -o</strong> , &ndash;offline 运行 offline 模式, 不联网更新依赖;</p>
+<p><strong>mvn -N</strong>, &ndash;non-recursive 仅在当前项目模块执行命令, 不构建子模块;</p>
+<p><strong>mvn -pl</strong>, &ndash;module_name 在指定模块上执行命令;</p>
+<p><strong>mvn -ff</strong>, &ndash;fail-fast 遇到构建失败就直接退出;</p>
+<p><strong>mvn -fn</strong>, &ndash;fail-never 无论项目结果如何, 构建从不失败;</p>
+<p><strong>mvn -fae</strong>, &ndash;fail-at-end 仅影响构建结果, 允许不受影响的构建继续;</p>
+<p><strong>mvn -C</strong>, &ndash;strict-checksums 如果校验码不匹配的话, 构建失败;</p>
+<p><strong>mvn -c</strong>, &ndash;lax-checksums 如果校验码不匹配的话, 产生告警;</p>
+<p><strong>mvn -U</strong> 强制更新 snapshot 类型的插件或依赖库 (否则 maven 一天只会更新一次 snapshot 依赖);</p>
+<p><strong>mvn -npu</strong>, &ndash;no-plugin-updates 对任何相关的注册插件, 不进行最新检查 (使用该选项使 Maven 表现出稳定行为，该稳定行为基于本地仓库当前可用的所有插件版本);</p>
+<p><strong>mvn -cpu</strong>, &ndash;check-plugin-updates 对任何相关的注册插件, 强制进行最新检查 (即使项目 POM 里明确规定了 Maven 插件版本, 还是会强制更新);</p>
+<p><strong>mvn -up</strong>, &ndash;update-plugins [mvn -cpu] 的同义词;</p>
+<p><strong>mvn -B</strong>, &ndash;batch-mode 在非交互（批处理）模式下运行 (该模式下, 当 Mven 需要输入时, 它不会停下来接受用户的输入, 而是使用合理的默认值);</p>
+<p><strong>mvn -f</strong>, &ndash;file 强制使用备用的 POM 文件;</p>
+<p><strong>mvn -s</strong>, &ndash;settings 用户配置文件的备用路径;</p>
+<p><strong>mvn -gs</strong>, &ndash;global-settings 全局配置文件的备用路径;</p>
+<p><strong>mvn -emp</strong>, &ndash;encrypt-master-password 加密主安全密码, 存储到 Maven settings 文件里;</p>
+<p><strong>mvn -ep</strong>, &ndash;encrypt-password 加密服务器密码, 存储到 Maven settings 文件里;</p>
+<p><strong>mvn -npr</strong>, &ndash;no-plugin-registry 对插件版本不使用~/.m2/plugin-registry.xml(插件注册表) 里的配置;</p>
+<h3 id="mvn-常用命令">mvn 常用命令</h3>
+<ol>
+<li>创建 Maven 的普通 java 项目：
+mvn archetype:create
+-DgroupId=packageName
+-DartifactId=projectName</li>
+<li>创建 Maven 的 Web 项目：<br>
+mvn archetype:create
+-DgroupId=packageName<br>
+-DartifactId=webappName
+-DarchetypeArtifactId=maven-archetype-webapp</li>
+<li>编译源代码：mvn compile</li>
+<li>编译测试代码：mvn test-compile</li>
+<li>运行测试：mvn test</li>
+<li>产生 site：mvn site</li>
+<li>打包：mvn package</li>
+<li>在本地 Repository 中安装 jar：mvn install</li>
+<li>清除产生的项目：mvn clean</li>
+<li>生成 eclipse 项目：mvn eclipse:eclipse</li>
+<li>生成 idea 项目：mvn idea:idea</li>
+<li>组合使用 goal 命令，如只打包不测试：mvn -Dtest package</li>
+<li>编译测试的内容：mvn test-compile</li>
+<li>只打 jar 包: mvn jar:jar</li>
+<li>只测试而不编译，也不测试编译：mvn test -skipping compile -skipping test-compile
+(-skipping 的灵活运用，当然也可以用于其他组合命令)</li>
+<li>清除 eclipse 的一些系统设置: mvn eclipse:clean</li>
+</ol>
+<p><strong>ps</strong></p>
+<p>一般使用情况是这样，首先通过 cvs 或 svn 下载代码到本机，然后执行 mvn eclipse:eclipse 生成 ecllipse 项目文件，然后导入到 eclipse 就行了；修改代码后执行 mvn compile 或 mvn test 检验，也可以下载 eclipse 的 maven 插件。</p>
+<p><strong>mvn -version/-v</strong> 显示版本信息</p>
+<p><strong>mvn archetype:generate</strong>    创建 mvn 项目</p>
+<p><strong>mvn archetype:create -DgroupId=com.oreilly -DartifactId=my-app</strong>  创建 mvn 项目</p>
+<p><strong>mvn package</strong>      生成 target 目录，编译、测试代码，生成测试报告，生成 jar/war 文件</p>
+<p><strong>mvn jetty:run</strong>      运行项目于 jetty 上,</p>
+<p><strong>mvn compile</strong>          编译</p>
+<p><strong>mvn test</strong>          编译并测试</p>
+<p><strong>mvn clean</strong>          清空生成的文件</p>
+<p><strong>mvn site</strong>          生成项目相关信息的网站</p>
+<p><strong>mvn -Dwtpversion=1.0 eclipse:eclipse</strong>    生成 Wtp 插件的 Web 项目</p>
+<p><strong>mvn -Dwtpversion=1.0 eclipse:clean</strong>    清除 Eclipse 项目的配置信息 (Web 项目)</p>
+<p><strong>mvn eclipse:eclipse</strong>  将项目转化为 Eclipse 项目</p>
+<p>在应用程序用使用多个存储库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;repositories&gt;</span>        
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;repository&gt;</span>              
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;id&gt;</span>Ibiblio<span class="nt">&lt;/id&gt;</span>              
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;name&gt;</span>Ibiblio<span class="nt">&lt;/name&gt;</span>              
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;url&gt;</span>http://www.ibiblio.org/maven/<span class="nt">&lt;/url&gt;</span>        
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/repository&gt;</span>        
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;repository&gt;</span>              
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;id&gt;</span>PlanetMirror<span class="nt">&lt;/id&gt;</span>              
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;name&gt;</span>Planet Mirror<span class="nt">&lt;/name&gt;</span>              
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;url&gt;</span>http://public.planetmirror.com/pub/maven/<span class="nt">&lt;/url&gt;</span>        
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/repository&gt;</span>  <span class="nt">&lt;/repositories&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mvn deploy:deploy-file -DgroupId<span class="o">=</span>com -DartifactId<span class="o">=</span>client -Dversion<span class="o">=</span>0.1.0-Dpackaging<span class="o">=</span>jar 
+</span></span><span class="line"><span class="cl">-Dfile<span class="o">=</span>d:<span class="se">\c</span>lient-0.1.0.jar-DrepositoryId<span class="o">=</span>maven-repository-inner -Durl<span class="o">=</span>ftp://xxxxxxx/opt/maven/repository/ 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>发布第三方 Jar 到本地库中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mvn install:install-file -DgroupId<span class="o">=</span>com -DartifactId<span class="o">=</span>client -Dversion<span class="o">=</span>0.1.0-Dpackaging<span class="o">=</span>jar 
+</span></span><span class="line"><span class="cl">-Dfile<span class="o">=</span>d:<span class="se">\c</span>lient-0.1.0.jar -DdownloadSources<span class="o">=</span><span class="nb">true</span>  -DdownloadJavadocs<span class="o">=</span><span class="nb">true</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>mvn -e</strong>      显示详细错误 信息.</p>
+<p><strong>mvn validate</strong>     验证工程是否正确，所有需要的资源是否可用。</p>
+<p><strong>mvn test-compile</strong>   编译项目测试代码。</p>
+<p><strong>mvn integration-test</strong>   在集成测试可以运行的环境中处理和发布包。</p>
+<p><strong>mvn verify</strong>     运行任何检查，验证包是否有效且达到质量标准。</p>
+<p><strong>mvn generate-sources</strong>   产生应用需要的任何额外的源代码，如 xdoclet。</p>
+<h3 id="mvn-常用命令-2">mvn 常用命令 2</h3>
+<p><strong>mvn -v</strong> 显示版本</p>
+<p><strong>mvn help:describe -Dplugin=help</strong> 使用 help 插件的 describe 目标来输出 Maven Help 插件的信息。</p>
+<p><strong>mvn help:describe -Dplugin=help -Dfull</strong> 使用 Help 插件输出完整的带有参数的目标列</p>
+<p><strong>mvn help:describe -Dplugin=compiler -Dmojo=compile -Dfull</strong> 获取单个目标的信息, 设置 mojo 参数和 plugin 参数。此命令列出了 Compiler 插件的 compile 目标的所有信息</p>
+<p><strong>mvn help:describe -Dplugin=exec -Dfull</strong> 列出所有 Maven Exec 插件可用的目标</p>
+<p><strong>mvn help:effective-pom</strong> 看这个 “有效的 (effective)”POM，它暴露了 Maven 的默认设置</p>
+<p><strong>mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch03 -DartifactId=simple -DpackageName=org.sonatype.mavenbook</strong> 创建 Maven 的普通 java 项目，在命令行使用 Maven Archetype 插件</p>
+<p><strong>mvn exec:java -Dexec.mainClass=org.sonatype.mavenbook.weather.Main Exec</strong> 插件让我们能够在不往 classpath 载入适当的依赖的情况下，运行这个程序</p>
+<p><strong>mvn dependency:resolve</strong> 打印出已解决依赖的列表</p>
+<p><strong>mvn dependency:tree</strong> 打印整个依赖树</p>
+<p><strong>mvn install -X</strong> 想要查看完整的依赖踪迹，包含那些因为冲突或者其它原因而被拒绝引入的构件，打开 Maven 的调试标记运行</p>
+<p><strong>mvn install -Dmaven.test.skip=true</strong> 给任何目标添加 maven.test.skip 属性就能跳过测试</p>
+<p><strong>mvn install assembly:assembly</strong> 构建装配 Maven Assembly 插件是一个用来创建你应用程序特有分发包的插件</p>
+<p><strong>mvn jetty:run</strong> 调用 Jetty 插件的 Run 目标在 Jetty Servlet 容器中启动 web 应用</p>
+<p><strong>mvn compile</strong> 编译你的项目</p>
+<p><strong>mvn clean install</strong> 删除再编译</p>
+<p><strong>mvn hibernate3:hbm2ddl</strong> 使用 Hibernate3 插件构造数据库</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-04-11</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/maven/">maven</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0/" class="prev" rel="prev" title="短信验证码实现"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>短信验证码实现</a>
+            <a href="/posts/docker-compose%E4%B9%8Benv_file%E5%BA%94%E7%94%A8/" class="next" rel="next" title="Docker Compose之env_file应用">Docker Compose之env_file应用<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

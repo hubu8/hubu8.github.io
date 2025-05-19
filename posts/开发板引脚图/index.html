@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>开发板引脚图 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="开发板引脚图" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-22T07:59:26+08:00" />
+<meta property="article:modified_time" content="2024-02-22T07:59:26+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="开发板引脚图"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/" /><link rel="prev" href="https://hubu8.github.io/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E7%94%A8%E9%87%87%E9%9B%86%E5%8D%A1%E8%BF%9E%E6%8E%A5%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95/" /><link rel="next" href="https://hubu8.github.io/posts/uart%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "开发板引脚图",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE\/"
+        },"genre": "posts","wordcount":  3333 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE\/","datePublished": "2024-02-22T07:59:26+08:00","dateModified": "2024-02-22T07:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">开发板引脚图</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>开发板</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-22">2024-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3333 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/" class="leancloud_visitors" data-flag-title="开发板引脚图">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1树莓派">1.树莓派</a>
+          <ul>
+            <li><a href="#电源引脚">电源引脚</a>
+              <ul>
+                <li><a href="#电源输入"><strong>电源输入</strong></a></li>
+                <li><a href="#电源输出"><strong>电源输出</strong></a></li>
+              </ul>
+            </li>
+            <li><a href="#数字输入输出引脚">数字输入/输出引脚</a></li>
+            <li><a href="#串行通信模块">串行通信模块</a>
+              <ul>
+                <li><a href="#uart引脚">UART引脚</a></li>
+                <li><a href="#spi通信引脚">SPI通信引脚</a></li>
+                <li><a href="#i2c通信引脚">I2C通信引脚</a></li>
+                <li><a href="#pwm-gpio引脚">PWM GPIO引脚</a></li>
+                <li><a href="#sdio引脚">SDIO引脚</a></li>
+              </ul>
+            </li>
+            <li><a href="#规格特性">规格特性</a></li>
+            <li><a href="#主要应用">主要应用</a></li>
+            <li><a href="#开发板说明">开发板说明</a></li>
+            <li><a href="#总结">总结</a></li>
+          </ul>
+        </li>
+        <li><a href="#2香蕉派">2.香蕉派</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="1树莓派">1.树莓派</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110829746.png"
+        data-srcset="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110829746.png, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110829746.png 1.5x, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110829746.png 2x"
+        data-sizes="auto"
+        alt="/posts/pi/树莓派引脚图/image-20240226110829746.png"
+        title="image-20240226110829746.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110802064.png"
+        data-srcset="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110802064.png, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110802064.png 1.5x, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110802064.png 2x"
+        data-sizes="auto"
+        alt="/posts/pi/树莓派引脚图/image-20240226110802064.png"
+        title="image-20240226110802064.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110721563.png"
+        data-srcset="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110721563.png, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110721563.png 1.5x, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240226110721563.png 2x"
+        data-sizes="auto"
+        alt="/posts/pi/树莓派引脚图/image-20240226110721563.png"
+        title="image-20240226110721563.png" /></p>
+<p><a href="https://pinout.xyz/" target="_blank" rel="noopener noreffer">https://pinout.xyz/</a></p>
+<p>树莓派4可用于外部嵌入式系统进行通信。它共有40个引脚，其中28个为GPIO引脚，其余为电源引脚。GPIO引脚不仅仅执行管单的I/0功能。它们可以提供 UART、SPI和IC通信。这些通信特定于每个引脚，其所有功能如下所述.</p>
+<h4 id="电源引脚">电源引脚</h4>
+<h5 id="电源输入"><strong>电源输入</strong></h5>
+<p>在树莓派中，有两种供电方式，一种是来自USB-C电源端口，另一种是来自任意5V引脚。5伏引脚直接连接到USB-C适配器端口。5V引脚上的输入应稳定并符合其规格。如果电压较高，设备可能会被烧毁。5V输入引脚在电源输入时会绕过任何保险丝和稳压器，因此5V电源应符合其规格，以免造成任何伤害。</p>
+<p>树莓派的电源输入引脚如下:</p>
+<p>引脚2、4-&gt;+5V</p>
+<h5 id="电源输出"><strong>电源输出</strong></h5>
+<p>树莓派4中有3V3和5V两种电源输出引脚。5V直接连接到USB端口，但3V3通过稳压器连接，提供稳定的3伏输出，所有电源输出引脚如下:</p>
+<p>3V3-引脚1、引脚17</p>
+<p>5V-引脚2、引脚4</p>
+<p><strong>接地</strong>:树莓派4有多个内部连接的接地引脚，任何接地引脚都可以与电源或外部设备共同接地，接地引脚列表如下:</p>
+<ul>
+<li>引脚6</li>
+<li>引脚9</li>
+<li>引脚14</li>
+<li>引脚20</li>
+<li>引脚25</li>
+<li>引脚30</li>
+<li>引脚34</li>
+<li>引脚39</li>
+</ul>
+<h4 id="数字输入输出引脚">数字输入/输出引脚</h4>
+<p>几乎每个设备都需要输入和输出引脚来进行通信。该器件有28个GPIO引脚可用，这些引脚可用于任何数字输入和输出操作。控制器中的GPIO引脚有一些默认值。GPIO引脚从0-9将处于高电平状态，从10到以上引脚将处于低电平状态。树莓派4中的所有引脚如下:</p>
+<ul>
+<li>GPI00-引脚27</li>
+<li>GPI01-引脚28</li>
+<li>GPIO2-引脚3</li>
+<li>GPIO3-引脚5</li>
+<li>GPIO4-引脚7</li>
+<li>GPIO5-引脚29</li>
+<li>GPI06-引脚31</li>
+<li>GPIO7-引脚26</li>
+<li>GPIO8-引脚24</li>
+<li>GPIO9-引脚21</li>
+<li>GPIO10-引脚19</li>
+<li>GPIO11-引脚23</li>
+<li>GPIO12-引脚32</li>
+<li>GPIO13-引脚33</li>
+<li>GPI014-引脚8</li>
+<li>GPIO15-引脚10</li>
+<li>GPI016-引脚36</li>
+<li>GPIO17-引脚11</li>
+<li>GPI018-引脚12</li>
+<li>GPIO19-引脚35</li>
+<li>GPIO20-引脚38</li>
+<li>GPIO21-引脚40</li>
+<li>GPIO22-引脚15</li>
+<li>GPIO23-引脚16</li>
+<li>GPIO24-引脚18</li>
+<li>GPI025-引脚22</li>
+<li>GPIO26-引脚37</li>
+<li>GPIO27-引脚13</li>
+</ul>
+<p>树莓派4中的所有GPIO引脚不仅用于输入输出功能。每个GPIO引脚都可以用作其它功能，这将通过编程来指定。</p>
+<h4 id="串行通信模块">串行通信模块</h4>
+<h5 id="uart引脚">UART引脚</h5>
+<p>​	串行通信有很多种，UART就是其中之一。它因其简单的通信系统和对大多数软件的依赖而颇受欢迎。树莓派4中有多个UART通信引脚，如下所示:</p>
+<ul>
+<li>TXD1-GPI014-引脚8</li>
+<li>RXD1-GPIO15-引脚10</li>
+<li>TXD2-GPI00-引脚27</li>
+<li>RXD2-GPI01-引脚28</li>
+<li>TXD3-GPIO5-引脚29</li>
+<li>RXD3-GPI04-引脚7</li>
+<li>TXD4-GPI08-引脚24</li>
+<li>RXD4-GPI09-引脚21</li>
+<li>TXD5-GPIO12-引脚32</li>
+<li>RXD5-GPI013-引脚33</li>
+</ul>
+<h5 id="spi通信引脚">SPI通信引脚</h5>
+<p>​	有些设备使用SP|协议，它可以帮助控制设备使用单根数据传输线控制多个设备。在树莓派4中有多个SP|引脚可用于SPI通信。树莓派4的SPI引脚如下:</p>
+<ul>
+<li>SPI3 CEO N-GPIO0-引脚27</li>
+<li>SPI3 MISO-GPI01-引脚28</li>
+<li>SPI3 MOSI-GPIO2-引脚3</li>
+<li>SPI3 SCLK-GPIO3-引脚5</li>
+<li>SPI4 CEO N-GPIO4-引脚7</li>
+<li>SPI4 MISO-GPI05-引脚29</li>
+<li>SPI4 MOSI-GPI06-引脚31</li>
+<li>SPI4 SCLK-GPIO7-引脚26</li>
+<li>SPI0 CE1 N-GPIO8-引脚24</li>
+<li>SPI0 CEO N-GPIO9-引脚21</li>
+<li>SPI0 MISO-GPIO10-引脚19</li>
+<li>SPI0 MOSI-GPIO11-引脚23</li>
+<li>SPI5 CEO N/SPI0 SCLK-GPIO12-引脚32</li>
+<li>SPI5 MISO-GPIO13-引脚33</li>
+<li>SPI5 MOSI-GPIO14-引脚8</li>
+<li>SPI5 SCLK-GPIO15-引脚10</li>
+<li>CTS0-GPI016-引脚36</li>
+<li>RTS0-GPIO17-引脚11</li>
+<li>SPI6 CEO N-GPIO18-引脚12</li>
+<li>SPI6 MISO-GPI019-引脚35</li>
+<li>SPI6 MOSI-GPIO20-引脚38</li>
+<li>SPI6 SCLK-GPIO21-引脚40</li>
+</ul>
+<h5 id="i2c通信引脚">I2C通信引脚</h5>
+<p>树莓派4还支持I2C协议，它是一些传感器和电机用于通信的串行通信类型。在Pi中，GPIO引脚还提供I2C支持。所有这些引脚如下:</p>
+<ul>
+<li>SDA0/SDA6-GPI00-引脚27</li>
+<li>SCLO/SCL6-GPI01-引脚28</li>
+<li>SDA1/SDA3-GPI02-引脚3</li>
+<li>SCL1/SCL3-GPI03-引脚5</li>
+<li>SDA3-GPI04-引脚7</li>
+<li>SCL3-GPI05-引脚29</li>
+<li>SDA4-GPI06-引脚31</li>
+<li>SCL4-GPI07-引脚26</li>
+<li>SDA4-GPI08-引脚24</li>
+<li>SCL4-GPI09-引脚21</li>
+<li>SDA5-GPI010-引脚19</li>
+<li>SCL5-GPI011-引脚23</li>
+<li>SDA5-GPIO12-引脚32</li>
+<li>SCL5-GPI013-引脚33</li>
+<li>SDA6-GPI022-引脚15</li>
+<li>SCL6-GPIO23-引脚16</li>
+</ul>
+<h5 id="pwm-gpio引脚">PWM GPIO引脚</h5>
+<p>为了生成所需的脉冲输出信号，树莓派4有一些PWM引脚，这些引脚可以直接与任何低压外部设备一起使用来获取该信号。要首先生成信号，引脚应首先获取指令。所有PWM引脚如下:</p>
+<ul>
+<li>PWMO-GPI012-引脚32</li>
+<li>PWM1-GPIO13-引脚33</li>
+<li>PWMO-GPIO18-引脚12</li>
+<li>PWM1-GPIO19-引脚35</li>
+</ul>
+<h5 id="sdio引脚">SDIO引脚</h5>
+<p>树莓派4中有一个SD卡插槽，但GPIO引脚也支持SD卡兼容性。如果需要，设备上的SDIO引脚可用于SD卡:</p>
+<ul>
+<li>SDOCLK/SD1 CLK-GPIO22-引脚15</li>
+<li>SDO CMD/SD1 CMD-GPIO23-引脚16</li>
+<li>SD0 DATAO/SD1 DAT0-GPIO24-引脚18</li>
+<li>SDO DAT1/SD1 DAT1-GPIO25-引脚22</li>
+<li>SD1 DAT2/SD1 DAT2-GPI026-引脚37</li>
+<li>SDO DAT3/SD1 DAT3-GPI027-引脚13</li>
+</ul>
+<h4 id="规格特性">规格特性</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142242135.png"
+        data-srcset="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142242135.png, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142242135.png 1.5x, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142242135.png 2x"
+        data-sizes="auto"
+        alt="/posts/pi/树莓派引脚图/image-20240227142242135.png"
+        title="image-20240227142242135.png" /></p>
+<h4 id="主要应用">主要应用</h4>
+<p>树莓派可以用作家庭自动化的集线器,</p>
+<p>可以用作小型网络的服务器</p>
+<p>树莓派4还用于机器人和其他嵌入式系统</p>
+<h4 id="开发板说明">开发板说明</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142804650.png"
+        data-srcset="/posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142804650.png, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142804650.png 1.5x, /posts/pi/%e6%a0%91%e8%8e%93%e6%b4%be%e5%bc%95%e8%84%9a%e5%9b%be/image-20240227142804650.png 2x"
+        data-sizes="auto"
+        alt="/posts/pi/树莓派引脚图/image-20240227142804650.png"
+        title="image-20240227142804650.png" /></p>
+<p><strong>现代通讯支持</strong></p>
+<p>树莓派4拥有所有现代通信系统，它具有内部WiFi和蓝牙，用于无线数据通信。它可以在任何地方与内部一起使用，不受任何干扰。由于快速WiFi支持，它可以在同一网络内轻松移动。该设备还具有LAN支持，以防WiFi不可用且网络遵循有线通信方法进行通信。</p>
+<ul>
+<li>LAN-千兆字节以太网</li>
+<li>蓝牙-5.0</li>
+<li>WiFi-2.4，速度为5GHZ**</li>
+</ul>
+<p><strong>HDMI接口特性</strong></p>
+<p>在以前的Pi设备中，只有一个HDMI端口，图形性能也较低，但在最新型号中，有两个迷你HDMI端口，可以同时用于多个桌面图。两个端口均可为用户提供 4K超高清视图。用户永远不会感觉自己正在查看一台迷你电脑。</p>
+<ul>
+<li>GPU规格-H264(1080p60解码、1080p30编码)OpenGL ES 3.0图形、H.265(4kp60解码)</li>
+</ul>
+<p><strong>其它主要外设</strong></p>
+<ul>
+<li>USB:树莓派4中有四个USB端口。两个端口仅支持2.0，其余两个是3.0。这些3.0支持使用户能够快速传输数据。</li>
+<li>PoE接头:由干树蕴派在物联网和其他智能项目中的使用不断增加，树蕴派中也包含了PoE接头。单板POE允许用户通过以太网线将电源传输到设备。如果是 POE，则需要外部POE HAT。</li>
+<li>摄像头:设备支持摄像头，它有一个双通道MIPICS|摄像头端口，可用于将pi直接连接到摄像头并使用它们，无需任何第
+三个接口。</li>
+<li>显示屏:树莓派4可连接外部LCD，它不像其他设备那样使用扩展接头与LCD进行通信。它有一个独立的2通道MIPI DSI端口，可用于与外部兼容LCD进行通信。</li>
+<li>音频:音频数据可以通过HDMI从pi传输到显示设备，但它有一个单独的4极音频端口，可用于发送和接收音频信号，来自设备的信号可由内部程序或扩展头处的任何其它设备使用。</li>
+<li>SD卡:它是树莓派最需要的部分，Pi的操作系统将被放置在SD卡中，然后通过SD卡插槽使用该卡。</li>
+</ul>
+<h4 id="总结">总结</h4>
+<p>树莓派4(Raspberry Pi 4)是一款单板计算机，它是树莓派系列的第四代产品，于2019年6月发布。树莓派4在前几代产品的基础上进行了大幅升级和改进，提供更高性能和更多功能。</p>
+<p>树莓派4可以运行多种操作系统，包括Raspberny Pi官方推荐的Raspberny PiOS(以前称为Raspbian)，以及其他基于Linux的发行版。广泛用于各种项目和应用，例如家庭媒体中心、物联网设备、网络服务器、教育教学工具、编程学习平台等，受到全球广大爱好者、学生、教育机构和创客社区的喜爱和广泛应用。</p>
+<h3 id="2香蕉派">2.香蕉派</h3>
+<p><a href="https://wiki.banana-pi.org/Banana_Pi_BPI-M4_Zero#BPI-M4_Zero_40-pin_header" target="_blank" rel="noopener noreffer">Banana Pi BPI-M4 Zero - Banana Pi Wiki (banana-pi.org)</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-02-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E7%94%A8%E9%87%87%E9%9B%86%E5%8D%A1%E8%BF%9E%E6%8E%A5%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95/" class="prev" rel="prev" title="开发板用采集卡连接笔记本屏幕"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>开发板用采集卡连接笔记本屏幕</a>
+            <a href="/posts/uart%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95/" class="next" rel="next" title="UART串口调试">UART串口调试<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

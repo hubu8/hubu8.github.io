@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>通过HelmCLI部署wordpress到ACK集群 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="通过HelmCLI部署wordpress到ACK集群" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hubu8.github.io/posts/%E9%80%9A%E8%BF%87helmcli%E9%83%A8%E7%BD%B2wordpress%E5%88%B0ack%E9%9B%86%E7%BE%A4/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-20T22:31:02+08:00" />
+<meta property="article:modified_time" content="2021-04-20T22:31:02+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
+
+<meta name="twitter:title" content="通过HelmCLI部署wordpress到ACK集群"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/%E9%80%9A%E8%BF%87helmcli%E9%83%A8%E7%BD%B2wordpress%E5%88%B0ack%E9%9B%86%E7%BE%A4/" /><link rel="prev" href="https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8kubectl%E9%83%A8%E7%BD%B2web%E6%9C%8D%E5%8A%A1%E5%88%B0k8s%E9%9B%86%E7%BE%A4/" /><link rel="next" href="https://hubu8.github.io/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "通过HelmCLI部署wordpress到ACK集群",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/%E9%80%9A%E8%BF%87helmcli%E9%83%A8%E7%BD%B2wordpress%E5%88%B0ack%E9%9B%86%E7%BE%A4\/"
+        },"genre": "posts","keywords": "k8s","wordcount":  839 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/%E9%80%9A%E8%BF%87helmcli%E9%83%A8%E7%BD%B2wordpress%E5%88%B0ack%E9%9B%86%E7%BE%A4\/","datePublished": "2021-04-20T22:31:02+08:00","dateModified": "2021-04-20T22:31:02+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过HelmCLI部署wordpress到ACK集群</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-20">2021-04-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 839 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/posts/%E9%80%9A%E8%BF%87helmcli%E9%83%A8%E7%BD%B2wordpress%E5%88%B0ack%E9%9B%86%E7%BE%A4/" class="leancloud_visitors" data-flag-title="通过HelmCLI部署wordpress到ACK集群">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-2-部署业务应用">Step 2 ：部署业务应用</a></li>
+    <li><a href="#step-3-访问-wordpress-应用">Step 3 ：访问 WordPress 应用</a>
+      <ul>
+        <li><a href="#1-获取访问地址">1. 获取访问地址</a></li>
+        <li><a href="#2-访问后台">2. 访问后台</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-4-删除-wordpress-应用">Step 4 ：删除 WordPress 应用</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本实验，你将使用 Kubernetes 包管理工具 <code>helm</code> 部署一个 wordpress 应用到 ack 集群中，并通过 <code>LoadBalancer</code> 将部署的服务暴露出来由外部访问。</p>
+<p>通过本实验，你将学习：</p>
+<ul>
+<li>Helm 命令的基本用法；</li>
+</ul>
+<h2 id="step-2-部署业务应用">Step 2 ：部署业务应用</h2>
+<p>首先，我们需要添加 WordPress 官方Repo地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">helm3 repo add bitnami https://charts.bitnami.com/bitnami
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行 <code>Helm Install</code> 部署 WordPress：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">helm3 install wordpress bitnami/wordpress <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set mariadb.primary.persistence.enabled<span class="o">=</span><span class="nb">true</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set mariadb.primary.persistence.storageClass<span class="o">=</span>alicloud-disk-ssd <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set mariadb.primary.persistence.size<span class="o">=</span>20Gi <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set persistence.enabled<span class="o">=</span><span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中：</p>
+<ul>
+<li>为了实现数据的持久化，mariadb 使用持久化存储卷保存数据；</li>
+<li>持久化存储选用阿里云 ssd 云盘，大小为 20Gi，并通过配置 StorageClassName 自动化创建；</li>
+<li>WordPress 不需要进行数据持久化，数据卷选项可配置为 false</li>
+</ul>
+<p>执行成功后，应该有如下返回：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">NAME: wordpress
+</span></span></span><span class="line"><span class="cl"><span class="go">LAST DEPLOYED: Wed Jan 20 15:09:45 2021
+</span></span></span><span class="line"><span class="cl"><span class="go">NAMESPACE: handsonack
+</span></span></span><span class="line"><span class="cl"><span class="go">STATUS: deployed
+</span></span></span><span class="line"><span class="cl"><span class="go">REVISION: 1
+</span></span></span><span class="line"><span class="cl"><span class="go">NOTES:
+</span></span></span><span class="line"><span class="cl"><span class="go">** Please be patient while the chart is being deployed **
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">Your WordPress site can be accessed through the following DNS name from within your cluster:
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">    wordpress.handsonack.svc.cluster.local (port 80)
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">To access your WordPress site from outside the cluster follow the steps below:
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">1. Get the WordPress URL by running these commands:
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+</span></span></span><span class="line"><span class="cl"><span class="go">        Watch the status with: &#39;kubectl get svc --namespace handsonack -w wordpress&#39;
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">   export SERVICE_IP=$(kubectl get svc --namespace handsonack wordpress --template &#34;{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="go">   echo &#34;WordPress URL: http://$SERVICE_IP/&#34;
+</span></span></span><span class="line"><span class="cl"><span class="go">   echo &#34;WordPress Admin URL: http://$SERVICE_IP/admin&#34;
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">2. Open a browser and access WordPress using the obtained URL.
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">3. Login with the following credentials below to see your blog:
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">  echo Username: user
+</span></span></span><span class="line"><span class="cl"><span class="go">  echo Password: $(kubectl get secret --namespace handsonack wordpress -o jsonpath=&#34;{.data.wordpress-password}&#34; | base64 --decode)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以通过以下命令查看部署状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">helm3 status wordpress
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="step-3-访问-wordpress-应用">Step 3 ：访问 WordPress 应用</h2>
+<h3 id="1-获取访问地址">1. 获取访问地址</h3>
+<p>首先，我们需要找到刚才部署的 WordPress 的访问地址。</p>
+<p>通过运行下面的命令来获取 WordPress 的 LoadBalancer 地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl get svc wordpress
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将获得如下的返回：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">NAME        TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)                      AGE
+</span></span></span><span class="line"><span class="cl"><span class="go">wordpress   LoadBalancer   172.21.7.165   120.79.38.52   80:32034/TCP,443:31842/TCP   117s
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中的 <code>EXTERNAL-IP</code> 就是当前 WordPress 应用外网可访问的 IP 地址。</p>
+<p>通过浏览器访问该 EXTERNAL-IP 地址，我们可以看到 WordPress 应用的首页：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png"
+        data-srcset="/posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png, /posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png 1.5x, /posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png 2x"
+        data-sizes="auto"
+        alt="/posts/k8s/通过HelmCLI部署wordpress到ACK集群/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png"
+        title="O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png" /></p>
+<h3 id="2-访问后台">2. 访问后台</h3>
+<p>为了能进入 WordPress 的后台，我们先要获取后台的用户名和密码。</p>
+<p>前文的 <code>helm3 status wordpress</code> 命令的返回值已经给出了提示，访问后台的用户名就是 <code>user</code>。</p>
+<p>而 <code>user</code> 用户的密码则需要通过下面的命令来获得：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl get secret wordpress -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&#34;{.data.wordpress-password}&#34;</span> <span class="p">|</span> base64 --decode
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在终端的返回值中，你会看到类似下面的结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">TCEYTlASR8
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这一段文本就是用户 user 的密码。</p>
+<p>接着，我们需要通过地址 http://47.100.82.29/wp-admin/ 访问 WordPress 的后台：</p>
+<p>其中的 <code>EXTERNAL-IP</code> 就是前文中获得的 WordPress 的 LoadBalancer 地址。</p>
+<p>在浏览器访问后台地址，并输入用户名和密码会看到如下页面：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png"
+        data-srcset="/posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png, /posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png 1.5x, /posts/k8s/%e9%80%9a%e8%bf%87HelmCLI%e9%83%a8%e7%bd%b2wordpress%e5%88%b0ACK%e9%9b%86%e7%be%a4/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png 2x"
+        data-sizes="auto"
+        alt="/posts/k8s/通过HelmCLI部署wordpress到ACK集群/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png"
+        title="O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png" /></p>
+<p>至此，WordPress 产品部署完成，并成功访问前台和后台。</p>
+<h2 id="step-4-删除-wordpress-应用">Step 4 ：删除 WordPress 应用</h2>
+<p>最后，通过 uninstall 命令删除部署的workpress：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">helm3 uninstall wordpress
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-04-20</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/%E9%80%9A%E8%BF%87helmcli%E9%83%A8%E7%BD%B2wordpress%E5%88%B0ack%E9%9B%86%E7%BE%A4/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/k8s/">”k8s“</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%BD%BF%E7%94%A8kubectl%E9%83%A8%E7%BD%B2web%E6%9C%8D%E5%8A%A1%E5%88%B0k8s%E9%9B%86%E7%BE%A4/" class="prev" rel="prev" title="使用Kubectl部署web服务到K8s集群"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>使用Kubectl部署web服务到K8s集群</a>
+            <a href="/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/" class="next" rel="next" title="域名绑定">域名绑定<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

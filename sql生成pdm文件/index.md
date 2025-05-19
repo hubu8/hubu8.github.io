@@ -11,31 +11,31 @@
 
 工具栏 Tools -> 常规选项 general Options -> Dialog 下 Name to Code mirroring 取消勾选
 
-![image-20231222141450298](/common_images/image-20231222141450298.png)
+![image-20231222141450298.png](/posts/MySQL/SQL生成PDM文件/image-20231222141450298.png)
 
 ##### 版本是16.6以及之上
 
 工具栏 Tools -> 常规选项 general Options -> Respository 下 Display 取消 **Name to Code mirroring** 勾选
 
-![在这里插入图片描述](/common_images/594c7ad4eed94cb792f2717b3b9883bb.png)
+![594c7ad4eed94cb792f2717b3b9883bb.png](/posts/MySQL/SQL生成PDM文件/594c7ad4eed94cb792f2717b3b9883bb.png)
 
 工具栏 Tools -> Modeal Options -> Naming Convention  -> Synchronize code
 
-![在这里插入图片描述](/common_images/1ae53767bda24667bbd5898be8634f71.png)
+![1ae53767bda24667bbd5898be8634f71.png](/posts/MySQL/SQL生成PDM文件/1ae53767bda24667bbd5898be8634f71.png)
 
 ### SQL逆向生成PDM
 
 #### 第一步：File > Reverse Engineer > Database
 
-![image-20231221143024791](/common_images/image-20231221143024791.png)
+![image-20231221143024791.png](/posts/MySQL/SQL生成PDM文件/image-20231221143024791.png)
 
 #### 第二步：设置DBMS参数
 
-![image-20231221143237554](/common_images/image-20231221143237554.png)
+![image-20231221143237554.png](/posts/MySQL/SQL生成PDM文件/image-20231221143237554.png)
 
 #### 第三步：选择sql文件
 
-![image-20231221143333237](/common_images/image-20231221143333237.png)
+![image-20231221143333237.png](/posts/MySQL/SQL生成PDM文件/image-20231221143333237.png)
 
 ### 生成的PDM将coments同步至name字段
 

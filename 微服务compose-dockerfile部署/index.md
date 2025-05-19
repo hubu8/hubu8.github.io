@@ -240,4 +240,4 @@ docker-compose -f docker-compose_comp_rec.yml down
 
 接口测试：
 
-![image-20210415183408221](/common_images/image-20210415183408221.png)
+![image-20210415183408221.png](/posts/Docker/微服务compose+Dockerfile部署/image-20210415183408221.png)

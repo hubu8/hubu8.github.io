@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7\/"
-        },"genre": "posts","wordcount":  6546 ,
+        },"genre": "posts","wordcount":  6602 ,
         "url": "https:\/\/hubu8.github.io\/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7\/","datePublished": "2024-05-13T08:59:26+08:00","dateModified": "2024-05-13T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Spring Boot如何优雅提高接口数据安全性</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-05-13">2024-05-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 6546 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-05-13">2024-05-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 6602 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 14 分钟&nbsp;<span id="/spring-boot%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E6%8F%90%E9%AB%98%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%80%A7/" class="leancloud_visitors" data-flag-title="Spring Boot如何优雅提高接口数据安全性">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -166,14 +166,7 @@
 <p><strong>AES 是对称加密算法</strong>，优点：加密速度快；缺点：如果秘钥丢失，就容易解密密文，安全性相对比较差</p>
 <p><strong>RSA 是非对称加密算法</strong> ， 优点：安全 ；缺点：加密速度慢</p>
 <p>接口参数加解密的流程大致如图所示：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/java_images/java_640"
-        data-srcset="/java_images/java_640, /java_images/java_640 1.5x, /java_images/java_640 2x"
-        data-sizes="auto"
-        alt="/java_images/java_640"
-        title="图片" /></p>
+<p>![java_640](/posts/java/Spring Boot如何优雅提高接口数据安全性/java_640)</p>
 <p>具体步骤如下：</p>
 <ol>
 <li>客户端(调用接口方)随机生成AES加解密的密钥<strong>aes key</strong>，这里的AES密钥每次调接口都需要随机生成，可以有效提高安全性。</li>
@@ -186,14 +179,7 @@
 </ol>
 <h3 id="22-加签">2.2 加签</h3>
 <p>签名验证也是当下提高接口安全性主要措施之一，核心就是客户端在调用接口时按照一定规则生成签名<code>sign</code>，服务端拿到签名<code>sign</code>之后进行验证操作，大致流程如下：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/java_images/java_641"
-        data-srcset="/java_images/java_641, /java_images/java_641 1.5x, /java_images/java_641 2x"
-        data-sizes="auto"
-        alt="/java_images/java_641"
-        title="图片" /></p>
+<p>![java_641](/posts/java/Spring Boot如何优雅提高接口数据安全性/java_641)</p>
 <p>具体步骤：</p>
 <ol>
 <li>对请求参数对象bean转<code>sortMap</code>保证参数拼接的有序性，如果接口没有参数也没有关系，这里转成一个空的<code>sortMap</code></li>

@@ -138,11 +138,11 @@
 </div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%e5%89%8d%e7%ab%af/image-20230913165951398.png"
-        data-srcset="/%e5%89%8d%e7%ab%af/image-20230913165951398.png, /%e5%89%8d%e7%ab%af/image-20230913165951398.png 1.5x, /%e5%89%8d%e7%ab%af/image-20230913165951398.png 2x"
+        data-src="/posts/%e5%89%8d%e7%ab%af/https%e7%ab%99%e7%82%b9%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8http%e8%b5%84%e6%ba%90/image-20230913165951398.png"
+        data-srcset="/posts/%e5%89%8d%e7%ab%af/https%e7%ab%99%e7%82%b9%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8http%e8%b5%84%e6%ba%90/image-20230913165951398.png, /posts/%e5%89%8d%e7%ab%af/https%e7%ab%99%e7%82%b9%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8http%e8%b5%84%e6%ba%90/image-20230913165951398.png 1.5x, /posts/%e5%89%8d%e7%ab%af/https%e7%ab%99%e7%82%b9%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8http%e8%b5%84%e6%ba%90/image-20230913165951398.png 2x"
         data-sizes="auto"
-        alt="/前端/image-20230913165951398.png"
-        title="image-20230913165951398" /></p>
+        alt="/posts/前端/https站点无法使用http资源/image-20230913165951398.png"
+        title="image-20230913165951398.png" /></p>
 <h3 id="问题分析">问题分析</h3>
 <p>报错的原因就是当前页面是https协议加载的，但是这个页面发起了一个http的ajax请求，这种做法是非法的。HTTPS页面里动态的引入HTTP资源，比如引入一个js文件，会被直接block掉的.在HTTPS页面里通过AJAX的方式请求HTTP资源，也会被直接block掉的。</p>
 <h3 id="解决办法">解决办法</h3>

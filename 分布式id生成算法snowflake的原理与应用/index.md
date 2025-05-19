@@ -361,7 +361,7 @@ public class SnowFlake {
 
 #### 精度问题
 
-![image-20221129164454927](/java_images/image-20221129164454927.png)
+![image-20221129164454927.png](/posts/java/basic/分布式ID生成算法Snowflake的原理与应用/image-20221129164454927.png)
 
 值得注意的是，雪花算法在JavaScript中有一个坑。后端在返回ID的时候，需要使用String类型代替Long类型，否则会产生预想不到的错误。
 
@@ -444,7 +444,7 @@ public class JacksonConfig {
 }
 ```
 
-![image-20221129165000574](/java_images/image-20221129165000574.png)
+![image-20221129165000574.png](/posts/java/basic/分布式ID生成算法Snowflake的原理与应用/image-20221129165000574.png)
 
 ###### 2、属性字段加注解
 
@@ -467,7 +467,7 @@ public class LongToStringSerializer extends JsonSerializer<Long> {
 }
 ```
 
-![image-20221129170406111](/java_images/image-20221129170406111.png)
+![image-20221129170406111.png](/posts/java/basic/分布式ID生成算法Snowflake的原理与应用/image-20221129170406111.png)
 
 数据实体转换规则（不太准确，以实际测试为准）：
 

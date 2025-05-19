@@ -146,7 +146,7 @@ docker exec -it sc-person_info /bin/bash
 env
 ```
 
-![image-20210411172349531](/common_images/image-20210411172349531.png)
+![image-20210411172349531.png](/posts/Docker/docker-compose之env_file/image-20210411172349531.png)
 
 ### 5、愉快地开始部署项目了！！！
 

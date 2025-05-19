@@ -116,13 +116,13 @@ public class JDBCDemo01 {
 
 ##### 快速入门：
 
-![image-20201106180134782](/实训/jdbc/image-20201106180134782.png)
+![image-20201106180134782.png](/posts/实训笔记/JDBC-01/image-20201106180134782.png)
 
 
 
 ##### 抽取到单元测试：（只用关心5、6）
 
-![image-20201106180221097](/实训/jdbc/image-20201106180221097.png)
+![image-20201106180221097.png](/posts/实训笔记/JDBC-01/image-20201106180221097.png)
 
 
 
@@ -216,11 +216,11 @@ public class JDBCDemo01 {
 
 #### 【小结：
 
-![image-20201106184858039](/实训/jdbc/image-20201106184858039.png)
+![image-20201106184858039.png](/posts/实训笔记/JDBC-01/image-20201106184858039.png)
 
 
 
-![image-20210328105637129](/实训/jdbc/image-20210328105637129.png)
+![image-20210328105637129.png](/posts/实训笔记/JDBC-01/image-20210328105637129.png)
 
 
 
@@ -827,7 +827,7 @@ username=root
 password=itheima
 ```
 
-![image-20201108143309924](/实训/jdbc/image-20201108143309924.png)
+![image-20201108143309924.png](/posts/实训笔记/JDBC-01/image-20201108143309924.png)
 
 
 
@@ -1340,7 +1340,7 @@ public class StudentDaoImpl implements StudentDao {
 
 ##### 抽取配置文件的好处：
 
-![image-20201108143309924](/实训/jdbc/image-20201108143309924.png)
+![image-20201108143309924.png](/posts/实训笔记/JDBC-01/image-20201108143309924.png)
 
 
 
@@ -1348,7 +1348,7 @@ public class StudentDaoImpl implements StudentDao {
 
 ##### 抽取工具类的好处：
 
-![image-20201108144910169](/实训/jdbc/image-20201108144910169.png)
+![image-20201108144910169.png](/posts/实训笔记/JDBC-01/image-20201108144910169.png)
 
 
 
@@ -1378,7 +1378,7 @@ public class StudentDaoImpl implements StudentDao {
 
 - 在登录界面，输入一个错误的用户名或密码，也可以登录成功
 
-![06](/实训/jdbc/06.png)
+![06.png](/posts/实训笔记/JDBC-01/06.png)
 
 #### 2.sql注入攻击的原理
 
@@ -1767,7 +1767,7 @@ public void test() throws Exception{
 
 
 
-![image-20201108180937480](/实训/jdbc/image-20201108180937480.png)
+![image-20201108180937480.png](/posts/实训笔记/JDBC-01/image-20201108180937480.png)
 
 
 
@@ -1791,11 +1791,11 @@ public void test() throws Exception{
 
 #### 1.关于三层架构：
 
-![image-20210328161053612](/实训/jdbc/image-20210328161053612.png)
+![image-20210328161053612.png](/posts/实训笔记/JDBC-01/image-20210328161053612.png)
 
 
 
-![image-20201108113227379](/实训/jdbc/image-20201108113227379.png)
+![image-20201108113227379.png](/posts/实训笔记/JDBC-01/image-20201108113227379.png)
 
 
 
@@ -1807,7 +1807,7 @@ public void test() throws Exception{
 
 >web工程的lib依赖必须在web-inf目录下，否则tomcat找不到依赖，就会引发报错：
 
-![image-20201108113348489](/实训/jdbc/image-20201108113348489.png)
+![image-20201108113348489.png](/posts/实训笔记/JDBC-01/image-20201108113348489.png)
 
 
 
@@ -1817,11 +1817,11 @@ public void test() throws Exception{
 
 #### 3.注入攻击：
 
-![image-20201108160805770](/实训/jdbc/image-20201108160805770.png)
+![image-20201108160805770.png](/posts/实训笔记/JDBC-01/image-20201108160805770.png)
 
 
 
-![image-20201108162120054](/实训/jdbc/image-20201108162120054.png)
+![image-20201108162120054.png](/posts/实训笔记/JDBC-01/image-20201108162120054.png)
 
 
 
@@ -1857,7 +1857,7 @@ url=jdbc:mysql://localhost:3306/你的库?useUnicode=true&characterEncoding=utf-
 
 2. 在1的基础上，将crud操作改造为web功能，使用网页来完成数据的查询、增删改；
 
-   > ![image-20210328154816271](/实训/jdbc/image-20210328154816271.png)
+   > ![image-20210328154816271.png](/posts/实训笔记/JDBC-01/image-20210328154816271.png)
 
 3. 预习后面的内容；
 
@@ -1867,7 +1867,7 @@ url=jdbc:mysql://localhost:3306/你的库?useUnicode=true&characterEncoding=utf-
 
 5. 附加2： 在附加1的基础上，添加查询条件；
 
-![image-20201106190242475](/实训/jdbc/image-20201106190242475.png)
+![image-20201106190242475.png](/posts/实训笔记/JDBC-01/image-20201106190242475.png)
 
 
 
@@ -1875,7 +1875,7 @@ url=jdbc:mysql://localhost:3306/你的库?useUnicode=true&characterEncoding=utf-
 
 **预习：**
 
-![image-20201106185427204](/实训/jdbc/image-20201106185427204.png)
+![image-20201106185427204.png](/posts/实训笔记/JDBC-01/image-20201106185427204.png)
 
 
 

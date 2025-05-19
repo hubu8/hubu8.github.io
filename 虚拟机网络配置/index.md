@@ -33,6 +33,6 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 
 客户端只需要设置VMnet8虚拟网络参数
 
-![image-20221202140945052](/common_images/image-20221202140945052.png)
+![image-20221202140945052.png](/posts/other/虚拟机网络配置/image-20221202140945052.png)
 
 

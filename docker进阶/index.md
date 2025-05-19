@@ -360,7 +360,7 @@ a56f5f6a9eb6   wordpress:latest   "docker-entrypoint.s…"   About a minute ago 
 63f261196b58   mysql:5.7          "docker-entrypoint.s…"   About a minute ago   Up About a minute   3306/tcp, 33060/tcp    my_wordpress_db_1
 ```
 
-![admin-QQ](/docker_image/images/image-20210409175443074.png)
+![image-20210409175443074.png](/posts/Docker/docker进阶/image-20210409175443074.png)
 
 All are easy!!!!
 
@@ -427,7 +427,7 @@ services:
 
 ### 4、打jar包上传服务器
 
-![image-20210409182130800](/docker_image/images/image-20210409182130800.png)
+![image-20210409182130800.png](/posts/Docker/docker进阶/image-20210409182130800.png)
 
 ### 5、运行服务：
 
@@ -437,7 +437,7 @@ docker-compose up -d
 docker-compose up --build     #重新构建
 ```
 
-![image-20210409183359246](/docker_image/images/image-20210409183359246.png)
+![image-20210409183359246.png](/posts/Docker/docker进阶/image-20210409183359246.png)
 
 
 
@@ -449,7 +449,7 @@ docker-compose up --build     #重新构建
 
 集群-----4台服务器（一主三从）
 
-![](https://docs.docker.com/engine/swarm/docker_image/images/swarm-diagram.png)
+![swarm-diagram.png](/posts/Docker/docker进阶/swarm-diagram.png)
 
 4台机器安装Docker(Xshell窗口右键：发送键输入到所有会话):
 
@@ -546,7 +546,7 @@ Error response from daemon: manager stopped: can't initialize raft node: rpc err
 
 试了好多次发现总是加入管理节点错误，一开始怀疑自己网络通信问题，后来网上无脑抄袭一致认为代理问题：
 
-![image-20210410112632392](/docker_image/images/image-20210410112632392.png)
+![image-20210410112632392.png](/posts/Docker/docker进阶/image-20210410112632392.png)
 
 最终发现是自己新建的虚拟机test防火墙没有关:
 
@@ -559,7 +559,7 @@ systemctl stop firewalld.service
 systemctl disable firewalld.service
 ```
 
-![image-20210410113141469](/docker_image/images/image-20210410113141469.png)
+![image-20210410113141469.png](/posts/Docker/docker进阶/image-20210410113141469.png)
 
 ## Raft协议
 
@@ -575,11 +575,11 @@ Raft协议：保证大多数节点存活集群才可用，至少大于1台，集
 systemctl stop docker 
 ```
 
-![image-20210410113944489](/docker_image/images/image-20210410113944489.png)
+![image-20210410113944489.png](/posts/Docker/docker进阶/image-20210410113944489.png)
 
 在test管理节点查看集群，发现不可用：
 
-![image-20210410114244657](/docker_image/images/image-20210410114244657.png)
+![image-20210410114244657.png](/posts/Docker/docker进阶/image-20210410114244657.png)
 
 #### 2、重新启动node2:
 
@@ -589,7 +589,7 @@ systemctl start docker
 
 发现leader节点变了：
 
-![image-20210410114520473](/docker_image/images/image-20210410114520473.png)
+![image-20210410114520473.png](/posts/Docker/docker进阶/image-20210410114520473.png)
 
 #### 3、工作节点node3离开：
 
@@ -598,7 +598,7 @@ docker swarm --help
 docker swarm leave
 ```
 
-![image-20210410114810911](/docker_image/images/image-20210410114810911.png)
+![image-20210410114810911.png](/posts/Docker/docker进阶/image-20210410114810911.png)
 
 #### 4、三主一工作：
 
@@ -618,11 +618,11 @@ e2hlgfd1v4xk7azjp27ce3fcy     node3                   Down      Active          
 
 现在Leader是test节点，停掉：
 
-![image-20210410115412414](/docker_image/images/image-20210410115412414.png)
+![image-20210410115412414.png](/posts/Docker/docker进阶/image-20210410115412414.png)
 
 在node2查看集群状态,发现node3变成了leader，集群任然可用
 
-![image-20210410115450463](/docker_image/images/image-20210410115450463.png)
+![image-20210410115450463.png](/posts/Docker/docker进阶/image-20210410115450463.png)
 
 #### 6、大多数存活可用
 
@@ -633,7 +633,7 @@ e2hlgfd1v4xk7azjp27ce3fcy     node3                   Down      Active          
 Error response from daemon: rpc error: code = Unknown desc = The swarm does not have a leader. It's possible that too few managers are online. Make sure more than half of the managers are online.
 ```
 
-![](https://docs.docker.com/engine/swarm/docker_image/images/swarm-diagram.png)
+![swarm-diagram.png](/posts/Docker/docker进阶/swarm-diagram.png)
 
 大多数管理节点存活才可用
 
@@ -643,7 +643,7 @@ Error response from daemon: rpc error: code = Unknown desc = The swarm does not 
 
 集群：高可用，web->redis(分布在三台不同主机上，服务副本，挂了一个没事，其他可用)
 
-![image-20210410125301040](/docker_image/images/image-20210410125301040.png)
+![image-20210410125301040.png](/posts/Docker/docker进阶/image-20210410125301040.png)
 
 容器=》服务=》副本
 
@@ -696,13 +696,13 @@ iv9jcn74r0uj   mynginx   replicated   3/3        nginx:latest   *:8888->80/tcp
 
 此时三个服务副本在node3、node4、test主机上
 
-![image-20210410140217454](/docker_image/images/image-20210410140217454.png)
+![image-20210410140217454.png](/posts/Docker/docker进阶/image-20210410140217454.png)
 
 在集群中的任意一个节点都可访问，服务可以有多个副本来实现高可用：
 
 但是现在通过node3IP无法访问服务，其他正常
 
-![image-20210410142028172](/docker_image/images/image-20210410142028172.png)
+![image-20210410142028172.png](/posts/Docker/docker进阶/image-20210410142028172.png)
 
 ### 大无语事件来了，有彩蛋:
 
@@ -790,7 +790,7 @@ systemctl status firewalld.service    #防火墙状态关闭
 systemctl start docker    #重新启动又好了,玄学
 ```
 
-![image-20210410151656061](/docker_image/images/image-20210410151656061.png)
+![image-20210410151656061.png](/posts/Docker/docker进阶/image-20210410151656061.png)
 
 副本服务与全局服务
 
@@ -858,10 +858,10 @@ docker stack deploy wordpress.yml
 
 安全，密码、证书配置：
 
-![image-20210410154835209](/docker_image/images/image-20210410154835209.png)
+![image-20210410154835209.png](/posts/Docker/docker进阶/image-20210410154835209.png)
 
 # Docker Config
 
 配置：
 
-![image-20210410154923154](/docker_image/images/image-20210410154923154.png)
+![image-20210410154923154.png](/posts/Docker/docker进阶/image-20210410154923154.png)

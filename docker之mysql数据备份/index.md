@@ -40,7 +40,7 @@
 
 ### 环境简介
 
-![image-20230511174022829](/docker_image/image-20230511174022829.png)
+![image-20230511174022829.png](/posts/Docker/docker之mysql数据备份/image-20230511174022829.png)
 
 主应用程序和MySQL容器部署在不同容器但是属于同一个网络，此时服务器系统没有mysql环境，所以也就没有mysqldump备份命令，此时数据库的备份方案只能在mysql容器上部署。
 
@@ -273,4 +273,4 @@ cat ${dir}/backup.log>>./backup/backup.log
 
 #### 4、文件目录结构
 
-![image-20230511195957921](/docker_image/image-20230511195957921.png)
+![image-20230511195957921.png](/posts/Docker/docker之mysql数据备份/image-20230511195957921.png)

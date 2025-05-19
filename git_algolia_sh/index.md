@@ -34,17 +34,17 @@
 
 ### 2.1 登录 [Algolia 官网](https://www.algolia.com/) ，注册账号，创建 Application 名为 “test01”作为举例，默认选择 “FREE” 即可，这里自定义名称
 
-![img](/common_images/image-20200627215434095.png)
+![image-20200627215434095.png](/posts/windows/git_algolia_sh/image-20200627215434095.png)
 
 ### 2.2 我这里选择香港作为存储地区
 
 ### 2.3 创建index，要与config.toml 的配置 index 一样
 
-![img](/common_images/image-20200627220936376.png)
+![image-20200627220936376.png](/posts/windows/git_algolia_sh/image-20200627220936376.png)
 
 ### 2.4 将 API Keys 里面补充到 config.toml 里面
 
-![img](/common_images/image-20200627221400836.png)
+![image-20200627221400836.png](/posts/windows/git_algolia_sh/image-20200627221400836.png)
 
 ## 3 使用 [atomic-algolia](https://github.com/chrisdmacrae/atomic-algolia) 来完成自动更新索引
 
@@ -67,7 +67,7 @@ ALGOLIA_INDEX_FILE="public/index.json"
 
 ### 3.4 可能影响环境变量的githu设置
 
-![image-20250517145608220](/common_images/image-20250517145608220.png)
+![image-20250517145608220.png](/posts/windows/git_algolia_sh/image-20250517145608220.png)
 
 
 ### 3.5 修改根目录下的 `package.json` 文件（没有就新建），在 `scripts` 下添加 `"algolia": "atomic-algolia"`
@@ -191,9 +191,9 @@ esac
 
 仓库代码检验：
 
-![image-20210413222226726](/common_images/image-20210413222226726.png)
+![image-20210413222226726.png](/posts/windows/git_algolia_sh/image-20210413222226726.png)
 
  algolia 的索引:
 
-![image-20210413223145848](/common_images/image-20210413223145848.png)
+![image-20210413223145848.png](/posts/windows/git_algolia_sh/image-20210413223145848.png)
 

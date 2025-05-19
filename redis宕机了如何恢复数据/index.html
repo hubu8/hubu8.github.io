@@ -208,11 +208,11 @@ bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有�
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/redis/image-20240514164237169.png"
-        data-srcset="/redis/image-20240514164237169.png, /redis/image-20240514164237169.png 1.5x, /redis/image-20240514164237169.png 2x"
+        data-src="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164237169.png"
+        data-srcset="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164237169.png, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164237169.png 1.5x, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164237169.png 2x"
         data-sizes="auto"
-        alt="/redis/image-20240514164237169.png"
-        title="image-20240514164237169" /></p>
+        alt="/posts/Redis笔记/Redis宕机了，如何恢复数据/image-20240514164237169.png"
+        title="image-20240514164237169.png" /></p>
 <p>写时复制机制保证快照期间数据可修改</p>
 <p>这既保证了快照的完整性，也允许主线程同时对数据进行修改，避免了对正常业务的影响。</p>
 <h3 id="快照的频率如何把握">快照的频率如何把握</h3>
@@ -220,11 +220,11 @@ bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有�
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/redis/image-20240514164316642.png"
-        data-srcset="/redis/image-20240514164316642.png, /redis/image-20240514164316642.png 1.5x, /redis/image-20240514164316642.png 2x"
+        data-src="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164316642.png"
+        data-srcset="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164316642.png, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164316642.png 1.5x, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164316642.png 2x"
         data-sizes="auto"
-        alt="/redis/image-20240514164316642.png"
-        title="image-20240514164316642" /></p>
+        alt="/posts/Redis笔记/Redis宕机了，如何恢复数据/image-20240514164316642.png"
+        title="image-20240514164316642.png" /></p>
 <p>为了尽可能保证在宕机的情况下，保证数据尽量不丢失，比如：<strong>一秒一次快照，那丢失的数据也是一秒</strong>。这看上去很美好，其实为带来很大的问题，<strong>如果频繁地执行全量快照，也会带来两方面的开销</strong></p>
 <ul>
 <li>一方面，频繁将全量数据写入磁盘，会给磁盘带来很大压力，多个快照竞争有限的磁盘带宽，前一个快照还没有做完，后一个又开始做了，容易造成恶性循环。</li>
@@ -251,21 +251,21 @@ bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有�
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/redis/image-20240514164331753.png"
-        data-srcset="/redis/image-20240514164331753.png, /redis/image-20240514164331753.png 1.5x, /redis/image-20240514164331753.png 2x"
+        data-src="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164331753.png"
+        data-srcset="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164331753.png, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164331753.png 1.5x, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164331753.png 2x"
         data-sizes="auto"
-        alt="/redis/image-20240514164331753.png"
-        title="image-20240514164331753" /></p>
+        alt="/posts/Redis笔记/Redis宕机了，如何恢复数据/image-20240514164331753.png"
+        title="image-20240514164331753.png" /></p>
 <h3 id="aof日志内容">AOF日志内容</h3>
 <p>我们以 Redis 收到“set testkey 1”命令后记录的日志为例，看看 AOF 日志的内容，</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/redis/image-20240514164352390.png"
-        data-srcset="/redis/image-20240514164352390.png, /redis/image-20240514164352390.png 1.5x, /redis/image-20240514164352390.png 2x"
+        data-src="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164352390.png"
+        data-srcset="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164352390.png, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164352390.png 1.5x, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514164352390.png 2x"
         data-sizes="auto"
-        alt="/redis/image-20240514164352390.png"
-        title="image-20240514164352390" /></p>
+        alt="/posts/Redis笔记/Redis宕机了，如何恢复数据/image-20240514164352390.png"
+        title="image-20240514164352390.png" /></p>
 <p>日志格式说明 <code>*3表示当前命令有三个部分，每部分都是由$+数字开头，后面紧跟着具体的命令、键或值。这里，数字表示这部分中的命令、键或值一共有多少字节。例如，$3 set表示这部分有 3 个字节，也就是set命令</code></p>
 <h3 id="redisconf中配置aof">redis.conf中配置AOF</h3>
 <p>默认情况下，Redis是没有开启AOF的，可以通过配置redis.conf文件来开启AOF持久化，关于AOF的配置如下：</p>
@@ -384,11 +384,11 @@ bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有�
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/redis/image-20240514165205360.png"
-        data-srcset="/redis/image-20240514165205360.png, /redis/image-20240514165205360.png 1.5x, /redis/image-20240514165205360.png 2x"
+        data-src="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165205360.png"
+        data-srcset="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165205360.png, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165205360.png 1.5x, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165205360.png 2x"
         data-sizes="auto"
-        alt="/redis/image-20240514165205360.png"
-        title="image-20240514165205360" /></p>
+        alt="/posts/Redis笔记/Redis宕机了，如何恢复数据/image-20240514165205360.png"
+        title="image-20240514165205360.png" /></p>
 <p>我们对列表先后做了 6 次修改操作后，列表的最后状态是[“D”, “C”, “N”]，此时，只用 LPUSH u:list “N”, “C”, “D”这一条命令就能实现该数据的恢复，这就节省了五条命令的空间。对于被修改过成百上千次的键值对来说，重写能节省的空间当然就更大了。</p>
 <p>不过，虽然 AOF 重写后，日志文件会缩小，但是，要把整个数据库的最新数据的操作日志都写回磁盘，仍然是一个非常耗时的过程。那这个过程，会阻塞主线程吗</p>
 <h3 id="aof重写会阻塞吗"><strong>AOF重写会阻塞吗</strong></h3>
@@ -406,11 +406,11 @@ bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有�
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/redis/image-20240514165219656.png"
-        data-srcset="/redis/image-20240514165219656.png, /redis/image-20240514165219656.png 1.5x, /redis/image-20240514165219656.png 2x"
+        data-src="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165219656.png"
+        data-srcset="/posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165219656.png, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165219656.png 1.5x, /posts/Redis%e7%ac%94%e8%ae%b0/Redis%e5%ae%95%e6%9c%ba%e4%ba%86%ef%bc%8c%e5%a6%82%e4%bd%95%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae/image-20240514165219656.png 2x"
         data-sizes="auto"
-        alt="/redis/image-20240514165219656.png"
-        title="image-20240514165219656" /></p>
+        alt="/posts/Redis笔记/Redis宕机了，如何恢复数据/image-20240514165219656.png"
+        title="image-20240514165219656.png" /></p>
 <p>内存快照和AOF混合使用</p>
 <p>这个方法既能享受到 RDB 文件快速恢复的好处，又能享受到 AOF 只记录操作命令的简单优势，颇有点“鱼和熊掌可以兼得”的感觉，建议你在实践中用起来。</p>
 <h1 id="总结">总结</h1>

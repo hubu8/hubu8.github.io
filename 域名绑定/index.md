@@ -15,18 +15,18 @@
 
 记录值就是你的github博客地址。主机记录设置为www，线路就默认就行了。
 
-![image-20210428182812305](/hugo_images/image-20210428182812305.png)
+![image-20210428182812305.png](/posts/hugo/域名绑定/image-20210428182812305.png)
 
 ## Github Pages绑定域名
 
 在仓库根目录下新建CNAME文件，
 
-![image-20210428183210306](/hugo_images/image-20210428183210306.png)
+![image-20210428183210306.png](/posts/hugo/域名绑定/image-20210428183210306.png)
 
 此时pages setting界面会自动绑定域名
 
-![image-20210428183313499](/hugo_images/image-20210428183313499.png)
+![image-20210428183313499.png](/posts/hugo/域名绑定/image-20210428183313499.png)
 
 之后就可以正常访问了：
 
-![image-20210428183428468](/hugo_images/image-20210428183428468.png)
+![image-20210428183428468.png](/posts/hugo/域名绑定/image-20210428183428468.png)

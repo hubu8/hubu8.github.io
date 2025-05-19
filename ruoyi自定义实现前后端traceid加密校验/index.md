@@ -9,7 +9,7 @@
 
 ### 业务设计
 
-![image-20240429101925819](/java_images/ruoyi/image-20240429101925819.png)
+![image-20240429101925819.png](/posts/java/ruoyi/ruoyi自定义实现前后端traceid加密校验/image-20240429101925819.png)
 
 ### 业务代码
 

@@ -564,7 +564,7 @@ data() {
 
 **文字相关class**
 
-![image-20210512214923077](/common_images/image-20210512214923077.png)
+![image-20210512214923077.png](/posts/uni-app/小程序ColorUI使用简易教程/image-20210512214923077.png)
 
 ### Icon图标
 

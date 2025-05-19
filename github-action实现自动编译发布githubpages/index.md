@@ -145,17 +145,17 @@ jobs:
 
 GITHUB_TOKEN 是一个**特殊访问令牌**,您可以使用它代表 GitHub Actions 进行身份验证
 
-![image-20230212194812357](/hugo_images/image-20230212194812357.png)
+![image-20230212194812357.png](/posts/hugo/github action实现自动编译发布githubPages/image-20230212194812357.png)
 
 在用户设置中最下面找到Developer setting，在token中增加自己的token
 
-![image-20230212195401796](/hugo_images/image-20230212195401796.png)
+![image-20230212195401796.png](/posts/hugo/github action实现自动编译发布githubPages/image-20230212195401796.png)
 
 随后点击generate token按钮之后会出现token,此时需要复制下来，后面会用到，不然重新打开界面是看不到的。
 
 #### 设置Action的serects
 
-![image-20230212195608938](/hugo_images/image-20230212195608938.png)
+![image-20230212195608938.png](/posts/hugo/github action实现自动编译发布githubPages/image-20230212195608938.png)
 
 
 

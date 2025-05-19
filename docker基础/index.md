@@ -17,7 +17,7 @@ docker容器技术也是一种虚拟化技术
 
 仓库地址： https://hub.docker.com/
 
-![](/docker_image/src=http___www.srcmini.com_wp-content_uploads_2020_03_docker-architecture.png&refer=http___www.srcmini.jpg)
+![src=http___www.srcmini.com_wp-content_uploads_2020_03_docker-architecture.png&refer=http___www.srcmini.jpg](/posts/Docker/docker基础/src=http___www.srcmini.com_wp-content_uploads_2020_03_docker-architecture.png&refer=http___www.srcmini.jpg)
 
 镜像（image）:模板，通过这个模板来创建容器服务，可创建多个容器（最终服务或者项目运行在容器中）
 
@@ -75,7 +75,7 @@ docker images
 
 阿里云镜像加速
 
-![image-20210321214340675](/docker_image/image-20210321214340675.png)
+![image-20210321214340675.png](/posts/Docker/docker基础/image-20210321214340675.png)
 
 ```shell
 sudo mkdir -p /etc/docker
@@ -492,7 +492,7 @@ docker cp id:/home/test.java /home
 docker cp 容器id:容器目录 本机目录
 ```
 
-![img](/docker_image/186C0EC8DE5EC3A36385E029611A8D2E.jpg)
+![186C0EC8DE5EC3A36385E029611A8D2E.jpg](/posts/Docker/docker基础/186C0EC8DE5EC3A36385E029611A8D2E.jpg)
 
 
 
@@ -505,11 +505,11 @@ docker run -d --name nginx-01 -p 3344:80 nginx   #运行容器
 curl localhost:3344    #测试
 ```
 
-![image-20210324211614449](/docker_image/image-20210324211614449.png)
+![image-20210324211614449.png](/posts/Docker/docker基础/image-20210324211614449.png)
 
 
 
-![](/docker_image/QQ图片20210324212600.png)
+![QQ图片20210324212600.png](/posts/Docker/docker基础/QQ图片20210324212600.png)
 
 ```shell
 pi@raspberrypi:~ $ docker exec -it nginx-01 /bin/bash   #进入容器
@@ -542,15 +542,15 @@ docker images
 docker run -d --name tomcat-01 -p 3355:8080 tomcat   #运行  外部3355
 ```
 
-![image-20210324215208158](/docker_image/image-20210324215208158.png)
+![image-20210324215208158.png](/posts/Docker/docker基础/image-20210324215208158.png)
 
 but
 
-![image-20210324215238640](/docker_image/image-20210324215238640.png)
+![image-20210324215238640.png](/posts/Docker/docker基础/image-20210324215238640.png)
 
 原因：官方镜像最简化，所以找不到资源文件：
 
-![image-20210324215558043](/docker_image/image-20210324215558043.png)
+![image-20210324215558043.png](/posts/Docker/docker基础/image-20210324215558043.png)
 
 ```shell
 docker exec -it tomcat-01 /bin/bash    #进入容器
@@ -558,9 +558,9 @@ docker exec -it tomcat-01 /bin/bash    #进入容器
 cp -r webapps.dist/* webapps
 ```
 
-![image-20210324215946756](/docker_image/image-20210324215946756.png)
+![image-20210324215946756.png](/posts/Docker/docker基础/image-20210324215946756.png)
 
-![image-20210324215802596](/docker_image/image-20210324215802596.png)
+![image-20210324215802596.png](/posts/Docker/docker基础/image-20210324215802596.png)
 
 ## 作业三：部署es+kibana
 
@@ -595,18 +595,18 @@ C:\Users\26505>curl localhost:9200
 docker stats
 ```
 
-![image-20210324221348743](/docker_image/image-20210324221348743.png)
+![image-20210324221348743.png](/posts/Docker/docker基础/image-20210324221348743.png)
 
 ```shell
 # 解决一：增加内存限制，修改配置文件， -e 环境的配置修改
 docker run -d --name elasticsearch -p 9201:9200 -p 9301:9300 -e "discovery.type=single-node" -e ES_JAVA_OPTS="-Xms64m -Xmx512m" elasticsearch:7.11.2
 ```
 
-![image-20210324222139669](/docker_image/image-20210324222139669.png)
+![image-20210324222139669.png](/posts/Docker/docker基础/image-20210324222139669.png)
 
 使用kibana连接ES：
 
-![](/docker_image/QQ图片20210324222617.jpg)
+![QQ图片20210324222617.jpg](/posts/Docker/docker基础/QQ图片20210324222617.jpg)
 
 ## 可视化工具
 
@@ -620,9 +620,9 @@ docker run -d --name elasticsearch -p 9201:9200 -p 9301:9300 -e "discovery.type=
 
   测试访问：8088
 
-  ![image-20210324223705434](/docker_image/image-20210324223705434.png)
+  ![image-20210324223705434.png](/posts/Docker/docker基础/image-20210324223705434.png)
 
-  ![image-20210324223937802](/docker_image/image-20210324223937802.png)
+  ![image-20210324223937802.png](/posts/Docker/docker基础/image-20210324223937802.png)
 
 
 
@@ -638,7 +638,7 @@ docker run -d --name elasticsearch -p 9201:9200 -p 9301:9300 -e "discovery.type=
 
 UFS 联合文件系统，分层轻量，分层下载，分层加载，多镜像共用 公共内核(bootfs) 
 
-![](/docker_image/QQ图片20210324224927.png)
+![QQ图片20210324224927.png](/posts/Docker/docker基础/QQ图片20210324224927.png)
 
 对于一个OS，rootfs可以很小，只需要包含基本的命令、工具和程序库就可以了，因为底层直接用host的kernel，自己只需要提供rootfs就可以了，由此可见，不同版本的Linux发行版，bootfs是相同的，只是rootfs不同罢了。
 
@@ -646,17 +646,17 @@ bootfs引导启动非常慢，rootfs库启动非常快，所以虚拟机启动�
 
 分层理解：
 
-![image-20210324225854525](/docker_image/image-20210324225854525.png)
+![image-20210324225854525.png](/posts/Docker/docker基础/image-20210324225854525.png)
 
-![](/docker_image/QQ图片20210324230734.jpg)
+![QQ图片20210324230734.jpg](/posts/Docker/docker基础/QQ图片20210324230734.jpg)
 
-![QQ图片20210324230740](/docker_image/QQ图片20210324230740.jpg)
+![QQ图片20210324230740.jpg](/posts/Docker/docker基础/QQ图片20210324230740.jpg)
 
-![QQ图片20210324230747](/docker_image/QQ图片20210324230747.jpg)
+![QQ图片20210324230747.jpg](/posts/Docker/docker基础/QQ图片20210324230747.jpg)
 
-![QQ图片20210324230756](/docker_image/QQ图片20210324230756.jpg)
+![QQ图片20210324230756.jpg](/posts/Docker/docker基础/QQ图片20210324230756.jpg)
 
-![QQ图片20210324230803](/docker_image/QQ图片20210324230803.jpg)
+![QQ图片20210324230803.jpg](/posts/Docker/docker基础/QQ图片20210324230803.jpg)
 
 ## 如何打包一个自己的镜像：commit
 
@@ -679,7 +679,7 @@ MySQL，容器删除了，MySQL数据就没了，MySQL可以保存在本地吗�
 
 卷技术，？目录挂载，将容器内的目录挂载在宿主机上，持久化与同步操作，容器间数据可以共享
 
-![](/docker_image/QQ图片20210325101252.png)
+![QQ图片20210325101252.png](/posts/Docker/docker基础/QQ图片20210325101252.png)
 
 ```shell
 # 方式一：使用-v挂载 docker run -d -v 主机目录:容器目录
@@ -687,9 +687,9 @@ docker run -it -v /home/ceshi:/home --name ubuntu01 ubuntu /bin/bash
 docker inspect 容器id
 ```
 
-![image-20210325102140448](/docker_image/image-20210325102140448.png)
+![image-20210325102140448.png](/posts/Docker/docker基础/image-20210325102140448.png)
 
-![image-20210325103109576](/docker_image/image-20210325103109576.png)
+![image-20210325103109576.png](/posts/Docker/docker基础/image-20210325103109576.png)
 
 ```shell
 docker stop 1bfb0a3ad95e    #停止docker 容器
@@ -724,15 +724,15 @@ docker run -d -p 3310:3306 --name mysql-test -v H:\myNotsBooks\docker\conf:/etc/
 
 ```
 
-![image-20210325105209550](/docker_image/image-20210325105209550.png)
+![image-20210325105209550.png](/posts/Docker/docker基础/image-20210325105209550.png)
 
 链接成功：
 
-![image-20210325105322349](/docker_image/image-20210325105322349.png)
+![image-20210325105322349.png](/posts/Docker/docker基础/image-20210325105322349.png)
 
 数据挂载成功：（conf）
 
-![image-20210325105410388](/docker_image/image-20210325105410388.png)
+![image-20210325105410388.png](/posts/Docker/docker基础/image-20210325105410388.png)
 
 即使删除容器，本地的数据卷依旧没有丢失，这就达到了数据持久化
 
@@ -793,11 +793,11 @@ pi@raspberrypi:~ $ docker volume inspect jumingfs
 
 ```
 
-![image-20210325110900154](/docker_image/image-20210325110900154.png)
+![image-20210325110900154.png](/posts/Docker/docker基础/image-20210325110900154.png)
 
 所有docker容器内的卷，没有指定目录的情况下都是在/var/lib/docker/volumes/jumingfs/_data
 
-![image-20210325111842114](/docker_image/image-20210325111842114.png)
+![image-20210325111842114.png](/posts/Docker/docker基础/image-20210325111842114.png)
 
 我们通过具名挂载可以方便找到我们的一个大卷，大多数情况下使用的是具名挂载
 
@@ -860,13 +860,13 @@ CMD /bin/bash
 
 ```
 
-![image-20210325190654523](/docker_image/image-20210325190654523.png)
+![image-20210325190654523.png](/posts/Docker/docker基础/image-20210325190654523.png)
 
 ```shell
 docker inspect id    #查看卷挂载路径
 ```
 
-![image-20210325191029106](/docker_image/image-20210325191029106.png)
+![image-20210325191029106.png](/posts/Docker/docker基础/image-20210325191029106.png)
 
 ## 多个docker同步数据
 
@@ -878,9 +878,9 @@ docker run -it --name docker02 --volumes-from docker01 jd/centos:1.0
 docker run -it --name docker03 --volumes-from docker01 jd/centos:1.0
 ```
 
-![image-20210325193456653](/docker_image/image-20210325193456653.png)
+![image-20210325193456653.png](/posts/Docker/docker基础/image-20210325193456653.png)
 
-![image-20210325193621432](/docker_image/image-20210325193621432.png)
+![image-20210325193621432.png](/posts/Docker/docker基础/image-20210325193621432.png)
 
 ```shell
 # 进入docker01创建文件
@@ -909,21 +909,21 @@ docker01.txt
 
 docker02	 volumesfrom   docker01
 
-![image-20210325194022740](/docker_image/image-20210325194022740.png)
+![image-20210325194022740.png](/posts/Docker/docker基础/image-20210325194022740.png)
 
 
 
 docker03	 volumesfrom   docker01 
 
-![image-20210325194537968](/docker_image/image-20210325194537968.png)
+![image-20210325194537968.png](/posts/Docker/docker基础/image-20210325194537968.png)
 
 
 
 如果把1删除了，2，3还在吗？？？  **发现还在，只要有一个容器使用，就依旧存在，共享备份机制，双向拷贝的概念**
 
-![image-20210325195011008](/docker_image/image-20210325195011008.png)
+![image-20210325195011008.png](/posts/Docker/docker基础/image-20210325195011008.png)
 
-![](/docker_image/QQ图片20210325195303.jpg)
+![QQ图片20210325195303.jpg](/posts/Docker/docker基础/QQ图片20210325195303.jpg)
 
 ```shell
 # 多个mysql实现数据共享
@@ -954,7 +954,7 @@ docker run -d -p 3302:3306 --name mysql02 --volumes-from mysql01 -e MYSQL_ROOT_P
 
 查看一下官方这么做的：
 
-![image-20210325200845834](/docker_image/image-20210325200845834.png)
+![image-20210325200845834.png](/posts/Docker/docker基础/image-20210325200845834.png)
 
 ```shell
 FROM scratch
@@ -972,11 +972,11 @@ CMD ["/bin/bash"]
 
 ## 构建过程
 
-![](/docker_image/src=http___seo-1255598498.file.myqcloud.com_full_4455082961bc017cb7c87a3463bb326e021013ce.jpg&refer=http___seo-1255598498.file.myqcloud.jpg)
+![src=http___seo-1255598498.file.myqcloud.com_full_4455082961bc017cb7c87a3463bb326e021013ce.jpg&refer=http___seo-1255598498.file.myqcloud.jpg](/posts/Docker/docker基础/src=http___seo-1255598498.file.myqcloud.com_full_4455082961bc017cb7c87a3463bb326e021013ce.jpg&refer=http___seo-1255598498.file.myqcloud.jpg)
 
 从上到下顺序执行，指令大写，每个指令就会创建一个新的镜像层
 
-![img](/docker_image/u=3926838190,4076298221&fm=26&gp=0.jpg)
+![u=3926838190,4076298221&fm=26&gp=0.jpg](/posts/Docker/docker基础/u=3926838190,4076298221&fm=26&gp=0.jpg)
 
 企业交付的标准！！！！！
 
@@ -1022,7 +1022,7 @@ CMD /bin/bash
 docker build -f centos-vim-ip -t mycentos:1.0 .
 ```
 
-![image-20210325214545002](/docker_image/image-20210325214545002.png)
+![image-20210325214545002.png](/posts/Docker/docker基础/image-20210325214545002.png)
 
 ```shell
 docker images
@@ -1030,15 +1030,15 @@ docker run -it --name mycentostest mycentos:1.0
 # 现在vim 与 ifconfig命令都可以用了,官方不可用
 ```
 
-![image-20210325215112776](/docker_image/image-20210325215112776.png)
+![image-20210325215112776.png](/posts/Docker/docker基础/image-20210325215112776.png)
 
 ```
 docker history mycentos:1.0
 ```
 
-![image-20210325215212619](/docker_image/image-20210325215212619.png)
+![image-20210325215212619.png](/posts/Docker/docker基础/image-20210325215212619.png)
 
-![image-20210325215345040](/docker_image/image-20210325215345040.png)
+![image-20210325215345040.png](/posts/Docker/docker基础/image-20210325215345040.png)
 
 ### CMD与ENTRYPOINT区别
 
@@ -1048,7 +1048,7 @@ CMD ["ls","-a"]　　　
 # 指定容器启动时运行的命令，只有最后一个生效，可被替代
 ```
 
-![image-20210325221617333](/docker_image/image-20210325221617333.png)
+![image-20210325221617333.png](/posts/Docker/docker基础/image-20210325221617333.png)
 
 ```shell
 H:\myNotsBooks\docker\dockerfile>docker run -it cmdtest -l
@@ -1123,7 +1123,7 @@ drwxr-xr-x  12 root root 4096 Dec  4 17:37 usr
 drwxr-xr-x  20 root root 4096 Dec  4 17:37 var
 ```
 
-![image-20210325223553498](/docker_image/image-20210325223553498.png)
+![image-20210325223553498.png](/posts/Docker/docker基础/image-20210325223553498.png)
 
 ## 实战：tomcat镜像
 
@@ -1165,7 +1165,7 @@ docker build -t mytomcat .
 # 构建镜像
 ```
 
-![image-20210326213439087](/docker_image/image-20210326213439087.png)
+![image-20210326213439087.png](/posts/Docker/docker基础/image-20210326213439087.png)
 
 4、启动镜像
 
@@ -1175,9 +1175,9 @@ docker run -d -p 9090:8080 --name testmytomcat -v /root/environment/tomcat-test-
 
 5、访问测试
 
-![image-20210326215239316](/docker_image/image-20210326215239316.png)
+![image-20210326215239316.png](/posts/Docker/docker基础/image-20210326215239316.png)
 
-![image-20210326215303914](/docker_image/image-20210326215303914.png)
+![image-20210326215303914.png](/posts/Docker/docker基础/image-20210326215303914.png)
 
 6、发布项目（由于实现了卷挂载，所以我们就直接在本地写项目发布就可以了）
 
@@ -1208,7 +1208,7 @@ web.xml文件
   </web-app>
 ```
 
-![image-20210326230653392](/docker_image/image-20210326230653392.png)
+![image-20210326230653392.png](/posts/Docker/docker基础/image-20210326230653392.png)
 
 ## 发布镜像
 
@@ -1249,7 +1249,7 @@ Login Succeeded
 [root@jd ~]# docker push hubu8023/mytest:1.0
 ```
 
-![image-20210327110448487](/docker_image/image-20210327110448487.png)
+![image-20210327110448487.png](/posts/Docker/docker基础/image-20210327110448487.png)
 
 ```shell
 [root@jd ~]# docker tag hello-world:latest hubu8023/myhello:2.0    #增加标签
@@ -1259,7 +1259,7 @@ f22b99068db9: Mounted from library/hello-world
 2.0: digest: sha256:1b26826f602946860c279fce658f31050cff2c596583af237d971f4629b57792 size: 525
 ```
 
-![image-20210327110123052](/docker_image/image-20210327110123052.png)
+![image-20210327110123052.png](/posts/Docker/docker基础/image-20210327110123052.png)
 
 ### 阿里云镜像
 
@@ -1267,15 +1267,15 @@ f22b99068db9: Mounted from library/hello-world
 
 2、找到容器镜像服务
 
-![image-20210327110758058](/docker_image/image-20210327110758058.png)
+![image-20210327110758058.png](/posts/Docker/docker基础/image-20210327110758058.png)
 
 3、创建命名空间
 
-![image-20210327111843833](/docker_image/image-20210327111843833.png)
+![image-20210327111843833.png](/posts/Docker/docker基础/image-20210327111843833.png)
 
 4、创建容器镜像
 
-![image-20210327111100649](/docker_image/image-20210327111100649.png)
+![image-20210327111100649.png](/posts/Docker/docker基础/image-20210327111100649.png)
 
 5、浏览页面信息
 
@@ -1309,15 +1309,15 @@ $ sudo docker push registry.cn-hangzhou.aliyuncs.com/jda/testdockerjd:[镜像版
 
 小结：
 
-![](/docker_image/u=158836981,2597373737&fm=26&gp=0.png)
+![u=158836981,2597373737&fm=26&gp=0.png](/posts/Docker/docker基础/u=158836981,2597373737&fm=26&gp=0.png)
 
-![](/docker_image/186C0EC8DE5EC3A36385E029611A8D2E.jpg)
+![186C0EC8DE5EC3A36385E029611A8D2E.jpg](/posts/Docker/docker基础/186C0EC8DE5EC3A36385E029611A8D2E.jpg)
 
 # Docker网络
 
 docker网络核心docker0:
 
-![image-20210327113434961](/docker_image/image-20210327113434961.png)
+![image-20210327113434961.png](/posts/Docker/docker基础/image-20210327113434961.png)
 
 两个容器之间如何访问？？？？？
 
@@ -1339,9 +1339,9 @@ docker run -d -P --name tomcat01 tomcat
 # 查看容器内网IP地址，发现容器启动的时候得到一个eth0@if19   IP地址，这是docker分配的！！！
 ```
 
-![image-20210327114704548](/docker_image/image-20210327114704548.png)现在能不能ping通容器？？？linux可以ping通容器内部
+![image-20210327114704548.png](/posts/Docker/docker基础/image-20210327114704548.png)现在能不能ping通容器？？？linux可以ping通容器内部
 
-![image-20210327114129386](/docker_image/image-20210327114129386.png)
+![image-20210327114129386.png](/posts/Docker/docker基础/image-20210327114129386.png)
 
 ## 原理：
 
@@ -1349,9 +1349,9 @@ docker run -d -P --name tomcat01 tomcat
 
 2、再启动一个docker容器，发现又多了一对网卡：
 
-![image-20210327115014049](/docker_image/image-20210327115014049.png)
+![image-20210327115014049.png](/posts/Docker/docker基础/image-20210327115014049.png)
 
-![image-20210327115105955](/docker_image/image-20210327115105955.png)
+![image-20210327115105955.png](/posts/Docker/docker基础/image-20210327115105955.png)
 
 ```shell
 # 容器的网卡都是成对出现的，
@@ -1361,11 +1361,11 @@ docker run -d -P --name tomcat01 tomcat
 
 3、测试两个tomcat能不能互通：
 
-![image-20210327115741038](/docker_image/image-20210327115741038.png)
+![image-20210327115741038.png](/posts/Docker/docker基础/image-20210327115741038.png)
 
 网络模型
 
-![image-20210327120403816](/docker_image/image-20210327120403816.png)
+![image-20210327120403816.png](/posts/Docker/docker基础/image-20210327120403816.png)
 
 结论：tomcat01和tomcat02 共用一个路由器docker0,
 
@@ -1414,13 +1414,13 @@ c9c57d03a4a4   host      host      local
 [root@jd ~]# docker network inspect c592ad97632c    #docker0网卡信息
 ```
 
-![image-20210327135139291](/docker_image/image-20210327135139291.png)
+![image-20210327135139291.png](/posts/Docker/docker基础/image-20210327135139291.png)
 
 ```shell
 docker inspect tomcat03
 ```
 
-![image-20210327135635560](/docker_image/image-20210327135635560.png)
+![image-20210327135635560.png](/posts/Docker/docker基础/image-20210327135635560.png)
 
 ```shell
 # 原理发现！！！！！！！！！！！！！！！！！！！！
@@ -1512,7 +1512,7 @@ docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.
 docker network ls
 ```
 
-![image-20210327141825700](/docker_image/image-20210327141825700.png)
+![image-20210327141825700.png](/posts/Docker/docker基础/image-20210327141825700.png)
 
 ```shelll
 [root@jd ~]# docker network inspect mytestnet
@@ -1626,11 +1626,11 @@ PING tomcat-net-01 (192.168.0.2) 56(84) bytes of data.
 
 redis集群，mysql集群使用不同的网络，保证集群的隔离性与数据安全 ，网络互相隔离
 
-![image-20210327143128285](/docker_image/image-20210327143128285.png)
+![image-20210327143128285.png](/posts/Docker/docker基础/image-20210327143128285.png)
 
 ## 网络互通
 
-![image-20210327143717983](/docker_image/image-20210327143717983.png)
+![image-20210327143717983.png](/posts/Docker/docker基础/image-20210327143717983.png)
 
 **测试**
 
@@ -1656,7 +1656,7 @@ CONTAINER ID   IMAGE     COMMAND             CREATED          STATUS          PO
 
 其实就是一个容器两个IP
 
-![image-20210327144142561](/docker_image/image-20210327144142561.png)
+![image-20210327144142561.png](/posts/Docker/docker基础/image-20210327144142561.png)
 
 ```shell
 [root@jd ~]# docker exec -it tomcat-net-01 ping tomcat01
@@ -1674,7 +1674,7 @@ tomcat02依旧不同
 
 分片+高可用+负载均衡
 
-![](/docker_image/QQ图片20210327144932.jpg)
+![QQ图片20210327144932.jpg](/posts/Docker/docker基础/QQ图片20210327144932.jpg)
 
 ```shell
 # 创建网络
@@ -1739,7 +1739,7 @@ done
 docker ps 
 ```
 
-![image-20210327152231823](/docker_image/image-20210327152231823.png)
+![image-20210327152231823.png](/posts/Docker/docker基础/image-20210327152231823.png)
 
 ```shell
 # 交互模式进节点
@@ -1860,7 +1860,7 @@ docker run -d -P --name postWeb posttimer
 
 win本机因为处于局域网，docker容器可以访问192.168.1.104树莓派，所以可以运行成功
 
-![image-20210327164351278](/docker_image/image-20210327164351278.png)
+![image-20210327164351278.png](/posts/Docker/docker基础/image-20210327164351278.png)
 
 5、发布运行
 

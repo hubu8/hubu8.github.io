@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/specified-key-was-too-long\/"
-        },"genre": "posts","wordcount":  2894 ,
+        },"genre": "posts","wordcount":  2914 ,
         "url": "https:\/\/hubu8.github.io\/specified-key-was-too-long\/","datePublished": "2023-12-26T08:59:26+08:00","dateModified": "2023-12-26T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Specified key was too long; max key length is 3072 bytes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-26">2023-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2894 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-26">2023-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2914 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/specified-key-was-too-long/" class="leancloud_visitors" data-flag-title="Specified key was too long; max key length is 3072 bytes">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -129,14 +129,7 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/image-20231226145606320.png"
-        data-srcset="/mysql/image-20231226145606320.png, /mysql/image-20231226145606320.png 1.5x, /mysql/image-20231226145606320.png 2x"
-        data-sizes="auto"
-        alt="/mysql/image-20231226145606320.png"
-        title="image-20231226145606320" /></p>
+            </div><div class="content" id="content"><p>![image-20231226145606320.png](/posts/MySQL/Specified key was too long/image-20231226145606320.png)</p>
 <p>Specified key was too long; max key length is 3072 bytes</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -146,14 +139,7 @@
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;innodb_page_size&#39;</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/image-20231226150434031.png"
-        data-srcset="/mysql/image-20231226150434031.png, /mysql/image-20231226150434031.png 1.5x, /mysql/image-20231226150434031.png 2x"
-        data-sizes="auto"
-        alt="/mysql/image-20231226150434031.png"
-        title="image-20231226150434031" /></p>
+</div><p>![image-20231226150434031.png](/posts/MySQL/Specified key was too long/image-20231226150434031.png)</p>
 <p>16384 = 16KB * 1024</p>
 <h4 id="果断翻译了一下mysql8的官方文档得出结论">果断翻译了一下mysql8的官方文档，得出结论：</h4>
 <ul>
@@ -237,14 +223,7 @@
 <p>我们先来执行如下这条语句：</p>
 <p><code>explain select * from tb_item where title = '编译原理' and price = 45 and num = 23232</code>;</p>
 <p>我们看到 key 是 <code>tb_item_title_price_num</code>，同时索引长度 key_len 为 314 ，证明是使用到了联合索引 <code>tb_item_title_price_num</code> 的三个完整字段的。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png"
-        data-srcset="/mysql/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png, /mysql/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png 1.5x, /mysql/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png 2x"
-        data-sizes="auto"
-        alt="/mysql/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png"
-        title="img" /></p>
+<p>![d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png](/posts/MySQL/Specified key was too long/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png)</p>
 <p>这个 314 的具体计算方式为：</p>
 <p>字符集我们建表时用的为 utf8 编码，所以 title 字段的索引长度是 3 * 100 + 0 + 2 = 302，price 字段的索引长度是 8，num 字段的索引长度是 4。</p>
 <p>因此 tb_item_title_price_num 索引总共长度是 302 + 8 + 4 = 314。</p>
@@ -258,14 +237,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>这条语句因为我们跳过了 price 字段，所以联合索引中只会有 title 字段生效，剩余部分都会失效，如果我们计算方式没有问题的话，那么此时执行计划中的 key_len 应该为 302。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png"
-        data-srcset="/mysql/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png, /mysql/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png 1.5x, /mysql/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png 2x"
-        data-sizes="auto"
-        alt="/mysql/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png"
-        title="img" /></p>
+<p>![c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png](/posts/MySQL/Specified key was too long/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png)</p>
 <p>果然，我们看到 key_len 已经变成了 302，这意味着索引部分失效了，只有 title 字段索引起了作用，同时 Extra 为 <code>Using index condition</code>，说明使用了索引，但是需要回表查询数据。</p>
 <p><strong>简单总结一下，在 MySQL 中，索引长度不仅取决于我们建表时设置的字段长度，还和具体的字符集编码以及字段是否允许为 Null 等多个条件相关，字段长度只能作为索引长度的预估项，而不是准确值。</strong></p>
 <h4 id="mysql各版本中对索引大小限制innodb引擎">MySQL各版本中对索引大小限制（InnoDB引擎）</h4>

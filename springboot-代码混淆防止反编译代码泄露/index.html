@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2\/"
-        },"genre": "posts","keywords": "代码混淆","wordcount":  1436 ,
+        },"genre": "posts","keywords": "代码混淆","wordcount":  1656 ,
         "url": "https:\/\/hubu8.github.io\/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2\/","datePublished": "2022-11-26T16:00:30+08:00","dateModified": "2022-11-26T16:00:30+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">springboot 代码混淆，防止反编译代码泄露</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-26">2022-11-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1436 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/" class="leancloud_visitors" data-flag-title="springboot 代码混淆，防止反编译代码泄露">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-26">2022-11-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1656 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/" class="leancloud_visitors" data-flag-title="springboot 代码混淆，防止反编译代码泄露">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -129,50 +129,22 @@
             </div><div class="content" id="content"><h1 id="springboot-玩一玩代码混淆防止反编译代码泄露">SpringBoot 玩一玩代码混淆，防止反编译代码泄露</h1>
 <h2 id="编译">编译</h2>
 <p>简单就是把代码跑一哈，然后我们的代码 .java文件 就被编译成了 .class 文件</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/640"
-        data-srcset="/springboot/640, /springboot/640 1.5x, /springboot/640 2x"
-        data-sizes="auto"
-        alt="/springboot/640"
-        title="图片" /></p>
+<p>![640](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/640)</p>
 <h2 id="反编译">反编译</h2>
 <p>就是针对编译生成的 jar/war 包 里面的 .class 文件 逆向还原回来，可以看到你的代码写的啥。</p>
 <p>比较常用的反编译工具 JD-GUI ，直接把编译好的jar丢进去，大部分都能反编译看到源码:</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/641"
-        data-srcset="/springboot/641, /springboot/641 1.5x, /springboot/641 2x"
-        data-sizes="auto"
-        alt="/springboot/641"
-        title="图片" /></p>
+<p>![641](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/641)</p>
 <p>那如果不想给别人反编译看自己写的代码呢？</p>
 <p>怎么做？</p>
 <h2 id="混淆">混淆</h2>
 <p>该篇玩的代码混淆 ，是其中一种手段。</p>
 <p>我给你看，但你反编译看到的不是真正的代码。</p>
 <p>先看一张效果示例图 ：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/642"
-        data-srcset="/springboot/642, /springboot/642 1.5x, /springboot/642 2x"
-        data-sizes="auto"
-        alt="/springboot/642"
-        title="图片" /></p>
+<p>![642](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/642)</p>
 <p>开搞</p>
 <h2 id="正文">正文</h2>
 <p>先看一下我们混淆一个项目代码，要做啥？</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/643"
-        data-srcset="/springboot/643, /springboot/643 1.5x, /springboot/643 2x"
-        data-sizes="auto"
-        alt="/springboot/643"
-        title="图片" /></p>
+<p>![643](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/643)</p>
 <h3 id="一共就两步">一共就两步</h3>
 <p><strong>第一步， 在项目路径下，新增一份文件 proguard.cfg ：</strong></p>
 <p>proguard.cfg</p>
@@ -269,14 +241,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意点：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/644"
-        data-srcset="/springboot/644, /springboot/644 1.5x, /springboot/644 2x"
-        data-sizes="auto"
-        alt="/springboot/644"
-        title="图片" /></p>
+<p>![644](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/644)</p>
 <p>其余的看注释，可以配置哪些类不参与混淆，哪些枚举保留，哪些方法名不混淆等等。</p>
 <p><strong>第二步，在pom文件上 加入proguard 混淆插件 ：</strong></p>
 <p>build标签里面改动加入一下配置</p>
@@ -399,58 +364,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意点：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/645"
-        data-srcset="/springboot/645, /springboot/645 1.5x, /springboot/645 2x"
-        data-sizes="auto"
-        alt="/springboot/645"
-        title="图片" /></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/646"
-        data-srcset="/springboot/646, /springboot/646 1.5x, /springboot/646 2x"
-        data-sizes="auto"
-        alt="/springboot/646"
-        title="图片" /></p>
+<p>![645](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/645)</p>
+<p>![646](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/646)</p>
 <p>然后可以看到：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/647"
-        data-srcset="/springboot/647, /springboot/647 1.5x, /springboot/647 2x"
-        data-sizes="auto"
-        alt="/springboot/647"
-        title="图片" /></p>
+<p>![647](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/647)</p>
 <p>然后点击package，正常执行编译打包流程就可以 ：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/648"
-        data-srcset="/springboot/648, /springboot/648 1.5x, /springboot/648 2x"
-        data-sizes="auto"
-        alt="/springboot/648"
-        title="图片" /></p>
+<p>![648](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/648)</p>
 <p>然后可以看到jar的生成：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/649"
-        data-srcset="/springboot/649, /springboot/649 1.5x, /springboot/649 2x"
-        data-sizes="auto"
-        alt="/springboot/649"
-        title="图片" /></p>
+<p>![649](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/649)</p>
 <p>看看效果：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/springboot/650"
-        data-srcset="/springboot/650, /springboot/650 1.5x, /springboot/650 2x"
-        data-sizes="auto"
-        alt="/springboot/650"
-        title="图片" /></p></div><div class="post-footer" id="post-footer">
+<p>![650](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/650)</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

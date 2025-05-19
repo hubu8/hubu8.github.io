@@ -188,7 +188,7 @@
 
 - Stream流的思想
 
-  ![01_Stream流思想](/实训/Collection/01_Stream流思想.png)
+  ![01_Stream流思想.png](/posts/实训笔记/day10集合04/01_Stream流思想.png)
 
 - Stream流的三类方法
 

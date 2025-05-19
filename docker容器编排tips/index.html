@@ -118,22 +118,22 @@
             </div><div class="content" id="content"><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/docker_image/image-20221129144424867.png"
-        data-srcset="/docker_image/image-20221129144424867.png, /docker_image/image-20221129144424867.png 1.5x, /docker_image/image-20221129144424867.png 2x"
+        data-src="/posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144424867.png"
+        data-srcset="/posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144424867.png, /posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144424867.png 1.5x, /posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144424867.png 2x"
         data-sizes="auto"
-        alt="/docker_image/image-20221129144424867.png"
-        title="image-20221129144424867" /></p>
+        alt="/posts/Docker/Docker容器编排tips/image-20221129144424867.png"
+        title="image-20221129144424867.png" /></p>
 <p>一个系统采用微服务的方式编写，根据业务分割，将系统分为权限管理，内容管理，订单管理，视频管理，数据统计等服务，每个服务以Docker容器的方式运行，底层的redis,mysql等基础性的组件也以容器的方式启动，所有容器在同一主机的同一网络内，在同一个虚拟网络内，每个服务占用一个接口，因此，各个服务之间是相互可以通信的，在系统运行时只需要开放网关接口，所有请求通过网关转发到具体服务，所以在运行期，所有非网关端口对外不可见，在一定程度上也保证了系统安全。</p>
 <p>但是在系统运行时，可能出现系统Bug,此时需要访问一些内部组件或服务来查找原因，但是端口又不可见，停止容器，重新启动容器加端口映射并不是明智之举，解决完问题又需要把端口关闭，此时就需要在系统中加一个nginx;</p>
 <p>在网络中加一个或者多个nginx,把需要的端口映射出来，不需要外部访问时把nginx关闭，就做到了端口安全，当需要访问内部服务是，只需要开启有对应端口映射的nginx,就能达到动态开启端口与关闭端口的目的。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/docker_image/image-20221129144337514.png"
-        data-srcset="/docker_image/image-20221129144337514.png, /docker_image/image-20221129144337514.png 1.5x, /docker_image/image-20221129144337514.png 2x"
+        data-src="/posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144337514.png"
+        data-srcset="/posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144337514.png, /posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144337514.png 1.5x, /posts/Docker/Docker%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92tips/image-20221129144337514.png 2x"
         data-sizes="auto"
-        alt="/docker_image/image-20221129144337514.png"
-        title="image-20221129144337514" /></p>
+        alt="/posts/Docker/Docker容器编排tips/image-20221129144337514.png"
+        title="image-20221129144337514.png" /></p>
 <p>docker-compose.xml配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

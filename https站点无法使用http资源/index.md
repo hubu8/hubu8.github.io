@@ -11,7 +11,7 @@
 hubu8.github.io/:1  Mixed Content: The page at 'https://hubu8.github.io/friend/' was loaded over HTTPS, but requested an insecure image 'http://www.ruoyi.vip/images/ruoyi_vue.png'. This request has been blocked; the content must be served over HTTPS.
 ```
 
-![image-20230913165951398](/前端/image-20230913165951398.png)
+![image-20230913165951398.png](/posts/前端/https站点无法使用http资源/image-20230913165951398.png)
 
 ### 问题分析
 

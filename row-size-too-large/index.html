@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/row-size-too-large\/"
-        },"genre": "posts","keywords": "Row size too large","wordcount":  1298 ,
+        },"genre": "posts","keywords": "Row size too large","wordcount":  1314 ,
         "url": "https:\/\/hubu8.github.io\/row-size-too-large\/","datePublished": "2024-01-08T08:59:26+08:00","dateModified": "2024-01-08T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Row size too large. The maximum row size(Mysql行长度超过65535)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-08">2024-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1298 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-08">2024-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1314 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/row-size-too-large/" class="leancloud_visitors" data-flag-title="Row size too large. The maximum row size(Mysql行长度超过65535)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -134,14 +134,7 @@
 <p>仔细看看这个错误，应该是说行大小超了，然后百度了下这个错误</p>
 <p>看网上的介绍说是，MySQL建表有个长度限制，一个行的定义长度不能超过65535；</p>
 <p>原来如此，这个主要和表中的varchar类型有关，我么可以把长文本修改为Text，这个是不限制的。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/image-20240108140504694.png"
-        data-srcset="/mysql/image-20240108140504694.png, /mysql/image-20240108140504694.png 1.5x, /mysql/image-20240108140504694.png 2x"
-        data-sizes="auto"
-        alt="/mysql/image-20240108140504694.png"
-        title="image-20240108140504694" /></p>
+<p>![image-20240108140504694.png](/posts/MySQL/Row size too large/image-20240108140504694.png)</p>
 <p>这个是后台自动生成的字段，果然太坑了，都是999，然后，我就把表的字段长度都改为200了，然后就可以了。</p>
 <p>记录下这个问题。</p>
 <h4 id="分析">分析</h4>
@@ -169,23 +162,9 @@
 </blockquote>
 <p>接下来，我们进行验证下</p>
 <p>根据行最大65535字节，我们选择utf8编码，那我们最多可以设置的字符数为65535/3=21845</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/50268ebd614042b68342d171bad45151.png"
-        data-srcset="/mysql/50268ebd614042b68342d171bad45151.png, /mysql/50268ebd614042b68342d171bad45151.png 1.5x, /mysql/50268ebd614042b68342d171bad45151.png 2x"
-        data-sizes="auto"
-        alt="/mysql/50268ebd614042b68342d171bad45151.png"
-        title="在这里插入图片描述" /></p>
+<p>![50268ebd614042b68342d171bad45151.png](/posts/MySQL/Row size too large/50268ebd614042b68342d171bad45151.png)</p>
 <p>还是报错了，因为我们还需要减去额外的存储（长度和是否为NULL），65535-3=65532/2=21844，设置成21844就成功了</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/08c115444d9e41728377dfeb10c241e9.png"
-        data-srcset="/mysql/08c115444d9e41728377dfeb10c241e9.png, /mysql/08c115444d9e41728377dfeb10c241e9.png 1.5x, /mysql/08c115444d9e41728377dfeb10c241e9.png 2x"
-        data-sizes="auto"
-        alt="/mysql/08c115444d9e41728377dfeb10c241e9.png"
-        title="在这里插入图片描述" /></p>
+<p>![08c115444d9e41728377dfeb10c241e9.png](/posts/MySQL/Row size too large/08c115444d9e41728377dfeb10c241e9.png)</p>
 <p>计算规则=（65535-4-2-1）/3=21,842.66666666667，<a href="https://so.csdn.net/so/search?q=%e5%90%91%e4%b8%8b%e5%8f%96%e6%95%b4&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreffer">向下取整</a>，就是21842</p>
 <p><code>说明：int占用4个字节，varchar的长度和是否为NULL占用3个字节，使用了utf8编码，1个字符占用3个字节</code></p>
 <h4 id="解决方案">解决方案</h4>
@@ -206,14 +185,7 @@
 <p>tinyint占用1个字节、varchar的长度和是否为NULL占用3个字节</p>
 <p>计算规则：65535-1-3=65531/3=21,843.66666666667，向下取整，最多只能21843</p>
 <p>所以长度设为21844就会报错，如下：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/mysql/73bc7ab2cfcf404fbe7408d4529f7980.png"
-        data-srcset="/mysql/73bc7ab2cfcf404fbe7408d4529f7980.png, /mysql/73bc7ab2cfcf404fbe7408d4529f7980.png 1.5x, /mysql/73bc7ab2cfcf404fbe7408d4529f7980.png 2x"
-        data-sizes="auto"
-        alt="/mysql/73bc7ab2cfcf404fbe7408d4529f7980.png"
-        title="在这里插入图片描述" /></p>
+<p>![73bc7ab2cfcf404fbe7408d4529f7980.png](/posts/MySQL/Row size too large/73bc7ab2cfcf404fbe7408d4529f7980.png)</p>
 <p>我们把varchar字段设为不是null，计算规则：65535-1-2=65532/3=21844，设为21844就成功了</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

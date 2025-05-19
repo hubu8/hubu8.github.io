@@ -18,7 +18,7 @@
 ./nginx -V  
 ```
 
-![image-20201202092315511](/common_images/4fb721313eefbd37d2330a19b2591bce.png)
+![4fb721313eefbd37d2330a19b2591bce.png](/posts/nginx/https配置/4fb721313eefbd37d2330a19b2591bce.png)
 
 如果出现 (configure arguments: --with-http_ssl_module), 则已安装（下面的步骤可以跳过，直接进行**第二步**）。
 
@@ -37,7 +37,7 @@ make
 
 上述操作执行完成以后，你的目录下会出现objs文件夹，文件夹内存在nginx文件，如图：
 
-![image-20201202092633829](/common_images/8adfbacdc5838a5b882d7a3003bb7332.png)
+![8adfbacdc5838a5b882d7a3003bb7332.png](/posts/nginx/https配置/8adfbacdc5838a5b882d7a3003bb7332.png)
 
 接下来使用新的nginx文件替换掉之前安装目录sbin下的nginx，注意这里的替换的时候可以先将之前的文件备份下，停掉nginx服务
 
@@ -56,11 +56,11 @@ cp /root/nginx/objs/nginx /usr/local/nginx/sbin
 #可以看到这里出现了configure arguments: --with-http_ssl_module   证明已经安装成功
 ```
 
-![image-20201202092315511](/common_images/4fb721313eefbd37d2330a19b2591bce.png)
+![4fb721313eefbd37d2330a19b2591bce.png](/posts/nginx/https配置/4fb721313eefbd37d2330a19b2591bce.png)
 
 提示：这里替换后在执行 -V命令如果提示权限不足，先给这个nginx文件提升下权限
 
-![image-20201202093247907](/common_images/66f07d4bbbe3f7d38673af4be0382418.png)
+![66f07d4bbbe3f7d38673af4be0382418.png](/posts/nginx/https配置/66f07d4bbbe3f7d38673af4be0382418.png)
 
 我是用的是finalshell连接工具，直接右键就可以修改权限了，当然，也可以通过指令修改，如下：
 
@@ -80,7 +80,7 @@ cd /root
 mkdir card
 ```
 
-![image-20201202095434271](/common_images/34c7092f6f6c994ca441dfa818165ea6.png)
+![34c7092f6f6c994ca441dfa818165ea6.png](/posts/nginx/https配置/34c7092f6f6c994ca441dfa818165ea6.png)
 
 ## 第三步：进行nginx.conf配置
 
@@ -94,7 +94,7 @@ vim nginx.conf
 
 打开之后文件内容如图
 
-![image-20201202095750057](/common_images/a225234f667d1cc889eb50fd59de34b2.png)
+![a225234f667d1cc889eb50fd59de34b2.png](/posts/nginx/https配置/a225234f667d1cc889eb50fd59de34b2.png)
 
 可以将没用的东西都删除掉，删除的时候注意，括号要对应起来。
 

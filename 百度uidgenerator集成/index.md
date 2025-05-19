@@ -14,7 +14,7 @@ UidGenerator是百度开源的Java语言实现，基于Snowflake算法的唯一I
 
 但是百度对这些组成部分稍微调整了一下：
 
-![在这里插入图片描述](/java_images/20200910221235690.jpeg)
+![20200910221235690.jpeg](/posts/java/basic/百度UidGenerator集成/20200910221235690.jpeg)
 
 由上图可知，UidGenerator的时间部分只有28位，这就意味着UidGenerator默认只能承受8.5年（2^28-1/86400/365）
 也可以根据你业务的需求，UidGenerator可以适当调整delta seconds、worker node id和sequence占用位数。
@@ -167,7 +167,7 @@ CachedUidGenerator通过缓存的方式预先生成一批唯一ID列表，可以
 
 拖进IDEA打包（需要先点击禁止按钮，跳过打包测试，否则会报错，因为这个包需要连接数据库创建对象）
 
-![image-20221202160251439](/common_images/image-20221202160251439.png)
+![image-20221202160251439.png](/posts/java/basic/百度UidGenerator集成/image-20221202160251439.png)
 
 #### 加入依赖
 
@@ -190,7 +190,7 @@ pom文件：
 <version>1.0.0-SNAPSHOT</version>
 ```
 
-![image-20221202161144279](/common_images/image-20221202161144279.png)
+![image-20221202161144279.png](/posts/java/basic/百度UidGenerator集成/image-20221202161144279.png)
 
 也可以在全局安装jar包
 
@@ -559,5 +559,5 @@ public class TestController {
 
 #### 测试
 
-![image-20221204151831970](/common_images/image-20221204151831970.png)
+![image-20221204151831970.png](/posts/java/basic/百度UidGenerator集成/image-20221204151831970.png)
 

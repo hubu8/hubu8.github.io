@@ -569,7 +569,7 @@ public class Customer { ... }
 Hibernate验证注解
 ================
 
-![20190827200631310.png](/posts/MySQL/JPA/20190827200631310.png)  
+![20190827200631310.png](./images/20190827200631310.png)  
 以上每个注解都可能性有一个message属性，用于在验证失败后向用户返回的消息
 
 总结
@@ -649,3 +649,4 @@ public AddressEO getAddress() {
 
 属性referencedColumnName标注的是所关联表中的字段名，若不指定则使用的所关联表的主键字段名作为外键。   
 JoinColumn标记不仅能够与@OneToOne使用，也可以@ManyToOne或@ManyToMany标记同时使用，它们所表示的含义不同。
+

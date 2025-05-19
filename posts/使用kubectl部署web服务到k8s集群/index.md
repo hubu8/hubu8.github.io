@@ -177,7 +177,7 @@ example-ingress   <none>   *       47.100.138.224   80      72s
 
 所以我们可以通过下面的链接访问刚才部署的应用：http://47.100.138.224/welcome
 
-![image-20210420222421144.png](/posts/k8s/使用Kubectl部署web服务到K8s集群/image-20210420222421144.png)
+![image-20210420222421144.png](./images/image-20210420222421144.png)
 
 除了部署服务，我们还需要能卸载相关资源，才算完整的流程
 
@@ -233,3 +233,4 @@ No resources found in handson-3e8b9bbfb31484d1aaddf1a82156c3bf namespace.
 ```
 
 代表卸载工作完成
+

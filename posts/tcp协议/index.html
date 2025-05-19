@@ -119,28 +119,28 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205525161.jpg"
-        data-srcset="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205525161.jpg, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205525161.jpg 1.5x, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205525161.jpg 2x"
+        data-src="./images/20200418205525161.jpg"
+        data-srcset="./images/20200418205525161.jpg, ./images/20200418205525161.jpg 1.5x, ./images/20200418205525161.jpg 2x"
         data-sizes="auto"
-        alt="/posts/面试/TCP协议/20200418205525161.jpg"
+        alt="./images/20200418205525161.jpg"
         title="20200418205525161.jpg" /></p>
 <p>我们需要知道TCP工作在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP 在第二层——Data Link层;在第二层上的数据，我们把它叫Frame，在第三层上的数据叫Packet，第四层的数 据叫Segment。 同时，我们需要简单的知道，数据从应用层发下来，会在每一层都会加上头部信息，进行 封装，然后再发送到数据接收端。这个基本的流程你需要知道，就是每个数据都会经过数据的封装和解封 装的过程。 在OSI七层模型中，每一层的作用和对应的协议如下：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205556366.jpg"
-        data-srcset="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205556366.jpg, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205556366.jpg 1.5x, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205556366.jpg 2x"
+        data-src="./images/20200418205556366.jpg"
+        data-srcset="./images/20200418205556366.jpg, ./images/20200418205556366.jpg 1.5x, ./images/20200418205556366.jpg 2x"
         data-sizes="auto"
-        alt="/posts/面试/TCP协议/20200418205556366.jpg"
+        alt="./images/20200418205556366.jpg"
         title="20200418205556366.jpg" /></p>
 <p>TCP是一个协议，那这个协议是如何定义的，它的数据格式是什么样子的呢?要进行更深层次的剖析，就 需要了解，甚至是熟记TCP协议中每个字段的含义。哦，来吧。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205617508.jpg"
-        data-srcset="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205617508.jpg, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205617508.jpg 1.5x, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205617508.jpg 2x"
+        data-src="./images/20200418205617508.jpg"
+        data-srcset="./images/20200418205617508.jpg, ./images/20200418205617508.jpg 1.5x, ./images/20200418205617508.jpg 2x"
         data-sizes="auto"
-        alt="/posts/面试/TCP协议/20200418205617508.jpg"
+        alt="./images/20200418205617508.jpg"
         title="20200418205617508.jpg" /></p>
 <p>上面就是TCP协议头部的格式，由于它太重要了，是理解其它内容的基础，下面就将每个字段的信息都详 细的说明一下。</p>
 <p>Source Port和Destination Port:分别占用16位，表示源端口号和目的端口号;用于区别主机中的不同进程， 而IP地址是用来区分不同的主机的，源端口号和目的端口号配合上IP首部中的源IP地址和目的IP地址就能唯一 的确定一个TCP连接;</p>
@@ -161,10 +161,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205646818.jpg"
-        data-srcset="/posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205646818.jpg, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205646818.jpg 1.5x, /posts/%e9%9d%a2%e8%af%95/TCP%e5%8d%8f%e8%ae%ae/20200418205646818.jpg 2x"
+        data-src="./images/20200418205646818.jpg"
+        data-srcset="./images/20200418205646818.jpg, ./images/20200418205646818.jpg 1.5x, ./images/20200418205646818.jpg 2x"
         data-sizes="auto"
-        alt="/posts/面试/TCP协议/20200418205646818.jpg"
+        alt="./images/20200418205646818.jpg"
         title="20200418205646818.jpg" /></p>
 <p>多么清晰的一张图，当然了，也不是我画的，我也只是引用过来说明问题了。</p>
 <p>1.第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x;然后，客户端进入SYN_SEND状态，等待服务器的确认;</p>

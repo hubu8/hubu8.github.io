@@ -152,23 +152,23 @@ public class RemoteFileFallbackFactory implements FallbackFactory<RemoteFileServ
 
 ### 后端debugger
 
-![image-20221005212554544.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221005212554544.png)
+![image-20221005212554544.png](./images/image-20221005212554544.png)
 
 ### 前端请求
 
-![image-20221005212652959.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221005212652959.png)
+![image-20221005212652959.png](./images/image-20221005212652959.png)
 
-![image-20221005212714833.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221005212714833.png)
+![image-20221005212714833.png](./images/image-20221005212714833.png)
 
-![image-20221005212728565.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221005212728565.png)
+![image-20221005212728565.png](./images/image-20221005212728565.png)
 
-![image-20221005212812923.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221005212812923.png)
+![image-20221005212812923.png](./images/image-20221005212812923.png)
 
 ## 使用自定义http-request
 
 ​	不使用action定义文件上传接口，而是通过用户自定义方法实现对文件的上传，例如，更具不同的文件类型上传到不同的接口，相比较与以上方法灵活性更高。
 
-![image-20221008210221195.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221008210221195.png)
+![image-20221008210221195.png](./images/image-20221008210221195.png)
 
 ### vue自定义http-request
 
@@ -259,9 +259,9 @@ export function uploadQrcode(formData) {
 
 ### 请求
 
-![image-20221008222722627.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221008222722627.png)
+![image-20221008222722627.png](./images/image-20221008222722627.png)
 
-![image-20221008222735061.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221008222735061.png)
+![image-20221008222735061.png](./images/image-20221008222735061.png)
 
-![image-20221008222751855.png](/posts/java/ruoyi/ruoyi框架之文件上传/image-20221008222751855.png)
+![image-20221008222751855.png](./images/image-20221008222751855.png)
 

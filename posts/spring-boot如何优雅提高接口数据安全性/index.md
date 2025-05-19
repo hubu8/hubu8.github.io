@@ -53,7 +53,7 @@ delete from table where id=? and user_id = userId
 
 接口参数加解密的流程大致如图所示：
 
-![java_640](/posts/java/Spring Boot如何优雅提高接口数据安全性/java_640)
+![java_640](./images/java_640)
 
 具体步骤如下：
 
@@ -69,7 +69,7 @@ delete from table where id=? and user_id = userId
 
 签名验证也是当下提高接口安全性主要措施之一，核心就是客户端在调用接口时按照一定规则生成签名`sign`，服务端拿到签名`sign`之后进行验证操作，大致流程如下：
 
-![java_641](/posts/java/Spring Boot如何优雅提高接口数据安全性/java_641)
+![java_641](./images/java_641)
 
 具体步骤：
 
@@ -496,3 +496,4 @@ public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
 来源： Shepherd进阶笔记(微信公众号)
 
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+

@@ -564,7 +564,7 @@ data() {
 
 **文字相关class**
 
-![image-20210512214923077.png](/posts/uni-app/小程序ColorUI使用简易教程/image-20210512214923077.png)
+![image-20210512214923077.png](./images/image-20210512214923077.png)
 
 ### Icon图标
 
@@ -1140,3 +1140,4 @@ data() {
 这篇博客太长了，交互组件的介绍就另写一篇吧，[ColorUI组件库简易教程之交互组件](https://blog.csdn.net/miao_yf/article/details/103081988)
 
 这只是个人的理解写的，有什么不足，望大佬指教，及时更正！
+

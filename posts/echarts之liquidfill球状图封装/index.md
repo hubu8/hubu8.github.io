@@ -5,7 +5,7 @@
 
 ### 0、最终实现效果
 
-![image-20230407145509979.png](/posts/前端/vue/Echarts之liquidFill球状图封装/image-20230407145509979.png)
+![image-20230407145509979.png](./images/image-20230407145509979.png)
 
 ### 1、组件代码
 

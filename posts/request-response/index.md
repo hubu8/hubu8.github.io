@@ -29,13 +29,13 @@
 
 #### 1.请求方式与servlet的方法对应关系：
 
-![image-20201028103018918.png](/posts/实训笔记/web核心-request&response/image-20201028103018918.png)
+![image-20201028103018918.png](./images/image-20201028103018918.png)
 
 
 
 #### 2.请求对象与响应对象的快速入门：
 
-![image-20201028103055987.png](/posts/实训笔记/web核心-request&response/image-20201028103055987.png)
+![image-20201028103055987.png](./images/image-20201028103055987.png)
 
 
 
@@ -103,7 +103,7 @@ public class RequestDemo1 extends HttpServlet {
 
 ##### 小结：
 
-![image-20201028112941570.png](/posts/实训笔记/web核心-request&response/image-20201028112941570.png)
+![image-20201028112941570.png](./images/image-20201028112941570.png)
 
 
 
@@ -294,7 +294,7 @@ private void test8(HttpServletRequest request, HttpServletResponse response)
 
 
 
-![image-20201028143019748.png](/posts/实训笔记/web核心-request&response/image-20201028143019748.png)
+![image-20201028143019748.png](./images/image-20201028143019748.png)
 
 
 
@@ -314,7 +314,7 @@ private void test8(HttpServletRequest request, HttpServletResponse response)
 
 ##### 问题展示：
 
-![image-20201028144606133.png](/posts/实训笔记/web核心-request&response/image-20201028144606133.png)
+![image-20201028144606133.png](./images/image-20201028144606133.png)
 
 
 
@@ -326,7 +326,7 @@ private void test8(HttpServletRequest request, HttpServletResponse response)
 > request.setCharacterEncoding("UTF-8");
 > ```
 
-![image-20201028145243276.png](/posts/实训笔记/web核心-request&response/image-20201028145243276.png)
+![image-20201028145243276.png](./images/image-20201028145243276.png)
 
 
 
@@ -385,7 +385,7 @@ private void test8(HttpServletRequest request, HttpServletResponse response)
 >
 > 转发可以实现： 一次请求，让两个甚至多个servlet执行， 并且参数是可以共享的！
 
-![image-20201028161235467.png](/posts/实训笔记/web核心-request&response/image-20201028161235467.png)
+![image-20201028161235467.png](./images/image-20201028161235467.png)
 
 ##### 如何使用：
 
@@ -406,7 +406,7 @@ req.getRequestDispatcher("/testRequest05").forward(req,resp);
 
 ##### 请求转发执行的顺序：
 
-![image-20201028160307721.png](/posts/实训笔记/web核心-request&response/image-20201028160307721.png)
+![image-20201028160307721.png](./images/image-20201028160307721.png)
 
 <img src="/实训/req/image-20201028160415972.png" alt="image-20201028160415972" style="zoom:80%;" />
 
@@ -456,7 +456,7 @@ response.getWriter().write("你好 ~~ hello ~~ 123");
 
 
 
-![image-20201028165211930.png](/posts/实训笔记/web核心-request&response/image-20201028165211930.png)
+![image-20201028165211930.png](./images/image-20201028165211930.png)
 
 
 
@@ -492,7 +492,7 @@ public class ResponseDemo5 extends HttpServlet {
 }
 ```
 
-![ResponseDemo5.png](/posts/实训笔记/web核心-request&response/ResponseDemo5.png)
+![ResponseDemo5.png](./images/ResponseDemo5.png)
 
 
 
@@ -544,7 +544,7 @@ response.sendRedirect("https://www.baidu.com/");
 
 ##### 重定向执行顺序：
 
-![image-20201028190727467.png](/posts/实训笔记/web核心-request&response/image-20201028190727467.png)
+![image-20201028190727467.png](./images/image-20201028190727467.png)
 
 
 
@@ -567,7 +567,7 @@ response.sendRedirect("https://www.baidu.com/");
 
 首先，在工程的web目录下新建一个目录uploads，并且拷贝一张图片到目录中，如下图所示：
 
-![文件下载的图片.png](/posts/实训笔记/web核心-request&response/文件下载的图片.png)
+![文件下载的图片.png](./images/文件下载的图片.png)
 
 文件下载的Servlet代码如下：
 
@@ -612,7 +612,7 @@ public class ResponseDemo8 extends HttpServlet {
 }
 ```
 
-![ResponseDemo8.png](/posts/实训笔记/web核心-request&response/ResponseDemo8.png)
+![ResponseDemo8.png](./images/ResponseDemo8.png)
 
 
 
@@ -655,7 +655,7 @@ public class ResponseDemo8 extends HttpServlet {
 2. 理解今天标了重要和掌握的内容
 3. 预习后面的内容：
 
-![image-20201028192622769.png](/posts/实训笔记/web核心-request&response/image-20201028192622769.png)
+![image-20201028192622769.png](./images/image-20201028192622769.png)
 
 
 

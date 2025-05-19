@@ -24,21 +24,21 @@
 
 创建项目名为dateUtil的project项目
 
-![c9c1ba0366a040d0b738ea2433759c49.png](/posts/java/mvn/IDEA如何创建专属JAR包/c9c1ba0366a040d0b738ea2433759c49.png)
+![c9c1ba0366a040d0b738ea2433759c49.png](./images/c9c1ba0366a040d0b738ea2433759c49.png)
 
 或者：
 
-![40eaed6c1a2a484cac3e2b728497bcbe.png](/posts/java/mvn/IDEA如何创建专属JAR包/40eaed6c1a2a484cac3e2b728497bcbe.png)
+![40eaed6c1a2a484cac3e2b728497bcbe.png](./images/40eaed6c1a2a484cac3e2b728497bcbe.png)
 
-![368e1ae398f34b42b8739ceb11fa27d2.png](/posts/java/mvn/IDEA如何创建专属JAR包/368e1ae398f34b42b8739ceb11fa27d2.png)
+![368e1ae398f34b42b8739ceb11fa27d2.png](./images/368e1ae398f34b42b8739ceb11fa27d2.png)
 
 项目 dateUtil 创建完成
 
-![e4f70edbb09f49edb36292007c5130fe.png](/posts/java/mvn/IDEA如何创建专属JAR包/e4f70edbb09f49edb36292007c5130fe.png)
+![e4f70edbb09f49edb36292007c5130fe.png](./images/e4f70edbb09f49edb36292007c5130fe.png)
 
 ### 创建包和类
 
-![074f6a5b93f44cf28072bbc6078d1400.png](/posts/java/mvn/IDEA如何创建专属JAR包/074f6a5b93f44cf28072bbc6078d1400.png)
+![074f6a5b93f44cf28072bbc6078d1400.png](./images/074f6a5b93f44cf28072bbc6078d1400.png)
 
 ### 相应的代码
 
@@ -156,13 +156,13 @@ public class Test { //测试
 
 ### 验证结果
 
-![5df36c09555f465a84f5560a2e1ffeb3.png](/posts/java/mvn/IDEA如何创建专属JAR包/5df36c09555f465a84f5560a2e1ffeb3.png)
+![5df36c09555f465a84f5560a2e1ffeb3.png](./images/5df36c09555f465a84f5560a2e1ffeb3.png)
 
 ## 打包和引用
 
 选择 File 中的 Project Structure。
 
-![aad87d54dbca4efdbb38b9e09b4134c1.png](/posts/java/mvn/IDEA如何创建专属JAR包/aad87d54dbca4efdbb38b9e09b4134c1.png)
+![aad87d54dbca4efdbb38b9e09b4134c1.png](./images/aad87d54dbca4efdbb38b9e09b4134c1.png)
 
 ### Project 左侧工具栏的功能
 
@@ -170,75 +170,75 @@ public class Test { //测试
 
 
 
-![c05db86570354633bd98c2e95ab4f0f3.png](/posts/java/mvn/IDEA如何创建专属JAR包/c05db86570354633bd98c2e95ab4f0f3.png)
+![c05db86570354633bd98c2e95ab4f0f3.png](./images/c05db86570354633bd98c2e95ab4f0f3.png)
 
 
 介绍 Project Structure 的工具栏及具体功能：
 
-![5ba7efa017d2451aa73cf8584204d1c0.png](/posts/java/mvn/IDEA如何创建专属JAR包/5ba7efa017d2451aa73cf8584204d1c0.png)
+![5ba7efa017d2451aa73cf8584204d1c0.png](./images/5ba7efa017d2451aa73cf8584204d1c0.png)
 
 
 
-![e84cc125d3724056b93dbb69476acfc7.png](/posts/java/mvn/IDEA如何创建专属JAR包/e84cc125d3724056b93dbb69476acfc7.png)
+![e84cc125d3724056b93dbb69476acfc7.png](./images/e84cc125d3724056b93dbb69476acfc7.png)
 
 
 
-![a70fe502524e4704b0f6303ace8e84a8.png](/posts/java/mvn/IDEA如何创建专属JAR包/a70fe502524e4704b0f6303ace8e84a8.png)
+![a70fe502524e4704b0f6303ace8e84a8.png](./images/a70fe502524e4704b0f6303ace8e84a8.png)
 
 
 
-![ea5afbe74ea14b7886682b6ad226b24f.png](/posts/java/mvn/IDEA如何创建专属JAR包/ea5afbe74ea14b7886682b6ad226b24f.png)
+![ea5afbe74ea14b7886682b6ad226b24f.png](./images/ea5afbe74ea14b7886682b6ad226b24f.png)
 
 
 
-![12df6479701b40cabd1f6893e759c175.png](/posts/java/mvn/IDEA如何创建专属JAR包/12df6479701b40cabd1f6893e759c175.png)
+![12df6479701b40cabd1f6893e759c175.png](./images/12df6479701b40cabd1f6893e759c175.png)
 
 ### 打 jar 包
 
-![9460e68760fd4ca58e9dbc86857f1a3c.png](/posts/java/mvn/IDEA如何创建专属JAR包/9460e68760fd4ca58e9dbc86857f1a3c.png)
+![9460e68760fd4ca58e9dbc86857f1a3c.png](./images/9460e68760fd4ca58e9dbc86857f1a3c.png)
 
 
 
-![0694cb0d72554b438b44752cc2c4a712.png](/posts/java/mvn/IDEA如何创建专属JAR包/0694cb0d72554b438b44752cc2c4a712.png)
+![0694cb0d72554b438b44752cc2c4a712.png](./images/0694cb0d72554b438b44752cc2c4a712.png)
 
-![c245e894eb2444b59910adcbc072d8f3.png](/posts/java/mvn/IDEA如何创建专属JAR包/c245e894eb2444b59910adcbc072d8f3.png)
-
-
-
-![345b038dc03843af8562a6f07dd7102f.png](/posts/java/mvn/IDEA如何创建专属JAR包/345b038dc03843af8562a6f07dd7102f.png)
+![c245e894eb2444b59910adcbc072d8f3.png](./images/c245e894eb2444b59910adcbc072d8f3.png)
 
 
 
-![0accc90bbd734951881ff308882936a8.png](/posts/java/mvn/IDEA如何创建专属JAR包/0accc90bbd734951881ff308882936a8.png)
+![345b038dc03843af8562a6f07dd7102f.png](./images/345b038dc03843af8562a6f07dd7102f.png)
 
 
 
-![486cecb92d384e36978be5a415e721b8.png](/posts/java/mvn/IDEA如何创建专属JAR包/486cecb92d384e36978be5a415e721b8.png)
+![0accc90bbd734951881ff308882936a8.png](./images/0accc90bbd734951881ff308882936a8.png)
+
+
+
+![486cecb92d384e36978be5a415e721b8.png](./images/486cecb92d384e36978be5a415e721b8.png)
 
 
 复制生成的 jar 包到桌面，然后用解压工具打开：
 
-![341dd8765180461881608260972898a0.png](/posts/java/mvn/IDEA如何创建专属JAR包/341dd8765180461881608260972898a0.png)
+![341dd8765180461881608260972898a0.png](./images/341dd8765180461881608260972898a0.png)
 
 
 
-![135751604cd549f8a872dcd24f859158.png](/posts/java/mvn/IDEA如何创建专属JAR包/135751604cd549f8a872dcd24f859158.png)
+![135751604cd549f8a872dcd24f859158.png](./images/135751604cd549f8a872dcd24f859158.png)
 
 ### 导入生成的 jar 包
 
-![289753be63354952a19e7ecb7d86c78c.png](/posts/java/mvn/IDEA如何创建专属JAR包/289753be63354952a19e7ecb7d86c78c.png)
+![289753be63354952a19e7ecb7d86c78c.png](./images/289753be63354952a19e7ecb7d86c78c.png)
 
 
 
-![7ec3e778dc5c446cb79ef06a39d729b7.png](/posts/java/mvn/IDEA如何创建专属JAR包/7ec3e778dc5c446cb79ef06a39d729b7.png)
+![7ec3e778dc5c446cb79ef06a39d729b7.png](./images/7ec3e778dc5c446cb79ef06a39d729b7.png)
 
 
 
-![eb4010cf18c6489b806c5d9d7fdaec8c.png](/posts/java/mvn/IDEA如何创建专属JAR包/eb4010cf18c6489b806c5d9d7fdaec8c.png)
+![eb4010cf18c6489b806c5d9d7fdaec8c.png](./images/eb4010cf18c6489b806c5d9d7fdaec8c.png)
 
 ### 验证 jar 包导入 / 应用的正确性
 
-![86ed277925d8432792f4b4201dc488b2.png](/posts/java/mvn/IDEA如何创建专属JAR包/86ed277925d8432792f4b4201dc488b2.png)
+![86ed277925d8432792f4b4201dc488b2.png](./images/86ed277925d8432792f4b4201dc488b2.png)
 
 ## maven项目如何使用jar包
 
@@ -306,7 +306,7 @@ pom.xml中引入
     </dependency>
 ```
 
-![image-20220806180341428.png](/posts/java/mvn/IDEA如何创建专属JAR包/image-20220806180341428.png)
+![image-20220806180341428.png](./images/image-20220806180341428.png)
 
 注意：
 groupId：自定义

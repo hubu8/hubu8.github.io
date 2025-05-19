@@ -47,13 +47,13 @@
 
 ##### 客户端添加数据到服务器：
 
-![image-20201029111037303.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201029111037303.png)
+![image-20201029111037303.png](./images/image-20201029111037303.png)
 
 
 
 ##### 服务器响应数据到客户端（浏览器）：
 
-![image-20201029111124092.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201029111124092.png)
+![image-20201029111124092.png](./images/image-20201029111124092.png)
 
 # 二.session：服务器端会话技术
 
@@ -71,7 +71,7 @@
 
 **作用：**可以实现数据共享
 
-![image-20201029161905911.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201029161905911.png)
+![image-20201029161905911.png](./images/image-20201029161905911.png)
 
 注意： 从大到小的顺序：  servletContext  > session > request
 
@@ -124,7 +124,7 @@ session.getId();
 
 #### 2.jsp快速入门
 
-![image-20201030104238499.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201030104238499.png)
+![image-20201030104238499.png](./images/image-20201030104238499.png)
 
 
 
@@ -136,15 +136,15 @@ session.getId();
 
 >  **jsp效率低下的原因**: (所以大型项目基本不用jsp，一些小型的后台系统会使用)
 
-![image-20201030105756152.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201030105756152.png)
+![image-20201030105756152.png](./images/image-20201030105756152.png)
 
-![image-20201030110359420.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201030110359420.png)
+![image-20201030110359420.png](./images/image-20201030110359420.png)
 
 
 
 **效率对比：**
 
-![image-20201030105947019.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201030105947019.png)
+![image-20201030105947019.png](./images/image-20201030105947019.png)
 
 
 
@@ -152,7 +152,7 @@ session.getId();
 
 <img src="/实训/jsp/image-20201030110502535.png" alt="image-20201030110502535" style="zoom:80%;" />
 
-![image-20201030113204475.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201030113204475.png)
+![image-20201030113204475.png](./images/image-20201030113204475.png)
 
 
 
@@ -215,7 +215,7 @@ session.getId();
 
 > 把数据的封装、展示和业务处理，进行分工！
 
-![image-20201030115831274.png](/posts/实训笔记/会话技术session&jsp&mysql笔记/image-20201030115831274.png)
+![image-20201030115831274.png](./images/image-20201030115831274.png)
 
 
 

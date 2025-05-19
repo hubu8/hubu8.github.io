@@ -11,7 +11,7 @@
 
 简单就是把代码跑一哈，然后我们的代码 .java文件 就被编译成了 .class 文件
 
-![640](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/640)
+![640](./images/640)
 
 ## 反编译
 
@@ -19,7 +19,7 @@
 
 比较常用的反编译工具 JD-GUI ，直接把编译好的jar丢进去，大部分都能反编译看到源码:
 
-![641](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/641)
+![641](./images/641)
 
 那如果不想给别人反编译看自己写的代码呢？
 
@@ -33,7 +33,7 @@
 
 先看一张效果示例图 ：
 
-![642](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/642)
+![642](./images/642)
 
 开搞
 
@@ -41,7 +41,7 @@
 
 先看一下我们混淆一个项目代码，要做啥？
 
-![643](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/643)
+![643](./images/643)
 
 ### 一共就两步
 
@@ -97,7 +97,7 @@ proguard.cfg
 
 注意点：
 
-![644](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/644)
+![644](./images/644)
 
 其余的看注释，可以配置哪些类不参与混淆，哪些枚举保留，哪些方法名不混淆等等。
 
@@ -166,23 +166,23 @@ build标签里面改动加入一下配置
 
 注意点：
 
-![645](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/645)
+![645](./images/645)
 
-![646](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/646)
+![646](./images/646)
 
 然后可以看到：
 
-![647](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/647)
+![647](./images/647)
 
 然后点击package，正常执行编译打包流程就可以 ：
 
-![648](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/648)
+![648](./images/648)
 
 然后可以看到jar的生成：
 
-![649](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/649)
+![649](./images/649)
 
 看看效果：
 
-![650](/posts/java/springboot/springboot 代码混淆，防止反编译代码泄露/650)
+![650](./images/650)
 

@@ -47,13 +47,13 @@
 
 [下载地址](https://stanfordnlp.github.io/CoreNLP/index.html)主要下载两个文件
 
-![image-20210509081926890.png](/posts/java/Stanford-coreNLP/image-20210509081926890.png)
+![image-20210509081926890.png](./images/image-20210509081926890.png)
 
-![image-20210509081945599.png](/posts/java/Stanford-coreNLP/image-20210509081945599.png)
+![image-20210509081945599.png](./images/image-20210509081945599.png)
 
 在resources目录下新建lib包，将一下三个文件导入：
 
-![image-20210509082333232.png](/posts/java/Stanford-coreNLP/image-20210509082333232.png)
+![image-20210509082333232.png](./images/image-20210509082333232.png)
 
 pom文件导入本地Jar
 
@@ -175,7 +175,7 @@ public class Segmentation {
 
 代码中一共定义了3中配置模型属性的方法，第一种、第三种需要自己写，容易出错，第二种jar包中有默认的配置文件，只需要做部分修改就可以用，但是jar包里的文件只读，所以需要复制出来
 
-![image-20210509083109304.png](/posts/java/Stanford-coreNLP/image-20210509083109304.png)
+![image-20210509083109304.png](./images/image-20210509083109304.png)
 
 ```shell
 2021-05-09 08:31:41.066  INFO 12596 --- [nio-9981-exec-1] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator coref
@@ -189,7 +189,7 @@ public class Segmentation {
 
 默认配置文件的bug,模型配置了coref（同义词分辨）但是没有找到，想到还有一个modles没有用到，导入进来
 
-![image-20210509083842970.png](/posts/java/Stanford-coreNLP/image-20210509083842970.png)
+![image-20210509083842970.png](./images/image-20210509083842970.png)
 
 
 
@@ -425,4 +425,5 @@ public class WordsCloud extends Thread{
 		</view>
 ```
 
-![image-20210509095316236.png](/posts/java/Stanford-coreNLP/image-20210509095316236.png)
+![image-20210509095316236.png](./images/image-20210509095316236.png)
+

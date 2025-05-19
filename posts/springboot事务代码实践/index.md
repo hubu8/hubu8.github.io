@@ -22,7 +22,7 @@
 
 如下，两表同步数据，一个表有数据，另一个表没有
 
-![image-20221205185437096.png](/posts/Spring/Springboot事务代码实践/image-20221205185437096.png)
+![image-20221205185437096.png](./images/image-20221205185437096.png)
 
 ### 编程式事务管理
 
@@ -124,3 +124,4 @@ java.lang.ArithmeticException: / by zero
 ```
 
 业务代码处在同一个事务中，系统抛出异常后，业务代码都不成功
+

@@ -5,7 +5,7 @@
 
 ## 模式动机
 
-![image-20210501153039285.png](/posts/设计模式/适配器模式/image-20210501153039285.png)
+![image-20210501153039285.png](./images/image-20210501153039285.png)
 
 - 现实生活：
 
@@ -29,11 +29,11 @@
 
   类适配模式
 
-![image-20210501153210990.png](/posts/设计模式/适配器模式/image-20210501153210990.png)
+![image-20210501153210990.png](./images/image-20210501153210990.png)
 
 对象适配模式：
 
-![image-20210501163517652.png](/posts/设计模式/适配器模式/image-20210501163517652.png)
+![image-20210501163517652.png](./images/image-20210501163517652.png)
 
 ## 模式分析
 
@@ -91,7 +91,7 @@
 
 4-2.现有一个接口DataOperation定义了排序方法sort(int[])和查找方法search(int[],int)，已知类QuickSort的quickSort(int[])方法实现了快速排序算法，类BinarySearch的binarySearch(int[],int)方法实现了二分查找算法。现使用适配器模式设计一个系统，在不修改源代码的情况下，将QuickSort和类BinarySearch的方法适配到接口DataOperation中，绘制类图并实现。
 
-![image-20210501154813927.png](/posts/设计模式/适配器模式/image-20210501154813927.png)
+![image-20210501154813927.png](./images/image-20210501154813927.png)
 
 代码：
 
@@ -188,4 +188,5 @@ public class Client {
 
 结果：
 
-![image-20210501155521888.png](/posts/设计模式/适配器模式/image-20210501155521888.png)
+![image-20210501155521888.png](./images/image-20210501155521888.png)
+

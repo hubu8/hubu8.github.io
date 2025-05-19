@@ -13,7 +13,7 @@
 
 原来如此，这个主要和表中的varchar类型有关，我么可以把长文本修改为Text，这个是不限制的。
 
-![image-20240108140504694.png](/posts/MySQL/Row size too large/image-20240108140504694.png)
+![image-20240108140504694.png](./images/image-20240108140504694.png)
 
 这个是后台自动生成的字段，果然太坑了，都是999，然后，我就把表的字段长度都改为200了，然后就可以了。
 
@@ -45,11 +45,11 @@
 
 根据行最大65535字节，我们选择utf8编码，那我们最多可以设置的字符数为65535/3=21845
 
-![50268ebd614042b68342d171bad45151.png](/posts/MySQL/Row size too large/50268ebd614042b68342d171bad45151.png)
+![50268ebd614042b68342d171bad45151.png](./images/50268ebd614042b68342d171bad45151.png)
 
 还是报错了，因为我们还需要减去额外的存储（长度和是否为NULL），65535-3=65532/2=21844，设置成21844就成功了
 
-![08c115444d9e41728377dfeb10c241e9.png](/posts/MySQL/Row size too large/08c115444d9e41728377dfeb10c241e9.png)
+![08c115444d9e41728377dfeb10c241e9.png](./images/08c115444d9e41728377dfeb10c241e9.png)
 
 计算规则=（65535-4-2-1）/3=21,842.66666666667，[向下取整](https://so.csdn.net/so/search?q=向下取整&spm=1001.2101.3001.7020)，就是21842
 
@@ -85,6 +85,7 @@ tinyint占用1个字节、varchar的长度和是否为NULL占用3个字节
 
 所以长度设为21844就会报错，如下：
 
-![73bc7ab2cfcf404fbe7408d4529f7980.png](/posts/MySQL/Row size too large/73bc7ab2cfcf404fbe7408d4529f7980.png)
+![73bc7ab2cfcf404fbe7408d4529f7980.png](./images/73bc7ab2cfcf404fbe7408d4529f7980.png)
 
 我们把varchar字段设为不是null，计算规则：65535-1-2=65532/3=21844，设为21844就成功了
+

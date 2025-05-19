@@ -139,19 +139,19 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412203618846.png"
-        data-srcset="/posts/nginx/nginx/image-20210412203618846.png, /posts/nginx/nginx/image-20210412203618846.png 1.5x, /posts/nginx/nginx/image-20210412203618846.png 2x"
+        data-src="./images/image-20210412203618846.png"
+        data-srcset="./images/image-20210412203618846.png, ./images/image-20210412203618846.png 1.5x, ./images/image-20210412203618846.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412203618846.png"
+        alt="./images/image-20210412203618846.png"
         title="image-20210412203618846.png" /></p>
 <p>但是用户多了，并发量就增大了，这时候一台服务器就不能满足需求，于是可以横向扩展服务器，这时候几个项目启动在不同的服务器上，由于session不共享，就需要一个代理服务器，通过代理服务器请求转发：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412204125797.png"
-        data-srcset="/posts/nginx/nginx/image-20210412204125797.png, /posts/nginx/nginx/image-20210412204125797.png 1.5x, /posts/nginx/nginx/image-20210412204125797.png 2x"
+        data-src="./images/image-20210412204125797.png"
+        data-srcset="./images/image-20210412204125797.png, ./images/image-20210412204125797.png 1.5x, ./images/image-20210412204125797.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412204125797.png"
+        alt="./images/image-20210412204125797.png"
         title="image-20210412204125797.png" /></p>
 <p>我们希望这个代理服务器可以帮助我们接受用户请求，然后按照规则转发在不同服务器上，这个过程用户是无感知的，用户并不知道哪台服务器在返回结果，还希望它可以按照服务器性能提供不同的权重选择</p>
 <h2 id="什么是nginx">什么是nginx</h2>
@@ -165,20 +165,20 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210509100408047.png"
-        data-srcset="/posts/nginx/nginx/image-20210509100408047.png, /posts/nginx/nginx/image-20210509100408047.png 1.5x, /posts/nginx/nginx/image-20210509100408047.png 2x"
+        data-src="./images/image-20210509100408047.png"
+        data-srcset="./images/image-20210509100408047.png, ./images/image-20210509100408047.png 1.5x, ./images/image-20210509100408047.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210509100408047.png"
+        alt="./images/image-20210509100408047.png"
         title="image-20210509100408047.png" /></p>
 <p>例如我们用的VPN，相当于一个中介跳转；正向代理代理的是客户端，反向代理代理的是服务器。</p>
 <h3 id="反向代理">反向代理：</h3>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/nginx01"
-        data-srcset="/posts/nginx/nginx/nginx01, /posts/nginx/nginx/nginx01 1.5x, /posts/nginx/nginx/nginx01 2x"
+        data-src="./images/nginx01"
+        data-srcset="./images/nginx01, ./images/nginx01 1.5x, ./images/nginx01 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/nginx01"
+        alt="./images/nginx01"
         title="nginx01" /></p>
 <h3 id="负载均衡">负载均衡：</h3>
 <p>nginx提供两种负载均衡策略：内置策略和扩展策略；内置策略为轮询、加权轮询，ip hash;扩展策略就是天马行空，任意的定制</p>
@@ -186,28 +186,28 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/ngins02"
-        data-srcset="/posts/nginx/nginx/ngins02, /posts/nginx/nginx/ngins02 1.5x, /posts/nginx/nginx/ngins02 2x"
+        data-src="./images/ngins02"
+        data-srcset="./images/ngins02, ./images/ngins02 1.5x, ./images/ngins02 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/ngins02"
+        alt="./images/ngins02"
         title="ngins02" /></p>
 <p><strong>加权轮询：</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/img2018.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg"
-        data-srcset="/posts/nginx/nginx/img2018.cnblogs.com&amp;app=2002&amp;size=f9999%2c10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg, /posts/nginx/nginx/img2018.cnblogs.com&amp;app=2002&amp;size=f9999%2c10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg 1.5x, /posts/nginx/nginx/img2018.cnblogs.com&amp;app=2002&amp;size=f9999%2c10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg 2x"
+        data-src="./images/img2018.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg"
+        data-srcset="./images/img2018.cnblogs.com&amp;app=2002&amp;size=f9999%2c10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg, ./images/img2018.cnblogs.com&amp;app=2002&amp;size=f9999%2c10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg 1.5x, ./images/img2018.cnblogs.com&amp;app=2002&amp;size=f9999%2c10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/img2018.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg"
+        alt="./images/img2018.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg"
         title="img2018.cnblogs.com&amp;amp;app=2002&amp;amp;size=f9999,10000&amp;amp;q=a80&amp;amp;n=0&amp;amp;g=0n&amp;amp;fmt=jpeg" /></p>
 <p><strong>ip hash:</strong></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/nginx03"
-        data-srcset="/posts/nginx/nginx/nginx03, /posts/nginx/nginx/nginx03 1.5x, /posts/nginx/nginx/nginx03 2x"
+        data-src="./images/nginx03"
+        data-srcset="./images/nginx03, ./images/nginx03 1.5x, ./images/nginx03 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/nginx03"
+        alt="./images/nginx03"
         title="nginx03" /></p>
 <p><strong>动静分离：</strong></p>
 <p>动静分离，通过中间将动静分离和静态请求进行分离；
@@ -216,10 +216,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/1689287-20190828161533793-1775785085.png"
-        data-srcset="/posts/nginx/nginx/1689287-20190828161533793-1775785085.png, /posts/nginx/nginx/1689287-20190828161533793-1775785085.png 1.5x, /posts/nginx/nginx/1689287-20190828161533793-1775785085.png 2x"
+        data-src="./images/1689287-20190828161533793-1775785085.png"
+        data-srcset="./images/1689287-20190828161533793-1775785085.png, ./images/1689287-20190828161533793-1775785085.png 1.5x, ./images/1689287-20190828161533793-1775785085.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/1689287-20190828161533793-1775785085.png"
+        alt="./images/1689287-20190828161533793-1775785085.png"
         title="1689287-20190828161533793-1775785085.png" /></p>
 <p>动静分离只有好处：动静分离后，即使动态服务不可用，但静态资源不会受到影响。</p>
 <h2 id="nginx安装">nginx安装：</h2>
@@ -230,20 +230,20 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412211208083.png"
-        data-srcset="/posts/nginx/nginx/image-20210412211208083.png, /posts/nginx/nginx/image-20210412211208083.png 1.5x, /posts/nginx/nginx/image-20210412211208083.png 2x"
+        data-src="./images/image-20210412211208083.png"
+        data-srcset="./images/image-20210412211208083.png, ./images/image-20210412211208083.png 1.5x, ./images/image-20210412211208083.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412211208083.png"
+        alt="./images/image-20210412211208083.png"
         title="image-20210412211208083.png" /></p>
 <h3 id="linux下安装">linux下安装：</h3>
 <p>1、官网下载稳定版本，上传到服务器：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412211321454.png"
-        data-srcset="/posts/nginx/nginx/image-20210412211321454.png, /posts/nginx/nginx/image-20210412211321454.png 1.5x, /posts/nginx/nginx/image-20210412211321454.png 2x"
+        data-src="./images/image-20210412211321454.png"
+        data-srcset="./images/image-20210412211321454.png, ./images/image-20210412211321454.png 1.5x, ./images/image-20210412211321454.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412211321454.png"
+        alt="./images/image-20210412211321454.png"
         title="image-20210412211321454.png" /></p>
 <p>2、解压安装：</p>
 <div class="highlight"><div class="chroma">
@@ -421,10 +421,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412214413458.png"
-        data-srcset="/posts/nginx/nginx/image-20210412214413458.png, /posts/nginx/nginx/image-20210412214413458.png 1.5x, /posts/nginx/nginx/image-20210412214413458.png 2x"
+        data-src="./images/image-20210412214413458.png"
+        data-srcset="./images/image-20210412214413458.png, ./images/image-20210412214413458.png 1.5x, ./images/image-20210412214413458.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412214413458.png"
+        alt="./images/image-20210412214413458.png"
         title="image-20210412214413458.png" /></p>
 <p>配置实例：8000代表一台服务器，8001代表一台服务器，加权轮询1：3</p>
 <div class="highlight"><div class="chroma">
@@ -560,19 +560,19 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412221941067.png"
-        data-srcset="/posts/nginx/nginx/image-20210412221941067.png, /posts/nginx/nginx/image-20210412221941067.png 1.5x, /posts/nginx/nginx/image-20210412221941067.png 2x"
+        data-src="./images/image-20210412221941067.png"
+        data-srcset="./images/image-20210412221941067.png, ./images/image-20210412221941067.png 1.5x, ./images/image-20210412221941067.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412221941067.png"
+        alt="./images/image-20210412221941067.png"
         title="image-20210412221941067.png" /></p>
 <p>两台服务器接受到的请求次数：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/posts/nginx/nginx/image-20210412222057222.png"
-        data-srcset="/posts/nginx/nginx/image-20210412222057222.png, /posts/nginx/nginx/image-20210412222057222.png 1.5x, /posts/nginx/nginx/image-20210412222057222.png 2x"
+        data-src="./images/image-20210412222057222.png"
+        data-srcset="./images/image-20210412222057222.png, ./images/image-20210412222057222.png 1.5x, ./images/image-20210412222057222.png 2x"
         data-sizes="auto"
-        alt="/posts/nginx/nginx/image-20210412222057222.png"
+        alt="./images/image-20210412222057222.png"
         title="image-20210412222057222.png" /></p>
 <p><strong>Windows双击运行nginx.exe带来的问题，没有办法通过命令行关闭，nginx80端口一直被占用：</strong></p>
 <div class="highlight"><div class="chroma">

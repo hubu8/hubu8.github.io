@@ -3,7 +3,7 @@
 
 <!--more-->
 
-![image-20231226145606320.png](/posts/MySQL/Specified key was too long/image-20231226145606320.png)
+![image-20231226145606320.png](./images/image-20231226145606320.png)
 
 Specified key was too long; max key length is 3072 bytes
 
@@ -11,7 +11,7 @@ Specified key was too long; max key length is 3072 bytes
 show variables like 'innodb_page_size';
 ```
 
-![image-20231226150434031.png](/posts/MySQL/Specified key was too long/image-20231226150434031.png)
+![image-20231226150434031.png](./images/image-20231226150434031.png)
 
 16384 = 16KB * 1024
 
@@ -80,7 +80,7 @@ CREATE TABLE `tb_item` (
 
 我们看到 key 是 `tb_item_title_price_num`，同时索引长度 key_len 为 314 ，证明是使用到了联合索引 `tb_item_title_price_num` 的三个完整字段的。
 
-![d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png](/posts/MySQL/Specified key was too long/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png)
+![d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png](./images/d000baa1cd11728bfc3b1f8d529008c4c2fd2c86.png)
 
 这个 314 的具体计算方式为：
 
@@ -96,7 +96,7 @@ explain select * from tb_item where title = '编译原理' and num = 23232
 
 这条语句因为我们跳过了 price 字段，所以联合索引中只会有 title 字段生效，剩余部分都会失效，如果我们计算方式没有问题的话，那么此时执行计划中的 key_len 应该为 302。
 
-![c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png](/posts/MySQL/Specified key was too long/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png)
+![c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png](./images/c9fcc3cec3fdfc03754156704e534c9ea5c226b0.png)
 
 果然，我们看到 key_len 已经变成了 302，这意味着索引部分失效了，只有 title 字段索引起了作用，同时 Extra 为 `Using index condition`，说明使用了索引，但是需要回表查询数据。
 
@@ -125,3 +125,4 @@ MySQL 5.6 及之前版本： InnoDB 存储引擎中单列索引的大小限制�
 MySQL 5.7：InnoDB 存储引擎中单列索引的大小限制已经被扩展到3072字节。这个改变主要是为了适应更长的JSON列索引。
 
 MySQL 8.0：InnoDB 存储引擎中单列索引的大小限制依然是3072字节。
+

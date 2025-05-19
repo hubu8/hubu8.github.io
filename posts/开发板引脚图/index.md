@@ -5,11 +5,11 @@
 
 ### 1.树莓派
 
-![image-20240226110829746.png](/posts/pi/树莓派引脚图/image-20240226110829746.png)
+![image-20240226110829746.png](./images/image-20240226110829746.png)
 
-![image-20240226110802064.png](/posts/pi/树莓派引脚图/image-20240226110802064.png)
+![image-20240226110802064.png](./images/image-20240226110802064.png)
 
-![image-20240226110721563.png](/posts/pi/树莓派引脚图/image-20240226110721563.png)
+![image-20240226110721563.png](./images/image-20240226110721563.png)
 
 https://pinout.xyz/
 
@@ -166,7 +166,7 @@ https://pinout.xyz/
 
 #### 规格特性
 
-![image-20240227142242135.png](/posts/pi/树莓派引脚图/image-20240227142242135.png)
+![image-20240227142242135.png](./images/image-20240227142242135.png)
 
 #### 主要应用
 
@@ -178,7 +178,7 @@ https://pinout.xyz/
 
 #### 开发板说明
 
-![image-20240227142804650.png](/posts/pi/树莓派引脚图/image-20240227142804650.png)
+![image-20240227142804650.png](./images/image-20240227142804650.png)
 
 **现代通讯支持**
 
@@ -221,3 +221,4 @@ https://pinout.xyz/
 ### 2.香蕉派
 
 [Banana Pi BPI-M4 Zero - Banana Pi Wiki (banana-pi.org)](https://wiki.banana-pi.org/Banana_Pi_BPI-M4_Zero#BPI-M4_Zero_40-pin_header)
+

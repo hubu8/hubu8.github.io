@@ -137,4 +137,5 @@ spring:
 
 
 
-![image-20221228202513257.png](/posts/Spring/Jasypt实现springboot参数加密/image-20221228202513257.png)
+![image-20221228202513257.png](./images/image-20221228202513257.png)
+

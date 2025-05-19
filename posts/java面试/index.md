@@ -778,7 +778,7 @@ str = “bcd”;
 
 因为它的所有方法都没有被 synchronized 修饰，因此它的效率理论上也比 StringBuffer 要高。
 
-![StringBuilder.png](/posts/java/面试/java面试/StringBuilder.png)
+![StringBuilder.png](./images/StringBuilder.png)
 
 
 
@@ -950,7 +950,7 @@ hashCode()源自于java.lang.Object ,该方法用于获取给定对象的唯一�
 
 hash散列算法,使得在hash表中查找一个记录速度变O(1). 每个记录都有自己的hashcode,散列算法按照hashcode把记录放置在合适的位置. 在查找一个记录,首先先通过hashcode快速定位记录的位置.然后再通过equals来比较是否相等。如果hashcode没找到，则不equal，元素不存在于哈希表中；即使找到了，也只需执行hashcode相同的几个元素的equal，如果不equal，还是不存在哈希表中。
 
-![HashMap1.7hashcodequals.png](/posts/java/面试/java面试/HashMap1.7hashcodequals.png)
+![HashMap1.7hashcodequals.png](./images/HashMap1.7hashcodequals.png)
 
 # HashMap和HashTable的区别及底层实现 
 
@@ -973,11 +973,11 @@ hash散列算法,使得在hash表中查找一个记录速度变O(1). 每个记�
 
 JDK 1.8 在扩容时并没有像 JDK 1.7 那样，重新计算每个元素的哈希值，而是通过高位运算**（e.hash & oldCap）**来确定元素是否需要移动，比如 key1 的信息如下：
 
-![1621414916379-1621752756248.png](/posts/java/面试/java面试/1621414916379-1621752756248.png)
+![1621414916379-1621752756248.png](./images/1621414916379-1621752756248.png)
 
 使用 e.hash & oldCap 得到的结果，高一位为 0，当结果为 0 时表示元素在扩容时位置不会发生任何变化，而 key 2 信息如下
 
-![1621414931120-1621752756248.png](/posts/java/面试/java面试/1621414931120-1621752756248.png)
+![1621414931120-1621752756248.png](./images/1621414931120-1621752756248.png)
 
  
 
@@ -1243,7 +1243,7 @@ Spring 是开源的。它拥有一个庞大而且活跃的社区，提供不同�
 
 # 简述spring bean的生命周期？
 
-![bean的生命周期.png](/posts/java/面试/java面试/bean的生命周期.png)
+![bean的生命周期.png](./images/bean的生命周期.png)
 
 1、实例化bean对象
 
@@ -1443,7 +1443,7 @@ TransactionInterceptor
 
 ​		当发起请求时被前置的控制器拦截到请求，根据请求参数生成代理请求，找到请求对应的实际控制器，控制器处理请求，创建数据模型，访问数据库，将模型响应给中心控制器，控制器使用模型与视图渲染视图结果，将结果返回给中心控制器，再将结果返回给请求者。
 
-![springmvc运行流程.jpg](/posts/java/面试/java面试/springmvc运行流程.jpg)
+![springmvc运行流程.jpg](./images/springmvc运行流程.jpg)
 
 1、DispatcherServlet表示前置控制器，是整个SpringMVC的控制中心。用户发出请求，DispatcherServlet接收请求并拦截请求。
 2、HandlerMapping为处理器映射。DispatcherServlet调用HandlerMapping,HandlerMapping根据请求url查找Handler。
@@ -2776,7 +2776,7 @@ SERIALIZABLE 可串行化
 
 ​		记录如图所示：
 
-![数据案例.png](/posts/java/面试/java面试/数据案例.png)
+![数据案例.png](./images/数据案例.png)
 
 ​		在上图中，DB_ROW_ID是数据库默认为该行记录生成的唯一隐式主键，DB_TRX_ID是当前操作该记录的事务ID，DB_ROLL_PTR是一个回滚指针，用于配合undo日志，指向上一个旧版本
 
@@ -2792,7 +2792,7 @@ SERIALIZABLE 可串行化
 
 ​		1、假设有一个事务编号为1的事务向表中插入一条记录，那么此时行数据的状态为：
 
-![1.png](/posts/java/面试/java面试/1.png)
+![1.png](./images/1.png)
 
 ​		2、假设有第二个事务编号为2对该记录的name做出修改，改为lisi
 
@@ -2804,7 +2804,7 @@ SERIALIZABLE 可串行化
 
 ​		事务提交后，释放锁
 
-![2.png](/posts/java/面试/java面试/2.png)
+![2.png](./images/2.png)
 
 ​		3、假设有第三个事务编号为3对该记录的age做了修改，改为32
 
@@ -2816,7 +2816,7 @@ SERIALIZABLE 可串行化
 
 ​		事务提交，释放锁
 
-![3.png](/posts/java/面试/java面试/3.png)
+![3.png](./images/3.png)
 
 ​		从上述的一系列图中，大家可以发现，不同事务或者相同事务的对同一记录的修改，会导致该记录的undolog生成一条记录版本线性表，即链表，undolog的链首就是最新的旧记录，链尾就是最早的旧记录。
 
@@ -2861,11 +2861,11 @@ SERIALIZABLE 可串行化
 
 从上述表格中，我们可以看到，当事务2对某行数据执行了快照读，数据库为该行数据生成一个Read View视图，可以看到事务1和事务3还在活跃状态，事务4在事务2快照读的前一刻提交了更新，所以，在Read View中记录了系统当前活跃事务1，3，维护在一个列表中。同时可以看到up_limit_id的值为1，而low_limit_id为5，如下图所示：
 
-![image-20210520143604440.png](/posts/java/面试/java面试/image-20210520143604440.png)
+![image-20210520143604440.png](./images/image-20210520143604440.png)
 
 在上述的例子中，只有事务4修改过该行记录，并在事务2进行快照读前，就提交了事务，所以该行当前数据的undolog如下所示：
 
-![image-20210520143717928.png](/posts/java/面试/java面试/image-20210520143717928.png)
+![image-20210520143717928.png](./images/image-20210520143717928.png)
 
 
 
@@ -2875,7 +2875,7 @@ SERIALIZABLE 可串行化
 
 
 
-![image-20210520143742317.png](/posts/java/面试/java面试/image-20210520143742317.png)
+![image-20210520143742317.png](./images/image-20210520143742317.png)
 
 当上述的内容都看明白了的话，那么大家就应该能够搞清楚这几个核心概念之间的关系了，下面我们讲一个不同的隔离级别下的快照读的不同。
 
@@ -2928,7 +2928,7 @@ SERIALIZABLE 可串行化
 4--Mysql复制最好确保master和slave服务器上的Mysql版本相同（如果不能满足版本一致，那么要保证master主节点的版本低于slave从节点的版本）
 5--master和slave两节点间时间需同步
 
-![主从原理.png](/posts/java/面试/java面试/主从原理.png)
+![主从原理.png](./images/主从原理.png)
 
 具体步骤：
 
@@ -3000,12 +3000,12 @@ MyISAM存储引擎: 是MySQL官方提供的存储引擎，主要面向OLAP(Onlin
 
 因为JVM针对各种操作系统和平台都进行了定制，无论在什么平台，都可以通过javac命令将一个.java文件编译成固定格式的字节码（.class文件）供JVM使用。之所以被称为字节码，是因为**.class文件是由十六进制值组成的，JVM以两个十六进制值为一组，就是以字节为单位进行读取**
 格式如下
-![bytecode.png](/posts/java/面试/java面试/bytecode.png)
+![bytecode.png](./images/bytecode.png)
 
 # 字节码的组成结构是什么？
 
 JVM对字节码的规范是有要求的，要求每一个字节码文件都要有十部分固定的顺序组成，如下图：
-![bytecode2.png](/posts/java/面试/java面试/bytecode2.png)
+![bytecode2.png](./images/bytecode2.png)
 
 1. 魔数
 
@@ -3015,17 +3015,17 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 
 版本号是魔术之后的4个字节，前两个字节表示次版本号（Minor Version），后两个字节表示主版本号（Major Version），上面的0000 0032，次版本号0000转为十进制是0，主版本号0032 转为十进制50，对应下图的版本映射关系，可以看到对应的java版本号是1.6
 
-![bytecodeversion.png](/posts/java/面试/java面试/bytecodeversion.png)
+![bytecodeversion.png](./images/bytecodeversion.png)
 
 3. 常量池
 
 紧接着主版本号之后的字节为常量池入口，常量池中有两类常量：字面量和符号引用，字面量是代码中申明为Final的常量值，符号引用是如类和接口的全局限定名、字段的名称和描述符、方法的名称和描述符。常量池整体分为两个部分：常量池计数器以及常量池数据区
-![changlangchi.png](/posts/java/面试/java面试/changlangchi.png)
+![changlangchi.png](./images/changlangchi.png)
 
 4. 访问标志
 
 常量池结束后的两个字节，描述的是类还是接口，以及是否被Public、Abstract、Final等修饰符修饰，JVM规范规定了9种访问标示（Access_Flag）JVM是通过按位或操作来描述所有的访问标示的，比如类的修饰符是Public Final，则对应的访问修饰符的值为ACC_PUBLIC | ACC_FINAL，即0x0001 | 0x0010=0x0011
-![access_flag.png](/posts/java/面试/java面试/access_flag.png)
+![access_flag.png](./images/access_flag.png)
 
 
 5. 当前类索引
@@ -3045,13 +3045,13 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 8. 字段表
 
 用于描述类和接口中声明的变量，包含类级别的变量和实例变量，但是不包含方法内部声明的局部变量，字段表也分为两个部分，第一部分是两个字节，描述字段个数，第二部分是每个字段的详细信息fields_info
-![field.png](/posts/java/面试/java面试/field.png)
+![field.png](./images/field.png)
 
 9. 方法表
 
 字段表结束后为方法表，方法表也分为两个部分，第一个部分是两个字节表述方法的个数，第二部分是每个方法的详细信息
 方法的访问信息比较复杂，包括方法的访问标志、方法名、方法的描述符和方法的属性：
-![method.png](/posts/java/面试/java面试/method.png)
+![method.png](./images/method.png)
 
 10. 附加属性
 
@@ -3061,7 +3061,7 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 # class初始化过程是什么？
 
 首先类加载的机制过程分为5个部分：加载、验证、准备、解析、初始化
-![class-int.png](/posts/java/面试/java面试/class-int.png)
+![class-int.png](./images/class-int.png)
 
 
 我们现在主要分析类的初始化过程：
@@ -3089,7 +3089,7 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 
 
 
-![javammode.png](/posts/java/面试/java面试/javammode.png)
+![javammode.png](./images/javammode.png)
 
 
 
@@ -3282,11 +3282,11 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 应用程序可以自定义类加载器，父类加载器为AppClassLoader
 
 
-![classloader.png](/posts/java/面试/java面试/classloader.png)
+![classloader.png](./images/classloader.png)
 
 # 双亲委派机制是什么？
 
-## ![classloader2.png](/posts/java/面试/java面试/classloader2.png)
+## ![classloader2.png](./images/classloader2.png)
 
 双亲委派机制
 双亲委派模式是在Java 1.2后引入的，其工作原理的是，如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个**请求委托给父类的加载器去执行**，如果父类加载器还存在其父类加载器，则**进一步向上委托，依次递归**，**请求最终将到达顶层的启动类加载器**，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式。
@@ -3335,7 +3335,7 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 
 **1.标记-清除（Mark-Sweep）算法**  
 
-分为标记和清除两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收所有被标记的对象。![before.png](/posts/java/面试/java面试/before.png)
+分为标记和清除两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收所有被标记的对象。![before.png](./images/before.png)
 
 它的主要不足有两个：
 
@@ -3345,13 +3345,13 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 2. **复制算法**
 
 为了解决效率问题，一种称为复制（Copying）的收集算法出现了，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对整个半区进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。
-![copy.png](/posts/java/面试/java面试/copy.png)
+![copy.png](./images/copy.png)
 **复制算法的代价**是将内存缩小为了原来的一半，减少了实际可用的内存。现在的商业虚拟机都采用这种收集算法来回收新生代，IBM公司的专门研究表明，新生代中的对象98%是“朝生夕死”的，所以并不需要按照1:1的比例来划分内存空间，而是将内存分为一块较大的Eden空间和两块较小的Survivor空间，每次使用Eden和其中一块Survivor。当回收时，将Eden和Survivor中还存活着的对象一次性地复制到另外一块Survivor空间上，最后清理掉Eden和刚才用过的Survivor空间。HotSpot虚拟机默认Eden和Survivor的大小比例是8:1，也就是每次新生代中可用内存空间为整个新生代容量的90%（80%+10%），只有10%的内存会被“浪费”。当然，98%的对象可回收只是一般场景下的数据，我们没有办法保证每次回收都只有不多于10%的对象存活，当Survivor空间不够用时，需要依赖其他内存（这里指老年代）进行分配担保（Handle Promotion）。
 
 3. **标记-整理算法**
 
 复制收集算法在对象存活率较高时就要进行较多的复制操作，效率将会变低。更关键的是，如果不想浪费50%的空间，就需要有额外的空间进行分配担保，以应对被使用的内存中所有对象都100%存活的极端情况，所以在老年代一般不能直接选用这种算法。根据老年代的特点，有人提出了另外一种标记-整理（Mark-Compact）算法，标记过程仍然与标记-清除算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。
-![3-1621487892206.png](/posts/java/面试/java面试/3-1621487892206.png)
+![3-1621487892206.png](./images/3-1621487892206.png)
 
 4. **分代收集算法**
 
@@ -3359,7 +3359,7 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 
 #  jvm有哪些垃圾回收器，实际中如何选择？ 
 
-![gcollector.png](/posts/java/面试/java面试/gcollector.png)
+![gcollector.png](./images/gcollector.png)
 图中展示了7种作用于不同分代的收集器，如果两个收集器之间存在连线，则说明它们可以搭配使用。虚拟机所处的区域则表示它是属于新生代还是老年代收集器。
 新生代收集器（全部的都是复制算法）：Serial、ParNew、Parallel Scavenge
 老年代收集器：CMS（标记-清理）、Serial Old（标记-整理）、Parallel Old（标记整理）
@@ -3372,14 +3372,14 @@ JVM对字节码的规范是有要求的，要求每一个字节码文件都要�
 **特点：**单线程、简单高效（与其他收集器的单线程相比），对于限定单个CPU的环境来说，Serial收集器由于没有线程交互的开销，专心做垃圾收集自然可以获得最高的单线程手机效率。收集器进行垃圾回收时，必须暂停其他所有的工作线程，直到它结束（Stop The World）。
 **应用场景**：适用于Client模式下的虚拟机。
 **Serial / Serial Old收集器运行示意图**
-![serial.png](/posts/java/面试/java面试/serial.png)
+![serial.png](./images/serial.png)
 **2.ParNew收集器其实就是Serial收集器的多线程版本。**
 除了使用多线程外其余行为均和Serial收集器一模一样（参数控制、收集算法、Stop The World、对象分配规则、回收策略等）。
 **特点**：多线程、ParNew收集器默认开启的收集线程数与CPU的数量相同，在CPU非常多的环境中，可以使用-XX:ParallelGCThreads参数来限制垃圾收集的线程数。
 　　　和Serial收集器一样存在Stop The World问题
 **应用场景**：ParNew收集器是许多运行在Server模式下的虚拟机中首选的新生代收集器，因为它是除了Serial收集器外，唯一一个能与CMS收集器配合工作的。
 _ParNew/Serial Old组合收集器运行示意图如下：_
-![parnew.png](/posts/java/面试/java面试/parnew.png)
+![parnew.png](./images/parnew.png)
 **3.Parallel Scavenge 收集器与吞吐量关系密切，故也称为吞吐量优先收集器。**
 **特点**：属于新生代收集器也是采用复制算法的收集器，又是并行的多线程收集器（与ParNew收集器类似）。
 该收集器的目标是达到一个可控制的吞吐量。还有一个值得关注的点是：GC自适应调节策略（与ParNew收集器最重要的一个区别）
@@ -3398,7 +3398,7 @@ Server模式下主要的两大用途（在后续中详细讲解···）：
 1. 作为CMS收集器的后备方案，在并发收集Concurent Mode Failure时使用。
 
 Serial / Serial Old收集器工作过程图（Serial收集器图示相同）：
-![serial-old.png](/posts/java/面试/java面试/serial-old.png)
+![serial-old.png](./images/serial-old.png)
 **5.Parallel Old是Parallel Scavenge收集器的老年代版本。**
 **特点**：多线程，采用标记-整理算法。
 **应用场景**：注重高吞吐量以及CPU资源敏感的场合，都可以优先考虑Parallel Scavenge+Parallel Old 收集器。
@@ -3413,12 +3413,12 @@ _Parallel Scavenge/Parallel Old收集器工作过程图：_
 **并发清除**：对标记的对象进行清除回收。
 CMS收集器的内存回收过程是与用户线程一起并发执行的。
  CMS收集器的工作过程图：
-![cms.png](/posts/java/面试/java面试/cms.png)
+![cms.png](./images/cms.png)
 CMS收集器的缺点：
 
 - 对CPU资源非常敏感。
 - 无法处理浮动垃圾，可能出现Concurrent Model Failure失败而导致另一次Full GC的产生。
-- 因为采用标记-清除算法所以会存在空间碎片的问题，导致大对象无法分配空间，不得不提前触发一次Full GC。![cms2.png](/posts/java/面试/java面试/cms2.png)
+- 因为采用标记-清除算法所以会存在空间碎片的问题，导致大对象无法分配空间，不得不提前触发一次Full GC。![cms2.png](./images/cms2.png)
 
 **​**
 
@@ -3429,7 +3429,7 @@ CMS收集器的缺点：
 空间整合：G1运作期间不会产生空间碎片，收集后能提供规整的可用内存。
 可预测的停顿：G1除了追求低停顿外，还能建立可预测的停顿时间模型。能让使用者明确指定在一个长度为M毫秒的时间段内，消耗在垃圾收集上的时间不得超过N毫秒。
 **G1收集器运行示意图：**
-![g1.png](/posts/java/面试/java面试/g1.png)
+![g1.png](./images/g1.png)
 **​**
 
 关于gc的选择
@@ -3495,7 +3495,7 @@ CMS收集器的缺点：
 
 # 介绍一下线程的生命周期及状态？
 
-![life.jpg](/posts/java/面试/java面试/life.jpg)
+![life.jpg](./images/life.jpg)
 **1.创建**
 当程序使用new关键字创建了一个线程之后，该线程就处于一个新建状态（初始状态），此时它和其他Java对象一样，仅仅由Java虚拟机为其分配了内存，并初始化了其成员变量值。此时的线程对象没有表现出任何线程的动态特征，程序也不会执行线程的线程执行体。
 **2.就绪**
@@ -3600,7 +3600,7 @@ public void remove() {
 
 每个Thread都有一个ThreadLocal.ThreadLocalMap的map，该map的key为ThreadLocal实例，它为一个弱引用，我们知道弱引用有利于GC回收。当ThreadLocal的key == null时，GC就会回收这部分空间，但是value却不一定能够被回收，因为他还与Current Thread存在一个强引用关系，如下
 
-![threadlocal.png](/posts/java/面试/java面试/threadlocal.png)由于存在这个强引用关系，会导致value无法回收。如果这个线程对象不会销毁那么这个强引用关系则会一直存在，就会出现内存泄漏情况。所以说只要这个线程对象能够及时被GC回收，就不会出现内存泄漏。如果碰到线程池，那就更坑了。 那么要怎么避免这个问题呢？ 在前面提过，在ThreadLocalMap中的setEntry()、getEntry()，如果遇到key == null的情况，会对value设置为null。当然我们也可以显示调用ThreadLocal的remove()方法进行处理。 下面再对ThreadLocal进行简单的总结：
+![threadlocal.png](./images/threadlocal.png)由于存在这个强引用关系，会导致value无法回收。如果这个线程对象不会销毁那么这个强引用关系则会一直存在，就会出现内存泄漏情况。所以说只要这个线程对象能够及时被GC回收，就不会出现内存泄漏。如果碰到线程池，那就更坑了。 那么要怎么避免这个问题呢？ 在前面提过，在ThreadLocalMap中的setEntry()、getEntry()，如果遇到key == null的情况，会对value设置为null。当然我们也可以显示调用ThreadLocal的remove()方法进行处理。 下面再对ThreadLocal进行简单的总结：
 
 - ThreadLocal 不是用于解决共享变量的问题的，也不是为了协调线程同步而存在，而是为了方便每个线程处理自己的状态而引入的一个机制。这点至关重要。
 - 每个Thread内部都有一个ThreadLocal.ThreadLocalMap类型的成员变量，该成员变量用来存储实际的ThreadLocal变量副本。
@@ -3778,11 +3778,11 @@ private Runnable getTask() {
 1.7
 数据结构：
 内部主要是一个Segment数组，而数组的每一项又是一个HashEntry数组，元素都存在HashEntry数组里。因为每次锁定的是Segment对象，也就是整个HashEntry数组，所以又叫分段锁。
-![1.7ConcurrentHashMap.png](/posts/java/面试/java面试/1.7ConcurrentHashMap.png)
+![1.7ConcurrentHashMap.png](./images/1.7ConcurrentHashMap.png)
 1.8
 数据结构：
 与HashMap一样采用：数组+链表+红黑树
-![ConCurrentHashMap.png](/posts/java/面试/java面试/ConCurrentHashMap.png)
+![ConCurrentHashMap.png](./images/ConCurrentHashMap.png)
 底层原理则是采用锁链表或者红黑树头结点，相比于HashTable的方法锁，力度更细，是对数组（table）中的桶（链表或者红黑树）的头结点进行锁定，这样锁定，只会影响数组（table）当前下标的数据，不会影响其他下标节点的操作，可以提高读写效率。
 putVal执行流程：
 
@@ -3816,7 +3816,7 @@ UUID,数据库主键自增，Redis自增ID，雪花算法。
 3. 机器ID，占用10位。
 4. 序列号，占用12位。一毫秒可以生成4095个ID。
 
-![image-20210521124236027.png](/posts/java/面试/java面试/image-20210521124236027.png)
+![image-20210521124236027.png](./images/image-20210521124236027.png)
 
 
 
@@ -3953,7 +3953,7 @@ def unlock ：
 
 ​		计数器算法，是指在指定的时间周期内累加访问次数，达到设定的阈值时，触发限流策略。下一个时间周期进行访问时，访问次数清零。此算法无论在单机还是分布式环境下实现都非常简单，使用redis的incr原子自增性，再结合key的过期时间，即可轻松实现。
 
-![4-6 计数器算法-1621753094321.jpg](/posts/java/面试/java面试/4-6 计数器算法-1621753094321.jpg)
+![4-6 计数器算法-1621753094321.jpg](./images/4-6 计数器算法-1621753094321.jpg)
 
 
 
@@ -3969,7 +3969,7 @@ def unlock ：
 
 ​		滑动时间窗口是将计数器算法中的实际周期切分成多个小的时间窗口，分别在每个小的时间窗口中记录访问次数，然后根据时间将窗口往前滑动并删除过期的小时间窗口。最终只需要统计滑动窗口范围内的小时间窗口的总的请求数即可。
 
-![4-7 滑动窗口算法-1621753118270.jpg](/posts/java/面试/java面试/4-7 滑动窗口算法-1621753118270.jpg)
+![4-7 滑动窗口算法-1621753118270.jpg](./images/4-7 滑动窗口算法-1621753118270.jpg)
 
 
 
@@ -4032,7 +4032,7 @@ def unlock ：
 
   我们来详细分析一下CAP，为什么只能满足两个。看下图所示：
 
-  ![10-4 CAP演示-1617721637028.jpg](/posts/java/面试/java面试/10-4 CAP演示-1617721637028.jpg)
+  ![10-4 CAP演示-1617721637028.jpg](./images/10-4 CAP演示-1617721637028.jpg)
 
   
 
@@ -4104,7 +4104,7 @@ def unlock ：
 >
 > 当协调者节点从所有参与者节点获得的相应消息都为”同意”时:
 >
-> [![success.png](/posts/java/面试/java面试/success.png)](http://www.hollischuang.com/wp-content/uploads/2015/12/success.png)
+> [![success.png](./images/success.png)](http://www.hollischuang.com/wp-content/uploads/2015/12/success.png)
 >
 > > 1）协调者节点向所有参与者节点发出”正式提交(commit)”的请求。
 > >
@@ -4116,7 +4116,7 @@ def unlock ：
 
 如果任一参与者节点在第一阶段返回的响应消息为”中止”，或者 协调者节点在第一阶段的询问超时之前无法获取所有参与者节点的响应消息时：
 
-[![fail.png](/posts/java/面试/java面试/fail.png)](http://www.hollischuang.com/wp-content/uploads/2015/12/fail.png)
+[![fail.png](./images/fail.png)](http://www.hollischuang.com/wp-content/uploads/2015/12/fail.png)
 
 > 1）协调者节点向所有参与者节点发出”回滚操作(rollback)”的请求。
 >
@@ -4221,19 +4221,19 @@ doCommit阶段
 
   + C（Cancel）：业务回滚阶段，这阶段和上面的C（Confirm）是互斥的，用于释放Try阶段预留的资源或者业务。
 
-  ![image-20210521230854476-1621753201509.png](/posts/java/面试/java面试/image-20210521230854476-1621753201509.png)
+  ![image-20210521230854476-1621753201509.png](./images/image-20210521230854476-1621753201509.png)
 
   
 
-  ![image-20210521230904203-1621753201509.png](/posts/java/面试/java面试/image-20210521230904203-1621753201509.png)
+  ![image-20210521230904203-1621753201509.png](./images/image-20210521230904203-1621753201509.png)
 
   
 
-  ![image-20210521230912365-1621753201509.png](/posts/java/面试/java面试/image-20210521230912365-1621753201509.png)
+  ![image-20210521230912365-1621753201509.png](./images/image-20210521230912365-1621753201509.png)
 
   
 
-  ![image-20210521230919795-1621753201509.png](/posts/java/面试/java面试/image-20210521230919795-1621753201509.png)
+  ![image-20210521230919795-1621753201509.png](./images/image-20210521230919795-1621753201509.png)
 
   
 
@@ -4268,7 +4268,7 @@ doCommit阶段
 1. 可靠消息：发起方一定得把消息传递到消费者。
 2. 最终一致性：最终发起方的业务处理和消费方的业务处理得完成，达成最终一致。
 
-![image-20210522125830646.png](/posts/java/面试/java面试/image-20210522125830646.png)
+![image-20210522125830646.png](./images/image-20210522125830646.png)
 
 
 
@@ -4438,7 +4438,7 @@ ok，如果发生上述情况，确实是会发生脏数据。
 提供一个保障的重试机制即可，这里给出两套方案。
 **方案一**：
 如下图所示
-![o_update1.png](/posts/java/面试/java面试/o_update1.png)
+![o_update1.png](./images/o_update1.png)
 流程如下所示
 （1）更新数据库数据；
 （2）缓存因为种种问题删除失败
@@ -4447,7 +4447,7 @@ ok，如果发生上述情况，确实是会发生脏数据。
 （5）继续重试删除操作，直到成功
 然而，该方案有一个缺点，对业务线代码造成大量的侵入。于是有了方案二，在方案二中，启动一个订阅程序去订阅数据库的binlog，获得需要操作的数据。在应用程序中，另起一段程序，获得这个订阅程序传来的信息，进行删除缓存操作。
 **方案二**：
-![o_update2.png](/posts/java/面试/java面试/o_update2.png)
+![o_update2.png](./images/o_update2.png)
 流程如下图所示：
 （1）更新数据库数据
 （2）数据库会将操作信息写入binlog日志当中
@@ -4469,7 +4469,7 @@ ok，如果发生上述情况，确实是会发生脏数据。
 
 我一般设计成两层：业务层和能力层（中台），业务层接受用户请求，然后通过调用能力层来完成业务逻辑。
 
-![image-20210522172654370.png](/posts/java/面试/java面试/image-20210522172654370.png)
+![image-20210522172654370.png](./images/image-20210522172654370.png)
 
 
 
@@ -4491,7 +4491,7 @@ Cookie 数据保存在客户端(浏览器端)，Session 数据保存在服务器
 
 很多时候我们都是通过 SessionID 来实现特定的用户，SessionID 一般会选择存放在 Redis 中。举个例子：用户成功登陆系统，然后返回给客户端具有 SessionID 的 Cookie，当用户向后端发起请求的时候会把 SessionID 带上，这样后端就知道你的身份状态了。关于这种认证方式更详细的过程如下：
 
-![image-20210520130119426.png](/posts/java/面试/java面试/image-20210520130119426.png)
+![image-20210520130119426.png](./images/image-20210520130119426.png)
 
 用户向服务器发送用户名和密码用于登陆系统。
 服务器验证通过后，服务器为用户创建一个 Session，并将 Session信息存储 起来。
@@ -4543,7 +4543,7 @@ Payload（负载）:用来存放实际需要传递的数据
 Signature（签名）：服务器通过Payload、Header和一个密钥(secret)使用 Header 里面指定的签名算法（默认是 HMAC SHA256）生成。
 在基于 Token 进行身份验证的的应用程序中，服务器通过Payload、Header和一个密钥(secret)创建令牌（Token）并将 Token 发送给客户端，客户端将 Token 保存在 Cookie 或者 localStorage 里面，以后客户端发出的所有请求都会携带这个令牌。你可以把它放在 Cookie 里面自动发送，但是这样不能跨域，所以更好的做法是放在 HTTP Header 的 Authorization字段中：Authorization: Bearer Token。
 
-![image-20210520130410868.png](/posts/java/面试/java面试/image-20210520130410868.png)
+![image-20210520130410868.png](./images/image-20210520130410868.png)
 
 用户向服务器发送用户名和密码用于登陆系统。
 身份验证服务响应并返回了签名的 JWT，上面包含了用户是谁的内容。

@@ -29,7 +29,7 @@ TXD：发送数据引脚
 
 **模块TXD   -->  开发板RXD**
 
-![ff7a53c40c0f6872f4d0363d9797b478.jpeg](/posts/pi/UART串口调试/ff7a53c40c0f6872f4d0363d9797b478.jpeg)
+![ff7a53c40c0f6872f4d0363d9797b478.jpeg](./images/ff7a53c40c0f6872f4d0363d9797b478.jpeg)
 
 ### 串口调试注意事项：
 
@@ -37,6 +37,7 @@ TXD：发送数据引脚
 
 2、MobaXterm连接信息配置：
 
-![image-20240304135627391.png](/posts/pi/UART串口调试/image-20240304135627391.png)
+![image-20240304135627391.png](./images/image-20240304135627391.png)
 
 3、如果发现控制台窗口不能输入命令，则切换一下Flow control ，多尝试几次
+

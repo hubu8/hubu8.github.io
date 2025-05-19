@@ -115,7 +115,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 如果-d后台运行，那么前台不会出现日志，此时，密码会记录再日志中，访问Jenkins：localhost:9980，发现密码提示：
 
-![image-20210822145859268.png](/posts/jenkins/jenkins笔记/image-20210822145859268.png)
+![image-20210822145859268.png](./images/image-20210822145859268.png)
 
 ```shell
 C:\Users\26505>docker exec -it myjenkins /bin/bash
@@ -125,7 +125,7 @@ a8e55644a46a468497388c8f771e9923
 
 然后输入密码，进入配置：下载插件过程中不下载任何插件，进入配置超级管理员用户密码：
 
-![image-20210822150205178.png](/posts/jenkins/jenkins笔记/image-20210822150205178.png)
+![image-20210822150205178.png](./images/image-20210822150205178.png)
 
 http://updates.jenkins-ci.org/update-center.json
 

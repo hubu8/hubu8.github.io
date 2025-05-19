@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Friends on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/friend/</link>
+    <description>Recent content in Friends on Eccentric&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
+    <webMaster>tjindong8024@qq.com (Eccentric)</webMaster>
+    <lastBuildDate>Fri, 02 Aug 2019 11:04:49 +0800</lastBuildDate><atom:link href="https://hubu8.github.io/friend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>友情链接</title>
+      <link>https://hubu8.github.io/friend/index/</link>
+      <pubDate>Fri, 02 Aug 2019 11:04:49 +0800</pubDate>
+      <author>tjindong8024@qq.com (Eccentric)</author>
+      <guid>https://hubu8.github.io/friend/index/</guid>
+      <description>#article-container { display: block; word-wrap: break-word; overflow-wrap: break-word } #article-container a { color: #49b1f5 } #article-container a:hover { text-decoration: underline } #article-container img { margin: 0 auto .8rem } .flink#article-container .friend-list-div .friend-div a .friend-info, .flink#article-container .friend-list-div .friend-div a .friend-name { overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap } .flink#article-container .friend-list-div { display: initial; overflow: auto; padding: 10px 0 0; text-align: center; } .flink#article-container .friend-list-div .friend-div { position: relative; float:</description>
+    </item>
+    
+  </channel>
+</rss>

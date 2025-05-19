@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/about/</link>
+    <description>Recent content in Abouts on Eccentric&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
+    <webMaster>tjindong8024@qq.com (Eccentric)</webMaster>
+    <lastBuildDate>Fri, 02 Aug 2019 11:04:49 +0800</lastBuildDate><atom:link href="https://hubu8.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于本站</title>
+      <link>https://hubu8.github.io/about/index/</link>
+      <pubDate>Fri, 02 Aug 2019 11:04:49 +0800</pubDate>
+      <author>tjindong8024@qq.com (Eccentric)</author>
+      <guid>https://hubu8.github.io/about/index/</guid>
+      <description>特性 性能和 SEO :(fas fa-rocket fa-fw): 性能优化：在 Google PageSpeed Insights 中， [99]/[100] 的移动设备得分和 [100]/[100] 的桌面设备得分 :(fab fa-searchengin fa-fw): 使用基于 JSON-LD 格式 的 SEO SCHEMA 文件进行 SEO 优化 :(fab fa-google fa-fw): 支持 Google Analytics :(far fa-chart-bar fa-fw): 支持 Fathom</description>
+    </item>
+    
+  </channel>
+</rss>

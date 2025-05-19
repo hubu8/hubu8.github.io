@@ -1165,7 +1165,7 @@ docker build -t mytomcat .
 # 构建镜像
 ```
 
-![image-20210326213439087](../../../../../../docker_image/image-20210326213439087.png)
+![image-20210326213439087](/docker_image/image-20210326213439087.png)
 
 4、启动镜像
 
@@ -1175,9 +1175,9 @@ docker run -d -p 9090:8080 --name testmytomcat -v /root/environment/tomcat-test-
 
 5、访问测试
 
-![image-20210326215239316](../../../../../../docker_image/image-20210326215239316.png)
+![image-20210326215239316](/docker_image/image-20210326215239316.png)
 
-![image-20210326215303914](../../../../../../docker_image/image-20210326215303914.png)
+![image-20210326215303914](/docker_image/image-20210326215303914.png)
 
 6、发布项目（由于实现了卷挂载，所以我们就直接在本地写项目发布就可以了）
 
@@ -1208,7 +1208,7 @@ web.xml文件
   </web-app>
 ```
 
-![image-20210326230653392](../../../../../../docker_image/image-20210326230653392.png)
+![image-20210326230653392](/docker_image/image-20210326230653392.png)
 
 ## 发布镜像
 
@@ -1259,7 +1259,7 @@ f22b99068db9: Mounted from library/hello-world
 2.0: digest: sha256:1b26826f602946860c279fce658f31050cff2c596583af237d971f4629b57792 size: 525
 ```
 
-![image-20210327110123052](../../../../../../docker_image/image-20210327110123052.png)
+![image-20210327110123052](/docker_image/image-20210327110123052.png)
 
 ### 阿里云镜像
 

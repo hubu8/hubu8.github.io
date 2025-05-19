@@ -96,7 +96,7 @@ wordpress   LoadBalancer   172.21.7.165   120.79.38.52   80:32034/TCP,443:31842/
 
 通过浏览器访问该 EXTERNAL-IP 地址，我们可以看到 WordPress 应用的首页：
 
-![ack-handsonlab-2-wordpress](/k8s_images/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png)
+![ack-handsonlab-2-wordpress](/k8s/O1CN01GQeUrJ1rPNjbFqQbB_!!6000000005623-2-tps-2488-1186.png)
 
 ### 2. 访问后台
 
@@ -124,7 +124,7 @@ TCEYTlASR8
 
 在浏览器访问后台地址，并输入用户名和密码会看到如下页面：
 
-![ack-handsonlab-2-wordpress-login](/k8s_images/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png)
+![ack-handsonlab-2-wordpress-login](/k8s/O1CN01tfzWEO22AEPGviYUY_!!6000000007079-2-tps-2852-1628.png)
 
 至此，WordPress 产品部署完成，并成功访问前台和后台。
 

@@ -3,7 +3,7 @@
 
 <!--more-->
 
-![image-20210721215218934](images/image-20210721215218934.png)
+![image-20210721215218934](/面试/image-20210721215218934.png)
 
 数据结构：数组+链表+红黑树（JDK8）
 
@@ -63,7 +63,7 @@ JVM的性能排查，jstack,top,jmap,arthas《JVM性能调优》
 
 # 3、Hash Map中的算法
 
-![image-20210721220819125](images/image-20210721220819125.png)
+![image-20210721220819125](/面试/image-20210721220819125.png)
 
 ## Hash算法的流程
 
@@ -76,6 +76,6 @@ static final int hash(Object key) {
 public native int hashCode();
 ```
 
-![image-20210721221546037](images/image-20210721221546037.png)
+![image-20210721221546037](/面试/image-20210721221546037.png)
 
-![image-20210722090446863](images/image-20210722090446863.png)
+![image-20210722090446863](/面试/image-20210722090446863.png)

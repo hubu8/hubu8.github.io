@@ -86,7 +86,7 @@ docker run --name jenkins -u root --rm -d -p 8080:8080 -p 50000:50000 -v /var/je
 - 查看密码：`cat /var/lib/jenkins/secrets/initialAdminPassword`
 - 复制密码到输入框里面
 
-![图片](/docker_image/640)
+![图片](/docker_image/docker_640)
 
 图片
 

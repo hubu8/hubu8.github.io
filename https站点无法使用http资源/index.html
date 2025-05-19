@@ -138,10 +138,10 @@
 </div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%E5%89%8D%E7%AB%AF/image-20230913165951398.png"
-        data-srcset="/%E5%89%8D%E7%AB%AF/image-20230913165951398.png, /%E5%89%8D%E7%AB%AF/image-20230913165951398.png 1.5x, /%E5%89%8D%E7%AB%AF/image-20230913165951398.png 2x"
+        data-src="/%e5%89%8d%e7%ab%af/image-20230913165951398.png"
+        data-srcset="/%e5%89%8d%e7%ab%af/image-20230913165951398.png, /%e5%89%8d%e7%ab%af/image-20230913165951398.png 1.5x, /%e5%89%8d%e7%ab%af/image-20230913165951398.png 2x"
         data-sizes="auto"
-        alt="/%E5%89%8D%E7%AB%AF/image-20230913165951398.png"
+        alt="/前端/image-20230913165951398.png"
         title="image-20230913165951398" /></p>
 <h3 id="问题分析">问题分析</h3>
 <p>报错的原因就是当前页面是https协议加载的，但是这个页面发起了一个http的ajax请求，这种做法是非法的。HTTPS页面里动态的引入HTTP资源，比如引入一个js文件，会被直接block掉的.在HTTPS页面里通过AJAX的方式请求HTTP资源，也会被直接block掉的。</p>

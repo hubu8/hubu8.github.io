@@ -633,7 +633,7 @@ e2hlgfd1v4xk7azjp27ce3fcy     node3                   Down      Active          
 Error response from daemon: rpc error: code = Unknown desc = The swarm does not have a leader. It's possible that too few managers are online. Make sure more than half of the managers are online.
 ```
 
-![swarm-diagram.png](/posts/Docker/docker进阶/swarm-diagram.png)
+![swarm-diagram.png](./images/swarm-diagram.png)
 
 大多数管理节点存活才可用
 

@@ -1340,7 +1340,7 @@ public class StudentDaoImpl implements StudentDao {
 
 ##### 抽取配置文件的好处：
 
-![image-20201108143309924.png](/posts/实训笔记/JDBC-01/image-20201108143309924.png)
+![image-20201108143309924.png](./images/image-20201108143309924.png)
 
 
 

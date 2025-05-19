@@ -56,7 +56,7 @@ cp /root/nginx/objs/nginx /usr/local/nginx/sbin
 #可以看到这里出现了configure arguments: --with-http_ssl_module   证明已经安装成功
 ```
 
-![4fb721313eefbd37d2330a19b2591bce.png](/posts/nginx/https配置/4fb721313eefbd37d2330a19b2591bce.png)
+![4fb721313eefbd37d2330a19b2591bce.png](./images/4fb721313eefbd37d2330a19b2591bce.png)
 
 提示：这里替换后在执行 -V命令如果提示权限不足，先给这个nginx文件提升下权限
 

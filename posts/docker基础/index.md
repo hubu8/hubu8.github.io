@@ -1311,7 +1311,7 @@ $ sudo docker push registry.cn-hangzhou.aliyuncs.com/jda/testdockerjd:[镜像版
 
 ![u=158836981,2597373737&fm=26&gp=0.png](./images/u=158836981,2597373737&fm=26&gp=0.png)
 
-![186C0EC8DE5EC3A36385E029611A8D2E.jpg](/posts/Docker/docker基础/186C0EC8DE5EC3A36385E029611A8D2E.jpg)
+![186C0EC8DE5EC3A36385E029611A8D2E.jpg](./images/186C0EC8DE5EC3A36385E029611A8D2E.jpg)
 
 # Docker网络
 

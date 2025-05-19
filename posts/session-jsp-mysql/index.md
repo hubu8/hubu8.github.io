@@ -521,7 +521,7 @@ DROP DATABASE db03;
 
 
 
-![image-20201101185611413](/实训/jsp/image-20201101185611413.png)
+![image-20201101185611413](./images/image-20201101185611413.png)
 
 > 对库的操作： 都是database关键字；
 >

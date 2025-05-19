@@ -23,7 +23,7 @@
 
 DCL:
 
-![image-20210525214256846](images/image-20210525214256846.png)
+![image-20210525214256846](/posts/java/面试/java面试/image-20210525214256846.png)
 
 1. Synchronized关键字用来加锁，Volatile只是保持变量的线程可见性，通常适用于一个线程写，多个线程读的场景
 2. 不能。Volatile只能保证线程可见性，不能保证原子性，
@@ -33,7 +33,7 @@ DCL:
 
 1. Java的锁机制就是在对象的Markword中记录一个锁的状态，偏向锁、轻量级锁、重量级锁对应不同的锁标志位状态
 2. Java的锁机制就是根据资源竞争的激烈程度不断进行锁升级的过程。
-3. ![img](images/dingyue.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg)
+3. ![img](/posts/java/面试/java面试/dingyue.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg)
 
 ### 谈谈你对AQS的理解，AQS如何实现可重入锁？
 

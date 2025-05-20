@@ -4,15 +4,7 @@
         <link>https://hubu8.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
         <description>前端 - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 03 Jan 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
-    <title>Demo</title>
-    <link>https://hubu8.github.io/posts/demo/</link>
-    <pubDate>Fri, 03 Jan 2025 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/demo/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 25 Dec 2023 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
     <title>JavaScript基础语法</title>
     <link>https://hubu8.github.io/posts/javascript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
     <pubDate>Mon, 25 Dec 2023 08:59:26 &#43;0800</pubDate>
@@ -82,6 +74,14 @@
     <pubDate>Wed, 12 May 2021 02:08:31 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/posts/colorui%E4%BA%A4%E4%BA%92%E7%BB%84%E4%BB%B6/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>ColorUI扩展组件</title>
+    <link>https://hubu8.github.io/posts/colorui%E6%89%A9%E5%B1%95%E7%BB%84%E4%BB%B6/</link>
+    <pubDate>Wed, 12 May 2021 02:08:31 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/colorui%E6%89%A9%E5%B1%95%E7%BB%84%E4%BB%B6/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

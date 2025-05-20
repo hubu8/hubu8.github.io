@@ -4,9 +4,17 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 02 Aug 2024 08:59:26 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 20 May 2025 08:59:26 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>byte类型取值范围为啥是-128~127</title>
+    <link>https://hubu8.github.io/posts/byte%E7%B1%BB%E5%9E%8B%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4%E4%B8%BA%E5%95%A5%E6%98%AF-128~127/</link>
+    <pubDate>Tue, 20 May 2025 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/byte%E7%B1%BB%E5%9E%8B%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4%E4%B8%BA%E5%95%A5%E6%98%AF-128~127/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>使用有向无环图表示任务的依赖关系</title>
     <link>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</link>
     <pubDate>Fri, 02 Aug 2024 08:59:26 &#43;0800</pubDate>
@@ -76,14 +84,6 @@
     <pubDate>Wed, 21 Feb 2024 07:59:26 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/posts/%E5%BC%80%E5%8F%91%E6%9D%BF%E7%94%A8%E9%87%87%E9%9B%86%E5%8D%A1%E8%BF%9E%E6%8E%A5%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>SpringBoot项目打包瘦身</title>
-    <link>https://hubu8.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</link>
-    <pubDate>Thu, 25 Jan 2024 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E7%98%A6%E8%BA%AB/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

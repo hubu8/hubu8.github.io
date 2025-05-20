@@ -4,7 +4,15 @@
         <link>https://hubu8.github.io/categories/java/</link>
         <description>java - 分类 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 12 Sep 2023 16:00:30 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 20 May 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>byte类型取值范围为啥是-128~127</title>
+    <link>https://hubu8.github.io/posts/byte%E7%B1%BB%E5%9E%8B%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4%E4%B8%BA%E5%95%A5%E6%98%AF-128~127/</link>
+    <pubDate>Tue, 20 May 2025 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/byte%E7%B1%BB%E5%9E%8B%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4%E4%B8%BA%E5%95%A5%E6%98%AF-128~127/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Date Formatting中YYYY与yyyy的区别</title>
     <link>https://hubu8.github.io/posts/date-formatting%E4%B8%ADyyyy%E4%B8%8Eyyyy%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
     <pubDate>Tue, 12 Sep 2023 16:00:30 &#43;0800</pubDate>

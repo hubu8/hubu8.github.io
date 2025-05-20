@@ -28,7 +28,7 @@ Servlet是SUN公司提供的一套规范，名称就叫Servlet规范，它也是
 
 打开官方API网址，在左上部分找到javax.servlet包，在左下部分找到Servlet，如下图显示：
 
-![Servlet的API官网](assets/Servlet的API官网.png)
+![Servlet的API官网](./images/Snipaste_2025-05-20_08-53-04.png)
 
 通过阅读API，我们得到如下信息：
 
@@ -44,12 +44,7 @@ Servlet是SUN公司提供的一套规范，名称就叫Servlet规范，它也是
 
 具体请看下图：
 
-![ServletAPI详解](assets/ServletAPI详解.png)
-
-
-
-
-
+![ServletAPI详解](./images/1a6ba80e7daeba6c8135dde904abce05.png)
 
 
 ## 1.2 Servlet入门
@@ -70,13 +65,11 @@ Servlet是SUN公司提供的一套规范，名称就叫Servlet规范，它也是
 
 **在浏览器访问Servlet**
 
-![测试入门案例执行](assets/测试入门案例执行.png)
-
 ### 1.2.2 Servlet执行过程分析
 
 我们通过浏览器发送请求，请求首先到达Tomcat服务器，由服务器解析请求URL，然后在部署的应用列表中找到我们的应用。接下来，在我们的应用中找应用里的web.xml配置文件，在web.xml中找到FirstServlet的配置，找到后执行service方法，最后由FirstServlet响应客户浏览器。整个过程如下图所示：
 
-![Servlet执行过程图](assets/Servlet执行过程图.jpg)
+![Servlet执行过程图](./images/a75265c7fe500cd3b8cf42a5b332daca.jpeg)
 
 一句话总结执行过程：
 
@@ -89,8 +82,6 @@ Servlet是SUN公司提供的一套规范，名称就叫Servlet规范，它也是
 ### 1.2.3 Servlet类视图
 
 在《Tomcat和Http协议》这天课程和刚才的入门案例中，我们都定义了自己的Servlet，实现的方式都是选择继承GenericServlet，在Servlet的API介绍中，它提出了我们除了继承GenericServlet外还可以继承HttpServlet，通过查阅servlet的类视图，我们看到GenericServlet还有一个子类HttpServlet。同时，在service方法中还有参数ServletRequest和ServletResponse，它们的关系如下图所示：
-
-![image-20210623095137664](/Users/jianwei/Library/Application Support/typora-user-images/image-20210623095137664.png)
 
 
 
@@ -112,15 +103,15 @@ Servlet是SUN公司提供的一套规范，名称就叫Servlet规范，它也是
 
 ​				使用此种方式，表示我们的请求和响应需要和HTTP协议相关。也就是说，我们是通过HTTP协议来访问的。那么每次请求和响应都符合HTTP协议的规范。请求的方式就是HTTP协议所支持的方式（目前我们只知道GET和POST，而实际HTTP协议支持7种请求方式，GET POST PUT DELETE TRACE OPTIONS HEAD )。
 
+![](./images/c773948363f67d2455230d43f7962a5a.png)
+
 #### 2）HttpServlet的使用细节
 
 **第一步：在入门案例的工程中创建一个Servlet继承HttpServlet**
 
 <font color='red'>注意：不要重写任何方法</font>，如下图所示：
 
-![HttpServlet的使用1](assets/HttpServlet的使用1.png)
-
-![HttpServlet的使用2](assets/HttpServlet的使用2.png)
+![HttpServlet的使用1](./images/6a3e1b16579c23a1c8ae78a7a19e95a1.png)
 
 **第二步：部署项目并测试访问**
 
@@ -274,11 +265,6 @@ public class Servlet05 extends HttpServlet {
 >  **什么是多例:**   每次访问该对象，都是一个全新的对象，都是新初始化的一个！ （以前用的  new User()）;
 
 **单例实现的两种方式：**
-
-![image-20201026150101626](assets/image-20201026150101626.png)
-
-
-
 
 
 ### 2.单例线程不安全，那么我们为什么还要使用？--- 如何避免线程问题？

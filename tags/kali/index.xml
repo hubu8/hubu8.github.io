@@ -4,7 +4,31 @@
         <link>https://hubu8.github.io/tags/kali/</link>
         <description>kali - 标签 - Eccentric&#39;s Note</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sat, 24 May 2025 10:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/kali/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 27 May 2025 13:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/kali/" rel="self" type="application/rss+xml" /><item>
+    <title>Sqlmap-SQL注入漏洞</title>
+    <link>https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</link>
+    <pubDate>Tue, 27 May 2025 13:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>hydra-暴力破解工具-支持多种协议</title>
+    <link>https://hubu8.github.io/posts/hydra-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7-%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E5%8D%8F%E8%AE%AE/</link>
+    <pubDate>Tue, 27 May 2025 09:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/hydra-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7-%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E5%8D%8F%E8%AE%AE/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Nikto-服务器安全漏洞扫描</title>
+    <link>https://hubu8.github.io/posts/nikto-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/</link>
+    <pubDate>Tue, 27 May 2025 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/nikto-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>网站系统账户破解-BurpSuite</title>
     <link>https://hubu8.github.io/posts/%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F%E8%B4%A6%E6%88%B7%E7%A0%B4%E8%A7%A3-burpsuite/</link>
     <pubDate>Sat, 24 May 2025 10:59:26 &#43;0800</pubDate>

@@ -20,6 +20,8 @@
 
 {{< friend name="美团技术团队" url="https://tech.meituan.com/" logo="https://s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:1040877d/favicon-mt.ico" word="涵盖了前端（Web、iOS和Android）、后台、系统、算法、测试、运维、大数据等技术领域" >}}
 
-{{< friend name="美团技术团队" url="http://xh3qf1665858.vicp.fun"  word="文件管理工具" >}}
+{{< friend name="文件管理工具" url="http://xh3qf1665858.vicp.fun"  word="文件管理工具" >}}
+{{< friend name="IT类电子书" url="https://it-ebooks.info/"  word="IT类电子书" >}}
+
 
 

@@ -22,7 +22,7 @@
 
 {{< friend name="文件管理工具" url="http://xh3qf1665858.vicp.fun"  word="文件管理工具" >}}
 {{< friend name="IT类电子书" url="https://it-ebooks.info/"  word="IT类电子书" >}}
-
+{{< friend name="数据转换工具" url="https://www.json.cm/"  word="数据转换工具" >}}
 
 
 

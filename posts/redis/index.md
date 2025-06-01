@@ -9,7 +9,7 @@
 
 > 1、单机Mysql时代
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020082010365930.png#pic_center)
+![image-20250601191447497](images/image-20250601191447497.png)
 
 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出现以下问题
 
@@ -21,7 +21,7 @@
 
 网站80%的情况都是在读，每次都要去查询数据库的话就十分的麻烦！所以说我们希望减轻数据库的压力，我们可以使用缓存来保证效率！
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820103713734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![image-20250601191514395](images/image-20250601191514395.png)
 
 优化过程经历了以下几个过程：
 
@@ -31,7 +31,7 @@
 
 > 3、分库分表 + 水平拆分 + Mysql集群
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820103739584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![image-20250601191546417](images/image-20250601191546417.png)
 
 > 4、如今最近的年代
 
@@ -39,7 +39,7 @@
 
 > 目前一个基本的互联网项目
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820103804572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/59f182920cd7f4f1441944bf1749da3a.png)
 
 > 为什么要用NoSQL ？
 
@@ -110,9 +110,9 @@ NoSQL泛指非关系型数据库，随着web2.0互联网的诞生，传统的关
 
 推荐阅读：阿里云的这群疯子https://yq.aliyun.com/articles/653511
 
-![1](https://img-blog.csdnimg.cn/20200820103829446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![img](images/919333fe800a7f5d192cdd79b4a8bc13.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820103851613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/8d0d8c57041b71335a6c3a44f2e6e626.png)
 
 ```bash
 # 商品信息
@@ -218,9 +218,13 @@ windows版本的Redis已经停更很久了…
 https://github.com/dmajkic/redis
 
 1. 解压安装包
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820103922318.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+   ![在这里插入图片描述](images/da34dcd914f6da300f3bbf2e034cfd94.png)
+
 2. 开启redis-server.exe
-3. 启动redis-cli.exe测试![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820103950934.png#pic_center)
+
+3. 启动redis-cli.exe测试
+
+   ![在这里插入图片描述](images/658f172b06cca7a84a056c56f8b36232.png)
 
 ### Linux安装
 
@@ -228,7 +232,7 @@ https://github.com/dmajkic/redis
 
 2. 解压Redis的安装包！程序一般放在 `/opt` 目录下
 
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820104016426.png#pic_center)
+   ![在这里插入图片描述](images/2ef4cb75b1f5a44fe47911094c90af62.png)
 
 3. 基本环境安装
 
@@ -240,33 +244,35 @@ https://github.com/dmajkic/redis
    make install
    ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820104048327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/25bf32565502840701b372b11eaf596b.png)
 
-1. redis默认安装路径 `/usr/local/bin`![在这里插入图片描述](https://img-blog.csdnimg.cn/20200820104140692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+1. redis默认安装路径 `/usr/local/bin
+
+   ![在这里插入图片描述](images/b8cff6d655a8882890d322180b88499d.png)
 
 2. 将redis的配置文件复制到 程序安装目录 `/usr/local/bin/kconfig`下
 
-   ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-hxvGQ47d-1597890996509)(狂神说 Redis.assets/image-20200813114000868.png)]](https://img-blog.csdnimg.cn/20200820104157817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+   ![在这里插入图片描述](images/5a958186dc6b02d3970317151d8a0046.png)
 
 3. redis默认不是后台启动的，需要修改配置文件！
 
-   ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-dDdKTUgd-1597890996510)(狂神说 Redis.assets/image-20200813114019063.png)]](https://img-blog.csdnimg.cn/20200820104213706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+   ![在这里插入图片描述](images/6c3b9252fb9fc09293e640b303a291ec.png)
 
 4. 通过制定的配置文件启动redis服务
 
-   ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-jOypL57Z-1597890996511)(狂神说 Redis.assets/image-20200813114030597.png)]](https://img-blog.csdnimg.cn/20200820104228556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+   ![在这里插入图片描述](images/1e42dd99fa2b4a33f6420e28e8ba369d.png)
 
 5. 使用redis-cli连接指定的端口号测试，Redis的默认端口6379
 
-   ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LnDaISQ4-1597890996512)(狂神说 Redis.assets/image-20200813114045299.png)]](https://img-blog.csdnimg.cn/20200820104243223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+   ![在这里插入图片描述](images/81a4415cfd2225f6e1ca88c43ffb1a66-174877678622225.png)
 
 6. 查看redis进程是否开启
 
-   ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-9PhN1jC1-1597890996513)(狂神说 Redis.assets/image-20200813114103769.png)]](https://img-blog.csdnimg.cn/20200820104300532.png#pic_center)
+   ![在这里插入图片描述](images/0ec80091515d0dbbf23a0492e97f4763.png)
 
 7. 关闭Redis服务 `shutdown`
 
-   ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Y54EuOYm-1597890996514)(狂神说 Redis.assets/image-20200813114116691.png)]](https://img-blog.csdnimg.cn/20200820104314297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+   ![在这里插入图片描述](images/b1a14b77f02c52968b85191ed08280e6.png)
 
 8. 再次查看进程是否存在
 
@@ -286,13 +292,13 @@ redis-benchmark -h localhost -p 6379 -c 100 -n 100000
 12
 ```
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-plMshjFg-1597890996515)(狂神说 Redis.assets/image-20200813114143365.png)]](https://img-blog.csdnimg.cn/20200820104343472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/636f355a2c8101d301cce935e569473b.png)
 
 ### 基础知识
 
 > redis默认有16个数据库
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-v2S3n3Si-1597890996516)(狂神说 Redis.assets/image-20200813114158322.png)]](https://img-blog.csdnimg.cn/20200820104357466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/abcf07343ed7de1b2b658c5f337b9364.png)
 
 默认使用的第0个;
 
@@ -466,7 +472,7 @@ String类似的使用场景：value除了是字符串还可以是数字，用途
 
 首先我们列表，可以经过规则定义将其变为队列、栈、双端队列等
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-VPvbIltc-1597890996518)(狂神说 Redis.assets/image-20200813114255459.png)]](https://img-blog.csdnimg.cn/20200820104440398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/d026f660d152d90ad99f5b944ee05a1d.png)
 
 正如图Redis中List是可以进行双端操作的，所以命令也就分为了LXXX和RLLL两类，有时候L也表示List例如LLEN
 
@@ -1498,29 +1504,29 @@ springboot 2.x后 ，原来使用的 Jedis 被 lettuce 替换。
 
 我们在学习SpringBoot自动配置的原理时，整合一个组件并进行配置一定会有一个自动配置类xxxAutoConfiguration,并且在spring.factories中也一定能找到这个类的完全限定名。Redis也不例外。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214531573.png)
+![在这里插入图片描述](images/b94619ac9e353afb8227e256c60db53c.png)
 
 那么就一定还存在一个RedisProperties类
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214554661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/2d474c55b1759d0ed77e4378d78afe13.png)
 
 之前我们说SpringBoot2.x后默认使用Lettuce来替换Jedis，现在我们就能来验证了。
 
 先看Jedis:
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214607475.png)
+![在这里插入图片描述](images/ba6e29ad7d0fd32e1ca0f05a625e8bf9.png)
 
 @ConditionalOnClass注解中有两个类是默认不存在的，所以Jedis是无法生效的
 
 然后再看Lettuce：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214618179.png)
+![在这里插入图片描述](images/ba6e29ad7d0fd32e1ca0f05a625e8bf9-174877694251846.png)
 
 完美生效。
 
 现在我们回到RedisAutoConfiguratio
 
-![img](https://img-blog.csdnimg.cn/2020051321462777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/d77036671bc8d66bc47d11c6c01706b7.png)
 
 只有两个简单的Bean
 
@@ -1533,15 +1539,15 @@ springboot 2.x后 ，原来使用的 Jedis 被 lettuce 替换。
 
 说完这些，我们需要知道如何编写配置文件然后连接Redis，就需要阅读RedisProperties
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214638238.png)
+![在这里插入图片描述](images/3b4d1842c0b5dcd36ee3c03418fd2b14.png)
 
 这是一些基本的配置属性。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214649380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/d6e651d5b0361eb4050e56ce7176130f.png)
 
 还有一些连接池相关的配置。注意使用时一定使用Lettuce的连接池。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214700372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/f810df4d5ab85521ca034da2b3d33798.png)
 
 1. 编写配置文件
 
@@ -1585,23 +1591,23 @@ springboot 2.x后 ，原来使用的 Jedis 被 lettuce 替换。
 
    **此时我们回到Redis查看数据时候，惊奇发现全是乱码，可是程序中可以正常输出：**
 
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214734520.png)
+   ![在这里插入图片描述](images/84b7788d7cec823ed3599641a0bb5b85.png)
 
     这时候就关系到存储对象的序列化问题，在网络中传输的对象也是一样需要序列化，否者就全是乱码。
 
    我们转到看那个默认的RedisTemplate内部什么样子：
 
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214746506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+   ![在这里插入图片描述](images/c5571cf465ebd63e0805f287437c03c4.png)
 
    在最开始就能看到几个关于序列化的参数。
 
    默认的序列化器是采用JDK序列化器
 
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214757247.png)
+   ![在这里插入图片描述](images/a00049ed4e133572ee3996d411477388.png)
 
    而默认的RedisTemplate中的所有序列化器都是使用这个序列化器：
 
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214809494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+   ![在这里插入图片描述](images/cd50ad8a6abb927c796b38ad25e30c8d.png)
 
    后续我们定制RedisTemplate就可以对其进行修改。
 
@@ -1609,11 +1615,11 @@ springboot 2.x后 ，原来使用的 Jedis 被 lettuce 替换。
 
    - 直接调用RedisSerializer的静态方法来返回序列化器，然后set
 
-     ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214818682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+     ![在这里插入图片描述](images/ff1a19855ad1c07828c06257b2f75103.png)
 
    - 自己new 相应的实现类，然后set
 
-     ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214827233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+     ![在这里插入图片描述](images/08927b09435723ddb087c4efafafb5e9.png)
 
 4. **定制RedisTemplate的模板：**
 
@@ -1663,23 +1669,23 @@ https://www.cnblogs.com/zhzhlong/p/11434284.html
 
 > 容量单位不区分大小写，G和GB有区别
 
-![img](https://img-blog.csdnimg.cn/2020051321485460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/f56d8c50798d79bad287f13599645ec3.png)
 
 > 可以使用 include 组合多个配置问题
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214902552.png)
+![在这里插入图片描述](images/233355697a726becee7b922526782014.png)
 
 > 网络配置
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214912813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/a100af9526a3e055f4452f2847754449.png)
 
 > 日志输出级别
 
-![img](https://img-blog.csdnimg.cn/20200513214923678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/41806b50ad0ffb81a938d70d046118d6.png)
 
 > 日志输出文件
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214933713.png)
+![在这里插入图片描述](images/c5532e42f657a5c282629d39543b5dab.png)
 
 > 持久化规则
 
@@ -1690,21 +1696,21 @@ https://www.cnblogs.com/zhzhlong/p/11434284.html
 - RDB
 - AOF
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214944964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/8c4d77e425fc022cba939df702553d64.png)
 
 > RDB文件相关
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513214955679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/f39fad10b30ea2eca49f501c17f49948.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215006207.png)
+![在这里插入图片描述](images/dc66cd5b32f280199037c9cb610c940b.png)
 
 > 主从复制
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215016371.png)
+![在这里插入图片描述](images/7ca10110cc06d93112124c047713a731.png)
 
 > Security模块中进行密码设置
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215026143.png)
+![在这里插入图片描述](images/d98f36beaf1231b125a2a008def51721.png)
 
 > 客户端连接相关
 
@@ -1739,9 +1745,9 @@ config set maxmemory-policy volatile-lru
 
 > AOF相关部分
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215037918.png)
+![在这里插入图片描述](images/77203c9996839bc190adb5f879ef5393.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215047999.png)
+![在这里插入图片描述](images/8bac4c476c7287c0da7fd2009ad5bc15.png)
 
 ## 十、持久化—RDB
 
@@ -1755,7 +1761,7 @@ RDB：Redis Databases
 
 在指定时间间隔后，将内存中的数据集快照写入数据库 ；在恢复时候，直接读取快照文件，进行数据的恢复 ；
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215126515.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/042287b42d70f963ff8025cfd272c178.png)
 
 默认情况下， Redis 将数据库快照保存在名字为 dump.rdb的二进制文件中。文件名可以在配置文件中进行自定义。
 
@@ -1771,7 +1777,7 @@ RDB：Redis Databases
 
 这种工作方式使得 Redis 可以从写时复制（copy-on-write）机制中获益(因为是使用子进程进行写操作，而父进程依然可以接收来自客户端的请求。)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215141519.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/f18f2e343c689fe01f5013728bbc50a7.png)
 
 ### 触发机制
 
@@ -1787,7 +1793,7 @@ RDB：Redis Databases
 
 > 由于 `save` 命令是同步命令，会占用Redis的主进程。若Redis数据非常多时，`save`命令执行速度会非常慢，阻塞所有客户端的请求。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215150892.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/087da0868f0f80409cd0a1fbe30c9e2b.png)
 
 #### flushall命令
 
@@ -1799,15 +1805,15 @@ RDB：Redis Databases
 
 > 可以通过配置文件对 Redis 进行设置， 让它在“ N 秒内数据集至少有 M 个改动”这一条件被满足时， 自动进行数据集保存操作。
 >
-> ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215205970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+> ![在这里插入图片描述](images/fd068b9ffc34461feac30fa8253257a1.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215220858.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/73f52404b16b4e50c4d38444de142bb1.png)
 
 #### bgsave
 
 `bgsave` 是异步进行，进行持久化的时候，`redis` 还可以将继续响应客户端请求 ；
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020051321523151.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/53901ee1c54a5819ffa5a9f35d6fb186.png)
 
 **bgsave和save对比**
 
@@ -1847,7 +1853,7 @@ RDB：Redis Databases
 
 如果要使用AOF，需要修改配置文件：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215247113.png)
+![在这里插入图片描述](images/86c764ca1d45a99bb726b9a1c2f5738d.png)
 
 `appendonly no yes`则表示启用AOF
 
@@ -1906,11 +1912,11 @@ Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消
 
 下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215523258.png)
+![在这里插入图片描述](images/bb7fe473fed33c1f6211b3b54716fd54.png)
 
 当有新消息通过 PUBLISH 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020051321553483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/867ed0544585074c02ba344bdce0b1e9.png)
 
 ### 命令
 
@@ -1954,7 +1960,7 @@ Reading messages... (press Ctrl-C to quit) # 等待接收消息
 
 每个 Redis 服务器进程都维持着一个表示服务器状态的 redis.h/redisServer 结构， 结构的 pubsub_channels 属性是一个字典， 这个字典就用于保存订阅频道的信息，其中，字典的键为正在被订阅的频道， 而字典的值则是一个链表， 链表中保存了所有订阅这个频道的客户端。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020051321554964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/6a9ff56ace179fff394b53b6eaf4e1f3.png)
 
 客户端订阅，就被链接到对应频道的链表的尾部，退订则就是将客户端节点从链表中移除。
 
@@ -2021,7 +2027,7 @@ repl_backlog_histlen:0
 
 启动单机多服务集群：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215610163.png)
+![在这里插入图片描述](images/de05158c3584c4647b765326ce3ce17c.png)
 
 ### 一主二从配置
 
@@ -2031,15 +2037,15 @@ repl_backlog_histlen:0
 
 使用`SLAVEOF host port`就可以为从机配置主机了。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215637483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/7a16989a8f56a61048c08047de07afce.png)
 
 然后主机上也能看到从机的状态：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215645778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/d20f7cdb94ecc5ce08eefbc043eef344.png)
 
 我们这里是使用命令搭建，是暂时的，==真实开发中应该在从机的配置文件中进行配置，==这样的话是永久的。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215654634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/de9efa13c93ffa05b286d9d4df95e85b.png)
 
 ### 使用规则
 
@@ -2079,7 +2085,7 @@ repl_backlog_histlen:0
 
 单机单个哨兵
 
-[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-2ENYVAPp-1597890996527)(狂神说 Redis.assets/image-20200818233231154.png)]
+![在这里插入图片描述](images/0a78b6d9307db62b853e3db6c8bfadb9.png)
 
 哨兵的作用：
 
@@ -2088,7 +2094,7 @@ repl_backlog_histlen:0
 
 多哨兵模式
 
-[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ga1RyfVc-1597890996528)(狂神说 Redis.assets/image-20200818233316478.png)]
+![在这里插入图片描述](images/ee148e885f5ea57203c92e154aa241fe.png)
 
 哨兵的核心配置
 
@@ -2106,11 +2112,11 @@ redis-sentinel xxx/sentinel.conf
 
 成功启动哨兵模式
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215752444.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/594ae2f67f90e3bed1df6f59f6143f72.png)
 
 此时哨兵监视着我们的主机6379，当我们断开主机后：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215806972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/af08ea84e6cbd0abae92821ab8c53dc1.png)
 
 > 哨兵模式优缺点
 
@@ -2216,13 +2222,13 @@ sentinel client-reconfig-script mymaster /var/redis/reconfig.sh
 
 对所有可能查询的参数以Hash的形式存储，以便快速确定是否存在这个值，在控制层先进行拦截校验，校验不通过直接打回，减轻了存储系统的压力。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215824722.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/ddb857edf822737ae88c541216420073.png)
 
 **缓存空对象**
 
 一次请求若在缓存和数据库中都没找到，就在缓存中方一个空对象用于处理后续这个请求。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215836317.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/12738e5ea449c14797ce06b750fa1392.png)
 
  这样做有一个缺陷：存储空对象也需要空间，大量的空对象会耗费一定的空间，存储效率并不高。解决这个缺陷的方式就是设置较短过期时间
 
@@ -2252,7 +2258,7 @@ sentinel client-reconfig-script mymaster /var/redis/reconfig.sh
 
 大量的key设置了相同的过期时间，导致在缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200513215850428.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/39c4da35fe94fec343b54dc4b1448d47.png)
 
 > 解决方案
 

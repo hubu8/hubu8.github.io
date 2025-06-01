@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/redis\/"
-        },"genre": "posts","keywords": "Redis","wordcount":  23344 ,
+        },"genre": "posts","keywords": "Redis","wordcount":  23210 ,
         "url": "https:\/\/hubu8.github.io\/posts\/redis\/","datePublished": "2021-04-06T20:23:59+08:00","dateModified": "2021-04-06T20:23:59+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 23344 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 23210 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 47 分钟&nbsp;<span id="/posts/redis/" class="leancloud_visitors" data-flag-title="Redis">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -234,11 +234,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/2020082010365930.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/2020082010365930.png#pic_center, https://img-blog.csdnimg.cn/2020082010365930.png#pic_center 1.5x, https://img-blog.csdnimg.cn/2020082010365930.png#pic_center 2x"
+        data-src="/posts/redis/images/image-20250601191447497.png"
+        data-srcset="/posts/redis/images/image-20250601191447497.png, /posts/redis/images/image-20250601191447497.png 1.5x, /posts/redis/images/image-20250601191447497.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/2020082010365930.png#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/image-20250601191447497.png"
+        title="image-20250601191447497" width="1174" height="254" /></p>
 <p>90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出现以下问题</p>
 <ol>
 <li>数据量增加到一定程度，单机数据库就放不下了</li>
@@ -252,11 +252,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103713734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103713734.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820103713734.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103713734.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/image-20250601191514395.png"
+        data-srcset="/posts/redis/images/image-20250601191514395.png, /posts/redis/images/image-20250601191514395.png 1.5x, /posts/redis/images/image-20250601191514395.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103713734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/image-20250601191514395.png"
+        title="image-20250601191514395" width="1170" height="587" /></p>
 <p>优化过程经历了以下几个过程：</p>
 <ol>
 <li>优化数据库的数据结构和索引(难度大)</li>
@@ -269,11 +269,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103739584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103739584.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820103739584.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103739584.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/image-20250601191546417.png"
+        data-srcset="/posts/redis/images/image-20250601191546417.png, /posts/redis/images/image-20250601191546417.png 1.5x, /posts/redis/images/image-20250601191546417.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103739584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/image-20250601191546417.png"
+        title="image-20250601191546417" width="860" height="697" /></p>
 <blockquote>
 <p>4、如今最近的年代</p>
 </blockquote>
@@ -284,11 +284,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103804572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103804572.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820103804572.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103804572.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/59f182920cd7f4f1441944bf1749da3a.png"
+        data-srcset="/posts/redis/images/59f182920cd7f4f1441944bf1749da3a.png, /posts/redis/images/59f182920cd7f4f1441944bf1749da3a.png 1.5x, /posts/redis/images/59f182920cd7f4f1441944bf1749da3a.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103804572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/59f182920cd7f4f1441944bf1749da3a.png"
+        title="在这里插入图片描述" width="1131" height="516" /></p>
 <blockquote>
 <p>为什么要用NoSQL ？</p>
 </blockquote>
@@ -380,19 +380,19 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103829446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103829446.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820103829446.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103829446.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/919333fe800a7f5d192cdd79b4a8bc13.png"
+        data-srcset="/posts/redis/images/919333fe800a7f5d192cdd79b4a8bc13.png, /posts/redis/images/919333fe800a7f5d192cdd79b4a8bc13.png 1.5x, /posts/redis/images/919333fe800a7f5d192cdd79b4a8bc13.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103829446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="1" /></p>
+        alt="/posts/redis/images/919333fe800a7f5d192cdd79b4a8bc13.png"
+        title="img" width="1056" height="813" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103851613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103851613.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820103851613.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103851613.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/8d0d8c57041b71335a6c3a44f2e6e626.png"
+        data-srcset="/posts/redis/images/8d0d8c57041b71335a6c3a44f2e6e626.png, /posts/redis/images/8d0d8c57041b71335a6c3a44f2e6e626.png 1.5x, /posts/redis/images/8d0d8c57041b71335a6c3a44f2e6e626.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103851613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/8d0d8c57041b71335a6c3a44f2e6e626.png"
+        title="在这里插入图片描述" width="1130" height="836" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -568,24 +568,31 @@
 <h3 id="windows安装">Windows安装</h3>
 <p><a href="https://github.com/dmajkic/redis" target="_blank" rel="noopener noreffer">https://github.com/dmajkic/redis</a></p>
 <ol>
-<li>解压安装包
+<li>
+<p>解压安装包
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103922318.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103922318.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820103922318.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103922318.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/da34dcd914f6da300f3bbf2e034cfd94.png"
+        data-srcset="/posts/redis/images/da34dcd914f6da300f3bbf2e034cfd94.png, /posts/redis/images/da34dcd914f6da300f3bbf2e034cfd94.png 1.5x, /posts/redis/images/da34dcd914f6da300f3bbf2e034cfd94.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103922318.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></li>
-<li>开启redis-server.exe</li>
-<li>启动redis-cli.exe测试<img
+        alt="/posts/redis/images/da34dcd914f6da300f3bbf2e034cfd94.png"
+        title="在这里插入图片描述" width="1103" height="637" /></p>
+</li>
+<li>
+<p>开启redis-server.exe</p>
+</li>
+<li>
+<p>启动redis-cli.exe测试</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820103950934.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820103950934.png#pic_center, https://img-blog.csdnimg.cn/20200820103950934.png#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820103950934.png#pic_center 2x"
+        data-src="/posts/redis/images/658f172b06cca7a84a056c56f8b36232.png"
+        data-srcset="/posts/redis/images/658f172b06cca7a84a056c56f8b36232.png, /posts/redis/images/658f172b06cca7a84a056c56f8b36232.png 1.5x, /posts/redis/images/658f172b06cca7a84a056c56f8b36232.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820103950934.png#pic_center"
-        title="在这里插入图片描述" /></li>
+        alt="/posts/redis/images/658f172b06cca7a84a056c56f8b36232.png"
+        title="在这里插入图片描述" width="1062" height="198" /></p>
+</li>
 </ol>
 <h3 id="linux安装">Linux安装</h3>
 <ol>
@@ -597,11 +604,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104016426.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104016426.png#pic_center, https://img-blog.csdnimg.cn/20200820104016426.png#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104016426.png#pic_center 2x"
+        data-src="/posts/redis/images/2ef4cb75b1f5a44fe47911094c90af62.png"
+        data-srcset="/posts/redis/images/2ef4cb75b1f5a44fe47911094c90af62.png, /posts/redis/images/2ef4cb75b1f5a44fe47911094c90af62.png 1.5x, /posts/redis/images/2ef4cb75b1f5a44fe47911094c90af62.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104016426.png#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/2ef4cb75b1f5a44fe47911094c90af62.png"
+        title="在这里插入图片描述" width="1006" height="155" /></p>
 </li>
 <li>
 <p>基本环境安装</p>
@@ -626,87 +633,88 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104048327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104048327.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104048327.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104048327.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/25bf32565502840701b372b11eaf596b.png"
+        data-srcset="/posts/redis/images/25bf32565502840701b372b11eaf596b.png, /posts/redis/images/25bf32565502840701b372b11eaf596b.png 1.5x, /posts/redis/images/25bf32565502840701b372b11eaf596b.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104048327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/25bf32565502840701b372b11eaf596b.png"
+        title="在这里插入图片描述" width="1085" height="579" /></p>
 <ol>
 <li>
-<p>redis默认安装路径 <code>/usr/local/bin</code><img
+<p>redis默认安装路径 `/usr/local/bin</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104140692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104140692.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104140692.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104140692.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/b8cff6d655a8882890d322180b88499d.png"
+        data-srcset="/posts/redis/images/b8cff6d655a8882890d322180b88499d.png, /posts/redis/images/b8cff6d655a8882890d322180b88499d.png 1.5x, /posts/redis/images/b8cff6d655a8882890d322180b88499d.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104140692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/b8cff6d655a8882890d322180b88499d.png"
+        title="在这里插入图片描述" width="1098" height="315" /></p>
 </li>
 <li>
 <p>将redis的配置文件复制到 程序安装目录 <code>/usr/local/bin/kconfig</code>下</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104157817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104157817.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104157817.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104157817.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/5a958186dc6b02d3970317151d8a0046.png"
+        data-srcset="/posts/redis/images/5a958186dc6b02d3970317151d8a0046.png, /posts/redis/images/5a958186dc6b02d3970317151d8a0046.png 1.5x, /posts/redis/images/5a958186dc6b02d3970317151d8a0046.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104157817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-hxvGQ47d-1597890996509)(狂神说 Redis.assets/image-20200813114000868.png)]" /></p>
+        alt="/posts/redis/images/5a958186dc6b02d3970317151d8a0046.png"
+        title="在这里插入图片描述" width="1102" height="223" /></p>
 </li>
 <li>
 <p>redis默认不是后台启动的，需要修改配置文件！</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104213706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104213706.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104213706.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104213706.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/6c3b9252fb9fc09293e640b303a291ec.png"
+        data-srcset="/posts/redis/images/6c3b9252fb9fc09293e640b303a291ec.png, /posts/redis/images/6c3b9252fb9fc09293e640b303a291ec.png 1.5x, /posts/redis/images/6c3b9252fb9fc09293e640b303a291ec.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104213706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-dDdKTUgd-1597890996510)(狂神说 Redis.assets/image-20200813114019063.png)]" /></p>
+        alt="/posts/redis/images/6c3b9252fb9fc09293e640b303a291ec.png"
+        title="在这里插入图片描述" width="1088" height="354" /></p>
 </li>
 <li>
 <p>通过制定的配置文件启动redis服务</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104228556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104228556.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104228556.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104228556.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/1e42dd99fa2b4a33f6420e28e8ba369d.png"
+        data-srcset="/posts/redis/images/1e42dd99fa2b4a33f6420e28e8ba369d.png, /posts/redis/images/1e42dd99fa2b4a33f6420e28e8ba369d.png 1.5x, /posts/redis/images/1e42dd99fa2b4a33f6420e28e8ba369d.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104228556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-jOypL57Z-1597890996511)(狂神说 Redis.assets/image-20200813114030597.png)]" /></p>
+        alt="/posts/redis/images/1e42dd99fa2b4a33f6420e28e8ba369d.png"
+        title="在这里插入图片描述" width="1101" height="255" /></p>
 </li>
 <li>
 <p>使用redis-cli连接指定的端口号测试，Redis的默认端口6379</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104243223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104243223.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104243223.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104243223.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/81a4415cfd2225f6e1ca88c43ffb1a66-174877678622225.png"
+        data-srcset="/posts/redis/images/81a4415cfd2225f6e1ca88c43ffb1a66-174877678622225.png, /posts/redis/images/81a4415cfd2225f6e1ca88c43ffb1a66-174877678622225.png 1.5x, /posts/redis/images/81a4415cfd2225f6e1ca88c43ffb1a66-174877678622225.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104243223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LnDaISQ4-1597890996512)(狂神说 Redis.assets/image-20200813114045299.png)]" /></p>
+        alt="/posts/redis/images/81a4415cfd2225f6e1ca88c43ffb1a66-174877678622225.png"
+        title="在这里插入图片描述" width="986" height="421" /></p>
 </li>
 <li>
 <p>查看redis进程是否开启</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104300532.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104300532.png#pic_center, https://img-blog.csdnimg.cn/20200820104300532.png#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104300532.png#pic_center 2x"
+        data-src="/posts/redis/images/0ec80091515d0dbbf23a0492e97f4763.png"
+        data-srcset="/posts/redis/images/0ec80091515d0dbbf23a0492e97f4763.png, /posts/redis/images/0ec80091515d0dbbf23a0492e97f4763.png 1.5x, /posts/redis/images/0ec80091515d0dbbf23a0492e97f4763.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104300532.png#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-9PhN1jC1-1597890996513)(狂神说 Redis.assets/image-20200813114103769.png)]" /></p>
+        alt="/posts/redis/images/0ec80091515d0dbbf23a0492e97f4763.png"
+        title="在这里插入图片描述" width="1102" height="176" /></p>
 </li>
 <li>
 <p>关闭Redis服务 <code>shutdown</code></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104314297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104314297.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104314297.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104314297.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/b1a14b77f02c52968b85191ed08280e6.png"
+        data-srcset="/posts/redis/images/b1a14b77f02c52968b85191ed08280e6.png, /posts/redis/images/b1a14b77f02c52968b85191ed08280e6.png 1.5x, /posts/redis/images/b1a14b77f02c52968b85191ed08280e6.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104314297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Y54EuOYm-1597890996514)(狂神说 Redis.assets/image-20200813114116691.png)]" /></p>
+        alt="/posts/redis/images/b1a14b77f02c52968b85191ed08280e6.png"
+        title="在这里插入图片描述" width="1102" height="207" /></p>
 </li>
 <li>
 <p>再次查看进程是否存在</p>
@@ -741,11 +749,11 @@
 </div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104343472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104343472.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104343472.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104343472.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/636f355a2c8101d301cce935e569473b.png"
+        data-srcset="/posts/redis/images/636f355a2c8101d301cce935e569473b.png, /posts/redis/images/636f355a2c8101d301cce935e569473b.png 1.5x, /posts/redis/images/636f355a2c8101d301cce935e569473b.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104343472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-plMshjFg-1597890996515)(狂神说 Redis.assets/image-20200813114143365.png)]" /></p>
+        alt="/posts/redis/images/636f355a2c8101d301cce935e569473b.png"
+        title="在这里插入图片描述" width="1124" height="319" /></p>
 <h3 id="基础知识">基础知识</h3>
 <blockquote>
 <p>redis默认有16个数据库</p>
@@ -753,11 +761,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104357466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104357466.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104357466.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104357466.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/abcf07343ed7de1b2b658c5f337b9364.png"
+        data-srcset="/posts/redis/images/abcf07343ed7de1b2b658c5f337b9364.png, /posts/redis/images/abcf07343ed7de1b2b658c5f337b9364.png 1.5x, /posts/redis/images/abcf07343ed7de1b2b658c5f337b9364.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104357466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-v2S3n3Si-1597890996516)(狂神说 Redis.assets/image-20200813114158322.png)]" /></p>
+        alt="/posts/redis/images/abcf07343ed7de1b2b658c5f337b9364.png"
+        title="在这里插入图片描述" width="1116" height="282" /></p>
 <p>默认使用的第0个;</p>
 <p>16个数据库为：DB 0~DB 15
 默认使用DB 0 ，可以使用<code>select n</code>切换到DB n，<code>dbsize</code>可以查看当前数据库的大小，与key数量相关。</p>
@@ -1065,11 +1073,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200820104440398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20200820104440398.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center, https://img-blog.csdnimg.cn/20200820104440398.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 1.5x, https://img-blog.csdnimg.cn/20200820104440398.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf%2csize_16%2ccolor_FFFFFF%2ct_70#pic_center 2x"
+        data-src="/posts/redis/images/d026f660d152d90ad99f5b944ee05a1d.png"
+        data-srcset="/posts/redis/images/d026f660d152d90ad99f5b944ee05a1d.png, /posts/redis/images/d026f660d152d90ad99f5b944ee05a1d.png 1.5x, /posts/redis/images/d026f660d152d90ad99f5b944ee05a1d.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200820104440398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70#pic_center"
-        title="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-VPvbIltc-1597890996518)(狂神说 Redis.assets/image-20200813114255459.png)]" /></p>
+        alt="/posts/redis/images/d026f660d152d90ad99f5b944ee05a1d.png"
+        title="在这里插入图片描述" width="1119" height="306" /></p>
 <p>正如图Redis中List是可以进行双端操作的，所以命令也就分为了LXXX和RLLL两类，有时候L也表示List例如LLEN</p>
 <table>
 <thead>
@@ -3069,50 +3077,50 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214531573.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214531573.png, https://img-blog.csdnimg.cn/20200513214531573.png 1.5x, https://img-blog.csdnimg.cn/20200513214531573.png 2x"
+        data-src="/posts/redis/images/b94619ac9e353afb8227e256c60db53c.png"
+        data-srcset="/posts/redis/images/b94619ac9e353afb8227e256c60db53c.png, /posts/redis/images/b94619ac9e353afb8227e256c60db53c.png 1.5x, /posts/redis/images/b94619ac9e353afb8227e256c60db53c.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214531573.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/b94619ac9e353afb8227e256c60db53c.png"
+        title="在这里插入图片描述" width="1147" height="110" /></p>
 <p>那么就一定还存在一个RedisProperties类</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214554661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214554661.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214554661.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214554661.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/2d474c55b1759d0ed77e4378d78afe13.png"
+        data-srcset="/posts/redis/images/2d474c55b1759d0ed77e4378d78afe13.png, /posts/redis/images/2d474c55b1759d0ed77e4378d78afe13.png 1.5x, /posts/redis/images/2d474c55b1759d0ed77e4378d78afe13.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214554661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/2d474c55b1759d0ed77e4378d78afe13.png"
+        title="在这里插入图片描述" width="1159" height="214" /></p>
 <p>之前我们说SpringBoot2.x后默认使用Lettuce来替换Jedis，现在我们就能来验证了。</p>
 <p>先看Jedis:</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214607475.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214607475.png, https://img-blog.csdnimg.cn/20200513214607475.png 1.5x, https://img-blog.csdnimg.cn/20200513214607475.png 2x"
+        data-src="/posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9.png"
+        data-srcset="/posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9.png, /posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9.png 1.5x, /posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214607475.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9.png"
+        title="在这里插入图片描述" width="1009" height="67" /></p>
 <p>@ConditionalOnClass注解中有两个类是默认不存在的，所以Jedis是无法生效的</p>
 <p>然后再看Lettuce：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214618179.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214618179.png, https://img-blog.csdnimg.cn/20200513214618179.png 1.5x, https://img-blog.csdnimg.cn/20200513214618179.png 2x"
+        data-src="/posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9-174877694251846.png"
+        data-srcset="/posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9-174877694251846.png, /posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9-174877694251846.png 1.5x, /posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9-174877694251846.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214618179.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/ba6e29ad7d0fd32e1ca0f05a625e8bf9-174877694251846.png"
+        title="在这里插入图片描述" width="1009" height="67" /></p>
 <p>完美生效。</p>
 <p>现在我们回到RedisAutoConfiguratio</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/2020051321462777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/2020051321462777.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020051321462777.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020051321462777.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/d77036671bc8d66bc47d11c6c01706b7.png"
+        data-srcset="/posts/redis/images/d77036671bc8d66bc47d11c6c01706b7.png, /posts/redis/images/d77036671bc8d66bc47d11c6c01706b7.png 1.5x, /posts/redis/images/d77036671bc8d66bc47d11c6c01706b7.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/2020051321462777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="img" /></p>
+        alt="/posts/redis/images/d77036671bc8d66bc47d11c6c01706b7.png"
+        title="在这里插入图片描述" width="1256" height="630" /></p>
 <p>只有两个简单的Bean</p>
 <ul>
 <li><strong>RedisTemplate</strong></li>
@@ -3124,29 +3132,29 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214638238.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214638238.png, https://img-blog.csdnimg.cn/20200513214638238.png 1.5x, https://img-blog.csdnimg.cn/20200513214638238.png 2x"
+        data-src="/posts/redis/images/3b4d1842c0b5dcd36ee3c03418fd2b14.png"
+        data-srcset="/posts/redis/images/3b4d1842c0b5dcd36ee3c03418fd2b14.png, /posts/redis/images/3b4d1842c0b5dcd36ee3c03418fd2b14.png 1.5x, /posts/redis/images/3b4d1842c0b5dcd36ee3c03418fd2b14.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214638238.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/3b4d1842c0b5dcd36ee3c03418fd2b14.png"
+        title="在这里插入图片描述" width="763" height="128" /></p>
 <p>这是一些基本的配置属性。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214649380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214649380.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214649380.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214649380.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/d6e651d5b0361eb4050e56ce7176130f.png"
+        data-srcset="/posts/redis/images/d6e651d5b0361eb4050e56ce7176130f.png, /posts/redis/images/d6e651d5b0361eb4050e56ce7176130f.png 1.5x, /posts/redis/images/d6e651d5b0361eb4050e56ce7176130f.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214649380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/d6e651d5b0361eb4050e56ce7176130f.png"
+        title="在这里插入图片描述" width="359" height="377" /></p>
 <p>还有一些连接池相关的配置。注意使用时一定使用Lettuce的连接池。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214700372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214700372.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214700372.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214700372.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/f810df4d5ab85521ca034da2b3d33798.png"
+        data-srcset="/posts/redis/images/f810df4d5ab85521ca034da2b3d33798.png, /posts/redis/images/f810df4d5ab85521ca034da2b3d33798.png 1.5x, /posts/redis/images/f810df4d5ab85521ca034da2b3d33798.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214700372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/f810df4d5ab85521ca034da2b3d33798.png"
+        title="在这里插入图片描述" width="432" height="490" /></p>
 <ol>
 <li>
 <p>编写配置文件</p>
@@ -3228,40 +3236,40 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214734520.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214734520.png, https://img-blog.csdnimg.cn/20200513214734520.png 1.5x, https://img-blog.csdnimg.cn/20200513214734520.png 2x"
+        data-src="/posts/redis/images/84b7788d7cec823ed3599641a0bb5b85.png"
+        data-srcset="/posts/redis/images/84b7788d7cec823ed3599641a0bb5b85.png, /posts/redis/images/84b7788d7cec823ed3599641a0bb5b85.png 1.5x, /posts/redis/images/84b7788d7cec823ed3599641a0bb5b85.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214734520.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/84b7788d7cec823ed3599641a0bb5b85.png"
+        title="在这里插入图片描述" width="525" height="182" /></p>
 <p>这时候就关系到存储对象的序列化问题，在网络中传输的对象也是一样需要序列化，否者就全是乱码。</p>
 <p>我们转到看那个默认的RedisTemplate内部什么样子：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214746506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214746506.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214746506.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214746506.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/c5571cf465ebd63e0805f287437c03c4.png"
+        data-srcset="/posts/redis/images/c5571cf465ebd63e0805f287437c03c4.png, /posts/redis/images/c5571cf465ebd63e0805f287437c03c4.png 1.5x, /posts/redis/images/c5571cf465ebd63e0805f287437c03c4.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214746506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/c5571cf465ebd63e0805f287437c03c4.png"
+        title="在这里插入图片描述" width="1193" height="288" /></p>
 <p>在最开始就能看到几个关于序列化的参数。</p>
 <p>默认的序列化器是采用JDK序列化器</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214757247.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214757247.png, https://img-blog.csdnimg.cn/20200513214757247.png 1.5x, https://img-blog.csdnimg.cn/20200513214757247.png 2x"
+        data-src="/posts/redis/images/a00049ed4e133572ee3996d411477388.png"
+        data-srcset="/posts/redis/images/a00049ed4e133572ee3996d411477388.png, /posts/redis/images/a00049ed4e133572ee3996d411477388.png 1.5x, /posts/redis/images/a00049ed4e133572ee3996d411477388.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214757247.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/a00049ed4e133572ee3996d411477388.png"
+        title="在这里插入图片描述" width="816" height="50" /></p>
 <p>而默认的RedisTemplate中的所有序列化器都是使用这个序列化器：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214809494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214809494.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214809494.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214809494.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/cd50ad8a6abb927c796b38ad25e30c8d.png"
+        data-srcset="/posts/redis/images/cd50ad8a6abb927c796b38ad25e30c8d.png, /posts/redis/images/cd50ad8a6abb927c796b38ad25e30c8d.png 1.5x, /posts/redis/images/cd50ad8a6abb927c796b38ad25e30c8d.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214809494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/cd50ad8a6abb927c796b38ad25e30c8d.png"
+        title="在这里插入图片描述" width="799" height="586" /></p>
 <p>后续我们定制RedisTemplate就可以对其进行修改。</p>
 <p><code>RedisSerializer</code>提供了多种序列化方案：</p>
 <ul>
@@ -3270,22 +3278,22 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214818682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214818682.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214818682.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214818682.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/ff1a19855ad1c07828c06257b2f75103.png"
+        data-srcset="/posts/redis/images/ff1a19855ad1c07828c06257b2f75103.png, /posts/redis/images/ff1a19855ad1c07828c06257b2f75103.png 1.5x, /posts/redis/images/ff1a19855ad1c07828c06257b2f75103.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214818682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/ff1a19855ad1c07828c06257b2f75103.png"
+        title="在这里插入图片描述" width="457" height="312" /></p>
 </li>
 <li>
 <p>自己new 相应的实现类，然后set</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214827233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214827233.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214827233.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214827233.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/08927b09435723ddb087c4efafafb5e9.png"
+        data-srcset="/posts/redis/images/08927b09435723ddb087c4efafafb5e9.png, /posts/redis/images/08927b09435723ddb087c4efafafb5e9.png 1.5x, /posts/redis/images/08927b09435723ddb087c4efafafb5e9.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214827233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/08927b09435723ddb087c4efafafb5e9.png"
+        title="在这里插入图片描述" width="602" height="335" /></p>
 </li>
 </ul>
 </li>
@@ -3360,55 +3368,55 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/2020051321485460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/2020051321485460.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020051321485460.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020051321485460.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/f56d8c50798d79bad287f13599645ec3.png"
+        data-srcset="/posts/redis/images/f56d8c50798d79bad287f13599645ec3.png, /posts/redis/images/f56d8c50798d79bad287f13599645ec3.png 1.5x, /posts/redis/images/f56d8c50798d79bad287f13599645ec3.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/2020051321485460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="img" /></p>
+        alt="/posts/redis/images/f56d8c50798d79bad287f13599645ec3.png"
+        title="在这里插入图片描述" width="1008" height="349" /></p>
 <blockquote>
 <p>可以使用 include 组合多个配置问题</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214902552.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214902552.png, https://img-blog.csdnimg.cn/20200513214902552.png 1.5x, https://img-blog.csdnimg.cn/20200513214902552.png 2x"
+        data-src="/posts/redis/images/233355697a726becee7b922526782014.png"
+        data-srcset="/posts/redis/images/233355697a726becee7b922526782014.png, /posts/redis/images/233355697a726becee7b922526782014.png 1.5x, /posts/redis/images/233355697a726becee7b922526782014.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214902552.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/233355697a726becee7b922526782014.png"
+        title="在这里插入图片描述" width="604" height="99" /></p>
 <blockquote>
 <p>网络配置</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214912813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214912813.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214912813.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214912813.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/a100af9526a3e055f4452f2847754449.png"
+        data-srcset="/posts/redis/images/a100af9526a3e055f4452f2847754449.png, /posts/redis/images/a100af9526a3e055f4452f2847754449.png 1.5x, /posts/redis/images/a100af9526a3e055f4452f2847754449.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214912813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/a100af9526a3e055f4452f2847754449.png"
+        title="在这里插入图片描述" width="1193" height="741" /></p>
 <blockquote>
 <p>日志输出级别</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214923678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214923678.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214923678.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214923678.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/41806b50ad0ffb81a938d70d046118d6.png"
+        data-srcset="/posts/redis/images/41806b50ad0ffb81a938d70d046118d6.png, /posts/redis/images/41806b50ad0ffb81a938d70d046118d6.png 1.5x, /posts/redis/images/41806b50ad0ffb81a938d70d046118d6.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214923678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="img" /></p>
+        alt="/posts/redis/images/41806b50ad0ffb81a938d70d046118d6.png"
+        title="在这里插入图片描述" width="970" height="261" /></p>
 <blockquote>
 <p>日志输出文件</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214933713.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214933713.png, https://img-blog.csdnimg.cn/20200513214933713.png 1.5x, https://img-blog.csdnimg.cn/20200513214933713.png 2x"
+        data-src="/posts/redis/images/c5532e42f657a5c282629d39543b5dab.png"
+        data-srcset="/posts/redis/images/c5532e42f657a5c282629d39543b5dab.png, /posts/redis/images/c5532e42f657a5c282629d39543b5dab.png 1.5x, /posts/redis/images/c5532e42f657a5c282629d39543b5dab.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214933713.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/c5532e42f657a5c282629d39543b5dab.png"
+        title="在这里插入图片描述" width="847" height="138" /></p>
 <blockquote>
 <p>持久化规则</p>
 </blockquote>
@@ -3421,52 +3429,52 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214944964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214944964.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214944964.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214944964.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/8c4d77e425fc022cba939df702553d64.png"
+        data-srcset="/posts/redis/images/8c4d77e425fc022cba939df702553d64.png, /posts/redis/images/8c4d77e425fc022cba939df702553d64.png 1.5x, /posts/redis/images/8c4d77e425fc022cba939df702553d64.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214944964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/8c4d77e425fc022cba939df702553d64.png"
+        title="在这里插入图片描述" width="668" height="202" /></p>
 <blockquote>
 <p>RDB文件相关</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513214955679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513214955679.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513214955679.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513214955679.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/f39fad10b30ea2eca49f501c17f49948.png"
+        data-srcset="/posts/redis/images/f39fad10b30ea2eca49f501c17f49948.png, /posts/redis/images/f39fad10b30ea2eca49f501c17f49948.png 1.5x, /posts/redis/images/f39fad10b30ea2eca49f501c17f49948.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513214955679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/f39fad10b30ea2eca49f501c17f49948.png"
+        title="在这里插入图片描述" width="1115" height="721" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215006207.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215006207.png, https://img-blog.csdnimg.cn/20200513215006207.png 1.5x, https://img-blog.csdnimg.cn/20200513215006207.png 2x"
+        data-src="/posts/redis/images/dc66cd5b32f280199037c9cb610c940b.png"
+        data-srcset="/posts/redis/images/dc66cd5b32f280199037c9cb610c940b.png, /posts/redis/images/dc66cd5b32f280199037c9cb610c940b.png 1.5x, /posts/redis/images/dc66cd5b32f280199037c9cb610c940b.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215006207.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/dc66cd5b32f280199037c9cb610c940b.png"
+        title="在这里插入图片描述" width="656" height="88" /></p>
 <blockquote>
 <p>主从复制</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215016371.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215016371.png, https://img-blog.csdnimg.cn/20200513215016371.png 1.5x, https://img-blog.csdnimg.cn/20200513215016371.png 2x"
+        data-src="/posts/redis/images/7ca10110cc06d93112124c047713a731.png"
+        data-srcset="/posts/redis/images/7ca10110cc06d93112124c047713a731.png, /posts/redis/images/7ca10110cc06d93112124c047713a731.png 1.5x, /posts/redis/images/7ca10110cc06d93112124c047713a731.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215016371.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/7ca10110cc06d93112124c047713a731.png"
+        title="在这里插入图片描述" width="1033" height="140" /></p>
 <blockquote>
 <p>Security模块中进行密码设置</p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215026143.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215026143.png, https://img-blog.csdnimg.cn/20200513215026143.png 1.5x, https://img-blog.csdnimg.cn/20200513215026143.png 2x"
+        data-src="/posts/redis/images/d98f36beaf1231b125a2a008def51721.png"
+        data-srcset="/posts/redis/images/d98f36beaf1231b125a2a008def51721.png, /posts/redis/images/d98f36beaf1231b125a2a008def51721.png 1.5x, /posts/redis/images/d98f36beaf1231b125a2a008def51721.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215026143.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/d98f36beaf1231b125a2a008def51721.png"
+        title="在这里插入图片描述" width="777" height="107" /></p>
 <blockquote>
 <p>客户端连接相关</p>
 </blockquote>
@@ -3507,19 +3515,19 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215037918.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215037918.png, https://img-blog.csdnimg.cn/20200513215037918.png 1.5x, https://img-blog.csdnimg.cn/20200513215037918.png 2x"
+        data-src="/posts/redis/images/77203c9996839bc190adb5f879ef5393.png"
+        data-srcset="/posts/redis/images/77203c9996839bc190adb5f879ef5393.png, /posts/redis/images/77203c9996839bc190adb5f879ef5393.png 1.5x, /posts/redis/images/77203c9996839bc190adb5f879ef5393.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215037918.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/77203c9996839bc190adb5f879ef5393.png"
+        title="在这里插入图片描述" width="1040" height="146" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215047999.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215047999.png, https://img-blog.csdnimg.cn/20200513215047999.png 1.5x, https://img-blog.csdnimg.cn/20200513215047999.png 2x"
+        data-src="/posts/redis/images/8bac4c476c7287c0da7fd2009ad5bc15.png"
+        data-srcset="/posts/redis/images/8bac4c476c7287c0da7fd2009ad5bc15.png, /posts/redis/images/8bac4c476c7287c0da7fd2009ad5bc15.png 1.5x, /posts/redis/images/8bac4c476c7287c0da7fd2009ad5bc15.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215047999.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/8bac4c476c7287c0da7fd2009ad5bc15.png"
+        title="在这里插入图片描述" width="1014" height="136" /></p>
 <h2 id="十持久化rdb">十、持久化—RDB</h2>
 <p>RDB：Redis Databases</p>
 <p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-C0mm1D4A-1597890996524)(狂神说 Redis.assets/image-20200818122236614.png)]</p>
@@ -3529,11 +3537,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215126515.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215126515.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215126515.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215126515.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/042287b42d70f963ff8025cfd272c178.png"
+        data-srcset="/posts/redis/images/042287b42d70f963ff8025cfd272c178.png, /posts/redis/images/042287b42d70f963ff8025cfd272c178.png 1.5x, /posts/redis/images/042287b42d70f963ff8025cfd272c178.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215126515.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/042287b42d70f963ff8025cfd272c178.png"
+        title="在这里插入图片描述" width="443" height="262" /></p>
 <p>默认情况下， Redis 将数据库快照保存在名字为 dump.rdb的二进制文件中。文件名可以在配置文件中进行自定义。</p>
 <h3 id="工作原理">工作原理</h3>
 <hr>
@@ -3547,11 +3555,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215141519.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215141519.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215141519.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215141519.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/f18f2e343c689fe01f5013728bbc50a7.png"
+        data-srcset="/posts/redis/images/f18f2e343c689fe01f5013728bbc50a7.png, /posts/redis/images/f18f2e343c689fe01f5013728bbc50a7.png 1.5x, /posts/redis/images/f18f2e343c689fe01f5013728bbc50a7.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215141519.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/f18f2e343c689fe01f5013728bbc50a7.png"
+        title="在这里插入图片描述" width="592" height="307" /></p>
 <h3 id="触发机制">触发机制</h3>
 <hr>
 <ol>
@@ -3567,11 +3575,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215150892.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215150892.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215150892.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215150892.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/087da0868f0f80409cd0a1fbe30c9e2b.png"
+        data-srcset="/posts/redis/images/087da0868f0f80409cd0a1fbe30c9e2b.png, /posts/redis/images/087da0868f0f80409cd0a1fbe30c9e2b.png 1.5x, /posts/redis/images/087da0868f0f80409cd0a1fbe30c9e2b.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215150892.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/087da0868f0f80409cd0a1fbe30c9e2b.png"
+        title="在这里插入图片描述" width="783" height="288" /></p>
 <h4 id="flushall命令">flushall命令</h4>
 <p><code>flushall</code> 命令也会触发持久化 ；</p>
 <h4 id="触发持久化规则">触发持久化规则</h4>
@@ -3581,30 +3589,30 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215205970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215205970.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215205970.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215205970.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png"
+        data-srcset="/posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png, /posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png 1.5x, /posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215205970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png"
+        title="在这里插入图片描述" width="668" height="202" /></p>
 </blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215220858.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215220858.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215220858.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215220858.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/73f52404b16b4e50c4d38444de142bb1.png"
+        data-srcset="/posts/redis/images/73f52404b16b4e50c4d38444de142bb1.png, /posts/redis/images/73f52404b16b4e50c4d38444de142bb1.png 1.5x, /posts/redis/images/73f52404b16b4e50c4d38444de142bb1.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215220858.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/73f52404b16b4e50c4d38444de142bb1.png"
+        title="在这里插入图片描述" width="611" height="253" /></p>
 <h4 id="bgsave">bgsave</h4>
 <p><code>bgsave</code> 是异步进行，进行持久化的时候，<code>redis</code> 还可以将继续响应客户端请求 ；</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/2020051321523151.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/2020051321523151.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020051321523151.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020051321523151.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/53901ee1c54a5819ffa5a9f35d6fb186.png"
+        data-srcset="/posts/redis/images/53901ee1c54a5819ffa5a9f35d6fb186.png, /posts/redis/images/53901ee1c54a5819ffa5a9f35d6fb186.png 1.5x, /posts/redis/images/53901ee1c54a5819ffa5a9f35d6fb186.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/2020051321523151.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/53901ee1c54a5819ffa5a9f35d6fb186.png"
+        title="在这里插入图片描述" width="592" height="307" /></p>
 <p><strong>bgsave和save对比</strong></p>
 <table>
 <thead>
@@ -3666,11 +3674,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215247113.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215247113.png, https://img-blog.csdnimg.cn/20200513215247113.png 1.5x, https://img-blog.csdnimg.cn/20200513215247113.png 2x"
+        data-src="/posts/redis/images/86c764ca1d45a99bb726b9a1c2f5738d.png"
+        data-srcset="/posts/redis/images/86c764ca1d45a99bb726b9a1c2f5738d.png, /posts/redis/images/86c764ca1d45a99bb726b9a1c2f5738d.png 1.5x, /posts/redis/images/86c764ca1d45a99bb726b9a1c2f5738d.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215247113.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/86c764ca1d45a99bb726b9a1c2f5738d.png"
+        title="在这里插入图片描述" width="1040" height="146" /></p>
 <p><code>appendonly no yes</code>则表示启用AOF</p>
 <p>默认是不开启的，我们需要手动配置，然后重启redis，就可以生效了！</p>
 <p>如果这个aof文件有错位，这时候redis是启动不起来的，我需要修改这个aof文件</p>
@@ -3751,20 +3759,20 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215523258.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215523258.png, https://img-blog.csdnimg.cn/20200513215523258.png 1.5x, https://img-blog.csdnimg.cn/20200513215523258.png 2x"
+        data-src="/posts/redis/images/bb7fe473fed33c1f6211b3b54716fd54.png"
+        data-srcset="/posts/redis/images/bb7fe473fed33c1f6211b3b54716fd54.png, /posts/redis/images/bb7fe473fed33c1f6211b3b54716fd54.png 1.5x, /posts/redis/images/bb7fe473fed33c1f6211b3b54716fd54.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215523258.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/bb7fe473fed33c1f6211b3b54716fd54.png"
+        title="在这里插入图片描述" width="319" height="198" /></p>
 <p>当有新消息通过 PUBLISH 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/2020051321553483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/2020051321553483.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020051321553483.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020051321553483.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/867ed0544585074c02ba344bdce0b1e9.png"
+        data-srcset="/posts/redis/images/867ed0544585074c02ba344bdce0b1e9.png, /posts/redis/images/867ed0544585074c02ba344bdce0b1e9.png 1.5x, /posts/redis/images/867ed0544585074c02ba344bdce0b1e9.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/2020051321553483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/867ed0544585074c02ba344bdce0b1e9.png"
+        title="在这里插入图片描述" width="315" height="285" /></p>
 <h3 id="命令">命令</h3>
 <table>
 <thead>
@@ -3856,11 +3864,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/2020051321554964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/2020051321554964.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020051321554964.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020051321554964.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/6a9ff56ace179fff394b53b6eaf4e1f3.png"
+        data-srcset="/posts/redis/images/6a9ff56ace179fff394b53b6eaf4e1f3.png, /posts/redis/images/6a9ff56ace179fff394b53b6eaf4e1f3.png 1.5x, /posts/redis/images/6a9ff56ace179fff394b53b6eaf4e1f3.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/2020051321554964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/6a9ff56ace179fff394b53b6eaf4e1f3.png"
+        title="在这里插入图片描述" width="709" height="216" /></p>
 <p>客户端订阅，就被链接到对应频道的链表的尾部，退订则就是将客户端节点从链表中移除。</p>
 <h3 id="缺点">缺点</h3>
 <ol>
@@ -3934,11 +3942,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215610163.png"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215610163.png, https://img-blog.csdnimg.cn/20200513215610163.png 1.5x, https://img-blog.csdnimg.cn/20200513215610163.png 2x"
+        data-src="/posts/redis/images/de05158c3584c4647b765326ce3ce17c.png"
+        data-srcset="/posts/redis/images/de05158c3584c4647b765326ce3ce17c.png, /posts/redis/images/de05158c3584c4647b765326ce3ce17c.png 1.5x, /posts/redis/images/de05158c3584c4647b765326ce3ce17c.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215610163.png"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/de05158c3584c4647b765326ce3ce17c.png"
+        title="在这里插入图片描述" width="993" height="108" /></p>
 <h3 id="一主二从配置">一主二从配置</h3>
 <p>==默认情况下，每台Redis服务器都是主节点；==我们一般情况下只用配置从机就好了！</p>
 <p>认老大！一主（79）二从（80，81）</p>
@@ -3946,29 +3954,29 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215637483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215637483.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215637483.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215637483.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/7a16989a8f56a61048c08047de07afce.png"
+        data-srcset="/posts/redis/images/7a16989a8f56a61048c08047de07afce.png, /posts/redis/images/7a16989a8f56a61048c08047de07afce.png 1.5x, /posts/redis/images/7a16989a8f56a61048c08047de07afce.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215637483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/7a16989a8f56a61048c08047de07afce.png"
+        title="在这里插入图片描述" width="1226" height="410" /></p>
 <p>然后主机上也能看到从机的状态：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215645778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215645778.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215645778.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215645778.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/d20f7cdb94ecc5ce08eefbc043eef344.png"
+        data-srcset="/posts/redis/images/d20f7cdb94ecc5ce08eefbc043eef344.png, /posts/redis/images/d20f7cdb94ecc5ce08eefbc043eef344.png 1.5x, /posts/redis/images/d20f7cdb94ecc5ce08eefbc043eef344.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215645778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/d20f7cdb94ecc5ce08eefbc043eef344.png"
+        title="在这里插入图片描述" width="818" height="378" /></p>
 <p>我们这里是使用命令搭建，是暂时的，==真实开发中应该在从机的配置文件中进行配置，==这样的话是永久的。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215654634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215654634.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215654634.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215654634.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/de9efa13c93ffa05b286d9d4df95e85b.png"
+        data-srcset="/posts/redis/images/de9efa13c93ffa05b286d9d4df95e85b.png, /posts/redis/images/de9efa13c93ffa05b286d9d4df95e85b.png 1.5x, /posts/redis/images/de9efa13c93ffa05b286d9d4df95e85b.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215654634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/de9efa13c93ffa05b286d9d4df95e85b.png"
+        title="在这里插入图片描述" width="912" height="253" /></p>
 <h3 id="使用规则">使用规则</h3>
 <ol>
 <li>
@@ -4022,14 +4030,28 @@
 <p>更多信息参考博客：https://www.jianshu.com/p/06ab9daf921d</p>
 <p><strong>主从切换技术的方法是：当主服务器宕机后，需要手动把一台从服务器切换为主服务器，这就需要人工干预，费事费力，还会造成一段时间内服务不可用。<strong>这不是一种推荐的方式，更多时候，我们优先考虑</strong>哨兵模式</strong>。</p>
 <p>单机单个哨兵</p>
-<p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-2ENYVAPp-1597890996527)(狂神说 Redis.assets/image-20200818233231154.png)]</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/redis/images/0a78b6d9307db62b853e3db6c8bfadb9.png"
+        data-srcset="/posts/redis/images/0a78b6d9307db62b853e3db6c8bfadb9.png, /posts/redis/images/0a78b6d9307db62b853e3db6c8bfadb9.png 1.5x, /posts/redis/images/0a78b6d9307db62b853e3db6c8bfadb9.png 2x"
+        data-sizes="auto"
+        alt="/posts/redis/images/0a78b6d9307db62b853e3db6c8bfadb9.png"
+        title="在这里插入图片描述" width="507" height="409" /></p>
 <p>哨兵的作用：</p>
 <ul>
 <li>通过发送命令，让Redis服务器返回监控其运行状态，包括主服务器和从服务器。</li>
 <li>当哨兵监测到master宕机，会自动将slave切换成master，然后通过<strong>发布订阅模式</strong>通知其他的从服务器，修改配置文件，让它们切换主机。</li>
 </ul>
 <p>多哨兵模式</p>
-<p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ga1RyfVc-1597890996528)(狂神说 Redis.assets/image-20200818233316478.png)]</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/redis/images/ee148e885f5ea57203c92e154aa241fe.png"
+        data-srcset="/posts/redis/images/ee148e885f5ea57203c92e154aa241fe.png, /posts/redis/images/ee148e885f5ea57203c92e154aa241fe.png 1.5x, /posts/redis/images/ee148e885f5ea57203c92e154aa241fe.png 2x"
+        data-sizes="auto"
+        alt="/posts/redis/images/ee148e885f5ea57203c92e154aa241fe.png"
+        title="在这里插入图片描述" width="747" height="384" /></p>
 <p>哨兵的核心配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -4057,20 +4079,20 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215752444.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215752444.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215752444.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215752444.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/594ae2f67f90e3bed1df6f59f6143f72.png"
+        data-srcset="/posts/redis/images/594ae2f67f90e3bed1df6f59f6143f72.png, /posts/redis/images/594ae2f67f90e3bed1df6f59f6143f72.png 1.5x, /posts/redis/images/594ae2f67f90e3bed1df6f59f6143f72.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215752444.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/594ae2f67f90e3bed1df6f59f6143f72.png"
+        title="在这里插入图片描述" width="890" height="582" /></p>
 <p>此时哨兵监视着我们的主机6379，当我们断开主机后：</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215806972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215806972.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215806972.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215806972.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/af08ea84e6cbd0abae92821ab8c53dc1.png"
+        data-srcset="/posts/redis/images/af08ea84e6cbd0abae92821ab8c53dc1.png, /posts/redis/images/af08ea84e6cbd0abae92821ab8c53dc1.png 1.5x, /posts/redis/images/af08ea84e6cbd0abae92821ab8c53dc1.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215806972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/af08ea84e6cbd0abae92821ab8c53dc1.png"
+        title="在这里插入图片描述" width="1255" height="736" /></p>
 <blockquote>
 <p>哨兵模式优缺点</p>
 </blockquote>
@@ -4249,21 +4271,21 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215824722.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215824722.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215824722.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215824722.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/ddb857edf822737ae88c541216420073.png"
+        data-srcset="/posts/redis/images/ddb857edf822737ae88c541216420073.png, /posts/redis/images/ddb857edf822737ae88c541216420073.png 1.5x, /posts/redis/images/ddb857edf822737ae88c541216420073.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215824722.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/ddb857edf822737ae88c541216420073.png"
+        title="在这里插入图片描述" width="342" height="416" /></p>
 <p><strong>缓存空对象</strong></p>
 <p>一次请求若在缓存和数据库中都没找到，就在缓存中方一个空对象用于处理后续这个请求。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215836317.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215836317.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215836317.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215836317.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/12738e5ea449c14797ce06b750fa1392.png"
+        data-srcset="/posts/redis/images/12738e5ea449c14797ce06b750fa1392.png, /posts/redis/images/12738e5ea449c14797ce06b750fa1392.png 1.5x, /posts/redis/images/12738e5ea449c14797ce06b750fa1392.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215836317.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/12738e5ea449c14797ce06b750fa1392.png"
+        title="在这里插入图片描述" width="573" height="610" /></p>
 <p>这样做有一个缺陷：存储空对象也需要空间，大量的空对象会耗费一定的空间，存储效率并不高。解决这个缺陷的方式就是设置较短过期时间</p>
 <p>即使对空值设置了过期时间，还是会存在缓存层和存储层的数据会有一段时间窗口的不一致，这对于需要保持一致性的业务会有影响。</p>
 <h3 id="缓存击穿量太大缓存过期">缓存击穿（量太大，缓存过期）</h3>
@@ -4293,11 +4315,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20200513215850428.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        data-srcset="https://img-blog.csdnimg.cn/20200513215850428.jpeg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200513215850428.jpeg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200513215850428.jpeg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-src="/posts/redis/images/39c4da35fe94fec343b54dc4b1448d47.png"
+        data-srcset="/posts/redis/images/39c4da35fe94fec343b54dc4b1448d47.png, /posts/redis/images/39c4da35fe94fec343b54dc4b1448d47.png 1.5x, /posts/redis/images/39c4da35fe94fec343b54dc4b1448d47.png 2x"
         data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20200513215850428.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg3MzIyNw==,size_16,color_FFFFFF,t_70"
-        title="在这里插入图片描述" /></p>
+        alt="/posts/redis/images/39c4da35fe94fec343b54dc4b1448d47.png"
+        title="在这里插入图片描述" width="636" height="385" /></p>
 <blockquote>
 <p>解决方案</p>
 </blockquote>

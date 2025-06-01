@@ -323,11 +323,12 @@
 </div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726000212450.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726000212450.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726000212450.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726000212450.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726000212450.png"
-        title="redo" />redo</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184.webp"
+        title="事务的基本概念，Mysql事务处理原理_编程语言_02" width="1080" height="383" /></p>
+<p>redo</p>
 <blockquote>
 <p>❝</p>
 <p>这里需要对redo log的刷盘补充一点内容：</p>
@@ -359,11 +360,12 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726212526422.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726212526422.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726212526422.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726212526422.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-17487789415983.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789415983.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789415983.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789415983.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726212526422.png"
-        title="insert undo" />insert undo</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-17487789415983.webp"
+        title="事务的基本概念，Mysql事务处理原理_python_03" width="802" height="457" /></p>
+<p>insert undo</p>
 <p>在上图中，<code>undo type</code>记录的是undo log的类型，对于<code>insert undo log</code>，该值始终为11（<code>TRX_UNDO_INSERT_REC</code>），<code>undo no</code>在一个事务中是从<code>0</code>开始递增的，也就是说只要事务没提交，每生成一条<code>undo日志</code>，那么该条日志的<code>undo no</code>就增1。table id记录undo log所对应的表对象。如果记录中的主键只包含一个列，那么在类型为<code>TRX_UNDO_INSERT_REC</code>的<code>undo日志</code>中只需要把该列占用的存储空间大小和真实值记录下来，如果记录中的主键包含多个列（复合主键），那么每个列占用的存储空间大小和对应的真实值都需要记录下来（图中的<code>len</code>就代表列占用的存储空间大小，<code>value</code>就代表列的真实值），<strong>「在回滚时只需要根据主键找到对应的列然后删除即可」</strong>。end of record记录了下一条undo log在页面中开始的地址，start of record记录了本条undo log在页面中开始的地址。</p>
 <p>对undo log有一定了解后，我们再回头看看文章开头的例子，分析下为什么undo log能保证原子性</p>
 <div class="highlight"><div class="chroma">
@@ -391,11 +393,12 @@
 </div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200727100030136.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200727100030136.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200727100030136.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200727100030136.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-17487789586776.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789586776.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789586776.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789586776.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200727100030136.png"
-        title="undo redo" />undo redo</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-17487789586776.webp"
+        title="事务的基本概念，Mysql事务处理原理_java_04" width="1080" height="343" /></p>
+<p>undo redo</p>
 <p>考虑到排版，这里我只画了一条语句的流程图，第二条也是一样的，每次更新或者插入前，先记录undo，再修改内存中数据，再记录redo。</p>
 <h3 id="隔离性实现原理">隔离性实现原理</h3>
 <p>我们知道，一个事务中的读操作是不会影响到另外一个事务的，所以在讨论隔离性我们主要分为两种情况</p>
@@ -510,11 +513,12 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/%E8%A1%8C%E9%94%81.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/%E8%A1%8C%E9%94%81.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/%E8%A1%8C%E9%94%81.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/%E8%A1%8C%E9%94%81.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-17487789846139.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789846139.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789846139.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-17487789846139.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/%E8%A1%8C%E9%94%81.png"
-        title="行锁" />行锁</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-17487789846139.webp"
+        title="事务的基本概念，Mysql事务处理原理_数据库_05" width="1080" height="576" /></p>
+<p>行锁</p>
 <h5 id="gap-lock间隙锁">Gap Lock（间隙锁）</h5>
 <ol>
 <li>锁定一个范围，但是不包含记录本身</li>
@@ -525,21 +529,23 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/%E9%97%B4%E9%9A%99%E9%94%81.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/%E9%97%B4%E9%9A%99%E9%94%81.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/%E9%97%B4%E9%9A%99%E9%94%81.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/%E9%97%B4%E9%9A%99%E9%94%81.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877899630012.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877899630012.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877899630012.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877899630012.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/%E9%97%B4%E9%9A%99%E9%94%81.png"
-        title="间隙锁" />间隙锁</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877899630012.webp"
+        title="事务的基本概念，Mysql事务处理原理_java_06" width="1080" height="358" /></p>
+<p>间隙锁</p>
 <h5 id="next-key-lockgap-lockrecord-lock">Next-Key Lock（Gap Lock+Record Lock）</h5>
 <p>假设我们要对id为6的记录添加<code>Next-Key Lock</code>，那么此时锁定的区域如下所示</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/nextkeylock.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/nextkeylock.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/nextkeylock.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/nextkeylock.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877900700915.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877900700915.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877900700915.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877900700915.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/nextkeylock.png"
-        title="next key lock" />next key lock</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877900700915.webp"
+        title="事务的基本概念，Mysql事务处理原理_java_07" width="1080" height="378" /></p>
+<p>next key lock</p>
 <p>跟间隙锁最大的区别在于，<code>Next-Key Lock</code>除了锁定间隙之外还要锁定当前记录</p>
 <blockquote>
 <p>❝</p>
@@ -600,11 +606,12 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/SQL%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/SQL%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/SQL%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/SQL%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877902330718.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877902330718.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877902330718.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877902330718.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/SQL%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png"
-        title="SQL执行流程图" />SQL执行流程图</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877902330718.webp"
+        title="事务的基本概念，Mysql事务处理原理_mysql_08" width="1080" height="467" /></p>
+<p>SQL执行流程图</p>
 <p>从上图中我们可以看到，每对记录进行一次增、删、改时，都会生成一条对应的undo log，并且被修改后的记录中的<code>roll pointer</code>指针指向了这条undo log，同时如果不是新增操作，那么生成的undo log中也会保存一个<code>roll pointer</code>，其值是从被修改的数据中复制过来了，在我们上边的例子中update undo log的<code>roll pointer</code>就复制了insert进去的数据中的<code>roll pointer</code>指针的值。</p>
 <p>另外我们会发现，根据当前记录中的<code>roll pointer</code>指针，我们可以找到一个有undo log组成的链表，这个undo log链表其实就是这条记录的<code>版本链</code>。</p>
 <h5 id="readview快照">ReadView（快照）</h5>
@@ -641,11 +648,12 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://gitee.com/wx_cc347be696/blogImage/raw/master/MVCC.png"
-        data-srcset="https://gitee.com/wx_cc347be696/blogImage/raw/master/MVCC.png, https://gitee.com/wx_cc347be696/blogImage/raw/master/MVCC.png 1.5x, https://gitee.com/wx_cc347be696/blogImage/raw/master/MVCC.png 2x"
+        data-src="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877903728721.webp"
+        data-srcset="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877903728721.webp, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877903728721.webp 1.5x, /posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize%2cm_fixed%2cw_1184-174877903728721.webp 2x"
         data-sizes="auto"
-        alt="https://gitee.com/wx_cc347be696/blogImage/raw/master/MVCC.png"
-        title="MVCC" />MVCC</p>
+        alt="/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/images/resize,m_fixed,w_1184-174877903728721.webp"
+        title="事务的基本概念，Mysql事务处理原理_python_09" width="1080" height="999" /></p>
+<p>MVCC</p>
 <ol>
 <li>从上图中我们可以看到，在根据当前数据库中运行中的读写事务id，会去生成一个ReadView。</li>
 <li>然后根据要读取的数据记录中的事务id（方便区别，记为<code>r_trx_id</code>）跟ReadView中保存的几个属性做如下判断</li>

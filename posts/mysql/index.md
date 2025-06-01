@@ -685,9 +685,9 @@ WHERE `BornDate` IS NOT NULL;``
 
 > JOIN 对比
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013553742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013558863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-17487791080583.png)
 
 ```mysql
 `======================联表查询 join ==============================
@@ -1217,7 +1217,7 @@ Btree: 默认innodb 的数据结构
 
 > SQLyog 可视化管理
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013449970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70.png)
 
 > SQL命令操作
 
@@ -1270,9 +1270,9 @@ MySQL数据库备份的方式
 *   直接拷贝物理文件
 *   在SQLyog这种可视化工具中手动导出
     *   在想要导出的表或者库中，右键选择备份和导出
-    *   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013418659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+    *   ![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-17487791261586.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013426360.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-17487791306089.png)
 
 # 9、规范数据库设计
 
@@ -1367,7 +1367,7 @@ MySQL数据库备份的方式
 
 驱动：声卡，显卡，数据库
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013306539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-174877913515212.png)
 
 我们的程序会通过数据库驱动，和数据库打交道！
 
@@ -1379,7 +1379,7 @@ SUN 公司为了简化开发人员的（对数据库的统一）操作，提供�
 
 对于开发人员来说，我们只需要掌握JDBC的接口操作即可
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013314340.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-174877913727915.png)
 
 java.sql
 
@@ -1845,20 +1845,20 @@ public class Test {
 
 ## 10.6 使用IDEA连接数据库
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013123797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-174877914949618.png)
 
 连接成功后，可以选择数据库
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013148715.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-174877915318921.png)  
 双击数据库
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013157507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-174877915815224.png)
 
 更新数据
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013204924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTU2NTM2,size_16,color_FFFFFF,t_70-174877916042727.png)  
 编写sql代码的地方  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200708013211958.png)
+![在这里插入图片描述](images/20200708013211958.png)
 
 ## 10.7 JDBC事务
 

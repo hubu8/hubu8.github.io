@@ -3,8 +3,6 @@
 
 <!--more-->
 
-<img src="/docker_image/images/u=2264215715,2220430449&fm=26&gp=0.jpg" style="zoom:200%;" />
-
 # Docker Compose
 
 
@@ -835,9 +833,14 @@ kvn9nhtwymds   mynginxtest.5   nginx:latest   node4                   Running   
 
 ​	就是一个任务，可以在管理节点或者工作节点运行，核心
 
-![](https://docs.docker.com/engine/swarm/docker_image/images/services-diagram.png)
+**Task**
+	容器内的命令，细节任务。
 
-​	![](https://docs.docker.com/engine/swarm/docker_image/images/service-lifecycle.png)
+![在这里插入图片描述](images/f3a5a8a2ae19b5fde02a391bb916b1a2.png)
+
+**service**
+
+![在这里插入图片描述](images/006792ba9d4943a3bb6870b367471f57.png)
 
 **swarm网络：overlay,ingress**
 

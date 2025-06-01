@@ -148,7 +148,9 @@ update balance set money = money +500 where name= ‘B’;
 commit;
 ```
 
-![redo](https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726000212450.png)redo
+![事务的基本概念，Mysql事务处理原理_编程语言_02](images/resize,m_fixed,w_1184.webp)
+
+redo
 
 > ❝
 >
@@ -187,7 +189,9 @@ undo log属于**「逻辑日志」**（*前面提到的redo log属于物理日�
 
 这里我们就来看看insert undo log的结构，如下：
 
-![insert undo](https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200726212526422.png)insert undo
+![事务的基本概念，Mysql事务处理原理_python_03](images/resize,m_fixed,w_1184-17487789415983.webp)
+
+insert undo
 
 在上图中，`undo type`记录的是undo log的类型，对于`insert undo log`，该值始终为11（`TRX_UNDO_INSERT_REC`），`undo no`在一个事务中是从`0`开始递增的，也就是说只要事务没提交，每生成一条`undo日志`，那么该条日志的`undo no`就增1。table id记录undo log所对应的表对象。如果记录中的主键只包含一个列，那么在类型为`TRX_UNDO_INSERT_REC`的`undo日志`中只需要把该列占用的存储空间大小和真实值记录下来，如果记录中的主键包含多个列（复合主键），那么每个列占用的存储空间大小和对应的真实值都需要记录下来（图中的`len`就代表列占用的存储空间大小，`value`就代表列的真实值），**「在回滚时只需要根据主键找到对应的列然后删除即可」**。end of record记录了下一条undo log在页面中开始的地址，start of record记录了本条undo log在页面中开始的地址。
 
@@ -204,7 +208,9 @@ update balance set money = money +500 where name= ‘B’;
 commit;
 ```
 
-![undo redo](https://gitee.com/wx_cc347be696/blogImage/raw/master/image-20200727100030136.png)undo redo
+![事务的基本概念，Mysql事务处理原理_java_04](images/resize,m_fixed,w_1184-17487789586776.webp)
+
+undo redo
 
 考虑到排版，这里我只画了一条语句的流程图，第二条也是一样的，每次更新或者插入前，先记录undo，再修改内存中数据，再记录redo。
 
@@ -277,7 +283,9 @@ INSERT INTO `test`.`user`(`id`, `name`) VALUES (15, 'e董格求');
 
 如果我们对id为3的记录添加一个行锁，对应如下（图中每一列代表数据库中的一行记录）：
 
-![行锁](https://gitee.com/wx_cc347be696/blogImage/raw/master/%E8%A1%8C%E9%94%81.png)行锁
+![事务的基本概念，Mysql事务处理原理_数据库_05](images/resize,m_fixed,w_1184-17487789846139.webp)
+
+行锁
 
 ##### Gap Lock（间隙锁）
 
@@ -288,13 +296,17 @@ INSERT INTO `test`.`user`(`id`, `name`) VALUES (15, 'e董格求');
 
 其中虚线框代表的是要锁定的间隙，其实就是当前需要加间隙锁的记录跟上一条记录之间的范围，但是间隙锁不会锁定当前记录，如图所示，id=6的记录并没有被加锁。（图中虚线框表锁间隙，没有插入真实的记录）
 
-![间隙锁](https://gitee.com/wx_cc347be696/blogImage/raw/master/%E9%97%B4%E9%9A%99%E9%94%81.png)间隙锁
+![事务的基本概念，Mysql事务处理原理_java_06](images/resize,m_fixed,w_1184-174877899630012.webp)
+
+间隙锁
 
 ##### Next-Key Lock（Gap Lock+Record Lock）
 
 假设我们要对id为6的记录添加`Next-Key Lock`，那么此时锁定的区域如下所示
 
-![next key lock](https://gitee.com/wx_cc347be696/blogImage/raw/master/nextkeylock.png)next key lock
+![事务的基本概念，Mysql事务处理原理_java_07](images/resize,m_fixed,w_1184-174877900700915.webp)
+
+next key lock
 
 跟间隙锁最大的区别在于，`Next-Key Lock`除了锁定间隙之外还要锁定当前记录
 
@@ -351,7 +363,9 @@ DELETE from  `test`.`user` WHERE id = 16;
 
 我们通过画图来看看上面这段SQL在执行的过程中都做了什么
 
-![SQL执行流程图](https://gitee.com/wx_cc347be696/blogImage/raw/master/SQL%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png)SQL执行流程图
+![事务的基本概念，Mysql事务处理原理_mysql_08](images/resize,m_fixed,w_1184-174877902330718.webp)
+
+SQL执行流程图
 
 从上图中我们可以看到，每对记录进行一次增、删、改时，都会生成一条对应的undo log，并且被修改后的记录中的`roll pointer`指针指向了这条undo log，同时如果不是新增操作，那么生成的undo log中也会保存一个`roll pointer`，其值是从被修改的数据中复制过来了，在我们上边的例子中update undo log的`roll pointer`就复制了insert进去的数据中的`roll pointer`指针的值。
 
@@ -391,7 +405,9 @@ DELETE from  `test`.`user` WHERE id = 16;
 
 当生成快照后，会通过下面这个流程来判断该记录对当前事务是否可见
 
-![MVCC](https://gitee.com/wx_cc347be696/blogImage/raw/master/MVCC.png)MVCC
+![事务的基本概念，Mysql事务处理原理_python_09](images/resize,m_fixed,w_1184-174877903728721.webp)
+
+MVCC
 
 1. 从上图中我们可以看到，在根据当前数据库中运行中的读写事务id，会去生成一个ReadView。
 2. 然后根据要读取的数据记录中的事务id（方便区别，记为`r_trx_id`）跟ReadView中保存的几个属性做如下判断

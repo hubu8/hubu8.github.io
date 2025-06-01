@@ -803,4 +803,3 @@ hashcat -h | grep -i "office"
 
 
 
-

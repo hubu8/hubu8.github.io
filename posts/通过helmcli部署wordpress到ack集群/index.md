@@ -135,4 +135,3 @@ TCEYTlASR8
 ```bash
 helm3 uninstall wordpress
 ```
-

@@ -70,4 +70,3 @@ String suffix = UploadContext.getOrCreate().getSuffix();
 一个上下文变量类，里面包含上下文业务需要的参数；
 
 静态成员变量（所有对象共享一个本地线程变量）为ThreadLocal，getOrCreate返回的是上下文变量对象（本地线程变量值），变量对象包含参数的get与set方法，
-

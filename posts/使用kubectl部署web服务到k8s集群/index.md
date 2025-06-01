@@ -233,4 +233,3 @@ No resources found in handson-3e8b9bbfb31484d1aaddf1a82156c3bf namespace.
 ```
 
 代表卸载工作完成
-

@@ -63,4 +63,3 @@ PS：
 4. **if(?1 !='',name like concat('%',?1,'%'),1=1)** 代表传入的参数name如果不为""（Spring类型空是""而不是null）将参数传入name，如果为空时显示1=1 代表参数为真，对查询结果不产生作用。IF 的语法满足mysql的基本语法，IF(expr1,expr2,expr3)， 如果 expr1 为真(expr1 <> 0 以及 expr1 <> NULL)，那么 IF() 返回 expr2，否则返回expr3
 5. **if(IFNULL(?3,'') !='',age=?3,1=1)** 表示如果传入的年龄是null，则替换成空字符串，然后判断是否为空，不为空则将参数传入age，否则忽略不对查询结果产生影响。IFNULL 是mysql中的一个函数，这个函数一般用来替换 NULL 值的。IFNULL(value1,value2)，判断value1是否为null，如果为null则用value2替换。
 6. **参数定义时，定义数值，应使用Integer，**如果用int定义，当入参为NULL时，程序会报空指针错误。原因是JAVA 中 int 是值类型，非对象，不可以设置为 NULL，integer 是对象类型，可以设置为NULL
-

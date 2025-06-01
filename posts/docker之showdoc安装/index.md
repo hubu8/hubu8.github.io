@@ -89,4 +89,3 @@ docker stop $(docker ps -a -q) ;docker rm $(docker ps -a -q) ; #停止并删除�
 docker rmi -f `docker images | grep showdoc| awk '{print $3}'` # 删除所有名字含有showdoc关键字的镜像
 ```
 
-

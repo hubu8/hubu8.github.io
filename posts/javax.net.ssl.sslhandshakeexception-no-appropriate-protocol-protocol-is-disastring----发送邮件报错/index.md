@@ -507,4 +507,3 @@ try {
             <artifactId>hutool-all</artifactId>
             <version>5.7.19</version>
         </dependency>
-

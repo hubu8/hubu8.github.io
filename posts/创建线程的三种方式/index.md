@@ -56,4 +56,3 @@ public class TestThread {
 这是一个Thread类的子类，涉及运行机制问题，影响程序性能
 ```
 
-

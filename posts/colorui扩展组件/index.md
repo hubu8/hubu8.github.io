@@ -22,7 +22,7 @@
 
 > 索引列表主要由[scroll-view标签](https://uniapp.dcloud.io/component/scroll-view)实现，类名为indexes，具体js逻辑请看源码，有些我没看懂，希望看懂的大佬教教我
 
-![索引](https://img-blog.csdnimg.cn/2019112215285896.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70) 
+![索引](images/image-1748786511333.jpg) 
 
 ```
 <template>
@@ -231,7 +231,7 @@
 
 > 微动画我没办法截图展示出来这种动态效果，我就直接给出class了，想要看效果，可以去官方示例去看，这里有几个gif动画，我可以给个图和代码，看一下
 
-![gif](https://img-blog.csdnimg.cn/20191122160230238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70) 
+![gif](images/image-1748786511367.jpg) 
 
 ```
 <view class="margin radius bg-gradual-green shadow-blur">
@@ -272,7 +272,7 @@
 
 > 全屏抽屉效果主要分为三个部分，主要有三个类名，第一个类名DrawerPage，就是第一张图总体外部包裹的类名；第二个类名DrawerClose，用来包裹打开抽屉之后关闭部分，如图二红框框出来的部分；第三个类名DrawerWindow，就是打开的抽屉部分了
 
- ![抽屉1](https://img-blog.csdnimg.cn/20191122161902426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)                  ![抽屉2](https://img-blog.csdnimg.cn/20191122161914953.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+ ![抽屉1](images/image-1748786511402.jpg)                  ![抽屉2](images/image-1748786511436.jpg)
 
 ```
 <template>
@@ -455,7 +455,7 @@
 
 > 垂直导航主要有两个[scroll-view标签](https://uniapp.dcloud.io/component/scroll-view)实现，分别是左侧的导航栏部分和右侧的内容部分，左侧导航栏部分使用类名VerticalBox，右侧内容部分使用类名VerticalMain 
 
-![垂直导航](https://img-blog.csdnimg.cn/2019112216375184.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![垂直导航](images/image-1748786511468.jpg)
 
 ```
 <template>

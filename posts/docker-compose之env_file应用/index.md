@@ -190,4 +190,3 @@ services:
 docker-compose --compatibility up -d
 ```
 
-

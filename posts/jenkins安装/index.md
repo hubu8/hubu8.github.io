@@ -129,4 +129,3 @@ a8e55644a46a468497388c8f771e9923
 
 http://updates.jenkins-ci.org/update-center.json
 
-

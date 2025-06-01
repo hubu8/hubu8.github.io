@@ -475,4 +475,3 @@ public class LongToStringSerializer extends JsonSerializer<Long> {
 - 如果属性全部大写，增加属性转全部小写；
 - 全是小写，不在家属性字段，原字段直接传String
 
-

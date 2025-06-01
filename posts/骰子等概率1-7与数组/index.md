@@ -110,4 +110,3 @@ public static int solution2(int array[]){
 | 1    | 1    | 5    |
 | 1    | 1    | 6    |
 
-

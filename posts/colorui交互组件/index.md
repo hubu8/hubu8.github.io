@@ -30,7 +30,7 @@
 > 
 > 底部操作条包括底部的tabBar和商场小程序加入购物车的操作条，底部操作条中cu-bar和tabbar是必备的class，foot则设置该操作条固定在页面底部。
 
-![示例操作条](https://img-blog.csdnimg.cn/20191115140850835.png)
+![示例操作条](images/20191115140850835.png)
 
 ```html
 <template>
@@ -80,7 +80,7 @@
 
 > 操作条中的图标，可以是自定义引入的图片，也可以是这个组件中的图标，加角标就是上一章在[基础元素](https://blog.csdn.net/miao_yf/article/details/102971767)中介绍的标签组件cu-tag、badge，背景颜色以及文字图标颜色都可以添加相应的颜色class进行自定义
 
-![操作条1](https://img-blog.csdnimg.cn/20191115141516589.png)
+![操作条1](images/20191115141516589.png)
 
 ```
 <view class="cu-bar tabbar bg-white">
@@ -140,7 +140,7 @@
 
 >  这种操作条就是中间设置了一个midButton，只需在中间的view上添加class add-action，其他设置同上，不赘述
 
-![操作条2](https://img-blog.csdnimg.cn/20191115142637207.png)
+![操作条2](images/20191115142637207.png)
 
 ```
 <view class="cu-bar tabbar margin-bottom-xl bg-white">
@@ -171,7 +171,7 @@
 
 > 加入购物车的操作条增加了shop类名，但是我不清楚，加不加shop有什么区别，我删了他，样式好像也没变，有大佬懂得望指教。submit类名用于加入购物车和立即购买等操作，样式可以撑开占满。 
 
-![shop1](https://img-blog.csdnimg.cn/20191115143012720.png)
+![shop1](images/20191115143012720.png)
 
 ```
 <view class="cu-bar bg-white tabbar border shop">
@@ -196,7 +196,7 @@
 
 > 这种样式就是把上面那种换成了button标签，设置成round圆形 
 
-![shop2](https://img-blog.csdnimg.cn/20191115144900942.png)
+![shop2](images/20191115144900942.png)
 
 ```
 <view class="cu-bar bg-white tabbar border shop">
@@ -222,7 +222,7 @@
 
 >  看下面代码注释吧，一条对应一条，清晰一点
 
-**![标题1](https://img-blog.csdnimg.cn/2019111515084340.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![标题2](https://img-blog.csdnimg.cn/20191115150857366.png)**
+**![标题1](images/image-1748786509006.jpg)![标题2](images/20191115150857366.png)**
 
 ```
 <view class="box">
@@ -279,7 +279,7 @@
 
 > 顶部操作条具体设置方法请移步上一章[自定义导航栏](https://blog.csdn.net/miao_yf/article/details/102971767#%E5%BC%80%E5%A7%8B)，以下几种样式可以参考，就不详解了。
 
-![顶部1](https://img-blog.csdnimg.cn/20191115154708964.png) ![顶部2](https://img-blog.csdnimg.cn/2019111515472512.png)
+![顶部1](images/20191115154708964.png) ![顶部2](images/2019111515472512.png)
 
 ```
 <view class="box">
@@ -319,7 +319,7 @@
 
 > 搜索操作条主要就是search-form，配合round和radius设置input框的样式（越写我越发现，新的东西不多，都是基础元素拼凑出来的，示例就是一个参考样式，耐心仔细看，很简单）
 
-![搜索1](https://img-blog.csdnimg.cn/20191115160458828.png)![搜索2](https://img-blog.csdnimg.cn/20191115160513596.png)
+![搜索1](images/20191115160458828.png)![搜索2](images/20191115160513596.png)
 
 ```
 <view class="box">
@@ -375,7 +375,7 @@
 
 > 这就是几个按钮，cu-bar操作条类名就是为这个按钮组设置了平铺的样式，你看第二组按钮，我删除了cu-bar类名，效果对比就很明显。
 
-![按钮组操作条](https://img-blog.csdnimg.cn/20191115161318801.png)
+![按钮组操作条](images/20191115161318801.png)
 
 ```
 <view class="box">
@@ -397,7 +397,7 @@
 
 > 主要由cu-bar和input设置出大体样式，内部填充自定义，以下样式供参考 
 
-![输入](https://img-blog.csdnimg.cn/20191115162012367.png)
+![输入](images/20191115162012367.png)
 
 ```
 <view class="box">
@@ -440,7 +440,7 @@
 
 > 不知道咋解释，看代码很简单，就是通过index值进行切换每个tab，及其字体边框样式，我就不赘述了
 
-**![默认nav](https://img-blog.csdnimg.cn/20191118143525152.png)**
+**![默认nav](images/20191118143525152.png)**
 
 ```
 <scroll-view scroll-x class="bg-white nav" scroll-with-animation :scroll-left="scrollLeft">
@@ -471,7 +471,7 @@
 
 > 通过text-center居中
 
-![居中nav](https://img-blog.csdnimg.cn/20191118144326708.png)
+![居中nav](images/20191118144326708.png)
 
 ```
 <scroll-view scroll-x class="bg-white nav text-center">
@@ -485,7 +485,7 @@
 
 > 设置flex和flex-sub实现弹性布局，flex-sub就是css属性flex:1，将弹性盒子内子元素按照1:1:1:1来分配空间
 
- ![平分nav](https://img-blog.csdnimg.cn/201911181443543.png)
+ ![平分nav](images/201911181443543.png)
 
 ```
 <scroll-view scroll-x class="bg-white nav">
@@ -501,7 +501,7 @@
 
 >  bg-{{color}}，参考[背景色](https://blog.csdn.net/miao_yf/article/details/102971767#%E8%83%8C%E6%99%AF%C2%A0)
 
- ![背景nav](https://img-blog.csdnimg.cn/20191118144414392.png)
+ ![背景nav](images/20191118144414392.png)
 
 ```
 <scroll-view scroll-x class="bg-red nav text-center">
@@ -515,7 +515,7 @@
 
 >  cuIcon-{{icon}}，参考[图标](https://blog.csdn.net/miao_yf/article/details/102971767#ICON%E5%9B%BE%E6%A0%87)
 
- ![图标nav](https://img-blog.csdnimg.cn/20191118144439675.png)
+ ![图标nav](images/20191118144439675.png)
 
 ```
 <scroll-view scroll-x class="bg-green nav text-center">
@@ -543,7 +543,7 @@
 
 > 宫格列表就是列表结合grid布局设计出的样式，通过col-{{number}}设置每行的个数，number取值1~5，默认有边框，可以加类名no-border去除边框
 
-![宫格列表1](https://img-blog.csdnimg.cn/20191118153358267.png)![宫格列表](https://img-blog.csdnimg.cn/20191118153413191.png)
+![宫格列表1](images/20191118153358267.png)![宫格列表](images/20191118153413191.png)
 
 ```
 <view class="cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
@@ -579,7 +579,7 @@ data() {
 
 > 菜单列表就是列表结合类名menu设计出的样式，可以通过sm-border设置每一行的短边框，通过card-menu将列表设置成卡片样式，通过在列表子元素上添加arrow设置箭头，变化样式效果可以由以下两图对比
 
-**![菜单列表1](https://img-blog.csdnimg.cn/20191118154545385.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)**![菜单列表2](https://img-blog.csdnimg.cn/20191118154614313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+**![菜单列表1](images/image-1748786509534.jpg)**![菜单列表2](images/image-1748786509587.jpg)
 
 ```
 <view class="cu-list menu" :class="[menuBorder?'sm-border':'',menuCard?'card-menu margin-top':'']">
@@ -694,7 +694,7 @@ data() {
 
 具体实例请看下面的代码：
 
-![消息列表](https://img-blog.csdnimg.cn/20191118161710463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![消息列表](images/image-1748786509634.jpg)
 
 ```
 <view class="cu-list menu-avatar">
@@ -781,7 +781,7 @@ data() {
 
 > 用户开始触摸时，获取触摸点到盒子左侧的距离，根据触摸结束时的距离与开始距离作比较，判断出用户滑动的方向，如果是左滑，则添加类名move-cur，就是将该项左移260upx，右滑则回到原位不变。
 
-![列表左滑](https://img-blog.csdnimg.cn/20191118165236932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![列表左滑](images/image-1748786509689.jpg)
 
 ```
 <view class="cu-list menu-avatar">
@@ -848,7 +848,7 @@ data() {
 
 > cu-card和case结合，在配合子元素的cu-item类名，写出案例类的样式，内部其他样式可以根据其他类名自行设置，cu-item自带margin:30px;可以通过类名no-card去除
 
-![案例类卡片](https://img-blog.csdnimg.cn/20191120113121863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![案例类卡片](images/image-1748786509730.jpg)
 
 ```
 <view class="cu-card case" :class="isCard?'no-card':''">
@@ -883,7 +883,7 @@ data() {
 
 > 该样式类似于QQ动态，由cu-card和dynamic结合，再配合子元素cu-item编写而成，动态下方的评论需要添加类名comment
 
-![动态类卡片](https://img-blog.csdnimg.cn/20191120114137548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![动态类卡片](images/image-1748786509795.jpg)
 
 ```
 <view class="cu-card dynamic" :class="isCard?'no-card':''">
@@ -945,7 +945,7 @@ data() {
 
 >  该卡片由cu-card和article结合，再配合子元素cu-item
 
-![文章类卡片](https://img-blog.csdnimg.cn/2019112011453697.png)
+![文章类卡片](images/2019112011453697.png)
 
 ```
 <view class="cu-card article" :class="isCard?'no-card':''">
@@ -976,7 +976,7 @@ data() {
 
 > form表单是用form标签包裹，每一个子元素添加类名cu-form-group，行内自定义，title类名用于设置每行的文字说明，如果想统一宽度，像示例一样，需要自定义宽度
 
-![表单1](https://img-blog.csdnimg.cn/20191120142812707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![表单1](images/image-1748786509873.jpg)
 
 ```
 <form>	
@@ -1023,7 +1023,7 @@ data() {
 
 >  对于表单中从底部谈起的选择器，写法与上述简单的input相同，而选择器picker的使用，建议查看[官方文档](https://uniapp.dcloud.io/component/picker)
 
-![表单2](https://img-blog.csdnimg.cn/20191120143716691.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![表单2](images/image-1748786509907.jpg)
 
 ```
 <form>
@@ -1078,7 +1078,7 @@ data() {
 
 > 对于开关的样式，参考[switch官方文档](https://uniapp.dcloud.io/component/switch)，需要注意的阿里小程序的不同，我没有用阿里测试，我测的是微信小程序，在微信小程序上，switch的color属性不生效，想要更改开关颜色，可以用颜色类名，直接写颜色就可以，颜色的取值可以参考[上一章背景色](https://blog.csdn.net/miao_yf/article/details/102971767#%E8%83%8C%E6%99%AF%C2%A0)
 
-![开关](https://img-blog.csdnimg.cn/20191120150640698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![开关](images/image-1748786509940.jpg)
 
 ```
 <form>
@@ -1113,7 +1113,7 @@ data() {
 
 > [radio官方文档](https://uniapp.dcloud.io/component/radio)先奉上，更改颜色同上，使用提供的颜色类名即可，其默认样式是圆形全色中间有个√，可以通过类名radio更改形状为镂空中间一个点
 
-![单选1](https://img-blog.csdnimg.cn/20191121100828615.png)![单选2](https://img-blog.csdnimg.cn/2019112110085444.png)
+![单选1](images/20191121100828615.png)![单选2](images/2019112110085444.png)
 
 ```
 <form>
@@ -1143,7 +1143,7 @@ data() {
 
 > [CheckBox官方文档](https://uniapp.dcloud.io/component/checkbox) ，更改颜色同上，使用提供的颜色类名即可，其默认样式是方形，可以通过类名round更改形状为圆形
 
-![复选](https://img-blog.csdnimg.cn/20191121103540196.png)
+![复选](images/20191121103540196.png)
 
 ```
 <form>
@@ -1171,7 +1171,7 @@ data() {
 
 >  [图片相关操作的API](https://uniapp.dcloud.io/api/media/image)，自己看一下哈，我没什么好说的
 
- ![图片1](https://img-blog.csdnimg.cn/20191121103632495.png)![图片2](https://img-blog.csdnimg.cn/20191121103642804.png)
+ ![图片1](images/20191121103632495.png)![图片2](images/20191121103642804.png)
 
 ```
 <form>
@@ -1241,7 +1241,7 @@ data() {
 
 > 这个样式可以用于用户修改个人资料中，修改头像 
 
-![表单头像](https://img-blog.csdnimg.cn/20191121105630578.png)
+![表单头像](images/20191121105630578.png)
 
 ```
 <form>
@@ -1256,7 +1256,7 @@ data() {
 
 > [官方官方](https://uniapp.dcloud.io/component/textarea)
 
- ![多行文本](https://img-blog.csdnimg.cn/2019112111034226.png)
+ ![多行文本](images/2019112111034226.png)
 
 ```
 <form>
@@ -1281,7 +1281,7 @@ data() {
 
 > 时间轴默认结构如下代码，由cu-timeline包裹cu-time和cu-item，在item内编写内容，由content包裹
 
-![时间轴1](https://img-blog.csdnimg.cn/20191121113455285.png)
+![时间轴1](images/20191121113455285.png)
 
 ```
 <view class="cu-timeline">
@@ -1298,7 +1298,7 @@ data() {
 
 > 这个与默认的基本格式相同，只是自定义了内容框颜色和图标，结合基础元素的样式，你可以写个彩虹
 
-![时间轴2](https://img-blog.csdnimg.cn/20191121114015420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![时间轴2](images/image-1748786510242.jpg)
 
 ```
 <view class="cu-timeline">
@@ -1333,7 +1333,7 @@ data() {
 
 > 上一个是简单的修改了颜色图标，这一个则是稍微复杂一点，结合之前的标签、列表等，丰富了内容
 
-![时间轴3](https://img-blog.csdnimg.cn/20191121114320780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![时间轴3](images/image-1748786510278.jpg)
 
 ```
 <view class="cu-timeline">
@@ -1396,7 +1396,7 @@ data() {
 
 > 聊天的外部大框架是cu-chat，cu-item包裹某人的聊天信息，self表示右侧自己的聊天样式，main包含聊天内容，date表示消息时间，cu-info表示提示词
 
-![聊天1](https://img-blog.csdnimg.cn/20191121145435968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![聊天1](images/image-1748786510315.jpg)
 
 ```
 <view class="cu-chat">
@@ -1433,7 +1433,7 @@ data() {
 
 > 聊天内容除了语句，还有图片，语音消息，地理位置消息等 ，main包含的聊天内容不止是消息框里的，还有消息框旁边的提示图标文字等，消息框里的内容由content包裹
 
-![聊天2](https://img-blog.csdnimg.cn/20191121145901549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![聊天2](images/image-1748786510349.jpg)
 
 ```
 <view class="cu-chat">
@@ -1487,7 +1487,7 @@ data() {
 
 > 发送框就是之前的操作条，相关内容看最上面操作条的讲解
 
- ![聊天3](https://img-blog.csdnimg.cn/20191121150543194.png)
+ ![聊天3](images/20191121150543194.png)
 
 ```
 <view class="cu-bar foot input" :style="[{bottom:InputBottom+'px'}]">
@@ -1513,7 +1513,7 @@ data() {
 
 > 这是最常见的轮播图，添加类名screen-swiper，宽度为全屏，高度自定义，请直接参考[swiper官方文档](https://uniapp.dcloud.io/component/swiper)，可以通过类名square-dot和round-dot定义小圆点样式
 
- ![全屏](https://img-blog.csdnimg.cn/20191121153548424.png)
+ ![全屏](images/20191121153548424.png)
 
 ```
 <template>
@@ -1561,7 +1561,7 @@ data() {
 
 > 在swiper标签上添加类名card-swiper，在swiper-item标签内的子元素上添加类名swiper-item，示例中cardSwiper函数的主要作用是切换类名cur，cur的作用是实现轮播图片中间大，两边小的效果，就是transform的scale()
 
- ![卡片式](https://img-blog.csdnimg.cn/20191121153617987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+ ![卡片式](images/image-1748786510470.jpg)
 
 ```
 <swiper class="card-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
@@ -1584,7 +1584,7 @@ cardSwiper(e) {
 
 > 堆叠轮播是原生写的，注意类名tower-swiper、tower-item以及swiper-item的配合使用，这主要是通过层级的高低来显示图片的，使用时需要配合js和css。（这种轮播图初始化展示效果如图二，需要触动一下才会展示如图一的效果，可以通过在onload()函数中给变量direction赋值解决）
 
-![堆叠式](https://img-blog.csdnimg.cn/20191121153638109.png) ![bug](https://img-blog.csdnimg.cn/20191121164628849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![堆叠式](images/20191121153638109.png) ![bug](images/image-1748786510556.jpg)
 
 ```
 <template>
@@ -1714,7 +1714,7 @@ cardSwiper(e) {
 
 > 普通窗口就是cu-modal包裹cu-dialog，只做信息的展示，没有交互效果 
 
- ![普通窗口](https://img-blog.csdnimg.cn/20191122103159939.png)![普通窗口1](https://img-blog.csdnimg.cn/2019112210322147.png)
+ ![普通窗口](images/20191122103159939.png)![普通窗口1](images/2019112210322147.png)
 
 ```
 <view class="cu-modal" :class="modalName=='Modal'?'show':''">
@@ -1736,7 +1736,7 @@ cardSwiper(e) {
 
 > cu-modal结合bottom-modal实现底部弹窗 
 
- ![底部窗口](https://img-blog.csdnimg.cn/2019112210324933.png)![底部窗口](https://img-blog.csdnimg.cn/20191122103322308.png)
+ ![底部窗口](images/2019112210324933.png)![底部窗口](images/20191122103322308.png)
 
 ```
 <view class="cu-modal bottom-modal" :class="modalName=='bottomModal'?'show':''">
@@ -1756,9 +1756,9 @@ cardSwiper(e) {
 
 > 对话窗口相较于普通窗口底部多了一些用户交互的操作 
 
- ![对话窗口](https://img-blog.csdnimg.cn/20191122103350116.png)
+ ![对话窗口](images/20191122103350116.png)
 
-![对话窗口1](https://img-blog.csdnimg.cn/20191122103404842.png)      ![对话窗口2](https://img-blog.csdnimg.cn/20191122103430284.png)
+![对话窗口1](images/20191122103404842.png)      ![对话窗口2](images/20191122103430284.png)
 
 ```
 //示例一
@@ -1807,7 +1807,7 @@ cardSwiper(e) {
 
 > 图片窗口用于图片的展示，也可自定义操作 
 
- ![图片窗口](https://img-blog.csdnimg.cn/2019112210345862.png)![图片窗口1](https://img-blog.csdnimg.cn/20191122103513659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+ ![图片窗口](images/2019112210345862.png)![图片窗口1](images/image-1748786510855.jpg)
 
 ```
 <view class="cu-modal" :class="modalName=='Image'?'show':''">
@@ -1830,7 +1830,7 @@ cardSwiper(e) {
 
 > 单选窗口是普通窗口内部结合radio标签编写的 
 
- ![单选窗口](https://img-blog.csdnimg.cn/20191122103539689.png)![单选窗口1](https://img-blog.csdnimg.cn/2019112210355610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+ ![单选窗口](images/20191122103539689.png)![单选窗口1](images/image-1748786510931.jpg)
 
 ```
 <view class="cu-modal" :class="modalName=='RadioModal'?'show':''" @tap="hideModal">
@@ -1854,7 +1854,7 @@ cardSwiper(e) {
 
 > 多选窗口的内容是配合grid布局自定义的
 
- ![多选窗口](https://img-blog.csdnimg.cn/20191122103623885.png)![多选窗口1](https://img-blog.csdnimg.cn/20191122103640441.png)
+ ![多选窗口](images/20191122103623885.png)![多选窗口1](images/20191122103640441.png)
 
 ```
 <view class="cu-modal bottom-modal" :class="modalName=='ChooseModal'?'show':''" @tap="hideModal">
@@ -1913,9 +1913,9 @@ cardSwiper(e) {
 
 > cu-modal结合drawer-modal，由justify-start和justify-end决定抽屉方向 
 
-![侧边抽屉](https://img-blog.csdnimg.cn/20191122103706277.png)
+![侧边抽屉](images/20191122103706277.png)
 
-![侧边抽屉1](https://img-blog.csdnimg.cn/20191122103730687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)             ![侧边抽屉2](https://img-blog.csdnimg.cn/20191122103748980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![侧边抽屉1](images/image-1748786511066.jpg)             ![侧边抽屉2](images/image-1748786511105.jpg)
 
 ```
 //左侧抽屉
@@ -1956,7 +1956,7 @@ cardSwiper(e) {
 
 >  cu-steps和cu-item配合使用
 
- ![步骤条1](https://img-blog.csdnimg.cn/2019112213204285.png)
+ ![步骤条1](images/2019112213204285.png)
 
 ```
 <view class="bg-white padding">
@@ -1990,7 +1990,7 @@ cardSwiper(e) {
 
 >  步骤条的颜色和图标都可以自定义
 
-![步骤条2](https://img-blog.csdnimg.cn/20191122132100746.png)
+![步骤条2](images/20191122132100746.png)
 
 ```
 <view class="bg-white padding margin-top-xs">
@@ -2004,7 +2004,7 @@ cardSwiper(e) {
 
 > 步骤之间的连接默认是横线，也可以通过类名steps-arrow换成箭头
 
-![步骤条3](https://img-blog.csdnimg.cn/20191122132118650.png)
+![步骤条3](images/20191122132118650.png)
 
 ```
 <view class="bg-white padding  margin-top-xs">
@@ -2020,7 +2020,7 @@ cardSwiper(e) {
 
 > 通过类名num可以设置默认图标为数字，已完成且正确的图标为勾，已完成但错误的图标由类名err定义
 
- ![步骤条4](https://img-blog.csdnimg.cn/20191122133829775.png)
+ ![步骤条4](images/20191122133829775.png)
 
 ```
 <view class="bg-white padding">
@@ -2036,7 +2036,7 @@ cardSwiper(e) {
 
 > 多级显示需要配合[scroll-view标签](https://uniapp.dcloud.io/component/scroll-view)使用 ，并增加类名steps-bottom
 
-  ![步骤条5](https://img-blog.csdnimg.cn/20191122132147779.png)![步骤条6](https://img-blog.csdnimg.cn/20191122132209860.png)
+  ![步骤条5](images/20191122132147779.png)![步骤条6](images/20191122132209860.png)
 
 ```
 <scroll-view scroll-x class="bg-white padding response cu-steps steps-bottom" :scroll-into-view="'scroll-' + scroll"
@@ -2070,3 +2070,4 @@ cardSwiper(e) {
 -----
 
 交互组件就到此为止了，不足之处请多多指教，便于我及时更正，承接上一篇基础元素的博客，扩展插件部分我们就在再另写一篇，[ColorUI组件库简易教程之扩展插件](https://blog.csdn.net/miao_yf/article/details/103199773)
+

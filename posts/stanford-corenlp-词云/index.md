@@ -426,4 +426,3 @@ public class WordsCloud extends Thread{
 ```
 
 ![image-20210509095316236.png](./images/image-20210509095316236.png)
-

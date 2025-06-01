@@ -103,4 +103,3 @@ makeRequest()
 #### 六、总结
 
 Async/await进一步优化了Promise.then()的缺点，使代码更简洁，所以在项目中尽量使用Async/await
-

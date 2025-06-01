@@ -12,7 +12,7 @@ Java 208 道面试题 · 容器
 
 **常用容器的图录：**
 
-![](https://img-blog.csdnimg.cn/20190317184953342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYWRvd196ZWQ=,size_16,color_FFFFFF,t_70)
+![](images/image-1748786514227.jpg)
 
 ### **19. Collection 和 Collections 有什么区别？**
 
@@ -23,7 +23,7 @@ Java 208 道面试题 · 容器
 
 ### **20. List、Set、Map 之间的区别是什么？**
 
-![](https://img-blog.csdnimg.cn/20190317185014560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYWRvd196ZWQ=,size_16,color_FFFFFF,t_70)
+![](images/image-1748786514266.jpg)
 
 ### **21. HashMap 和 Hashtable 有什么区别？**
 

@@ -73,4 +73,3 @@ PDF文章列表
 | [java开发手册嵩山版.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=java开发手册嵩山版.pdf) |      |
 | [java开发手册泰山版.pdf](https://hubu8.github.io/pdf/web/viewer.html?file=java开发手册泰山版.pdf) |      |
 
-

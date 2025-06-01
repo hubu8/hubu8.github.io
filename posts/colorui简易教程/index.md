@@ -18,7 +18,7 @@
 前言
 ==
 
-![colorUI组件](https://img-blog.csdnimg.cn/20191108134813292.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![colorUI组件](images/image-1748786511522.jpg)
 
 ColorUI是一个css库！！！在你引入样式后可以根据class来调用组件 
 
@@ -186,7 +186,7 @@ Vue.component('cu-custom',cuCustom)
 
 > 通过添加class名basic-{{options}}来设置分栏大小，options可以取五个值，分别为xs、sm、df、lg、xl
 
-![固定尺寸](https://img-blog.csdnimg.cn/20191108160223564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![固定尺寸](images/image-1748786511558.jpg)
 
 ```
 <view class="padding bg-white">
@@ -206,7 +206,7 @@ Vue.component('cu-custom',cuCustom)
 
 > 通过添加class名flex-{{options}}来设置分栏大小，options可以取值sub、twice、treble，分别代表占比1，2，3
 
-![比例布局](https://img-blog.csdnimg.cn/20191108160308488.png)
+![比例布局](images/20191108160308488.png)
 
 ```
 <view class="padding bg-white">
@@ -230,7 +230,7 @@ Vue.component('cu-custom',cuCustom)
 
 > 通过添加class名justify-{{options}}来设置盒子水平对齐方式，options可以取值start、end、center、between、around，效果可以参考flex布局布局中的容器属性justify-content（[Flex布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool%29)）
 
-![水平对齐](https://img-blog.csdnimg.cn/20191108160339234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![水平对齐](images/image-1748786511624.jpg)
 
 ```
 <view class="bg-white">
@@ -261,7 +261,7 @@ Vue.component('cu-custom',cuCustom)
 
 > 通过添加class名align-{{options}}来设置盒子垂直对齐方式，options可以取值start、end、center，效果可以参考flex布局布局中的容器属性align-item（[Flex布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool%29)）
 
-![垂直对齐](https://img-blog.csdnimg.cn/2019110816040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![垂直对齐](images/image-1748786511656.jpg)
 
 ```
 <view class="bg-white">
@@ -288,7 +288,7 @@ Vue.component('cu-custom',cuCustom)
 
 > 通过添加class名col-{{options}}来实现栅格布局，options可以取值1、2、3、4、5
 
-![等分列](https://img-blog.csdnimg.cn/20191108160618281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![等分列](images/image-1748786511688.jpg)
 
 ```
 <view class="bg-white padding">
@@ -302,7 +302,7 @@ Vue.component('cu-custom',cuCustom)
 
 > 通过添加class名grid-square设置盒子内容等高，添加col-{{options}}来设置分栏个数，options可以取值1、2、3、4、5，将盒子等分
 
-![等高](https://img-blog.csdnimg.cn/20191108162002771.png)
+![等高](images/20191108162002771.png)
 
 ```
 <view class="bg-white padding">
@@ -338,7 +338,7 @@ data() {
 
 >  通过添加class名bg-{{options}}设置背景
 
- ![深色背景](https://img-blog.csdnimg.cn/2019111109361946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+ ![深色背景](images/image-1748786511759.jpg)
 
 ```
 <view class="grid col-3 padding-sm">
@@ -355,7 +355,7 @@ data() {
 
 >  通过添加class名bg-{{options}}设置背景颜色，添加class名light表示相应的浅色
 
-![浅色背景](https://img-blog.csdnimg.cn/20191111093637911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![浅色背景](images/image-1748786511798.jpg)
 
 ```
 <view class="grid col-3 bg-white padding-sm">
@@ -372,7 +372,7 @@ data() {
 
 > 通过添加class名bg-gradual-{{options}}设置渐变背景颜色
 
-![渐变背景](https://img-blog.csdnimg.cn/2019111109374684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![渐变背景](images/image-1748786511831.jpg)
 
 ```
 <view class="grid col-2 padding-sm">
@@ -421,7 +421,7 @@ data() {
 
 > 通过bg-img设置图片背景，bg-mask设置透明遮罩层
 
-![透明背景](https://img-blog.csdnimg.cn/20191111094642351.png)
+![透明背景](images/20191111094642351.png)
 
 ```
 <view class="bg-img bg-mask flex align-center" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 414upx;">
@@ -463,17 +463,17 @@ data() {
 
 > 通过添加class名text-{{size}}设置文字大小，size取值xs、sm、df、lg、xl、xxl、sl、xsl
 
-![1](https://img-blog.csdnimg.cn/2019111113350672.png)![2](https://img-blog.csdnimg.cn/20191111133527559.png)![](https://img-blog.csdnimg.cn/20191111133559775.png)
+![1](images/2019111113350672.png)![2](images/20191111133527559.png)![](images/20191111133559775.png)
 
-![4](https://img-blog.csdnimg.cn/20191111133648383.png)![5](https://img-blog.csdnimg.cn/20191111133703940.png)![6](https://img-blog.csdnimg.cn/20191111133717338.png) 
+![4](images/20191111133648383.png)![5](images/20191111133703940.png)![6](images/20191111133717338.png) 
 
-![7](https://img-blog.csdnimg.cn/2019111113373618.png)
+![7](images/2019111113373618.png)
 
 **文字颜色**
 
 > 通过添加class名text-{{color}}设置文字颜色，color取值red、orange、yellow、olive、green、cyan、blue、purple、mauve、brown、grey、gray、black、white
 
-![文字颜色](https://img-blog.csdnimg.cn/20191111134530426.png)
+![文字颜色](images/20191111134530426.png)
 
 ```
 <view class="grid col-5 padding-sm">
@@ -489,7 +489,7 @@ data() {
 
 > 通过添加class名text-shadow设置文字阴影
 
-![文字阴影](https://img-blog.csdnimg.cn/20191111134737509.png)
+![文字阴影](images/20191111134737509.png)
 
 ```
 <view class="grid col-5 padding-sm">
@@ -505,7 +505,7 @@ data() {
 
 > 通过添加class名text-cut设置文字长度溢出显示省略号
 
-![文字截断](https://img-blog.csdnimg.cn/20191111134948425.png)
+![文字截断](images/20191111134948425.png)
 
 ```
 <view class="padding bg-white">
@@ -517,7 +517,7 @@ data() {
 
 > 通过添加class名text-{{position}}设置文字长度溢出显示省略号，position取值left、center、right
 
-![文字对齐](https://img-blog.csdnimg.cn/20191111135201781.png)
+![文字对齐](images/20191111135201781.png)
 
 ```
 <view class="padding bg-white">
@@ -531,7 +531,7 @@ data() {
 
 > 通过添加class名text-price表示价格，会显示￥符号，text-Abc设置英文首字母大写，text-ABC设置英文大写，text-abc设置英文小写
 
-![价格](https://img-blog.csdnimg.cn/20191111135548406.png)![首字母大写](https://img-blog.csdnimg.cn/20191111135609974.png)![大写](https://img-blog.csdnimg.cn/20191111135632717.png)![小写](https://img-blog.csdnimg.cn/20191111135646227.png)
+![价格](images/20191111135548406.png)![首字母大写](images/20191111135609974.png)![大写](images/20191111135632717.png)![小写](images/20191111135646227.png)
 
 ```
 <view class="padding text-center">
@@ -570,7 +570,7 @@ data() {
 
 > 通过添加class名cuIcon-{{iconName}}，直接设置图标
 
-![1](https://img-blog.csdnimg.cn/20191111141543306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![2](https://img-blog.csdnimg.cn/20191111141622936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![3](https://img-blog.csdnimg.cn/20191111141647695.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![4](https://img-blog.csdnimg.cn/20191111141704933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![5](https://img-blog.csdnimg.cn/20191111141716215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![6](https://img-blog.csdnimg.cn/20191111141728688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![7](https://img-blog.csdnimg.cn/20191111141739263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![8](https://img-blog.csdnimg.cn/20191111141748739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![9](https://img-blog.csdnimg.cn/20191111141806229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![10](https://img-blog.csdnimg.cn/20191111141816359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![11](https://img-blog.csdnimg.cn/20191111141832215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![12](https://img-blog.csdnimg.cn/20191111141842653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![13](https://img-blog.csdnimg.cn/20191111141853726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![14](https://img-blog.csdnimg.cn/20191111141903501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![15](https://img-blog.csdnimg.cn/20191111141913914.png)
+![1](images/image-1748786512377.jpg)![2](images/image-1748786512412.jpg)![3](images/image-1748786512446.jpg)![4](images/image-1748786512487.jpg)![5](images/image-1748786512521.jpg)![6](images/image-1748786512555.jpg)![7](images/image-1748786512590.jpg)![8](images/image-1748786512625.jpg)![9](images/image-1748786512661.jpg)![10](images/image-1748786512693.jpg)![11](images/image-1748786512727.jpg)![12](images/image-1748786512763.jpg)![13](images/image-1748786512796.jpg)![14](images/image-1748786512830.jpg)![15](images/20191111141913914.png)
 
 ### Button按钮
 
@@ -580,7 +580,7 @@ data() {
 
 > 通过添加class名设置按钮不同形状，默认只需要添加cu-btn，round为圆角，cuIcon为圆形用来包裹图标
 
-![按钮大小](https://img-blog.csdnimg.cn/20191111165212978.png)
+![按钮大小](images/20191111165212978.png)
 
 ```
 <view class="padding flex flex-wrap justify-between align-center bg-white">
@@ -596,7 +596,7 @@ data() {
 
 > sm小尺寸，lg大尺寸
 
-![按钮尺寸](https://img-blog.csdnimg.cn/20191111165433741.png)
+![按钮尺寸](images/20191111165433741.png)
 
 ```
 <view class="padding flex flex-wrap justify-between align-center bg-white">
@@ -610,7 +610,7 @@ data() {
 
 > 添加背景class名就可以，用法参考背景组件的介绍
 
- ![按钮颜色](https://img-blog.csdnimg.cn/20191111165859113.png)
+ ![按钮颜色](images/20191111165859113.png)
 
 ```
 <view class="grid col-5 padding-sm">
@@ -624,7 +624,7 @@ data() {
 
 > 通过line-{{color}}或者lines-{{color}}设置镂空的幽灵按钮
 
-![youling](https://img-blog.csdnimg.cn/20191112093523337.png)
+![youling](images/20191112093523337.png)
 
 ```
 <view class="grid col-5 padding-sm">
@@ -638,7 +638,7 @@ data() {
 
 > 添加disabled禁用按钮
 
-![禁用按钮](https://img-blog.csdnimg.cn/20191113095716624.png)
+![禁用按钮](images/20191113095716624.png)
 
 ```
 <view class="padding">
@@ -651,7 +651,7 @@ data() {
 
 > 可以直接在button标签class内添加图标名，或者在text等其他标签内添加class，其他标签要包裹在button标签内
 
-![图标按钮](https://img-blog.csdnimg.cn/20191113095733628.png)
+![图标按钮](images/20191113095733628.png)
 
 ```
 <view class="padding-xl">
@@ -673,7 +673,7 @@ data() {
 
 > 通过添加class名设置标签不同形状，默认只需要添加cu-tag，round为椭圆，radius为圆角
 
-![标签形状](https://img-blog.csdnimg.cn/20191113105209689.png)
+![标签形状](images/20191113105209689.png)
 
 ```
 <view class="padding bg-white solid-bottom">
@@ -687,7 +687,7 @@ data() {
 
 > sm小尺寸
 
-![标签尺寸](https://img-blog.csdnimg.cn/20191113110743846.png)
+![标签尺寸](images/20191113110743846.png)
 
 ```
 <view class="padding bg-white">
@@ -700,7 +700,7 @@ data() {
 
 > 添加背景class名就可以，用法参考背景组件的介绍
 
-![标签颜色](https://img-blog.csdnimg.cn/20191113111823368.png)
+![标签颜色](images/20191113111823368.png)
 
 ```
 <view class='padding-sm flex flex-wrap'>
@@ -717,7 +717,7 @@ data() {
 
 > 通过line-{{color}}设置镂空的幽灵按钮
 
-![幽灵标签](https://img-blog.csdnimg.cn/20191113111934479.png)
+![幽灵标签](images/20191113111934479.png)
 
 ```
 <view class='padding-sm flex flex-wrap'>
@@ -731,7 +731,7 @@ data() {
 
 > 通过cu-capsule设置为胶囊样式，内部设置自己想要的样式
 
-![胶囊样式](https://img-blog.csdnimg.cn/20191113113252320.png)
+![胶囊样式](images/20191113113252320.png)
 
 ```
 <view class="padding">
@@ -762,7 +762,7 @@ data() {
 
 >  通过badge设置角标
 
- ![数字标签](https://img-blog.csdnimg.cn/2019111311364981.png)
+ ![数字标签](images/2019111311364981.png)
 
 ```
 <view class="padding flex justify-between align-center">
@@ -792,7 +792,7 @@ data() {
 
 > 通过round和radius设置头像形状
 
-![头像形状](https://img-blog.csdnimg.cn/20191113165047125.png)
+![头像形状](images/20191113165047125.png)
 
 ```
 <view class="padding">
@@ -805,7 +805,7 @@ data() {
 
 > 通过sm 、lg、xl设置不同大小的头像
 
-![头像尺寸](https://img-blog.csdnimg.cn/20191113165147527.png)
+![头像尺寸](images/20191113165147527.png)
 
 ```
 <view class="padding">
@@ -828,7 +828,7 @@ data() {
 
 > 头像内部不仅仅是图片，也可以是自定义文字和图标等
 
-![内嵌文字](https://img-blog.csdnimg.cn/20191113165402123.png)
+![内嵌文字](images/20191113165402123.png)
 
 ```
 <view class="padding">
@@ -845,7 +845,7 @@ data() {
 
 > 设置背景色即可
 
-![头像颜色](https://img-blog.csdnimg.cn/20191113165654604.png)
+![头像颜色](images/20191113165654604.png)
 
 ```
 <view class="padding-sm">
@@ -859,7 +859,7 @@ data() {
 
 > 设置了cu-avatar外部的盒子添加cu-avatar-group的class
 
-![头像组](https://img-blog.csdnimg.cn/20191113165955393.png)
+![头像组](images/20191113165955393.png)
 
 ```
 <view class="padding">
@@ -873,7 +873,7 @@ data() {
 
 > 在头像标签内部添加数字标签的角标即可
 
-![头像标签](https://img-blog.csdnimg.cn/20191113170127235.png)
+![头像标签](images/20191113170127235.png)
 
 ```
 <view class="padding">
@@ -895,7 +895,7 @@ data() {
 
 > 进度条默认为方形，radius为圆角，round为圆形；代码中loading只是一个变量，初始值为false，页面初始化时赋值为true，即给进度条赋值，使进度条有一个动画效果。
 
-![进度条形状](https://img-blog.csdnimg.cn/20191114145356523.png)
+![进度条形状](images/20191114145356523.png)
 
 ```
 <view class="padding bg-white">
@@ -915,7 +915,7 @@ data() {
 
 > sm为小尺寸，xs为超小尺寸 
 
-![进度条尺寸](https://img-blog.csdnimg.cn/20191114145626765.png)
+![进度条尺寸](images/20191114145626765.png)
 
 ```
 <view class="padding bg-white">
@@ -935,7 +935,7 @@ data() {
 
 > 添加背景色即可
 
-![进度条颜色](https://img-blog.csdnimg.cn/20191114152225684.png)
+![进度条颜色](images/20191114152225684.png)
 
 ```
 <view class="padding" :class="color=='white'?'bg-grey':'bg-white'">
@@ -949,7 +949,7 @@ data() {
 
 > 添加striped设置条纹样式，active设置条纹动态效果
 
-![进度条条纹](https://img-blog.csdnimg.cn/20191114155705759.png)
+![进度条条纹](images/20191114155705759.png)
 
 ```
 <view class="padding bg-white">
@@ -966,7 +966,7 @@ data() {
 
 > 在给定class为cu-progress的标签内按需放置元素并进行分段设计即可
 
-![进度条比例](https://img-blog.csdnimg.cn/20191114160101242.png)
+![进度条比例](images/20191114160101242.png)
 
 ```
 <view class="padding bg-white">
@@ -982,7 +982,7 @@ data() {
 
 > 结合布局、图标等内容，可根据个人所需可以设置不同进度显示的样式
 
-![进度条布局](https://img-blog.csdnimg.cn/20191114160359906.png)
+![进度条布局](images/20191114160359906.png)
 
 ```
 <view class="padding bg-white ">
@@ -1009,7 +1009,7 @@ data() {
 
 > 默认shadow是根据背景色设置的阴影，shadow-lg为长阴影，但是我肉眼没看出来二者的区别，真是在下愚钝，shadow-warp为翘边阴影（在下愚钝，它翘一点？？？），shadow-blur根据背景图片设置的阴影，有点意思，挺好。关于边框border没什么好展开的，直接看下面表格class说明就好。
 
-![阴影1](https://img-blog.csdnimg.cn/20191114162957890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)![阴影2](https://img-blog.csdnimg.cn/20191114163011903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![阴影1](images/image-1748786513694.jpg)![阴影2](images/image-1748786513732.jpg)
 
 ```
 <view class="padding text-center">
@@ -1036,11 +1036,11 @@ data() {
 
 > loading正在加载中，over加载完成，erro加载失败
 
-![加载中](https://img-blog.csdnimg.cn/20191114165750120.png)
+![加载中](images/20191114165750120.png)
 
-![加载完成](https://img-blog.csdnimg.cn/20191114165807766.png)
+![加载完成](images/20191114165807766.png)
 
-![加载失败](https://img-blog.csdnimg.cn/20191114165846401.png)
+![加载失败](images/20191114165846401.png)
 
 ```
 <view class="cu-load bg-blue loading"></view>
@@ -1052,7 +1052,7 @@ data() {
 
 > 设置按钮，弹出弹框，显示加载状态，弹框模板设置load-modal
 
-![弹框加载](https://img-blog.csdnimg.cn/20191115102233946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pYW9feWY=,size_16,color_FFFFFF,t_70)
+![弹框加载](images/image-1748786513862.jpg)
 
 ```
 <view class="cu-bar bg-white margin-top">
@@ -1094,7 +1094,7 @@ data() {
 
 > 设置进度条加载时需要添加load-progress，变量loadProgress为加载进度条的进度，load-progress-bar代表加载中进度条样式，load-progress-spinner代表加载中旋转的圆圈样式
 
-![进度条加载](https://img-blog.csdnimg.cn/20191115101626286.png)
+![进度条加载](images/20191115101626286.png)
 
 ```
 <view class="action">
@@ -1140,4 +1140,3 @@ data() {
 这篇博客太长了，交互组件的介绍就另写一篇吧，[ColorUI组件库简易教程之交互组件](https://blog.csdn.net/miao_yf/article/details/103081988)
 
 这只是个人的理解写的，有什么不足，望大佬指教，及时更正！
-

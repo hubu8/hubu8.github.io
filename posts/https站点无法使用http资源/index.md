@@ -25,4 +25,3 @@ hubu8.github.io/:1  Mixed Content: The page at 'https://hubu8.github.io/friend/'
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 ```
 
-

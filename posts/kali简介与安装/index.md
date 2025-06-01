@@ -79,4 +79,3 @@ Kali中提供了2个版本的桌面，分别是Xfce和GNOME，Xfce是默认的�
 
 `
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib`
-

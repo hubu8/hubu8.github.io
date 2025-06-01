@@ -264,4 +264,3 @@ export function uploadQrcode(formData) {
 ![image-20221008222735061.png](./images/image-20221008222735061.png)
 
 ![image-20221008222751855.png](./images/image-20221008222751855.png)
-

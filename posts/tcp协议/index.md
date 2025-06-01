@@ -112,4 +112,3 @@ LAST_ACK: 这个状态还是比较容易好理解的，它是被动关闭一方�
 TIME_WAIT: 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。 如果FINWAIT1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无 须经过FIN_WAIT_2状态。(主动方)
 
 CLOSED: 表示连接中断。
-

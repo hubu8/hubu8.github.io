@@ -133,4 +133,3 @@ includes excludes 等配置项均支持模糊匹配，匹配规则如下
 ‘a/**/*.js’ 匹配 a 文件夹内的所有以 .js 为后缀的文件； 正则： new RegExp(^/a/([^/])*.js$)
 
 ‘a/*.js’ 仅匹配 a 文件夹内的所有以 .js 为后缀的子文件； 正则： new RegExp(^/a/([^/])*.js$)
-

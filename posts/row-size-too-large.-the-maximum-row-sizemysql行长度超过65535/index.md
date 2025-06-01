@@ -88,4 +88,3 @@ tinyint占用1个字节、varchar的长度和是否为NULL占用3个字节
 ![73bc7ab2cfcf404fbe7408d4529f7980.png](./images/73bc7ab2cfcf404fbe7408d4529f7980.png)
 
 我们把varchar字段设为不是null，计算规则：65535-1-2=65532/3=21844，设为21844就成功了
-

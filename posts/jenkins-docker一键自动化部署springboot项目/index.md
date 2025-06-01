@@ -263,4 +263,3 @@ docker run -d -p 8888:8888 --name zx-order zx-order:latest
 1. `docker ps` 查看是否有自己的容器
 2. `docker logs` 自己的容器名 查看日志是否正确
 3. 浏览器访问项目试一试
-

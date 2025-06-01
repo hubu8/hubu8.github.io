@@ -217,7 +217,6 @@ System.out.println(stringBuilder.reverse()); // gfedcba`
 
 不能，定义抽象类就是让其他类继承的，如果定义为 final 该类就不能被继承，这样彼此就会产生矛盾，所以 final 不能修饰抽象类，如下图所示，编辑器也会提示错误信息：
 
-![final定义抽象类](http://icdn.apigo.cn/gitchat/java-intervier002.png)
 
 #### 14.接口和抽象类有什么区别？
 
@@ -260,3 +259,4 @@ System.out.println(stringBuilder.reverse()); // gfedcba`
 [《Java 最常见的 200+ 面试题》](https://blog.csdn.net/sufu1065/article/details/88051083)
 
 [《程序员精美简历Top榜—面试必备》](https://blog.csdn.net/sufu1065/article/details/87272338)
+

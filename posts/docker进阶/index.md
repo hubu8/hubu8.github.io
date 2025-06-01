@@ -868,4 +868,3 @@ docker stack deploy wordpress.yml
 配置：
 
 ![image-20210410154923154.png](./images/image-20210410154923154.png)
-

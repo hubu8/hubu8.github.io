@@ -132,4 +132,3 @@ spring中的默认事务传播行为就是它。如果业务方法执行时已�
 @Transactional(propagation = Propagation.NEVER) 
 
 不支持事务。如果当前已经在一个事务中了，抛出异常。
-

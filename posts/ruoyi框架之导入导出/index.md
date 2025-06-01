@@ -679,4 +679,3 @@ public void resourceDownload(String resource, HttpServletRequest request, HttpSe
 	FileUtils.writeBytes(downloadPath, response.getOutputStream());
 }
 ```
-

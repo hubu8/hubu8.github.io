@@ -460,4 +460,3 @@ public static void clearPage() {
 除此之外，我们可以**手动调用`clearPage()`方法**，在存在问题的方法之前。
 
 需要注意：**不要分页的方法前手动调用clearPage，将会导致你的分页出现问题**。
-

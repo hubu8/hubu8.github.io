@@ -35,4 +35,3 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 
 ![image-20221202140945052.png](./images/image-20221202140945052.png)
 
-

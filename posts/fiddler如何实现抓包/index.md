@@ -144,4 +144,3 @@ Postman**关闭 SSL 设置** ：`Settings` -> `General` -> 关闭：`SSL certifi
 [官方文档](https://docs.telerik.com/fiddler/knowledge-base/uiguide)
 
 ![图标含义](images/fcdcd04be7704f21ac8ce1e1ce792bac.png)
-

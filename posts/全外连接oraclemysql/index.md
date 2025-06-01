@@ -39,4 +39,3 @@ SELECT * FROM emp e RIGHT JOIN dept d ON e.`deptno`=d.`deptno`;
 ![watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3fffRheW5naA==,size_16,color_FFFFFF,t_70](./images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3fffRheW5naA==,size_16,color_FFFFFF,t_70)
 
 注释：以上连接全为等值连接；Oracle中全外连接可以使用full join；请不要弄混。
-

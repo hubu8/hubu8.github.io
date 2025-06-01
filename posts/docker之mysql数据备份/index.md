@@ -274,4 +274,3 @@ cat ${dir}/backup.log>>./backup/backup.log
 #### 4、文件目录结构
 
 ![image-20230511195957921.png](./images/image-20230511195957921.png)
-

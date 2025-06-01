@@ -617,4 +617,3 @@ Teacher{name='zhaoliu', age=24}
 
       ![11_平衡二叉树右左.png](./images/11_平衡二叉树右左.png)
 
-

@@ -49,7 +49,7 @@
 > 众所周知，一张表中大多数情况下，会将主键索引以聚簇的形式存在磁盘中，上篇文章也聊到过，聚簇索引在存储数据时，表数据和索引数据是一起存放的。同时，`MySQL`默认的索引结构是`B+Tree`，也就代表着索引节点的数据是有序的。
 
 此时结合上面给出的一些信息，主键索引是聚簇索引，表数据和索引数据在一块、索引结构是有序的，那再反推前面给出的疑惑，为何不使用`UUID`呢？因为`UUID`是无序的，如果使用`UUID`作为主键，那么每当插入一条新数据，都有可能破坏原本的树结构，如下：
-![索引维护](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c4874d642cf040be9299d5a5ef53c409~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![索引维护](images/index-suoyin.jpg)
 比如上图中的灰色节点，是一条新插入的数据，此时经过计算后，应该排第二个位置，那就代表着后面的三个节点需要移动，然后给灰色节点挪出一个位置存储，从而确保索引的有序性。
 
 > 这里只是伪逻辑，目的是用于举例演示，实际上`B+`树索引结构不长这样，在《索引原理篇》会重新说一下这个点的。
@@ -125,7 +125,7 @@ SELECT * FROM TABLE_XX WHERE COLUMN_XX = "XX";
 > 那么在创建索引时，咱们应当遵守那些原理原则，才能创建出合理的索引呢？
 
 在实际项目场景中，当`SQL`查询性能较慢时，我们常常会有一个疑惑：**表中哪个字段建立一个索引能带来最大的性能收益呢**？一般来说，判断字段是否要添加的索引的依据，是看这个字段是否被经常当做查询条件使用，但也不能光依靠这一个依据来判断，比如用户表中的性别字段，就会经常被用做查询条件，但如果对性别字段建立一个索引，那对查询的性能提升并不大，因为性别就两个值：男/女（不包含泰国在内），那对其建立索引，索引文件中就只会有两个索引节点，大致情况如下：
-![性别索引](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b81d3711e1394d319ab06fdb2594c509~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![性别索引](images/b81d3711e1394d319ab06fdb2594c509tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 这种情况下，为性别建立一个索引，带来的性能收益显然不是太大。同时，上图中给出的案例，也不是索引真正的样子，如果表中存在主键索引或聚簇索引，对其他字段建立的索引，都是次级索引，也被称为辅助索引，其节点上的值，存储的并非一条完整的行数据，而是指向聚簇索引的索引字段值。
 
 > 如果基于辅助索引查询数据，最终数据会以何种方式被检索出来，这里就牵扯到`MySQL`中的一个新概念，也就是`SQL`执行时的回表问题。
@@ -133,7 +133,7 @@ SELECT * FROM TABLE_XX WHERE COLUMN_XX = "XX";
 ### 2.1、索引查询时的回表问题
 
   什么叫做回表呢？意思就是指一条`SQL`语句在`MySQL`内部，要经过两次查询过程才能获取到数据。这是跟索引机制有关的，先来看看索引在`MySQL`内部真正的面貌：
-![表中索引结构](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2549441191b14183b7df0c14aba85cbe~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![表中索引结构](images/2549441191b14183b7df0c14aba85cbetplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 在上图用户表中，基于`ID`字段先建立了一个主键索引，然后又基于`name`字段建立了一个普通索引，此时`MySQL`默认会选用主键索引作为聚簇索引，将表数据和主键索引存在同一个文件中，也就是主键索引的每个索引节点，都直接对应着行数据。而基于`name`字段建立的索引，其索引节点存放的则是指向聚簇索引的`ID`值。
 
 > 在这种情况下，假设有一条下述`SQL`，其内部查询过程是啥样的呢？
@@ -343,7 +343,7 @@ EXPLAIN SELECT * FROM `zz_users` WHERE user_id = 1 OR user_name = "熊猫";
 ```
 
 例如上述这条`SQL`，其中既包含了主键索引的字段，又包含了联合索引的第一个字段，按理来说是会走索引查询的对吗？但看看执行结果：
-![or导致索引失效](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/daba592fab5b4c47819a211cd828d5d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![or导致索引失效](images/daba592fab5b4c47819a211cd828d5d7tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 从结果中可看到`type=ALL`，显然并未使用索引来查询，也就代表着，虽然所有查询条件都包含了索引字段，但由于使用了`OR`，最终导致索引失效。
 
 #### 3.1.3、模糊查询中like以%开头导致索引失效
@@ -356,9 +356,9 @@ EXPLAIN SELECT * FROM `zz_users` WHERE user_name LIKE "%熊";
 ```
 
 在这条`SQL`中以联合索引中的第一个字段作为了查询条件，此时会使用索引吗？看看结果：
-![like%*导致索引失效](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2cdb8fa875314b2f954e08b2de836e43~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![like%*导致索引失效](images/2cdb8fa875314b2f954e08b2de836e43tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 结果中显示依旧走了全表扫描，并未使用索引，但`like`不以`%`开头，实际上是不会导致索引失效的，例如：
-![%结尾](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0845a5a46db6400581a7eb37a102f3b1~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![%结尾](images/0845a5a46db6400581a7eb37a102f3b1tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 在这里以`%`结尾，其实可以使用联合索引来检索数据，并不会导致索引失效。
 
 #### 3.1.4、字符类型查询时不带引号导致索引失效
@@ -372,8 +372,8 @@ EXPLAIN SELECT * FROM `zz_users` WHERE user_name = 111;
 ```
 
 上述这条`SQL`按理来说是没有半点问题的，目前是符合联合索引的最左匹配原则的，但来看看结果：
-![不带引号对比](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca01ae3e18e8420e845f8d771124218a~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
-从结果中很明显的可以看出，由于`user_name`是字符串类型的，因此查询时没带引号，竟然直接未使用索引，导致了索引失效（上面也放了对比图，大家可以仔细看看区别）。
+![不带引号对比](images/ca01ae3e18e8420e845f8d771124218atplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
+从结果中很明显的可以看出，由于`user_name`是字符串类型的，因此查询时没带引号，竟然直接未使用索引，导致了索引失效（上面也放了对比图，大家可以仔细看看区别)。
 
 #### 3.1.5、索引字段参与计算导致索引失效
 
@@ -383,7 +383,7 @@ EXPLAIN SELECT * FROM `zz_users` WHERE user_id - 1 = 1;
 ```
 
 上面这条`SQL`看着估计有些懵，但实际上很简单，就是查询`ID=2`的数据，理论上因为查询条件中使用了主键字段，应该会使用主键索引，但结果呢？
-![索引字段参与计算](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/788432af3fc7440dac4d5ba843b25c00~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![索引字段参与计算](images/788432af3fc7440dac4d5ba843b25c00tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 由于索引字段参与了计算，所以此时又导致了索引失效，因此大家要切记，千万不要让索引字段在`SQL`中参与计算，也包括使用一些聚合函数时也会导致索引失效，其根本原因就在于索引字段参与了计算导致的。
 
 > 这里的运算也包括`+、-、*、/、!.....`等一系列涉及字段计算的逻辑。
@@ -396,7 +396,7 @@ EXPLAIN SELECT * FROM `zz_users` WHERE SUBSTRING(user_name,0,1) = "竹子";
 ```
 
 上述中，我们使用`SUBSTRING`函数对`user_name`字段进行了截取，然后再用于条件查询，此时看看执行结果：
-![函数计算](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4fa14046c5974fff961362832e249554~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![函数计算](images/4fa14046c5974fff961362832e249554tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 很显然，并未使用索引查询，这也是意料之中的事情，毕竟这一条和`3.1.5`的原因大致相同，索引字段参与计算导致失效。
 
 #### 3.1.7、违背最左前缀原则导致索引失效
@@ -407,7 +407,7 @@ EXPLAIN SELECT * FROM `zz_users` WHERE `user_sex` = "男" AND `password` = "1234
 ```
 
 上述这条`SQL`中，显然用到了联合索引中的性别和密码字段，此时再看看结果：
-![违背最左匹配](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c8614279bae43689a8cbe9f12917f3f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![违背最左匹配](images/8c8614279bae43689a8cbe9f12917f3ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 由于违背了联合索引的最左前缀原则，因为没使用最左边的`user_name`字段，因此也导致索引失效，从而走了全表查询。
 
 #### 3.1.8、不同字段值对比导致索引失效
@@ -420,7 +420,7 @@ EXPLAIN SELECT * FROM `zz_users` WHERE user_name = user_sex;
 ```
 
 按理来说，因为`user_name`属于联合索引的第一个字段，所以上述这条`SQL`中规中矩，理论上会走索引的，但看看结果：
-![字段对比](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0fbf03533f9c4e979d2207432d408c95~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![字段对比](images/0fbf03533f9c4e979d2207432d408c95tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 显然，这个场景也会导致索引无法使用，因此之后也要切记这点。
 
 #### 3.1.9、反向范围操作导致索引失效
@@ -433,7 +433,7 @@ EXPLAIN SELECT * FROM `zz_users` WHERE user_id NOT IN(1,2,3);
 ```
 
 上述`SQL`的意思很简单，也就是查询`user_id`不是`1,2,3`的数据，这里是基于主键索引字段`user_id`查询的，但会走索引吗？来看看结果：
-![范围查询对比](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3b2e7542400b4140bcb03c6c260be841~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![范围查询对比](images/3b2e7542400b4140bcb03c6c260be841tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 结果也很明显，使用`NOT`关键字做反向范围查询时，并不会走索引，索引此时失效了，但是做正向范围查询时，索引依旧有效。
 
 > 对于这一点，其实大家可以慢慢实验，并非所有的正向范围操作都会走索引，例如`IS NULL`就不会走，它的反向操作：`IS NOT NULL`同样不会走。
@@ -508,7 +508,7 @@ WHERE
 ```
 
 比如上述这条`SQL`，显然是不符合联合索引的最左前缀匹配原则的，但来看看执行结果：
-![索引覆盖](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6cf8c136e86473fac747f4bb430cfce~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![索引覆盖](images/d6cf8c136e86473fac747f4bb430cfcetplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 这个结果是不是很令你惊讶，通过`EXPLAIN`分析的结果显示，这条`SQL`竟然使用了索引，这是什么原因呢？也是因为索引覆盖。
 
 > 一句话概述：就是要查询的列，在使用的索引中已经包含，被所使用的索引覆盖，这种情况称之为索引覆盖。

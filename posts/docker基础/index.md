@@ -17,7 +17,7 @@ docker容器技术也是一种虚拟化技术
 
 仓库地址： https://hub.docker.com/
 
-![src=http___www.srcmini.com_wp-content_uploads_2020_03_docker-architecture.png&refer=http___www.srcmini.jpg](./images/src=http___www.srcmini.com_wp-content_uploads_2020_03_docker-architecture.png&refer=http___www.srcmini.jpg)
+![](images/images-docker-info.jpg)
 
 镜像（image）:模板，通过这个模板来创建容器服务，可创建多个容器（最终服务或者项目运行在容器中）
 
@@ -972,7 +972,7 @@ CMD ["/bin/bash"]
 
 ## 构建过程
 
-![src=http___seo-1255598498.file.myqcloud.com_full_4455082961bc017cb7c87a3463bb326e021013ce.jpg&refer=http___seo-1255598498.file.myqcloud.jpg](./images/src=http___seo-1255598498.file.myqcloud.com_full_4455082961bc017cb7c87a3463bb326e021013ce.jpg&refer=http___seo-1255598498.file.myqcloud.jpg)
+![](images/dockerfile.jpg)
 
 从上到下顺序执行，指令大写，每个指令就会创建一个新的镜像层
 

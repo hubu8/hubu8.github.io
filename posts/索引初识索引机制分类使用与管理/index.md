@@ -36,7 +36,7 @@ SELECT * FROM `zz_student`  WHERE name = "脑斧";
 > 在这种情况下，又该如何去提升数据库的查询性能呢？因为查询往往都是一个业务系统中最频繁的操作，一般项目的写/读请求比例都遵循三七定律，也就是`30%`的请求会涉及到写库操作，另外`70%`则属于查库类型的操作。
 
   在思考如何提升查询性能前，咱们不妨先回想一下小时候的场景，小时候由于刚接触汉字，很多字都不认识，所以通常每个人小时候都会拥有一本「新华字典」，但一本字典那么厚，我们是一页页去翻的吗？并不是，字典中有目录索引，我们可以根据音节、偏旁等方式查找不认识的字。
-![新华字典](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6b14b218a98947c9add20a470ec0a6a0~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![新华字典](images/6b14b218a98947c9add20a470ec0a6a0tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 在「新华字典」中一页页翻找某个汉字，就类似于我们前面给出的全表扫描方式，效率特别特别低，而通过目录索引则能够在很短的时间内找到目标汉字。
 
   既然字典中都存在目录索引页，能帮助小时候的我们快速检索汉字，那这个思想能否应用到数据库中来呢？答案是当然可以，并且`MySQL`也提供了索引机制，索引是数据库中的核心组件之一，一张表中建立了合适的索引后，往往在面对海量数据查询时，能够事半功倍，接下来一起聊一聊`MySQL`的索引。
@@ -112,7 +112,7 @@ CREATE TABLE `zz_user`  (
 ```
 
 在上述的建表`SQL`中，为`user_id`创建了一个主键索引，然后来查一下当前表的索引信息：
-![索引查询](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4ad9dbbda57c4d5dade247db392c4803~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![索引查询](images/4ad9dbbda57c4d5dade247db392c4803tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 简单的概述一下查询后，每个字段的含义：
 
 - ①`Table`：当前索引属于那张表。
@@ -454,7 +454,7 @@ WITH PARSER NGRAM;
 ```
 
 创建好全文索引后，当你想要使用全文索引时，优化器这时不能自动选择，因为全文索引有自己的语法，但在了解如何使用之前，得先清楚两个概念：最小搜索长度和最大搜索长度，先来看看全文索引的一些参数，可通过`show variables like '%ft%';`命令查询，如下：
-![全文索引参数](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/15843b9707f6416bb5da7e7f22fe039f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![全文索引参数](images/15843b9707f6416bb5da7e7f22fe039ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 多余的参数就不介绍了，重点讲一下其中的几个重要参数：
 
 - `ft_min_word_len`：使用`MyISAM`引擎的表中，全文索引最小搜索长度。

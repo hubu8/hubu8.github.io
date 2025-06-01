@@ -5,7 +5,7 @@
 
 # Umi4 集成阿里低代码框架lowcode-engine
 
-![Umi4 集成阿里低代码框架lowcode-engine](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cfb2462f6c6e430fb769c7da8479ef2e~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?)
+![Umi4 集成阿里低代码框架lowcode-engine](images/cfb2462f6c6e430fb769c7da8479ef2etplv-k3u1fbpfcp-zoom-crop-mark3024302430241702.webp)
 
 携手创作，共同成长！这是我参与「掘金日新计划 · 8 月更文挑战」的第2天，[点击查看活动详情](https://juejin.cn/post/7123120819437322247)
 
@@ -173,7 +173,7 @@ export default function LowcodeEditor() {
 
 这里只是入口组件的初始化，组件内部还有很多内容，我们重Deom中copy出来。比如`plugin`，`assets.josn`,`schem.json`等，这里不做过多的介绍，里面的内容好多，后续我们一边学习，一边慢慢拆解，分享。
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/34d2230ea2cc4c2e922c636e5473130f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![image.png](images/34d2230ea2cc4c2e922c636e5473130ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 
 1. 使用`LowcodeEditor`组件，在我们需要的地方直接导入，使用就行
 
@@ -194,7 +194,7 @@ export default function HomePage() {
 
 4.访问页面
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f22b94432d4349b08cc3f7939e25e6ab~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
+![image.png](images/f22b94432d4349b08cc3f7939e25e6abtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 
 ## 结束语
 

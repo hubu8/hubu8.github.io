@@ -102,9 +102,9 @@ IDEA 工具里面使用Maven开发的一个个独立的小Moudel，它具体是�
 
 Spring官网：https://spring.io/
 
-![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zczEuYmRzdGF0aWMuY29tLzcwY0Z1WFNoX1ExWW54R2twb1dLMUhGNmhoeS9pdC91PTM1NzgwMTc3ODAsMTIxODQyMDAyOSZmbT0yNiZncD0wLmpwZw?x-oss-process=image/format,png)
+![img](images/format,png.png)
 
-![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zczIuYmRzdGF0aWMuY29tLzcwY0Z2blNoX1ExWW54R2twb1dLMUhGNmhoeS9pdC91PTE2Mzc3ODY4OTcsNzQ1MTM1MjUxJmZtPTI2JmdwPTAuanBn?x-oss-process=image/format,png)
+![img](images/format,png-17487802468353.png)
 
 Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus, one-time tokens, global locks, leadership election, distributed sessions, cluster state). Coordination of distributed systems leads to boiler plate patterns, and using Spring Cloud developers can quickly stand up services and applications that implement those patterns. They will work well in any distributed environment, including the developer’s own laptop, bare metal data centres, and managed platforms such as Cloud Foundry.
 
@@ -166,7 +166,7 @@ https://github.com/spring-cloud
 
 版本号有点特别：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130004420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70.png)
 
 SpringCloud没有采用数字编号的方式命名版本号，而是采用了伦敦地铁站的名称，**同时根据字母表的顺序来对应版本时间顺序**，比如最早的Realse版本：Angel，第二个Realse版本：Brixton，然后是Camden、Dalston、Edgware，目前最新的是Hoxton SR4 CURRENT GA通用稳定版。
 
@@ -223,7 +223,7 @@ MicroServiceCloud父工程(Project)下初次带着3个子模块(Module)
 
 *   新建父工程项目springcloud，切记**Packageing是pom模式**
 *   主要是定义POM文件，将后续各个子模块公用的jar包等统一提取出来，类似一个抽象父类  
-    ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130052880.png#pic_center)
+    ![在这里插入图片描述](images/20200521130052880.png)
 
 **pom.xml**
 
@@ -339,7 +339,7 @@ MicroServiceCloud父工程(Project)下初次带着3个子模块(Module)
 
 父工程为springcloud，其下有多个子mudule，详情参考完整代码了解
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130118985.png#pic_center)
+![在这里插入图片描述](images/20200521130118985.png)
 
 springcloud-consumer-dept-80访问springcloud-provider-dept-8001下的controller使用REST方式
 
@@ -425,11 +425,11 @@ springcloud-consumer-dept-80和springcloud-provider-dept-8001的pom.xml和父工
     *   Eureka采用了C-S的架构设计，EurekaServer作为服务注册功能的服务器，他是服务注册中心.
     *   而系统中的其他微服务，使用Eureka的客户端连接到EurekaServer并维持心跳连接。这样系统的维护人员就可以通过EurekaServer来监控系统中各个微服务是否正常运行，Springcloud 的一些其他模块 (比如Zuul) 就可以通过EurekaServer来发现系统中的其他微服务，并执行相关的逻辑.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130157770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878026319212.png)
 
 *   和Dubbo架构对比.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130222344.png#pic_center)
+![在这里插入图片描述](images/20200521130222344.png)
 
 *   Eureka 包含两个组件：**Eureka Server** 和 **Eureka Client**.
 *   Eureka Server 提供服务注册，各个节点启动后，回在EurekaServer中进行注册，这样Eureka Server中的服务注册表中将会储存所有课用服务节点的信息，服务节点的信息可以在界面中直观的看到.
@@ -440,7 +440,7 @@ springcloud-consumer-dept-80和springcloud-provider-dept-8001的pom.xml和父工
     *   Service Consumer：服务消费方，从Eureka中获取注册服务列表，从而找到消费服务
 *   目前工程状况
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130244579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780470724127.png)
 
 #### 4.3 构建步骤
 
@@ -489,7 +489,7 @@ springcloud-consumer-dept-80和springcloud-provider-dept-8001的pom.xml和父工
     源码中Eureka的默认端口以及访问路径:
     
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130439891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878027141517.png)
 
 1.  主启动类
     
@@ -507,7 +507,7 @@ springcloud-consumer-dept-80和springcloud-provider-dept-8001的pom.xml和父工
 2.  启动成功后访问 http://localhost:7001/ 得到以下页面
     
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130420201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878027342920.png)
 
 ##### 2. eureka-client
 
@@ -550,7 +550,7 @@ springcloud-consumer-dept-80和springcloud-provider-dept-8001的pom.xml和父工
 4.  先启动7001服务端后启动8001客户端进行测试，然后访问监控页http://localhost:7001/ 产看结果如图，成功
     
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130507106.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878027737323.png)
 
 1.  修改Eureka上的默认描述信息
     
@@ -565,15 +565,15 @@ springcloud-consumer-dept-80和springcloud-provider-dept-8001的pom.xml和父工
     ```
     
     结果如图：  
-    ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130659314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+    ![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878028080126.png)
     
     如果此时停掉springcloud-provider-dept-8001 等30s后 监控会开启保护机制  
-    ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130557974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+    ![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878028656829.png)
     
 2.  配置关于服务加载的监控信息
     
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130718511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878028912532.png)
 
 pom.xml中添加依赖
 
@@ -594,9 +594,13 @@ info:
   company.name: com.haust #公司的名称` 
 ```
 
-此时刷新监控页，点击进入![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130756988.png#pic_center)跳转新页面显示如下内容：
+此时刷新监控页，点击进入
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130814308.png#pic_center)
+![在这里插入图片描述](images/20200521130756988.png)
+
+跳转新页面显示如下内容：
+
+![在这里插入图片描述](images/20200521130814308.png)
 
 ##### 3. EureKa自我保护机制：好死不如赖活着
 
@@ -637,7 +641,7 @@ private DiscoveryClient client;
  }` 
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521130913485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878030674239.png)
 
 主启动类中加入@EnableDiscoveryClient 注解
 
@@ -652,9 +656,9 @@ public class DeptProvider_8001 {
 
 结果如图：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131043195.png#pic_center)
+![在这里插入图片描述](images/20200521131043195.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131103616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780480067130.png)
 
 #### 4.4 Eureka：集群环境配置
 
@@ -717,15 +721,15 @@ public class EurekaServer_7003 {
 
 配置一些自定义本机名字，找到本机hosts文件并打开
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131127278.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878031509944.png)
 
 在hosts文件最后加上，要访问的本机名称，默认是localhost
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131141804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878031743947.png)
 
 修改application.yml的配置，如图为springcloud-eureka-7001配置，springcloud-eureka-70002/springcloud-eureka-7003同样分别修改为其对应的名称即可
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/202005211312020.png#pic_center)
+![在这里插入图片描述](images/202005211312020.png)
 
 在集群中使springcloud-eureka-7001关联springcloud-eureka-70002、springcloud-eureka-7003
 
@@ -789,7 +793,7 @@ eureka:
 
 这样模拟集群就搭建号了，就可以把一个项目挂载到三个服务器上了
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131237217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878032738952.png)
 
 #### 4.5 对比和Zookeeper区别
 
@@ -935,7 +939,7 @@ private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT"
 
 流程图：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131315626.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878033194155.png)
 
 1.新建两个服务提供者Moudle：springcloud-provider-dept-8003、springcloud-provider-dept-8002
 
@@ -943,15 +947,15 @@ private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT"
 
 3.启动所有服务测试(根据自身电脑配置决定启动服务的个数)，访问http://eureka700fxgfj1.com:70002/查看结果
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131332466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878033491558.png)
 
 测试访问http://localhost/consumer/dept/list 这时候随机访问的是服务提供者8003
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131413295.png#pic_center)
+![在这里插入图片描述](images/20200521131413295.png)
 
 再次访问http://localhost/consumer/dept/list这时候随机的是服务提供者8001
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131431716.png#pic_center)
+![在这里插入图片描述](images/20200521131431716.png)
 
 以上这种**每次访问http://localhost/consumer/dept/list随机访问集群中某个服务提供者，这种情况叫做轮询**，轮询算法在SpringCloud中可以自定义。
 
@@ -986,7 +990,7 @@ public class ConfigBean {//@Configuration -- spring  applicationContext.xml
 
 也可以自定义规则，在myRule包下自定义一个配置类MyRule.java，注意：**该包不要和主启动类所在的包同级，要跟启动类所在包同级**：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131456478.png#pic_center)
+![在这里插入图片描述](images/20200521131456478.png)
 
 MyRule.java
 
@@ -1319,21 +1323,21 @@ Hystrix是一个应用于处理分布式系统的延迟和容错的开源库，�
 
 当一切正常时，请求流可以如下所示：
 
-![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRodWIuY29tL05ldGZsaXgvSHlzdHJpeC93aWtpL2ltYWdlcy9zb2EtMS02NDAucG5n?x-oss-process=image/format,png)
+![img](images/format,png-174878035588567.png)
 
 当许多后端系统中有一个潜在时，它可以阻止整个用户请求：
 
-![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRodWIuY29tL05ldGZsaXgvSHlzdHJpeC93aWtpL2ltYWdlcy9zb2EtMi02NDAucG5n?x-oss-process=image/format,png)
+![img](images/format,png-1748780485962133.png)
 
 随着大容量通信量的增加，单个后端依赖项的潜在性会导致所有服务器上的所有资源在几秒钟内饱和。
 
 应用程序中通过网络或客户端库可能导致网络请求的每个点都是潜在故障的来源。比失败更糟糕的是，这些应用程序还可能导致服务之间的延迟增加，从而备份队列、线程和其他系统资源，从而导致更多跨系统的级联故障。
 
-![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRodWIuY29tL05ldGZsaXgvSHlzdHJpeC93aWtpL2ltYWdlcy9zb2EtMy02NDAucG5n?x-oss-process=image/format,png)
+![img](images/format,png-174878035804070.png)
 
 当使用hystrix包装每个基础依赖项时，上面的图表中所示的体系结构会发生类似于以下关系图的变化。每个依赖项是相互隔离的，限制在延迟发生时它可以填充的资源中，并包含在回退逻辑中，该逻辑决定在依赖项中发生任何类型的故障时要做出什么样的响应：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131820586.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878036029873.png)
 
 **官网资料**：https://github.com/Netflix/Hystrix/wiki
 
@@ -1413,11 +1417,11 @@ info:
 
 prefer-ip-address: false:
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521131940911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878036679976.png)
 
 prefer-ip-address: true：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020052113195798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878036889779.png)
 
 **修改controller**
 
@@ -1469,11 +1473,11 @@ public class HystrixDeptProvider_8001 {
 
 使用熔断后，当访问一个不存在的id时，前台页展示数据如下
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132057247.png#pic_center)
+![在这里插入图片描述](images/20200521132057247.png)
 
 而不适用熔断的springcloud-provider-dept–8001模块访问相同地址会出现下面状况
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132119757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878037497684.png)
 
 因此，**为了避免因某个微服务后台出现异常或错误而导致整个应用或网页报错，使用熔断是必要的**
 
@@ -1487,7 +1491,7 @@ public class HystrixDeptProvider_8001 {
 服务降级主要用于什么场景呢？当整个微服务架构整体的负载超出了预设的上限阈值或即将到来的流量预计将会超过预设的阈值时，为了保证重要或基本的服务能正常运行，可以将一些 不重要 或 不紧急 的服务或任务进行服务的 延迟使用 或 暂停使用。  
   降级的方式可以根据业务来，可以延迟服务，比如延迟给用户增加积分，只是放到一个缓存中，等服务平稳之后再执行 ；或者在粒度范围内关闭服务，比如关闭相关文章的推荐。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132141732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878038026787.png)
 
 由上图可得，**当某一时间内服务A的访问量暴增，而B和C的访问量较少，为了缓解A服务的压力，这时候需要B和C暂时关闭一些服务功能，去承担A的部分服务，从而为A分担压力，叫做服务降级**。
 
@@ -1783,7 +1787,7 @@ zuul:
     prefix: /kuagn # 设置公共的前缀,实现隐藏原有路由` 
 ```
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-pc2gKhub-1590035798590)(C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200520211031365.png)]](https://img-blog.csdnimg.cn/20200521132228379.png#pic_center)
+![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-pc2gKhub-1590035798590)(C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200520211031365.png)]](images/20200521132228379.png)
 
 **主启动类**
 
@@ -1815,7 +1819,7 @@ public class ZuulApplication_9527 {
 
 **什么是SpringCloud config分布式配置中心？**
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/202005211322530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878039019392.png)
 
 spring cloud config 为微服务架构中的微服务提供集中化的外部支持，配置服务器为各个不同微服务应用的所有环节提供了一个**中心化的外部配置**。
 
@@ -1906,43 +1910,43 @@ public class Config_server_3344 {
 
 将本地git仓库springcloud-config文件夹下新建的application.yml提交到码云仓库：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132326502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878039471195.png)
 
 定位资源的默认策略是克隆一个git仓库（在`spring.cloud.config.server.git.uri`），并使用它来初始化一个迷你`SpringApplication`。小应用程序的`Environment`用于枚举属性源并通过JSON端点发布。
 
 HTTP服务具有以下格式的资源：
 
 ```yml
-`/{application}/{profile}[/{label}]
+/{application}/{profile}[/{label}]
 /{application}-{profile}.yml
 /{label}/{application}-{profile}.yml
 /{application}-{profile}.properties
-/{label}/{application}-{profile}.properties` 
+/{label}/{application}-{profile}.properties
 ```
 
 其中“应用程序”作为`SpringApplication`中的`spring.config.name`注入（即常规的Spring Boot应用程序中通常是“应用程序”），“配置文件”是活动配置文件（或逗号分隔列表的属性），“label”是可选的git标签（默认为“master”）。
 
 测试访问http://localhost:3344/application-dev.yml
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132350566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-174878040333098.png)
 
 测试访问 http://localhost:3344/application/test/master
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132406474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780405773101.png)
 
 测试访问 http://localhost:3344/master/application-dev.yml
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132423447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780407763104.png)
 
 如果测试访问不存在的配置则不显示 如：http://localhost:3344/master/application-aaa.yml
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132439404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780409395107.png)
 
 ##### **客户端**
 
 将本地git仓库springcloud-config文件夹下新建的config-client.yml提交到码云仓库：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132503261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780411422110.png)
 
 新建一个springcloud-config-client-3355模块，并导入依赖
 
@@ -2033,15 +2037,15 @@ public class ConfigClient {
 
 访问：http://localhost:8201/config/
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132534867.png#pic_center)
+![在这里插入图片描述](images/20200521132534867.png)
 
 **小案例**
 
 本地新建config-dept.yml和config-eureka.yml并提交到码云仓库
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132550150.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780418553115.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132601463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780420551118.png)
 
 这里配置文件内容不再列举直接到代码中看把。
 
@@ -2087,10 +2091,10 @@ public class ConfigEurekaServer_7001 {
 
 第一步：启动 Config_Server_3344，并访问 http://localhost:3344/master/config-eureka-dev.yml 测试
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020052113262082.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)  
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780425530121.png)  
 第二部：启动ConfigEurekaServer_7001，访问 http://localhost:7001/ 测试
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200521132633925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70#pic_center)  
+![在这里插入图片描述](images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70-1748780428109124.png)  
 显示上图则成功
 
 新建springcloud-config-dept-8001模块并拷贝springcloud-provider-dept-8001的内容

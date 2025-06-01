@@ -3,7 +3,7 @@
 
 <!--more-->
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7456c802d1894835a04d89c52735cc3b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
+![](images/7456c802d1894835a04d89c52735cc3btplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 
 ### PO（Persistant Object - 持久化对象）
 

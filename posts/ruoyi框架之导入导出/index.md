@@ -545,7 +545,7 @@ public class Test
 }
 ```
 
-**导出文件结果** ![ruoyi-sub-execl](https://oscimg.oschina.net/oscnet/up-6b1853322c0d5472bee27065023bd06841b.png)
+**导出文件结果** ![ruoyi-sub-execl](images/up-6b1853322c0d5472bee27065023bd06841b.png)
 
 ## [#](http://doc.ruoyi.vip/ruoyi/document/htsc.html#上传下载)上传下载
 

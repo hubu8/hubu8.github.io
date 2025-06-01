@@ -51,7 +51,7 @@ UidGenerator是百度开源的Java语言实现，基于Snowflake算法的唯一I
 
 而UidGenerator改进后的SnowFlake算法核心组成如下图：
 
-![img](https://p8.itc.cn/q_70/images03/20210524/905ce523d73f422caf4b336870d898c6.png)
+![img](images/905ce523d73f422caf4b336870d898c6.png)
 
 简单来说，UidGenerator能保证“ 指定机器 & 同一时刻 & 某一并发序列 ”，是唯一，并据此生成一个64 bits的唯一ID（long），且默认采用上图字节分配方式。
 
@@ -92,7 +92,7 @@ DefaultUidGenerator 的源码很清楚的说明了几个生成ID的关键位的�
 >
 > d. 如果是新的一秒，那么sequence重新从0开始。
 
-![img](https://p9.itc.cn/q_70/images03/20210524/e60ae0662e734951b9e9409a13c76fd1.png)
+![img](images/e60ae0662e734951b9e9409a13c76fd1.png)
 
 （ 上述源码节选自：DefaultUidGenerator 类中的 nextId 方法）
 
@@ -116,7 +116,7 @@ CachedUidGenerator是DefaultUidGenerator的重要改进实现。它的核心利�
 
 以下是CachedUidGenerator中的RingBuffer原理示意图：
 
-![img](https://p2.itc.cn/q_70/images03/20210524/1c486c9f5a5541c4a0afeb241137d3ac.png)
+![img](images/1c486c9f5a5541c4a0afeb241137d3ac.png)
 
 扩展知识：什么是RingBuffer？
 

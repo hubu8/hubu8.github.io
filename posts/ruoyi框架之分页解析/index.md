@@ -399,7 +399,7 @@ resultList = executor.query(ms, parameter, rowBounds, resultHandler, cacheKey, b
 
 为什么不分也得也会拼接？我们回头看下前面提到的`dialect.skip(ms, parameter, rowBounds)`:
 
-![1f4f6d4d80e9c5420c2a33145b248f18.jpeg](https://img-blog.csdnimg.cn/img_convert/1f4f6d4d80e9c5420c2a33145b248f18.jpeg)
+![1f4f6d4d80e9c5420c2a33145b248f18.jpeg](images/1f4f6d4d80e9c5420c2a33145b248f18.jpeg)
 
 图片
 

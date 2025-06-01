@@ -75,7 +75,7 @@ public class ResourcesConfig implements WebMvcConfigurer
 
 3、启动`ruoyi-file`应用，访问`statics`会被映射到本地项目`D:/ruoyi/uploadPath`下的目录里面。
 
-![statics](https://oscimg.oschina.net/oscnet/up-b1b7ed31eabe28b4ce815ab76569a771d05.png)
+![statics](images/up-b1b7ed31eabe28b4ce815ab76569a771d05.png)
 
 ## [#](http://doc.ruoyi.vip/ruoyi-cloud/cloud/file.html#minio存储)MinIO存储
 
@@ -89,7 +89,7 @@ Windows下载后新建一个目录存放`minio`文件，例如`D:\minioData`，�
 
 启动成功以后如下图，最后红色字提示修改`access Key`和`Secret Key`
 
-![minio](https://oscimg.oschina.net/oscnet/up-0f06828839a1214544aae11d4c38cfb5b8a.png)
+![minio](images/up-0f06828839a1214544aae11d4c38cfb5b8a.png)
 
 提示
 
@@ -101,7 +101,7 @@ Windows下载后新建一个目录存放`minio`文件，例如`D:\minioData`，�
 minio`提供了一个可视化的管理控制平台，安装好之后，在浏览器中输入([http://localhost:9000/ (opens new window)](http://localhost:9000/))就可以访问了，默认的用户名和密码都是`minioadmin
 ```
 
-![minio](https://oscimg.oschina.net/oscnet/up-0c6c496704c7f30a569a07c520d0bbf40dd.png)
+![minio](images/up-0c6c496704c7f30a569a07c520d0bbf40dd.png)
 
 ### [#](http://doc.ruoyi.vip/ruoyi-cloud/cloud/file.html#如何使用)如何使用
 
@@ -123,19 +123,19 @@ minio:
 
 在后台管理界面选择`+号`创建你的`Create Bucket`，可以理解为一个文件夹用来存放图片。桶创建成功之后就可以上传图片了。
 
-![minio](https://oscimg.oschina.net/oscnet/up-fc0a58dcb7bc7a2ec03736857febb50e20d.png)
+![minio](images/up-fc0a58dcb7bc7a2ec03736857febb50e20d.png)
 
 - 上传图片
 
 在后台管理界面选择`+号`上传你的`Upload file`，上传你自己的图片。在文件列表的右边就可以看到图片了。
 
-![minio](https://oscimg.oschina.net/oscnet/up-106b75fff841430904e5125272b2d7f1bf6.png)
+![minio](images/up-106b75fff841430904e5125272b2d7f1bf6.png)
 
 ### [#](http://doc.ruoyi.vip/ruoyi-cloud/cloud/file.html#访问策略)访问策略
 
 设置`* ReadOnly`则所有用户通过文件路径即可访问，私有桶则不必设置访问策略。
 
-![minio](https://oscimg.oschina.net/oscnet/up-4c2d1660428db87b223240736461ac034fc.png)
+![minio](images/up-4c2d1660428db87b223240736461ac034fc.png)
 
 启动`ruoyi-file`应用，在浏览器中打开([http://127.0.0.1:9000/ruoyi/ruoyi.png (opens new window)](http://127.0.0.1:9000/ruoyi/ruoyi.png))就可以访问图片了。
 

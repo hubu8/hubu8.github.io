@@ -34,7 +34,7 @@ UUID由以下几部分的组合：
 
 SnowFlake算法生成id的结果是一个64bit大小的整数，它的结构如下图：
 
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/2/26/1692952e7ee6f2a3~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image)
+![img](images/1692952e7ee6f2a3tplv-t2oaga2asx-zoom-in-crop-mark4536000.jpeg)
 
 
 1) 1位，不用。二进制中最高位为1的都是负数，但是我们生成的id一般都使用整数，所以这个最高位固定是0

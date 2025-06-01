@@ -550,7 +550,7 @@ public boolean saveStaff(Staff staff) {
 
 postman传参如图。我们并没有在参数体里传租户id，而是和查询时一样将租户id放在了请求头。
 
-![img](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0d572cd749f49cd9af67f23f5eb3719~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp)
+![img](images/d0d572cd749f49cd9af67f23f5eb3719tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 腾讯又增加了一名叫“腾讯果果”的员工。
 

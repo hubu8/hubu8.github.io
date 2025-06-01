@@ -4,9 +4,25 @@
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 27 May 2025 13:59:26 &#43;0800</lastBuildDate>
+            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sat, 31 May 2025 08:59:26 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>bannanapi M4 ZERO 安装系统</title>
+    <link>https://hubu8.github.io/posts/bannanapi-m4-zero-%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/</link>
+    <pubDate>Sat, 31 May 2025 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/bannanapi-m4-zero-%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>CSRF-跨站请求伪造</title>
+    <link>https://hubu8.github.io/posts/csrf-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</link>
+    <pubDate>Wed, 28 May 2025 08:59:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hubu8.github.io/posts/csrf-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Sqlmap-SQL注入漏洞</title>
     <link>https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</link>
     <pubDate>Tue, 27 May 2025 13:59:26 &#43;0800</pubDate>
@@ -69,22 +85,6 @@
     <author>作者</author>
     <guid>https://hubu8.github.io/posts/fiddler%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%8A%93%E5%8C%85/</guid>
     <description><![CDATA[fiddler简介 Fiddler 是一款强大的抓包工具，原理是以 web 代理服务器的形式进行工作的: 下载地址： Fiddler 下载 配置 允许监听https Fiddler 如果抓取 https 协议会话需]]></description>
-</item>
-<item>
-    <title>byte类型取值范围为啥是-128~127</title>
-    <link>https://hubu8.github.io/posts/byte%E7%B1%BB%E5%9E%8B%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4%E4%B8%BA%E5%95%A5%E6%98%AF-128~127/</link>
-    <pubDate>Tue, 20 May 2025 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/byte%E7%B1%BB%E5%9E%8B%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4%E4%B8%BA%E5%95%A5%E6%98%AF-128~127/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>使用有向无环图表示任务的依赖关系</title>
-    <link>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</link>
-    <pubDate>Fri, 02 Aug 2024 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

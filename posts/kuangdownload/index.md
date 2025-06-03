@@ -21,6 +21,6 @@
 
 接口：
 ```
-
+https://kuangstudy.oss-cn-beijing.aliyuncs.com/download/note/JavaScript_hvtser8u0.rar?Expires=1618756583&OSSAccessKeyId=LTAI4G9FmSQ5cVvkR2ZVjSYi&Signature=LuaKA5VVvNrPAYERGfvrwC7%2BeXQ%3D
 ```
 只用把其中的下载路径换一下就OK了

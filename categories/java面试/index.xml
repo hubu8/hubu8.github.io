@@ -1,88 +1,82 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>java面试 - 分类 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/</link>
-        <description>java面试 - 分类 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
-    <title>Java面试</title>
-    <link>https://hubu8.github.io/posts/java%E9%9D%A2%E8%AF%95/</link>
-    <pubDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/java%E9%9D%A2%E8%AF%95/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>创建线程的三种方式</title>
-    <link>https://hubu8.github.io/posts/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
-    <pubDate>Wed, 03 Nov 2021 09:25:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>TCP协议</title>
-    <link>https://hubu8.github.io/posts/tcp%E5%8D%8F%E8%AE%AE/</link>
-    <pubDate>Mon, 30 Aug 2021 11:19:52 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/tcp%E5%8D%8F%E8%AE%AE/</guid>
-    <description><![CDATA[TCP(Transmission Control Protocol 传输控制协议)是一种面向连接(连接导向)的、可靠的、 基于IP的传输层协议。TCP在IP报文的协议号是6。TCP是一个超级麻烦的协议，而]]></description>
-</item>
-<item>
-    <title>HashMap</title>
-    <link>https://hubu8.github.io/posts/hashmap/</link>
-    <pubDate>Wed, 21 Jul 2021 21:18:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/hashmap/</guid>
-    <description><![CDATA[享学hashmap]]></description>
-</item>
-<item>
-    <title>javaWeb 六</title>
-    <link>https://hubu8.github.io/posts/javaweb-%E5%85%AD/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/javaweb-%E5%85%AD/</guid>
-    <description><![CDATA[本文由 简悦 SimpRead 转码， 原文地址 blog.csdn.net Java 208 道面试题 · Java Web 64. jsp 和 servlet 有什么区别？ jsp经编译后就变成了Servlet.（JSP的本质就是Servlet，J]]></description>
-</item>
-<item>
-    <title>Java基础 一</title>
-    <link>https://hubu8.github.io/posts/java%E5%9F%BA%E7%A1%80-%E4%B8%80/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/java%E5%9F%BA%E7%A1%80-%E4%B8%80/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>对象拷贝 五</title>
-    <link>https://hubu8.github.io/posts/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D-%E4%BA%94/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D-%E4%BA%94/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>多线程 三</title>
-    <link>https://hubu8.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E4%B8%89/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E4%B8%89/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>反射 四</title>
-    <link>https://hubu8.github.io/posts/%E5%8F%8D%E5%B0%84-%E5%9B%9B/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%8F%8D%E5%B0%84-%E5%9B%9B/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>容器 二</title>
-    <link>https://hubu8.github.io/posts/%E5%AE%B9%E5%99%A8-%E4%BA%8C/</link>
-    <pubDate>Mon, 19 Jul 2021 21:17:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%AE%B9%E5%99%A8-%E4%BA%8C/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java面试 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/</link>
+    <description>Recent content in Java面试 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 12 Feb 2023 15:33:18 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/categories/java%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java面试</title>
+      <link>https://hubu8.github.io/posts/java%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Sun, 12 Feb 2023 15:33:18 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/java%E9%9D%A2%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>创建线程的三种方式</title>
+      <link>https://hubu8.github.io/posts/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Wed, 03 Nov 2021 09:25:32 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TCP协议</title>
+      <link>https://hubu8.github.io/posts/tcp%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Mon, 30 Aug 2021 11:19:52 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/tcp%E5%8D%8F%E8%AE%AE/</guid>
+      <description>&lt;p&gt;TCP(Transmission Control Protocol 传输控制协议)是一种面向连接(连接导向)的、可靠的、 基于IP的传输层协议。TCP在IP报文的协议号是6。TCP是一个超级麻烦的协议，而它又是互联网的基础，也是每个程序员必备的基本功。首先来看看OSI的七层模型:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HashMap</title>
+      <link>https://hubu8.github.io/posts/hashmap/</link>
+      <pubDate>Wed, 21 Jul 2021 21:18:05 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/hashmap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>javaWeb 六</title>
+      <link>https://hubu8.github.io/posts/javaweb-%E5%85%AD/</link>
+      <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/javaweb-%E5%85%AD/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;本文由 &lt;a href=&#34;http://ksria.com/simpread/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;简悦 SimpRead&lt;/a&gt; 转码， 原文地址 &lt;a href=&#34;https://blog.csdn.net/fangchao2011/article/details/89185249&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;blog.csdn.net&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;java-208-道面试题--java-web&#34;&gt;Java 208 道面试题 · Java Web&lt;/h2&gt;&#xA;&lt;h3 id=&#34;64-jsp-和-servlet-有什么区别&#34;&gt;&lt;strong&gt;64. jsp 和 servlet 有什么区别？&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;jsp经编译后就变成了Servlet.（JSP的本质就是Servlet，JVM只能识别java的类，不能识别JSP的代码，Web容器将JSP的代码编译成JVM能够识别的java类）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java基础 一</title>
+      <link>https://hubu8.github.io/posts/java%E5%9F%BA%E7%A1%80-%E4%B8%80/</link>
+      <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/java%E5%9F%BA%E7%A1%80-%E4%B8%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>对象拷贝 五</title>
+      <link>https://hubu8.github.io/posts/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D-%E4%BA%94/</link>
+      <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D-%E4%BA%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>多线程 三</title>
+      <link>https://hubu8.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E4%B8%89/</link>
+      <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E4%B8%89/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>反射 四</title>
+      <link>https://hubu8.github.io/posts/%E5%8F%8D%E5%B0%84-%E5%9B%9B/</link>
+      <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%8F%8D%E5%B0%84-%E5%9B%9B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>容器 二</title>
+      <link>https://hubu8.github.io/posts/%E5%AE%B9%E5%99%A8-%E4%BA%8C/</link>
+      <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%AE%B9%E5%99%A8-%E4%BA%8C/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

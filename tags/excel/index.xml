@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Excel - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/excel/</link>
-        <description>Excel - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 05 Mar 2023 16:37:43 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/excel/" rel="self" type="application/rss+xml" /><item>
-    <title>Excel去除单元格保护</title>
-    <link>https://hubu8.github.io/posts/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</link>
-    <pubDate>Sun, 05 Mar 2023 16:37:43 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/excel/</link>
+    <description>Recent content in Excel on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 05 Mar 2023 16:37:43 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Excel去除单元格保护</title>
+      <link>https://hubu8.github.io/posts/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</link>
+      <pubDate>Sun, 05 Mar 2023 16:37:43 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/excel%E5%8E%BB%E9%99%A4%E5%8D%95%E5%85%83%E6%A0%BC%E4%BF%9D%E6%8A%A4/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

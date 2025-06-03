@@ -1,32 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>hugo - 分类 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/categories/hugo/</link>
-        <description>hugo - 分类 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/hugo/" rel="self" type="application/rss+xml" /><item>
-    <title>github action实现自动编译发布githubPages</title>
-    <link>https://hubu8.github.io/posts/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</link>
-    <pubDate>Sun, 12 Feb 2023 15:33:18 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Echarts示例</title>
-    <link>https://hubu8.github.io/posts/echarts%E7%A4%BA%E4%BE%8B/</link>
-    <pubDate>Wed, 14 Sep 2022 16:43:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/echarts%E7%A4%BA%E4%BE%8B/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>域名绑定</title>
-    <link>https://hubu8.github.io/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</link>
-    <pubDate>Wed, 28 Apr 2021 18:25:35 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</guid>
-    <description><![CDATA[hugo   Github Pages绑定域名]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/categories/hugo/</link>
+    <description>Recent content in Hugo on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 12 Feb 2023 15:33:18 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>github action实现自动编译发布githubPages</title>
+      <link>https://hubu8.github.io/posts/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</link>
+      <pubDate>Sun, 12 Feb 2023 15:33:18 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/github-action%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%8F%91%E5%B8%83githubpages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>域名绑定</title>
+      <link>https://hubu8.github.io/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Wed, 28 Apr 2021 18:25:35 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

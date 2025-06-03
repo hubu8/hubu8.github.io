@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>网络 - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/%E7%BD%91%E7%BB%9C/</link>
-        <description>网络 - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 02 Dec 2022 13:57:12 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/%E7%BD%91%E7%BB%9C/" rel="self" type="application/rss+xml" /><item>
-    <title>虚拟机网络配置</title>
-    <link>https://hubu8.github.io/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
-    <pubDate>Fri, 02 Dec 2022 13:57:12 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 02 Dec 2022 13:57:12 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>虚拟机网络配置</title>
+      <link>https://hubu8.github.io/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 02 Dec 2022 13:57:12 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

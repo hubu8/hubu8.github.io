@@ -4,22 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Jenkins持续集成入门到精通 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="Jenkins持续集成入门到精通" />
-<meta property="og:description" content="EditPreview 《Jenkins持续集成入门到精通》 1 、持续集成及Jenkins介绍 2 、Jenkins安装和持续集成环境配置 3 、Jenkins构建Mave" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-06T20:23:59+08:00" />
-<meta property="article:modified_time" content="2021-04-06T20:23:59+08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>Jenkins持续集成入门到精通 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="Jenkins持续集成入门到精通">
+  <meta property="og:description" content="EditPreview
+《Jenkins持续集成入门到精通》 1 、持续集成及Jenkins介绍 2 、Jenkins安装和持续集成环境配置 3 、Jenkins构建Maven项目 4 、Jenkins&#43;Docker&#43;SpringCloud微服务持续集成 5 、基于Kubernetes/K8S构建Jenkins微服务持续集成平台">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-04-06T20:23:59+08:00">
+    <meta property="article:modified_time" content="2021-04-06T20:23:59+08:00">
+    <meta property="article:tag" content="Jenkins">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
-
-<meta name="twitter:title" content="Jenkins持续集成入门到精通"/>
-<meta name="twitter:description" content="EditPreview 《Jenkins持续集成入门到精通》 1 、持续集成及Jenkins介绍 2 、Jenkins安装和持续集成环境配置 3 、Jenkins构建Mave"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="Jenkins持续集成入门到精通">
+  <meta name="twitter:description" content="EditPreview
+《Jenkins持续集成入门到精通》 1 、持续集成及Jenkins介绍 2 、Jenkins安装和持续集成环境配置 3 、Jenkins构建Maven项目 4 、Jenkins&#43;Docker&#43;SpringCloud微服务持续集成 5 、基于Kubernetes/K8S构建Jenkins微服务持续集成平台">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" /><link rel="prev" href="https://hubu8.github.io/posts/redis/" /><link rel="next" href="https://hubu8.github.io/posts/jenkins%E5%AE%89%E8%A3%85/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" /><link rel="prev" href="https://hubu8.github.io/posts/redis/" /><link rel="next" href="https://hubu8.github.io/posts/jenkins%E5%AE%89%E8%A3%85/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -30,12 +34,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A\/"
-        },"genre": "posts","keywords": "jenkins","wordcount":  31963 ,
+        },"genre": "posts","keywords": "jenkins","wordcount":  31972 ,
         "url": "https:\/\/hubu8.github.io\/posts\/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A\/","datePublished": "2021-04-06T20:23:59+08:00","dateModified": "2021-04-06T20:23:59+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Eccentric"
+                "name": "xxxx"
             },"description": ""
     }
     </script></head>
@@ -60,8 +64,7 @@
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -104,8 +107,8 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Jenkins持续集成入门到精通</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 31963 字&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 31972 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 64 分钟&nbsp;<span id="/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" class="leancloud_visitors" data-flag-title="Jenkins持续集成入门到精通">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -267,7 +270,7 @@
         <li><a href="#持续集成环境6-tomcat安装和配置">持续集成环境(6)-Tomcat安装和配置</a>
           <ul>
             <li><a href="#把上面这行注释掉即可">把上面这行注释掉即可！</a></li>
-            <li><a href="#--">&lt;!&ndash;</a></li>
+            <li><a href="#heading">&lt;!&ndash;</a></li>
           </ul>
         </li>
       </ul>
@@ -381,7 +384,7 @@
             <li><a href="#占用磁盘空间-非常大gb级-小mb甚至kb级">占用磁盘空间 非常大，GB级 小，MB甚至KB级</a></li>
             <li><a href="#启动速度-慢分钟级-快秒级">启动速度 慢，分钟级 快，秒级</a></li>
             <li><a href="#5-安装指定版本这里使用1801版本">5 ）安装指定版本（这里使用18.0.1版本）</a></li>
-            <li><a href="#heading">{</a></li>
+            <li><a href="#heading-1">{</a></li>
           </ul>
         </li>
         <li><a href="#环境准备2-dockerfile镜像脚本快速入门">环境准备(2)-Dockerfile镜像脚本快速入门</a>
@@ -401,8 +404,8 @@
             <li><a href="#角色-权限说明">角色 权限说明</a></li>
             <li><a href="#访客-对于指定项目拥有只读权限">访客 对于指定项目拥有只读权限</a></li>
             <li><a href="#开发人员-对于指定项目拥有读写权限">开发人员 对于指定项目拥有读写权限</a></li>
-            <li><a href="#heading-1">{</a></li>
             <li><a href="#heading-2">{</a></li>
+            <li><a href="#heading-3">{</a></li>
           </ul>
         </li>
         <li><a href="#微服务持续集成1-项目代码上传到gitlab">微服务持续集成(1)-项目代码上传到Gitlab</a></li>
@@ -481,7 +484,7 @@
           <ul>
             <li><a href="#1-配置远程部署服务器">1 ）配置远程部署服务器</a></li>
             <li><a href="#拷贝公钥到远程服务器">拷贝公钥到远程服务器</a></li>
-            <li><a href="#heading-3">{</a></li>
+            <li><a href="#heading-4">{</a></li>
             <li><a href="#最终效果">最终效果：</a></li>
             <li><a href="#删除本地镜像">//删除本地镜像</a></li>
             <li><a href="#6-集群效果">6 ）集群效果</a></li>
@@ -513,7 +516,7 @@
             <li><a href="#安装">安装：</a></li>
             <li><a href="#查看版本">查看版本</a></li>
             <li><a href="#安装过程日志">安装过程日志：</a></li>
-            <li><a href="#heading-4">{</a></li>
+            <li><a href="#heading-5">{</a></li>
             <li><a href="#最后会提示节点安装的命令必须记下来">最后，会提示节点安装的命令，必须记下来</a></li>
           </ul>
         </li>
@@ -552,12 +555,12 @@
           <ul>
             <li><a href="#拉取代码构建镜像">拉取代码，构建镜像</a></li>
             <li><a href="#1-创建nfs共享目录">1 ）创建NFS共享目录</a></li>
-            <li><a href="#heading-5">}</a></li>
+            <li><a href="#heading-6">}</a></li>
             <li><a href="#注意在构建过程会发现无法创建仓库目录是因为nfs共享目录权限不足需更改权限">注意：在构建过程会发现无法创建仓库目录，是因为NFS共享目录权限不足，需更改权限</a></li>
             <li><a href="#微服务部署到k8s">微服务部署到K8S</a></li>
             <li><a href="#2-修改后的流水线脚本">2 ）修改后的流水线脚本</a></li>
-            <li><a href="#----">- &ndash;</a></li>
-            <li><a href="#-----1">- &ndash;</a></li>
+            <li><a href="#--">- &ndash;</a></li>
+            <li><a href="#---1">- &ndash;</a></li>
             <li><a href="#7-项目构建后查看服务创建情况">7 ）项目构建后，查看服务创建情况</a></li>
             <li><a href="#效果如下">效果如下：</a></li>
           </ul>
@@ -687,7 +690,7 @@ tar filename.tar * ）存档，发到生产服务器。</p>
 <h4 id="6-增强团队信心">6 、增强团队信心；</h4>
 <h3 id="jenkins介绍">Jenkins介绍</h3>
 <p>Jenkins 是一款流行的开源持续集成（Continuous Integration）工具，广泛用于项目开发，具有自动
-化构建、测试和部署等功能。官网： <a href="http://jenkins-ci.org/" target="_blank" rel="noopener noreffer">http://jenkins-ci.org/</a>。</p>
+化构建、测试和部署等功能。官网： <a href="http://jenkins-ci.org/" target="_blank" rel="noopener noreffer ">http://jenkins-ci.org/</a>。</p>
 <p>Jenkins的特征：
 开源的Java语言开发持续集成工具，支持持续集成，持续部署。
 易于安装部署配置：可通过yum安装,或下载war包以及通过docker容器等快速实现安装部署，可
@@ -736,7 +739,7 @@ Maven等软件完成代码编译，代码测试与审查，测试，打包等工
 本课程虚拟机统一采用CentOS7。</p>
 <h3 id="gitlab代码托管服务器安装">Gitlab代码托管服务器安装</h3>
 <p>Gitlab简介</p>
-<p>官网： <a href="https://about.gitlab.com/" target="_blank" rel="noopener noreffer">https://about.gitlab.com/</a>
+<p>官网： <a href="https://about.gitlab.com/" target="_blank" rel="noopener noreffer ">https://about.gitlab.com/</a>
 GitLab 是一个用于仓库管理系统的开源项目，使用Git作为代码管理工具，并在此基础上搭建起来的
 web服务。</p>
 <p>GitLab和GitHub一样属于第三方基于Git开发的作品，免费且开源（基于MIT协议），与Github类似，
@@ -758,7 +761,7 @@ firewall-cmd &ndash;reload
 如果关闭防火墙就不需要做以上配置</li>
 <li>下载gitlab包，并且安装
 在线下载安装包：
-wget <a href="https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-12.4.2-ce.0.el6.x" target="_blank" rel="noopener noreffer">https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-12.4.2-ce.0.el6.x</a>
+wget <a href="https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-12.4.2-ce.0.el6.x" target="_blank" rel="noopener noreffer ">https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-12.4.2-ce.0.el6.x</a>
 86_64.rpm
 安装：
 rpm -i gitlab-ce-12.4.2-ce.0.el6.x86_64.rpm</li>
@@ -827,7 +830,7 @@ JENKINS_PORT=&ldquo;8888&rdquo;
 5 ）启动Jenkins
 systemctl start jenkins
 6 ）打开浏览器访问
-<a href="http://192.168.66.101/" target="_blank" rel="noopener noreffer">http://192.168.66.101:</a></p>
+<a href="http://192.168.66.101/" target="_blank" rel="noopener noreffer ">http://192.168.66.101:</a></p>
 <h4 id="注意本服务器把防火墙关闭了如果开启防火墙需要在防火墙添加端口">注意：本服务器把防火墙关闭了，如果开启防火墙，需要在防火墙添加端口</h4>
 <p>7 ）获取并输入admin账户密码
 cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -849,7 +852,7 @@ cd /var/lib/jenkins/updates</p>
 ci.org/download/https://mirrors.tuna.tsinghua.edu.cn/jenkins/g&rsquo; default.json &amp;&amp; sed -i
 &rsquo;s/http://www.google.com/https://www.baidu.com/g&rsquo; default.json
 最后，Manage Plugins点击Advanced，把Update Site改为国内插件下载地址
-<a href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json" target="_blank" rel="noopener noreffer">https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</a></p>
+<a href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json" target="_blank" rel="noopener noreffer ">https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</a></p>
 <p>Sumbit后，在浏览器输入： http://192.168.66.101:8888/restart ，重启Jenkins。</p>
 <h4 id="下载中文汉化插件">下载中文汉化插件</h4>
 <p>Jenkins-&gt;Manage Jenkins-&gt;Manage Plugins，点击Available，搜索&quot;Chinese&quot;</p>
@@ -971,9 +974,9 @@ Jenkins-&gt;Global Tool Configuration-&gt;JDK-&gt;新增JDK，配置如下：</p
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">export JAVA_HOME=/usr/lib/jvm/java- 1. 8. 0 - openjdk
-</span></span><span class="line"><span class="cl">export MAVEN_HOME=/opt/maven
-</span></span><span class="line"><span class="cl">export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">JAVA_HOME</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">jvm</span><span class="o">/</span><span class="n">java</span><span class="o">-</span> <span class="mf">1.</span> <span class="mf">8.</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">openjdk</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">MAVEN_HOME</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">maven</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">PATH</span><span class="o">=$</span><span class="n">PATH</span><span class="p">:</span><span class="o">$</span><span class="n">JAVA_HOME</span><span class="o">/</span><span class="n">bin</span><span class="p">:</span><span class="o">$</span><span class="n">MAVEN_HOME</span><span class="o">/</span><span class="n">bin</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>添加Jenkins全局变量
@@ -984,7 +987,7 @@ mkdir /root/repo 创建本地仓库目录
 vi /opt/maven/conf/settings.xml
 本地仓库改为：/root/repo/
 添加阿里云私服地址：
-alimaven aliyun maven <a href="http://maven.aliyun.com/nexus/content/groups/public/" target="_blank" rel="noopener noreffer">http://maven.aliyun.com/nexus/content/groups/public/</a> central</p>
+alimaven aliyun maven <a href="http://maven.aliyun.com/nexus/content/groups/public/" target="_blank" rel="noopener noreffer ">http://maven.aliyun.com/nexus/content/groups/public/</a> central</p>
 <p>测试Maven是否配置成功
 使用之前的gitlab密码测试项目，修改配置</p>
 <p>构建-&gt;增加构建步骤-&gt;Execute Shell</p>
@@ -1051,7 +1054,7 @@ vi /opt/tomcat/webapps/manager/META-INF/context.xml</p>
 </span></span><span class="line"><span class="cl">&lt;/tomcat-users&gt;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="--">&lt;!&ndash;</h4>
+</div><h4 id="heading">&lt;!&ndash;</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1646,7 +1649,7 @@ Manage Jenkins-&gt;Configure System</p>
 2 ）安装SonarQube
 在MySQL创建sonar数据库</p>
 <p>下载sonar压缩包：
-<a href="https://www.sonarqube.org/downloads/" target="_blank" rel="noopener noreffer">https://www.sonarqube.org/downloads/</a>
+<a href="https://www.sonarqube.org/downloads/" target="_blank" rel="noopener noreffer ">https://www.sonarqube.org/downloads/</a>
 解压sonar，并设置权限
 yum install unzip
 unzip sonarqube-6.7.4.zip 解压
@@ -1669,7 +1672,7 @@ su sonar ./bin/linux-x86-64/sonar.sh status 查看状态
 su sonar ./bin/linux-x86-64/sonar.sh stop 停止
 tail -f logs/sonar.logs 查看日志
 访问sonar
-<a href="http://192.168.66.101:9000/" target="_blank" rel="noopener noreffer">http://192.168.66.101:9000</a></p>
+<a href="http://192.168.66.101:9000/" target="_blank" rel="noopener noreffer ">http://192.168.66.101:9000</a></p>
 <p>默认账户：admin/admin
 创建token</p>
 <p>bb8b6c53d9d921e101343cef0395243e6c1dc8a3
@@ -1803,51 +1806,51 @@ Manage Jenkins-&gt;Configure System-&gt;SonarQube servers</p>
 </span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pipeline {
-</span></span><span class="line"><span class="cl">agent any
-</span></span><span class="line"><span class="cl">stages {
-</span></span><span class="line"><span class="cl">stage(&#39;拉取代码&#39;) {
-</span></span><span class="line"><span class="cl">steps {
-</span></span><span class="line"><span class="cl">checkout([$class: &#39;GitSCM&#39;, branches: [[name: &#39;*/master&#39;]],
-</span></span><span class="line"><span class="cl">doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
-</span></span><span class="line"><span class="cl">userRemoteConfigs: [[credentialsId: &#39; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#39;, url:
-</span></span><span class="line"><span class="cl">&#39;git@ 192. 168. 66. 100 :itheima_group/web_demo.git&#39;]]])
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">stage(&#39;编译构建&#39;) {
-</span></span><span class="line"><span class="cl">steps {
-</span></span><span class="line"><span class="cl">sh label: &#39;&#39;, script: &#39;mvn clean package&#39;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">stage(&#39;SonarQube代码审查&#39;) {
-</span></span><span class="line"><span class="cl">steps{
-</span></span><span class="line"><span class="cl">script {
-</span></span><span class="line"><span class="cl">scannerHome = tool &#39;sonarqube-scanner&#39;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">withSonarQubeEnv(&#39;sonarqube 6. 7. 4 &#39;) {
-</span></span><span class="line"><span class="cl">sh &#34;${scannerHome}/bin/sonar-scanner&#34;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">stage(&#39;项目部署&#39;) {
-</span></span><span class="line"><span class="cl">steps {
-</span></span><span class="line"><span class="cl">deploy adapters: [tomcat 8 (credentialsId: &#39;afc 43 e 5 e- 4 a 4 e- 4 de 6 - 984 f-
-</span></span><span class="line"><span class="cl">b 1 d 5 a 254 e 434 &#39;, path: &#39;&#39;, url: &#39;http:// 192. 168. 66. 102 : 8080 &#39;)], contextPath: null,
-</span></span><span class="line"><span class="cl">war: &#39;target/*.war&#39;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">post {
-</span></span><span class="line"><span class="cl">always {
-</span></span><span class="line"><span class="cl">emailext(
-</span></span><span class="line"><span class="cl">subject: &#39;构建通知：${PROJECT_NAME} - Build # ${BUILD_NUMBER} -
-</span></span><span class="line"><span class="cl">${BUILD_STATUS}!&#39;,
-</span></span><span class="line"><span class="cl">body: &#39;${FILE,path=&#34;email.html&#34;}&#39;,
-</span></span><span class="line"><span class="cl">to: &#39; 1014671449 @qq.com&#39;
-</span></span><span class="line"><span class="cl">)
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">pipeline</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">agent</span> <span class="n">any</span>
+</span></span><span class="line"><span class="cl"><span class="n">stages</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;拉取代码&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">steps</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">checkout</span><span class="p">([</span><span class="o">$</span><span class="k">class</span><span class="p">:</span> <span class="s1">&#39;GitSCM&#39;</span><span class="p">,</span> <span class="n">branches</span><span class="p">:</span> <span class="p">[[</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;*/master&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl"><span class="n">doGenerateSubmoduleConfigurations</span><span class="p">:</span> <span class="bp">false</span><span class="p">,</span> <span class="n">extensions</span><span class="p">:</span> <span class="p">[],</span> <span class="n">submoduleCfg</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl"><span class="n">userRemoteConfigs</span><span class="p">:</span> <span class="p">[[</span><span class="n">credentialsId</span><span class="p">:</span> <span class="s1">&#39; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;git@ 192. 168. 66. 100 :itheima_group/web_demo.git&#39;</span><span class="p">]]])</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;编译构建&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">steps</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="n">label</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">script</span><span class="p">:</span> <span class="s1">&#39;mvn clean package&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;SonarQube代码审查&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">steps</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">script</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">scannerHome</span> <span class="o">=</span> <span class="k">tool</span> <span class="s1">&#39;sonarqube-scanner&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">withSonarQubeEnv</span><span class="p">(</span><span class="s1">&#39;sonarqube 6. 7. 4 &#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;${scannerHome}/bin/sonar-scanner&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;项目部署&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">steps</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">deploy</span> <span class="n">adapters</span><span class="p">:</span> <span class="p">[</span><span class="n">tomcat</span> <span class="mi">8</span> <span class="p">(</span><span class="n">credentialsId</span><span class="p">:</span> <span class="s1">&#39;afc 43 e 5 e- 4 a 4 e- 4 de 6 - 984 f-</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="mi">1</span> <span class="n">d</span> <span class="mi">5</span> <span class="n">a</span> <span class="mi">254</span> <span class="n">e</span> <span class="mi">434</span> <span class="s1">&#39;, path: &#39;&#39;, url: &#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span> <span class="mf">192.</span> <span class="mf">168.</span> <span class="mf">66.</span> <span class="mi">102</span> <span class="p">:</span> <span class="mi">8080</span> <span class="s1">&#39;)], contextPath: null,</span>
+</span></span><span class="line"><span class="cl"><span class="n">war</span><span class="p">:</span> <span class="s1">&#39;target/*.war&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">post</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">always</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">emailext</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="n">subject</span><span class="p">:</span> <span class="s1">&#39;构建通知：${PROJECT_NAME} - Build # ${BUILD_NUMBER} -</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="p">{</span><span class="n">BUILD_STATUS</span><span class="p">}</span><span class="o">!</span><span class="s1">&#39;,</span>
+</span></span><span class="line"><span class="cl"><span class="n">body</span><span class="p">:</span> <span class="s1">&#39;${FILE,path=&#34;email.html&#34;}&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">to</span><span class="p">:</span> <span class="s1">&#39; 1014671449 @qq.com&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="服务器名称-ip地址-安装的软件">服务器名称 IP地址 安装的软件</h4>
@@ -1920,7 +1923,7 @@ npm run build
 3 ）部署到nginx服务器
 把dist目录的静态文件拷贝到nginx的html目录，启动nginx
 4 ）启动nginx，并访问
-<a href="http://localhost:82/" target="_blank" rel="noopener noreffer">http://localhost:82</a></p>
+<a href="http://localhost:82/" target="_blank" rel="noopener noreffer ">http://localhost:82</a></p>
 <h3 id="环境准备1-docker快速入门">环境准备(1)-Docker快速入门</h3>
 <p>Docker简介</p>
 <div class="highlight"><div class="chroma">
@@ -1969,7 +1972,7 @@ yum -y remove docker的包名称 卸载docker包</p>
 2 ）安装必要的软件包
 sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2
 3 ）设置下载的镜像仓库
-sudo yum-config-manager \ &ndash;add-repo \ <a href="https://download.docker.com/linux/centos/docker-" target="_blank" rel="noopener noreffer">https://download.docker.com/linux/centos/docker-</a>
+sudo yum-config-manager \ &ndash;add-repo \ <a href="https://download.docker.com/linux/centos/docker-" target="_blank" rel="noopener noreffer ">https://download.docker.com/linux/centos/docker-</a>
 ce.repo
 4 ）列出需要安装的版本列表
 yum list docker-ce &ndash;showduplicates | sort -r</p>
@@ -2007,7 +2010,7 @@ docker images 查看本地所有镜像</p>
 </span></span><span class="line"><span class="cl">......
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="heading">{</h4>
+</div><h4 id="heading-1">{</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2118,7 +2121,7 @@ docker images
 5 ）创建容器
 docker run -i &ndash;name=eureka -p 10086:10086 eureka:v1
 6 ）访问容器
-<a href="http://192.168.66.101:10086/" target="_blank" rel="noopener noreffer">http://192.168.66.101:10086</a></p>
+<a href="http://192.168.66.101:10086/" target="_blank" rel="noopener noreffer ">http://192.168.66.101:10086</a></p>
 <h3 id="环境准备3-harbor镜像仓库安装及使用">环境准备(3)-Harbor镜像仓库安装及使用</h3>
 <p>Harbor简介</p>
 <div class="highlight"><div class="chroma">
@@ -2148,29 +2151,29 @@ docker run -i &ndash;name=eureka -p 10086:10086 eureka:v1
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Install server
-</span></span><span class="line"><span class="cl">RUN yum install - y https://repo.mysql.com/mysql-community-minimal-release-
-</span></span><span class="line"><span class="cl">el 7 .rpm \
-</span></span><span class="line"><span class="cl">https://repo.mysql.com/mysql-community-release-el 7 .rpm \
-</span></span><span class="line"><span class="cl">&amp;&amp; yum-config-manager - -enable mysql 57 - server-minimal \
-</span></span><span class="line"><span class="cl">&amp;&amp; yum install - y \
-</span></span><span class="line"><span class="cl">$MYSQL_SERVER_PACKAGE \
-</span></span><span class="line"><span class="cl">$MYSQL_SHELL_PACKAGE \
-</span></span><span class="line"><span class="cl">libpwquality \
-</span></span><span class="line"><span class="cl">&amp;&amp; yum clean all \
-</span></span><span class="line"><span class="cl">&amp;&amp; mkdir /docker-entrypoint-initdb.d
-</span></span><span class="line"><span class="cl">VOLUME /var/lib/mysql
-</span></span><span class="line"><span class="cl">COPY docker-entrypoint.sh /entrypoint.sh
-</span></span><span class="line"><span class="cl">COPY healthcheck.sh /healthcheck.sh
-</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;/entrypoint.sh&#34;]
-</span></span><span class="line"><span class="cl">HEALTHCHECK CMD /healthcheck.sh
-</span></span><span class="line"><span class="cl">EXPOSE 3306 33060
-</span></span><span class="line"><span class="cl">CMD [&#34;mysqld&#34;]
-</span></span><span class="line"><span class="cl">FROM openjdk: 8 - jdk-alpine
-</span></span><span class="line"><span class="cl">ARG JAR_FILE
-</span></span><span class="line"><span class="cl">COPY ${JAR_FILE} app.jar
-</span></span><span class="line"><span class="cl">EXPOSE 10086
-</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;java&#34;,&#34;-jar&#34;,&#34;/app.jar&#34;]
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Install server</span>
+</span></span><span class="line"><span class="cl"><span class="n">RUN</span> <span class="n">yum</span> <span class="n">install</span> <span class="o">-</span> <span class="n">y</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">mysql</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mysql</span><span class="o">-</span><span class="n">community</span><span class="o">-</span><span class="n">minimal</span><span class="o">-</span><span class="n">release</span><span class="o">-</span>
+</span></span><span class="line"><span class="cl"><span class="n">el</span> <span class="mi">7</span> <span class="o">.</span><span class="n">rpm</span> \
+</span></span><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">mysql</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mysql</span><span class="o">-</span><span class="n">community</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="n">el</span> <span class="mi">7</span> <span class="o">.</span><span class="n">rpm</span> \
+</span></span><span class="line"><span class="cl"><span class="o">&amp;&amp;</span> <span class="n">yum</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">manager</span> <span class="o">-</span> <span class="o">-</span><span class="n">enable</span> <span class="n">mysql</span> <span class="mi">57</span> <span class="o">-</span> <span class="n">server</span><span class="o">-</span><span class="n">minimal</span> \
+</span></span><span class="line"><span class="cl"><span class="o">&amp;&amp;</span> <span class="n">yum</span> <span class="n">install</span> <span class="o">-</span> <span class="n">y</span> \
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="n">MYSQL_SERVER_PACKAGE</span> \
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="n">MYSQL_SHELL_PACKAGE</span> \
+</span></span><span class="line"><span class="cl"><span class="n">libpwquality</span> \
+</span></span><span class="line"><span class="cl"><span class="o">&amp;&amp;</span> <span class="n">yum</span> <span class="n">clean</span> <span class="n">all</span> \
+</span></span><span class="line"><span class="cl"><span class="o">&amp;&amp;</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">entrypoint</span><span class="o">-</span><span class="n">initdb</span><span class="o">.</span><span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="n">VOLUME</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span>
+</span></span><span class="line"><span class="cl"><span class="n">COPY</span> <span class="n">docker</span><span class="o">-</span><span class="n">entrypoint</span><span class="o">.</span><span class="n">sh</span> <span class="o">/</span><span class="n">entrypoint</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="n">COPY</span> <span class="n">healthcheck</span><span class="o">.</span><span class="n">sh</span> <span class="o">/</span><span class="n">healthcheck</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/entrypoint.sh&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">HEALTHCHECK</span> <span class="n">CMD</span> <span class="o">/</span><span class="n">healthcheck</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="n">EXPOSE</span> <span class="mi">3306</span> <span class="mi">33060</span>
+</span></span><span class="line"><span class="cl"><span class="n">CMD</span> <span class="p">[</span><span class="s2">&#34;mysqld&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">FROM</span> <span class="n">openjdk</span><span class="p">:</span> <span class="mi">8</span> <span class="o">-</span> <span class="n">jdk</span><span class="o">-</span><span class="n">alpine</span>
+</span></span><span class="line"><span class="cl"><span class="n">ARG</span> <span class="n">JAR_FILE</span>
+</span></span><span class="line"><span class="cl"><span class="n">COPY</span> <span class="o">$</span><span class="p">{</span><span class="n">JAR_FILE</span><span class="p">}</span> <span class="n">app</span><span class="o">.</span><span class="n">jar</span>
+</span></span><span class="line"><span class="cl"><span class="n">EXPOSE</span> <span class="mi">10086</span>
+</span></span><span class="line"><span class="cl"><span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;java&#34;</span><span class="p">,</span><span class="s2">&#34;-jar&#34;</span><span class="p">,</span><span class="s2">&#34;/app.jar&#34;</span><span class="p">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Harbor（港口，港湾）是一个用于存储和分发Docker镜像的企业级Registry服务器。
@@ -2197,7 +2200,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 4 ）查看docker-compose是否安装成功
 docker-compose -version
 5 ）下载Harbor的压缩包（本课程版本为：v1.9.2）
-<a href="https://github.com/goharbor/harbor/releases" target="_blank" rel="noopener noreffer">https://github.com/goharbor/harbor/releases</a>
+<a href="https://github.com/goharbor/harbor/releases" target="_blank" rel="noopener noreffer ">https://github.com/goharbor/harbor/releases</a>
 6 ）上传压缩包到linux，并解压
 tar -xzf harbor-offline-installer-v1.9.2.tgz
 mkdir /opt/harbor
@@ -2211,9 +2214,9 @@ cd /opt/harbor
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo curl - L https://github.com/docker/compose/releases/download/ 1. 21. 2 /docker-
-</span></span><span class="line"><span class="cl">compose-$(uname - s)-$(uname - m) - o /usr/local/bin/docker-compose
-</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/docker-compose
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">curl</span> <span class="o">-</span> <span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">compose</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span> <span class="mf">1.</span> <span class="mf">21.</span> <span class="mi">2</span> <span class="o">/</span><span class="n">docker</span><span class="o">-</span>
+</span></span><span class="line"><span class="cl"><span class="n">compose</span><span class="o">-$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span><span class="o">-$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">-</span> <span class="n">o</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>vi harbor.yml
@@ -2228,7 +2231,7 @@ docker-compose up -d 启动
 docker-compose stop 停止
 docker-compose restart 重新启动
 10 ）访问Harbor
-<a href="http://192.168.66.102:85/" target="_blank" rel="noopener noreffer">http://192.168.66.102:85</a>
+<a href="http://192.168.66.102:85/" target="_blank" rel="noopener noreffer ">http://192.168.66.102:85</a>
 默认账户密码：admin/Harbor12345</p>
 <p>在Harbor创建用户和项目
 1 ）创建项目
@@ -2287,7 +2290,7 @@ vi /etc/docker/daemon.json</p>
 <p>重启docker
 3 ）先登录，再从Harbor下载镜像
 docker login -u 用户名 -p 密码 192.168.66.102:85</p>
-<h4 id="heading-1">{</h4>
+<h4 id="heading-2">{</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2312,7 +2315,7 @@ docker login -u 用户名 -p 密码 192.168.66.102:85</p>
 </span></span><span class="line"><span class="cl">Login Succeeded
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="heading-2">{</h4>
+</div><h4 id="heading-3">{</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2409,44 +2412,44 @@ docker login -u 用户名 -p 密码 192.168.66.102:85</p>
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># must be unique in a given SonarQube instance
-</span></span><span class="line"><span class="cl">sonar.projectKey=tensquare_zuul
-</span></span><span class="line"><span class="cl"># this is the name and version displayed in the SonarQube UI. Was mandatory
-</span></span><span class="line"><span class="cl">prior to SonarQube 6. 1.
-</span></span><span class="line"><span class="cl">sonar.projectName=tensquare_zuul
-</span></span><span class="line"><span class="cl">sonar.projectVersion= 1. 0
-</span></span><span class="line"><span class="cl"># Path is relative to the sonar-project.properties file. Replace &#34;\&#34; by &#34;/&#34; on
-</span></span><span class="line"><span class="cl">Windows.
-</span></span><span class="line"><span class="cl"># This property is optional if sonar.modules is set.
-</span></span><span class="line"><span class="cl">sonar.sources=.
-</span></span><span class="line"><span class="cl">sonar.exclusions=**/test/**,**/target/**
-</span></span><span class="line"><span class="cl">sonar.java.binaries=.
-</span></span><span class="line"><span class="cl">sonar.java.source= 1. 8
-</span></span><span class="line"><span class="cl">sonar.java.target= 1. 8
-</span></span><span class="line"><span class="cl">sonar.java.libraries=**/target/classes/**
-</span></span><span class="line"><span class="cl"># Encoding of the source code. Default is default system encoding
-</span></span><span class="line"><span class="cl">sonar.sourceEncoding=UTF- 8
-</span></span><span class="line"><span class="cl">//gitlab的凭证
-</span></span><span class="line"><span class="cl">def git_auth = &#34; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#34;
-</span></span><span class="line"><span class="cl">//构建版本的名称
-</span></span><span class="line"><span class="cl">def tag = &#34;latest&#34;
-</span></span><span class="line"><span class="cl">node {
-</span></span><span class="line"><span class="cl">stage(&#39;拉取代码&#39;) {
-</span></span><span class="line"><span class="cl">checkout([$class: &#39;GitSCM&#39;, branches: [[name: &#39;*/${branch}&#39;]],
-</span></span><span class="line"><span class="cl">doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
-</span></span><span class="line"><span class="cl">userRemoteConfigs: [[credentialsId: &#34;${git_auth}&#34;, url:
-</span></span><span class="line"><span class="cl">&#39;git@ 192. 168. 66. 100 :itheima_group/tensquare_back.git&#39;]]])
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">stage(&#39;代码审查&#39;) {
-</span></span><span class="line"><span class="cl">def scannerHome = tool &#39;sonarqube-scanner&#39;
-</span></span><span class="line"><span class="cl">withSonarQubeEnv(&#39;sonarqube 6. 7. 4 &#39;) {
-</span></span><span class="line"><span class="cl">sh &#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">cd ${project_name}
-</span></span><span class="line"><span class="cl">${scannerHome}/bin/sonar-scanner
-</span></span><span class="line"><span class="cl">&#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># must be unique in a given SonarQube instance</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">projectKey</span><span class="o">=</span><span class="n">tensquare_zuul</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this is the name and version displayed in the SonarQube UI. Was mandatory</span>
+</span></span><span class="line"><span class="cl"><span class="n">prior</span> <span class="n">to</span> <span class="n">SonarQube</span> <span class="mf">6.</span> <span class="mf">1.</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">projectName</span><span class="o">=</span><span class="n">tensquare_zuul</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">projectVersion</span><span class="o">=</span> <span class="mf">1.</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Path is relative to the sonar-project.properties file. Replace &#34;\&#34; by &#34;/&#34; on</span>
+</span></span><span class="line"><span class="cl"><span class="n">Windows</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This property is optional if sonar.modules is set.</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">sources</span><span class="o">=.</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">exclusions</span><span class="o">=**/</span><span class="n">test</span><span class="o">/**</span><span class="p">,</span><span class="o">**/</span><span class="n">target</span><span class="o">/**</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">binaries</span><span class="o">=.</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">source</span><span class="o">=</span> <span class="mf">1.</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">target</span><span class="o">=</span> <span class="mf">1.</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">libraries</span><span class="o">=**/</span><span class="n">target</span><span class="o">/</span><span class="n">classes</span><span class="o">/**</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Encoding of the source code. Default is default system encoding</span>
+</span></span><span class="line"><span class="cl"><span class="n">sonar</span><span class="o">.</span><span class="n">sourceEncoding</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">gitlab的凭证</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">git_auth</span> <span class="o">=</span> <span class="s2">&#34; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">构建版本的名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tag</span> <span class="o">=</span> <span class="s2">&#34;latest&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;拉取代码&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">checkout</span><span class="p">([</span><span class="o">$</span><span class="k">class</span><span class="p">:</span> <span class="s1">&#39;GitSCM&#39;</span><span class="p">,</span> <span class="n">branches</span><span class="p">:</span> <span class="p">[[</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;*/${branch}&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl"><span class="n">doGenerateSubmoduleConfigurations</span><span class="p">:</span> <span class="bp">false</span><span class="p">,</span> <span class="n">extensions</span><span class="p">:</span> <span class="p">[],</span> <span class="n">submoduleCfg</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl"><span class="n">userRemoteConfigs</span><span class="p">:</span> <span class="p">[[</span><span class="n">credentialsId</span><span class="p">:</span> <span class="s2">&#34;${git_auth}&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;git@ 192. 168. 66. 100 :itheima_group/tensquare_back.git&#39;</span><span class="p">]]])</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;代码审查&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">scannerHome</span> <span class="o">=</span> <span class="k">tool</span> <span class="s1">&#39;sonarqube-scanner&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">withSonarQubeEnv</span><span class="p">(</span><span class="s1">&#39;sonarqube 6. 7. 4 &#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">cd ${project_name}
+</span></span></span><span class="line"><span class="cl"><span class="s2">${scannerHome}/bin/sonar-scanner
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>2 ）在每个微服务项目根目录下建立Dockerfile文件</p>
@@ -2499,49 +2502,49 @@ docker login -u 用户名 -p 密码 192.168.66.102:85</p>
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;plugin&gt;
-</span></span><span class="line"><span class="cl">&lt;groupId&gt;com.spotify&lt;/groupId&gt;
-</span></span><span class="line"><span class="cl">&lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-</span></span><span class="line"><span class="cl">&lt;version&gt; 1. 3. 6 &lt;/version&gt;
-</span></span><span class="line"><span class="cl">&lt;configuration&gt;
-</span></span><span class="line"><span class="cl">&lt;repository&gt;${project.artifactId}&lt;/repository&gt;
-</span></span><span class="line"><span class="cl">&lt;buildArgs&gt;
-</span></span><span class="line"><span class="cl">&lt;JAR_FILE&gt;target/${project.build.finalName}.jar&lt;/JAR_FILE&gt;
-</span></span><span class="line"><span class="cl">&lt;/buildArgs&gt;
-</span></span><span class="line"><span class="cl">&lt;/configuration&gt;
-</span></span><span class="line"><span class="cl">&lt;/plugin&gt;
-</span></span><span class="line"><span class="cl">#FROM java: 8
-</span></span><span class="line"><span class="cl">FROM openjdk: 8 - jdk-alpine
-</span></span><span class="line"><span class="cl">ARG JAR_FILE
-</span></span><span class="line"><span class="cl">COPY ${JAR_FILE} app.jar
-</span></span><span class="line"><span class="cl">EXPOSE 10086
-</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;java&#34;,&#34;-jar&#34;,&#34;/app.jar&#34;]
-</span></span><span class="line"><span class="cl">//gitlab的凭证
-</span></span><span class="line"><span class="cl">def git_auth = &#34; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#34;
-</span></span><span class="line"><span class="cl">//构建版本的名称
-</span></span><span class="line"><span class="cl">def tag = &#34;latest&#34;
-</span></span><span class="line"><span class="cl">//Harbor私服地址
-</span></span><span class="line"><span class="cl">def harbor_url = &#34; 192. 168. 66. 102 : 85 /tensquare/&#34;
-</span></span><span class="line"><span class="cl">node {
-</span></span><span class="line"><span class="cl">stage(&#39;拉取代码&#39;) {
-</span></span><span class="line"><span class="cl">checkout([$class: &#39;GitSCM&#39;, branches: [[name: &#39;*/${branch}&#39;]],
-</span></span><span class="line"><span class="cl">doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
-</span></span><span class="line"><span class="cl">userRemoteConfigs: [[credentialsId: &#34;${git_auth}&#34;, url:
-</span></span><span class="line"><span class="cl">&#39;git@ 192. 168. 66. 100 :itheima_group/tensquare_back.git&#39;]]])
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">stage(&#39;代码审查&#39;) {
-</span></span><span class="line"><span class="cl">def scannerHome = tool &#39;sonarqube-scanner&#39;
-</span></span><span class="line"><span class="cl">withSonarQubeEnv(&#39;sonarqube 6. 7. 4 &#39;) {
-</span></span><span class="line"><span class="cl">sh &#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">cd ${project_name}
-</span></span><span class="line"><span class="cl">${scannerHome}/bin/sonar-scanner
-</span></span><span class="line"><span class="cl">&#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">stage(&#39;编译，构建镜像&#39;) {
-</span></span><span class="line"><span class="cl">//定义镜像名称
-</span></span><span class="line"><span class="cl">def imageName = &#34;${project_name}:${tag}&#34;
-</span></span><span class="line"><span class="cl">//编译，安装公共工程
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">plugin</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">spotify</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">dockerfile</span><span class="o">-</span><span class="n">maven</span><span class="o">-</span><span class="n">plugin</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span> <span class="mf">1.</span> <span class="mf">3.</span> <span class="mi">6</span> <span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">configuration</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;$</span><span class="p">{</span><span class="n">project</span><span class="o">.</span><span class="n">artifactId</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">repository</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">buildArgs</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">JAR_FILE</span><span class="o">&gt;</span><span class="n">target</span><span class="o">/$</span><span class="p">{</span><span class="n">project</span><span class="o">.</span><span class="n">build</span><span class="o">.</span><span class="n">finalName</span><span class="p">}</span><span class="o">.</span><span class="n">jar</span><span class="o">&lt;/</span><span class="n">JAR_FILE</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">buildArgs</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">configuration</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">plugin</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#FROM java: 8</span>
+</span></span><span class="line"><span class="cl"><span class="n">FROM</span> <span class="n">openjdk</span><span class="p">:</span> <span class="mi">8</span> <span class="o">-</span> <span class="n">jdk</span><span class="o">-</span><span class="n">alpine</span>
+</span></span><span class="line"><span class="cl"><span class="n">ARG</span> <span class="n">JAR_FILE</span>
+</span></span><span class="line"><span class="cl"><span class="n">COPY</span> <span class="o">$</span><span class="p">{</span><span class="n">JAR_FILE</span><span class="p">}</span> <span class="n">app</span><span class="o">.</span><span class="n">jar</span>
+</span></span><span class="line"><span class="cl"><span class="n">EXPOSE</span> <span class="mi">10086</span>
+</span></span><span class="line"><span class="cl"><span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;java&#34;</span><span class="p">,</span><span class="s2">&#34;-jar&#34;</span><span class="p">,</span><span class="s2">&#34;/app.jar&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">gitlab的凭证</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">git_auth</span> <span class="o">=</span> <span class="s2">&#34; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">构建版本的名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tag</span> <span class="o">=</span> <span class="s2">&#34;latest&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">Harbor私服地址</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">harbor_url</span> <span class="o">=</span> <span class="s2">&#34; 192. 168. 66. 102 : 85 /tensquare/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;拉取代码&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">checkout</span><span class="p">([</span><span class="o">$</span><span class="k">class</span><span class="p">:</span> <span class="s1">&#39;GitSCM&#39;</span><span class="p">,</span> <span class="n">branches</span><span class="p">:</span> <span class="p">[[</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;*/${branch}&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl"><span class="n">doGenerateSubmoduleConfigurations</span><span class="p">:</span> <span class="bp">false</span><span class="p">,</span> <span class="n">extensions</span><span class="p">:</span> <span class="p">[],</span> <span class="n">submoduleCfg</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl"><span class="n">userRemoteConfigs</span><span class="p">:</span> <span class="p">[[</span><span class="n">credentialsId</span><span class="p">:</span> <span class="s2">&#34;${git_auth}&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;git@ 192. 168. 66. 100 :itheima_group/tensquare_back.git&#39;</span><span class="p">]]])</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;代码审查&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">scannerHome</span> <span class="o">=</span> <span class="k">tool</span> <span class="s1">&#39;sonarqube-scanner&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">withSonarQubeEnv</span><span class="p">(</span><span class="s1">&#39;sonarqube 6. 7. 4 &#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">cd ${project_name}
+</span></span></span><span class="line"><span class="cl"><span class="s2">${scannerHome}/bin/sonar-scanner
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;编译，构建镜像&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">定义镜像名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">imageName</span> <span class="o">=</span> <span class="s2">&#34;${project_name}:${tag}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">编译，安装公共工程</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="注意如果出现找不到父工程依赖需要手动把父工程的依赖上传到仓库中">注意：如果出现找不到父工程依赖，需要手动把父工程的依赖上传到仓库中</h4>
@@ -2592,47 +2595,47 @@ docker login -u 用户名 -p 密码 192.168.66.102:85</p>
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">sh</span> <span class="s">&#34;mvn - f tensquare_common clean install&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//编译，构建本地镜像
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">sh</span> <span class="s">&#34;mvn - f ${project_name} clean package dockerfile:build&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;mvn - f tensquare_common clean install&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">编译，构建本地镜像</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;mvn - f ${project_name} clean package dockerfile:build&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//gitlab的凭证
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">def</span> <span class="nx">git_auth</span> <span class="p">=</span> <span class="s">&#34; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//构建版本的名称
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">def</span> <span class="nx">tag</span> <span class="p">=</span> <span class="s">&#34;latest&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//Harbor私服地址
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">def</span> <span class="nx">harbor_url</span> <span class="p">=</span> <span class="s">&#34; 192. 168. 66. 102 : 85 &#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//Harbor的项目名称
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">def</span> <span class="nx">harbor_project_name</span> <span class="p">=</span> <span class="s">&#34;tensquare&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//Harbor的凭证
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">def</span> <span class="nx">harbor_auth</span> <span class="p">=</span> <span class="s">&#34;ef 499 f 29 - f 138 - 44 dd- 975 e-ff 1 ca 1 d 8 c 933 &#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">node</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="nf">stage</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">拉取代码</span><span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="nf">checkout</span><span class="p">([</span><span class="err">$</span><span class="nx">class</span><span class="p">:</span> <span class="err">&#39;</span><span class="nx">GitSCM</span><span class="err">&#39;</span><span class="p">,</span> <span class="nx">branches</span><span class="p">:</span> <span class="p">[[</span><span class="nx">name</span><span class="p">:</span> <span class="err">&#39;</span><span class="o">*/</span><span class="err">$</span><span class="p">{</span><span class="nx">branch</span><span class="p">}</span><span class="err">&#39;</span><span class="p">]],</span>
-</span></span><span class="line"><span class="cl"><span class="nx">doGenerateSubmoduleConfigurations</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">extensions</span><span class="p">:</span> <span class="p">[],</span> <span class="nx">submoduleCfg</span><span class="p">:</span> <span class="p">[],</span>
-</span></span><span class="line"><span class="cl"><span class="nx">userRemoteConfigs</span><span class="p">:</span> <span class="p">[[</span><span class="nx">credentialsId</span><span class="p">:</span> <span class="s">&#34;${git_auth}&#34;</span><span class="p">,</span> <span class="nx">url</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="err">&#39;</span><span class="nx">git</span><span class="err">@</span> <span class="mf">192.</span> <span class="mf">168.</span> <span class="mf">66.</span> <span class="mi">100</span> <span class="p">:</span><span class="nx">itheima_group</span><span class="o">/</span><span class="nx">tensquare_back</span><span class="p">.</span><span class="nx">git</span><span class="err">&#39;</span><span class="p">]]])</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">gitlab的凭证</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">git_auth</span> <span class="o">=</span> <span class="s2">&#34; 68 f 2087 f-a 034 - 4 d 39 - a 9 ff- 1 f 776 dd 3 dfa 8 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">构建版本的名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tag</span> <span class="o">=</span> <span class="s2">&#34;latest&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">Harbor私服地址</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">harbor_url</span> <span class="o">=</span> <span class="s2">&#34; 192. 168. 66. 102 : 85 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">Harbor的项目名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">harbor_project_name</span> <span class="o">=</span> <span class="s2">&#34;tensquare&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="n">Harbor的凭证</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">harbor_auth</span> <span class="o">=</span> <span class="s2">&#34;ef 499 f 29 - f 138 - 44 dd- 975 e-ff 1 ca 1 d 8 c 933 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;拉取代码&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">checkout</span><span class="p">([</span><span class="o">$</span><span class="k">class</span><span class="p">:</span> <span class="s1">&#39;GitSCM&#39;</span><span class="p">,</span> <span class="n">branches</span><span class="p">:</span> <span class="p">[[</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;*/${branch}&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl"><span class="n">doGenerateSubmoduleConfigurations</span><span class="p">:</span> <span class="bp">false</span><span class="p">,</span> <span class="n">extensions</span><span class="p">:</span> <span class="p">[],</span> <span class="n">submoduleCfg</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl"><span class="n">userRemoteConfigs</span><span class="p">:</span> <span class="p">[[</span><span class="n">credentialsId</span><span class="p">:</span> <span class="s2">&#34;${git_auth}&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;git@ 192. 168. 66. 100 :itheima_group/tensquare_back.git&#39;</span><span class="p">]]])</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nf">stage</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">代码审查</span><span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="nx">def</span> <span class="nx">scannerHome</span> <span class="p">=</span> <span class="nx">tool</span> <span class="err">&#39;</span><span class="nx">sonarqube</span><span class="o">-</span><span class="nx">scanner</span><span class="err">&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nf">withSonarQubeEnv</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">sonarqube</span> <span class="mf">6.</span> <span class="mf">7.</span> <span class="mi">4</span> <span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="nx">sh</span> <span class="s">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s">cd ${project_name}
-</span></span></span><span class="line"><span class="cl"><span class="s">${scannerHome}/bin/sonar-scanner
-</span></span></span><span class="line"><span class="cl"><span class="s">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;代码审查&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">scannerHome</span> <span class="o">=</span> <span class="k">tool</span> <span class="s1">&#39;sonarqube-scanner&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">withSonarQubeEnv</span><span class="p">(</span><span class="s1">&#39;sonarqube 6. 7. 4 &#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">cd ${project_name}
+</span></span></span><span class="line"><span class="cl"><span class="s2">${scannerHome}/bin/sonar-scanner
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nf">stage</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">编译</span><span class="err">，</span><span class="nx">构建镜像</span><span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//定义镜像名称
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">def</span> <span class="nx">imageName</span> <span class="p">=</span> <span class="s">&#34;${project_name}:${tag}&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//编译，安装公共工程
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">sh</span> <span class="s">&#34;mvn - f tensquare_common clean install&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//编译，构建本地镜像
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">sh</span> <span class="s">&#34;mvn - f ${project_name} clean package dockerfile:build&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//给镜像打标签
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">sh</span> <span class="s">&#34;docker tag ${imageName}
-</span></span></span><span class="line"><span class="cl"><span class="s">${harbor_url}/${harbor_project_name}/${imageName}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;编译，构建镜像&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">定义镜像名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">imageName</span> <span class="o">=</span> <span class="s2">&#34;${project_name}:${tag}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">编译，安装公共工程</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;mvn - f tensquare_common clean install&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">编译，构建本地镜像</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;mvn - f ${project_name} clean package dockerfile:build&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">给镜像打标签</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;docker tag ${imageName}</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="p">{</span><span class="n">harbor_url</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">harbor_project_name</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">imageName</span><span class="p">}</span><span class="s2">&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>2 ）使用凭证管理Harbor私服账户和密码
@@ -3170,7 +3173,7 @@ def imageName = &ldquo;${currentProjectName}:${tag}&rdquo;</p>
 <p>重启Docker</p>
 <p>3 ）添加参数
 多选框：部署服务器</p>
-<h4 id="heading-3">{</h4>
+<h4 id="heading-4">{</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3713,7 +3716,7 @@ kubectl: 用来与集群通信的命令行工具。
 <li>-service-cidr= 10. 1. 0. 0 / 16 \</li>
 <li>-pod-network-cidr= 10. 244. 0. 0 / 16</li>
 </ul>
-<h4 id="heading-4">{</h4>
+<h4 id="heading-5">{</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3853,14 +3856,14 @@ nfs-client-provisioner 是一个Kubernetes的简易NFS的外部provisioner，本
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install - y nfs-utils
-</span></span><span class="line"><span class="cl">mkdir - p /opt/nfs/jenkins
-</span></span><span class="line"><span class="cl">vi /etc/exports 编写NFS的共享配置
-</span></span><span class="line"><span class="cl">内容如下:
-</span></span><span class="line"><span class="cl">/opt/nfs/jenkins *(rw,no_root_squash) *代表对所有IP都开放此目录，rw是读写
-</span></span><span class="line"><span class="cl">systemctl enable nfs 开机启动
-</span></span><span class="line"><span class="cl">systemctl start nfs 启动
-</span></span><span class="line"><span class="cl">showmount - e 192. 168. 66. 101
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span> <span class="n">y</span> <span class="n">nfs</span><span class="o">-</span><span class="n">utils</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span> <span class="n">p</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">nfs</span><span class="o">/</span><span class="n">jenkins</span>
+</span></span><span class="line"><span class="cl"><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span> <span class="err">编写</span><span class="n">NFS的共享配置</span>
+</span></span><span class="line"><span class="cl"><span class="err">内容如下</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">nfs</span><span class="o">/</span><span class="n">jenkins</span> <span class="o">*</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">no_root_squash</span><span class="p">)</span> <span class="o">*</span><span class="err">代表对所有</span><span class="n">IP都开放此目录</span><span class="err">，</span><span class="n">rw是读写</span>
+</span></span><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">nfs</span> <span class="err">开机启动</span>
+</span></span><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">start</span> <span class="n">nfs</span> <span class="err">启动</span>
+</span></span><span class="line"><span class="cl"><span class="n">showmount</span> <span class="o">-</span> <span class="n">e</span> <span class="mf">192.</span> <span class="mf">168.</span> <span class="mf">66.</span> <span class="mi">101</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>2 ）构建nfs-client-provisioner的pod资源</p>
@@ -4044,7 +4047,7 @@ nfs-client-provisioner 是一个Kubernetes的简易NFS的外部provisioner，本
 <h4 id="1-创建nfs共享目录">1 ）创建NFS共享目录</h4>
 <p>让所有Jenkins-Slave构建指向NFS的Maven的共享仓库目录</p>
 <p>2 ）创建项目，编写构建Pipeline</p>
-<h4 id="heading-5">}</h4>
+<h4 id="heading-6">}</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -4054,11 +4057,11 @@ nfs-client-provisioner 是一个Kubernetes的简易NFS的外部provisioner，本
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vi /etc/exports
-</span></span><span class="line"><span class="cl">添加内容：
-</span></span><span class="line"><span class="cl">/opt/nfs/jenkins *(rw,no_root_squash)
-</span></span><span class="line"><span class="cl">/opt/nfs/maven *(rw,no_root_squash)
-</span></span><span class="line"><span class="cl">systemctl restart nfs 重启NFS
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span>
+</span></span><span class="line"><span class="cl"><span class="err">添加内容：</span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">nfs</span><span class="o">/</span><span class="n">jenkins</span> <span class="o">*</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">no_root_squash</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">nfs</span><span class="o">/</span><span class="n">maven</span> <span class="o">*</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">no_root_squash</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">systemctl</span> <span class="n">restart</span> <span class="n">nfs</span> <span class="err">重启</span><span class="n">NFS</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>def git_address =
@@ -4154,37 +4157,37 @@ def currentProjectPort = currentProject.split(&rsquo;@&rsquo;)[ 1 ]</p>
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">def imageName = &#34;${currentProjectName}:${tag}&#34;
-</span></span><span class="line"><span class="cl">//编译，构建本地镜像
-</span></span><span class="line"><span class="cl">sh &#34;mvn - f ${currentProjectName} clean package
-</span></span><span class="line"><span class="cl">dockerfile:build&#34;
-</span></span><span class="line"><span class="cl">container(&#39;docker&#39;) {
-</span></span><span class="line"><span class="cl">//给镜像打标签
-</span></span><span class="line"><span class="cl">sh &#34;docker tag ${imageName}
-</span></span><span class="line"><span class="cl">${harbor_url}/${harbor_project_name}/${imageName}&#34;
-</span></span><span class="line"><span class="cl">//登录Harbor，并上传镜像
-</span></span><span class="line"><span class="cl">withCredentials([usernamePassword(credentialsId:
-</span></span><span class="line"><span class="cl">&#34;${harbor_auth}&#34;, passwordVariable: &#39;password&#39;, usernameVariable: &#39;username&#39;)])
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">//登录
-</span></span><span class="line"><span class="cl">sh &#34;docker login - u ${username} - p ${password}
-</span></span><span class="line"><span class="cl">${harbor_url}&#34;
-</span></span><span class="line"><span class="cl">//上传镜像
-</span></span><span class="line"><span class="cl">sh &#34;docker push
-</span></span><span class="line"><span class="cl">${harbor_url}/${harbor_project_name}/${imageName}&#34;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">//删除本地镜像
-</span></span><span class="line"><span class="cl">sh &#34;docker rmi - f ${imageName}&#34;
-</span></span><span class="line"><span class="cl">sh &#34;docker rmi - f
-</span></span><span class="line"><span class="cl">${harbor_url}/${harbor_project_name}/${imageName}&#34;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">chown - R jenkins:jenkins /opt/nfs/maven
-</span></span><span class="line"><span class="cl">chmod - R 777 /opt/nfs/maven
-</span></span><span class="line"><span class="cl">chmod 777 /var/run/docker.sock
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">imageName</span> <span class="o">=</span> <span class="s2">&#34;${currentProjectName}:${tag}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">编译，构建本地镜像</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;mvn - f ${currentProjectName} clean package</span>
+</span></span><span class="line"><span class="cl"><span class="n">dockerfile</span><span class="p">:</span><span class="n">build</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">container</span><span class="p">(</span><span class="s1">&#39;docker&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">给镜像打标签</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;docker tag ${imageName}</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="p">{</span><span class="n">harbor_url</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">harbor_project_name</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">imageName</span><span class="p">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">登录</span><span class="n">Harbor</span><span class="err">，并上传镜像</span>
+</span></span><span class="line"><span class="cl"><span class="n">withCredentials</span><span class="p">([</span><span class="n">usernamePassword</span><span class="p">(</span><span class="n">credentialsId</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;${harbor_auth}&#34;</span><span class="p">,</span> <span class="n">passwordVariable</span><span class="p">:</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="n">usernameVariable</span><span class="p">:</span> <span class="s1">&#39;username&#39;</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">登录</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;docker login - u ${username} - p ${password}</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="p">{</span><span class="n">harbor_url</span><span class="p">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">上传镜像</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;docker push</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="p">{</span><span class="n">harbor_url</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">harbor_project_name</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">imageName</span><span class="p">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">删除本地镜像</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;docker rmi - f ${imageName}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="s2">&#34;docker rmi - f</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="p">{</span><span class="n">harbor_url</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">harbor_project_name</span><span class="p">}</span><span class="o">/$</span><span class="p">{</span><span class="n">imageName</span><span class="p">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">chown</span> <span class="o">-</span> <span class="n">R</span> <span class="n">jenkins</span><span class="p">:</span><span class="n">jenkins</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">nfs</span><span class="o">/</span><span class="n">maven</span>
+</span></span><span class="line"><span class="cl"><span class="n">chmod</span> <span class="o">-</span> <span class="n">R</span> <span class="mi">777</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">nfs</span><span class="o">/</span><span class="n">maven</span>
+</span></span><span class="line"><span class="cl"><span class="n">chmod</span> <span class="mi">777</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改每个微服务的application.yml
@@ -4311,7 +4314,7 @@ Eureka的deply.yml</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>其他项目的deploy.yml主要把名字和端口修改：</p>
-<h4 id="----">- &ndash;</h4>
+<h4 id="--">- &ndash;</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -4379,7 +4382,7 @@ value: &ldquo;http://eureka- 0 .eureka: 10086 /eureka/,http://eureka-
 value: ${MY_POD_NAME}.eureka
 podManagementPolicy: &ldquo;Parallel&rdquo;</li>
 </ul>
-<h4 id="-----1">- &ndash;</h4>
+<h4 id="---1">- &ndash;</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -4456,28 +4459,28 @@ podManagementPolicy: &ldquo;Parallel&rdquo;</li>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><table>
-<thead>
-<tr>
-<th>(本邮件是程序自动下发的，请勿回复！)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>构建结果 - ${BUILD_STATUS}</td>
-</tr>
-<tr>
-<td><strong>构建信息</strong></td>
-</tr>
-<tr>
-<td>项目名称 ： ${PROJECT_NAME}构建编号 ： 第${BUILD_NUMBER}次构建触发原因： ${CAUSE}构建日志： <a href="https://pdf2md.morethan.io/$%7bBUILD_URL%7dconsole" target="_blank" rel="noopener noreffer">${BUILD_URL}console</a>构建 Url ： <a href="https://pdf2md.morethan.io/$%7bBUILD_URL%7d" target="_blank" rel="noopener noreffer">${BUILD_URL}</a>工作目录 ： <a href="https://pdf2md.morethan.io/$%7bPROJECT_URL%7dws" target="_blank" rel="noopener noreffer">${PROJECT_URL}ws</a>项目 Url ： <a href="https://pdf2md.morethan.io/$%7bPROJECT_URL%7d" target="_blank" rel="noopener noreffer">${PROJECT_URL}</a></td>
-</tr>
-<tr>
-<td><strong>Changes Since Last Successful Build:</strong></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>(本邮件是程序自动下发的，请勿回复！)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>构建结果 - ${BUILD_STATUS}</td>
+      </tr>
+      <tr>
+          <td><strong>构建信息</strong></td>
+      </tr>
+      <tr>
+          <td>项目名称 ： ${PROJECT_NAME}构建编号 ： 第${BUILD_NUMBER}次构建触发原因： ${CAUSE}构建日志： <a href="https://pdf2md.morethan.io/$%7bBUILD_URL%7dconsole" target="_blank" rel="noopener noreffer ">${BUILD_URL}console</a>构建 Url ： <a href="https://pdf2md.morethan.io/$%7bBUILD_URL%7d" target="_blank" rel="noopener noreffer ">${BUILD_URL}</a>工作目录 ： <a href="https://pdf2md.morethan.io/$%7bPROJECT_URL%7dws" target="_blank" rel="noopener noreffer ">${PROJECT_URL}ws</a>项目 Url ： <a href="https://pdf2md.morethan.io/$%7bPROJECT_URL%7d" target="_blank" rel="noopener noreffer ">${PROJECT_URL}</a></td>
+      </tr>
+      <tr>
+          <td><strong>Changes Since Last Successful Build:</strong></td>
+      </tr>
+  </tbody>
 </table>
 <p>This is a offline tool, your data stays locally and is not send to any server!</p>
-<p><a href="https://github.com/jzillmann/pdf-to-markdown/issues" target="_blank" rel="noopener noreffer">Feedback &amp; Bug Reports</a></p>
+<p><a href="https://github.com/jzillmann/pdf-to-markdown/issues" target="_blank" rel="noopener noreffer ">Feedback &amp; Bug Reports</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -4493,7 +4496,7 @@ podManagementPolicy: &ldquo;Parallel&rdquo;</li>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/jenkins/">jenkins</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/jenkins/">Jenkins</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -4506,8 +4509,8 @@ podManagementPolicy: &ldquo;Parallel&rdquo;</li>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -4516,5 +4519,5 @@ podManagementPolicy: &ldquo;Parallel&rdquo;</li>
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

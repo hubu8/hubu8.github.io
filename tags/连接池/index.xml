@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>连接池 - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/</link>
-        <description>连接池 - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 03 Nov 2021 09:26:50 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/" rel="self" type="application/rss+xml" /><item>
-    <title>数据库连接池的工作原理</title>
-    <link>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
-    <pubDate>Wed, 03 Nov 2021 09:26:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>连接池 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/</link>
+    <description>Recent content in 连接池 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 03 Nov 2021 09:26:50 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库连接池的工作原理</title>
+      <link>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Wed, 03 Nov 2021 09:26:50 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

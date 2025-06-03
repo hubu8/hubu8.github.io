@@ -1,88 +1,82 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>数据库 - 分类 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-        <description>数据库 - 分类 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 08 Jan 2024 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
-    <title>Row size too large. The maximum row size(Mysql行长度超过65535)</title>
-    <link>https://hubu8.github.io/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/</link>
-    <pubDate>Mon, 08 Jan 2024 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Specified key was too long; max key length is 3072 bytes</title>
-    <link>https://hubu8.github.io/posts/specified-key-was-too-long-max-key-length-is-3072-bytes/</link>
-    <pubDate>Tue, 26 Dec 2023 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/specified-key-was-too-long-max-key-length-is-3072-bytes/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Mysql事务处理原理</title>
-    <link>https://hubu8.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/</link>
-    <pubDate>Wed, 27 Sep 2023 08:59:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>for update的作用与用法</title>
-    <link>https://hubu8.github.io/posts/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/</link>
-    <pubDate>Tue, 12 Sep 2023 16:00:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/</guid>
-    <description><![CDATA[for update定义 ​ for update是一种行级锁，又叫排它锁，一旦用户对某个行施加了行级加锁，则该用户可以查询也可以更新被加锁的数据行，其它用]]></description>
-</item>
-<item>
-    <title>建立索引的正确姿势与使用索引的最佳指南</title>
-    <link>https://hubu8.github.io/posts/%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF%E4%B8%8E%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/</link>
-    <pubDate>Sat, 26 Nov 2022 16:00:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF%E4%B8%8E%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>索引初识:索引机制、分类、使用与管理</title>
-    <link>https://hubu8.github.io/posts/%E7%B4%A2%E5%BC%95%E5%88%9D%E8%AF%86%E7%B4%A2%E5%BC%95%E6%9C%BA%E5%88%B6%E5%88%86%E7%B1%BB%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%AE%A1%E7%90%86/</link>
-    <pubDate>Sat, 26 Nov 2022 16:00:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E7%B4%A2%E5%BC%95%E5%88%9D%E8%AF%86%E7%B4%A2%E5%BC%95%E6%9C%BA%E5%88%B6%E5%88%86%E7%B1%BB%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%AE%A1%E7%90%86/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>数据库连接池的工作原理</title>
-    <link>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
-    <pubDate>Wed, 03 Nov 2021 09:26:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>全外连接？Oracle!MySQL？</title>
-    <link>https://hubu8.github.io/posts/%E5%85%A8%E5%A4%96%E8%BF%9E%E6%8E%A5oraclemysql/</link>
-    <pubDate>Thu, 26 Aug 2021 15:49:24 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%85%A8%E5%A4%96%E8%BF%9E%E6%8E%A5oraclemysql/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>JPA实现动态SQL</title>
-    <link>https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</link>
-    <pubDate>Sat, 15 May 2021 12:03:18 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>MySQL</title>
-    <link>https://hubu8.github.io/posts/mysql/</link>
-    <pubDate>Sat, 17 Apr 2021 20:47:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/mysql/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 08 Jan 2024 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Row size too large. The maximum row size(Mysql行长度超过65535)</title>
+      <link>https://hubu8.github.io/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/</link>
+      <pubDate>Mon, 08 Jan 2024 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Specified key was too long; max key length is 3072 bytes</title>
+      <link>https://hubu8.github.io/posts/specified-key-was-too-long-max-key-length-is-3072-bytes/</link>
+      <pubDate>Tue, 26 Dec 2023 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/specified-key-was-too-long-max-key-length-is-3072-bytes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>for update的作用与用法</title>
+      <link>https://hubu8.github.io/posts/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Tue, 12 Sep 2023 16:00:30 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/for-update%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;h3 id=&#34;for-update定义&#34;&gt;for update定义&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;for update是一种行级锁，又叫排它锁，一旦用户对某个行施加了行级加锁，则该用户可以查询也可以更新被加锁的数据行，其它用户只能查询但不能更新被加锁的数据行．如果其它用户想更新该表中的数据行，则也必须对该表施加行级锁．即使多个用户对一个表均使用了共享更新，但也不允许两个事务同时对一个表进行更新，真正对表进行更新时，是以独占方式锁表，一直到提交或复原该事务为止。行锁永远是独占方式锁。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>建立索引的正确姿势与使用索引的最佳指南</title>
+      <link>https://hubu8.github.io/posts/%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF%E4%B8%8E%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 26 Nov 2022 16:00:30 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF%E4%B8%8E%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>索引初识:索引机制、分类、使用与管理</title>
+      <link>https://hubu8.github.io/posts/%E7%B4%A2%E5%BC%95%E5%88%9D%E8%AF%86%E7%B4%A2%E5%BC%95%E6%9C%BA%E5%88%B6%E5%88%86%E7%B1%BB%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sat, 26 Nov 2022 16:00:30 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E7%B4%A2%E5%BC%95%E5%88%9D%E8%AF%86%E7%B4%A2%E5%BC%95%E6%9C%BA%E5%88%B6%E5%88%86%E7%B1%BB%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>数据库连接池的工作原理</title>
+      <link>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Wed, 03 Nov 2021 09:26:50 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>全外连接？Oracle!MySQL？</title>
+      <link>https://hubu8.github.io/posts/%E5%85%A8%E5%A4%96%E8%BF%9E%E6%8E%A5oraclemysql/</link>
+      <pubDate>Thu, 26 Aug 2021 15:49:24 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%85%A8%E5%A4%96%E8%BF%9E%E6%8E%A5oraclemysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JPA实现动态SQL</title>
+      <link>https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</link>
+      <pubDate>Sat, 15 May 2021 12:03:18 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MySQL</title>
+      <link>https://hubu8.github.io/posts/mysql/</link>
+      <pubDate>Sat, 17 Apr 2021 20:47:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>https://hubu8.github.io/posts/redis/</link>
+      <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/redis/</guid>
+      <description>&lt;h2 id=&#34;一nosql概述&#34;&gt;一、Nosql概述&lt;/h2&gt;&#xA;&lt;h3 id=&#34;为什么使用nosql&#34;&gt;为什么使用Nosql&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;1、单机Mysql时代&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://hubu8.github.io/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://hubu8.github.io/posts/redis/images/image-20250601191447497.png&#34;&#xA;        data-srcset=&#34;https://hubu8.github.io/posts/redis/images/image-20250601191447497.png, https://hubu8.github.io/posts/redis/images/image-20250601191447497.png 1.5x, https://hubu8.github.io/posts/redis/images/image-20250601191447497.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/posts/redis/images/image-20250601191447497.png&#34;&#xA;        title=&#34;image-20250601191447497&#34; width=&#34;1174&#34; height=&#34;254&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出现以下问题&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;数据量增加到一定程度，单机数据库就放不下了&lt;/li&gt;&#xA;&lt;li&gt;数据的索引（B+ Tree）,一个机器内存也存放不下&lt;/li&gt;&#xA;&lt;li&gt;访问量变大后（读写混合），一台服务器承受不住。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2、Memcached(缓存) + Mysql + 垂直拆分（读写分离）&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

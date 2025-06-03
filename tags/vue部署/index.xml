@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>vue部署 - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/vue%E9%83%A8%E7%BD%B2/</link>
-        <description>vue部署 - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 03 Jun 2025 07:57:53 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/vue%E9%83%A8%E7%BD%B2/" rel="self" type="application/rss+xml" /><item>
-    <title>如何把vue项目部署在admin路径下前端访问</title>
-    <link>https://hubu8.github.io/posts/%E5%A6%82%E4%BD%95%E6%8A%8Avue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%9C%A8admin%E8%B7%AF%E5%BE%84%E4%B8%8B%E5%89%8D%E7%AB%AF%E8%AE%BF%E9%97%AE/</link>
-    <pubDate>Tue, 03 Jun 2025 07:57:53 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%A6%82%E4%BD%95%E6%8A%8Avue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%9C%A8admin%E8%B7%AF%E5%BE%84%E4%B8%8B%E5%89%8D%E7%AB%AF%E8%AE%BF%E9%97%AE/</guid>
-    <description><![CDATA[前端部署]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue部署 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/vue%E9%83%A8%E7%BD%B2/</link>
+    <description>Recent content in Vue部署 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 03 Jun 2025 07:57:53 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/vue%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何把vue项目部署在admin路径下前端访问</title>
+      <link>https://hubu8.github.io/posts/%E5%A6%82%E4%BD%95%E6%8A%8Avue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%9C%A8admin%E8%B7%AF%E5%BE%84%E4%B8%8B%E5%89%8D%E7%AB%AF%E8%AE%BF%E9%97%AE/</link>
+      <pubDate>Tue, 03 Jun 2025 07:57:53 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%A6%82%E4%BD%95%E6%8A%8Avue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%9C%A8admin%E8%B7%AF%E5%BE%84%E4%B8%8B%E5%89%8D%E7%AB%AF%E8%AE%BF%E9%97%AE/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

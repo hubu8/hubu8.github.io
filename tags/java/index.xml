@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>java - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/java/</link>
-        <description>java - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Thu, 13 Oct 2022 11:10:02 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/java/" rel="self" type="application/rss+xml" /><item>
-    <title>Java判断字符串String是否为空</title>
-    <link>https://hubu8.github.io/posts/java%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2string%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA/</link>
-    <pubDate>Thu, 13 Oct 2022 11:10:02 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/java%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2string%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/java/</link>
+    <description>Recent content in Java on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 13 Oct 2022 11:10:02 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java判断字符串String是否为空</title>
+      <link>https://hubu8.github.io/posts/java%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2string%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA/</link>
+      <pubDate>Thu, 13 Oct 2022 11:10:02 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/java%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2string%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

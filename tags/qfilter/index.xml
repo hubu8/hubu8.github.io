@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>QFilter - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/qfilter/</link>
-        <description>QFilter - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 13 Sep 2022 21:08:01 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/qfilter/" rel="self" type="application/rss+xml" /><item>
-    <title>快速过滤器转QFilter</title>
-    <link>https://hubu8.github.io/posts/%E5%BF%AB%E9%80%9F%E8%BF%87%E6%BB%A4%E5%99%A8%E8%BD%ACqfilter/</link>
-    <pubDate>Tue, 13 Sep 2022 21:08:01 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%BF%AB%E9%80%9F%E8%BF%87%E6%BB%A4%E5%99%A8%E8%BD%ACqfilter/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QFilter on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/qfilter/</link>
+    <description>Recent content in QFilter on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 13 Sep 2022 21:08:01 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/qfilter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速过滤器转QFilter</title>
+      <link>https://hubu8.github.io/posts/%E5%BF%AB%E9%80%9F%E8%BF%87%E6%BB%A4%E5%99%A8%E8%BD%ACqfilter/</link>
+      <pubDate>Tue, 13 Sep 2022 21:08:01 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%BF%AB%E9%80%9F%E8%BF%87%E6%BB%A4%E5%99%A8%E8%BD%ACqfilter/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

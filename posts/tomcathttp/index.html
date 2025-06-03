@@ -4,22 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Tomcat&amp;Http - Eccentric&#39;s Note</title><meta name="Description" content="Tomcat服务器使用与常用网络知识"><meta property="og:title" content="Tomcat&amp;Http" />
-<meta property="og:description" content="Tomcat服务器使用与常用网络知识" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/posts/tomcathttp/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-17T19:59:34+08:00" />
-<meta property="article:modified_time" content="2021-07-17T19:59:34+08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>Tomcat&amp;Http - Eccentric&#39;s Note</title><meta name="Description" content="Tomcat服务器使用与常用网络知识"><meta property="og:url" content="https://hubu8.github.io/posts/tomcathttp/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="Tomcat&Http">
+  <meta property="og:description" content="Tomcat服务器使用与常用网络知识">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-07-17T19:59:34+08:00">
+    <meta property="article:modified_time" content="2021-07-17T19:59:34+08:00">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
-
-<meta name="twitter:title" content="Tomcat&amp;Http"/>
-<meta name="twitter:description" content="Tomcat服务器使用与常用网络知识"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="Tomcat&Http">
+  <meta name="twitter:description" content="Tomcat服务器使用与常用网络知识">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/tomcathttp/" /><link rel="prev" href="https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://hubu8.github.io/posts/file-io-%E4%B8%80/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/tomcathttp/" /><link rel="prev" href="https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://hubu8.github.io/posts/file-io-%E4%B8%80/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -35,7 +36,7 @@
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Eccentric"
+                "name": "xxxx"
             },"description": "Tomcat服务器使用与常用网络知识"
     }
     </script></head>
@@ -60,8 +61,7 @@
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -103,8 +103,8 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tomcat&amp;Http</h1><h2 class="single-subtitle">大三下学期实训</h2><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>大三下实训笔记</a></span></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tomcat&Http</h1><h2 class="single-subtitle">大三下学期实训</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>大三下实训笔记</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-07-17">2021-07-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 9584 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 20 分钟&nbsp;<span id="/posts/tomcathttp/" class="leancloud_visitors" data-flag-title="Tomcat&amp;Http">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -289,9 +289,9 @@
 <h2 id="11-javaee规范">1.1 JavaEE规范</h2>
 <p><code>JavaEE</code>规范是<code>J2EE</code>规范的新名称，早期被称为<code>J2EE</code>规范，其全称是<code>Java 2 Platform Enterprise Edition</code>，它是由SUN公司领导、各厂家共同制定并得到广泛认可的工业标准（<code>JCP</code>组织成员）。之所以改名为<code>JavaEE</code>，目的还是让大家清楚<code>J2EE</code>只是<code>Java</code>企业应用。在2004年底中国软件技术大会<code>Ioc</code>微容器(也就是<code>Jdon</code>框架的实现原理)演讲中指出：我们需要一个跨<code>J2SE/WEB/EJB</code>的微容器，保护我们的业务核心组件，以延续它的生命力，而不是依赖<code>J2SE/J2EE</code>版本.此次<code>J2EE</code>改名为<code>Java EE</code>，实际也反映出业界这种共同心声。</p>
 <p><code>JavaEE</code>规范是很多<code>Java</code>开发技术的总称。这些技术规范都是沿用自<code>J2EE</code>的。一共包括了13个技术规范。例如：<code>jsp/servlet</code>，<code>jndi</code>，<code>jaxp</code>，<code>jdbc</code>，<code>jni</code>，<code>jaxb</code>，<code>jmf</code>，<code>jta</code>，<code>jpa</code>，<code>EJB</code>等。</p>
-<p>其中，<code>JCP</code>组织的全称是<code>Java Community Process</code>。它是一个开放的国际组织，主要由<code>Java</code>开发者以及被授权者组成，职能是发展和更新。成立于1998年。官网是：<a href="https://jcp.org/en/home/index" target="_blank" rel="noopener noreffer">JCP</a></p>
+<p>其中，<code>JCP</code>组织的全称是<code>Java Community Process</code>。它是一个开放的国际组织，主要由<code>Java</code>开发者以及被授权者组成，职能是发展和更新。成立于1998年。官网是：<a href="https://jcp.org/en/home/index" target="_blank" rel="noopener noreffer ">JCP</a></p>
 <p><code>JavaEE</code>的版本是延续了<code>J2EE</code>的版本，但是没有继续采用其命名规则。<code>J2EE</code>的版本从1.0开始到1.4结束，而<code>JavaEE</code>版本是从<code>JavaEE 5</code>版本开始，目前最主流的版本是<code>JavaEE 8</code>。</p>
-<p>详情请参考：<a href="https://www.oracle.com/technetwork/cn/java/javaee/overview/index.html" target="_blank" rel="noopener noreffer">JavaEE8规范概览</a></p>
+<p>详情请参考：<a href="https://www.oracle.com/technetwork/cn/java/javaee/overview/index.html" target="_blank" rel="noopener noreffer ">JavaEE8规范概览</a></p>
 <h2 id="12-web概述">1.2 Web概述</h2>
 <p>Web在英文中的含义是网状物，网络。在计算机领域，它通常指的是后者，即<b>网络</b>。像我们前面接触的<code>WWW</code>，它是由3个单词组成的，即：<code>World Wide Web </code>，中文含义是<b>万维网</b>。而我们前面学的<code>HTML</code>，<code>CSS</code>和<code>JS</code>的参考文档《<code>W3School</code>全套教程》中的<code>W3C</code>就是万维网联盟。他们的出现都是为了让我们在网络的世界中获取资源，这些资源的存放之处，我们称之为<b><font color='red'>网站</font></b>。我们通过输入网站的地址（即：网址），就可以访问网站中提供的资源。在网上我们能访问到的内容全是资源（不区分局域网还是广域网）。只不过，不同类型的资源展示的效果不一样。</p>
 <p>首先，我们先来介绍资源的分类，它分为静态资源和动态资源。其中：</p>
@@ -360,39 +360,38 @@
 <p>IOE：</p>
 <p>​	ibm  &ndash; 服务器硬件</p>
 <p>​	oracle &ndash; 数据库</p>
-<p>​	emc  &mdash; 存储</p>
-</blockquote>
+<p>​	emc  &mdash; 存储</p></blockquote>
 <h3 id="211-关于服务器">2.1.1 关于服务器</h3>
 <p>服务器的概念非常的广泛，它可以指代一台特殊的计算机（相比普通计算机运行更快、负载更高、价格更贵），也可以指代用于部署网站的应用。我们这里说的服务器，其实是web服务器，或者应用服务器。它本质就是一个软件，一个应用。作用就是发布我们的应用（工程），让用户可以通过浏览器访问我们的应用。</p>
 <p>常见的应用服务器，请看下表：</p>
 <table>
-<thead>
-<tr>
-<th>服务器名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>weblogic</td>
-<td>实现了javaEE规范，重量级服务器，又称为javaEE容器（oracle）</td>
-</tr>
-<tr>
-<td>websphere</td>
-<td>实现了javaEE规范，重量级服务器。（ibm）</td>
-</tr>
-<tr>
-<td>JBOSS</td>
-<td>实现了JavaEE规范，重量级服务器。免费的。</td>
-</tr>
-<tr>
-<td>==Tomcat==</td>
-<td>实现了jsp/servlet规范，是一个==轻量级服务器，开源免费。==</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>服务器名称</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>weblogic</td>
+          <td>实现了javaEE规范，重量级服务器，又称为javaEE容器（oracle）</td>
+      </tr>
+      <tr>
+          <td>websphere</td>
+          <td>实现了javaEE规范，重量级服务器。（ibm）</td>
+      </tr>
+      <tr>
+          <td>JBOSS</td>
+          <td>实现了JavaEE规范，重量级服务器。免费的。</td>
+      </tr>
+      <tr>
+          <td>==Tomcat==</td>
+          <td>实现了jsp/servlet规范，是一个==轻量级服务器，开源免费。==</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="212-tomcat下载与安装">2.1.2 Tomcat下载与安装</h3>
-<p><a href="http://tomcat.apache.org/" target="_blank" rel="noopener noreffer">Tomcat官网下载地址</a></p>
+<p><a href="http://tomcat.apache.org/" target="_blank" rel="noopener noreffer ">Tomcat官网下载地址</a></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -403,8 +402,7 @@
         title="tomcat官网.png" /></p>
 <h3 id="213-tomcat各版本所需支持">2.1.3 Tomcat各版本所需支持</h3>
 <blockquote>
-<p>JDK8 + tomcat9</p>
-</blockquote>
+<p>JDK8 + tomcat9</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -485,8 +483,7 @@
 <p>例如：启动产生异常，但是不能正常启动。此时就需要解压一个新的Tomcat启动，来确定是系统问题，还是Tomcat的问题。</p>
 <p>所以，此时就需要具体问题，具体分析，然后再对症解决。</p>
 <blockquote>
-<p>如果是中文乱码： 可以改配置文件中的字符集：gbk (可以不配置)</p>
-</blockquote>
+<p>如果是中文乱码： 可以改配置文件中的字符集：gbk (可以不配置)</p></blockquote>
 <h3 id="222-idea集成tomcat服务器重要">2.2.2 IDEA集成Tomcat服务器（重要）</h3>
 <p><strong>第一步</strong></p>
 <p><img
@@ -610,20 +607,20 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">方式1:service iptables stop  关闭防火墙(不建议); 用到哪一个端口号就放行哪一个(80,8080,3306...)
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">方式</span><span class="mi">1</span><span class="p">:</span><span class="n">service</span> <span class="n">iptables</span> <span class="n">stop</span>  <span class="err">关闭防火墙</span><span class="p">(</span><span class="err">不建议</span><span class="p">);</span> <span class="err">用到哪一个端口号就放行哪一个</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">8080</span><span class="p">,</span><span class="mf">3306.</span><span class="o">..</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">方式2:放行8080 端口
-</span></span><span class="line"><span class="cl">	修改配置文件
-</span></span><span class="line"><span class="cl">		cd /etc/sysconfig
-</span></span><span class="line"><span class="cl">		vi iptables
-</span></span><span class="line"><span class="cl">			复制(yy , p)	
-</span></span><span class="line"><span class="cl">				-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
-</span></span><span class="line"><span class="cl">			改成
-</span></span><span class="line"><span class="cl">				-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
-</span></span><span class="line"><span class="cl">		重启加载防火墙或者重启防火墙
-</span></span><span class="line"><span class="cl">			service iptables reload  
-</span></span><span class="line"><span class="cl">			或者
-</span></span><span class="line"><span class="cl">			service iptables restart
+</span></span><span class="line"><span class="cl"><span class="err">方式</span><span class="mi">2</span><span class="p">:</span><span class="err">放行</span><span class="mi">8080</span> <span class="err">端口</span>
+</span></span><span class="line"><span class="cl">	<span class="err">修改配置文件</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span>
+</span></span><span class="line"><span class="cl">		<span class="n">vi</span> <span class="n">iptables</span>
+</span></span><span class="line"><span class="cl">			<span class="err">复制</span><span class="p">(</span><span class="n">yy</span> <span class="p">,</span> <span class="n">p</span><span class="p">)</span>	
+</span></span><span class="line"><span class="cl">				<span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">NEW</span> <span class="o">-</span><span class="n">m</span> <span class="n">tcp</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">22</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</span></span><span class="line"><span class="cl">			<span class="err">改成</span>
+</span></span><span class="line"><span class="cl">				<span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">NEW</span> <span class="o">-</span><span class="n">m</span> <span class="n">tcp</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">8080</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</span></span><span class="line"><span class="cl">		<span class="err">重启加载防火墙或者重启防火墙</span>
+</span></span><span class="line"><span class="cl">			<span class="n">service</span> <span class="n">iptables</span> <span class="n">reload</span>  
+</span></span><span class="line"><span class="cl">			<span class="err">或者</span>
+</span></span><span class="line"><span class="cl">			<span class="n">service</span> <span class="n">iptables</span> <span class="n">restart</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="23-tomcat发布应用-javaweb应用">2.3 Tomcat发布应用-JavaWeb应用</h2>
@@ -791,8 +788,7 @@
 <p><strong>配置默认端口</strong></p>
 <p>Tomcat的默认端口是<b><font color='red'>8080</font></b>。</p>
 <blockquote>
-<p>http：的默认端口 80 ， 80是可以省略！</p>
-</blockquote>
+<p>http：的默认端口 80 ， 80是可以省略！</p></blockquote>
 <p>配置方式如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -834,46 +830,46 @@
 <p>第一：HTTP1.1版本比1.0版本多了一些消息头。</p>
 <p>第二：HTTP1.1版本和1.0版本的执行过程不一样。执行过程如下：</p>
 <table>
-<thead>
-<tr>
-<th>创建连接（TCP/IP）</th>
-<th>创建连接（TCP/IP）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTTP1.0</td>
-<td>HTTP1.1</td>
-</tr>
-<tr>
-<td>发送请求</td>
-<td>发送请求1</td>
-</tr>
-<tr>
-<td>得到响应</td>
-<td>得到响应1</td>
-</tr>
-<tr>
-<td>关闭连接</td>
-<td>发送请求2</td>
-</tr>
-<tr>
-<td>创建连接（TCP/IP）</td>
-<td>得到响应2</td>
-</tr>
-<tr>
-<td>发送请求</td>
-<td>&hellip;&hellip;.</td>
-</tr>
-<tr>
-<td>得到响应</td>
-<td>&hellip;&hellip;.</td>
-</tr>
-<tr>
-<td>关闭连接</td>
-<td>连接超时或手动关闭连接</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>创建连接（TCP/IP）</th>
+          <th>创建连接（TCP/IP）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HTTP1.0</td>
+          <td>HTTP1.1</td>
+      </tr>
+      <tr>
+          <td>发送请求</td>
+          <td>发送请求1</td>
+      </tr>
+      <tr>
+          <td>得到响应</td>
+          <td>得到响应1</td>
+      </tr>
+      <tr>
+          <td>关闭连接</td>
+          <td>发送请求2</td>
+      </tr>
+      <tr>
+          <td>创建连接（TCP/IP）</td>
+          <td>得到响应2</td>
+      </tr>
+      <tr>
+          <td>发送请求</td>
+          <td>&hellip;&hellip;.</td>
+      </tr>
+      <tr>
+          <td>得到响应</td>
+          <td>&hellip;&hellip;.</td>
+      </tr>
+      <tr>
+          <td>关闭连接</td>
+          <td>连接超时或手动关闭连接</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="313-http协议相关说明">3.1.3 HTTP协议相关说明</h3>
 <p>HTTP协议概念是客户浏览器和服务器一种一问一答的规则，那么必须要有问有答，而且要先问后答。
@@ -914,221 +910,221 @@
 <h3 id="331-请求行详解">3.3.1 请求行详解</h3>
 <p>请求行：<code>GET /myapp/2.html HTTP/1.1</code></p>
 <table>
-<thead>
-<tr>
-<th>内容</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>请求的方式。（还有POST）</td>
-</tr>
-<tr>
-<td>/myapp/2.html</td>
-<td>请求的资源。</td>
-</tr>
-<tr>
-<td>HTTP/1.1</td>
-<td>使用的协议，及协议的版本。</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>内容</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GET</td>
+          <td>请求的方式。（还有POST）</td>
+      </tr>
+      <tr>
+          <td>/myapp/2.html</td>
+          <td>请求的资源。</td>
+      </tr>
+      <tr>
+          <td>HTTP/1.1</td>
+          <td>使用的协议，及协议的版本。</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="332-请求消息头详解">3.3.2 请求消息头详解</h3>
 <table>
-<thead>
-<tr>
-<th>内容</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Accept</td>
-<td>告知服务器，客户浏览器所支持的MIME类型。</td>
-</tr>
-<tr>
-<td>Accept-Encoding</td>
-<td>告知服务器，客户浏览器所支持的压缩编码格式。最常用的就是gzip压缩。</td>
-</tr>
-<tr>
-<td>Accept-Language</td>
-<td>告知服务器，客户浏览器所支持的语言。一般都是zh_CN或en_US等。</td>
-</tr>
-<tr>
-<td>Referer</td>
-<td>告知服务器，当前请求的来源。<br/>只有当前请求有来源的时候，才有这个消息头。从地址栏输入的没有来源。<br/>作用：1 投放广告  2 防盗链</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>告知服务器，请求正文的MIME类型。</td>
-</tr>
-<tr>
-<td>Content-Length</td>
-<td>告知服务器，请求正文的长度。</td>
-</tr>
-<tr>
-<td>User-Agent</td>
-<td>浏览器相关信息</td>
-</tr>
-<tr>
-<td>Connection: Keep-Alive</td>
-<td>连接的状态：保持连接</td>
-</tr>
-<tr>
-<td>If-Modified-Since</td>
-<td>告知服务器，客户浏览器缓存文件的最后修改时间。</td>
-</tr>
-<tr>
-<td>Cookie（********）</td>
-<td>会话管理相关，非常的重要。</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>内容</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Accept</td>
+          <td>告知服务器，客户浏览器所支持的MIME类型。</td>
+      </tr>
+      <tr>
+          <td>Accept-Encoding</td>
+          <td>告知服务器，客户浏览器所支持的压缩编码格式。最常用的就是gzip压缩。</td>
+      </tr>
+      <tr>
+          <td>Accept-Language</td>
+          <td>告知服务器，客户浏览器所支持的语言。一般都是zh_CN或en_US等。</td>
+      </tr>
+      <tr>
+          <td>Referer</td>
+          <td>告知服务器，当前请求的来源。<br/>只有当前请求有来源的时候，才有这个消息头。从地址栏输入的没有来源。<br/>作用：1 投放广告  2 防盗链</td>
+      </tr>
+      <tr>
+          <td>Content-Type</td>
+          <td>告知服务器，请求正文的MIME类型。</td>
+      </tr>
+      <tr>
+          <td>Content-Length</td>
+          <td>告知服务器，请求正文的长度。</td>
+      </tr>
+      <tr>
+          <td>User-Agent</td>
+          <td>浏览器相关信息</td>
+      </tr>
+      <tr>
+          <td>Connection: Keep-Alive</td>
+          <td>连接的状态：保持连接</td>
+      </tr>
+      <tr>
+          <td>If-Modified-Since</td>
+          <td>告知服务器，客户浏览器缓存文件的最后修改时间。</td>
+      </tr>
+      <tr>
+          <td>Cookie（********）</td>
+          <td>会话管理相关，非常的重要。</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="333-请求正文详解">3.3.3 请求正文详解</h3>
 <p>第一：只有post请求方式，才有请求的正文。get方式的正文是在地址栏中的。
 第二：表单的输入域有name属性的才会被提交。不分get和post的请求方式。
 第三：表单的enctype属性取值决定了请求正文的体现形式。概述的含义是：请求正文的MIME编码类型。</p>
 <table>
-<thead>
-<tr>
-<th>enctype取值</th>
-<th>请求正文体现形式</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>application/x-www-form-urlencoded</td>
-<td>key=value&amp;key=value</td>
-<td>username=test&amp;password=1234</td>
-</tr>
-<tr>
-<td>multipart/form-data</td>
-<td>此时变成了多部分表单数据。多部分是靠分隔符分隔的。</td>
-<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;username&rdquo;<br/><br/>test<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;password&rdquo;<br/><br/>1234<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;headfile&rdquo;; filename=&ldquo;C:\Users\zhy\Desktop\请求部分.jpg&rdquo;<br/>Content-Type: image/pjpeg<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>enctype取值</th>
+          <th>请求正文体现形式</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>application/x-www-form-urlencoded</td>
+          <td>key=value&amp;key=value</td>
+          <td>username=test&amp;password=1234</td>
+      </tr>
+      <tr>
+          <td>multipart/form-data</td>
+          <td>此时变成了多部分表单数据。多部分是靠分隔符分隔的。</td>
+          <td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;username&rdquo;<br/><br/>test<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;password&rdquo;<br/><br/>1234<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210<br/>Content-Disposition: form-data; name=&ldquo;headfile&rdquo;; filename=&ldquo;C:\Users\zhy\Desktop\请求部分.jpg&rdquo;<br/>Content-Type: image/pjpeg<br/>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7df23a16c0210</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="34-响应部分详解">3.4 响应部分详解</h2>
 <h3 id="341-响应行详解">3.4.1 响应行详解</h3>
 <p>响应行：<code>HTTP/1.1 200 OK</code></p>
 <table>
-<thead>
-<tr>
-<th>内容</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTTP/1.1</td>
-<td>使用协议的版本。</td>
-</tr>
-<tr>
-<td>200</td>
-<td>响应状态码</td>
-</tr>
-<tr>
-<td>OK</td>
-<td>状态码描述</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>内容</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HTTP/1.1</td>
+          <td>使用协议的版本。</td>
+      </tr>
+      <tr>
+          <td>200</td>
+          <td>响应状态码</td>
+      </tr>
+      <tr>
+          <td>OK</td>
+          <td>状态码描述</td>
+      </tr>
+  </tbody>
 </table>
 <p>常用状态码介绍：</p>
 <table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>一切都OK</td>
-</tr>
-<tr>
-<td>302/307</td>
-<td>请求重定向(客户端行为，两次请求，地址栏发生改变)</td>
-</tr>
-<tr>
-<td>304</td>
-<td>请求资源未发生变化，使用缓存</td>
-</tr>
-<tr>
-<td>404</td>
-<td>请求资源未找到</td>
-</tr>
-<tr>
-<td>500</td>
-<td>服务器错误</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>状态码</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>200</td>
+          <td>一切都OK</td>
+      </tr>
+      <tr>
+          <td>302/307</td>
+          <td>请求重定向(客户端行为，两次请求，地址栏发生改变)</td>
+      </tr>
+      <tr>
+          <td>304</td>
+          <td>请求资源未发生变化，使用缓存</td>
+      </tr>
+      <tr>
+          <td>404</td>
+          <td>请求资源未找到</td>
+      </tr>
+      <tr>
+          <td>500</td>
+          <td>服务器错误</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="342-响应消息头详解">3.4.2 响应消息头详解</h3>
 <table>
-<thead>
-<tr>
-<th>Location</th>
-<th>请求重定向的地址，常与302,307配合使用。</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>消息头</td>
-<td>说明</td>
-</tr>
-<tr>
-<td>Server</td>
-<td>服务器相关信息。</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>告知客户浏览器，响应正文的MIME类型。application/json   text/html</td>
-</tr>
-<tr>
-<td>Content-Length</td>
-<td>告知客户浏览器，响应正文的长度。</td>
-</tr>
-<tr>
-<td>Content-Encoding</td>
-<td>告知客户浏览器，响应正文使用的压缩编码格式。常用的gzip压缩。</td>
-</tr>
-<tr>
-<td>Content-Language</td>
-<td>告知客户浏览器，响应正文的语言。zh_CN或en_US等等。</td>
-</tr>
-<tr>
-<td>Content-Disposition</td>
-<td>告知客户浏览器，以下载的方式打开响应正文。</td>
-</tr>
-<tr>
-<td>Refresh</td>
-<td>定时刷新</td>
-</tr>
-<tr>
-<td>Last-Modified</td>
-<td>服务器资源的最后修改时间。</td>
-</tr>
-<tr>
-<td>Set-Cookie（*******）</td>
-<td>会话管理相关，非常的重要</td>
-</tr>
-<tr>
-<td>Expires:-1</td>
-<td>服务器资源到客户浏览器后的缓存时间</td>
-</tr>
-<tr>
-<td>Catch-Control: no-catch</td>
-<td>不要缓存，//针对http协议1.1版本</td>
-</tr>
-<tr>
-<td>Pragma:no-catch</td>
-<td>不要缓存，//针对http协议1.0版本</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Location</th>
+          <th>请求重定向的地址，常与302,307配合使用。</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>消息头</td>
+          <td>说明</td>
+      </tr>
+      <tr>
+          <td>Server</td>
+          <td>服务器相关信息。</td>
+      </tr>
+      <tr>
+          <td>Content-Type</td>
+          <td>告知客户浏览器，响应正文的MIME类型。application/json   text/html</td>
+      </tr>
+      <tr>
+          <td>Content-Length</td>
+          <td>告知客户浏览器，响应正文的长度。</td>
+      </tr>
+      <tr>
+          <td>Content-Encoding</td>
+          <td>告知客户浏览器，响应正文使用的压缩编码格式。常用的gzip压缩。</td>
+      </tr>
+      <tr>
+          <td>Content-Language</td>
+          <td>告知客户浏览器，响应正文的语言。zh_CN或en_US等等。</td>
+      </tr>
+      <tr>
+          <td>Content-Disposition</td>
+          <td>告知客户浏览器，以下载的方式打开响应正文。</td>
+      </tr>
+      <tr>
+          <td>Refresh</td>
+          <td>定时刷新</td>
+      </tr>
+      <tr>
+          <td>Last-Modified</td>
+          <td>服务器资源的最后修改时间。</td>
+      </tr>
+      <tr>
+          <td>Set-Cookie（*******）</td>
+          <td>会话管理相关，非常的重要</td>
+      </tr>
+      <tr>
+          <td>Expires:-1</td>
+          <td>服务器资源到客户浏览器后的缓存时间</td>
+      </tr>
+      <tr>
+          <td>Catch-Control: no-catch</td>
+          <td>不要缓存，//针对http协议1.1版本</td>
+      </tr>
+      <tr>
+          <td>Pragma:no-catch</td>
+          <td>不要缓存，//针对http协议1.0版本</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="343-响应正文详解">3.4.3 响应正文详解</h3>
 <p>就和我们在浏览器上右键查看源文件看到的内容是一样的。</p>
@@ -1163,27 +1159,23 @@
   					2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
   					3. 请求空行  ----- 什么都没有（空白）
   					4. 请求体   ----- （get没有请求体， post有请求体）
-</code></pre>
-</blockquote>
+</code></pre></blockquote>
 <blockquote>
 <p>响应分成几部分：</p>
-<p>​		同上，4部分</p>
-</blockquote>
+<p>​		同上，4部分</p></blockquote>
 <p><strong>2. get和post的区别：</strong></p>
 <blockquote>
 <p>a. 请求的参数位置：</p>
 <p>b. 请求的参数的容量是否有限制：</p>
 <p>c. 是否有请求体：</p>
-<p>d. 安全性：</p>
-</blockquote>
+<p>d. 安全性：</p></blockquote>
 <p><strong>3. 响应状态码：</strong></p>
 <blockquote>
 <p>200： 成功</p>
 <p>302： 重定向</p>
 <p>304： 资源有缓存；</p>
 <p>404： 资源未找到（请求路径有误）</p>
-<p>500： 服务器内部错误（java代码有误）</p>
-</blockquote>
+<p>500： 服务器内部错误（java代码有误）</p></blockquote>
 <h1 id="4-综合案例-tomcat的具体应用">4 综合案例-Tomcat的具体应用</h1>
 <h2 id="41-静态资源案例-门户类网站的部署和访问">4.1 静态资源案例-门户类网站的部署和访问</h2>
 <h3 id="411-案例介绍">4.1.1 案例介绍</h3>
@@ -1307,16 +1299,14 @@
         title="动态资源工程3.png" /></p>
 <h4 id="注意细节">注意细节：</h4>
 <blockquote>
-<p>注意在idea中的tomcat的配置中添加虚拟访问路径： /crm</p>
-</blockquote>
+<p>注意在idea中的tomcat的配置中添加虚拟访问路径： /crm</p></blockquote>
 <h3 id="432-创建案例中的动态资源-servlet">4.3.2 创建案例中的动态资源-Servlet</h3>
 <h4 id="1-servlet简介">1） Servlet简介</h4>
-<p>Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范，称为Servlet规范。Servlet规范是JavaEE规范中的一部分。我们可以通过查阅JavaEE规范的API来了解Servlet的基本概念。通过点击<a href="https://javaee.github.io/javaee-spec/javadocs/" target="_blank" rel="noopener noreffer">JavaEE8官方文档</a>，就可以看到关于Servlet的内容介绍。</p>
+<p>Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范，称为Servlet规范。Servlet规范是JavaEE规范中的一部分。我们可以通过查阅JavaEE规范的API来了解Servlet的基本概念。通过点击<a href="https://javaee.github.io/javaee-spec/javadocs/" target="_blank" rel="noopener noreffer ">JavaEE8官方文档</a>，就可以看到关于Servlet的内容介绍。</p>
 <blockquote>
 <p>servlet是 运行在客户端和服务器端的一个小程序！</p>
 <p>JDK只定义接口规范，并没有实现；</p>
-<p>具体的实现在服务器tomcat中！</p>
-</blockquote>
+<p>具体的实现在服务器tomcat中！</p></blockquote>
 <h4 id="2-按步骤编写servlet">2） 按步骤编写Servlet</h4>
 <p><strong>前期准备：在IDEA创建Javaweb工程</strong></p>
 <p><img
@@ -1377,8 +1367,7 @@
         title="image-20201026103052174.png" /></p>
 <h5 id="2servlet的执行顺序">2.servlet的执行顺序</h5>
 <blockquote>
-<p>注意： 两种配置以后使用一种即可 （自己选择）</p>
-</blockquote>
+<p>注意： 两种配置以后使用一种即可 （自己选择）</p></blockquote>
 <p><strong>方式1：注解形式：</strong></p>
 <img src="/实训/tomcat/image-20201026104504241.png" alt="image-20201026104504241" style="zoom:80%;" />
 <p><strong>方式2：web.xml形式：</strong></p>
@@ -1400,12 +1389,10 @@
   					2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
   					3. 请求空行  ----- 什么都没有（空白）
   					4. 请求体   ----- （get没有请求体， post有请求体）
-</code></pre>
-</blockquote>
+</code></pre></blockquote>
 <blockquote>
 <p>响应分成几部分：</p>
-<p>​		同上，4部分</p>
-</blockquote>
+<p>​		同上，4部分</p></blockquote>
 <h4 id="2-get和post的区别"><strong>2. get和post的区别：</strong></h4>
 <ol>
 <li>参数的位置不同</li>
@@ -1419,8 +1406,7 @@
 <p>302 重定向</p>
 <p>304 代表浏览器缓存（此请求没有真正访问资源）</p>
 <p>404 请求路径有误（资源访问不到）</p>
-<p>500 后台服务器内部错误（java程序有异常）</p>
-</blockquote>
+<p>500 后台服务器内部错误（java程序有异常）</p></blockquote>
 <h1 id="今日作业安排">【今日作业安排】</h1>
 <ol>
 <li>完成tomcat的安装（能正常启动，并访问看到tomcat猫）</li>
@@ -1542,59 +1528,59 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *          2.判断用户名和密码是否正确；
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *          3.如果正确，提示登录成功，
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *              如果不正确，提示登录失败；
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">&#34;/userLoginServlet&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserLoginServlet</span> <span class="kd">implements</span> <span class="n">Servlet</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/userLoginServlet&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLoginServlet</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Servlet</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">        1.service方法何时执行？
 </span></span></span><span class="line"><span class="cl"><span class="cm">            --- 每次访问servlet时，service方法都会执行！
 </span></span></span><span class="line"><span class="cl"><span class="cm">
 </span></span></span><span class="line"><span class="cl"><span class="cm">        2.service方法中如何获取请求的参数？
 </span></span></span><span class="line"><span class="cl"><span class="cm">            --- request.getparameter(&#34;参数名&#34;)
 </span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">ServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 0.指定字符集，防止乱码：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">&#34;text/html;charset=utf-8&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;----------------------servlet的service方法执行了 ......&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 1.获取请求的参数：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//获取用户名：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">//获取密码：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;password&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------------用户提交的用户名为：&#34;</span> <span class="o">+</span><span class="n">username</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------------用户提交的密码为：&#34;</span> <span class="o">+</span> <span class="n">password</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// 2.判断用户名和密码是否正确；   --------以后可以去数据库查询用户名和密码是否正确！ （目前写死）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="s">&#34;lisi&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">username</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;123456&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">password</span><span class="o">)){</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">//登录成功
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----------登录成功~~~&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1">// 3.1 成功：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;欢迎&#34;</span><span class="o">+</span><span class="n">username</span><span class="o">+</span><span class="s">&#34;, 登录成功！ &#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// 登录失败
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----------登录失败~~~&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// 3.2 失败：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;您的用户名密码有误，请重新输入!&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="n">ccleaner</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//    ==========其他4个方法，明天详细讲解=============================
-</span></span></span><span class="line"><span class="cl"><span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">service</span><span class="p">(</span><span class="n">ServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">ServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 0.指定字符集，防止乱码：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&#34;text/html;charset=utf-8&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;----------------------servlet的service方法执行了 ......&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1.获取请求的参数：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//获取用户名：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;username&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//获取密码：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;password&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;------------用户提交的用户名为：&#34;</span><span class="w"> </span><span class="o">+</span><span class="n">username</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;------------用户提交的密码为：&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">password</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2.判断用户名和密码是否正确；   --------以后可以去数据库查询用户名和密码是否正确！ （目前写死）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&#34;lisi&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s">&#34;123456&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">password</span><span class="p">)){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">//登录成功</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;-----------登录成功~~~&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 3.1 成功：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="s">&#34;欢迎&#34;</span><span class="o">+</span><span class="n">username</span><span class="o">+</span><span class="s">&#34;, 登录成功！ &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 登录失败</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;-----------登录失败~~~&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 3.2 失败：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="s">&#34;您的用户名密码有误，请重新输入!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">ccleaner</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//    ==========其他4个方法，明天详细讲解=============================</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -1618,14 +1604,14 @@
     </div>
 
     <div class="post-nav"><a href="/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="观察者模式"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>观察者模式</a>
-            <a href="/posts/file-io-%E4%B8%80/" class="next" rel="next" title="File &amp; IO 一">File &amp; IO 一<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+            <a href="/posts/file-io-%E4%B8%80/" class="next" rel="next" title="File &amp; IO 一">File & IO 一<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -1634,5 +1620,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

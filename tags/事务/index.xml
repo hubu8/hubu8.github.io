@@ -1,24 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>事务 - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/%E4%BA%8B%E5%8A%A1/</link>
-        <description>事务 - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Mon, 05 Dec 2022 16:19:11 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/%E4%BA%8B%E5%8A%A1/" rel="self" type="application/rss+xml" /><item>
-    <title>Springboot事务代码实践</title>
-    <link>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
-    <pubDate>Mon, 05 Dec 2022 16:19:11 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Springboot事务概述</title>
-    <link>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0/</link>
-    <pubDate>Mon, 05 Dec 2022 16:13:49 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>事务 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E4%BA%8B%E5%8A%A1/</link>
+    <description>Recent content in 事务 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 05 Dec 2022 16:19:11 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E4%BA%8B%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Springboot事务代码实践</title>
+      <link>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 05 Dec 2022 16:19:11 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Springboot事务概述</title>
+      <link>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Mon, 05 Dec 2022 16:13:49 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/springboot%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Spring - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/spring/</link>
-        <description>Spring - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/spring/" rel="self" type="application/rss+xml" /><item>
-    <title>Spring</title>
-    <link>https://hubu8.github.io/posts/spring/</link>
-    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/spring/</guid>
-    <description><![CDATA[Spring5 1.、Spring 1.1、简介 Spring ——&gt; 春天，为开源软件带来了春天 2002，首次推出了Spring框架的雏形：interface21框]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/spring/</link>
+    <description>Recent content in Spring on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 06 Apr 2021 20:23:59 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring</title>
+      <link>https://hubu8.github.io/posts/spring/</link>
+      <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/spring/</guid>
+      <description>&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://hubu8.github.io/svg/loading.min.svg&#34;&#xA;        data-src=&#34;./images/v2-c7d94fabd9e1251acb3bba73458e3813_720w.jpg&#34;&#xA;        data-srcset=&#34;./images/v2-c7d94fabd9e1251acb3bba73458e3813_720w.jpg, ./images/v2-c7d94fabd9e1251acb3bba73458e3813_720w.jpg 1.5x, ./images/v2-c7d94fabd9e1251acb3bba73458e3813_720w.jpg 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;./images/v2-c7d94fabd9e1251acb3bba73458e3813_720w.jpg&#34;&#xA;        title=&#34;v2-c7d94fabd9e1251acb3bba73458e3813_720w.jpg&#34; /&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;spring5&#34;&gt;Spring5&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1spring&#34;&gt;1.、Spring&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11简介&#34;&gt;1.1、简介&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Spring ——&amp;gt; 春天，为开源软件带来了春天&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2002，首次推出了Spring框架的雏形：interface21框架！&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Spring框架以interface21框架为基础，经过重新设计，并不断丰富其内涵，于2004年3月24日发布了1.0正式版&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

@@ -3,8 +3,7 @@
         <title>Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 03 Jun 2025 07:57:53 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 03 Jun 2025 07:57:53 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>如何把vue项目部署在admin路径下前端访问</title>
@@ -68,7 +67,9 @@
     <pubDate>Sat, 24 May 2025 09:59:26 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hubu8.github.io/posts/kali%E5%AE%9E%E7%8E%B0%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3pdf-zip%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[Hashcat Hashcat 是一款强大的密码破解工具，但它不支持直接破解 ZIP 文件密码。Hashcat 主要用于破解哈希值，而 ZIP 文件通常使用的是加密而不是哈希，它们使用的]]></description>
+    <description><![CDATA[<h2 id="hashcat">Hashcat</h2>
+<p>Hashcat 是一款强大的密码破解工具，但它不支持直接破解 ZIP 文件密码。Hashcat 主要用于破解哈希值，而 ZIP 文件通常使用的是加密而不是哈希，它们使用的是不同的加密技术。
+在kali中使用的要求必须是内存大于4G，否则没用Hashcat具体的用法如下:</p>]]></description>
 </item>
 <item>
     <title>网络主机探测与识别-Netdiscover &amp; nmap</title>

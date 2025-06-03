@@ -1,88 +1,89 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>大三下实训笔记 - 分类 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/</link>
-        <description>大三下实训笔记 - 分类 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
-    <title>JDBC-01</title>
-    <link>https://hubu8.github.io/posts/jdbc-01/</link>
-    <pubDate>Wed, 28 Jul 2021 20:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/jdbc-01/</guid>
-    <description><![CDATA[JDBC工具类]]></description>
-</item>
-<item>
-    <title>session &amp; jsp &amp; mysql</title>
-    <link>https://hubu8.github.io/posts/session-jsp-mysql/</link>
-    <pubDate>Wed, 28 Jul 2021 19:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/session-jsp-mysql/</guid>
-    <description><![CDATA[会话技术session&jsp&mysql-随堂笔记]]></description>
-</item>
-<item>
-    <title>request &amp; response</title>
-    <link>https://hubu8.github.io/posts/request-response/</link>
-    <pubDate>Sat, 24 Jul 2021 19:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/request-response/</guid>
-    <description><![CDATA[请求响应对象]]></description>
-</item>
-<item>
-    <title>Collection -01</title>
-    <link>https://hubu8.github.io/posts/collection-01/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/collection-01/</guid>
-    <description><![CDATA[Collection-List]]></description>
-</item>
-<item>
-    <title>Collection -02</title>
-    <link>https://hubu8.github.io/posts/collection-02/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/collection-02/</guid>
-    <description><![CDATA[泛型-Set-TreeSet]]></description>
-</item>
-<item>
-    <title>Collection -03</title>
-    <link>https://hubu8.github.io/posts/collection-03/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/collection-03/</guid>
-    <description><![CDATA[红黑树-HashSet-Map-HashMap-TreeMap]]></description>
-</item>
-<item>
-    <title>Collection -04</title>
-    <link>https://hubu8.github.io/posts/collection-04/</link>
-    <pubDate>Wed, 21 Jul 2021 15:32:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/collection-04/</guid>
-    <description><![CDATA[可变参数-Stream流]]></description>
-</item>
-<item>
-    <title>File &amp; IO 二</title>
-    <link>https://hubu8.github.io/posts/file-io-%E4%BA%8C/</link>
-    <pubDate>Mon, 19 Jul 2021 20:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/file-io-%E4%BA%8C/</guid>
-    <description><![CDATA[字符流-转换流-对象操作流-Properties集合]]></description>
-</item>
-<item>
-    <title>Servlet</title>
-    <link>https://hubu8.github.io/posts/servlet/</link>
-    <pubDate>Mon, 19 Jul 2021 20:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/servlet/</guid>
-    <description><![CDATA[Servlet使用]]></description>
-</item>
-<item>
-    <title>File &amp; IO 一</title>
-    <link>https://hubu8.github.io/posts/file-io-%E4%B8%80/</link>
-    <pubDate>Mon, 19 Jul 2021 09:59:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/file-io-%E4%B8%80/</guid>
-    <description><![CDATA[File类-字节流InputStream-字节缓冲流lBufferOutputStream]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>大三下实训笔记 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 大三下实训笔记 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 28 Jul 2021 20:59:34 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JDBC-01</title>
+      <link>https://hubu8.github.io/posts/jdbc-01/</link>
+      <pubDate>Wed, 28 Jul 2021 20:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/jdbc-01/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>session &amp; jsp &amp; mysql</title>
+      <link>https://hubu8.github.io/posts/session-jsp-mysql/</link>
+      <pubDate>Wed, 28 Jul 2021 19:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/session-jsp-mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>request &amp; response</title>
+      <link>https://hubu8.github.io/posts/request-response/</link>
+      <pubDate>Sat, 24 Jul 2021 19:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/request-response/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collection -01</title>
+      <link>https://hubu8.github.io/posts/collection-01/</link>
+      <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/collection-01/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collection -02</title>
+      <link>https://hubu8.github.io/posts/collection-02/</link>
+      <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/collection-02/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collection -03</title>
+      <link>https://hubu8.github.io/posts/collection-03/</link>
+      <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/collection-03/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collection -04</title>
+      <link>https://hubu8.github.io/posts/collection-04/</link>
+      <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/collection-04/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File &amp; IO 二</title>
+      <link>https://hubu8.github.io/posts/file-io-%E4%BA%8C/</link>
+      <pubDate>Mon, 19 Jul 2021 20:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/file-io-%E4%BA%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servlet</title>
+      <link>https://hubu8.github.io/posts/servlet/</link>
+      <pubDate>Mon, 19 Jul 2021 20:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/servlet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File &amp; IO 一</title>
+      <link>https://hubu8.github.io/posts/file-io-%E4%B8%80/</link>
+      <pubDate>Mon, 19 Jul 2021 09:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/file-io-%E4%B8%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tomcat&amp;Http</title>
+      <link>https://hubu8.github.io/posts/tomcathttp/</link>
+      <pubDate>Sat, 17 Jul 2021 19:59:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/tomcathttp/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

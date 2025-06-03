@@ -4,22 +4,28 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Redis - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:title" content="Redis" />
-<meta property="og:description" content="一、Nosql概述 为什么使用Nosql 1、单机Mysql时代 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hubu8.github.io/posts/redis/" /><meta property="og:image" content="https://hubu8.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-06T20:23:59+08:00" />
-<meta property="article:modified_time" content="2021-04-06T20:23:59+08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>Redis - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/redis/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="Redis">
+  <meta property="og:description" content="一、Nosql概述 为什么使用Nosql 1、单机Mysql时代
+90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出现以下问题
+数据量增加到一定程度，单机数据库就放不下了 数据的索引（B&#43; Tree）,一个机器内存也存放不下 访问量变大后（读写混合），一台服务器承受不住。 2、Memcached(缓存) &#43; Mysql &#43; 垂直拆分（读写分离）">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-04-06T20:23:59+08:00">
+    <meta property="article:modified_time" content="2021-04-06T20:23:59+08:00">
+    <meta property="article:tag" content="Redis">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://hubu8.github.io/logo.png"/>
-
-<meta name="twitter:title" content="Redis"/>
-<meta name="twitter:description" content="一、Nosql概述 为什么使用Nosql 1、单机Mysql时代 90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="Redis">
+  <meta name="twitter:description" content="一、Nosql概述 为什么使用Nosql 1、单机Mysql时代
+90年代,一个网站的访问量一般不会太大，单个数据库完全够用。随着用户增多，网站出现以下问题
+数据量增加到一定程度，单机数据库就放不下了 数据的索引（B&#43; Tree）,一个机器内存也存放不下 访问量变大后（读写混合），一台服务器承受不住。 2、Memcached(缓存) &#43; Mysql &#43; 垂直拆分（读写分离）">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note">
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/redis/" /><link rel="prev" href="https://hubu8.github.io/posts/spring/" /><link rel="next" href="https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/redis/" /><link rel="prev" href="https://hubu8.github.io/posts/spring/" /><link rel="next" href="https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -35,7 +41,7 @@
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Eccentric"
+                "name": "xxxx"
             },"description": ""
     }
     </script></head>
@@ -60,8 +66,7 @@
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -104,7 +109,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/hubu8" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据库</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 23210 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 47 分钟&nbsp;<span id="/posts/redis/" class="leancloud_visitors" data-flag-title="Redis">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -229,8 +234,7 @@
             </div><div class="content" id="content"><h2 id="一nosql概述">一、Nosql概述</h2>
 <h3 id="为什么使用nosql">为什么使用Nosql</h3>
 <blockquote>
-<p>1、单机Mysql时代</p>
-</blockquote>
+<p>1、单机Mysql时代</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -246,8 +250,7 @@
 <li>访问量变大后（读写混合），一台服务器承受不住。</li>
 </ol>
 <blockquote>
-<p>2、Memcached(缓存) + Mysql + 垂直拆分（读写分离）</p>
-</blockquote>
+<p>2、Memcached(缓存) + Mysql + 垂直拆分（读写分离）</p></blockquote>
 <p>网站80%的情况都是在读，每次都要去查询数据库的话就十分的麻烦！所以说我们希望减轻数据库的压力，我们可以使用缓存来保证效率！</p>
 <p><img
         class="lazyload"
@@ -264,8 +267,7 @@
 <li>MemCache,当时最热门的技术，通过在数据库和数据库访问层之间加上一层缓存，第一次访问时查询数据库，将结果保存到缓存，后续的查询先检查缓存，若有直接拿去使用，效率显著提升。</li>
 </ol>
 <blockquote>
-<p>3、分库分表 + 水平拆分 + Mysql集群</p>
-</blockquote>
+<p>3、分库分表 + 水平拆分 + Mysql集群</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -275,12 +277,10 @@
         alt="/posts/redis/images/image-20250601191546417.png"
         title="image-20250601191546417" width="860" height="697" /></p>
 <blockquote>
-<p>4、如今最近的年代</p>
-</blockquote>
+<p>4、如今最近的年代</p></blockquote>
 <p>如今信息量井喷式增长，各种各样的数据出现（用户定位数据，图片数据等），大数据的背景下关系型数据库（RDBMS）无法满足大量数据要求。Nosql数据库就能轻松解决这些问题。</p>
 <blockquote>
-<p>目前一个基本的互联网项目</p>
-</blockquote>
+<p>目前一个基本的互联网项目</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -290,8 +290,7 @@
         alt="/posts/redis/images/59f182920cd7f4f1441944bf1749da3a.png"
         title="在这里插入图片描述" width="1131" height="516" /></p>
 <blockquote>
-<p>为什么要用NoSQL ？</p>
-</blockquote>
+<p>为什么要用NoSQL ？</p></blockquote>
 <p>用户的个人信息，社交网络，地理位置。用户自己产生的数据，用户日志等等爆发式增长！
 这时候我们就需要使用NoSQL数据库的，Nosql可以很好的处理以上的情况！</p>
 <h3 id="什么是nosql">什么是Nosql</h3>
@@ -360,8 +359,7 @@
 </div></li>
 </ol>
 <blockquote>
-<p>了解：3V + 3高</p>
-</blockquote>
+<p>了解：3V + 3高</p></blockquote>
 <p>大数据时代的3V ：主要是<strong>描述问题</strong>的</p>
 <ol>
 <li>海量Velume</li>
@@ -445,16 +443,14 @@
 </div>
 </div><h3 id="nosql的四大分类">Nosql的四大分类</h3>
 <blockquote>
-<p><strong>KV键值对</strong></p>
-</blockquote>
+<p><strong>KV键值对</strong></p></blockquote>
 <ul>
 <li>新浪：<strong>Redis</strong></li>
 <li>美团：Redis + Tair</li>
 <li>阿里、百度：Redis + Memcache</li>
 </ul>
 <blockquote>
-<p><strong>文档型数据库（bson数据格式）：</strong></p>
-</blockquote>
+<p><strong>文档型数据库（bson数据格式）：</strong></p></blockquote>
 <ul>
 <li><strong>MongoDB</strong>(掌握)
 <ul>
@@ -465,76 +461,72 @@
 <li>ConthDB</li>
 </ul>
 <blockquote>
-<p><strong>列存储数据库</strong></p>
-</blockquote>
+<p><strong>列存储数据库</strong></p></blockquote>
 <ul>
 <li><strong>HBase</strong>(大数据必学)</li>
 <li>分布式文件系统</li>
 </ul>
 <blockquote>
-<p><strong>图关系数据库</strong></p>
-</blockquote>
+<p><strong>图关系数据库</strong></p></blockquote>
 <p>用于广告推荐，社交网络</p>
 <ul>
 <li><strong>Neo4j</strong>、InfoGrid</li>
 </ul>
 <table>
-<thead>
-<tr>
-<th><strong>分类</strong></th>
-<th><strong>Examples举例</strong></th>
-<th><strong>典型应用场景</strong></th>
-<th><strong>数据模型</strong></th>
-<th><strong>优点</strong></th>
-<th><strong>缺点</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>键值对（key-value）</strong></td>
-<td>Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB</td>
-<td>内容缓存，主要用于处理大量数据的高访问负载，也用于一些日志系统等等。</td>
-<td>Key 指向 Value 的键值对，通常用hash table来实现</td>
-<td>查找速度快</td>
-<td>数据无结构化，通常只被当作字符串或者二进制数据</td>
-</tr>
-<tr>
-<td><strong>列存储数据库</strong></td>
-<td>Cassandra, HBase, Riak</td>
-<td>分布式的文件系统</td>
-<td>以列簇式存储，将同一列数据存在一起</td>
-<td>查找速度快，可扩展性强，更容易进行分布式扩展</td>
-<td>功能相对局限</td>
-</tr>
-<tr>
-<td><strong>文档型数据库</strong></td>
-<td>CouchDB, MongoDb</td>
-<td>Web应用（与Key-Value类似，Value是结构化的，不同的是数据库能够了解Value的内容）</td>
-<td>Key-Value对应的键值对，Value为结构化数据</td>
-<td>数据结构要求不严格，表结构可变，不需要像关系型数据库一样需要预先定义表结构</td>
-<td>查询性能不高，而且缺乏统一的查询语法。</td>
-</tr>
-<tr>
-<td><strong>图形(Graph)数据库</strong></td>
-<td>Neo4J, InfoGrid, Infinite Graph</td>
-<td>社交网络，推荐系统等。专注于构建关系图谱</td>
-<td>图结构</td>
-<td>利用图结构相关算法。比如最短路径寻址，N度关系查找等</td>
-<td>很多时候需要对整个图做计算才能得出需要的信息，而且这种结构不太好做分布式的集群</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th><strong>分类</strong></th>
+          <th><strong>Examples举例</strong></th>
+          <th><strong>典型应用场景</strong></th>
+          <th><strong>数据模型</strong></th>
+          <th><strong>优点</strong></th>
+          <th><strong>缺点</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>键值对（key-value）</strong></td>
+          <td>Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB</td>
+          <td>内容缓存，主要用于处理大量数据的高访问负载，也用于一些日志系统等等。</td>
+          <td>Key 指向 Value 的键值对，通常用hash table来实现</td>
+          <td>查找速度快</td>
+          <td>数据无结构化，通常只被当作字符串或者二进制数据</td>
+      </tr>
+      <tr>
+          <td><strong>列存储数据库</strong></td>
+          <td>Cassandra, HBase, Riak</td>
+          <td>分布式的文件系统</td>
+          <td>以列簇式存储，将同一列数据存在一起</td>
+          <td>查找速度快，可扩展性强，更容易进行分布式扩展</td>
+          <td>功能相对局限</td>
+      </tr>
+      <tr>
+          <td><strong>文档型数据库</strong></td>
+          <td>CouchDB, MongoDb</td>
+          <td>Web应用（与Key-Value类似，Value是结构化的，不同的是数据库能够了解Value的内容）</td>
+          <td>Key-Value对应的键值对，Value为结构化数据</td>
+          <td>数据结构要求不严格，表结构可变，不需要像关系型数据库一样需要预先定义表结构</td>
+          <td>查询性能不高，而且缺乏统一的查询语法。</td>
+      </tr>
+      <tr>
+          <td><strong>图形(Graph)数据库</strong></td>
+          <td>Neo4J, InfoGrid, Infinite Graph</td>
+          <td>社交网络，推荐系统等。专注于构建关系图谱</td>
+          <td>图结构</td>
+          <td>利用图结构相关算法。比如最短路径寻址，N度关系查找等</td>
+          <td>很多时候需要对整个图做计算才能得出需要的信息，而且这种结构不太好做分布式的集群</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="二redis入门">二、Redis入门</h2>
 <h3 id="概述">概述</h3>
 <blockquote>
-<p>Redis是什么？</p>
-</blockquote>
+<p>Redis是什么？</p></blockquote>
 <p>Redis（Remote Dictionary Server )，即远程字典服务。</p>
 <p>是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、<strong>Key-Value数据库</strong>，并提供多种语言的API。</p>
 <p>与memcached一样，为了保证效率，<strong>数据都是缓存在内存中</strong>。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。</p>
 <blockquote>
-<p>Redis能该干什么？</p>
-</blockquote>
+<p>Redis能该干什么？</p></blockquote>
 <ol>
 <li>内存存储、持久化，内存是断电即失的，所以需要持久化（RDB、AOF）</li>
 <li>高效率、用于高速缓冲</li>
@@ -544,8 +536,7 @@
 <li>。。。</li>
 </ol>
 <blockquote>
-<p>特性</p>
-</blockquote>
+<p>特性</p></blockquote>
 <ol>
 <li>
 <p>多样的数据类型</p>
@@ -566,7 +557,7 @@
 <p>推荐使用Linux服务器学习。</p>
 <p>windows版本的Redis已经停更很久了…</p>
 <h3 id="windows安装">Windows安装</h3>
-<p><a href="https://github.com/dmajkic/redis" target="_blank" rel="noopener noreffer">https://github.com/dmajkic/redis</a></p>
+<p><a href="https://github.com/dmajkic/redis" target="_blank" rel="noopener noreffer ">https://github.com/dmajkic/redis</a></p>
 <ol>
 <li>
 <p>解压安装包
@@ -756,8 +747,7 @@
         title="在这里插入图片描述" width="1124" height="319" /></p>
 <h3 id="基础知识">基础知识</h3>
 <blockquote>
-<p>redis默认有16个数据库</p>
-</blockquote>
+<p>redis默认有16个数据库</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -835,24 +825,21 @@
 <p><code>flushdb</code>：清空当前数据库中的键值对。</p>
 <p><code>flushall</code>：清空所有数据库的键值对。</p>
 <blockquote>
-<p><strong>Redis是单线程的，Redis是基于内存操作的。</strong></p>
-</blockquote>
+<p><strong>Redis是单线程的，Redis是基于内存操作的。</strong></p></blockquote>
 <p>所以Redis的性能瓶颈不是CPU,而是机器内存和网络带宽。</p>
 <p>那么为什么Redis的速度如此快呢，性能这么高呢？QPS达到10W+</p>
 <blockquote>
-<p><strong>Redis为什么单线程还这么快？</strong></p>
-</blockquote>
+<p><strong>Redis为什么单线程还这么快？</strong></p></blockquote>
 <ul>
 <li>误区1：高性能的服务器一定是多线程的？</li>
 <li>误区2：多线程（CPU上下文会切换！）一定比单线程效率高！</li>
 </ul>
 <p>核心：Redis是将所有的数据放在内存中的，所以说使用单线程去操作效率就是最高的，多线程（CPU上下文会切换：耗时的操作！），对于内存系统来说，如果没有上下文切换效率就是最高的，多次读写都是在一个CPU上的，在内存存储数据情况下，单线程就是最佳的方案。</p>
 <h2 id="三五大数据类型">三、五大数据类型</h2>
-<p>Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作<strong>数据库</strong>，<strong>高速缓存</strong>和<strong>消息队列代理</strong>。它支持<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener noreffer">字符串</a>、<a href="https://www.redis.net.cn/tutorial/3509.html" target="_blank" rel="noopener noreffer">哈希表</a>、<a href="https://www.redis.net.cn/tutorial/3510.html" target="_blank" rel="noopener noreffer">列表</a>、<a href="https://www.redis.net.cn/tutorial/3511.html" target="_blank" rel="noopener noreffer">集合</a>、<a href="https://www.redis.net.cn/tutorial/3512.html" target="_blank" rel="noopener noreffer">有序集合</a>，<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener noreffer">位图</a>，<a href="https://www.redis.net.cn/tutorial/3513.html" target="_blank" rel="noopener noreffer">hyperloglogs</a>等数据类型。内置复制、<a href="https://www.redis.net.cn/tutorial/3516.html" target="_blank" rel="noopener noreffer">Lua脚本</a>、LRU收回、<a href="https://www.redis.net.cn/tutorial/3515.html" target="_blank" rel="noopener noreffer">事务</a>以及不同级别磁盘持久化功能，同时通过Redis Sentinel提供高可用，通过Redis Cluster提供自动<a href="https://www.redis.net.cn/tutorial/3524.html" target="_blank" rel="noopener noreffer">分区</a>。</p>
+<p>Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作<strong>数据库</strong>，<strong>高速缓存</strong>和<strong>消息队列代理</strong>。它支持<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener noreffer ">字符串</a>、<a href="https://www.redis.net.cn/tutorial/3509.html" target="_blank" rel="noopener noreffer ">哈希表</a>、<a href="https://www.redis.net.cn/tutorial/3510.html" target="_blank" rel="noopener noreffer ">列表</a>、<a href="https://www.redis.net.cn/tutorial/3511.html" target="_blank" rel="noopener noreffer ">集合</a>、<a href="https://www.redis.net.cn/tutorial/3512.html" target="_blank" rel="noopener noreffer ">有序集合</a>，<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener noreffer ">位图</a>，<a href="https://www.redis.net.cn/tutorial/3513.html" target="_blank" rel="noopener noreffer ">hyperloglogs</a>等数据类型。内置复制、<a href="https://www.redis.net.cn/tutorial/3516.html" target="_blank" rel="noopener noreffer ">Lua脚本</a>、LRU收回、<a href="https://www.redis.net.cn/tutorial/3515.html" target="_blank" rel="noopener noreffer ">事务</a>以及不同级别磁盘持久化功能，同时通过Redis Sentinel提供高可用，通过Redis Cluster提供自动<a href="https://www.redis.net.cn/tutorial/3524.html" target="_blank" rel="noopener noreffer ">分区</a>。</p>
 <h3 id="redis-key">Redis-key</h3>
 <blockquote>
-<p>在redis中无论什么数据类型，在数据库中都是以key-value形式保存，通过进行对Redis-key的操作，来完成对数据库中数据的操作。</p>
-</blockquote>
+<p>在redis中无论什么数据类型，在数据库中都是以key-value形式保存，通过进行对Redis-key的操作，来完成对数据库中数据的操作。</p></blockquote>
 <p>下面学习的命令：</p>
 <ul>
 <li><code>exists key</code>：判断键是否存在</li>
@@ -972,90 +959,90 @@
 <h3 id="string字符串">String(字符串)</h3>
 <p>普通的set、get直接略过。</p>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>APPEND key value</code></td>
-<td>向指定的key的value后追加字符串</td>
-<td>127.0.0.1:6379&gt; set msg hello OK 127.0.0.1:6379&gt; append msg &quot; world&quot; (integer) 11 127.0.0.1:6379&gt; get msg “hello world”</td>
-</tr>
-<tr>
-<td><code>DECR/INCR key</code></td>
-<td>将指定key的value数值进行+1/-1(仅对于数字)</td>
-<td>127.0.0.1:6379&gt; set age 20 OK 127.0.0.1:6379&gt; incr age (integer) 21 127.0.0.1:6379&gt; decr age (integer) 20</td>
-</tr>
-<tr>
-<td><code>INCRBY/DECRBY key n</code></td>
-<td>按指定的步长对数值进行加减</td>
-<td>127.0.0.1:6379&gt; INCRBY age 5 (integer) 25 127.0.0.1:6379&gt; DECRBY age 10 (integer) 15</td>
-</tr>
-<tr>
-<td><code>INCRBYFLOAT key n</code></td>
-<td>为数值加上浮点型数值</td>
-<td>127.0.0.1:6379&gt; INCRBYFLOAT age 5.2 “20.2”</td>
-</tr>
-<tr>
-<td><code>STRLEN key</code></td>
-<td>获取key保存值的字符串长度</td>
-<td>127.0.0.1:6379&gt; get msg “hello world” 127.0.0.1:6379&gt; STRLEN msg (integer) 11</td>
-</tr>
-<tr>
-<td><code>GETRANGE key start end</code></td>
-<td>按起止位置获取字符串（闭区间，起止位置都取）</td>
-<td>127.0.0.1:6379&gt; get msg “hello world” 127.0.0.1:6379&gt; GETRANGE msg 3 9 “lo worl”</td>
-</tr>
-<tr>
-<td><code>SETRANGE key offset value</code></td>
-<td>用指定的value 替换key中 offset开始的值</td>
-<td>127.0.0.1:6379&gt; SETRANGE msg 2 hello (integer) 7 127.0.0.1:6379&gt; get msg “tehello”</td>
-</tr>
-<tr>
-<td><code>GETSET key value</code></td>
-<td>将给定 key 的值设为 value ，并返回 key 的旧值(old value)。</td>
-<td>127.0.0.1:6379&gt; GETSET msg test “hello world”</td>
-</tr>
-<tr>
-<td><code>SETNX key value</code></td>
-<td>仅当key不存在时进行set</td>
-<td>127.0.0.1:6379&gt; SETNX msg test (integer) 0 127.0.0.1:6379&gt; SETNX name sakura (integer) 1</td>
-</tr>
-<tr>
-<td><code>SETEX key seconds value</code></td>
-<td>set 键值对并设置过期时间</td>
-<td>127.0.0.1:6379&gt; setex name 10 root OK 127.0.0.1:6379&gt; get name (nil)</td>
-</tr>
-<tr>
-<td><code>MSET key1 value1 [key2 value2..]</code></td>
-<td>批量set键值对</td>
-<td>127.0.0.1:6379&gt; MSET k1 v1 k2 v2 k3 v3 OK</td>
-</tr>
-<tr>
-<td><code>MSETNX key1 value1 [key2 value2..]</code></td>
-<td>批量设置键值对，仅当参数中所有的key都不存在时执行</td>
-<td>127.0.0.1:6379&gt; MSETNX k1 v1 k4 v4 (integer) 0</td>
-</tr>
-<tr>
-<td><code>MGET key1 [key2..]</code></td>
-<td>批量获取多个key保存的值</td>
-<td>127.0.0.1:6379&gt; MGET k1 k2 k3 1) “v1” 2) “v2” 3) “v3”</td>
-</tr>
-<tr>
-<td><code>PSETEX key milliseconds value</code></td>
-<td>和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间，</td>
-<td></td>
-</tr>
-<tr>
-<td><code>getset key value</code></td>
-<td>如果不存在值，则返回nil，如果存在值，获取原来的值，并设置新的值</td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>APPEND key value</code></td>
+          <td>向指定的key的value后追加字符串</td>
+          <td>127.0.0.1:6379&gt; set msg hello OK 127.0.0.1:6379&gt; append msg &quot; world&quot; (integer) 11 127.0.0.1:6379&gt; get msg “hello world”</td>
+      </tr>
+      <tr>
+          <td><code>DECR/INCR key</code></td>
+          <td>将指定key的value数值进行+1/-1(仅对于数字)</td>
+          <td>127.0.0.1:6379&gt; set age 20 OK 127.0.0.1:6379&gt; incr age (integer) 21 127.0.0.1:6379&gt; decr age (integer) 20</td>
+      </tr>
+      <tr>
+          <td><code>INCRBY/DECRBY key n</code></td>
+          <td>按指定的步长对数值进行加减</td>
+          <td>127.0.0.1:6379&gt; INCRBY age 5 (integer) 25 127.0.0.1:6379&gt; DECRBY age 10 (integer) 15</td>
+      </tr>
+      <tr>
+          <td><code>INCRBYFLOAT key n</code></td>
+          <td>为数值加上浮点型数值</td>
+          <td>127.0.0.1:6379&gt; INCRBYFLOAT age 5.2 “20.2”</td>
+      </tr>
+      <tr>
+          <td><code>STRLEN key</code></td>
+          <td>获取key保存值的字符串长度</td>
+          <td>127.0.0.1:6379&gt; get msg “hello world” 127.0.0.1:6379&gt; STRLEN msg (integer) 11</td>
+      </tr>
+      <tr>
+          <td><code>GETRANGE key start end</code></td>
+          <td>按起止位置获取字符串（闭区间，起止位置都取）</td>
+          <td>127.0.0.1:6379&gt; get msg “hello world” 127.0.0.1:6379&gt; GETRANGE msg 3 9 “lo worl”</td>
+      </tr>
+      <tr>
+          <td><code>SETRANGE key offset value</code></td>
+          <td>用指定的value 替换key中 offset开始的值</td>
+          <td>127.0.0.1:6379&gt; SETRANGE msg 2 hello (integer) 7 127.0.0.1:6379&gt; get msg “tehello”</td>
+      </tr>
+      <tr>
+          <td><code>GETSET key value</code></td>
+          <td>将给定 key 的值设为 value ，并返回 key 的旧值(old value)。</td>
+          <td>127.0.0.1:6379&gt; GETSET msg test “hello world”</td>
+      </tr>
+      <tr>
+          <td><code>SETNX key value</code></td>
+          <td>仅当key不存在时进行set</td>
+          <td>127.0.0.1:6379&gt; SETNX msg test (integer) 0 127.0.0.1:6379&gt; SETNX name sakura (integer) 1</td>
+      </tr>
+      <tr>
+          <td><code>SETEX key seconds value</code></td>
+          <td>set 键值对并设置过期时间</td>
+          <td>127.0.0.1:6379&gt; setex name 10 root OK 127.0.0.1:6379&gt; get name (nil)</td>
+      </tr>
+      <tr>
+          <td><code>MSET key1 value1 [key2 value2..]</code></td>
+          <td>批量set键值对</td>
+          <td>127.0.0.1:6379&gt; MSET k1 v1 k2 v2 k3 v3 OK</td>
+      </tr>
+      <tr>
+          <td><code>MSETNX key1 value1 [key2 value2..]</code></td>
+          <td>批量设置键值对，仅当参数中所有的key都不存在时执行</td>
+          <td>127.0.0.1:6379&gt; MSETNX k1 v1 k4 v4 (integer) 0</td>
+      </tr>
+      <tr>
+          <td><code>MGET key1 [key2..]</code></td>
+          <td>批量获取多个key保存的值</td>
+          <td>127.0.0.1:6379&gt; MGET k1 k2 k3 1) “v1” 2) “v2” 3) “v3”</td>
+      </tr>
+      <tr>
+          <td><code>PSETEX key milliseconds value</code></td>
+          <td>和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间，</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>getset key value</code></td>
+          <td>如果不存在值，则返回nil，如果存在值，获取原来的值，并设置新的值</td>
+          <td></td>
+      </tr>
+  </tbody>
 </table>
 <p>String类似的使用场景：value除了是字符串还可以是数字，用途举例：</p>
 <ul>
@@ -1067,8 +1054,7 @@
 <h3 id="list列表">List(列表)</h3>
 <blockquote>
 <p>Redis列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）</p>
-<p>一个列表最多可以包含 232 - 1 个元素 (4294967295, 每个列表超过40亿个元素)。</p>
-</blockquote>
+<p>一个列表最多可以包含 232 - 1 个元素 (4294967295, 每个列表超过40亿个元素)。</p></blockquote>
 <p>首先我们列表，可以经过规则定义将其变为队列、栈、双端队列等</p>
 <p><img
         class="lazyload"
@@ -1080,66 +1066,66 @@
         title="在这里插入图片描述" width="1119" height="306" /></p>
 <p>正如图Redis中List是可以进行双端操作的，所以命令也就分为了LXXX和RLLL两类，有时候L也表示List例如LLEN</p>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>LPUSH/RPUSH key value1[value2..]</code></td>
-<td>从左边/右边向列表中PUSH值(一个或者多个)。</td>
-</tr>
-<tr>
-<td><code>LRANGE key start end</code></td>
-<td>获取list 起止元素==（索引从左往右 递增）==</td>
-</tr>
-<tr>
-<td><code>LPUSHX/RPUSHX key value</code></td>
-<td>向已存在的列名中push值（一个或者多个）</td>
-</tr>
-<tr>
-<td>`LINSERT key BEFORE</td>
-<td>AFTER pivot value`</td>
-</tr>
-<tr>
-<td><code>LLEN key</code></td>
-<td>查看列表长度</td>
-</tr>
-<tr>
-<td><code>LINDEX key index</code></td>
-<td>通过索引获取列表元素</td>
-</tr>
-<tr>
-<td><code>LSET key index value</code></td>
-<td>通过索引为元素设值</td>
-</tr>
-<tr>
-<td><code>LPOP/RPOP key</code></td>
-<td>从最左边/最右边移除值 并返回</td>
-</tr>
-<tr>
-<td><code>RPOPLPUSH source destination</code></td>
-<td>将列表的尾部(右)最后一个值弹出，并返回，然后加到另一个列表的头部</td>
-</tr>
-<tr>
-<td><code>LTRIM key start end</code></td>
-<td>通过下标截取指定范围内的列表</td>
-</tr>
-<tr>
-<td><code>LREM key count value</code></td>
-<td>List中是允许value重复的 <code>count &gt; 0</code>：从头部开始搜索 然后删除指定的value 至多删除count个 <code>count &lt; 0</code>：从尾部开始搜索… <code>count = 0</code>：删除列表中所有的指定value。</td>
-</tr>
-<tr>
-<td><code>BLPOP/BRPOP key1[key2] timout</code></td>
-<td>移出并获取列表的第一个/最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
-</tr>
-<tr>
-<td><code>BRPOPLPUSH source destination timeout</code></td>
-<td>和<code>RPOPLPUSH</code>功能相同，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>LPUSH/RPUSH key value1[value2..]</code></td>
+          <td>从左边/右边向列表中PUSH值(一个或者多个)。</td>
+      </tr>
+      <tr>
+          <td><code>LRANGE key start end</code></td>
+          <td>获取list 起止元素==（索引从左往右 递增）==</td>
+      </tr>
+      <tr>
+          <td><code>LPUSHX/RPUSHX key value</code></td>
+          <td>向已存在的列名中push值（一个或者多个）</td>
+      </tr>
+      <tr>
+          <td>`LINSERT key BEFORE</td>
+          <td>AFTER pivot value`</td>
+      </tr>
+      <tr>
+          <td><code>LLEN key</code></td>
+          <td>查看列表长度</td>
+      </tr>
+      <tr>
+          <td><code>LINDEX key index</code></td>
+          <td>通过索引获取列表元素</td>
+      </tr>
+      <tr>
+          <td><code>LSET key index value</code></td>
+          <td>通过索引为元素设值</td>
+      </tr>
+      <tr>
+          <td><code>LPOP/RPOP key</code></td>
+          <td>从最左边/最右边移除值 并返回</td>
+      </tr>
+      <tr>
+          <td><code>RPOPLPUSH source destination</code></td>
+          <td>将列表的尾部(右)最后一个值弹出，并返回，然后加到另一个列表的头部</td>
+      </tr>
+      <tr>
+          <td><code>LTRIM key start end</code></td>
+          <td>通过下标截取指定范围内的列表</td>
+      </tr>
+      <tr>
+          <td><code>LREM key count value</code></td>
+          <td>List中是允许value重复的 <code>count &gt; 0</code>：从头部开始搜索 然后删除指定的value 至多删除count个 <code>count &lt; 0</code>：从尾部开始搜索… <code>count = 0</code>：删除列表中所有的指定value。</td>
+      </tr>
+      <tr>
+          <td><code>BLPOP/BRPOP key1[key2] timout</code></td>
+          <td>移出并获取列表的第一个/最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
+      </tr>
+      <tr>
+          <td><code>BRPOPLPUSH source destination timeout</code></td>
+          <td>和<code>RPOPLPUSH</code>功能相同，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
+      </tr>
+  </tbody>
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1406,8 +1392,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>小结</p>
-</blockquote>
+<p>小结</p></blockquote>
 <ul>
 <li>list实际上是一个链表，before Node after , left, right 都可以插入值</li>
 <li><strong>如果key不存在，则创建新的链表</strong></li>
@@ -1421,77 +1406,76 @@
 <blockquote>
 <p>Redis的Set是<strong>string类型</strong>的无序集合。集合成员是唯一的，这就意味着集合中不能出现重复的数据。</p>
 <p>Redis 中 集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
-<p>集合中最大的成员数为 232 - 1 (4294967295, 每个集合可存储40多亿个成员)。</p>
-</blockquote>
+<p>集合中最大的成员数为 232 - 1 (4294967295, 每个集合可存储40多亿个成员)。</p></blockquote>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SADD key member1[member2..]</code></td>
-<td>向集合中无序增加一个/多个成员</td>
-</tr>
-<tr>
-<td><code>SCARD key</code></td>
-<td>获取集合的成员数</td>
-</tr>
-<tr>
-<td><code>SMEMBERS key</code></td>
-<td>返回集合中所有的成员</td>
-</tr>
-<tr>
-<td><code>SISMEMBER key member</code></td>
-<td>查询member元素是否是集合的成员,结果是无序的</td>
-</tr>
-<tr>
-<td><code>SRANDMEMBER key [count]</code></td>
-<td>随机返回集合中count个成员，count缺省值为1</td>
-</tr>
-<tr>
-<td><code>SPOP key [count]</code></td>
-<td>随机移除并返回集合中count个成员，count缺省值为1</td>
-</tr>
-<tr>
-<td><code>SMOVE source destination member</code></td>
-<td>将source集合的成员member移动到destination集合</td>
-</tr>
-<tr>
-<td><code>SREM key member1[member2..]</code></td>
-<td>移除集合中一个/多个成员</td>
-</tr>
-<tr>
-<td><code>SDIFF key1[key2..]</code></td>
-<td>返回所有集合的差集 key1- key2 - …</td>
-</tr>
-<tr>
-<td><code>SDIFFSTORE destination key1[key2..]</code></td>
-<td>在SDIFF的基础上，将结果保存到集合中==(覆盖)==。不能保存到其他类型key噢！</td>
-</tr>
-<tr>
-<td><code>SINTER key1 [key2..]</code></td>
-<td>返回所有集合的交集</td>
-</tr>
-<tr>
-<td><code>SINTERSTORE destination key1[key2..]</code></td>
-<td>在SINTER的基础上，存储结果到集合中。覆盖</td>
-</tr>
-<tr>
-<td><code>SUNION key1 [key2..]</code></td>
-<td>返回所有集合的并集</td>
-</tr>
-<tr>
-<td><code>SUNIONSTORE destination key1 [key2..]</code></td>
-<td>在SUNION的基础上，存储结果到及和张。覆盖</td>
-</tr>
-<tr>
-<td><code>SSCAN KEY [MATCH pattern] [COUNT count]</code></td>
-<td>在大量数据环境下，使用此命令遍历集合中元素，每次遍历部分</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>SADD key member1[member2..]</code></td>
+          <td>向集合中无序增加一个/多个成员</td>
+      </tr>
+      <tr>
+          <td><code>SCARD key</code></td>
+          <td>获取集合的成员数</td>
+      </tr>
+      <tr>
+          <td><code>SMEMBERS key</code></td>
+          <td>返回集合中所有的成员</td>
+      </tr>
+      <tr>
+          <td><code>SISMEMBER key member</code></td>
+          <td>查询member元素是否是集合的成员,结果是无序的</td>
+      </tr>
+      <tr>
+          <td><code>SRANDMEMBER key [count]</code></td>
+          <td>随机返回集合中count个成员，count缺省值为1</td>
+      </tr>
+      <tr>
+          <td><code>SPOP key [count]</code></td>
+          <td>随机移除并返回集合中count个成员，count缺省值为1</td>
+      </tr>
+      <tr>
+          <td><code>SMOVE source destination member</code></td>
+          <td>将source集合的成员member移动到destination集合</td>
+      </tr>
+      <tr>
+          <td><code>SREM key member1[member2..]</code></td>
+          <td>移除集合中一个/多个成员</td>
+      </tr>
+      <tr>
+          <td><code>SDIFF key1[key2..]</code></td>
+          <td>返回所有集合的差集 key1- key2 - …</td>
+      </tr>
+      <tr>
+          <td><code>SDIFFSTORE destination key1[key2..]</code></td>
+          <td>在SDIFF的基础上，将结果保存到集合中==(覆盖)==。不能保存到其他类型key噢！</td>
+      </tr>
+      <tr>
+          <td><code>SINTER key1 [key2..]</code></td>
+          <td>返回所有集合的交集</td>
+      </tr>
+      <tr>
+          <td><code>SINTERSTORE destination key1[key2..]</code></td>
+          <td>在SINTER的基础上，存储结果到集合中。覆盖</td>
+      </tr>
+      <tr>
+          <td><code>SUNION key1 [key2..]</code></td>
+          <td>返回所有集合的并集</td>
+      </tr>
+      <tr>
+          <td><code>SUNIONSTORE destination key1 [key2..]</code></td>
+          <td>在SUNION的基础上，存储结果到及和张。覆盖</td>
+      </tr>
+      <tr>
+          <td><code>SSCAN KEY [MATCH pattern] [COUNT count]</code></td>
+          <td>在大量数据环境下，使用此命令遍历集合中元素，每次遍历部分</td>
+      </tr>
+  </tbody>
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1670,73 +1654,72 @@
 </div><h3 id="hash哈希">Hash（哈希）</h3>
 <blockquote>
 <p>Redis hash 是一个string类型的field和value的映射表，hash特别适合用于存储对象。</p>
-<p>Set就是一种简化的Hash,只变动key,而value使用默认值填充。可以将一个Hash表作为一个对象进行存储，表中存放对象的信息。</p>
-</blockquote>
+<p>Set就是一种简化的Hash,只变动key,而value使用默认值填充。可以将一个Hash表作为一个对象进行存储，表中存放对象的信息。</p></blockquote>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>HSET key field value</code></td>
-<td>将哈希表 key 中的字段 field 的值设为 value 。重复设置同一个field会覆盖,返回0</td>
-</tr>
-<tr>
-<td><code>HMSET key field1 value1 [field2 value2..]</code></td>
-<td>同时将多个 field-value (域-值)对设置到哈希表 key 中。</td>
-</tr>
-<tr>
-<td><code>HSETNX key field value</code></td>
-<td>只有在字段 field 不存在时，设置哈希表字段的值。</td>
-</tr>
-<tr>
-<td><code>HEXISTS key field</code></td>
-<td>查看哈希表 key 中，指定的字段是否存在。</td>
-</tr>
-<tr>
-<td><code>HGET key field value</code></td>
-<td>获取存储在哈希表中指定字段的值</td>
-</tr>
-<tr>
-<td><code>HMGET key field1 [field2..]</code></td>
-<td>获取所有给定字段的值</td>
-</tr>
-<tr>
-<td><code>HGETALL key</code></td>
-<td>获取在哈希表key 的所有字段和值</td>
-</tr>
-<tr>
-<td><code>HKEYS key</code></td>
-<td>获取哈希表key中所有的字段</td>
-</tr>
-<tr>
-<td><code>HLEN key</code></td>
-<td>获取哈希表中字段的数量</td>
-</tr>
-<tr>
-<td><code>HVALS key</code></td>
-<td>获取哈希表中所有值</td>
-</tr>
-<tr>
-<td><code>HDEL key field1 [field2..]</code></td>
-<td>删除哈希表key中一个/多个field字段</td>
-</tr>
-<tr>
-<td><code>HINCRBY key field n</code></td>
-<td>为哈希表 key 中的指定字段的整数值加上增量n，并返回增量后结果 一样只适用于整数型字段</td>
-</tr>
-<tr>
-<td><code>HINCRBYFLOAT key field n</code></td>
-<td>为哈希表 key 中的指定字段的浮点数值加上增量 n。</td>
-</tr>
-<tr>
-<td><code>HSCAN key cursor [MATCH pattern] [COUNT count]</code></td>
-<td>迭代哈希表中的键值对。</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>HSET key field value</code></td>
+          <td>将哈希表 key 中的字段 field 的值设为 value 。重复设置同一个field会覆盖,返回0</td>
+      </tr>
+      <tr>
+          <td><code>HMSET key field1 value1 [field2 value2..]</code></td>
+          <td>同时将多个 field-value (域-值)对设置到哈希表 key 中。</td>
+      </tr>
+      <tr>
+          <td><code>HSETNX key field value</code></td>
+          <td>只有在字段 field 不存在时，设置哈希表字段的值。</td>
+      </tr>
+      <tr>
+          <td><code>HEXISTS key field</code></td>
+          <td>查看哈希表 key 中，指定的字段是否存在。</td>
+      </tr>
+      <tr>
+          <td><code>HGET key field value</code></td>
+          <td>获取存储在哈希表中指定字段的值</td>
+      </tr>
+      <tr>
+          <td><code>HMGET key field1 [field2..]</code></td>
+          <td>获取所有给定字段的值</td>
+      </tr>
+      <tr>
+          <td><code>HGETALL key</code></td>
+          <td>获取在哈希表key 的所有字段和值</td>
+      </tr>
+      <tr>
+          <td><code>HKEYS key</code></td>
+          <td>获取哈希表key中所有的字段</td>
+      </tr>
+      <tr>
+          <td><code>HLEN key</code></td>
+          <td>获取哈希表中字段的数量</td>
+      </tr>
+      <tr>
+          <td><code>HVALS key</code></td>
+          <td>获取哈希表中所有值</td>
+      </tr>
+      <tr>
+          <td><code>HDEL key field1 [field2..]</code></td>
+          <td>删除哈希表key中一个/多个field字段</td>
+      </tr>
+      <tr>
+          <td><code>HINCRBY key field n</code></td>
+          <td>为哈希表 key 中的指定字段的整数值加上增量n，并返回增量后结果 一样只适用于整数型字段</td>
+      </tr>
+      <tr>
+          <td><code>HINCRBYFLOAT key field n</code></td>
+          <td>为哈希表 key 中的指定字段的浮点数值加上增量 n。</td>
+      </tr>
+      <tr>
+          <td><code>HSCAN key cursor [MATCH pattern] [COUNT count]</code></td>
+          <td>迭代哈希表中的键值对。</td>
+      </tr>
+  </tbody>
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1891,101 +1874,100 @@
 <blockquote>
 <p>不同的是每个元素都会关联一个double类型的分数（score）。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
 <p>score相同：按字典顺序排序</p>
-<p>有序集合的成员是唯一的,但分数(score)却可以重复。</p>
-</blockquote>
+<p>有序集合的成员是唯一的,但分数(score)却可以重复。</p></blockquote>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ZADD key score member1 [score2 member2]</code></td>
-<td>向有序集合添加一个或多个成员，或者更新已存在成员的分数</td>
-</tr>
-<tr>
-<td><code>ZCARD key</code></td>
-<td>获取有序集合的成员数</td>
-</tr>
-<tr>
-<td><code>ZCOUNT key min max</code></td>
-<td>计算在有序集合中指定区间score的成员数</td>
-</tr>
-<tr>
-<td><code>ZINCRBY key n member</code></td>
-<td>有序集合中对指定成员的分数加上增量 n</td>
-</tr>
-<tr>
-<td><code>ZSCORE key member</code></td>
-<td>返回有序集中，成员的分数值</td>
-</tr>
-<tr>
-<td><code>ZRANK key member</code></td>
-<td>返回有序集合中指定成员的索引</td>
-</tr>
-<tr>
-<td><code>ZRANGE key start end</code></td>
-<td>通过索引区间返回有序集合成指定区间内的成员</td>
-</tr>
-<tr>
-<td><code>ZRANGEBYLEX key min max</code></td>
-<td>通过字典区间返回有序集合的成员</td>
-</tr>
-<tr>
-<td><code>ZRANGEBYSCORE key min max</code></td>
-<td>通过分数返回有序集合指定区间内的成员==-inf 和 +inf分别表示最小最大值，只支持开区间()==</td>
-</tr>
-<tr>
-<td><code>ZLEXCOUNT key min max</code></td>
-<td>在有序集合中计算指定字典区间内成员数量</td>
-</tr>
-<tr>
-<td><code>ZREM key member1 [member2..]</code></td>
-<td>移除有序集合中一个/多个成员</td>
-</tr>
-<tr>
-<td><code>ZREMRANGEBYLEX key min max</code></td>
-<td>移除有序集合中给定的字典区间的所有成员</td>
-</tr>
-<tr>
-<td><code>ZREMRANGEBYRANK key start stop</code></td>
-<td>移除有序集合中给定的排名区间的所有成员</td>
-</tr>
-<tr>
-<td><code>ZREMRANGEBYSCORE key min max</code></td>
-<td>移除有序集合中给定的分数区间的所有成员</td>
-</tr>
-<tr>
-<td><code>ZREVRANGE key start end</code></td>
-<td>返回有序集中指定区间内的成员，通过索引，分数从高到底</td>
-</tr>
-<tr>
-<td><code>ZREVRANGEBYSCORRE key max min</code></td>
-<td>返回有序集中指定分数区间内的成员，分数从高到低排序</td>
-</tr>
-<tr>
-<td><code>ZREVRANGEBYLEX key max min</code></td>
-<td>返回有序集中指定字典区间内的成员，按字典顺序倒序</td>
-</tr>
-<tr>
-<td><code>ZREVRANK key member</code></td>
-<td>返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序</td>
-</tr>
-<tr>
-<td><code>ZINTERSTORE destination numkeys key1 [key2 ..]</code></td>
-<td>计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中，numkeys：表示参与运算的集合数，将score相加作为结果的score</td>
-</tr>
-<tr>
-<td><code>ZUNIONSTORE destination numkeys key1 [key2..]</code></td>
-<td>计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中</td>
-</tr>
-<tr>
-<td><code>ZSCAN key cursor [MATCH pattern\] [COUNT count]</code></td>
-<td>迭代有序集合中的元素（包括元素成员和元素分值）</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ZADD key score member1 [score2 member2]</code></td>
+          <td>向有序集合添加一个或多个成员，或者更新已存在成员的分数</td>
+      </tr>
+      <tr>
+          <td><code>ZCARD key</code></td>
+          <td>获取有序集合的成员数</td>
+      </tr>
+      <tr>
+          <td><code>ZCOUNT key min max</code></td>
+          <td>计算在有序集合中指定区间score的成员数</td>
+      </tr>
+      <tr>
+          <td><code>ZINCRBY key n member</code></td>
+          <td>有序集合中对指定成员的分数加上增量 n</td>
+      </tr>
+      <tr>
+          <td><code>ZSCORE key member</code></td>
+          <td>返回有序集中，成员的分数值</td>
+      </tr>
+      <tr>
+          <td><code>ZRANK key member</code></td>
+          <td>返回有序集合中指定成员的索引</td>
+      </tr>
+      <tr>
+          <td><code>ZRANGE key start end</code></td>
+          <td>通过索引区间返回有序集合成指定区间内的成员</td>
+      </tr>
+      <tr>
+          <td><code>ZRANGEBYLEX key min max</code></td>
+          <td>通过字典区间返回有序集合的成员</td>
+      </tr>
+      <tr>
+          <td><code>ZRANGEBYSCORE key min max</code></td>
+          <td>通过分数返回有序集合指定区间内的成员==-inf 和 +inf分别表示最小最大值，只支持开区间()==</td>
+      </tr>
+      <tr>
+          <td><code>ZLEXCOUNT key min max</code></td>
+          <td>在有序集合中计算指定字典区间内成员数量</td>
+      </tr>
+      <tr>
+          <td><code>ZREM key member1 [member2..]</code></td>
+          <td>移除有序集合中一个/多个成员</td>
+      </tr>
+      <tr>
+          <td><code>ZREMRANGEBYLEX key min max</code></td>
+          <td>移除有序集合中给定的字典区间的所有成员</td>
+      </tr>
+      <tr>
+          <td><code>ZREMRANGEBYRANK key start stop</code></td>
+          <td>移除有序集合中给定的排名区间的所有成员</td>
+      </tr>
+      <tr>
+          <td><code>ZREMRANGEBYSCORE key min max</code></td>
+          <td>移除有序集合中给定的分数区间的所有成员</td>
+      </tr>
+      <tr>
+          <td><code>ZREVRANGE key start end</code></td>
+          <td>返回有序集中指定区间内的成员，通过索引，分数从高到底</td>
+      </tr>
+      <tr>
+          <td><code>ZREVRANGEBYSCORRE key max min</code></td>
+          <td>返回有序集中指定分数区间内的成员，分数从高到低排序</td>
+      </tr>
+      <tr>
+          <td><code>ZREVRANGEBYLEX key max min</code></td>
+          <td>返回有序集中指定字典区间内的成员，按字典顺序倒序</td>
+      </tr>
+      <tr>
+          <td><code>ZREVRANK key member</code></td>
+          <td>返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序</td>
+      </tr>
+      <tr>
+          <td><code>ZINTERSTORE destination numkeys key1 [key2 ..]</code></td>
+          <td>计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中，numkeys：表示参与运算的集合数，将score相加作为结果的score</td>
+      </tr>
+      <tr>
+          <td><code>ZUNIONSTORE destination numkeys key1 [key2..]</code></td>
+          <td>计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中</td>
+      </tr>
+      <tr>
+          <td><code>ZSCAN key cursor [MATCH pattern\] [COUNT count]</code></td>
+          <td>迭代有序集合中的元素（包括元素成员和元素分值）</td>
+      </tr>
+  </tbody>
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2274,49 +2256,47 @@
 <h2 id="四三种特殊数据类型">四、三种特殊数据类型</h2>
 <h3 id="geospatial地理位置">Geospatial(地理位置)</h3>
 <blockquote>
-<p>使用经纬度定位地理坐标并用一个<strong>有序集合zset保存</strong>，所以zset命令也可以使用</p>
-</blockquote>
+<p>使用经纬度定位地理坐标并用一个<strong>有序集合zset保存</strong>，所以zset命令也可以使用</p></blockquote>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>geoadd key longitud(经度) latitude(纬度) member [..]</code></td>
-<td>将具体经纬度的坐标存入一个有序集合</td>
-</tr>
-<tr>
-<td><code>geopos key member [member..]</code></td>
-<td>获取集合中的一个/多个成员坐标</td>
-</tr>
-<tr>
-<td><code>geodist key member1 member2 [unit]</code></td>
-<td>返回两个给定位置之间的距离。默认以米作为单位。</td>
-</tr>
-<tr>
-<td>`georadius key longitude latitude radius m</td>
-<td>km</td>
-</tr>
-<tr>
-<td><code>GEORADIUSBYMEMBER key member radius...</code></td>
-<td>功能与GEORADIUS相同，只是中心位置不是具体的经纬度，而是使用结合中已有的成员作为中心点。</td>
-</tr>
-<tr>
-<td><code>geohash key member1 [member2..]</code></td>
-<td>返回一个或多个位置元素的Geohash表示。使用Geohash位置52点整数编码。</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>geoadd key longitud(经度) latitude(纬度) member [..]</code></td>
+          <td>将具体经纬度的坐标存入一个有序集合</td>
+      </tr>
+      <tr>
+          <td><code>geopos key member [member..]</code></td>
+          <td>获取集合中的一个/多个成员坐标</td>
+      </tr>
+      <tr>
+          <td><code>geodist key member1 member2 [unit]</code></td>
+          <td>返回两个给定位置之间的距离。默认以米作为单位。</td>
+      </tr>
+      <tr>
+          <td>`georadius key longitude latitude radius m</td>
+          <td>km</td>
+      </tr>
+      <tr>
+          <td><code>GEORADIUSBYMEMBER key member radius...</code></td>
+          <td>功能与GEORADIUS相同，只是中心位置不是具体的经纬度，而是使用结合中已有的成员作为中心点。</td>
+      </tr>
+      <tr>
+          <td><code>geohash key member1 [member2..]</code></td>
+          <td>返回一个或多个位置元素的Geohash表示。使用Geohash位置52点整数编码。</td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>有效经纬度</strong></p>
 <blockquote>
 <ul>
 <li>有效的经度从-180度到180度。</li>
 <li>有效的纬度从-85.05112878度到85.05112878度。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>指定单位的参数 <strong>unit</strong> 必须是以下单位的其中一个：</p>
 <ul>
 <li><strong>m</strong> 表示单位为米。</li>
@@ -2329,8 +2309,7 @@
 <p>通过<code>georadius</code>就可以完成 <strong>附近的人</strong>功能</p>
 <p>withcoord:带上坐标</p>
 <p>withdist:带上距离，单位与半径单位相同</p>
-<p>COUNT n : 只显示前n个(按距离递增排序)</p>
-</blockquote>
+<p>COUNT n : 只显示前n个(按距离递增排序)</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2372,38 +2351,35 @@
 <p>Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定的、并且是很小的。</p>
 <p>花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基数。</p>
 <p>因为 HyperLogLog 只会根据输入元素来计算基数，而不会储存输入元素本身，所以 HyperLogLog 不能像集合那样，返回输入的各个元素。</p>
-<p>其底层使用string数据类型</p>
-</blockquote>
+<p>其底层使用string数据类型</p></blockquote>
 <p><strong>什么是基数？</strong></p>
 <blockquote>
-<p>数据集中不重复的元素的个数。</p>
-</blockquote>
+<p>数据集中不重复的元素的个数。</p></blockquote>
 <p><strong>应用场景：</strong></p>
 <p>网页的访问量（UV）：一个用户多次访问，也只能算作一个人。</p>
 <blockquote>
-<p>传统实现，存储用户的id,然后每次进行比较。当用户变多之后这种方式及其浪费空间，而我们的目的只是<strong>计数</strong>，Hyperloglog就能帮助我们利用最小的空间完成。</p>
-</blockquote>
+<p>传统实现，存储用户的id,然后每次进行比较。当用户变多之后这种方式及其浪费空间，而我们的目的只是<strong>计数</strong>，Hyperloglog就能帮助我们利用最小的空间完成。</p></blockquote>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PFADD key element1 [elememt2..]</code></td>
-<td>添加指定元素到 HyperLogLog 中</td>
-</tr>
-<tr>
-<td><code>PFCOUNT key [key]</code></td>
-<td>返回给定 HyperLogLog 的基数估算值。</td>
-</tr>
-<tr>
-<td><code>PFMERGE destkey sourcekey [sourcekey..]</code></td>
-<td>将多个 HyperLogLog 合并为一个 HyperLogLog</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>PFADD key element1 [elememt2..]</code></td>
+          <td>添加指定元素到 HyperLogLog 中</td>
+      </tr>
+      <tr>
+          <td><code>PFCOUNT key [key]</code></td>
+          <td>返回给定 HyperLogLog 的基数估算值。</td>
+      </tr>
+      <tr>
+          <td><code>PFMERGE destkey sourcekey [sourcekey..]</code></td>
+          <td>将多个 HyperLogLog 合并为一个 HyperLogLog</td>
+      </tr>
+  </tbody>
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2450,39 +2426,38 @@
 <h3 id="bitmaps位图">BitMaps(位图)</h3>
 <blockquote>
 <p>使用位存储，信息状态只有 0 和 1</p>
-<p>Bitmap是一串连续的2进制数字（0或1），每一位所在的位置为偏移(offset)，在bitmap上可执行AND,OR,XOR,NOT以及其它位操作。</p>
-</blockquote>
+<p>Bitmap是一串连续的2进制数字（0或1），每一位所在的位置为偏移(offset)，在bitmap上可执行AND,OR,XOR,NOT以及其它位操作。</p></blockquote>
 <p><strong>应用场景</strong></p>
 <p>签到统计、状态统计</p>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>setbit key offset value</code></td>
-<td>为指定key的offset位设置值</td>
-</tr>
-<tr>
-<td><code>getbit key offset</code></td>
-<td>获取offset位的值</td>
-</tr>
-<tr>
-<td><code>bitcount key [start end]</code></td>
-<td>统计字符串被设置为1的bit数，也可以指定统计范围按字节</td>
-</tr>
-<tr>
-<td><code>bitop operration destkey key[key..]</code></td>
-<td>对一个或多个保存二进制位的字符串 key 进行位元操作，并将结果保存到 destkey 上。</td>
-</tr>
-<tr>
-<td><code>BITPOS key bit [start] [end]</code></td>
-<td>返回字符串里面第一个被设置为1或者0的bit位。start和end只能按字节,不能按位</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>setbit key offset value</code></td>
+          <td>为指定key的offset位设置值</td>
+      </tr>
+      <tr>
+          <td><code>getbit key offset</code></td>
+          <td>获取offset位的值</td>
+      </tr>
+      <tr>
+          <td><code>bitcount key [start end]</code></td>
+          <td>统计字符串被设置为1的bit数，也可以指定统计范围按字节</td>
+      </tr>
+      <tr>
+          <td><code>bitop operration destkey key[key..]</code></td>
+          <td>对一个或多个保存二进制位的字符串 key 进行位元操作，并将结果保存到 destkey 上。</td>
+      </tr>
+      <tr>
+          <td><code>BITPOS key bit [start] [end]</code></td>
+          <td>返回字符串里面第一个被设置为1或者0的bit位。start和end只能按字节,不能按位</td>
+      </tr>
+  </tbody>
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2552,8 +2527,7 @@
 <ol>
 <li>Redis事务没有隔离级别的概念</li>
 <li>Redis单条命令是保证原子性的，但是事务不保证原子性！</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <h3 id="redis事务操作过程">Redis事务操作过程</h3>
 <ul>
 <li>开启事务（<code>multi</code>）</li>
@@ -2640,8 +2614,7 @@
 </div>
 </div><h3 id="事务错误">事务错误</h3>
 <blockquote>
-<p>代码语法错误（编译时异常）所有的命令都不执行</p>
-</blockquote>
+<p>代码语法错误（编译时异常）所有的命令都不执行</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2677,8 +2650,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>代码逻辑错误 (运行时异常) **其他命令可以正常执行 ** &raquo;&gt; 所以不保证事务原子性</p>
-</blockquote>
+<p>代码逻辑错误 (运行时异常) **其他命令可以正常执行 ** &raquo;&gt; 所以不保证事务原子性</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2734,8 +2706,7 @@
 </ul>
 <p>使用<code>watch key</code>监控指定数据，相当于乐观锁加锁。</p>
 <blockquote>
-<p>正常执行</p>
-</blockquote>
+<p>正常执行</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2773,8 +2744,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>测试多线程修改值，使用watch可以当做redis的乐观锁操作（相当于getversion）</p>
-</blockquote>
+<p>测试多线程修改值，使用watch可以当做redis的乐观锁操作（相当于getversion）</p></blockquote>
 <p>我们启动另外一个客户端模拟插队线程。</p>
 <p>线程1：</p>
 <div class="highlight"><div class="chroma">
@@ -2837,8 +2807,7 @@
 </div>
 </div><blockquote>
 <p>解锁获取最新值，然后再加锁进行事务。</p>
-<p><code>unwatch</code>进行解锁。</p>
-</blockquote>
+<p><code>unwatch</code>进行解锁。</p></blockquote>
 <p>注意：每次提交执行exec后都会自动释放锁，不管是否成功</p>
 <h2 id="六jedis">六、Jedis</h2>
 <p>使用Java来操作Redis，Jedis是Redis官方推荐使用的Java连接redis的客户端。</p>
@@ -2971,14 +2940,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPing</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Jedis</span> <span class="n">jedis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Jedis</span><span class="o">(</span><span class="s">&#34;192.168.xx.xxx&#34;</span><span class="o">,</span> <span class="n">6379</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">jedis</span><span class="o">.</span><span class="na">ping</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">);</span> <span class="c1">// PONG
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestPing</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Jedis</span><span class="w"> </span><span class="n">jedis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jedis</span><span class="p">(</span><span class="s">&#34;192.168.xx.xxx&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">6379</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jedis</span><span class="p">.</span><span class="na">ping</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">response</span><span class="p">);</span><span class="w"> </span><span class="c1">// PONG</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -3019,34 +2988,34 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestTX</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Jedis</span> <span class="n">jedis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Jedis</span><span class="o">(</span><span class="s">&#34;39.99.xxx.xx&#34;</span><span class="o">,</span> <span class="n">6379</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;hello&#34;</span><span class="o">,</span> <span class="s">&#34;world&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="s">&#34;kuangshen&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 开启事务
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Transaction</span> <span class="n">multi</span> <span class="o">=</span> <span class="n">jedis</span><span class="o">.</span><span class="na">multi</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toJSONString</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// jedis.watch(result)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">multi</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;user1&#34;</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">multi</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;user2&#34;</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// 执行事务
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">multi</span><span class="o">.</span><span class="na">exec</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// 放弃事务
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">multi</span><span class="o">.</span><span class="na">discard</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// 关闭连接
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jedis</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;user1&#34;</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jedis</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;user2&#34;</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">            <span class="n">jedis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestTX</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Jedis</span><span class="w"> </span><span class="n">jedis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jedis</span><span class="p">(</span><span class="s">&#34;39.99.xxx.xx&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">6379</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">JSONObject</span><span class="w"> </span><span class="n">jsonObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JSONObject</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">jsonObject</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;world&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">jsonObject</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;kuangshen&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 开启事务</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Transaction</span><span class="w"> </span><span class="n">multi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jedis</span><span class="p">.</span><span class="na">multi</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jsonObject</span><span class="p">.</span><span class="na">toJSONString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// jedis.watch(result)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">multi</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;user1&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">multi</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;user2&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 执行事务</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">multi</span><span class="p">.</span><span class="na">exec</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 放弃事务</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">multi</span><span class="p">.</span><span class="na">discard</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 关闭连接</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">jedis</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;user1&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">jedis</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;user2&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">jedis</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -3071,8 +3040,7 @@
 </div><p>springboot 2.x后 ，原来使用的 Jedis 被 lettuce 替换。</p>
 <blockquote>
 <p>jedis：采用的直连，多个线程操作的话，是不安全的。如果要避免不安全，使用jedis pool连接池！更像BIO模式</p>
-<p>lettuce：采用netty，实例可以在多个线程中共享，不存在线程不安全的情况！可以减少线程数据了，更像NIO模式</p>
-</blockquote>
+<p>lettuce：采用netty，实例可以在多个线程中共享，不存在线程不安全的情况！可以减少线程数据了，更像NIO模式</p></blockquote>
 <p>我们在学习SpringBoot自动配置的原理时，整合一个组件并进行配置一定会有一个自动配置类xxxAutoConfiguration,并且在spring.factories中也一定能找到这个类的完全限定名。Redis也不例外。</p>
 <p><img
         class="lazyload"
@@ -3165,9 +3133,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 配置redis
-</span></span><span class="line"><span class="cl">spring.redis.host=39.99.xxx.xx
-</span></span><span class="line"><span class="cl">spring.redis.port=6379
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="c1"># 配置redis</span>
+</span></span><span class="line"><span class="cl"><span class="na">spring.redis.host</span><span class="o">=</span><span class="s">39.99.xxx.xx</span>
+</span></span><span class="line"><span class="cl"><span class="na">spring.redis.port</span><span class="o">=</span><span class="s">6379</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -3202,32 +3170,32 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootTest</span>
-</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Redis02SpringbootApplicationTests</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RedisTemplate</span> <span class="n">redisTemplate</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Test</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">contextLoads</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// redisTemplate 操作不同的数据类型，api和我们的指令是一样的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// opsForValue 操作字符串 类似String
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// opsForList 操作List 类似List
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// opsForHah
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 除了基本的操作，我们常用的方法都可以直接通过redisTemplate操作，比如事务和基本的CRUD
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 获取连接对象
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//connection.flushDb();
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//connection.flushAll();
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">        <span class="n">redisTemplate</span><span class="o">.</span><span class="na">opsForValue</span><span class="o">().</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;mykey&#34;</span><span class="o">,</span><span class="s">&#34;kuangshen&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">redisTemplate</span><span class="o">.</span><span class="na">opsForValue</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;mykey&#34;</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootTest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">Redis02SpringbootApplicationTests</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Autowired</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">contextLoads</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// redisTemplate 操作不同的数据类型，api和我们的指令是一样的</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// opsForValue 操作字符串 类似String</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// opsForList 操作List 类似List</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// opsForHah</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 除了基本的操作，我们常用的方法都可以直接通过redisTemplate操作，比如事务和基本的CRUD</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 获取连接对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//connection.flushDb();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//connection.flushAll();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;mykey&#34;</span><span class="p">,</span><span class="s">&#34;kuangshen&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;mykey&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -3327,30 +3295,30 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RedisConfig</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">   <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">redisTemplate</span><span class="o">(</span><span class="n">RedisConnectionFactory</span> <span class="n">redisConnectionFactory</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UnknownHostException</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 将template 泛型设置为 &lt;String, Object&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">template</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RedisTemplate</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 连接工厂，不必修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">template</span><span class="o">.</span><span class="na">setConnectionFactory</span><span class="o">(</span><span class="n">redisConnectionFactory</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="cm">/*
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RedisConfig</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nd">@Bean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">redisTemplate</span><span class="p">(</span><span class="n">RedisConnectionFactory</span><span class="w"> </span><span class="n">redisConnectionFactory</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">UnknownHostException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 将template 泛型设置为 &lt;String, Object&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 连接工厂，不必修改</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">template</span><span class="p">.</span><span class="na">setConnectionFactory</span><span class="p">(</span><span class="n">redisConnectionFactory</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="cm">/*
 </span></span></span><span class="line"><span class="cl"><span class="cm">         * 序列化设置
-</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// key、hash的key 采用 String序列化方式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">template</span><span class="o">.</span><span class="na">setKeySerializer</span><span class="o">(</span><span class="n">RedisSerializer</span><span class="o">.</span><span class="na">string</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="n">template</span><span class="o">.</span><span class="na">setHashKeySerializer</span><span class="o">(</span><span class="n">RedisSerializer</span><span class="o">.</span><span class="na">string</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// value、hash的value 采用 Jackson 序列化方式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">template</span><span class="o">.</span><span class="na">setValueSerializer</span><span class="o">(</span><span class="n">RedisSerializer</span><span class="o">.</span><span class="na">json</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="n">template</span><span class="o">.</span><span class="na">setHashValueSerializer</span><span class="o">(</span><span class="n">RedisSerializer</span><span class="o">.</span><span class="na">json</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="n">template</span><span class="o">.</span><span class="na">afterPropertiesSet</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">template</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// key、hash的key 采用 String序列化方式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">template</span><span class="p">.</span><span class="na">setKeySerializer</span><span class="p">(</span><span class="n">RedisSerializer</span><span class="p">.</span><span class="na">string</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">template</span><span class="p">.</span><span class="na">setHashKeySerializer</span><span class="p">(</span><span class="n">RedisSerializer</span><span class="p">.</span><span class="na">string</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// value、hash的value 采用 Jackson 序列化方式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">template</span><span class="p">.</span><span class="na">setValueSerializer</span><span class="p">(</span><span class="n">RedisSerializer</span><span class="p">.</span><span class="na">json</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">template</span><span class="p">.</span><span class="na">setHashValueSerializer</span><span class="p">(</span><span class="n">RedisSerializer</span><span class="p">.</span><span class="na">json</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">template</span><span class="p">.</span><span class="na">afterPropertiesSet</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">template</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样一来，只要实体类进行了序列化，我们存什么都不会有乱码的担忧了。</p>
 <p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-oc8kJP08-1597890996523)(狂神说 Redis.assets/image-20200817175638086.png)]</p>
@@ -3359,12 +3327,11 @@
 <h2 id="八自定义redis工具类">八、自定义Redis工具类</h2>
 <p>使用RedisTemplate需要频繁调用<code>.opForxxx</code>然后才能进行对应的操作，这样使用起来代码效率低下，工作中一般不会这样使用，而是将这些常用的公共API抽取出来封装成为一个工具类，然后直接使用工具类来间接操作Redis,不但效率高并且易用。</p>
 <p>工具类参考博客：</p>
-<p><a href="https://www.cnblogs.com/zeng1994/p/03303c805731afc9aa9c60dbbd32a323.html" target="_blank" rel="noopener noreffer">https://www.cnblogs.com/zeng1994/p/03303c805731afc9aa9c60dbbd32a323.html</a></p>
-<p><a href="https://www.cnblogs.com/zhzhlong/p/11434284.html" target="_blank" rel="noopener noreffer">https://www.cnblogs.com/zhzhlong/p/11434284.html</a></p>
+<p><a href="https://www.cnblogs.com/zeng1994/p/03303c805731afc9aa9c60dbbd32a323.html" target="_blank" rel="noopener noreffer ">https://www.cnblogs.com/zeng1994/p/03303c805731afc9aa9c60dbbd32a323.html</a></p>
+<p><a href="https://www.cnblogs.com/zhzhlong/p/11434284.html" target="_blank" rel="noopener noreffer ">https://www.cnblogs.com/zhzhlong/p/11434284.html</a></p>
 <h2 id="九redisconf">九、Redis.conf</h2>
 <blockquote>
-<p>容量单位不区分大小写，G和GB有区别</p>
-</blockquote>
+<p>容量单位不区分大小写，G和GB有区别</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3374,8 +3341,7 @@
         alt="/posts/redis/images/f56d8c50798d79bad287f13599645ec3.png"
         title="在这里插入图片描述" width="1008" height="349" /></p>
 <blockquote>
-<p>可以使用 include 组合多个配置问题</p>
-</blockquote>
+<p>可以使用 include 组合多个配置问题</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3385,8 +3351,7 @@
         alt="/posts/redis/images/233355697a726becee7b922526782014.png"
         title="在这里插入图片描述" width="604" height="99" /></p>
 <blockquote>
-<p>网络配置</p>
-</blockquote>
+<p>网络配置</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3396,8 +3361,7 @@
         alt="/posts/redis/images/a100af9526a3e055f4452f2847754449.png"
         title="在这里插入图片描述" width="1193" height="741" /></p>
 <blockquote>
-<p>日志输出级别</p>
-</blockquote>
+<p>日志输出级别</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3407,8 +3371,7 @@
         alt="/posts/redis/images/41806b50ad0ffb81a938d70d046118d6.png"
         title="在这里插入图片描述" width="970" height="261" /></p>
 <blockquote>
-<p>日志输出文件</p>
-</blockquote>
+<p>日志输出文件</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3418,8 +3381,7 @@
         alt="/posts/redis/images/c5532e42f657a5c282629d39543b5dab.png"
         title="在这里插入图片描述" width="847" height="138" /></p>
 <blockquote>
-<p>持久化规则</p>
-</blockquote>
+<p>持久化规则</p></blockquote>
 <p>由于Redis是基于内存的数据库，需要将数据由内存持久化到文件中</p>
 <p>持久化方式：</p>
 <ul>
@@ -3435,8 +3397,7 @@
         alt="/posts/redis/images/8c4d77e425fc022cba939df702553d64.png"
         title="在这里插入图片描述" width="668" height="202" /></p>
 <blockquote>
-<p>RDB文件相关</p>
-</blockquote>
+<p>RDB文件相关</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3454,8 +3415,7 @@
         alt="/posts/redis/images/dc66cd5b32f280199037c9cb610c940b.png"
         title="在这里插入图片描述" width="656" height="88" /></p>
 <blockquote>
-<p>主从复制</p>
-</blockquote>
+<p>主从复制</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3465,8 +3425,7 @@
         alt="/posts/redis/images/7ca10110cc06d93112124c047713a731.png"
         title="在这里插入图片描述" width="1033" height="140" /></p>
 <blockquote>
-<p>Security模块中进行密码设置</p>
-</blockquote>
+<p>Security模块中进行密码设置</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3476,8 +3435,7 @@
         alt="/posts/redis/images/d98f36beaf1231b125a2a008def51721.png"
         title="在这里插入图片描述" width="777" height="107" /></p>
 <blockquote>
-<p>客户端连接相关</p>
-</blockquote>
+<p>客户端连接相关</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3510,8 +3468,7 @@
 <p><strong>5、volatile-ttl ：</strong> 删除即将过期的</p>
 <p><strong>6、noeviction ：</strong> 永不过期，返回错误</p>
 <blockquote>
-<p>AOF相关部分</p>
-</blockquote>
+<p>AOF相关部分</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3570,8 +3527,7 @@
 <h4 id="save">save</h4>
 <p>使用 <code>save</code> 命令，会立刻对当前内存中的数据进行持久化 ,但是会阻塞，也就是不接受其他操作了；</p>
 <blockquote>
-<p>由于 <code>save</code> 命令是同步命令，会占用Redis的主进程。若Redis数据非常多时，<code>save</code>命令执行速度会非常慢，阻塞所有客户端的请求。</p>
-</blockquote>
+<p>由于 <code>save</code> 命令是同步命令，会占用Redis的主进程。若Redis数据非常多时，<code>save</code>命令执行速度会非常慢，阻塞所有客户端的请求。</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3593,8 +3549,7 @@
         data-srcset="/posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png, /posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png 1.5x, /posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png 2x"
         data-sizes="auto"
         alt="/posts/redis/images/fd068b9ffc34461feac30fa8253257a1.png"
-        title="在这里插入图片描述" width="668" height="202" /></p>
-</blockquote>
+        title="在这里插入图片描述" width="668" height="202" /></p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -3615,40 +3570,40 @@
         title="在这里插入图片描述" width="592" height="307" /></p>
 <p><strong>bgsave和save对比</strong></p>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>save</th>
-<th>bgsave</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IO类型</td>
-<td>同步</td>
-<td>异步</td>
-</tr>
-<tr>
-<td>阻塞？</td>
-<td>是</td>
-<td>是（阻塞发生在fock()，通常非常快）</td>
-</tr>
-<tr>
-<td>复杂度</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>不会消耗额外的内存</td>
-<td>不阻塞客户端命令</td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>阻塞客户端命令</td>
-<td>需要fock子进程，消耗内存</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>save</th>
+          <th>bgsave</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IO类型</td>
+          <td>同步</td>
+          <td>异步</td>
+      </tr>
+      <tr>
+          <td>阻塞？</td>
+          <td>是</td>
+          <td>是（阻塞发生在fock()，通常非常快）</td>
+      </tr>
+      <tr>
+          <td>复杂度</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+      </tr>
+      <tr>
+          <td>优点</td>
+          <td>不会消耗额外的内存</td>
+          <td>不阻塞客户端命令</td>
+      </tr>
+      <tr>
+          <td>缺点</td>
+          <td>阻塞客户端命令</td>
+          <td>需要fock子进程，消耗内存</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="优缺点">优缺点</h3>
 <p><strong>优点：</strong></p>
@@ -3666,8 +3621,7 @@
 <p>将我们所有的命令都记录下来，history，恢复的时候就把这个文件全部再执行一遍</p>
 <p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Z8wr9lBW-1597890996525)(狂神说 Redis.assets/image-20200818123711375.png)]</p>
 <blockquote>
-<p>以日志的形式来记录每个写的操作，将Redis执行过的所有指令记录下来（读操作不记录），只许追加文件但不可以改写文件，redis启动之初会读取该文件重新构建数据，换言之，redis重启的话就根据日志文件的内容将写指令从前到后执行一次以完成数据的恢复工作。</p>
-</blockquote>
+<p>以日志的形式来记录每个写的操作，将Redis执行过的所有指令记录下来（读操作不记录），只许追加文件但不可以改写文件，redis启动之初会读取该文件重新构建数据，换言之，redis重启的话就根据日志文件的内容将写指令从前到后执行一次以完成数据的恢复工作。</p></blockquote>
 <h3 id="什么是aof">什么是AOF</h3>
 <p>快照功能（RDB）并不是非常耐久（durable）： 如果 Redis 因为某些原因而造成故障停机， 那么服务器将丢失最近写入、以及未保存到快照中的那些数据。 从 1.1 版本开始， Redis 增加了一种完全耐久的持久化方式： AOF 持久化。</p>
 <p>如果要使用AOF，需要修改配置文件：</p>
@@ -3684,8 +3638,7 @@
 <p>如果这个aof文件有错位，这时候redis是启动不起来的，我需要修改这个aof文件</p>
 <p>redis给我们提供了一个工具<code>redis-check-aof --fix</code></p>
 <blockquote>
-<p>优点和缺点</p>
-</blockquote>
+<p>优点和缺点</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3718,35 +3671,35 @@
 <h2 id="十二rdb和aop选择">十二、RDB和AOP选择</h2>
 <h3 id="rdb-和-aof-对比">RDB 和 AOF 对比</h3>
 <table>
-<thead>
-<tr>
-<th>RDB</th>
-<th>AOF</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>启动优先级</td>
-<td>低</td>
-<td>高</td>
-</tr>
-<tr>
-<td>体积</td>
-<td>小</td>
-<td>大</td>
-</tr>
-<tr>
-<td>恢复速度</td>
-<td>快</td>
-<td>慢</td>
-</tr>
-<tr>
-<td>数据安全性</td>
-<td>丢数据</td>
-<td>根据策略决定</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>RDB</th>
+          <th>AOF</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>启动优先级</td>
+          <td>低</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td>体积</td>
+          <td>小</td>
+          <td>大</td>
+      </tr>
+      <tr>
+          <td>恢复速度</td>
+          <td>快</td>
+          <td>慢</td>
+      </tr>
+      <tr>
+          <td>数据安全性</td>
+          <td>丢数据</td>
+          <td>根据策略决定</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="如何选择使用哪种持久化方式">如何选择使用哪种持久化方式？</h3>
 <p>一般来说， 如果想达到足以媲美 PostgreSQL 的数据安全性， 你应该同时使用两种持久化功能。</p>
@@ -3775,38 +3728,38 @@
         title="在这里插入图片描述" width="315" height="285" /></p>
 <h3 id="命令">命令</h3>
 <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PSUBSCRIBE pattern [pattern..]</code></td>
-<td>订阅一个或多个符合给定模式的频道。</td>
-</tr>
-<tr>
-<td><code>PUNSUBSCRIBE pattern [pattern..]</code></td>
-<td>退订一个或多个符合给定模式的频道。</td>
-</tr>
-<tr>
-<td><code>PUBSUB subcommand [argument[argument]]</code></td>
-<td>查看订阅与发布系统状态。</td>
-</tr>
-<tr>
-<td><code>PUBLISH channel message</code></td>
-<td>向指定频道发布消息</td>
-</tr>
-<tr>
-<td><code>SUBSCRIBE channel [channel..]</code></td>
-<td>订阅给定的一个或多个频道。</td>
-</tr>
-<tr>
-<td><code>SUBSCRIBE channel [channel..]</code></td>
-<td>退订一个或多个频道</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>PSUBSCRIBE pattern [pattern..]</code></td>
+          <td>订阅一个或多个符合给定模式的频道。</td>
+      </tr>
+      <tr>
+          <td><code>PUNSUBSCRIBE pattern [pattern..]</code></td>
+          <td>退订一个或多个符合给定模式的频道。</td>
+      </tr>
+      <tr>
+          <td><code>PUBSUB subcommand [argument[argument]]</code></td>
+          <td>查看订阅与发布系统状态。</td>
+      </tr>
+      <tr>
+          <td><code>PUBLISH channel message</code></td>
+          <td>向指定频道发布消息</td>
+      </tr>
+      <tr>
+          <td><code>SUBSCRIBE channel [channel..]</code></td>
+          <td>订阅给定的一个或多个频道。</td>
+      </tr>
+      <tr>
+          <td><code>SUBSCRIBE channel [channel..]</code></td>
+          <td>退订一个或多个频道</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="示例">示例</h3>
 <div class="highlight"><div class="chroma">
@@ -4023,8 +3976,7 @@
 </li>
 </ol>
 <blockquote>
-<p>如果没有老大了，这个时候能不能选择出来一个老大呢？手动！</p>
-</blockquote>
+<p>如果没有老大了，这个时候能不能选择出来一个老大呢？手动！</p></blockquote>
 <p>如果主机断开了连接，我们可以使用<code>SLAVEOF no one</code>让自己变成主机！其他的节点就可以手动连接到最新的主节点（手动）！如果这个时候老大修复了，那么久重新连接！</p>
 <h2 id="十五哨兵模式">十五、哨兵模式</h2>
 <p>更多信息参考博客：https://www.jianshu.com/p/06ab9daf921d</p>
@@ -4065,8 +4017,7 @@
 <li>数字1表示 ：当一个哨兵主观认为主机断开，就可以客观认为主机故障，然后开始选举新的主机。</li>
 </ul>
 <blockquote>
-<p>测试</p>
-</blockquote>
+<p>测试</p></blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -4094,8 +4045,7 @@
         alt="/posts/redis/images/af08ea84e6cbd0abae92821ab8c53dc1.png"
         title="在这里插入图片描述" width="1255" height="736" /></p>
 <blockquote>
-<p>哨兵模式优缺点</p>
-</blockquote>
+<p>哨兵模式优缺点</p></blockquote>
 <p><strong>优点：</strong></p>
 <ol>
 <li>哨兵集群，基于主从复制模式，所有主从复制的优点，它都有</li>
@@ -4108,8 +4058,7 @@
 <li>实现哨兵模式的配置其实是很麻烦的，里面有很多配置项</li>
 </ol>
 <blockquote>
-<p>哨兵模式的全部配置</p>
-</blockquote>
+<p>哨兵模式的全部配置</p></blockquote>
 <p>完整的哨兵模式配置文件 sentinel.conf</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -4260,12 +4209,10 @@
 </div><h2 id="十六缓存穿透与雪崩">十六、缓存穿透与雪崩</h2>
 <h3 id="缓存穿透查不到">缓存穿透（查不到）</h3>
 <blockquote>
-<p>概念</p>
-</blockquote>
+<p>概念</p></blockquote>
 <p>在默认情况下，用户请求数据时，会先在缓存(Redis)中查找，若没找到即缓存未命中，再在数据库中进行查找，数量少可能问题不大，可是一旦大量的请求数据（例如秒杀场景）缓存都没有命中的话，就会全部转移到数据库上，造成数据库极大的压力，就有可能导致数据库崩溃。网络安全中也有人恶意使用这种手段进行攻击被称为洪水攻击。</p>
 <blockquote>
-<p>解决方案</p>
-</blockquote>
+<p>解决方案</p></blockquote>
 <p><strong>布隆过滤器</strong></p>
 <p>对所有可能查询的参数以Hash的形式存储，以便快速确定是否存在这个值，在控制层先进行拦截校验，校验不通过直接打回，减轻了存储系统的压力。</p>
 <p><img
@@ -4290,13 +4237,11 @@
 <p>即使对空值设置了过期时间，还是会存在缓存层和存储层的数据会有一段时间窗口的不一致，这对于需要保持一致性的业务会有影响。</p>
 <h3 id="缓存击穿量太大缓存过期">缓存击穿（量太大，缓存过期）</h3>
 <blockquote>
-<p>概念</p>
-</blockquote>
+<p>概念</p></blockquote>
 <p>相较于缓存穿透，缓存击穿的目的性更强，一个存在的key，在缓存过期的一刻，同时有大量的请求，这些请求都会击穿到DB，造成瞬时DB请求量大、压力骤增。这就是缓存被击穿，只是针对其中某个key的缓存不可用而导致击穿，但是其他的key依然可以使用缓存响应。</p>
 <p>比如热搜排行上，一个热点新闻被同时大量访问就可能导致缓存击穿。</p>
 <blockquote>
-<p>解决方案</p>
-</blockquote>
+<p>解决方案</p></blockquote>
 <ol>
 <li>
 <p><strong>设置热点数据永不过期</strong></p>
@@ -4309,8 +4254,7 @@
 </ol>
 <h3 id="缓存雪崩">缓存雪崩</h3>
 <blockquote>
-<p>概念</p>
-</blockquote>
+<p>概念</p></blockquote>
 <p>大量的key设置了相同的过期时间，导致在缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p>
 <p><img
         class="lazyload"
@@ -4321,8 +4265,7 @@
         alt="/posts/redis/images/39c4da35fe94fec343b54dc4b1448d47.png"
         title="在这里插入图片描述" width="636" height="385" /></p>
 <blockquote>
-<p>解决方案</p>
-</blockquote>
+<p>解决方案</p></blockquote>
 <ul>
 <li>
 <p>redis高可用</p>
@@ -4365,8 +4308,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/hubu8" target="_blank">Eccentric</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -4375,5 +4318,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

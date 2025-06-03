@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>代码混淆 - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86/</link>
-        <description>代码混淆 - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Sat, 26 Nov 2022 16:00:30 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86/" rel="self" type="application/rss+xml" /><item>
-    <title>springboot 代码混淆，防止反编译代码泄露</title>
-    <link>https://hubu8.github.io/posts/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/</link>
-    <pubDate>Sat, 26 Nov 2022 16:00:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码混淆 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86/</link>
+    <description>Recent content in 代码混淆 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Nov 2022 16:00:30 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>springboot 代码混淆，防止反编译代码泄露</title>
+      <link>https://hubu8.github.io/posts/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/</link>
+      <pubDate>Sat, 26 Nov 2022 16:00:30 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/springboot-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>docker基础 - 标签 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/tags/docker%E5%9F%BA%E7%A1%80/</link>
-        <description>docker基础 - 标签 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/tags/docker%E5%9F%BA%E7%A1%80/" rel="self" type="application/rss+xml" /><item>
-    <title>Docker基础</title>
-    <link>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Tue, 06 Apr 2021 20:23:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[docker概述 从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力 原：jar&mdash;&mdash;]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker基础 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/docker%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in Docker基础 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 06 Apr 2021 20:23:59 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/docker%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker基础</title>
+      <link>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;h1 id=&#34;docker概述&#34;&gt;docker概述&lt;/h1&gt;&#xA;&lt;p&gt;从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力&lt;/p&gt;&#xA;&lt;p&gt;原：jar&amp;mdash;&amp;mdash;-redis,mysql,jdk,项目能不能带上环境安装打包？跨平台，隔离，&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

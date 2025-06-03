@@ -1,88 +1,103 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>设计模式 - 分类 - Eccentric&#39;s Note</title>
-        <link>https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-        <description>设计模式 - 分类 - Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>tjindong8024@qq.com (Eccentric)</managingEditor>
-            <webMaster>tjindong8024@qq.com (Eccentric)</webMaster><lastBuildDate>Fri, 28 May 2021 22:09:55 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
-    <title>观察者模式</title>
-    <link>https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 28 May 2021 22:09:55 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>桥接模式</title>
-    <link>https://hubu8.github.io/posts/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Wed, 05 May 2021 11:34:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>组合模式</title>
-    <link>https://hubu8.github.io/posts/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Wed, 05 May 2021 11:34:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>代理模式</title>
-    <link>https://hubu8.github.io/posts/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Wed, 05 May 2021 10:34:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>单例模式</title>
-    <link>https://hubu8.github.io/posts/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Sun, 02 May 2021 20:44:38 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>适配器模式</title>
-    <link>https://hubu8.github.io/posts/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 30 Apr 2021 20:51:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>原型模式</title>
-    <link>https://hubu8.github.io/posts/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 30 Apr 2021 20:51:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>实验三---抽象工厂模式、建造者模式</title>
-    <link>https://hubu8.github.io/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 16 Apr 2021 20:51:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>建造者模式</title>
-    <link>https://hubu8.github.io/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 16 Apr 2021 03:51:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>抽象工厂模式</title>
-    <link>https://hubu8.github.io/posts/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 16 Apr 2021 02:51:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hubu8.github.io/posts/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计模式 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content in 设计模式 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 28 May 2021 22:09:55 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>观察者模式</title>
+      <link>https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 28 May 2021 22:09:55 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>桥接模式</title>
+      <link>https://hubu8.github.io/posts/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 May 2021 11:34:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>组合模式</title>
+      <link>https://hubu8.github.io/posts/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 May 2021 11:34:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>代理模式</title>
+      <link>https://hubu8.github.io/posts/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 May 2021 10:34:34 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>单例模式</title>
+      <link>https://hubu8.github.io/posts/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 02 May 2021 20:44:38 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>适配器模式</title>
+      <link>https://hubu8.github.io/posts/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 30 Apr 2021 20:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>原型模式</title>
+      <link>https://hubu8.github.io/posts/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 30 Apr 2021 20:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>实验三---抽象工厂模式、建造者模式</title>
+      <link>https://hubu8.github.io/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 16 Apr 2021 20:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>建造者模式</title>
+      <link>https://hubu8.github.io/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 16 Apr 2021 03:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>抽象工厂模式</title>
+      <link>https://hubu8.github.io/posts/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 16 Apr 2021 02:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>工厂方法模式</title>
+      <link>https://hubu8.github.io/posts/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 16 Apr 2021 01:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>简单工厂模式</title>
+      <link>https://hubu8.github.io/posts/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 16 Apr 2021 00:51:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>23种设计模式歪解</title>
+      <link>https://hubu8.github.io/posts/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%AD%AA%E8%A7%A3/</link>
+      <pubDate>Fri, 16 Apr 2021 00:30:31 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%AD%AA%E8%A7%A3/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

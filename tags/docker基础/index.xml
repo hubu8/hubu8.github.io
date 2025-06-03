@@ -13,7 +13,7 @@
       <link>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
       <guid>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</guid>
-      <description>&lt;h1 id=&#34;docker概述&#34;&gt;docker概述&lt;/h1&gt;&#xA;&lt;p&gt;从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力&lt;/p&gt;&#xA;&lt;p&gt;原：jar&amp;mdash;&amp;mdash;-redis,mysql,jdk,项目能不能带上环境安装打包？跨平台，隔离，&lt;/p&gt;</description>
+      <description>&lt;p&gt;从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力&lt;/p&gt;&#xA;&lt;p&gt;原：jar&amp;mdash;&amp;mdash;-redis,mysql,jdk,项目能不能带上环境安装打包？跨平台，隔离，&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

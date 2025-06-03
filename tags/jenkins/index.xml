@@ -13,14 +13,14 @@
       <link>https://hubu8.github.io/posts/jenkins%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
       <guid>https://hubu8.github.io/posts/jenkins%E5%AE%89%E8%A3%85/</guid>
-      <description>&lt;h1 id=&#34;安装jenkins&#34;&gt;安装Jenkins&lt;/h1&gt;&#xA;&lt;p&gt;预先安装docker、docker-compose环境&lt;/p&gt;&#xA;&lt;p&gt;拉取Jenkins镜像，运行容器：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run --name myjenkins -p 9980:8080 -p 50000:50000 -v /var/jenkins_home jenkins：2.60.3&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;映射端口为本地9980映射内部8080端口，50000映射50000端口。&lt;/p&gt;</description>
+      <description>&lt;p&gt;预先安装docker、docker-compose环境&lt;/p&gt;&#xA;&lt;p&gt;拉取Jenkins镜像，运行容器：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run --name myjenkins -p 9980:8080 -p 50000:50000 -v /var/jenkins_home jenkins：2.60.3&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;映射端口为本地9980映射内部8080端口，50000映射50000端口。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins持续集成入门到精通</title>
       <link>https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/</link>
       <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
       <guid>https://hubu8.github.io/posts/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/</guid>
-      <description>&lt;p&gt;EditPreview&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;jenkins持续集成入门到精通&#34;&gt;《Jenkins持续集成入门到精通》&lt;/h1&gt;&#xA;&lt;p&gt;1 、持续集成及Jenkins介绍&#xA;2 、Jenkins安装和持续集成环境配置&#xA;3 、Jenkins构建Maven项目&#xA;4 、Jenkins+Docker+SpringCloud微服务持续集成&#xA;5 、基于Kubernetes/K8S构建Jenkins微服务持续集成平台&lt;/p&gt;</description>
+      <description>&lt;p&gt;1 、持续集成及Jenkins介绍&#xA;2 、Jenkins安装和持续集成环境配置&#xA;3 、Jenkins构建Maven项目&#xA;4 、Jenkins+Docker+SpringCloud微服务持续集成&#xA;5 、基于Kubernetes/K8S构建Jenkins微服务持续集成平台&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

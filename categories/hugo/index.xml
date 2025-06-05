@@ -22,5 +22,12 @@
       <guid>https://hubu8.github.io/posts/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</guid>
       <description></description>
     </item>
+    <item>
+      <title>使用 Mermaid 库提供绘制图表和流程图的功能</title>
+      <link>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8-mermaid-%E5%BA%93%E6%8F%90%E4%BE%9B%E7%BB%98%E5%88%B6%E5%9B%BE%E8%A1%A8%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%9A%84%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E4%BD%BF%E7%94%A8-mermaid-%E5%BA%93%E6%8F%90%E4%BE%9B%E7%BB%98%E5%88%B6%E5%9B%BE%E8%A1%A8%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%9A%84%E5%8A%9F%E8%83%BD/</guid>
+      <description>&lt;a href=&#34;https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11&#34; rel=&#34;noopener noreffer&#34; target=&#34;_blank&#34;&gt;&lt;img&#xA;        class=&#34;lazyload version&#34;&#xA;        src=&#34;https://hubu8.github.io/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://hubu8.github.io/svg/version/0.2.11-changed.min.svg&#34;&#xA;        data-srcset=&#34;https://hubu8.github.io/svg/version/0.2.11-changed.min.svg, https://hubu8.github.io/svg/version/0.2.11-changed.min.svg 1.5x, https://hubu8.github.io/svg/version/0.2.11-changed.min.svg 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;LoveIt 更改 | 0.2.11&#34;&#xA;        title=&#34;LoveIt 更改 | 0.2.11&#34; /&gt;&lt;/a&gt;&#xA;&lt;p&gt;&lt;code&gt;mermaid&lt;/code&gt; shortcode 使用 &lt;a href=&#34;https://mermaidjs.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Mermaid&lt;/a&gt; 库提供绘制图表和流程图的功能.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

@@ -9,6 +9,13 @@
     <lastBuildDate>Thu, 05 Jun 2025 08:59:26 +0800</lastBuildDate>
     <atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>OpenAPI-API请求的身份鉴权</title>
+      <link>https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</link>
+      <pubDate>Thu, 05 Jun 2025 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</guid>
+      <description>&lt;p&gt;OpenAPI共支持五种认证方式，分别是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;AccessToken 认证&lt;/li&gt;&#xA;&lt;li&gt;JWT认证&lt;/li&gt;&#xA;&lt;li&gt;摘要认证&lt;/li&gt;&#xA;&lt;li&gt;基本认证&lt;/li&gt;&#xA;&lt;li&gt;签名认证&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;其中，AccessToken认证应用最广泛，基本认证则最方便。从安全和易用性的角度进行分析，不同的认证方式各有特点，用户可以根据具体需求，选择合适的认证方式。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>隐私中心-数据脱敏与数据加密</title>
       <link>https://hubu8.github.io/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</link>
       <pubDate>Thu, 05 Jun 2025 08:59:26 +0800</pubDate>

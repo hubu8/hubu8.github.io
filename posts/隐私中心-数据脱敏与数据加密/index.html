@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86\/"
-        },"genre": "posts","keywords": "数据加密","wordcount":  3082 ,
+        },"genre": "posts","keywords": "数据加密","wordcount":  4614 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86\/","datePublished": "2025-06-05T08:59:26+08:00","dateModified": "2025-06-05T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">隐私中心-数据脱敏与数据加密</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-05">2025-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3082 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" class="leancloud_visitors" data-flag-title="隐私中心-数据脱敏与数据加密">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-05">2025-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4614 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" class="leancloud_visitors" data-flag-title="隐私中心-数据脱敏与数据加密">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -136,11 +136,13 @@
     </li>
     <li><a href="#数据脱敏">数据脱敏</a>
       <ul>
+        <li><a href="#数据处理流程">数据处理流程</a></li>
         <li><a href="#脱敏规则-1">脱敏规则</a></li>
       </ul>
     </li>
     <li><a href="#数据加密">数据加密</a>
       <ul>
+        <li><a href="#数据处理流程-1">数据处理流程</a></li>
         <li><a href="#加密算法">加密算法</a>
           <ul>
             <li><a href="#aes-256">AES-256</a>
@@ -151,7 +153,13 @@
                 <li><a href="#注意事项和最佳实践">注意事项和最佳实践</a></li>
               </ul>
             </li>
-            <li><a href="#sm4">SM4</a></li>
+            <li><a href="#sm4">SM4</a>
+              <ul>
+                <li><a href="#工作原理-1">工作原理</a></li>
+                <li><a href="#应用场景-1">应用场景</a></li>
+                <li><a href="#sm4算法java的实现">SM4算法java的实现</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -260,11 +268,14 @@
 <h4 id="脱敏规则">脱敏规则</h4>
 <p>对于数据脱敏已经提供预置几种脱敏方式，比如身份证，姓名，电话号码的通用规则，而面对不同的业务场景仍然有特殊规则要求难以满足，因此为了提升隐私中心功能能力，为实施开发人员，提供自定义脱敏规则功能。</p>
 <h2 id="数据脱敏">数据脱敏</h2>
+<h3 id="数据处理流程">数据处理流程</h3>
 <h3 id="脱敏规则-1">脱敏规则</h3>
-<p>根据正则表达式编写脱敏方法；</p>
+<p>本质上是一个正则表达式</p>
 <h2 id="数据加密">数据加密</h2>
-<p>数据处理流程</p>
+<h3 id="数据处理流程-1">数据处理流程</h3>
 <h3 id="加密算法">加密算法</h3>
+<p>​	分组加密（英语：Block cipher），又称分块加密或块密码，是一种对称密钥算法。它将明文分成多个等长的模块（block），使用确定的算法和对称密钥对每组分别加密解密。</p>
+<p>​	对称加密、加密算法主要可以分为两种，一个是非对称加密算法，另一个就是对称加密算法。对称加密简单来说就是有一个明文，通过一个密钥加密之后得到一个密文，这个密文可以通过相同的密要解密得出和原来相同的明文</p>
 <h4 id="aes-256">AES-256</h4>
 <p>AES（Advanced Encryption Standard）是一种对称加密算法，它在密码学中被广泛应用。AES取代了原先的DES（Data Encryption Standard），成为新一代的加密标准。AES算法使用相同的密钥来进行加密和解密，因此被称为对称加密算法。它采用了替代和混淆的技术，通过对输入数据进行一系列的变换和代换，最终得到加密后的输出。</p>
 <h5 id="工作原理">工作原理</h5>
@@ -373,7 +384,411 @@
         data-sizes="auto"
         alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/2bic3il6jqu44_c3814a1623794f58923addcdb138a162.jpg"
         title="img" width="1210" height="400" /></p>
-<h4 id="sm4">SM4</h4></div><div class="post-footer" id="post-footer">
+<h4 id="sm4">SM4</h4>
+<p>SMS4算法是在国内广泛使用的WAPI无线网络标准中使用的加密算法，是一种32轮的迭代非平衡Feistel结构的分组加密算法，其密钥长度和分组长度均为128。SMS4算法的加解密过程中使用的算法是完全相同的，唯一不同点在于该算法的解密密钥是由它的加密密钥进行逆序变换后得到的。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/baf9d231d1704fe0b554a975e08f9022tplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/baf9d231d1704fe0b554a975e08f9022tplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/baf9d231d1704fe0b554a975e08f9022tplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/baf9d231d1704fe0b554a975e08f9022tplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/baf9d231d1704fe0b554a975e08f9022tplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg"
+        title="img" width="458" height="550" /></p>
+<p>明文加上128bit的秘钥，进过多轮变换，最后输出是加密的反序，解密时只是将轮密钥的使用顺序进行逆向进行。</p>
+<h5 id="工作原理-1">工作原理</h5>
+<p><strong>轮函数F</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606084956290.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606084956290.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606084956290.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606084956290.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606084956290.png"
+        title="image-20250606084956290" width="805" height="144" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606085008770.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606085008770.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606085008770.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606085008770.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250606085008770.png"
+        title="image-20250606085008770" width="863" height="551" /></p>
+<p>SM4的轮函数将输入部分看做了4个32bit长度的数据，每轮的后3个部分都向左移动32bit的数据长度，这三组数据异或后进入非线性部分τ和线性部分L，运算后的结果与第一组数据异或置于最右面。如此循环往复32轮，也就是数据一共左移了8个周期，将其中的混乱因素不断扩散至每个bit位中</p>
+<p><strong>T函数</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/4686cdf86230b4e2509d6cbef046f0c7.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/4686cdf86230b4e2509d6cbef046f0c7.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/4686cdf86230b4e2509d6cbef046f0c7.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/4686cdf86230b4e2509d6cbef046f0c7.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/4686cdf86230b4e2509d6cbef046f0c7.png"
+        title="img" width="787" height="448" /></p>
+<p>S盒如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/5a8aaebfd30222e28d4df874c563b927.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/5a8aaebfd30222e28d4df874c563b927.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/5a8aaebfd30222e28d4df874c563b927.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/5a8aaebfd30222e28d4df874c563b927.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/5a8aaebfd30222e28d4df874c563b927.png"
+        title="img" width="401" height="386" /></p>
+<p>使用规则：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/1a54edb4e0b6f14b415fed83a09ceb27.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/1a54edb4e0b6f14b415fed83a09ceb27.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/1a54edb4e0b6f14b415fed83a09ceb27.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/1a54edb4e0b6f14b415fed83a09ceb27.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/1a54edb4e0b6f14b415fed83a09ceb27.png"
+        title="img" width="398" height="85" /></p>
+<p><strong>秘钥扩展算法</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/fd32597c50b50643843499c47ccfad6b.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/fd32597c50b50643843499c47ccfad6b.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/fd32597c50b50643843499c47ccfad6b.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/fd32597c50b50643843499c47ccfad6b.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/fd32597c50b50643843499c47ccfad6b.png"
+        title="img" width="419" height="352" /></p>
+<h5 id="应用场景-1">应用场景</h5>
+<p>SM4常用于政府系统的数据传输加密，我们使用前端向后端传递信息，或者分布式场景下不同模块之间的调用，可以使用此算法。对参数的数据进行加密，然后后台对加密的数据进行解密再存储到数据库中，保证数据传输过程中，不受泄露。</p>
+<h5 id="sm4算法java的实现">SM4算法java的实现</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/0f8de81da0fa4522b9fa401c2b97d6bdtplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/0f8de81da0fa4522b9fa401c2b97d6bdtplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/0f8de81da0fa4522b9fa401c2b97d6bdtplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/0f8de81da0fa4522b9fa401c2b97d6bdtplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/0f8de81da0fa4522b9fa401c2b97d6bdtplv-k3u1fbpfcp-zoom-in-crop-mark1512000.jpg"
+        title="img" width="856" height="673" /></p>
+<p>外部依赖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.bouncycastle<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>bcprov-jdk15on<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>1.69<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.bouncycastle.jce.provider.BouncyCastleProvider</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.bouncycastle.pqc.math.linearalgebra.ByteUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.crypto.Cipher</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.crypto.KeyGenerator</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.security.Key</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.security.SecureRandom</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.security.Security</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Sm4Utils</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ENCODING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;UTF-8&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ALGORIGTHM_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;SM4&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ALGORITHM_NAME_ECB_PADDING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;SM4/ECB/PKCS7Padding&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DEFAULT_KEY_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">128</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:生成ecb秘钥
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Cipher</span><span class="w"> </span><span class="nf">generateEcbCipher</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">algorithmName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Security</span><span class="p">.</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BouncyCastleProvider</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cipher</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">algorithmName</span><span class="p">,</span><span class="n">BouncyCastleProvider</span><span class="p">.</span><span class="na">PROVIDER_NAME</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Key</span><span class="w"> </span><span class="n">sm4Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecretKeySpec</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">ALGORIGTHM_NAME</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">cipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">sm4Key</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cipher</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:自动生成密钥
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="nf">generateKey</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">generateKey</span><span class="p">(</span><span class="n">DEFAULT_KEY_SIZE</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="nf">generateKey</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">keySize</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">KeyGenerator</span><span class="w"> </span><span class="n">kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyGenerator</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">ALGORIGTHM_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">BouncyCastleProvider</span><span class="p">.</span><span class="na">PROVIDER_NAME</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">kg</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">keySize</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">kg</span><span class="p">.</span><span class="na">generateKey</span><span class="p">().</span><span class="na">getEncoded</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:加密
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">encryptEcb</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">hexKey</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">paramStr</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">charset</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">cipherText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">paramStr</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="s">&#34;&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">paramStr</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">keyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteUtils</span><span class="p">.</span><span class="na">fromHexString</span><span class="p">(</span><span class="n">hexKey</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">charset</span><span class="p">.</span><span class="na">trim</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">charset</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENCODING</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">srcData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paramStr</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="n">charset</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">cipherArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">encrypt_Ecb_Padding</span><span class="p">(</span><span class="n">keyData</span><span class="p">,</span><span class="w"> </span><span class="n">srcData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">cipherText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteUtils</span><span class="p">.</span><span class="na">toHexString</span><span class="p">(</span><span class="n">cipherArray</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cipherText</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:加密模式之ecb
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="nf">encrypt_Ecb_Padding</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cipher</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateEcbCipher</span><span class="p">(</span><span class="n">ALGORITHM_NAME_ECB_PADDING</span><span class="p">,</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">ENCRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">data</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bs</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:sm4解密
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">decryptEcb</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">hexKey</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">cipherText</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">charset</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">decryptStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">keyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteUtils</span><span class="p">.</span><span class="na">fromHexString</span><span class="p">(</span><span class="n">hexKey</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">cipherData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteUtils</span><span class="p">.</span><span class="na">fromHexString</span><span class="p">(</span><span class="n">cipherText</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">srcData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decrypt_Ecb_Padding</span><span class="p">(</span><span class="n">keyData</span><span class="p">,</span><span class="w"> </span><span class="n">cipherData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">charset</span><span class="p">.</span><span class="na">trim</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">charset</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENCODING</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">decryptStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">srcData</span><span class="p">,</span><span class="w"> </span><span class="n">charset</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">decryptStr</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:ecb解密
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="nf">decrypt_Ecb_Padding</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">cipherText</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cipher</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateEcbCipher</span><span class="p">(</span><span class="n">ALGORITHM_NAME_ECB_PADDING</span><span class="p">,</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">DECRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">cipherText</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:密码校验
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">verifyEcb</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">hexKey</span><span class="p">,</span><span class="n">String</span><span class="w"> </span><span class="n">cipherText</span><span class="p">,</span><span class="n">String</span><span class="w"> </span><span class="n">paramStr</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">keyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteUtils</span><span class="p">.</span><span class="na">fromHexString</span><span class="p">(</span><span class="n">hexKey</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">cipherData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteUtils</span><span class="p">.</span><span class="na">fromHexString</span><span class="p">(</span><span class="n">cipherText</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">decryptData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decrypt_Ecb_Padding</span><span class="p">(</span><span class="n">keyData</span><span class="p">,</span><span class="n">cipherData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">srcData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paramStr</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="n">ENCODING</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">decryptData</span><span class="p">,</span><span class="n">srcData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">flag</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.LinkedBlockingQueue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ThreadPoolExecutor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.TimeUnit</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ENCODING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;UTF-8&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  @Description:测试类
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ThreadPoolExecutor</span><span class="w"> </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">20</span><span class="p">,</span><span class="n">100</span><span class="p">,</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">,</span><span class="k">new</span><span class="w"> </span><span class="n">LinkedBlockingQueue</span><span class="o">&lt;</span><span class="n">Runnable</span><span class="o">&gt;</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Map</span><span class="w"> </span><span class="n">map</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">finalI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="o">-&gt;</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">().</span><span class="na">nextInt</span><span class="p">(</span><span class="n">100</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="kt">long</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;{\&#34;name\&#34;:\&#34;color\&#34;,\&#34;sex\&#34;:\&#34;man\&#34;}&#34;</span><span class="o">+</span><span class="n">number</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="c1">// 自定义的32位16进制密钥</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;888368581322491ace9q79348a2757d1&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sm4Utils</span><span class="p">.</span><span class="na">encryptEcb</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">json</span><span class="p">,</span><span class="n">ENCODING</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;加密之后:&#34;</span><span class="o">+</span><span class="n">cipher</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="n">100</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sm4Utils</span><span class="p">.</span><span class="na">decryptEcb</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">cipher</span><span class="p">,</span><span class="n">ENCODING</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;解密:&#34;</span><span class="o">+</span><span class="n">json</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Sm4Utils</span><span class="p">.</span><span class="na">verifyEcb</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">cipher</span><span class="p">,</span><span class="w"> </span><span class="n">json</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;密码校验:&#34;</span><span class="o">+</span><span class="n">json</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">finalI</span><span class="o">+</span><span class="s">&#34;Run Time:&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;(ms)&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">finalI</span><span class="p">,</span><span class="n">json</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

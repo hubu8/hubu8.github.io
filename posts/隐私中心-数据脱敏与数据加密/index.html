@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86\/"
-        },"genre": "posts","keywords": "数据加密","wordcount":  4710 ,
+        },"genre": "posts","keywords": "数据加密","wordcount":  7275 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86\/","datePublished": "2025-06-05T08:59:26+08:00","dateModified": "2025-06-05T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">隐私中心-数据脱敏与数据加密</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-05">2025-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4710 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" class="leancloud_visitors" data-flag-title="隐私中心-数据脱敏与数据加密">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-05">2025-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 7275 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 15 分钟&nbsp;<span id="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" class="leancloud_visitors" data-flag-title="隐私中心-数据脱敏与数据加密">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -136,15 +136,24 @@
     </li>
     <li><a href="#数据脱敏">数据脱敏</a>
       <ul>
-        <li><a href="#数据处理流程">数据处理流程</a></li>
+        <li><a href="#数据处理流程">数据处理流程</a>
+          <ul>
+            <li><a href="#工厂模式factory-pattern">**工厂模式（Factory Pattern）**‌</a></li>
+            <li><a href="#策略模式strategy-pattern">**策略模式（Strategy Pattern）**‌</a></li>
+            <li><a href="#组合优势"><strong>组合优势</strong>‌</a></li>
+          </ul>
+        </li>
         <li><a href="#脱敏规则-1">脱敏规则</a></li>
       </ul>
     </li>
     <li><a href="#数据加密">数据加密</a>
       <ul>
+        <li><a href="#设计模式">设计模式</a></li>
         <li><a href="#数据处理流程-1">数据处理流程</a>
           <ul>
-            <li><a href="#数据查询">数据查询</a></li>
+            <li><a href="#数据查询入口-businessdataservicehelper"><strong>数据查询入口 BusinessDataServiceHelper</strong></a></li>
+            <li><a href="#privacydatatoentities处理数据解密">privacyDataToEntities	处理数据解密</a></li>
+            <li><a href="#handleprivacydataentities隐私中心处理兼容分表以及异常数据">handlePrivacyDataEntities	隐私中心处理（兼容分表以及异常数据）</a></li>
           </ul>
         </li>
         <li><a href="#加密算法">加密算法</a>
@@ -282,12 +291,248 @@
 <p>对于数据脱敏已经提供预置几种脱敏方式，比如身份证，姓名，电话号码的通用规则，而面对不同的业务场景仍然有特殊规则要求难以满足，因此为了提升隐私中心功能能力，为实施开发人员，提供自定义脱敏规则功能。</p>
 <h2 id="数据脱敏">数据脱敏</h2>
 <h3 id="数据处理流程">数据处理流程</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DesensitizeStrategyFactory</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogFactory</span><span class="p">.</span><span class="na">getLog</span><span class="p">(</span><span class="s">&#34;DesensitizeStrategyFactory&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="o">&gt;</span><span class="w"> </span><span class="n">defaultMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">8</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRIVACY_DESENSITIZE_STRATEGY_REGION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;PRIVACY_DESENSITIZE_STRATEGY_REGION&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">initDefaultStrategy</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDefaultStrategy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">LengthDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">HeadTailDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FixLengthDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TelephoneDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NameDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">IdCardDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BankAcctDesenStrategy</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 从数据表加载
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDB</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//加载所有的脱敏方案至内存</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numberList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">10</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">DataSet</span><span class="w"> </span><span class="n">dataSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QueryServiceHelper</span><span class="p">.</span><span class="na">queryDataSet</span><span class="p">(</span><span class="s">&#34;loadDesensitizationRules&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;privacy_desen_rules&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;id,number,ruletype,matchrules,replacement&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">QFilter</span><span class="o">[]</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">QFilter</span><span class="p">(</span><span class="s">&#34;number&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">QCP</span><span class="p">.</span><span class="na">not_equals</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;NO&#34;</span><span class="p">)},</span><span class="w"> </span><span class="kc">null</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="o">&gt;</span><span class="w"> </span><span class="n">strategyMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">16</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">dataSet</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">Row</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSet</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&#34;number&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">IDesensitizeStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">defaultMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">IPrivacyConst</span><span class="p">.</span><span class="na">GLOBAL</span><span class="p">.</span><span class="na">DESENSITIZATION_RULE_REGULAR</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&#34;ruletype&#34;</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="c1">//如果正则表达式， 则将当前脱敏策略加载到内存中</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RegularDesenStrategy</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&#34;matchrules&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&#34;replacement&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">numberList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">//脱敏策略的值可能为number或id，需要把初始脱敏策略也用id设置到内存中，否则会找不到策略</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">strategyMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&#34;id&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">strategy</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">getLocalCache</span><span class="p">().</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;allDesensitizationRules&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">strategyMap</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;kd.bos.privacy.service.DesensitizeStrategyFactory.initDB(), data={}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">numberList</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 重新加载脱敏规则
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">reload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">getLocalCache</span><span class="p">().</span><span class="na">clear</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;kd.bos.privacy.service.DesensitizeStrategyFactory.reload()&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">initDB</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">IDesensitizeStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">defaultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="na">getStrategyName</span><span class="p">(),</span><span class="w"> </span><span class="n">strategy</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="w"> </span><span class="nf">unregister</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">defaultMap</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="w"> </span><span class="nf">getStrategy</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IDesensitizeStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">defaultMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="o">&gt;</span><span class="w"> </span><span class="n">strategyMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">getLocalCache</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;allDesensitizationRules&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strategyMap</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">//未从缓存加载到策略，则需要重新加载缓存获取</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">initDB</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">strategyMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">IDesensitizeStrategy</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">getLocalCache</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;allDesensitizationRules&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strategyMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">strategy</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">LocalMemoryCache</span><span class="w"> </span><span class="nf">getLocalCache</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">CacheConfigInfo</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CacheConfigInfo</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 缓存超时时间30分钟</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">info</span><span class="p">.</span><span class="na">setTimeout</span><span class="p">(</span><span class="n">1800</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 最大缓存</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">info</span><span class="p">.</span><span class="na">setMaxItemSize</span><span class="p">(</span><span class="n">500</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">CacheFactory</span><span class="p">.</span><span class="na">getCommonCacheFactory</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">$getOrCreateLocalMemoryCache</span><span class="p">(</span><span class="n">RequestContext</span><span class="p">.</span><span class="na">getOrCreate</span><span class="p">().</span><span class="na">getAccountId</span><span class="p">(),</span><span class="w"> </span><span class="n">PRIVACY_DESENSITIZE_STRATEGY_REGION</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607115025708.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607115025708.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607115025708.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607115025708.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607115025708.png"
+        title="image-20250607115025708" width="1061" height="486" /></p>
+<p>使用了‌<strong>工厂模式</strong>‌和‌<strong>策略模式</strong>‌的组合设计</p>
+<h4 id="工厂模式factory-pattern">**工厂模式（Factory Pattern）**‌</h4>
+<ul>
+<li>‌<strong>体现</strong>‌：通过<code>DesensitizeStrategyFactory</code>集中管理所有脱敏策略的创建和获取，隐藏具体实现类的实例化过程。
+<ul>
+<li>‌<strong>解耦</strong>‌：调用方无需关心策略的具体实现（如<code>RegularDesenStrategy</code>的构造参数）。</li>
+<li>‌<strong>扩展性</strong>‌：新增策略时只需注册到工厂（如<code>register(new EmailDesenStrategy())</code>），无需修改客户端代码。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="策略模式strategy-pattern">**策略模式（Strategy Pattern）**‌</h4>
+<ul>
+<li>‌<strong>体现</strong>‌：通过<code>IDesensitizeStrategy</code>接口定义统一的脱敏行为，不同策略（如<code>TelephoneDesenStrategy</code>、<code>IdCardDesenStrategy</code>）实现各自算法。
+<ul>
+<li>‌<strong>灵活替换</strong>‌：运行时动态切换策略（如从数据库加载正则表达式规则）。</li>
+<li>‌<strong>单一职责</strong>‌：每种策略只处理一类数据的脱敏逻辑（如手机号、身份证号）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="组合优势"><strong>组合优势</strong>‌</h4>
+<ul>
+<li>‌<strong>配置化能力</strong>‌：结合数据库动态加载规则（<code>initDB()</code>），实现业务规则与代码分离。</li>
+<li>‌<strong>性能优化</strong>‌：通过<code>ConcurrentHashMap</code>缓存策略实例，避免重复创建对象。</li>
+<li>‌<strong>标准化接口</strong>‌：所有策略遵循<code>IDesensitizeStrategy</code>，便于统一管理和监控。</li>
+</ul>
 <h3 id="脱敏规则-1">脱敏规则</h3>
 <p>本质上是一个正则表达式</p>
 <h2 id="数据加密">数据加密</h2>
+<h3 id="设计模式">设计模式</h3>
+<p>在运行时元数据上，将需要加密的字段的属性转换为隐私属性，并设置对应的隐私服务实现，在数据查询和保存阶段，通过对应数据的隐私实现加密或者解密数据。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607113636489.png"
+        data-srcset="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607113636489.png, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607113636489.png 1.5x, /posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607113636489.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/images/image-20250607113636489.png"
+        title="image-20250607113636489" width="756" height="730" /></p>
 <h3 id="数据处理流程-1">数据处理流程</h3>
-<h4 id="数据查询">数据查询</h4>
-<p><strong>数据查询入口</strong></p>
+<h4 id="数据查询入口-businessdataservicehelper"><strong>数据查询入口 BusinessDataServiceHelper</strong></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -332,9 +577,694 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>privacyDataToEntities</p>
-<p>handlePrivacyDataEntities</p>
-<h3 id="加密算法">加密算法</h3>
+</div><h4 id="privacydatatoentities处理数据解密">privacyDataToEntities	处理数据解密</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">privacyDataToEntities</span><span class="p">(</span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">,</span><span class="w"> </span><span class="n">DataEntityTypeMap</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">IDataEntityType</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getDataEntityType</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ComplexPropertyMap</span><span class="w"> </span><span class="n">cpxPropMap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getComplexProperties</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">16</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">cpxPropType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cpxPropMap</span><span class="p">.</span><span class="na">getDataEntityProperty</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">cpxPropType</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">obj</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">privacyDataToEntities</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">),</span><span class="w"> </span><span class="n">cpxPropMap</span><span class="p">.</span><span class="na">getComplexPropertyTypeMap</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">CollectionPropertyMap</span><span class="w"> </span><span class="n">colPropMap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getCollectionProperties</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ICollectionProperty</span><span class="w"> </span><span class="n">colp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colPropMap</span><span class="p">.</span><span class="na">getDataEntityProperty</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">List</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">colp</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">privacyDataToEntities</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                  </span><span class="n">colPropMap</span><span class="p">.</span><span class="na">getCollectionItemPropertyTypeMap</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">IPrivacyProperty</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyProperties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">16</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">SimplePropertyMap</span><span class="w"> </span><span class="n">splMap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getSimpleProperties</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 具体的隐私属性应该是在某个位置设置过</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">splMap</span><span class="p">.</span><span class="na">getDataEntityProperty</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">IPrivacyProperty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">privacyProperties</span><span class="p">.</span><span class="na">add</span><span class="p">((</span><span class="n">IPrivacyProperty</span><span class="p">)</span><span class="w"> </span><span class="n">sp</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">DataEntityPropertyCollection</span><span class="w"> </span><span class="n">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="na">getProperties</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">IDataEntityProperty</span><span class="o">&gt;</span><span class="w"> </span><span class="n">simpleProperties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">16</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">prop</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">ISimpleProperty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">simpleProperties</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">prop</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span><span class="w"> </span><span class="n">prop</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 该实体类对应的所有隐私属性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">IPrivacyProperty</span><span class="w"> </span><span class="n">privacyProperty</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">privacyProperties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">controlFieldKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyProperty</span><span class="p">.</span><span class="na">getOriginalPropKey</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originalProperty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simpleProperties</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">controlFieldKey</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IPrivacyDataService</span><span class="w"> </span><span class="n">pds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyProperty</span><span class="p">.</span><span class="na">getPrivacyDataService</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pds</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 加载解密隐私数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">pds</span><span class="p">.</span><span class="na">loadPrivacyData</span><span class="p">(</span><span class="n">originalProperty</span><span class="p">,</span><span class="w"> </span><span class="n">privacyProperty</span><span class="p">,</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>AbstractPrivacyDataService  隐私服务类 处理数据加密</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">kd.bos.dataentity.privacy</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.dataentity.metadata.IDataEntityProperty</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.dataentity.utils.StringUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AbstractPrivacyDataService</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IPrivacyDataService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loadPrivacyData</span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originalProperty</span><span class="p">,</span><span class="w"> </span><span class="n">IPrivacyProperty</span><span class="w"> </span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyMappingData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mappingDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PrivacyMappingData</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Object</span><span class="w"> </span><span class="n">dataEntity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataEntities</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataEntity</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">PrivacyMappingData</span><span class="w"> </span><span class="n">mappingData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrivacyMappingData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">privacyStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">dp</span><span class="p">.</span><span class="na">getValueFast</span><span class="p">(</span><span class="n">dataEntity</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">isNotBlank</span><span class="p">(</span><span class="n">privacyStr</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingData</span><span class="p">.</span><span class="na">setPrivacyProp</span><span class="p">(</span><span class="n">dp</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingData</span><span class="p">.</span><span class="na">setRowDataEntity</span><span class="p">(</span><span class="n">dataEntity</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingDatas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">mappingData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">PrivacyData</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createDecryptPrivacyData</span><span class="p">(</span><span class="n">originalProperty</span><span class="p">,</span><span class="n">privacyStr</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">pd</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">loadPrivacyData</span><span class="p">(</span><span class="n">privacyDatas</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mappingDatas</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//              mappingData.setOriginalValue(val);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">PrivacyMappingData</span><span class="w"> </span><span class="n">privacyMappingData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mappingDatas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Object</span><span class="w"> </span><span class="n">dataEntity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyMappingData</span><span class="p">.</span><span class="na">getRowDataEntity</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">PrivacyData</span><span class="w"> </span><span class="n">privacyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">originalProperty</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">dataEntity</span><span class="p">,</span><span class="w"> </span><span class="n">privacyData</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">savePrivacyData</span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originalProperty</span><span class="p">,</span><span class="w"> </span><span class="n">IPrivacyProperty</span><span class="w"> </span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyMappingData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mappingDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PrivacyMappingData</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">Object</span><span class="w"> </span><span class="n">dataEntity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataEntities</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataEntity</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">PrivacyMappingData</span><span class="w"> </span><span class="n">mappingData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrivacyMappingData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">Object</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">originalProperty</span><span class="p">.</span><span class="na">getValueFast</span><span class="p">(</span><span class="n">dataEntity</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingData</span><span class="p">.</span><span class="na">setOriginalValue</span><span class="p">(</span><span class="n">val</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingData</span><span class="p">.</span><span class="na">setPrivacyProp</span><span class="p">(</span><span class="n">dp</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingData</span><span class="p">.</span><span class="na">setRowDataEntity</span><span class="p">(</span><span class="n">dataEntity</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">mappingDatas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">mappingData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">PrivacyData</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createEncryptPrivacyData</span><span class="p">(</span><span class="n">originalProperty</span><span class="p">,</span><span class="n">val</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">pd</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">//保存隐私数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">savePrivacyData</span><span class="p">(</span><span class="n">privacyDatas</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">//隐私信息反写实体</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mappingDatas</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">PrivacyMappingData</span><span class="w"> </span><span class="n">privacyMappingData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mappingDatas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">Object</span><span class="w"> </span><span class="n">dataEntity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyMappingData</span><span class="p">.</span><span class="na">getRowDataEntity</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">PrivacyData</span><span class="w"> </span><span class="n">privacyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">privacyMappingData</span><span class="p">.</span><span class="na">getPrivacyProp</span><span class="p">().</span><span class="na">setValue</span><span class="p">(</span><span class="n">dataEntity</span><span class="p">,</span><span class="w"> </span><span class="n">privacyData</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">PrivacyData</span><span class="w"> </span><span class="nf">createDecryptPrivacyData</span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originProp</span><span class="w"> </span><span class="p">,</span><span class="n">String</span><span class="w"> </span><span class="n">privacyDataStr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">PrivacyData</span><span class="w"> </span><span class="n">privacyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrivacyData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">privacyData</span><span class="p">.</span><span class="na">toPrivacyData</span><span class="p">(</span><span class="n">privacyDataStr</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">privacyData</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">PrivacyData</span><span class="w"> </span><span class="nf">createEncryptPrivacyData</span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originProp</span><span class="p">,</span><span class="n">Object</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">PrivacyData</span><span class="w"> </span><span class="n">privacyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrivacyData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">privacyData</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">val</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">privacyData</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loadPrivacyData</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">savePrivacyData</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>LocalEncryptPrivacyDataService	加密服务具体实现</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">kd.bos.privacy.localencrypt</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.dataentity.metadata.IDataEntityProperty</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.dataentity.privacy.AbstractPrivacyDataService</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.dataentity.privacy.PrivacyData</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.dataentity.utils.StringUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">kd.bos.db.DB</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LocalEncryptPrivacyDataService</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractPrivacyDataService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">PrivacyData</span><span class="w"> </span><span class="nf">createDecryptPrivacyData</span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originProp</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">privacyDataStr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LocalEncryptPrivacyData</span><span class="w"> </span><span class="n">privacyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalEncryptPrivacyData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">privacyData</span><span class="p">.</span><span class="na">toPrivacyData</span><span class="p">(</span><span class="n">privacyDataStr</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">privacyData</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">PrivacyData</span><span class="w"> </span><span class="nf">createEncryptPrivacyData</span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">originProp</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LocalEncryptPrivacyData</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalEncryptPrivacyData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">pd</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">val</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pd</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loadPrivacyData</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">savePrivacyData</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">PrivacyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">genStringIds</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">LocalEncryptPrivacyData</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">LocalEncryptPrivacyData</span><span class="p">)</span><span class="w"> </span><span class="n">privacyDatas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pd</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">pd</span><span class="p">.</span><span class="na">setPId</span><span class="p">(</span><span class="n">ids</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            pd.setEncryptValue(Encrypters.encode(val));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">encode</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">privacyValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LocalEncryptPrivacyData</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalEncryptPrivacyData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">privacyValue</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">privacyValue</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">pd</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">decode</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LocalEncryptPrivacyData</span><span class="w"> </span><span class="n">privacyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalEncryptPrivacyData</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//兼容</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">isBlank</span><span class="p">(</span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">privacyData</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">privacyData</span><span class="p">.</span><span class="na">toPrivacyData</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">privacyData</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="handleprivacydataentities隐私中心处理兼容分表以及异常数据">handlePrivacyDataEntities	隐私中心处理（兼容分表以及异常数据）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handlePrivacyDataEntities</span><span class="p">(</span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">,</span><span class="w"> </span><span class="n">DataEntityTypeMap</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PrivacyDataCenterManager</span><span class="p">.</span><span class="na">isEnable</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">dataEntities</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">PrivacyDataCenterManager</span><span class="p">.</span><span class="na">getQueryService</span><span class="p">().</span><span class="na">read</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">,</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>PrivacyDataQueryService</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="n">DBRoute</span><span class="w"> </span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">dbRoute</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">DBRoute</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">dataEntityTypeMap</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">DataEntityTypeMap</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">dataEntities</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">handlePrivacyDataEntities</span><span class="p">(</span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">DataEntityTypeMap</span><span class="p">)</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">,</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//异常需要统一处理</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 隐私中心处理
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param dataEntities
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param dataEntityTypeMap
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @throws Exception
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handlePrivacyDataEntities</span><span class="p">(</span><span class="n">DBRoute</span><span class="w"> </span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">DataEntityTypeMap</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IDataEntityType</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getDataEntityType</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ComplexPropertyMap</span><span class="w"> </span><span class="n">cpxPropMap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getComplexProperties</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">16</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">cpxPropType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cpxPropMap</span><span class="p">.</span><span class="na">getDataEntityProperty</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">cpxPropType</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">obj</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">handlePrivacyDataEntities</span><span class="p">(</span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">cpxPropMap</span><span class="p">.</span><span class="na">getComplexPropertyTypeMap</span><span class="p">(),</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">CollectionPropertyMap</span><span class="w"> </span><span class="n">colPropMap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getCollectionProperties</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">ICollectionProperty</span><span class="w"> </span><span class="n">colp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colPropMap</span><span class="p">.</span><span class="na">getDataEntityProperty</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">colp</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">DynamicLocaleProperty</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">//localeProps.add((DynamicLocaleProperty)colp);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">List</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">colp</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">handlePrivacyDataEntities</span><span class="p">(</span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">colPropMap</span><span class="p">.</span><span class="na">getCollectionItemPropertyTypeMap</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                            </span><span class="n">list</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getDbTable</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">tableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="na">getAlias</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//兼容拆分表的情况</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Tuple</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">DbMetadataColumn</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getDbTable</span><span class="p">().</span><span class="na">getColumnsByTableGroup</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">tuple</span><span class="p">.</span><span class="na">item1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tableName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tableName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;_&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tuple</span><span class="p">.</span><span class="na">item1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">_handlePrivacyDataEntities</span><span class="p">(</span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">,</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&#34;java:S2259&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">_handlePrivacyDataEntities</span><span class="p">(</span><span class="n">DBRoute</span><span class="w"> </span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">DataEntityTypeMap</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">,</span><span class="w"> </span><span class="n">IDataEntityType</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">tableName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">encryptFields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PrivacyCenterUtils</span><span class="p">.</span><span class="na">getEncryptFields</span><span class="p">(</span><span class="n">tableName</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">encryptFields</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">encryptFields</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">DynamicSimpleProperty</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fieldsNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">6</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//取出所有id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ISimpleProperty</span><span class="w"> </span><span class="n">pkProp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="na">getPrimaryKey</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntityTypeMap</span><span class="p">.</span><span class="na">getDataEntityType</span><span class="p">().</span><span class="na">getProperties</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">fieldName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">prop</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">DynamicSimpleProperty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">fieldName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prop</span><span class="p">.</span><span class="na">getAlias</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">isNotEmpty</span><span class="p">(</span><span class="n">fieldName</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">fieldName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fieldName</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">ENGLISH</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">encryptFields</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">fieldName</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">fieldsNames</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">fieldName</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">DynamicSimpleProperty</span><span class="p">)</span><span class="w"> </span><span class="n">prop</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fieldsNames</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">6</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">ids</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">pkProp</span><span class="p">.</span><span class="na">getValueFast</span><span class="p">(</span><span class="n">obj</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//localeId为all，默认查询所有多语言字段</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">MuiltLocaleResultModel</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">clearVals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getPrivacyDataValues</span><span class="p">(</span><span class="n">dbRoute</span><span class="p">,</span><span class="w"> </span><span class="n">tableName</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">ids</span><span class="p">,</span><span class="w"> </span><span class="n">fieldsNames</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dataEntities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">DynamicObject</span><span class="w"> </span><span class="n">dynamicObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">DynamicObject</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">//处理dirty状态。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">dynamicObject</span><span class="p">.</span><span class="na">beginInit</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">MuiltLocaleResultModel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clearVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">pkProp</span><span class="p">.</span><span class="na">getValueFast</span><span class="p">(</span><span class="n">dynamicObject</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">MuiltLocaleResultModel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">values</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">IDataEntityProperty</span><span class="w"> </span><span class="n">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fieldsNames</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">MuiltLocaleResultModel</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fieldValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="na">getFieldValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">Object</span><span class="w"> </span><span class="n">finalVal</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">ILocaleProperty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                            </span><span class="n">ILocaleString</span><span class="w"> </span><span class="n">ormLocaleValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocaleString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mapEntry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">fieldValue</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="n">ormLocaleValue</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">mapEntry</span><span class="p">.</span><span class="na">getKey</span><span class="p">(),</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">mapEntry</span><span class="p">.</span><span class="na">getValue</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">finalVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ormLocaleValue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">finalVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fieldValue</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;default&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">sp</span><span class="p">.</span><span class="na">setValueFast</span><span class="p">(</span><span class="n">dynamicObject</span><span class="p">,</span><span class="n">finalVal</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">ILocaleProperty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="c1">// 多语言字段如果原本有空数据，塞加密的数据包时会触发LocaleDynamicObjectCollection.removeIfEmpty导致脏标志不对。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dynamicObject</span><span class="p">.</span><span class="na">getDataEntityState</span><span class="p">().</span><span class="na">setRemovedItems</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">dynamicObject</span><span class="p">.</span><span class="na">endInit</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="加密算法">加密算法</h3>
 <p>​	分组加密（英语：Block cipher），又称分块加密或块密码，是一种对称密钥算法。它将明文分成多个等长的模块（block），使用确定的算法和对称密钥对每组分别加密解密。</p>
 <p>​	对称加密、加密算法主要可以分为两种，一个是非对称加密算法，另一个就是对称加密算法。对称加密简单来说就是有一个明文，通过一个密钥加密之后得到一个密文，这个密文可以通过相同的密要解密得出和原来相同的明文</p>
 <h4 id="aes-256">AES-256</h4>

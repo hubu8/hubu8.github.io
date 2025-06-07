@@ -6,6 +6,16 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 07 Jun 2025 08:59:26 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>kd-分布式事务</title>
+    <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
+    <pubDate>Sat, 07 Jun 2025 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
+    <description><![CDATA[<h2 id="1-简介">1. 简介</h2>
+<h3 id="11-什么是分布式事务">1.1 什么是分布式事务</h3>
+<p>  分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。</p>]]></description>
+</item>
+<item>
     <title>kd-分布式锁</title>
     <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</link>
     <pubDate>Fri, 06 Jun 2025 08:59:26 &#43;0800</pubDate>
@@ -133,16 +143,6 @@
     <author>Eccentric</author>
     <guid>https://hubu8.github.io/posts/%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F%E8%B4%A6%E6%88%B7%E7%A0%B4%E8%A7%A3-burpsuite/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>kali实现密码破解PDF-ZIP文件</title>
-    <link>https://hubu8.github.io/posts/kali%E5%AE%9E%E7%8E%B0%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3pdf-zip%E6%96%87%E4%BB%B6/</link>
-    <pubDate>Sat, 24 May 2025 09:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/kali%E5%AE%9E%E7%8E%B0%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3pdf-zip%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[<h2 id="hashcat">Hashcat</h2>
-<p>Hashcat 是一款强大的密码破解工具，但它不支持直接破解 ZIP 文件密码。Hashcat 主要用于破解哈希值，而 ZIP 文件通常使用的是加密而不是哈希，它们使用的是不同的加密技术。
-在kali中使用的要求必须是内存大于4G，否则没用Hashcat具体的用法如下:</p>]]></description>
 </item>
 </channel>
 </rss>

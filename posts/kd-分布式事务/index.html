@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>kd-分布式事务 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="kd-分布式事务">
+  <meta property="og:description" content="1. 简介 1.1 什么是分布式事务 分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-07T08:59:26+08:00">
+    <meta property="article:modified_time" content="2025-06-07T08:59:26+08:00">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="kd-分布式事务">
+  <meta name="twitter:description" content="1. 简介 1.1 什么是分布式事务 分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" /><link rel="prev" href="https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "kd-分布式事务",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1\/"
+        },"genre": "posts","wordcount":  3163 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1\/","datePublished": "2025-06-07T08:59:26+08:00","dateModified": "2025-06-07T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">kd-分布式事务</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-07">2025-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3163 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="leancloud_visitors" data-flag-title="kd-分布式事务">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-简介">1. 简介</a>
+      <ul>
+        <li><a href="#11-什么是分布式事务">1.1 什么是分布式事务</a></li>
+        <li><a href="#12-cap定理base理论">1.2 CAP定理，Base理论</a></li>
+        <li><a href="#13-分布式事务的几种解决方案">1.3 分布式事务的几种解决方案</a></li>
+        <li><a href="#14-苍穹分布式事务kdtx的特点">1.4 苍穹分布式事务KDTX的特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-kdtx详细介绍">2. KDTX详细介绍</a>
+      <ul>
+        <li><a href="#21-kdtx产生背景">2.1 KDTX产生背景</a></li>
+        <li><a href="#22-系统架构图">2.2 系统架构图</a></li>
+        <li><a href="#23-支持的模式">2.3 支持的模式</a>
+          <ul>
+            <li><a href="#231-最终一致模式">2.3.1 最终一致模式</a></li>
+            <li><a href="#232-tcc模式">2.3.2 TCC模式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-开发步骤">3. 开发步骤</a></li>
+    <li><a href="#4-底层解析">4. 底层解析</a>
+      <ul>
+        <li><a href="#最终一致模式">最终一致模式</a></li>
+        <li><a href="#tcc模式">TCC模式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1-简介">1. 简介</h2>
+<h3 id="11-什么是分布式事务">1.1 什么是分布式事务</h3>
+<p>  分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。</p>
+<h3 id="12-cap定理base理论">1.2 CAP定理，Base理论</h3>
+<p>CAP 原则又称 CAP 定理，指的是分布式系统的几个特性:</p>
+<ul>
+<li><strong>一致性（Consistency）</strong>
+在分布式系统中的所有数据备份，在同一时刻是否同样的值。（等同于所有节点访问同一份最新的数据副本）</li>
+<li><strong>可用性（Availability）</strong>
+在集群中一部分节点故障后，集群整体是否还能响应客户端的读写请求。（对数据更新具备高可用性）</li>
+<li><strong>分区容错性（Partition tolerance）</strong> -
+大多数分布式系统都分布在多个子网络。每个子网络就叫做一个区（partition）。 分区容错的意思是，区间通信可能失败。比如，一台服务器放在中国，另一台服务 器放在美国，这就是两个区，它们之间可能无法通信。</li>
+</ul>
+<p><strong>CAP 原则指的是</strong>，这三个要素最多只能同时实现两点，不可能三者兼顾。</p>
+<p><strong>Base理论</strong>是对 CAP 理论的延伸，思想是即使无法做到强一致性（CAP 的一致性就是强一致性），但可以采用适当的采取弱一致性，即最终一致性。</p>
+<ul>
+<li><strong>基本可用（Basically Available）</strong>
+基本可用是指分布式系统在出现故障的时候，允许损失部分可用性（例如响应时间、 功能上的可用性），允许损失部分可用性。需要注意的是，基本可用绝不等价于系统不可用。响应时间上的损失：正常情况下搜索引擎需要在 0.5 秒之内返回给用户相应的 查询结果，但由于出现故障（比如系统部分机房发生断电或断网故障），查询 结果的响应时间增加到了 1~2 秒。功能上的损失：购物网站在购物高峰（如双十一）时，为了保护系统的稳定性， 部分消费者可能会被引导到一个降级页面。</li>
+<li><strong>软性状态（ Soft State）</strong>
+是指允许系统中的数据存在中间状态，并认为该中间状态的存在不会影响系统的整体可用性，即允许系统不同节点的数据副本之间进行数据同步的过程存在延时。</li>
+<li><strong>最终一致性（ Eventual Consistency）</strong>
+同一数据的不同副本的状态，可以不需要实时一致，但一定要保证经过一定时间后仍然是一致的。</li>
+</ul>
+<p>  BASE理论是对CAP中的一致性和可用性进行一个权衡的结果，理论的核心思想就是：我们无法做到强一致，但每个应用都可以根据自身的业务特点，采用适当的方式来使系统达到最终一致性（Eventual consistency）。</p>
+<h3 id="13-分布式事务的几种解决方案">1.3 分布式事务的几种解决方案</h3>
+<p>基于CAP定理和Base理论，目前常用的解决方案有以下几种:</p>
+<ul>
+<li><strong>两阶段提交/XA方案</strong></li>
+<li><strong>TCC方案</strong></li>
+<li><strong>三阶段提交方案</strong></li>
+<li><strong>本地消息表</strong></li>
+<li><strong>可靠消息最终一致</strong></li>
+<li><strong>最大努力通知</strong></li>
+</ul>
+<p>目前流行的分布式事务框架Seata,LCN,Saga等。</p>
+<h3 id="14-苍穹分布式事务kdtx的特点">1.4 苍穹分布式事务KDTX的特点</h3>
+<ul>
+<li><strong>弱一致</strong>
+最终一致模式实现数据弱一致性，适合苍穹里大部分的分布式事务场景</li>
+<li><strong>强一致</strong>
+TCC模式实现数据强一致性，解决某些对数据一致性很高的场景需求</li>
+<li><strong>很简单</strong>
+使用最终一致模式，现有的业务代码改造量很小，非常容易上手</li>
+<li><strong>高性能</strong>
+接入了KDTX之后保证了数据一致性的同时，原有的业务TPS几乎不变</li>
+<li><strong>可监控</strong>
+当出现数据不一致时系统会马上介入并告警，并提供监控</li>
+</ul>
+<h2 id="2-kdtx详细介绍">2. KDTX详细介绍</h2>
+<p>苍穹平台提供的分布式事务解决方案,简称KDTX(（Kingdee Distributed Transaction）。</p>
+<h3 id="21-kdtx产生背景">2.1 KDTX产生背景</h3>
+<ul>
+<li><strong>应用内跨库调用</strong></li>
+<li><strong>跨应用调用</strong></li>
+<li><strong>应用内跨事务调用</strong></li>
+</ul>
+<h3 id="22-系统架构图">2.2 系统架构图</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/image-20250607164447396.png"
+        data-srcset="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/image-20250607164447396.png, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/image-20250607164447396.png 1.5x, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/image-20250607164447396.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/image-20250607164447396.png"
+        title="image-20250607164447396" width="734" height="410" /></p>
+<h3 id="23-支持的模式">2.3 支持的模式</h3>
+<h4 id="231-最终一致模式">2.3.1 最终一致模式</h4>
+<p>  最终一致模式可以保证跨数据库或跨节点更新时的数据一致。它会以1个更新操作为基准，注册多个其它更新操作，最终保证所有更新都成功，实现分布式事务的弱一致性。最终一致模式非常适合这样的场景： 对本身的业务做更新，同时还要更新外部系统的数据，而这些外部更新稍微晚点完成也可以接受，但最终必须要都能成功。<strong>苍穹里的大部分分布式事务场景应该优先考虑使用最终一致。最终一致模式内部使用MQ或者微服务调用实现事务协调，默认使用MQ。使用微服务调用时，也可以设置使用同步或者异步模式。使用MQ模式或者微服务模式，性能会更佳。</strong></p>
+<p><strong>使用限制</strong>：(有以下情况不建议使用)</p>
+<p><strong>1</strong>.如果出现异常，有一些更新的数据要回滚，而不是让系统重试直到成功；</p>
+<p><strong>2</strong>.不能接受异步执行，所有逻辑必须同步完成，实时等待执行结果。</p>
+<ul>
+<li><strong>正常提交流程:</strong></li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-normal.png"
+        data-srcset="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-normal.png, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-normal.png 1.5x, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-normal.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-normal.png"
+        title="img" width="861" height="511" />在第一次调用register注册最终一致服务的时候，会开启一个新的分布式事务，创建全局唯一的xid所有通过register注册的信息暂时不会执行，而是先记录到本地数据库的表中t_dtx_local_tx_log如果一切顺利，本地事务成功提交，会自动触发提交分布式事务到事务协调器事务协调器收到提交后，会根据register的调用顺序逐个执行最终一致服务，直到全部完成。如果本地事务回滚了，会怎么处理？</p>
+<ul>
+<li><strong>回滚流程:</strong></li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-rollback.png"
+        data-srcset="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-rollback.png, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-rollback.png 1.5x, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-rollback.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-ec-rollback.png"
+        title="img" width="861" height="511" /></p>
+<p>当本地事务事务被回滚时，由于register的信息没有真正执行，所以相当于什么都没做，数据是一致。同时，如果已经开启是分布式事务，则会通知协调器回滚。如果在执行过程中，任何一个环节出现问题，包括宕机、程序bug、网络异常、数据库访问超时等情况，KDTX是怎么保证数据最终还是一致的？可以阅读<strong>手动事务补偿</strong>部分。使用最终一致模式之前，需要在业务数据库中创建本地事务表。</p>
+<h4 id="232-tcc模式">2.3.2 TCC模式</h4>
+<p>TCC通过两阶段提交来保证分布式环境下的数据强一致:</p>
+<p><strong>第一阶段</strong> : TRY锁定/预留资源;</p>
+<p><strong>第二阶段</strong> :COMFIRM/CANCEL提交或回滚资源。</p>
+<p><strong>适用场景</strong> :</p>
+<p>  TCC最大的特点是提供“后悔”的能力。最终一致模式在数据不一致时会尝试重试，让流程接着往下走，直到最后都成功。假设有个分布式事务的场景，其中一个环节是扣减库存，当库存为0并且不允许负库存时抛出异常，这样即使重试100次也不可能成功，最合理的做法是把前面数据回滚到原来的状态。这种情况你需要TCC。所以TCC适合这些场景：涉及库存，金额等余额更新类的数据操作；数据一旦异常，必须要回滚，使用重试无法解决的场景。</p>
+<p><strong>工作原理</strong> : TCC实现的是业务层面的两阶段提交:</p>
+<p><strong>第一阶段</strong>：TRY - 锁定/预留的资源，比如库存锁定或预占;</p>
+<p><strong>第二阶段</strong>：CONFIRM - 若TRY阶段的资源全部锁定成功，则调用所有的CONFIRM提交资源，如扣减库存生效;CANCEL - TRY阶段只要有任何异常，则调用已执行过TRY对应的CANCEL，回滚资源，比如预占库存回退。</p>
+<p><strong>TCC模式使用限制</strong> :</p>
+<p><strong>1</strong>.只有TRY阶段异常才会回滚，一旦进入CONFIRM阶段，则不能再回滚，系统会重试直到最后成功；</p>
+<p><strong>2</strong>.相对最终一致模式，TCC对业务的入侵更大，这也是想保证数据强一致的代价；</p>
+<p><strong>3</strong>.TCC也是异步执行，有可能转人工补偿，无法实时反馈执行结果。</p>
+<ul>
+<li><strong>标准TCC:</strong>
+标准TCC模式中，每个对数据的更新操作都需要分离到TCC服务中。下面这个图展示了标准的TCC模式，事务正常提交的流程:</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-normal.png"
+        data-srcset="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-normal.png, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-normal.png 1.5x, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-normal.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-normal.png"
+        title="img" width="861" height="511" /></p>
+<p><strong>第1步</strong>会在首次TRY的时候自动调用，像懒加载一样可以提交系统效率；</p>
+<p><strong>第3步</strong>需要显式的提交，因为标准TCC模式下跟本地事务是没有绑定的。</p>
+<ul>
+<li><strong>TCC try异常回滚:</strong></li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-rollback.png"
+        data-srcset="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-rollback.png, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-rollback.png 1.5x, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-rollback.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-rollback.png"
+        title="img" width="861" height="511" /></p>
+<ul>
+<li><strong>插件中的TCC事务:</strong></li>
+</ul>
+<p>  在标准的TCC模式中，有一点无法做到的是：集成在苍穹插件流程里的数据更新操作（比如单据审核）无法或者很难分离到TCC服务中，使用TCCGlobalSession类在插件中操作TCC可以解决这个问题。下面的图展示了在插件使用TCC的工作流程:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-plugin.png"
+        data-srcset="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-plugin.png, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-plugin.png 1.5x, /posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-plugin.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/images/kdtx-tcc-plugin.png"
+        title="img" width="861" height="511" /></p>
+<p><strong>1</strong>.这里保障了3个数据更新的强一致性：审核，采购单，库存。而标准的TCC只能保障后面2个；</p>
+<p><strong>2</strong>.这种用法分布式事务和插件的本地事务会绑定在一起，所以第3步是自动提交的，不需要显式提交；</p>
+<p><strong>3</strong>.在业务库中也需要建一张TCC的本地事务表。</p>
+<h2 id="3-开发步骤">3. 开发步骤</h2>
+<p><a href="https://dev.kingdee.com/open/detail/sdk/2077750765081867264" target="_blank" rel="noopener noreffer ">金蝶云苍穹开发者门户</a></p>
+<p>框架限制性很大，不详细展示，可查看官网</p>
+<h2 id="4-底层解析">4. 底层解析</h2>
+<h3 id="最终一致模式">最终一致模式</h3>
+<h3 id="tcc模式">TCC模式</h3>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-06-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="prev" rel="prev" title="kd-分布式锁"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>kd-分布式锁</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

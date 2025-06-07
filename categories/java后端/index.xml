@@ -6,8 +6,15 @@
     <description>Recent content in Java后端 on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 06 Jun 2025 08:59:26 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jun 2025 08:59:26 +0800</lastBuildDate>
     <atom:link href="https://hubu8.github.io/categories/java%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kd-分布式事务</title>
+      <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Sat, 07 Jun 2025 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
+      <description>&lt;h2 id=&#34;1-简介&#34;&gt;1. 简介&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-什么是分布式事务&#34;&gt;1.1 什么是分布式事务&lt;/h3&gt;&#xA;&lt;p&gt;  分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>kd-分布式锁</title>
       <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</link>

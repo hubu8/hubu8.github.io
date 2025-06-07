@@ -6,6 +6,63 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 06 Jun 2025 08:59:26 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>kd-分布式锁</title>
+    <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</link>
+    <pubDate>Fri, 06 Jun 2025 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</guid>
+    <description><![CDATA[<h2 id="单体式锁">单体式锁</h2>
+<h3 id="synchronized">synchronized</h3>
+<p>同步代码块</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">synchronized</span><span class="p">(</span><span class="n">obj</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//需要被同步的代码块</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">synchronized</span><span class="p">(</span><span class="k">this</span><span class="p">){}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//上面两种锁的都是对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">synchronize</span><span class="p">(</span><span class="n">TheClass</span><span class="p">.</span><span class="na">class</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//这种锁住的是一个类</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>同步方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testThread</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//需要被同步的代码块</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="同步锁-reentrantlock">同步锁 ReentrantLock</h3>
+<p><strong>JDK 1.7之后引入的JUC包中的重要工具类，让线程同步变得如此丝滑</strong></p>]]></description>
+</item>
+<item>
     <title>OpenAPI-API请求的身份鉴权</title>
     <link>https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</link>
     <pubDate>Thu, 05 Jun 2025 08:59:26 &#43;0800</pubDate>
@@ -86,14 +143,6 @@
     <description><![CDATA[<h2 id="hashcat">Hashcat</h2>
 <p>Hashcat 是一款强大的密码破解工具，但它不支持直接破解 ZIP 文件密码。Hashcat 主要用于破解哈希值，而 ZIP 文件通常使用的是加密而不是哈希，它们使用的是不同的加密技术。
 在kali中使用的要求必须是内存大于4G，否则没用Hashcat具体的用法如下:</p>]]></description>
-</item>
-<item>
-    <title>网络主机探测与识别-Netdiscover &amp; nmap</title>
-    <link>https://hubu8.github.io/posts/%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB-netdiscover-nmap/</link>
-    <pubDate>Sat, 24 May 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB-netdiscover-nmap/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>OpenAPI-API请求的身份鉴权 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/">
+        <title>kd-OpenAPI-API请求的身份鉴权 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/">
   <meta property="og:site_name" content="Eccentric&#39;s Note">
-  <meta property="og:title" content="OpenAPI-API请求的身份鉴权">
+  <meta property="og:title" content="kd-OpenAPI-API请求的身份鉴权">
   <meta property="og:description" content="OpenAPI共支持五种认证方式，分别是：
 AccessToken 认证 JWT认证 摘要认证 基本认证 签名认证 其中，AccessToken认证应用最广泛，基本认证则最方便。从安全和易用性的角度进行分析，不同的认证方式各有特点，用户可以根据具体需求，选择合适的认证方式。">
   <meta property="og:locale" content="zh_CN">
@@ -18,23 +18,23 @@ AccessToken 认证 JWT认证 摘要认证 基本认证 签名认证 其中，Acc
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
-  <meta name="twitter:title" content="OpenAPI-API请求的身份鉴权">
+  <meta name="twitter:title" content="kd-OpenAPI-API请求的身份鉴权">
   <meta name="twitter:description" content="OpenAPI共支持五种认证方式，分别是：
 AccessToken 认证 JWT认证 摘要认证 基本认证 签名认证 其中，AccessToken认证应用最广泛，基本认证则最方便。从安全和易用性的角度进行分析，不同的认证方式各有特点，用户可以根据具体需求，选择合适的认证方式。">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/" /><link rel="prev" href="https://hubu8.github.io/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" /><link rel="next" href="https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/" /><link rel="prev" href="https://hubu8.github.io/posts/kd-%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" /><link rel="next" href="https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "OpenAPI-API请求的身份鉴权",
+        "headline": "kd-OpenAPI-API请求的身份鉴权",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/posts\/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83\/"
+            "@id": "https:\/\/hubu8.github.io\/posts\/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83\/"
         },"genre": "posts","wordcount":  4666 ,
-        "url": "https:\/\/hubu8.github.io\/posts\/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83\/","datePublished": "2025-06-05T08:59:26+08:00","dateModified": "2025-06-05T08:59:26+08:00","publisher": {
+        "url": "https:\/\/hubu8.github.io\/posts\/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83\/","datePublished": "2025-06-05T08:59:26+08:00","dateModified": "2025-06-05T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -105,10 +105,10 @@ AccessToken 认证 JWT认证 摘要认证 基本认证 签名认证 其中，Acc
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">OpenAPI-API请求的身份鉴权</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">kd-OpenAPI-API请求的身份鉴权</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-05">2025-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4666 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/" class="leancloud_visitors" data-flag-title="OpenAPI-API请求的身份鉴权">
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/" class="leancloud_visitors" data-flag-title="kd-OpenAPI-API请求的身份鉴权">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -796,7 +796,7 @@ AccessToken 认证 JWT认证 摘要认证 基本认证 签名认证 其中，Acc
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" class="prev" rel="prev" title="隐私中心-数据脱敏与数据加密"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>隐私中心-数据脱敏与数据加密</a>
+    <div class="post-nav"><a href="/posts/kd-%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/" class="prev" rel="prev" title="kd-隐私中心-数据脱敏与数据加密"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>kd-隐私中心-数据脱敏与数据加密</a>
             <a href="/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="next" rel="next" title="kd-分布式锁">kd-分布式锁<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>

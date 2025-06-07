@@ -71,11 +71,11 @@
 <p><strong>JDK 1.7之后引入的JUC包中的重要工具类，让线程同步变得如此丝滑</strong></p>]]></description>
 </item>
 <item>
-    <title>OpenAPI-API请求的身份鉴权</title>
-    <link>https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</link>
+    <title>kd-OpenAPI-API请求的身份鉴权</title>
+    <link>https://hubu8.github.io/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</link>
     <pubDate>Thu, 05 Jun 2025 08:59:26 &#43;0800</pubDate>
     <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</guid>
+    <guid>https://hubu8.github.io/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</guid>
     <description><![CDATA[<p>OpenAPI共支持五种认证方式，分别是：</p>
 <ul>
 <li>AccessToken 认证</li>
@@ -87,11 +87,11 @@
 <p>其中，AccessToken认证应用最广泛，基本认证则最方便。从安全和易用性的角度进行分析，不同的认证方式各有特点，用户可以根据具体需求，选择合适的认证方式。</p>]]></description>
 </item>
 <item>
-    <title>隐私中心-数据脱敏与数据加密</title>
-    <link>https://hubu8.github.io/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</link>
+    <title>kd-隐私中心-数据脱敏与数据加密</title>
+    <link>https://hubu8.github.io/posts/kd-%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</link>
     <pubDate>Thu, 05 Jun 2025 08:59:26 &#43;0800</pubDate>
     <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</guid>
+    <guid>https://hubu8.github.io/posts/kd-%E9%9A%90%E7%A7%81%E4%B8%AD%E5%BF%83-%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>

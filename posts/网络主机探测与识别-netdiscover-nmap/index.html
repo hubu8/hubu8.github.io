@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB-netdiscover-nmap\/"
-        },"genre": "posts","keywords": "kali","wordcount":  2589 ,
+        },"genre": "posts","keywords": "kali","wordcount":  3034 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB-netdiscover-nmap\/","datePublished": "2025-05-24T08:59:26+08:00","dateModified": "2025-05-24T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">网络主机探测与识别-Netdiscover & nmap</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>网络安全</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-05-24">2025-05-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2589 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/posts/%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB-netdiscover-nmap/" class="leancloud_visitors" data-flag-title="网络主机探测与识别-Netdiscover &amp; nmap">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-05-24">2025-05-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3034 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB-netdiscover-nmap/" class="leancloud_visitors" data-flag-title="网络主机探测与识别-Netdiscover &amp; nmap">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -133,6 +133,13 @@
             <li><a href="#nmap--p-p1p2-ip--扫描指定端口">nmap -P p1,p2 IP  扫描指定端口</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#扫描服务器路由">扫描服务器路由</a>
+      <ul>
+        <li><a href="#使用nmap进行路径探测">使用Nmap进行路径探测‌</a></li>
+        <li><a href="#专用web路径扫描工具">专用Web路径扫描工具‌</a></li>
+        <li><a href="#burp-suite专业扫描">Burp Suite专业扫描</a></li>
       </ul>
     </li>
     <li><a href="#vm网络模式">VM网络模式</a>
@@ -633,7 +640,43 @@
 </span></span><span class="line"><span class="cl">MAC Address: 00:50:56:C0:00:08 (VMware)
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="vm网络模式">VM网络模式</h2>
+</div><h2 id="扫描服务器路由">扫描服务器路由</h2>
+<h3 id="使用nmap进行路径探测">使用Nmap进行路径探测‌</h3>
+<p>通过<code>http-enum</code>脚本扫描常见Web路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">nmap</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">,</span><span class="mi">443</span> <span class="o">--</span><span class="n">script</span> <span class="n">http</span><span class="o">-</span><span class="k">enum</span> <span class="o">&lt;</span><span class="err">目标</span><span class="ne">IP</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该脚本会自动检测/admin、/login等常见管理接口</p>
+<h3 id="专用web路径扫描工具">专用Web路径扫描工具‌</h3>
+<ul>
+<li>DirBuster：图形化工具，内置字典可暴力破解路径</li>
+<li>Gobuster：命令行工具，支持多线程扫描</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gobuster dir -u http://&lt;目标IP&gt; -w /path/to/wordlist.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="burp-suite专业扫描">Burp Suite专业扫描</h3>
+<ul>
+<li>使用爬虫功能自动发现路径：在Target站点地图中，右键目标选择“Spider this host”，Burp会递归爬取链接，发现隐藏路径（如<code>/admin</code>或<code>/backup</code>）</li>
+<li><strong>使用扫描器（Scanner）主动探测路径</strong>‌（需专业版支持）：
+<ul>
+<li>右键启动“Active Scan”，Burp会发送请求探测常见路径（如<code>/login</code>），并基于响应状态码（200/403/404）判断路径是否存在</li>
+<li>自定义扫描配置：在“Scanner”选项卡设置扫描范围，包括添加自定义路径字典（如<code>/admin</code>、<code>/api</code>）以提高针对性</li>
+</ul>
+</li>
+<li>结合Intruder模块进行定制化爆破</li>
+</ul>
+<h2 id="vm网络模式">VM网络模式</h2>
 <h3 id="模式对比"><strong>模式对比</strong>‌</h3>
 <ul>
 <li>‌<strong>NAT模式</strong>‌：虚拟机通过主机转换IP上网，默认创建独立子网（如192.168.81.0）</li>

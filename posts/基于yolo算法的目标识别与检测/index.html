@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>基于yolo算法的目标识别与检测 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="基于yolo算法的目标识别与检测">
+  <meta property="og:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-12T08:59:26+08:00">
+    <meta property="article:modified_time" content="2025-06-12T08:59:26+08:00">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="基于yolo算法的目标识别与检测">
+  <meta name="twitter:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/" /><link rel="prev" href="https://hubu8.github.io/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "基于yolo算法的目标识别与检测",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B\/"
+        },"genre": "posts","wordcount":  1789 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">基于yolo算法的目标识别与检测</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>深度学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1789 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/" class="leancloud_visitors" data-flag-title="基于yolo算法的目标识别与检测">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#算法概述">算法概述</a></li>
+    <li><a href="#yolo-算法核心流程">YOLO 算法核心流程</a>
+      <ul>
+        <li><a href="#一预测阶段上类别与框的初始生成">（一）预测阶段上：类别与框的初始生成</a></li>
+        <li><a href="#二预测阶段下边界框的筛选与保留">（二）预测阶段下：边界框的筛选与保留</a></li>
+        <li><a href="#三训练阶段模型的学习与优化">（三）训练阶段：模型的学习与优化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="算法概述">算法概述</h2>
+<p>YOLO（You Only Look Once）系列的首个版本由 Joseph Redmon 等人于 2015 年开创性提出。其核心设计目标在于将复杂的目标检测流程简化为单次回归问题，依托一个端到端的卷积神经网络（CNN）架构，直接对输入图像中的目标边界框与类别进行精准预测。简而言之，YOLO 致力于教会计算机系统如何高效识别图像中的各类物体，诸如常见的猫、狗、苹果、汽车等，并且能够精确确定这些物体在图像中的具体位置，摆脱传统方法的盲目性与不确定性。</p>
+<h2 id="yolo-算法核心流程">YOLO 算法核心流程</h2>
+<h3 id="一预测阶段上类别与框的初始生成">（一）预测阶段上：类别与框的初始生成</h3>
+<p>当一幅全新的图像输入至已训练完备的 YOLO 模型时，模型首先将图像均匀划分为 7×7 共计 49 个小方格，在专业术语体系中被称为 grid cell。每个 grid cell 肩负两项关键任务：其一，负责生成两个以该 grid cell 为中心的预测边界框（bounding box，简称 bbox），这两个 bbox 通过 x、y、w、h、c 五个参数予以精准界定，其中（x，y）代表预测框中心点的坐标，（w，h）表示框的宽度与高度，而 c 则用于表征该框的可信度（confidence）；其二，对该 grid cell 所处区域内可能存在的物体类别进行预测，物体类别的具体数量与训练所采用的数据集密切相关，在 YOLO 算法的原始论文中，其数据集涵盖 20 种不同物体类别。基于上述流程，在此阶段，模型共计会生成 7×7×2 个 bbox，相应的参数数量高达 7×7×2×5×20 个。后续通过一系列精细的后处理操作，旨在筛选并保留针对不同物体识别效果最佳的边界框。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212539410.png"
+        data-srcset="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212539410.png, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212539410.png 1.5x, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212539410.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212539410.png"
+        title="image-20250612212539410" width="831" height="595" /></p>
+<h3 id="二预测阶段下边界框的筛选与保留">（二）预测阶段下：边界框的筛选与保留</h3>
+<p>在前述步骤生成众多边界框之后，如何从中筛选出最为精准、可靠的边界框成为关键环节。聚焦于某一特定的 grid cell，以落在图像中汽车位置的 grid cell 为例，由于其与汽车位置高度重合，所生成的较大边界框因能更精准框选汽车，其置信度显著高于小框，这一置信度差异在可视化呈现中可通过线条粗细程度予以直观反映。同理，对于未包含任何物体的 grid cell，无论其将该区域判定为何种物体类别，其置信度均处于较低水平，对应边界框线条较细。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212604356.png"
+        data-srcset="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212604356.png, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212604356.png 1.5x, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212604356.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212604356.png"
+        title="image-20250612212604356" width="835" height="424" /></p>
+<p>进一步地，针对图像中所有 grid cell 生成的共计 98 个 bbox，采取置信度分数低分数过滤策略，将置信度过低的 bbox 直接置零，此举旨在大幅提升运算效率。随后，运用<a href="https://zhida.zhihu.com/search?content_id=252213848&amp;content_type=Article&amp;match_order=1&amp;q=%e9%9d%9e%e6%9e%81%e5%a4%a7%e5%80%bc%e6%8a%91%e5%88%b6&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NDk5MDcxODYsInEiOiLpnZ7mnoHlpKflgLzmipHliLYiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyNTIyMTM4NDgsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.ZOd0l7SnNH8ZP-MtnLztYh6lY_43kv0VU8EBKw7SGVE&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">非极大值抑制</a>（NMS）算法对剩余 bbox 进行深度筛选。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212951060.png"
+        data-srcset="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212951060.png, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212951060.png 1.5x, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212951060.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/image-20250612212951060.png"
+        title="image-20250612212951060" width="838" height="335" /></p>
+<p>NMS 算法的核心思想在于保留相近区域内得分最高的 bbox，而非单纯追求全图得分最高，这是考虑到图像中可能存在多个同类物体的实际情况。具体而言，在 NMS 算法执行过程中，首先对 bbox 依据置信度进行降序排序，以 1、2、3、4 分别标记置信度从高到低的四个 bbox 为例：第一轮比较时，将 1 与其他所有 bbox 逐一对比，若 1 与 2 的交并比（IOU）过大，表明二者极有可能是对同一物体的重复框选，此时保留得分最高的 1，将 2 置零；若 1 与 3 的 IOU 较小，则保留两者；依此类推完成第一轮比较。第二轮从剩余未被置零的 bbox 中选取起始点，如从 3 开始，重复上述比较过程，直至所有 bbox 均完成比较。最终，经过 NMS 算法处理后，仅保留少数得分最高且互不重叠过多的边界框，实现精准的目标定位。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-cdbed2ecdb785556f1b41b2fd0095ca7_1440w.jpg"
+        data-srcset="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-cdbed2ecdb785556f1b41b2fd0095ca7_1440w.jpg, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-cdbed2ecdb785556f1b41b2fd0095ca7_1440w.jpg 1.5x, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-cdbed2ecdb785556f1b41b2fd0095ca7_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-cdbed2ecdb785556f1b41b2fd0095ca7_1440w.jpg"
+        title="img" width="940" height="487" /></p>
+<h3 id="三训练阶段模型的学习与优化">（三）训练阶段：模型的学习与优化</h3>
+<ol>
+<li><strong>数据输入与标注</strong>：</li>
+</ol>
+<p>训练 YOLO 模型的首要步骤是构建规模庞大且标注精准的数据集，将成千上万张已精心标注物体类别及位置信息的图像输入至模型 f。对于每一张输入图像 X，其附带详细的物体标注信息，例如图像中存在汽车、苹果等物体的具体位置与类别标签，以此完成模型的初步知识传授。</p>
+<ol start="2">
+<li><strong>损失函数构建</strong>：</li>
+</ol>
+<p>在模型接收输入图像并输出其预测结果 f (X) 后，需要与预先标注的真实结果 y 进行比对。为促使模型的预测结果无限趋近于真实标签，即达成 f (X) → y 的优化目标，构建科学合理的损失函数至关重要。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-812b46e890034277c7056efd2b548aed_1440w.jpg"
+        data-srcset="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-812b46e890034277c7056efd2b548aed_1440w.jpg, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-812b46e890034277c7056efd2b548aed_1440w.jpg 1.5x, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-812b46e890034277c7056efd2b548aed_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-812b46e890034277c7056efd2b548aed_1440w.jpg"
+        title="img" width="628" height="370" /></p>
+<p>在 YOLO 算法的原始设计中，损失函数 loss 综合考量多个关键因素，具体包括：生成的 bbox 中心点定位误差，反映预测框中心位置与真实框中心的偏差程度；生成的 bbox 宽高定位误差，衡量框的大小预测准确性；该 grid cell 包含有物体时的置信度误差，确保对存在物体区域的置信度预测精准；该 grid cell 不含有物体时的置信度误差，避免对空区域的误判；以及该 grid cell 的分类误差，保障物体类别预测的正确性。通过对这些误差项的加权求和，构建出完整的损失函数，以量化模型预测结果与真实标签之间的差异。</p>
+<ol start="3">
+<li><strong>模型迭代优化</strong>：</li>
+</ol>
+<p>重复进行上述训练过程，历经多轮迭代训练，持续监测损失函数值的变化趋势。随着训练轮次的递增，损失函数值逐步趋于稳定，表明模型在不断学习与优化过程中，逐渐掌握目标识别与检测的核心规律，提升预测准确性与稳定性。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-05937209ac1c56f1bf6b120de2ae0af2_1440w.jpg"
+        data-srcset="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-05937209ac1c56f1bf6b120de2ae0af2_1440w.jpg, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-05937209ac1c56f1bf6b120de2ae0af2_1440w.jpg 1.5x, /posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-05937209ac1c56f1bf6b120de2ae0af2_1440w.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/images/v2-05937209ac1c56f1bf6b120de2ae0af2_1440w.jpg"
+        title="img" width="940" height="673" /></p>
+<p><a href="https://www.ultralytics.com/" target="_blank" rel="noopener noreffer ">https://www.ultralytics.com/</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-06-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F/" class="prev" rel="prev" title="刘同学的面经"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>刘同学的面经</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

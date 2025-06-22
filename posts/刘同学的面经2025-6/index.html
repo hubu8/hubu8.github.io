@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  10532 ,
+        },"genre": "posts","wordcount":  12965 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 10532 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 22 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12965 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 26 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -171,8 +171,26 @@
     <li><a href="#高德-java">高德-Java</a></li>
     <li><a href="#京东物流-java">京东物流-Java</a>
       <ul>
-        <li><a href="#京东物流一面">京东物流一面</a></li>
-        <li><a href="#京东物流二面">京东物流二面</a></li>
+        <li><a href="#京东物流一面">京东物流一面</a>
+          <ul>
+            <li><a href="#加载过程类加载到静态方法区">加载过程，类加载到静态方法区</a></li>
+            <li><a href="#java线程池底层机制">java线程池底层机制</a></li>
+            <li><a href="#spring事务失效-的情况">spring事务失效 的情况</a></li>
+            <li><a href="#mysql-最左前匹配">mysql 最左前匹配</a></li>
+            <li><a href="#sql优化-索引">sql优化 索引</a></li>
+            <li><a href="#redis分布式通信">redis分布式通信</a></li>
+            <li><a href="#复制是三个sync">复制是三个sync</a></li>
+            <li><a href="#底层是gossip协议反熵和流言模式">底层是gossip协议，反熵和流言模式</a></li>
+            <li><a href="#事务-spring-start原理">事务 spring start原理</a></li>
+          </ul>
+        </li>
+        <li><a href="#京东物流二面">京东物流二面</a>
+          <ul>
+            <li><a href="#低代码架构">低代码架构</a></li>
+            <li><a href="#流程架构">流程架构</a></li>
+            <li><a href="#mq重试">mq重试</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#百度搜索-c">百度搜索-c++</a></li>
@@ -835,26 +853,281 @@ activiti比flowable等框架好在哪</p>
 <p>消息的库表需要什么字段</p>
 <h2 id="京东物流-java">京东物流-Java</h2>
 <h3 id="京东物流一面">京东物流一面</h3>
-<p>加载过程
-类加载到静态方法区</p>
-<p>java线程池底层机制</p>
-<p>spring
-事务失效 的情况
-start的机制</p>
-<p>mysql
-最左前匹配
-sql优化 索引</p>
-<p>redis分布式通信
-复制是三个sync
-直接复制，断点复制，宕机复制断点
-底层是gossip协议，反熵和流言模式</p>
-<p>事务 spring start原理</p>
+<h4 id="加载过程类加载到静态方法区">加载过程，类加载到静态方法区</h4>
+<p>在Java中，类的加载过程涉及到Java虚拟机（JVM）的类加载器（Class Loader）机制。这个过程大致可以分为以下几个阶段：</p>
+<ol>
+<li>
+<p><strong>加载（Loading）</strong>：</p>
+<p>这一阶段主要是将类的字节码从不同的来源（如文件系统、网络等）加载到JVM中。</p>
+<p>类加载器（如Bootstrap ClassLoader, Extension ClassLoader, System ClassLoader或自定义类加载器）负责查找并加载类的二进制数据。</p>
+</li>
+<li>
+<p><strong>链接（Linking）</strong>：</p>
+<ul>
+<li><strong>验证（Verification）</strong>：确保被加载的类的正确性，例如检查字节码的格式是否正确，是否符合Java语言规范。</li>
+<li><strong>准备（Preparation）</strong>：为类的静态变量分配内存，并设置默认初始值（如int类型变量默认为0，对象引用默认为null）。</li>
+<li><strong>解析（Resolution）</strong>：将类、接口、字段和方法的符号引用转换为直接引用。这一步骤可能在初始化之前完成，也可能在初始化时完成。</li>
+</ul>
+</li>
+<li>
+<p><strong>初始化（Initialization）</strong>：</p>
+<p>执行类中的静态初始化器和静态初始化块。这是Java代码执行的最后一步，此时静态变量被赋予正确的值，静态代码块被执行。</p>
+</li>
+<li>
+<p><strong>使用（Using）</strong>：</p>
+<ul>
+<li>程序通过创建类的实例或使用类的静态变量和方法来使用类。</li>
+</ul>
+</li>
+<li>
+<p><strong>卸载（Unloading）</strong>：</p>
+<ul>
+<li>当类不再被使用时，JVM会卸载这个类。这通常发生在类的Class对象没有在任何地方被引用时。</li>
+</ul>
+</li>
+</ol>
+<p>值得注意的是，在Java中，静态方法区（也称为方法区或Metaspace，在Java 8及之后版本中称为Metaspace而非永久代PermGen）是用来存储每个类的结构信息，如运行时常量池（Runtime Constant Pool）、字段和方法数据、构造函数和普通方法的字节码内容等。它与类的加载和链接阶段密切相关，但不直接涉及初始化过程。</p>
+<p>** 静态方法区与类加载过程的关系：**</p>
+<ul>
+<li><strong>方法区</strong> 主要存储了类的元数据信息，包括类的字段信息、方法信息、常量池等。这些信息在类加载的链接阶段就已经准备好了。</li>
+<li><strong>初始化</strong> 主要涉及的是执行类的静态代码块和静态变量的初始化，这部分是在加载和链接之后进行的。</li>
+</ul>
+<p>因此，可以说静态方法区是存储了类的元数据的地方，而类的初始化过程则是在这些元数据基础上进行的。两者共同构成了Java中类的完整生命周期的一部分。</p>
+<h4 id="java线程池底层机制">java线程池底层机制</h4>
+<h4 id="spring事务失效-的情况">spring事务失效 的情况</h4>
+<p>Spring 事务失效是指使用 <code>@Transactional</code> 注解时，事务行为未按预期执行（如未回滚），常见于以下 8 种场景，其失效原理与解决方案如下：</p>
+<hr>
+<p><strong>🔧 一、Spring 事务失效的 8 种核心场景</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>场景</strong>‌</th>
+          <th>‌<strong>失效原因</strong>‌</th>
+          <th>‌<strong>解决方案</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>1. 非 public 方法</strong>‌</td>
+          <td>Spring 动态代理仅拦截 <code>public</code> 方法，私有/包级方法无法被代理增强事务</td>
+          <td>将事务方法设为 <code>public</code></td>
+      </tr>
+      <tr>
+          <td>‌**2. 自调用（内部调用）**‌</td>
+          <td>类内方法通过 <code>this</code> 调用事务方法，绕过代理对象</td>
+          <td>通过代理对象调用（如 <code>AopContext.currentProxy()</code>）或拆分到不同 Bean</td>
+      </tr>
+      <tr>
+          <td>‌<strong>3. 异常处理不当</strong>‌</td>
+          <td>• 默认仅回滚 <code>RuntimeException</code> 和 <code>Error</code> • 捕获异常未抛出，Spring 无法感知</td>
+          <td>配置 <code>@Transactional(rollbackFor = Exception.class)</code> 或在 catch 中抛出 <code>RuntimeException</code>56</td>
+      </tr>
+      <tr>
+          <td>‌<strong>4. 多线程调用</strong>‌</td>
+          <td>子线程与父线程事务上下文隔离，数据库连接不同</td>
+          <td>避免多线程操作，或使用分布式事务管理器</td>
+      </tr>
+      <tr>
+          <td>‌<strong>5. 数据库引擎不支持</strong>‌</td>
+          <td>如 MySQL 的 MyISAM 引擎不支持事务</td>
+          <td>改用 InnoDB 等支持事务的引擎</td>
+      </tr>
+      <tr>
+          <td>‌<strong>6. 方法被 final/static 修饰</strong>‌</td>
+          <td>代理类无法重写 final 方法；static 方法不属于实例，无法被代理</td>
+          <td>移除 final/static 修饰符</td>
+      </tr>
+      <tr>
+          <td>‌<strong>7. 未被 Spring 管理</strong>‌</td>
+          <td>类未标注 <code>@Component</code> 等注解，Spring 无法创建代理</td>
+          <td>确保 Bean 被 Spring 容器扫描</td>
+      </tr>
+      <tr>
+          <td>‌<strong>8. 错误的事务传播机制</strong>‌</td>
+          <td>如配置 <code>Propagation.NOT_SUPPORTED</code>（以非事务运行）</td>
+          <td>调整传播行为（如默认 <code>REQUIRED</code>）</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>⚙️ 二、事务传播机制（Propagation）与事务边界</strong></p>
+<p>Spring 通过传播机制控制事务边界，常见类型如下：</p>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>传播类型</strong>‌</th>
+          <th>‌<strong>行为描述</strong>‌</th>
+          <th>‌<strong>典型场景</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>REQUIRED</strong>‌（默认）</td>
+          <td>当前有事务则加入，无事务则新建</td>
+          <td>多数业务场景（如订单扣库存）</td>
+      </tr>
+      <tr>
+          <td>‌<strong>REQUIRES_NEW</strong>‌</td>
+          <td>挂起当前事务，始终新建独立事务（新事务回滚不影响原事务）</td>
+          <td>日志记录、独立操作（如发送短信）</td>
+      </tr>
+      <tr>
+          <td>‌<strong>NESTED</strong>‌</td>
+          <td>在当前事务内嵌套子事务（子事务回滚不影响主事务，主事务回滚则子事务一同回滚）</td>
+          <td>复杂业务分步骤执行（如订单拆分支付）</td>
+      </tr>
+      <tr>
+          <td>‌<strong>SUPPORTS</strong>‌</td>
+          <td>有事务则加入，无事务则以非事务方式运行</td>
+          <td>查询方法兼容有无事务上下文</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>⚠️ ‌<strong>失效案例</strong>‌：若方法需独立事务却误配 <code>SUPPORTS</code>，事务将不生效。</p></blockquote>
+<hr>
+<p><strong>💡 三、事务管理方式对比（声明式 vs 编程式）</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>特性</strong>‌</th>
+          <th>‌**声明式事务（@Transactional）**‌</th>
+          <th>‌**编程式事务（TransactionTemplate）**‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>实现原理</strong>‌</td>
+          <td>基于 AOP 动态代理封装事务逻辑</td>
+          <td>需手动编写事务代码（如 <code>template.execute()</code>）</td>
+      </tr>
+      <tr>
+          <td>‌<strong>灵活性</strong>‌</td>
+          <td>注解配置简单，但复杂逻辑受限</td>
+          <td>精细控制事务边界，适合多步骤非原子操作</td>
+      </tr>
+      <tr>
+          <td>‌<strong>适用场景</strong>‌</td>
+          <td>大多数标准业务场景</td>
+          <td>需动态判断回滚条件、多数据源混合操作</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>‌<strong>关键建议</strong>‌：</p>
+<ul>
+<li>优先用声明式事务，保持代码简洁；</li>
+<li>传播机制配置需结合业务语义，避免 <code>NOT_SUPPORTED</code>/<code>NEVER</code> 误用；</li>
+<li>多线程或跨微服务调用需引入分布式事务（如 Seata）</li>
+</ul></blockquote>
+<p>start的机制</p>
+<h4 id="mysql-最左前匹配">mysql 最左前匹配</h4>
+<p>MySQL 的最左前缀匹配(Leftmost Prefix Matching)是 B+树索引的核心特性，指复合索引按照从左到右的顺序进行匹配的规则。</p>
+<p><strong>一、最左前缀匹配的本质</strong></p>
+<p>当你在 MySQL 中创建复合索引时，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">CREATE INDEX idx_name_age ON users(name, age, gender);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个索引会按照 <code>name → age → gender</code> 的顺序构建 B+树，查询时必须从最左边的列开始使用才能生效。</p>
+<p><strong>二、有效使用最左前缀的查询示例</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>查询条件</th>
+          <th>是否使用索引</th>
+          <th>原因</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>WHERE name = '张三'</code></td>
+          <td>✅ 完全使用</td>
+          <td>从最左列开始</td>
+      </tr>
+      <tr>
+          <td><code>WHERE name = '李四' AND age = 25</code></td>
+          <td>✅ 完全使用</td>
+          <td>按顺序使用前两列</td>
+      </tr>
+      <tr>
+          <td><code>WHERE age = 30</code></td>
+          <td>❌ 不使用</td>
+          <td>缺少最左列</td>
+      </tr>
+      <tr>
+          <td><code>WHERE name = '王五' AND gender = 'M'</code></td>
+          <td>⚠️ 部分使用</td>
+          <td>只用到 name 列</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>三、特殊情况的处理</strong></p>
+<ol>
+<li>
+<p>‌<strong>LIKE 模糊查询</strong>‌：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code-- 可以使用索引
+</span></span><span class="line"><span class="cl">WHERE name LIKE &#39;张%&#39;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 不能使用索引
+</span></span><span class="line"><span class="cl">WHERE name LIKE &#39;%张&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>‌<strong>范围查询后的列失效</strong>‌：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code-- age 和 gender 无法使用索引
+</span></span><span class="line"><span class="cl">WHERE name = &#39;张三&#39; AND age &gt; 20 AND gender = &#39;M&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p><strong>四、优化建议</strong></p>
+<ol>
+<li>将选择性高的列放在索引左侧</li>
+<li>避免在索引列上使用函数或计算</li>
+<li>合理设计查询语句，确保从最左列开始使用</li>
+</ol>
+<p>理解最左前缀匹配原理可以帮助你设计更高效的索引结构，提升查询性能。</p>
+<h4 id="sql优化-索引">sql优化 索引</h4>
+<h4 id="redis分布式通信">redis分布式通信</h4>
+<h4 id="复制是三个sync">复制是三个sync</h4>
+<p>直接复制，断点复制，宕机复制断点</p>
+<h4 id="底层是gossip协议反熵和流言模式">底层是gossip协议，反熵和流言模式</h4>
+<h4 id="事务-spring-start原理">事务 spring start原理</h4>
 <h3 id="京东物流二面">京东物流二面</h3>
-<p>低代码架构
-流程架构
-mq重试
-数据量多
-压力大的部分</p>
+<h4 id="低代码架构">低代码架构</h4>
+<h4 id="流程架构">流程架构</h4>
+<h4 id="mq重试">mq重试</h4>
+<p>数据量多</p>
+<p>压力大的部分</p>
 <h2 id="百度搜索-c">百度搜索-c++</h2>
 <p>c++
 共享指针

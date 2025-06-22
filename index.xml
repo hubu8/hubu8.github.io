@@ -27,13 +27,14 @@
     <pubDate>Thu, 12 Jun 2025 08:59:26 &#43;0800</pubDate>
     <author>Eccentric</author>
     <guid>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/</guid>
-    <description><![CDATA[<h2 id="北京超星">北京超星</h2>
-<h3 id="sql调优">sql调优</h3>
-<h3 id="索引失效的情况">索引失效的情况</h3>
-<h3 id="集合">集合</h3>
-<h3 id="hashmap扩容原理以及过程">hashmap扩容原理以及过程</h3>
-<h3 id="线程创建方式">线程创建方式</h3>
-<h3 id="线程池参数">线程池参数</h3>]]></description>
+    <description><![CDATA[<h2 id="北京超星-一面">北京超星 一面</h2>
+<h3 id="1sql调优相关有哪些方式调优">1.sql调优相关，有哪些方式调优</h3>
+<h3 id="2索引失效的情况">2.索引失效的情况</h3>
+<h3 id="3java中的集合">3.Java中的集合</h3>
+<h3 id="4集合与hashmap的差异集合之间-list-hashset-集合和hashmap">4.集合与hashmap的差异(集合之间 list hashset 。集合和hashmap)</h3>
+<h3 id="5hashmap扩容机制">5.hashmap扩容机制</h3>
+<h3 id="6线程的创建方式">6.线程的创建方式</h3>
+<h3 id="7线程池的参数">7.线程池的参数</h3>]]></description>
 </item>
 <item>
     <title>kd-分布式事务</title>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ipv6网络使用 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="ipv6网络使用">
+  <meta property="og:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-14T08:59:26+08:00">
+    <meta property="article:modified_time" content="2025-07-14T08:59:26+08:00">
+    <meta property="og:image" content="https://hubu8.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:title" content="ipv6网络使用">
+  <meta name="twitter:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8/" /><link rel="prev" href="https://hubu8.github.io/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ipv6网络使用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hubu8.github.io\/posts\/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8\/"
+        },"genre": "posts","wordcount":  3332 ,
+        "url": "https:\/\/hubu8.github.io\/posts\/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8\/","datePublished": "2025-07-14T08:59:26+08:00","dateModified": "2025-07-14T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"> pdf </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title="">pdf</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ipv6网络使用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-07-14">2025-07-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3332 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="ipv6网络使用">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#ipv4">IPv4</a></li>
+    <li><a href="#ipv6">IPv6</a>
+      <ul>
+        <li><a href="#为什么要使用ipv6">为什么要使用IPv6？</a></li>
+        <li><a href="#ipv6会带给我们什么">IPv6会带给我们什么？</a></li>
+        <li><a href="#ipv6的优点这么多为什么之前普及却这么慢">IPv6的优点这么多，为什么之前普及却这么慢？</a>
+          <ul>
+            <li><a href="#nat这类技术让ipv4得以续命">NAT这类技术，让IPv4得以续命</a></li>
+            <li><a href="#升级ipv6涉及运营商的利益">升级IPv6涉及运营商的利益</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#如何访问ipv6">如何访问ipv6</a>
+      <ul>
+        <li><a href="#路由器配置ipv6">路由器配置ipv6</a></li>
+        <li><a href="#电脑配置ipv6">电脑配置ipv6</a></li>
+        <li><a href="#测试">测试</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#电脑测试test-ipv6com">电脑测试test-ipv6.com</a></li>
+                <li><a href="#手机流量ping电脑ipv6">手机流量ping电脑ipv6</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#外部访问">外部访问</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>互联网协议（Internet Protocol，IP）是一个负责在网络上传输数据包的协议。从其第一个版本发布以来，IP 已经经历了多个版本的发展。当前最常用的两个版本是 IPv4 和 IPv6。</p>
+<h2 id="ipv4">IPv4</h2>
+<p>IPv4是Internet Protocol version 4的缩写，中文翻译为互联网通信协议第四版，通常简称为网际协议版本4。</p>
+<p>IPv4使用32位（4字节）地址，因此地址空间中只有 4,294,967,296（即2^32） 个地址。</p>
+<p>IPv4地址可被写作任何表示一个32位整数值的形式，但为了方便人类阅读和分析，它通常被写作点分十进制的形式，即四个字节被分开用十进制写出，中间用点分隔。</p>
+<p><strong>通常IPv4地址的地址格式为 nnn.nnn.nnn.nnn，就像下面这样：</strong></p>
+<p><code>172.16.254.1</code></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1718625ea4f5cc7ftplv.png"
+        data-srcset="./images/1718625ea4f5cc7ftplv.png, ./images/1718625ea4f5cc7ftplv.png 1.5x, ./images/1718625ea4f5cc7ftplv.png 2x"
+        data-sizes="auto"
+        alt="./images/1718625ea4f5cc7ftplv.png"
+        title="img" /></p>
+<h2 id="ipv6">IPv6</h2>
+<p>IPv6是Internet Protocol version 6的缩写，中文翻译为互联网通信协议（TCP/IP协议）第6版，通常简称为网际协议版6。IPv6具有比IPv4大得多的编码地址空间，用它来取代IPv4主要是为了解决IPv4地址枯竭问题，同时它也在其他方面对于IPv4有许多改进。</p>
+<p>其实，IPv6并不是新技术，从IPv6最早的工作组成立1992年到现在，已过去27年。在互联网技术的发展历程中，IPv6年龄甚至有些太大了。</p>
+<p>IPv6的“6”表示的是TCP/IP协议的第六个版本，IPv4的“4”表示的是TCP/IP协议的第四个版本。其实除了这两个版本，当然还有其它版本，TCP/IP协议其实从IPv1开始，到现在IPv10都已经出现了，这些不同版本之间并没有关联，也不是简单IP地址长度的长短。</p>
+<p>IPv6地址由八组、每组四位16进制数字组成，每组之间由&quot;：&ldquo;来分隔。</p>
+<p><strong>看个简单的例子：</strong></p>
+<blockquote>
+<p>2610:00f8:0c34:67f9:0200:83ff:fe94:4c36，每个“：”前后都是4位16进制的数字，共分隔成8组。</p></blockquote>
+<p><strong>如下图所示：</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/1718625ea3c38f7etplv-t2oaga2asx-jj-mark3024000q75.png"
+        data-srcset="images/1718625ea3c38f7etplv-t2oaga2asx-jj-mark3024000q75.png, images/1718625ea3c38f7etplv-t2oaga2asx-jj-mark3024000q75.png 1.5x, images/1718625ea3c38f7etplv-t2oaga2asx-jj-mark3024000q75.png 2x"
+        data-sizes="auto"
+        alt="images/1718625ea3c38f7etplv-t2oaga2asx-jj-mark3024000q75.png"
+        title="img" /></p>
+<p>**小知识：**如何查看手机或者电脑的网络是否支持IPv6呢？</p>
+<p>可以在你手机或者电脑上的浏览器中打开：<a href="https://link.juejin.cn/?target=http%3A%2F%2Fwww.52im.net%2FIpv6-test.com" target="_blank" rel="noopener noreffer ">Ipv6-test.com</a>，就像下图这样：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/1718625ea5c43adbtplv-t2oaga2asx-jj-mark3024000q75.png"
+        data-srcset="images/1718625ea5c43adbtplv-t2oaga2asx-jj-mark3024000q75.png, images/1718625ea5c43adbtplv-t2oaga2asx-jj-mark3024000q75.png 1.5x, images/1718625ea5c43adbtplv-t2oaga2asx-jj-mark3024000q75.png 2x"
+        data-sizes="auto"
+        alt="images/1718625ea5c43adbtplv-t2oaga2asx-jj-mark3024000q75.png"
+        title="img" /></p>
+<h3 id="为什么要使用ipv6">为什么要使用IPv6？</h3>
+<p>最主要的原因，就是地址数量不够用了。</p>
+<p>IPv4迄今为止已经使用了30多年。最早期的时候，互联网只是设计给美国军方用的，根本没有考虑到它会变得如此庞大，成为全球网络。</p>
+<p>尤其是进入21世纪后，随着计算机和智能手机的迅速普及，互联网开始爆发性发展，越来越多的上网设备出现，越来越多的人开始连接互联网。这就意味着，需要越来越多的IP地址。</p>
+<p>IPv4的地址总数是2的32次方，也就是约42.9亿个。而全球的网民总数早已超过这个数目。</p>
+<p>所以说，IPv4地址池接近枯竭，根本无法满足互联网发展的需要。人们迫切需要更高版本的IP协议，更大数量的IP地址池。（有点像固定电话号码升位。）</p>
+<h3 id="ipv6会带给我们什么">IPv6会带给我们什么？</h3>
+<p>首先，最重要的一点，就是前面所说的地址池扩容。IPv4的地址池是约42.9亿，IPv6能达到多少呢？</p>
+<p><strong>数量如下：</strong></p>
+<blockquote>
+<p>340282366920938463463374607431768211456个…</p></blockquote>
+<p>不用数了，太多了… 简单说，是2的128次方。</p>
+<table>
+  <thead>
+      <tr>
+          <th>协议类型</th>
+          <th>数量</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IPV4</td>
+          <td>2^32</td>
+      </tr>
+      <tr>
+          <td>IPV6</td>
+          <td>2^128</td>
+      </tr>
+  </tbody>
+</table>
+<p>这个数量，即使是给地球上每一颗沙子都分配一个IP，也是妥妥够用的。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/1718625ec9c61877tplv-t2oaga2asx-jj-mark3024000q75.png"
+        data-srcset="images/1718625ec9c61877tplv-t2oaga2asx-jj-mark3024000q75.png, images/1718625ec9c61877tplv-t2oaga2asx-jj-mark3024000q75.png 1.5x, images/1718625ec9c61877tplv-t2oaga2asx-jj-mark3024000q75.png 2x"
+        data-sizes="auto"
+        alt="images/1718625ec9c61877tplv-t2oaga2asx-jj-mark3024000q75.png"
+        title="img" /></p>
+<p>这个数量值是怎么得来的呢？还是它的地址位长决定的。</p>
+<p>如果以二进制来写，IPv6的地址是128位。不过，这样写显然不太方便（一行都写不下）。所以，通常用十六进制来写，也就缩短成32位（32位会分为8组，每组4位）。</p>
+<p><strong>下面就是一个标准、合法的IPv6地址示例：</strong></p>
+<blockquote>
+<p>2001:0db8:85a3:08d3:1319:8a2e:0370:7344</p></blockquote>
+<p>**注意：**IPv6的地址是可以简写的，每项数字前导的0可以省略。</p>
+<p><strong>例如，下面这个地址：</strong></p>
+<blockquote>
+<p>2001:0DB8:02de:0000:0000:0000:0000:0e13</p></blockquote>
+<p><strong>粉红的“0”就可以省略，变成：</strong></p>
+<blockquote>
+<p>2001: DB8:2de:0:0:0:0:e13</p></blockquote>
+<p><strong>如果有一组或连续几组都是0，那么可以简写成“::”，也就是：</strong></p>
+<blockquote>
+<p>2001: DB8:2de::e13</p></blockquote>
+<p>**注意：**一个IPv6地址，只能有一个“::”。</p>
+<p><strong>为什么？很简单，你看下面这四个地址，如果所有0全都缩写，会变成什么样？</strong></p>
+<blockquote>
+<p>2001:0000:0000:0000:0000:25de:0000:cade</p>
+<p>2001: 0000: 0000:0000:25de:0000:0000:cade</p>
+<p>2001: 0000: 0000:25de:0000:0000:0000:cade</p>
+<p>2001: 0000: 25de:0000:0000:0000:0000:cade</p></blockquote>
+<p>是的，都是2001::25de::cade，冲突了。所以，这个地址是非法的，不允许存在的。</p>
+<p>关于IPv6还有很多技术细节，因篇幅原因，不再赘述。</p>
+<p><strong>除了地址数量之外，IPv6还有很多优点，例如：</strong></p>
+<blockquote>
+<p>1）IPv6使用更小的路由表。使得路由器转发数据包的速度更快；</p>
+<p>2）IPv6增加了增强的组播支持以及对流的控制，对多媒体应用很有利，对服务质量（QoS）控制也很有利；</p>
+<p>3）IPv6加入了对自动配置的支持。这是对DHCP协议的改进和扩展，使得网络（尤其是局域网）的管理更加方便和快捷；</p>
+<p>4）IPv6具有更高的安全性。用户可以对网络层的数据进行加密并对IP报文进行校验，极大地增强了网络的安全性；</p>
+<p>5）IPv6具有更好的扩容能力。如果新的技术或应用需要时，IPV6允许协议进行扩充；</p>
+<p>6）IPv6具有更好的头部格式。IPV6使用新的头部格式，就简化和加速了路由选择过程，提高了效率；</p>
+<p>……</p></blockquote>
+<h3 id="ipv6的优点这么多为什么之前普及却这么慢">IPv6的优点这么多，为什么之前普及却这么慢？</h3>
+<p>IPv6优点这么多，为什么它问世已经20年了，还是没有完全替代IPv4呢？这里面的水就很深了。。。说白了，主要还是和利益有关。</p>
+<h4 id="nat这类技术让ipv4得以续命">NAT这类技术，让IPv4得以续命</h4>
+<p>如果按照本世纪初专家们的预测，我们IPv4的地址早已枯竭几万次了。但是，一直挺到现在，大家仍然还在用IPv4，对老百姓来说，并没有因为地址不够而无法上网。</p>
+<p>这是为什么呢？ 就是因为除了IPv6之外，我们还有一些技术，可以变相地缓解地址不足。</p>
+<p>例如NAT（Network Address Translation，网络地址转换）。</p>
+<p>NAT是什么意思？当我们在家里或公司上网时，你的电脑肯定有一个类似192.168.0.1的地址，这种地址属于私网地址，不属于公共的互联网地址。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/1718625f1d982f19tplv-t2oaga2asx-jj-mark3024000q75.png"
+        data-srcset="images/1718625f1d982f19tplv-t2oaga2asx-jj-mark3024000q75.png, images/1718625f1d982f19tplv-t2oaga2asx-jj-mark3024000q75.png 1.5x, images/1718625f1d982f19tplv-t2oaga2asx-jj-mark3024000q75.png 2x"
+        data-sizes="auto"
+        alt="images/1718625f1d982f19tplv-t2oaga2asx-jj-mark3024000q75.png"
+        title="img" /></p>
+<p>每一个小的局域网，都会使用一个网段的私网地址，在与外界连接时，再变换成公网地址。这样一来，几十个或几百个电脑，都只需要一个公网地址。</p>
+<p>甚至还可以私网套私网，NAT套NAT，一层一层套。这样一来，大大节约了公网IP地址数量。正因为如此，才让我们“续命”到了今天，不至于无法上网。</p>
+<p>但是，NAT这种方式也有很多缺点，虽然私网地址访问互联网地址方便，但互联网地址访问私网地址就困难了。很多服务，都会受到限制，你只能通过复杂的设置才能解决，也会影响网络的处理效率。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/1718625f5dc27a64tplv-t2oaga2asx-jj-mark3024000q75.png"
+        data-srcset="images/1718625f5dc27a64tplv-t2oaga2asx-jj-mark3024000q75.png, images/1718625f5dc27a64tplv-t2oaga2asx-jj-mark3024000q75.png 1.5x, images/1718625f5dc27a64tplv-t2oaga2asx-jj-mark3024000q75.png 2x"
+        data-sizes="auto"
+        alt="images/1718625f5dc27a64tplv-t2oaga2asx-jj-mark3024000q75.png"
+        title="img" /></p>
+<h4 id="升级ipv6涉及运营商的利益">升级IPv6涉及运营商的利益</h4>
+<p>物以稀为贵，地址越稀缺，就越值钱。掌握地址的人，就越开心。谁开心？运营商和ISP（互联网服务提供商）。</p>
+<p>他们就像是经销商，从上游（互联网域名与号码分配机构，即ICANN）申请到IP地址，再卖给下游用户。稀缺没关系，反正，他一定能赚取更多的差价。</p>
+<p>如果大家去找运营商或ISP买带宽，或者租赁云服务，带公共地址的，一定比不带公共地址的贵很多很多。</p>
+<p>除了地址可以赚钱之外，如果升级支持IPv6，对运营商和ISP来说，也意味着很大的资金投入。现在新设备基本都是支持的，但毕竟还是有一些老设备，如果在使用寿命到期之前就换，就是亏钱。</p>
+<p>所以，运营商和ISP都没有动力去启用IPv6。</p>
+<p>至于设备商或手机电脑厂商，出于提前考虑，早已普遍支持了IPv6，意见并不是很大，也决定不了什么。必竟，提供基础设施服务的运营商们更强势。</p>
+<h2 id="如何访问ipv6">如何访问ipv6</h2>
+<h3 id="路由器配置ipv6">路由器配置ipv6</h3>
+<p>各家路由器配置不一样，请参照具体设置</p>
+<p>核心是开启上层设备的ipv6</p>
+<h3 id="电脑配置ipv6">电脑配置ipv6</h3>
+<ol>
+<li>插入网线，并在电脑端开启IPv6协议</li>
+</ol>
+<p>（1）打开网络和internet设置</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/75d4de46-7087-4ac7-890d-e2f7076f572f.jpg"
+        data-srcset="images/75d4de46-7087-4ac7-890d-e2f7076f572f.jpg, images/75d4de46-7087-4ac7-890d-e2f7076f572f.jpg 1.5x, images/75d4de46-7087-4ac7-890d-e2f7076f572f.jpg 2x"
+        data-sizes="auto"
+        alt="images/75d4de46-7087-4ac7-890d-e2f7076f572f.jpg"
+        title="img" /></p>
+<p>（2） 点击以太网——更改适配器选项</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/62a43a1c-49ce-4151-915c-d78a93f9b0c8.jpg"
+        data-srcset="images/62a43a1c-49ce-4151-915c-d78a93f9b0c8.jpg, images/62a43a1c-49ce-4151-915c-d78a93f9b0c8.jpg 1.5x, images/62a43a1c-49ce-4151-915c-d78a93f9b0c8.jpg 2x"
+        data-sizes="auto"
+        alt="images/62a43a1c-49ce-4151-915c-d78a93f9b0c8.jpg"
+        title="img" /></p>
+<p>（3） 右键点击本地连接——属性</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/08b024ba-cef5-442e-8c24-901d5e15d03b.jpg"
+        data-srcset="images/08b024ba-cef5-442e-8c24-901d5e15d03b.jpg, images/08b024ba-cef5-442e-8c24-901d5e15d03b.jpg 1.5x, images/08b024ba-cef5-442e-8c24-901d5e15d03b.jpg 2x"
+        data-sizes="auto"
+        alt="images/08b024ba-cef5-442e-8c24-901d5e15d03b.jpg"
+        title="img" /></p>
+<p>（4） 勾选Internet协议版本6（TCP/IPv6）,如果没有该选项则表明本设备不支持IPv6协议</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/4bc986a0-facc-4f89-8aab-1f11d90f0ceb.jpg"
+        data-srcset="images/4bc986a0-facc-4f89-8aab-1f11d90f0ceb.jpg, images/4bc986a0-facc-4f89-8aab-1f11d90f0ceb.jpg 1.5x, images/4bc986a0-facc-4f89-8aab-1f11d90f0ceb.jpg 2x"
+        data-sizes="auto"
+        alt="images/4bc986a0-facc-4f89-8aab-1f11d90f0ceb.jpg"
+        title="img" /></p>
+<p>（5） 双击Internet协议版本6（TCP/IPv6），进入配置界面，选择自动获取IPv6地址和自动获得DNS服务器地址</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/987278a2-cc55-461e-8340-858fcad3b401.jpg"
+        data-srcset="images/987278a2-cc55-461e-8340-858fcad3b401.jpg, images/987278a2-cc55-461e-8340-858fcad3b401.jpg 1.5x, images/987278a2-cc55-461e-8340-858fcad3b401.jpg 2x"
+        data-sizes="auto"
+        alt="images/987278a2-cc55-461e-8340-858fcad3b401.jpg"
+        title="img" /></p>
+<p>经以上配置，cmd的ipconfig中有ipv6地址和临时ipv6地址，可以通过命令关闭临时ipv6地址</p>
+<p><code>netsh interface ipv6 set privacy state=disable</code></p>
+<p>若想开启：</p>
+<p><code>netsh interface ipv6 set privacy state=enable</code></p>
+<h3 id="测试">测试</h3>
+<h5 id="电脑测试test-ipv6com">电脑测试test-ipv6.com</h5>
+<p><a href="http://test-ipv6.com/" target="_blank" rel="noopener noreffer ">http://test-ipv6.com/</a></p>
+<h5 id="手机流量ping电脑ipv6">手机流量ping电脑ipv6</h5>
+<p>如果ping不通，尝试</p>
+<ul>
+<li>手机只用流量去ping</li>
+<li>光猫防火墙开放ipv6</li>
+<li>电脑系统防火墙开放ipv6</li>
+</ul>
+<p>如果都不行，需要开启telnet修改光猫</p>
+<h3 id="外部访问">外部访问</h3>
+<p>以某个服务为例</p>
+<p><code>http://[240e:30e8:30e8:30e8:30e8:30e8:30e8:1569]:8080/doc.html</code></p>
+<p>URL需用方括号包裹地址（如<code>https://[::1]</code>）‌</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-07-14</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%9F%BA%E4%BA%8Eyolo%E7%AE%97%E6%B3%95%E7%9A%84%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E6%B5%8B/" class="prev" rel="prev" title="基于yolo算法的目标识别与检测"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>基于yolo算法的目标识别与检测</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><span data-hk-page="current"> - </span></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

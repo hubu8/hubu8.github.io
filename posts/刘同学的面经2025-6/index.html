@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  12965 ,
+        },"genre": "posts","wordcount":  24816 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12965 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 26 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 24816 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 50 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -141,18 +141,151 @@
     </li>
     <li><a href="#百度-java">百度-Java</a>
       <ul>
-        <li><a href="#百度一面">百度一面</a></li>
-        <li><a href="#redis的一致性hash">redis的一致性hash</a></li>
-        <li><a href="#redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</a></li>
-        <li><a href="#分布式锁-zk-redis">分布式锁 zk redis</a></li>
-        <li><a href="#zk优缺点">zk优缺点</a></li>
-        <li><a href="#网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</a></li>
-        <li><a href="#分析性能问题思路">分析性能问题思路</a></li>
-        <li><a href="#找最高点算法-一个for">找最高点算法 一个for</a></li>
-        <li><a href="#原地交换算法两个for">原地交换算法两个for</a></li>
-        <li><a href="#链表倒数500经典双指针闭眼秒">链表倒数500，经典双指针闭眼秒。</a></li>
-        <li><a href="#ip范围的优化-zset-redis">ip范围的优化 zset redis</a></li>
-        <li><a href="#百度二面">百度二面</a></li>
+        <li><a href="#百度一面">百度一面</a>
+          <ul>
+            <li><a href="#redis一致性hash算法">redis：一致性hash算法</a>
+              <ul>
+                <li><a href="#容错性">容错性</a></li>
+                <li><a href="#扩展性">扩展性</a></li>
+                <li><a href="#虚拟节点">虚拟节点</a></li>
+              </ul>
+            </li>
+            <li><a href="#redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</a>
+              <ul>
+                <li><a href="#1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</a></li>
+                <li><a href="#2-基于固定窗口计数器的简化实现">2. 基于固定窗口计数器的简化实现</a></li>
+                <li><a href="#3-关键注意事项">3. 关键注意事项</a>
+                  <ul>
+                    <li><a href="#31-原子性保障">3.1 原子性保障</a></li>
+                    <li><a href="#32-时间同步">3.2 时间同步</a></li>
+                    <li><a href="#33-性能优化">3.3 性能优化</a></li>
+                    <li><a href="#34-错误处理">3.4 错误处理</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#分布式锁-zk-redis">分布式锁 zk redis</a>
+              <ul>
+                <li><a href="#基于-redis-的分布式锁"><strong>基于 Redis 的分布式锁</strong></a></li>
+                <li><a href="#基于-zookeeper-的分布式锁">基于 ZooKeeper 的分布式锁</a></li>
+                <li><a href="#两种方式对比与总结">两种方式对比与总结</a></li>
+              </ul>
+            </li>
+            <li><a href="#网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</a>
+              <ul>
+                <li><a href="#一核心组件的角色定位">一、核心组件的角色定位</a></li>
+                <li><a href="#二两种网关的高可用实现方式">二、两种网关的高可用实现方式</a>
+                  <ul>
+                    <li><a href="#1-nginx-的高可用方案">1. Nginx 的高可用方案</a></li>
+                    <li><a href="#2-zuulspring-cloud-gateway-的高可用方案">2. Zuul/Spring Cloud Gateway 的高可用方案</a></li>
+                  </ul>
+                </li>
+                <li><a href="#三联合架构nginx--网关-实现端到端高可用">三、联合架构：Nginx + 网关 实现端到端高可用</a></li>
+                <li><a href="#四核心总结">四、核心总结</a></li>
+              </ul>
+            </li>
+            <li><a href="#分析性能问题思路">分析性能问题思路</a>
+              <ul>
+                <li><a href="#明确问题定义性能指标与场景"><strong>明确问题：定义性能指标与场景</strong></a></li>
+                <li><a href="#数据收集全链路指标采集">数据收集：全链路指标采集</a></li>
+                <li><a href="#中间件层数据库--缓存--消息队列">中间件层（数据库 / 缓存 / 消息队列）</a></li>
+              </ul>
+            </li>
+            <li><a href="#找最高点算法-一个for">找最高点算法 一个for</a>
+              <ul>
+                <li><a href="#一维数组的峰值查找">一维数组的峰值查找</a></li>
+                <li><a href="#二维网格的峰值查找">二维网格的峰值查找</a></li>
+              </ul>
+            </li>
+            <li><a href="#原地交换算法两个for">原地交换算法两个for</a></li>
+            <li><a href="#链表倒数500经典双指针">链表倒数500，经典双指针。</a>
+              <ul>
+                <li><a href="#原理">原理</a></li>
+              </ul>
+            </li>
+            <li><a href="#ip范围的优化-zset-redis">ip范围的优化	 zset redis</a>
+              <ul>
+                <li><a href="#ip-转长整型long"><strong>IP 转长整型（Long）</strong></a></li>
+                <li><a href="#ip-范围查询"><strong>IP 范围查询</strong></a></li>
+                <li><a href="#zset有序集合数据结构"><strong>ZSet:有序集合数据结构</strong></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#百度二面">百度二面</a>
+          <ul>
+            <li><a href="#字符串反转-有多少方法">字符串反转 有多少方法</a></li>
+            <li><a href="#快速排序">快速排序</a></li>
+            <li><a href="#字符串常量池-创建了几个对象">字符串常量池 创建了几个对象</a>
+              <ul>
+                <li><a href="#string-a--abc">String a = &ldquo;abc&rdquo;</a></li>
+                <li><a href="#string-a--new-stringabc">String a = new String(&ldquo;abc&rdquo;)</a></li>
+              </ul>
+            </li>
+            <li><a href="#集合stream解决问题-时间内filter金额最大-前五limit映射为一个属性map">集合stream解决问题 	时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</a></li>
+            <li><a href="#线程池参数-根据什么配置">线程池参数 根据什么配置</a>
+              <ul>
+                <li><a href="#一核心参数设置依据">一、核心参数设置依据</a></li>
+                <li><a href="#二动态调优技巧">二、动态调优技巧</a></li>
+                <li><a href="#三其他关键参数">三、其他关键参数</a></li>
+              </ul>
+            </li>
+            <li><a href="#如何创建线程">如何创建线程</a>
+              <ul>
+                <li><a href="#runnable">Runnable</a></li>
+                <li><a href="#callable和future-可以返回结果">Callable和Future （可以返回结果）</a></li>
+                <li><a href="#thread">Thread</a></li>
+                <li><a href="#completablefuture">CompletableFuture</a></li>
+                <li><a href="#线程池">线程池</a></li>
+                <li><a href="#lambda表达式">Lambda表达式</a></li>
+              </ul>
+            </li>
+            <li><a href="#thredlocal">thredlocal</a>
+              <ul>
+                <li><a href="#核心原理">核心原理</a></li>
+                <li><a href="#主要特点">主要特点</a></li>
+                <li><a href="#使用场景">使用场景</a></li>
+              </ul>
+            </li>
+            <li><a href="#synchronized-和-reentrantlock-区别-什么时候使用">synchronized 和 ReentrantLock 区别, 什么时候使用</a>
+              <ul>
+                <li><a href="#核心区别分析">核心区别分析</a></li>
+                <li><a href="#适用场景建议">适用场景建议</a></li>
+                <li><a href="#最佳实践提示">最佳实践提示</a></li>
+              </ul>
+            </li>
+            <li><a href="#jvm-垃圾处理器">jvm 垃圾处理器</a></li>
+            <li><a href="#redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</a></li>
+            <li><a href="#分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</a></li>
+            <li><a href="#mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</a>
+              <ul>
+                <li><a href="#执行计划参数解读">执行计划参数解读</a></li>
+                <li><a href="#优化建议">优化建议</a></li>
+                <li><a href="#性能监控方法">性能监控方法</a></li>
+              </ul>
+            </li>
+            <li><a href="#什么是跨域怎么解决跨域nginx和gateway怎么设置">什么是跨域，怎么解决跨域，nginx和gateway怎么设置？</a>
+              <ul>
+                <li><a href="#什么是跨域">什么是跨域</a></li>
+                <li><a href="#跨域请求流程">跨域请求流程</a></li>
+              </ul>
+            </li>
+            <li><a href="#springboot常用的注解">Springboot常用的注解</a></li>
+            <li><a href="#zab和raft区别">zab和raft区别</a>
+              <ul>
+                <li><a href="#核心机制对比">核心机制对比</a>
+                  <ul>
+                    <li><a href="#选举机制差异">选举机制差异</a></li>
+                    <li><a href="#日志处理差异">日志处理差异</a></li>
+                  </ul>
+                </li>
+                <li><a href="#协议阶段与性能特点">协议阶段与性能特点</a></li>
+                <li><a href="#适用场景对比">适用场景对比</a></li>
+                <li><a href="#相同点总结">相同点总结</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#滴滴-java">滴滴-Java</a>
@@ -783,37 +916,1431 @@
 <p>通过 ‌<strong>Channel-Buffer-Selector 三角协作</strong>‌，Java NIO 在同等资源下实现 10 倍于传统 I/O 的并发能力，成为高性能网络应用的基石。</p>
 <h2 id="百度-java">百度-Java</h2>
 <h3 id="百度一面">百度一面</h3>
-<h3 id="redis的一致性hash">redis的一致性hash</h3>
-<h3 id="redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</h3>
-<h3 id="分布式锁-zk-redis">分布式锁 zk redis</h3>
-<h3 id="zk优缺点">zk优缺点</h3>
-<h3 id="网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</h3>
-<h3 id="分析性能问题思路">分析性能问题思路</h3>
-<h3 id="找最高点算法-一个for">找最高点算法 一个for</h3>
-<h3 id="原地交换算法两个for">原地交换算法两个for</h3>
-<h3 id="链表倒数500经典双指针闭眼秒">链表倒数500，经典双指针闭眼秒。</h3>
-<h3 id="ip范围的优化-zset-redis">ip范围的优化 zset redis</h3>
+<h4 id="redis一致性hash算法">redis：一致性hash算法</h4>
+<p>一致哈希 是一种特殊的哈希算法。在使用一致哈希算法后，哈希表槽位数（大小）的改变平均只需要对 K/n 个关键字重新映射，其中K是关键字的数量， n是槽位数量。然而在传统的哈希表中，添加或删除一个槽位的几乎需要对所有关键字进行重新映射。</p>
+<p>简单的说，一致性哈希是将整个哈希值空间组织成一个虚拟的圆环，如假设哈希函数H的值空间为0-2^32-1（哈希值是32位无符号整形），整个哈希空间环如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847101.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847101.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847101.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847101.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847101.png"
+        title="哈希环" width="407" height="468" /></p>
+<p>整个空间按顺时针方向组织，0和2^32-1在零点中方向重合。</p>
+<p>接下来，把服务器按照IP或主机名作为关键字进行哈希，这样就能确定其在哈希环的位置。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847102.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847102.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847102.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847102.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847102.png"
+        title="哈希环2" width="663" height="498" /></p>
+<p>然后，我们就可以使用哈希函数H计算值为key的数据在哈希环的具体位置h，根据h确定在环中的具体位置，从此位置沿顺时针滚动，遇到的第一台服务器就是其应该定位到的服务器。</p>
+<p>例如我们有A、B、C、D四个数据对象，经过哈希计算后，在环空间上的位置如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847103.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847103.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847103.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847103.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847103.png"
+        title="哈希环3" width="628" height="500" /></p>
+<p>根据一致性哈希算法，数据A会被定为到Server 1上，数据B被定为到Server 2上，而C、D被定为到Server 3上。</p>
+<h5 id="容错性">容错性</h5>
+<p>假如RedisService2宕机了，那么会怎样呢？</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847104.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847104.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847104.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847104.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847104.png"
+        title="Redis2宕机" width="592" height="520" /></p>
+<p>那么，数据B对应的节点保存到RedisService3中。因此，其中一台宕机后，干扰的只有前面的数据（原数据被保存到顺时针的下一个服务器），而不会干扰到其他的数据。</p>
+<h5 id="扩展性">扩展性</h5>
+<p>下面考虑另一种情况，假如增加一台服务器Redis4，具体位置如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847105.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847105.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847105.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847105.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847105.png"
+        title="RedisServicee4" width="634" height="592" /></p>
+<p>原本数据C是保存到Redis3中，但由于增加了Redis4，数据C被保存到Redis4中。干扰的也只有Redis3而已，其他数据不会受到影响。</p>
+<p>因此，一致性哈希算法对于节点的增减都只需重定位换空间的一小部分即可，具有较好的容错性和可扩展性</p>
+<h5 id="虚拟节点">虚拟节点</h5>
+<p>前面部分都是讲述到Redis节点较多和节点分布较为均衡的情况，如果节点较少就会出现节点分布不均衡造成数据倾斜问题。</p>
+<p>例如，我们的的系统有两台Redis，分布的环位置如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847106.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847106.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847106.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847106.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847106.png"
+        title="哈希环" width="698" height="626" /></p>
+<p>这会产生一种情况，Redis2的hash范围比Redis1的hash范围大，导致数据大部分都存储在Redis2中，数据存储不平衡。</p>
+<p>为了解决这种数据存储不平衡的问题，一致性哈希算法引入了<strong>虚拟节点机制</strong>，即对每个节点计算多个哈希值，每个计算结果位置都放置在对应节点中，这些节点<strong>称为虚拟节点</strong>。</p>
+<p>具体做法可以在服务器IP或主机名的后面增加编号来实现，例如上面的情况，可以为每个服务节点增加三个虚拟节点，于是可以分为 RedisService1#1、 RedisService1#2、 RedisService1#3、 RedisService2#1、 RedisService2#2、 RedisService2#3，具体位置如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847107.png"
+        data-srcset="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847107.png, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847107.png 1.5x, /posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847107.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847107.png"
+        title="虚拟节点" width="771" height="668" /></p>
+<p>对于数据定位的hash算法仍然不变，只是增加了虚拟节点到实际节点的映射。例如，数据C保存到虚拟节点Redis1#2，实际上数据保存到Redis1中。这样，就能解决服务节点少时数据不平均的问题。在实际应用中，通常将虚拟节点数设置为<strong>32甚至更大</strong>，因此即使<strong>很少的服务节点</strong>也能做到相对<strong>均匀的数据分布</strong>。</p>
+<h4 id="redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</h4>
+<p>在 Redis 中使用 Lua 脚本实现限流时，为避免限流失败（例如并发问题、原子性破坏），需确保脚本的原子性和正确性。以下是具体实现方法和示例：</p>
+<h5 id="1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</h5>
+<p>令牌桶算法允许突发流量，适合大多数场景。以下是一个原子性的 Lua 脚本实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- KEYS[1]: 限流标识（如用户ID、IP）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[1]: 令牌桶容量（burst）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[2]: 令牌生成速率（replenish rate/秒）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[3]: 当前时间戳（毫秒）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[4]: 请求需要的令牌数（默认1）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">tokens_key</span> <span class="o">=</span> <span class="n">KEYS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">..</span> <span class="s2">&#34;:tokens&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">timestamp_key</span> <span class="o">=</span> <span class="n">KEYS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">..</span> <span class="s2">&#34;:timestamp&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 获取当前令牌数和最后更新时间</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">tokens_key</span><span class="p">)</span> <span class="ow">or</span> <span class="n">ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">last_tokens</span> <span class="o">=</span> <span class="n">tokens</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">last_refreshed</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">timestamp_key</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">now</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">requested</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">capacity</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 计算从上次更新到现在应生成的令牌数</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">math.max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">last_refreshed</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">filled_tokens</span> <span class="o">=</span> <span class="n">math.min</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">tokens</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">*</span> <span class="n">rate</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">allowed</span> <span class="o">=</span> <span class="n">filled_tokens</span> <span class="o">&gt;=</span> <span class="n">requested</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">new_tokens</span> <span class="o">=</span> <span class="n">filled_tokens</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 仅在允许请求或令牌数有变化时更新</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">allowed</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">new_tokens</span> <span class="o">=</span> <span class="n">filled_tokens</span> <span class="o">-</span> <span class="n">requested</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 原子性更新令牌数和时间戳</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">last_tokens</span> <span class="o">~=</span> <span class="n">new_tokens</span> <span class="ow">or</span> <span class="p">(</span><span class="n">allowed</span> <span class="ow">and</span> <span class="n">last_tokens</span> <span class="o">==</span> <span class="n">new_tokens</span><span class="p">)</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="n">tokens_key</span><span class="p">,</span> <span class="n">new_tokens</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="n">timestamp_key</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;pexpire&#39;</span><span class="p">,</span> <span class="n">tokens_key</span><span class="p">,</span> <span class="n">math.ceil</span><span class="p">((</span><span class="n">capacity</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;pexpire&#39;</span><span class="p">,</span> <span class="n">timestamp_key</span><span class="p">,</span> <span class="n">math.ceil</span><span class="p">((</span><span class="n">capacity</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 返回结果：是否允许访问，剩余令牌数</span>
+</span></span><span class="line"><span class="cl"><span class="kr">return</span> <span class="p">{</span> <span class="n">allowed</span> <span class="ow">and</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">new_tokens</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2-基于固定窗口计数器的简化实现">2. 基于固定窗口计数器的简化实现</h5>
+<p>适合严格限制请求频率的场景：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- KEYS[1]: 限流标识</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[1]: 时间窗口（秒）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[2]: 最大请求次数</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- ARGV[3]: 当前时间戳（秒）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KEYS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">window</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">max_requests</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">current_time</span> <span class="o">=</span> <span class="n">tonumber</span><span class="p">(</span><span class="n">ARGV</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 计算窗口开始时间</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">current_time</span> <span class="o">-</span> <span class="n">window</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 移除窗口外的请求记录</span>
+</span></span><span class="line"><span class="cl"><span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;zremrangebyscore&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">start_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 获取当前窗口内的请求数</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">count</span> <span class="o">=</span> <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;zcard&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 判断是否超出限制</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">allowed</span> <span class="o">=</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">max_requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 如果允许，则添加当前请求时间到有序集合</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">allowed</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;zadd&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">current_time</span><span class="p">,</span> <span class="n">current_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">-- 设置过期时间，避免内存泄漏</span>
+</span></span><span class="line"><span class="cl">  <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;expire&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 返回结果：是否允许访问，剩余次数</span>
+</span></span><span class="line"><span class="cl"><span class="kr">return</span> <span class="p">{</span> <span class="n">allowed</span> <span class="ow">and</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">max_requests</span> <span class="o">-</span> <span class="n">count</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="3-关键注意事项">3. 关键注意事项</h5>
+<h6 id="31-原子性保障">3.1 原子性保障</h6>
+<ul>
+<li><strong>单脚本执行</strong>：Redis 保证 Lua 脚本执行的原子性，无需担心并发问题。</li>
+<li><strong>避免外部依赖</strong>：脚本内不要调用可能阻塞的 Redis 命令（如 <code>KEYS</code>）。</li>
+</ul>
+<h6 id="32-时间同步">3.2 时间同步</h6>
+<ul>
+<li>
+<p><strong>使用 Redis 时间</strong>：避免客户端时间与 Redis 服务器时间不一致，可改用 <code>redis.call('time')</code> 获取服务器时间：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">current_time</span> <span class="o">=</span> <span class="n">redis.call</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1">-- 获取秒级时间</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h6 id="33-性能优化">3.3 性能优化</h6>
+<ul>
+<li><strong>批量处理</strong>：对于需要频繁调用的限流场景，可将多个操作合并到一个脚本中。</li>
+<li><strong>缓存预热</strong>：对热点 key 提前初始化，避免首次调用时的额外开销。</li>
+</ul>
+<h6 id="34-错误处理">3.4 错误处理</h6>
+<ul>
+<li><strong>返回明确状态</strong>：脚本返回 <code>{允许访问标志, 剩余令牌/次数}</code>，便于客户端处理。</li>
+<li><strong>异常处理</strong>：在客户端代码中增加重试逻辑（如网络波动导致的执行失败）。</li>
+</ul>
+<p>总结：</p>
+<ol>
+<li><strong>限流机制</strong>：
+<ul>
+<li>使用令牌桶算法，支持突发流量和稳定速率控制</li>
+<li>通过 Lua 脚本保证令牌计算和状态更新的原子性</li>
+</ul>
+</li>
+<li><strong>过期时间管理</strong>：
+<ul>
+<li>初始过期时间防止冷数据占用内存</li>
+<li>动态续期延长热点数据生命周期</li>
+<li>最大过期时间避免无限期占用资源</li>
+</ul>
+</li>
+<li><strong>自动续期策略</strong>：
+<ul>
+<li>基于令牌使用率触发续期，避免频繁续期</li>
+<li>使用客户端 ID 实现续期权竞争，防止多个客户端同时续期</li>
+<li>后台线程定期检查并执行续期操作</li>
+</ul>
+</li>
+<li><strong>可靠性保障</strong>：
+<ul>
+<li>守护线程确保续期逻辑不影响主业务流程</li>
+<li>Redis 过期机制确保异常情况下资源自动释放</li>
+<li>分布式环境下的续期权竞争通过 Lua 脚本原子性解决</li>
+</ul>
+</li>
+</ol>
+<h4 id="分布式锁-zk-redis">分布式锁 zk redis</h4>
+<h5 id="基于-redis-的分布式锁"><strong>基于 Redis 的分布式锁</strong></h5>
+<p><strong>实现原理</strong></p>
+<p>利用 Redis 的原子命令（如 <code>SET key value NX PX</code>）实现锁的抢占，通过过期时间避免死锁，使用 Lua 脚本保证释放锁的原子性。</p>
+<p><strong>核心逻辑</strong>：</p>
+<ul>
+<li>加锁：通过 <code>NX</code>（仅当 key 不存在时设置）保证只有一个客户端能成功设置 key，<code>PX</code> 为锁设置过期时间（防止客户端崩溃后锁无法释放）。</li>
+<li>解锁：通过 Lua 脚本先校验锁的持有者（避免误释放他人的锁），再删除 key，确保操作原子性。</li>
+</ul>
+<p><strong>优缺点</strong></p>
+<ul>
+<li>优点：
+<ul>
+<li>性能极高（Redis 单节点 QPS 可达 10W+），适合高并发场景；</li>
+<li>实现简单，依赖少，部署成本低。</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>一致性较弱：主从架构下，主节点宕机可能导致 “锁丢失”（从节点未同步锁信息）；</li>
+<li>过期时间难设置：若业务执行时间超过过期时间，可能导致锁提前释放。</li>
+</ul>
+</li>
+<li><strong>适用场景</strong>：高并发、短事务（如秒杀、接口限流），可容忍极少量锁失效的场景。</li>
+</ul>
+<h5 id="基于-zookeeper-的分布式锁">基于 ZooKeeper 的分布式锁</h5>
+<p><strong>实现原理</strong></p>
+<p>利用 ZooKeeper 的<strong>临时顺序节点</strong>和<strong>Watcher 机制</strong>实现公平锁：</p>
+<p><strong>核心逻辑</strong>：</p>
+<ul>
+<li>加锁：客户端在指定路径下创建临时顺序节点（节点名含递增序号），序号最小的节点持有者获得锁；其他节点监听前一个节点的删除事件（等待锁释放）。</li>
+<li>解锁：客户端删除自己的节点，触发下一个节点的 Watcher 事件，唤醒后续等待者。</li>
+<li>自动释放：若客户端崩溃，临时节点会因会话超时自动删除，避免死锁。</li>
+</ul>
+<p><strong>优缺点</strong></p>
+<ul>
+<li>优点：
+<ul>
+<li>强一致性：基于 ZooKeeper 的 ZAB 协议，锁的创建和释放具有强一致性，无锁丢失风险；</li>
+<li>公平性：通过顺序节点保证 “先来先服务”，避免饥饿问题；</li>
+<li>可靠性：临时节点自动释放，无需手动设置过期时间。</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>性能较低：依赖 ZooKeeper 集群的磁盘写入和网络通信，QPS 通常在 1000 左右；</li>
+<li>实现复杂：需处理 Watcher 事件和会话管理（通常依赖 Curator 框架简化）。</li>
+</ul>
+</li>
+<li><strong>适用场景</strong>：长事务、强一致性要求（如分布式事务、数据同步），或需要公平锁的场景。</li>
+</ul>
+<h5 id="两种方式对比与总结">两种方式对比与总结</h5>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>Redis 锁</th>
+          <th>ZooKeeper 锁</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>一致性</td>
+          <td>最终一致性（可能丢失锁）</td>
+          <td>强一致性（ZAB 协议保证）</td>
+      </tr>
+      <tr>
+          <td>性能</td>
+          <td>高（适合高并发）</td>
+          <td>中（适合低并发长事务）</td>
+      </tr>
+      <tr>
+          <td>公平性</td>
+          <td>不保证（需额外设计）</td>
+          <td>保证（顺序节点天然公平）</td>
+      </tr>
+      <tr>
+          <td>实现复杂度</td>
+          <td>简单（依赖原子命令）</td>
+          <td>复杂（依赖框架简化）</td>
+      </tr>
+      <tr>
+          <td>典型场景</td>
+          <td>秒杀、限流、高频短操作</td>
+          <td>分布式事务、数据同步</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>总结</strong>：分布式锁的核心是解决 “跨进程、跨机器的资源互斥”，Redis 锁侧重性能，ZooKeeper 锁侧重一致性，需根据业务的并发量、一致性要求和事务时长选择。</p>
+<h4 id="网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</h4>
+<h5 id="一核心组件的角色定位">一、核心组件的角色定位</h5>
+<ul>
+<li><strong>Nginx</strong>：高性能反向代理服务器，工作在 TCP/HTTP 层，主要负责 <strong>入口流量转发、负载均衡、静态资源缓存、SSL 终结</strong> 等，是系统的 “前端网关”。</li>
+<li><strong>Zuul/Spring Cloud Gateway</strong>：API 网关（应用层网关），工作在应用层，基于业务逻辑实现 <strong>动态路由、服务过滤（鉴权 / 限流）、负载均衡、熔断降级</strong> 等，是微服务间的 “流量中枢”。</li>
+</ul>
+<h5 id="二两种网关的高可用实现方式">二、两种网关的高可用实现方式</h5>
+<h6 id="1-nginx-的高可用方案">1. Nginx 的高可用方案</h6>
+<p>Nginx 作为系统入口，其单点故障会导致整个系统不可用，核心是 <strong>消除单点、保证转发连续性</strong>。</p>
+<ul>
+<li>
+<p><strong>（1）集群部署 + 主从切换</strong></p>
+<ul>
+<li>多实例部署：同时启动多个 Nginx 实例（至少 2 个），通过负载均衡器（如 F5）或 DNS 轮询将流量分发到不同实例，避免单实例压力过大或故障。</li>
+<li>主从热备（基于 Keepalived）：
+<ul>
+<li>主节点（Master）处理流量，从节点（Backup）实时监控主节点状态；</li>
+<li>当主节点故障时，从节点通过 VRRP 协议抢占 VIP（虚拟 IP），自动接管流量，切换时间通常在 1-3 秒内。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>（2）配置优化与容错</strong></p>
+<ul>
+<li>
+<p>健康检查：通过ngx_http_upstream_module配置后端服务的健康检查（max_fails/fail_timeout），自动剔除故障节点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">upstream</span> <span class="s">backend</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kn">server</span> <span class="n">10.0.0.1</span><span class="p">:</span><span class="mi">8080</span> <span class="s">max_fails=3</span> <span class="s">fail_timeout=10s</span><span class="p">;</span>  <span class="c1"># 3次失败后标记为不可用，10秒后重试
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kn">server</span> <span class="n">10.0.0.2</span><span class="p">:</span><span class="mi">8080</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>限流与降级：通过<code>ngx_http_limit_req_module</code>限制每秒请求数，避免流量洪峰压垮后端；对静态资源（如图片、JS）本地缓存，减少后端依赖。</p>
+</li>
+<li>
+<p>配置热更新：使用<code>nginx -s reload</code>实现配置变更不中断服务（新进程启动后，旧进程处理完现有请求再退出）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="2-zuulspring-cloud-gateway-的高可用方案">2. Zuul/Spring Cloud Gateway 的高可用方案</h6>
+<p>API 网关作为微服务的 “流量入口”，需保证 <strong>服务路由的连续性、业务逻辑的稳定性</strong>，核心是 <strong>集群化 + 动态容错</strong>。</p>
+<ul>
+<li>
+<p><strong>（1）集群部署 + 服务发现</strong></p>
+<ul>
+<li>多实例部署：启动多个网关实例（如 3 个），注册到服务注册中心（Eureka/Nacos），通过注册中心的健康检查剔除故障实例。</li>
+<li>负载均衡：前端 Nginx 或服务注册中心（如 Ribbon）将流量分发到健康的网关实例，避免单实例过载。</li>
+</ul>
+</li>
+<li>
+<p><strong>（2）容错与熔断</strong></p>
+<ul>
+<li>
+<p>熔断降级：集成 Hystrix（Zuul）或 Resilience4j（Gateway），当后端服务超时 / 异常时，快速返回降级响应（如默认数据），避免网关被拖垮。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Gateway 熔断示例（application.yml）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">gateway</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">routes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">user</span><span class="o">-</span><span class="n">service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">uri</span><span class="p">:</span><span class="w"> </span><span class="n">lb</span><span class="p">:</span><span class="c1">//user-service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">predicates</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="o">-</span><span class="w"> </span><span class="n">Path</span><span class="o">=/</span><span class="n">user</span><span class="o">/**</span><span class="n">filters</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">CircuitBreaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="n">args</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">userServiceCircuitBreaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">fallbackUri</span><span class="p">:</span><span class="w"> </span><span class="n">forward</span><span class="p">:</span><span class="o">/</span><span class="n">fallback</span><span class="o">/</span><span class="n">user</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">降级路径</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>限流控制：基于令牌桶 / 漏桶算法实现接口级限流（如 Gateway 的<code>RequestRateLimiter</code>过滤器），防止恶意请求冲击后端服务。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>（3）动态配置与监控</strong></p>
+<ul>
+<li>动态路由：通过 Nacos/Apollo 配置中心实时更新路由规则，无需重启网关实例。</li>
+<li>监控告警：集成 Prometheus + Grafana 监控网关的 QPS、响应时间、错误率，结合告警机制（如 AlertManager）及时发现异常。</li>
+</ul>
+</li>
+</ul>
+<h5 id="三联合架构nginx--网关-实现端到端高可用">三、联合架构：Nginx + 网关 实现端到端高可用</h5>
+<p>实际分布式系统中，通常将 Nginx 与 API 网关配合使用，形成 “多层高可用架构”：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">用户请求 → DNS轮询 → Nginx集群（主从+Keepalived） → API网关集群（Gateway/Zuul） → 微服务集群
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>分层职责：
+<ul>
+<li>Nginx：负责 “粗粒度” 流量控制（SSL 终结、静态资源缓存、入口限流），将流量转发到 API 网关集群。</li>
+<li>API 网关：负责 “细粒度” 业务逻辑（动态路由、鉴权、服务级限流熔断），将流量转发到具体微服务。</li>
+</ul>
+</li>
+<li>高可用保障：
+<ul>
+<li>每层均为集群部署，避免单点故障；</li>
+<li>上层对下层进行健康检查（如 Nginx 检查网关，网关检查微服务），自动剔除故障节点；</li>
+<li>全链路监控（如 SkyWalking）跟踪流量路径，快速定位故障点。</li>
+</ul>
+</li>
+</ul>
+<h5 id="四核心总结">四、核心总结</h5>
+<ol>
+<li><strong>Nginx 高可用</strong>：核心是 “集群部署 + 主从切换”，通过 Keepalived 实现 VIP 漂移，结合健康检查和限流保证入口稳定性。</li>
+<li><strong>API 网关高可用</strong>：核心是 “集群化 + 容错机制”，通过服务发现、熔断降级、动态配置应对微服务间的复杂交互。</li>
+<li><strong>联合架构</strong>：Nginx 作为 “前端屏障”，API 网关作为 “业务中枢”，分层协作实现端到端高可用，适合大规模分布式系统。</li>
+</ol>
+<h4 id="分析性能问题思路">分析性能问题思路</h4>
+<p>涵盖 <strong>问题定义、数据收集、分层定位、优化验证</strong> 四个核心步骤：</p>
+<h5 id="明确问题定义性能指标与场景"><strong>明确问题：定义性能指标与场景</strong></h5>
+<p>核心性能指标：响应时间、吞吐量、资源利用率</p>
+<p>场景划分：常态性能问题、突发性能问题</p>
+<h5 id="数据收集全链路指标采集">数据收集：全链路指标采集</h5>
+<p>性能问题定位的核心是 “用数据说话”，需从 <strong>基础设施、应用、中间件</strong> 三层采集数据，常用数据如下：</p>
+<p>基础设施层（服务层、容器）：CPU、内存、磁盘IO、网络</p>
+<p>应用层（代码、虚拟机）：Java应用（JVM监控、线程分析、接口耗时）、日志与链路追踪（错误日志、分布式链路追踪）</p>
+<h5 id="中间件层数据库--缓存--消息队列">中间件层（数据库 / 缓存 / 消息队列）</h5>
+<p>数据库：慢日志查询、连接与锁</p>
+<p>缓存redis：缓存策略</p>
+<p>消息队列：队列堆积量</p>
+<h4 id="找最高点算法-一个for">找最高点算法 一个for</h4>
+<h5 id="一维数组的峰值查找">一维数组的峰值查找</h5>
+<p>二分查找（O (log n) 最优解）</p>
+<p><strong>二分逻辑</strong>：</p>
+<ol>
+<li>取中间元素nums[mid]，比较其与右侧元素nums[mid+1]：
+<ul>
+<li>若 <code>nums[mid] &lt; nums[mid+1]</code>：右侧一定存在峰值（因为向右移动时，要么遇到更大的元素，要么到边界后成为峰值），因此搜索右半部分（<code>left = mid + 1</code>）。</li>
+<li>若 <code>nums[mid] &gt; nums[mid+1]</code>：左侧一定存在峰值（同理），因此搜索左半部分（<code>right = mid</code>）。</li>
+</ul>
+</li>
+<li>当 <code>left == right</code> 时，该位置即为峰值。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FindPeakElement</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">findPeakElement</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 避免溢出</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 右侧存在峰值，移动左指针</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 左侧存在峰值，移动右指针</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w"> </span><span class="c1">// 此时left == right，为峰值索引</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="二维网格的峰值查找">二维网格的峰值查找</h5>
+<p>解题思路：二维二分查找（O (n log m) 或 O (m log n)）</p>
+<ul>
+<li><strong>核心观察</strong>：二维峰值一定存在（可通过 “爬坡法” 证明：从任意点出发，向比当前值大的方向移动，最终必能到达峰值）。</li>
+<li>优化思路：利用二维结构的有序性（无需严格有序，只需局部可比较），通过二分法减少搜索范围：
+<ol>
+<li>选取中间列 <code>midCol</code>，找到该列的最大值 <code>maxRow</code>（该元素在列上是峰值）。</li>
+<li>比较该元素与左右相邻列的元素：
+<ul>
+<li>若大于左右，则该元素是二维峰值。</li>
+<li>若左侧列存在更大元素，则峰值在左半部分（<code>right = midCol - 1</code>）。</li>
+<li>若右侧列存在更大元素，则峰值在右半部分（<code>left = midCol + 1</code>）。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="原地交换算法两个for">原地交换算法两个for</h4>
+<h4 id="链表倒数500经典双指针">链表倒数500，经典双指针。</h4>
+<h5 id="原理">原理</h5>
+<p>通过两个指针（<code>fast</code> 快指针、<code>slow</code> 慢指针）实现一次遍历找到目标节点，避免先统计链表长度（第一次遍历）再定位（第二次遍历）的低效方式。</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li><strong>初始化</strong>：<code>fast</code> 和 <code>slow</code> 均指向链表头节点 <code>head</code>。</li>
+<li><strong>快指针先行</strong>：让 <code>fast</code> 指针先向前移动 <strong>500 步</strong>（若链表长度不足 500，则直接返回 <code>null</code>）。</li>
+<li><strong>双指针同步移动</strong>：<code>fast</code> 和 <code>slow</code> 同时向前移动，直到 <code>fast</code> 到达链表尾部（<code>fast == null</code>）。</li>
+<li><strong>结果</strong>：此时 <code>slow</code> 指针指向的节点即为链表倒数第 500 个节点（因为 <code>fast</code> 比 <code>slow</code> 超前 500 步，<code>fast</code> 到尾时，<code>slow</code> 距尾恰好 500 步）。</li>
+</ol>
+<h4 id="ip范围的优化-zset-redis">ip范围的优化	 zset redis</h4>
+<h5 id="ip-转长整型long"><strong>IP 转长整型（Long）</strong></h5>
+<p>将 IPv4 地址（如 <code>192.168.1.1</code>）转换为无符号 32 位整数（范围：0~4,294,967,295），利用 ZSet 的分数（score）进行排序。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Java实现（IP → Long）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">ipToLong</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ipAddress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">ipParts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipAddress</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&#34;\\.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">4</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">ipParts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 示例：192.168.1.1 → 3232235777</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="ip-范围查询"><strong>IP 范围查询</strong></h5>
+<p>将 IP 范围（如 <code>192.168.1.0/24</code>）转换为起始值和结束值的数值区间，利用 ZSet 的<code>ZRANGEBYSCORE</code>命令查询。</p>
+<p><code>ZRANGEBYSCORE ips 3232235776 3232236031</code></p>
+<h5 id="zset有序集合数据结构"><strong>ZSet:有序集合数据结构</strong></h5>
+<ol>
+<li><strong>成员唯一性</strong>‌：集合中的成员（member）不可重复，但关联的分数（score）可以重复‌6</li>
+<li>‌<strong>自动排序</strong>‌：根据分数从小到大排序，分数相同时按字典序排序‌1</li>
+<li>‌<strong>高效操作</strong>‌：添加、删除和查找的时间复杂度均为 O(logn)‌</li>
+</ol>
 <h3 id="百度二面">百度二面</h3>
-<p>算法
-字符串反转 有多少方法
-快速排序</p>
-<p>字符串常量池 创建了几个对象 1-2</p>
-<p>集合stream解决问题 时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</p>
-<p>线程池参数 根据什么配置</p>
-<p>如何创建线程 Runnable Callable Thread CompletableFuture 线程池</p>
-<p>thredlocal 线程池内容相同下</p>
-<p>synchronized 和 ReentrantLock 区别什么时候使用</p>
-<p>jvm 垃圾处理器
-cms和g1
+<h4 id="字符串反转-有多少方法">字符串反转 有多少方法</h4>
+<p>1、双指针原地交换</p>
+<p>2、新建数组反向填充</p>
+<p>3、递归法</p>
+<p>4、new StringBuilder(s).reverse().toString()</p>
+<p>5、异或交换</p>
+<h4 id="快速排序">快速排序</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">QuickSort</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">quickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">pivotIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partition</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">quickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">pivotIndex</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">quickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">pivotIndex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">partition</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 基准值 不变</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 基准下标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 循环数组</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">pivot</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 交换基准值到正确位置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">8</span><span class="p">,</span><span class="w"> </span><span class="n">4</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;排序后的数组: &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 这个快速排序实现包含以下部分：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// sort 方法：对外提供的排序接口，处理边界情况</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// quickSort 方法：递归进行分区排序</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// partition 方法：选择基准值并进行分区</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// swap 方法：交换数组中两个元素的位置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// main 方法：测试示例，创建一个数组并调用排序方法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 算法的时间复杂度平均为 O (n log n)，最坏情况下为 O (n²)。空间复杂度为 O (log n)。</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="字符串常量池-创建了几个对象">字符串常量池 创建了几个对象</h4>
+<h5 id="string-a--abc">String a = &ldquo;abc&rdquo;</h5>
+<p><strong>常量池不存在&quot;abc&quot;时</strong>：创建1个String对象并存入常量池，然后将引用赋给变量<code>a</code></p>
+<p><strong>常量池已存在&quot;abc&quot;时</strong>：不会创建新对象，直接复用常量池中的对象并引用赋值‌</p>
+<h5 id="string-a--new-stringabc">String a = new String(&ldquo;abc&rdquo;)</h5>
+<p>最多 ‌<strong>2个</strong>‌（1个常量池对象 + 1个堆对象）‌</p>
+<h4 id="集合stream解决问题-时间内filter金额最大-前五limit映射为一个属性map">集合stream解决问题 	时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 2. 筛选金额最大的前五个记录，并映射为金额属性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">topAmounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">records</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">record</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">!</span><span class="n">record</span><span class="p">.</span><span class="na">getTime</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startTime</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">                     </span><span class="o">!</span><span class="n">record</span><span class="p">.</span><span class="na">getTime</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endTime</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Record</span><span class="p">::</span><span class="n">getAmount</span><span class="p">).</span><span class="na">reversed</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">limit</span><span class="p">(</span><span class="n">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Record</span><span class="p">::</span><span class="n">getAmount</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="线程池参数-根据什么配置">线程池参数 根据什么配置</h4>
+<h5 id="一核心参数设置依据">一、核心参数设置依据</h5>
+<ol>
+<li>‌**核心线程数（corePoolSize）**‌
+<ul>
+<li>‌<strong>CPU密集型任务</strong>‌：建议设为CPU核数+1（避免单线程阻塞影响吞吐量）‌</li>
+<li>‌<strong>I/O密集型任务</strong>‌（如数据库操作）：设为CPU核数的2~3倍（因线程在等待I/O时会空闲）‌</li>
+</ul>
+</li>
+<li>‌**最大线程数（maximumPoolSize）**‌
+<ul>
+<li>需大于核心线程数，通常不超过CPU核数的5~8倍（避免频繁线程切换开销）‌</li>
+<li>结合业务流量高峰期预估（如电商需预留更多线程应对突发流量）‌</li>
+</ul>
+</li>
+<li>‌**空闲线程存活时间（keepAliveTime）**‌
+<ul>
+<li>‌<strong>突发流量场景</strong>‌（如秒杀）：设为10~20秒（快速回收临时线程）‌</li>
+<li>‌<strong>平稳流量场景</strong>‌：设为30~60秒（减少线程频繁创建/销毁）‌</li>
+</ul>
+</li>
+</ol>
+<h5 id="二动态调优技巧">二、动态调优技巧</h5>
+<ul>
+<li>‌<strong>避免重启服务</strong>‌：通过配置中心（如Nacos、Apollo）动态调整参数，结合监控告警（如DTP组件）实时优化‌</li>
+<li>‌<strong>监控指标</strong>‌：观察CPU、内存、磁盘、网络使用率，调整线程数以平衡资源消耗与吞吐量‌</li>
+</ul>
+<h5 id="三其他关键参数">三、其他关键参数</h5>
+<ol>
+<li>‌任务队列
+<ul>
+<li>无界队列适合任务量稳定的场景，有界队列需配合拒绝策略防止OOM‌</li>
+</ul>
+</li>
+<li>‌拒绝策略
+<ul>
+<li>根据业务容忍度选择（如<code>AbortPolicy</code>抛异常，<code>CallerRunsPolicy</code>由提交线程执行）‌</li>
+</ul>
+</li>
+</ol>
+<h4 id="如何创建线程">如何创建线程</h4>
+<h5 id="runnable">Runnable</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">MyRunnable</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Runnable</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;线程正在运行&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Thread</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyRunnable</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">  </span><span class="c1">// 启动线程</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="callable和future-可以返回结果">Callable和Future （可以返回结果）</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Callable</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.FutureTask</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">MyCallable</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Callable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">call</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&#34;线程返回的结果&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">FutureTask</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FutureTask</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyCallable</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Thread</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">task</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="na">get</span><span class="p">();</span><span class="w">  </span><span class="c1">// 获取线程返回的结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="thread">Thread</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">MyThread</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Thread</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;线程正在运行&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">MyThread</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyThread</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">  </span><span class="c1">// 启动线程</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="completablefuture">CompletableFuture</h5>
+<p>CompletableFuture是Java 8引入的异步编程工具，它改进了传统的Future模式，提供了更灵活、更强大的异步编程能力‌</p>
+<p><strong>1. 创建异步任务</strong></p>
+<ul>
+<li>‌**supplyAsync()**‌：执行有返回值的异步任务</li>
+<li>‌**runAsync()**‌：执行无返回值的异步任务</li>
+<li>‌**completedFuture()**‌：创建已完成的Future‌1</li>
+</ul>
+<p><strong>2. 结果处理</strong></p>
+<ul>
+<li>‌**thenApply()**‌：对结果进行转换处理</li>
+<li>‌**thenAccept()**‌：消费结果但不返回新值</li>
+<li>‌**thenRun()**‌：结果处理后执行Runnable‌4</li>
+</ul>
+<p><strong>3. 组合多个Future</strong></p>
+<ul>
+<li>‌**thenCompose()**‌：将两个Future串联执行</li>
+<li>‌**thenCombine()**‌：合并两个Future的结果</li>
+<li>‌**allOf()**‌：等待所有Future完成</li>
+<li>‌**anyOf()**‌：等待任意一个Future完成‌1</li>
+</ul>
+<ol start="4">
+<li><strong>异常处理</strong></li>
+</ol>
+<ul>
+<li>‌**exceptionally()**‌：处理链式调用中的异常</li>
+<li>‌**handle()**‌：同时处理结果和异常</li>
+<li>‌**whenComplete()**‌：记录结果或异常但不修改‌6</li>
+</ul>
+<ol start="5">
+<li><strong>实用方法</strong></li>
+</ol>
+<ul>
+<li>‌**complete()**‌：手动完成Future</li>
+<li>‌**completeExceptionally()**‌：手动以异常完成Future</li>
+<li>‌**getNow()**‌：立即获取结果或默认值</li>
+<li>‌**join()**‌：阻塞获取结果‌4</li>
+</ul>
+<h5 id="线程池">线程池</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ExecutorService</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Executors</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ExecutorService</span><span class="w"> </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="n">5</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;线程池中的线程正在运行&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">executor</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w">  </span><span class="c1">// 关闭线程池</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ArrayBlockingQueue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ThreadPoolExecutor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.TimeUnit</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomThreadPoolExample</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 自定义线程池配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ThreadPoolExecutor</span><span class="w"> </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="c1">// 核心线程数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="c1">// 最大线程数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="c1">// 空闲线程存活时间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayBlockingQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">100</span><span class="p">)</span><span class="w"> </span><span class="c1">// 任务队列</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;任务由&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;执行&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">executor</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w"> </span><span class="c1">// 关闭线程池</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="lambda表达式">Lambda表达式</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Thread</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;线程正在运行&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">  </span><span class="c1">// 启动线程</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="thredlocal">thredlocal</h4>
+<p>ThreadLocal是Java中用于管理线程局部变量的类，它为每个线程提供独立的变量副本，解决多线程并发访问共享资源时的线程安全问题‌。</p>
+<h5 id="核心原理">核心原理</h5>
+<ol>
+<li>‌<strong>线程隔离机制</strong>‌：每个线程内部维护一个ThreadLocalMap结构，以ThreadLocal实例为键、变量副本为值‌</li>
+<li>‌<strong>独立存储</strong>‌：不同线程访问同一个ThreadLocal变量时，实际获取的是各自线程内的独立副本‌</li>
+<li>‌<strong>避免同步</strong>‌：通过隔离线程间的变量存储，避免了同步锁带来的性能损耗‌</li>
+</ol>
+<h5 id="主要特点">主要特点</h5>
+<ul>
+<li>从JDK 1.2引入，在JDK 5.0中增加了泛型支持‌</li>
+<li>通常声明为private static类型，用于关联线程和线程上下文‌</li>
+<li>核心方法包括set()、get()、remove()和initialValue()‌</li>
+</ul>
+<h5 id="使用场景">使用场景</h5>
+<ol>
+<li>‌<strong>数据库连接管理</strong>‌：如Hibernate会话管理‌</li>
+<li>‌<strong>事务上下文传递</strong>‌：Spring框架中的事务管理‌</li>
+<li>‌<strong>线程状态跟踪</strong>‌：跟踪特定线程的执行状态‌</li>
+<li>‌<strong>多数据源切换</strong>‌：不同线程使用不同数据源‌</li>
+</ol>
+<h4 id="synchronized-和-reentrantlock-区别-什么时候使用">synchronized 和 ReentrantLock 区别, 什么时候使用</h4>
+<h5 id="核心区别分析">核心区别分析</h5>
+<ol>
+<li>‌<strong>实现机制差异</strong>‌
+<ul>
+<li>synchronized是Java内置关键字，基于JVM的monitorenter/monitorexit指令实现‌</li>
+<li>ReentrantLock是JDK层面的类，基于AQS(AbstractQueuedSynchronizer)框架实现‌</li>
+</ul>
+</li>
+<li>‌<strong>锁特性对比</strong>‌
+<ul>
+<li>‌<strong>可重入性</strong>‌：两者都支持可重入，同一线程可多次获取同一把锁‌</li>
+<li>‌<strong>公平性</strong>‌：synchronized仅支持非公平锁，ReentrantLock可通过构造参数选择公平/非公平模式‌</li>
+<li>‌<strong>中断响应</strong>‌：synchronized不可中断，ReentrantLock支持lockInterruptibly()响应中断‌</li>
+</ul>
+</li>
+<li>‌<strong>使用方式区别</strong>‌
+<ul>
+<li>synchronized自动加锁/释放锁，ReentrantLock需手动调用lock()/unlock()‌</li>
+<li>synchronized可修饰方法和代码块，ReentrantLock只能用于代码块‌</li>
+<li>ReentrantLock提供tryLock()尝试获取锁，可设置超时时间‌</li>
+</ul>
+</li>
+<li>‌<strong>性能与监控</strong>‌
+<ul>
+<li>synchronized在JDK1.6后性能优化明显，与ReentrantLock差距不大‌</li>
+<li>ReentrantLock可通过isLocked()判断锁状态，synchronized无法直接判断‌</li>
+</ul>
+</li>
+</ol>
+<h5 id="适用场景建议">适用场景建议</h5>
+<ol>
+<li>‌<strong>优先使用synchronized的情况</strong>‌
+<ul>
+<li>简单的同步需求，如单方法级别的线程安全控制‌</li>
+<li>需要简洁代码风格，避免手动锁管理带来的复杂性‌</li>
+<li>对性能要求不高且锁竞争不激烈的场景‌</li>
+</ul>
+</li>
+<li>‌<strong>选择ReentrantLock的场景</strong>‌
+<ul>
+<li>需要实现公平锁机制的业务场景‌</li>
+<li>需要可中断的锁获取操作，避免死锁风险‌</li>
+<li>需要尝试获取锁(tryLock)或带超时的锁获取‌</li>
+<li>需要绑定多个条件变量(Condition)的复杂同步逻辑‌</li>
+</ul>
+</li>
+</ol>
+<h5 id="最佳实践提示">最佳实践提示</h5>
+<ol>
+<li>‌<strong>锁释放注意事项</strong>‌
+<ul>
+<li>synchronized在异常时会自动释放锁‌</li>
+<li>ReentrantLock必须在finally块中手动释放锁，否则可能导致死锁‌</li>
+</ul>
+</li>
+<li>‌<strong>性能考量</strong>‌
+<ul>
+<li>高并发场景下，ReentrantLock的灵活性可能带来更好性能‌</li>
+<li>简单场景下synchronized的JVM优化通常表现更优‌</li>
+</ul>
+</li>
+<li>‌<strong>代码可维护性</strong>‌
+<ul>
+<li>synchronized代码更简洁，适合团队协作开发‌</li>
+<li>ReentrantLock提供更细粒度的控制，适合复杂并发逻辑‌</li>
+</ul>
+</li>
+</ol>
+<h4 id="jvm-垃圾处理器">jvm 垃圾处理器</h4>
+<p>cms和g1
 cms有几个阶段，g1
 他们的区别</p>
-<p>redis
-lua 脚本为什么用于限流 nginx</p>
-<p>分布式锁两种方式怎么实现的</p>
-<p>mysql 执行计划的参数 index性能为什么不好（走了全部索引）</p>
-<p>跨域怎么解决 （nginx 反带到允许域上，gateway设置允许域）</p>
-<p>Springboot常用的注解</p>
-<p>zab和raft区别</p>
+<h4 id="redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</h4>
+<h4 id="分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</h4>
+<h4 id="mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</h4>
+<h5 id="执行计划参数解读">执行计划参数解读</h5>
+<ol>
+<li>‌<strong>type列</strong>‌：显示访问类型，从最优到最差依次为：system &gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL‌4。出现index或ALL通常表示性能问题‌。</li>
+<li>‌<strong>key_len列</strong>‌：表示索引使用的字节数，可判断是否充分利用了复合索引‌。</li>
+<li>‌<strong>rows列</strong>‌：预估需要检查的行数，数值越大性能越差‌。</li>
+</ol>
+<h5 id="优化建议">优化建议</h5>
+<ol>
+<li>‌<strong>创建覆盖索引</strong>‌：确保查询涉及的列都包含在索引中‌。例如为<code>SELECT user_id, username FROM users WHERE email='...'</code>创建<code>(email, username)</code>复合索引‌2。</li>
+<li>‌<strong>优化复合索引顺序</strong>‌：将高选择性列放在复合索引左侧‌。</li>
+<li>‌<strong>避免索引失效写法</strong>‌：不使用函数操作索引列、注意类型匹配、避免OR条件等‌。</li>
+<li>‌<strong>定期维护索引</strong>‌：大数据量下索引可能失效，需要定期重建‌。</li>
+</ol>
+<h5 id="性能监控方法">性能监控方法</h5>
+<ol>
+<li>‌<strong>使用EXPLAIN分析</strong>‌：查看MySQL如何选择索引，识别不合理的索引选择‌。</li>
+<li>‌<strong>开启慢查询日志</strong>‌：设置阈值(如3秒)捕获慢SQL‌。</li>
+<li>‌<strong>对比不同环境执行计划</strong>‌：分析数据量差异对索引选择的影响‌</li>
+</ol>
+<h4 id="什么是跨域怎么解决跨域nginx和gateway怎么设置">什么是跨域，怎么解决跨域，nginx和gateway怎么设置？</h4>
+<h5 id="什么是跨域">什么是跨域</h5>
+<p>跨域(Cross-Origin)是指浏览器出于安全考虑，限制从一个源(协议+域名+端口)加载的文档或脚本与来自另一个源的资源进行交互。两个URL被认为是不同源，只要协议、域名或端口任意一个不相同‌12。</p>
+<p>‌**同源策略(Same-Origin Policy)**‌是浏览器实现的安全机制，防止恶意网站通过一个域的网页访问另一个域的敏感数据。如果没有同源策略，恶意网页可能会读取另一个网页的敏感信息，如用户输入的密码、银行账号等‌1。</p>
+<h5 id="跨域请求流程">跨域请求流程</h5>
+<ol>
+<li>浏览器发送跨域请求时，会自动在请求头中添加Origin字段，标明请求来源</li>
+<li>服务器根据配置决定是否允许该来源的请求</li>
+<li>如果允许，服务器在响应头中添加Access-Control-Allow-Origin等CORS相关头信息</li>
+<li>浏览器检查响应头，决定是否让前端JavaScript获取响应内容‌</li>
+</ol>
+<p><strong>nginx</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    listen 80;
+</span></span><span class="line"><span class="cl">    server_name api.example.com;
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">        # 简单请求头配置
+</span></span><span class="line"><span class="cl">        add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;
+</span></span><span class="line"><span class="cl">        add_header &#39;Access-Control-Allow-Methods&#39; &#39;GET, POST, OPTIONS&#39;;
+</span></span><span class="line"><span class="cl">        add_header &#39;Access-Control-Allow-Headers&#39; &#39;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization&#39;;
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        # 处理预检请求(OPTIONS)
+</span></span><span class="line"><span class="cl">        if ($request_method = &#39;OPTIONS&#39;) {
+</span></span><span class="line"><span class="cl">            add_header &#39;Access-Control-Max-Age&#39; 1728000; # 缓存20天
+</span></span><span class="line"><span class="cl">            add_header &#39;Content-Type&#39; &#39;text/plain; charset=utf-8&#39;;
+</span></span><span class="line"><span class="cl">            add_header &#39;Content-Length&#39; 0;
+</span></span><span class="line"><span class="cl">            return 204;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        proxy_pass http://backend_service;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//========================================
+</span></span><span class="line"><span class="cl">map $http_origin $cors_origin {
+</span></span><span class="line"><span class="cl">    default &#34;&#34;;
+</span></span><span class="line"><span class="cl">    &#34;~*&#34; $http_origin;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Origin $cors_origin always;
+</span></span><span class="line"><span class="cl">        add_header Vary Origin always;
+</span></span><span class="line"><span class="cl">        # 其他配置...
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="springboot常用的注解">Springboot常用的注解</h4>
+<h4 id="zab和raft区别">zab和raft区别</h4>
+<p>ZAB(ZooKeeper Atomic Broadcast)是专为ZooKeeper设计的原子广播协议，专注于高吞吐量的顺序一致性‌。Raft则是为通用分布式系统设计的共识算法，强调可理解性和易实现性‌</p>
+<h5 id="核心机制对比">核心机制对比</h5>
+<h6 id="选举机制差异">选举机制差异</h6>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>Raft</th>
+          <th>ZAB</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>触发条件</td>
+          <td>Follower在随机超时后转为Candidate发起选举‌</td>
+          <td>基于Fast Leader Election(FLE)，优先选择ZXID最大的节点‌</td>
+      </tr>
+      <tr>
+          <td>投票规则</td>
+          <td>比较日志的Term和Index，需获得半数以上投票‌</td>
+          <td>优先选择ZXID最大的候选者，ZXID相同时选server_id更大的节点‌</td>
+      </tr>
+      <tr>
+          <td>角色转换</td>
+          <td>明确区分Leader、Follower、Candidate三种角色‌</td>
+          <td>选举后进入恢复阶段确保日志同步‌</td>
+      </tr>
+  </tbody>
+</table>
+<h6 id="日志处理差异">日志处理差异</h6>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>Raft</th>
+          <th>ZAB</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>日志标识</td>
+          <td>使用Term + Index标识日志‌</td>
+          <td>使用ZXID(高32位epoch，低32位计数器)‌</td>
+      </tr>
+      <tr>
+          <td>提交方式</td>
+          <td>Leader提交后通知Followers‌</td>
+          <td>两阶段提交(先提案，Follower ACK后提交)‌</td>
+      </tr>
+      <tr>
+          <td>日志同步</td>
+          <td>Leader强制覆盖不一致的Follower日志‌</td>
+          <td>Follower必须与Leader日志完全一致‌</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="协议阶段与性能特点">协议阶段与性能特点</h5>
+<ol>
+<li>‌<strong>协议阶段</strong>‌：
+<ul>
+<li>Raft：统一任期(Term)下的选举+日志复制‌</li>
+<li>ZAB：分离的选举(Fast Leader Election)和广播(Atomic Broadcast)阶段‌</li>
+</ul>
+</li>
+<li>‌<strong>性能表现</strong>‌：
+<ul>
+<li>选举速度：ZAB的Fast Leader Election通常比Raft更快‌</li>
+<li>吞吐量：ZAB专为高吞吐设计，适合ZooKeeper场景‌</li>
+<li>稳定性：ZAB协议最稳定，Raft居中‌</li>
+</ul>
+</li>
+</ol>
+<h5 id="适用场景对比">适用场景对比</h5>
+<ol>
+<li>‌<strong>ZAB适用场景</strong>‌：
+<ul>
+<li>ZooKeeper的配置管理、分布式锁、命名服务‌</li>
+<li>需要严格顺序一致性的高吞吐消息广播‌</li>
+</ul>
+</li>
+<li>‌<strong>Raft适用场景</strong>‌：
+<ul>
+<li>通用分布式系统如etcd、Consul的键值存储‌</li>
+<li>需要快速开发共识模块的场景‌</li>
+</ul>
+</li>
+</ol>
+<h5 id="相同点总结">相同点总结</h5>
+<ol>
+<li>都采用quorum(多数派投票)机制确定系统一致性‌</li>
+<li>都由Leader发起写操作‌</li>
+<li>都使用心跳检测存活性‌</li>
+<li>Leader选举都采用先到先得的投票方式</li>
+</ol>
 <h2 id="滴滴-java">滴滴-Java</h2>
 <h3 id="滴滴一面">滴滴一面</h3>
 <h3 id="java-base-hasmap扩容为什么是两倍">java base hasmap扩容为什么是两倍</h3>

@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/"
-        },"genre": "posts","wordcount":  2431 ,
+        },"genre": "posts","wordcount":  3830 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/","datePublished": "2025-08-01T08:59:26+08:00","dateModified": "2025-08-01T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">凯同学的面经(2025-8)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2431 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3830 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -133,7 +133,11 @@
         <li><a href="#7用的哪种jvm有没有对比过">7、用的哪种jvm，有没有对比过</a></li>
         <li><a href="#8java17有哪些新特性有没有对比过每个版本">8、java17有哪些新特性，有没有对比过每个版本</a></li>
         <li><a href="#9线程池线程是怎么复用的">9、线程池线程是怎么复用的</a></li>
-        <li><a href="#10多线程的使用场景">10、多线程的使用场景</a></li>
+        <li><a href="#10多线程的使用场景">10、多线程的使用场景</a>
+          <ul>
+            <li><a href="#线程池参数如何设置">线程池参数如何设置？</a></li>
+          </ul>
+        </li>
         <li><a href="#11mysql为什么用innodb有没有横向对比过">11、mysql为什么用innodb，有没有横向对比过</a></li>
         <li><a href="#12有哪些锁重量级锁轻量级锁等等">12、有哪些锁，重量级锁、轻量级锁等等</a></li>
         <li><a href="#13项目管理的见解">13、项目管理的见解</a></li>
@@ -219,6 +223,7 @@
 <p>换句话说，你将选择一个起点，然后以 <code>k</code> 为间隔跳跃，直到到达魔法师序列的末端，<strong>在过程中吸收所有的能量</strong>。</p>
 <p>给定一个数组 <code>energy</code> 和一个整数<code>k</code>，返回你能获得的 <strong>最大</strong> 能量。</p>
 <h4 id="代码解析">代码解析</h4>
+<p>说白了就是起点不知道但是终点范围固定，通过状态转移向前寻找最大值，起点就不用关心</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -245,21 +250,95 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><p>通过范围进行二次循环，时间复杂度O(n),因为k是常量</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maximumEnergy</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">energy</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">energy</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">energy</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="2线上sql优化经验线上问题排查经验主动优化问题经验">2、线上sql优化经验、线上问题排查经验、主动优化问题经验</h3>
+<p>线上sql优化经验：</p>
+<p>​	1、避免使用select *</p>
+<p>​	2、小表驱动大表</p>
+<p>​	3、优化分页查询</p>
+<p>​	4、避免or连接条件</p>
+<p>​	5、优先使用union all代替union</p>
+<p>​	6、索引合理设计</p>
+<p>线上问题排查经验：</p>
+<p>​	总：稳定现场(止损优先)、科学排查、复盘改进</p>
+<p>​	排查：指标-&gt;日志-&gt;调用链路-&gt;复盘改进</p>
+<p>主动优化问题经验：</p>
+<p>​</p>
 <h3 id="3spring源码看过没有">3、spring源码看过没有</h3>
 <h3 id="4mybatis-plus源码看过没有与你们的框架有什么不同">4、mybatis plus源码看过没有，与你们的框架有什么不同</h3>
 <h3 id="5rabbitmq怎么保证消息不丢失的有没有横向对比过其他mq">5、rabbitmq怎么保证消息不丢失的，有没有横向对比过其他mq</h3>
 <h3 id="6规则引擎听说过没有哪些规则引擎">6、规则引擎听说过没，有哪些规则引擎</h3>
+<ul>
+<li><strong>Drools</strong>: 规则与代码分离（DRL文件/决策表）、RETE算法优化、运行时动态加载规则【金融风控、保险理赔等需处理多层对象和自定义数据结构的复杂业务】</li>
+<li><strong>LiteFlow</strong>：支持任意编排规则、平滑热刷新、多级嵌套与外部存储扩展【兼容任意Java架构，学习成本低，分钟级上手】</li>
+</ul>
 <h3 id="7用的哪种jvm有没有对比过">7、用的哪种jvm，有没有对比过</h3>
 <h3 id="8java17有哪些新特性有没有对比过每个版本">8、java17有哪些新特性，有没有对比过每个版本</h3>
 <h3 id="9线程池线程是怎么复用的">9、线程池线程是怎么复用的</h3>
+<p>线程池将线程和任务进⾏解耦，线程是线程，任务是任务，摆脱了之前通过 Thread 创建线程时的⼀个线程必须对应⼀个任务的限制。</p>
+<p>在线程池中，同⼀个线程可以从阻塞队列中不断获取新任务来执⾏，其核⼼原理在于线程池对 Thread 进⾏了封装，并不是每次执⾏任务都会调⽤ Thread.start() 来创建新线程，⽽是让每个线程去执⾏⼀个“循环任务”，在这个“循环任务”中不停检查是否有任务需要被执⾏，如果有则直接执⾏，也就是调⽤ 任务中的 run ⽅法，将 run ⽅法当成⼀个普通的⽅法执⾏，通过这种⽅式只使⽤固定的线程就将所有任务的 run ⽅法串联起来。</p>
+<p>线程复用依赖‌<strong>循环任务获取</strong>‌（<code>while + getTask()</code>）和‌<strong>阻塞队列调度</strong>‌，通过解耦线程与任务、动态管理线程生命周期实现高效复用</p>
+<p>线程池的核心目标之一是避免频繁创建和销毁线程，通过线程复用提升性能。其复用机制主要依赖以下关键设计：</p>
+<p>1、线程执行与任务解耦（工作线程调用任务的<code>run()</code>方法（同步执行），而非通过<code>start()</code>创建新线程）</p>
+<p>2、阻塞队列实现任务调度（‌生产者-消费者模型、工作线程通过<code>getTask()</code>方法循环从队列取任务）</p>
+<p>3、线程复用与控制策略（线程包装与状态管理、线程复用性保障）</p>
 <h3 id="10多线程的使用场景">10、多线程的使用场景</h3>
+<p><strong>1、并发处理IO操作</strong>：IO操作时cpu处于空闲状态，多线程可以让CPU在等待IO时处理其他任务，减少整体耗时。</p>
+<p><strong>2、提升CPU利用率</strong>：计算密集型，可以将任务分配到多个CPU核心，避免单线程阻塞导致的资源浪费</p>
+<p><strong>3、异步任务处理</strong>：避免用户操作因等待任务而卡顿</p>
+<p><strong>4、并发服务设计</strong>：多线程可并行响应多个客户端，提升服务吞吐量</p>
+<p><strong>5、实时性要求较高的场景</strong>：分离不同优先级任务，确保高优先级任务不被阻塞</p>
+<p><strong>6、批量任务并行化</strong>：并行执行，减少耗时</p>
+<h4 id="线程池参数如何设置">线程池参数如何设置？</h4>
+<p><strong>核心线程数</strong>：</p>
+<ul>
+<li>CPU密集型任务：CPU核心数 + 1   	 避免过多线程竞争CPU导致上下文切换开销【+1： 避免过度切换，应对短暂阻塞】</li>
+<li>IO密集型任务：CPU核心数 * 2    	  充分利用线程等待IO的空闲时间</li>
+</ul>
+<p><strong>最大线程数：</strong></p>
+<ul>
+<li>需要大于核心线程数， 一般是核心线程数 * 2</li>
+<li>高并发场景需要压测，避免队列堆积或者资源耗尽</li>
+</ul>
+<p><strong>任务队列</strong></p>
+<ul>
+<li>有界队列 ArrayBlockQueue: 需设置合理容量，防止任务堆积导致内存溢出【队列满了之后生产者会被阻塞或者触发拒绝策略】</li>
+<li>无界队列LinkBlockQueue: 使用与任务量波动平缓的场景，可能引发内存风险</li>
+</ul>
+<p><strong>空闲线程存活时间</strong></p>
+<ul>
+<li>非核心线程空闲超过此时间会被回收，通常设为 <code>30秒~1分钟</code>，平衡资源复用与释放效率</li>
+</ul>
 <h3 id="11mysql为什么用innodb有没有横向对比过">11、mysql为什么用innodb，有没有横向对比过</h3>
 <h3 id="12有哪些锁重量级锁轻量级锁等等">12、有哪些锁，重量级锁、轻量级锁等等</h3>
 <h3 id="13项目管理的见解">13、项目管理的见解</h3>

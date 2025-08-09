@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/"
-        },"genre": "posts","wordcount":  4279 ,
+        },"genre": "posts","wordcount":  9958 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/","datePublished": "2025-08-01T08:59:26+08:00","dateModified": "2025-08-01T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">凯同学的面经(2025-8)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4279 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 9958 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 20 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -147,17 +147,35 @@
         <li><a href="#13项目管理的见解">13、项目管理的见解</a></li>
         <li><a href="#14有没有学习英语的习惯">14、有没有学习英语的习惯</a></li>
         <li><a href="#15工作中提升自己的习惯文档编写">15、工作中提升自己的习惯，文档编写</a></li>
-        <li><a href="#16贪心算法与动态规划的区别">16、贪心算法与动态规划的区别</a></li>
+        <li><a href="#16贪心算法与动态规划的区别">16、贪心算法与动态规划的区别</a>
+          <ul>
+            <li><a href="#一核心区别对比">一、核心区别对比</a></li>
+            <li><a href="#二典型场景分析">二、典型场景分析</a></li>
+            <li><a href="#三直观理解差异比喻">三、直观理解差异（比喻）</a></li>
+            <li><a href="#四关键差异总结">四、关键差异总结</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#boss二面2025-08-08">BOSS二面(2025-08-08)</a>
       <ul>
-        <li><a href="#1redis是如何保证原子性的setnx做了什么-为什么不用get--set">1、redis是如何保证原子性的，setnx做了什么， 为什么不用get + set</a></li>
+        <li><a href="#1redis是如何保证原子性的setnx做了什么-为什么不用get--set">1、redis是如何保证原子性的，setnx做了什么， 为什么不用get + set</a>
+          <ul>
+            <li><a href="#redis原子性的保证机制">Redis原子性的保证机制</a></li>
+            <li><a href="#setnx的作用详解">SETNX的作用详解</a></li>
+            <li><a href="#为什么不用get--set">为什么不用GET + SET</a></li>
+          </ul>
+        </li>
         <li><a href="#2事务回滚缓存如何处理的同一个事务呢分布式事务呢">2、事务回滚，缓存如何处理的，同一个事务呢？分布式事务呢？</a></li>
         <li><a href="#3jvm调优做过吗垃圾回收器用的什么">3、jvm调优做过吗？垃圾回收器用的什么</a></li>
         <li><a href="#4java用的什么版本17用过吗">4、java用的什么版本，17用过吗</a></li>
         <li><a href="#5项目优化讲一下">5、项目优化讲一下</a></li>
         <li><a href="#6联合索引讲一下什么场景会用联合索引是只要组合字段就要加吗联合索引的结构与单字段索引有什么不同联合索引比单条索引快在哪">6、联合索引讲一下，什么场景会用联合索引，是只要组合字段就要加吗？联合索引的结构与单字段索引有什么不同？联合索引比单条索引快在哪</a></li>
+        <li><a href="#一联合索引的结构特性">一、联合索引的结构特性</a></li>
+        <li><a href="#二适用场景与使用原则">二、适用场景与使用原则</a></li>
+        <li><a href="#三性能优势的核心原因">三、性能优势的核心原因</a></li>
+        <li><a href="#四索引失效的典型陷阱">四、索引失效的典型陷阱</a></li>
+        <li><a href="#五设计建议">五、设计建议</a></li>
         <li><a href="#7集群有哪些集群节点处理并发量有多少">7、集群有哪些，集群节点处理，并发量有多少</a></li>
       </ul>
     </li>
@@ -165,9 +183,20 @@
       <ul>
         <li><a href="#1介绍一下项目具体业务流程项目都是深度参与吗">1、介绍一下项目，具体业务流程，项目都是深度参与吗？</a></li>
         <li><a href="#2多语言问题处理多币别处理金额数据处理">2、多语言问题处理、多币别处理、金额数据处理</a></li>
-        <li><a href="#3线上sql慢如何排查执行计划有哪些需要注意的字段">3、线上sql慢，如何排查，执行计划有哪些需要注意的字段</a></li>
+        <li><a href="#3线上sql慢如何排查执行计划有哪些需要注意的字段">3、线上sql慢，如何排查，执行计划有哪些需要注意的字段</a>
+          <ul>
+            <li><a href="#一慢sql排查流程">‌<strong>一、慢SQL排查流程</strong>‌</a></li>
+            <li><a href="#二执行计划explain核心字段解析">‌<strong>二、执行计划（EXPLAIN）核心字段解析</strong>‌</a></li>
+            <li><a href="#三高频慢sql优化方案">‌<strong>三、高频慢SQL优化方案</strong>‌</a></li>
+          </ul>
+        </li>
         <li><a href="#4mysql与pgsql的执行计划一样吗有什么区别">4、mysql与pgsql的执行计划一样吗？有什么区别</a></li>
-        <li><a href="#5数据量大之后分库分表如何实现如何分冷热字段分片分片后一个表数据量多大会比较合适分库分表有哪些中间件">5、数据量大之后，分库分表如何实现，如何分（冷热、字段分片），分片后一个表数据量多大会比较合适。分库分表有哪些中间件</a></li>
+        <li><a href="#5数据量大之后分库分表如何实现如何分冷热字段分片分片后一个表数据量多大会比较合适分库分表有哪些中间件">5、数据量大之后，分库分表如何实现，如何分（冷热、字段分片），分片后一个表数据量多大会比较合适。分库分表有哪些中间件</a>
+          <ul>
+            <li><a href="#一分库分表实现方法">一、分库分表实现方法</a></li>
+            <li><a href="#二分片后单表数据量合适阈值">二、分片后单表数据量合适阈值</a></li>
+          </ul>
+        </li>
         <li><a href="#6线程有哪些启动方式代码写了就是就是一个线程吗线程池是如何使用的">6、线程有哪些启动方式，代码写了就是就是一个线程吗？线程池是如何使用的</a></li>
         <li><a href="#7一段很简单计算的代码偶发执行很慢可能有什么原因">7、一段很简单计算的代码，偶发执行很慢，可能有什么原因</a></li>
         <li><a href="#8mysql-sql没走索引可能有哪些原因如何排查大数据in为什么mysql会优化成全表扫描">8、mysql sql没走索引，可能有哪些原因？如何排查？大数据in为什么mysql会优化成全表扫描？</a></li>
@@ -192,7 +221,11 @@
         <li><a href="#6如果后台业务并发修改同一行数据是怎么处理有没有不加锁的处理方法乐观锁">6、如果后台业务并发修改同一行数据，是怎么处理，有没有不加锁的处理方法（乐观锁？）</a></li>
         <li><a href="#7分库分表有哪些策略会带来什么问题">7、分库分表，有哪些策略，会带来什么问题</a></li>
         <li><a href="#8设计模式事件模式代理模式策略模式后两个的区别">8、设计模式，事件模式、代理模式、策略模式，后两个的区别</a></li>
-        <li><a href="#9场景题">9、场景题</a></li>
+        <li><a href="#9场景题">9、场景题</a>
+          <ul>
+            <li><a href="#微博中每个人都会被关注或者关注别人其中有人发了一条新的微博如何及时通知粉丝如果是大v发呢如果是大v的朋友圈许多大v转发呢数据库怎么设计消息怎么及时通知">微博中，每个人都会被关注或者关注别人，其中有人发了一条新的微博，如何及时通知粉丝，如果是大v发呢？如果是大v的朋友圈（许多大v转发呢）数据库怎么设计，消息怎么及时通知</a></li>
+          </ul>
+        </li>
         <li><a href="#10回文字符串判断">10、回文字符串判断</a></li>
         <li><a href="#11有一些课程需要学习前置课程给你一个二维数组">11、有一些课程，需要学习前置课程，给你一个二维数组</a></li>
         <li><a href="#12项目经历中比较复杂的怎么优化的">12、项目经历中比较复杂的，怎么优化的</a></li>
@@ -404,24 +437,556 @@ InnoDB完全支持原子性、一致性、隔离性和持久性，适合金融�
 <li>InnoDB需实时统计行数（慢），但数据安全性强</li>
 </ul>
 <h3 id="12有哪些锁重量级锁轻量级锁等等">12、有哪些锁，重量级锁、轻量级锁等等</h3>
+<p>在Java并发编程中，锁机制用于管理线程同步，常见类型包括偏向锁、轻量级锁和重量级锁等，它们根据竞争场景优化性能。以下是主要锁的分类及其特点：</p>
+<p><strong>偏向锁‌</strong>：适用于单线程环境，无竞争时优化访问速度；当出现线程竞争时，会升级为轻量级锁。
+<strong>轻量级锁‌</strong>：用于多线程交替执行同步代码块的场景，通过CAS操作减少性能开销；如果竞争加剧或升级失败，会进一步升级为重量级锁。
+<strong>重量级锁‌</strong>：在激烈竞争环境下使用，涉及操作系统级互斥，性能消耗较大，但确保强一致性。
+<strong>可重入锁‌</strong>：允许同一线程多次获取同一把锁（如Java的ReentrantLock），避免死锁。
+<strong>非可重入锁‌</strong>：线程不能重复获取锁，简化设计但易导致死锁。
+<strong>共享锁‌</strong>：允许多个线程同时读取资源，提高并发性。
+<strong>独占锁‌</strong>：一次仅允许一个线程访问资源（如写操作），确保排他性。
+<strong>公平锁‌</strong>：线程按请求顺序获取锁，避免饥饿。
+<strong>非公平锁‌</strong>：不保证顺序，可能插队，提升吞吐量但增加不公平风险。
+<strong>悲观锁‌</strong>：假设高冲突，操作前加锁（如synchronized），适合写密集型场景。
+<strong>乐观锁‌</strong>：假设低冲突，使用版本号或CAS机制检测冲突，适合读密集型场景。
+<strong>自旋锁‌</strong>：线程循环等待而非阻塞，减少上下文切换，但浪费CPU资源。
+<strong>分布式锁‌</strong>：用于跨节点协调，确保分布式系统一致性（如Redis实现）。</p>
+<p>锁的优化机制（如synchronized的锁升级路径）可进一步提升效率，但需根据具体应用场景选择合适类型。</p>
 <h3 id="13项目管理的见解">13、项目管理的见解</h3>
+<p>以下是对程序员面试中回答“项目管理见解”的建议框架，结合技术视角与管理思维：</p>
+<p><strong>一、核心目标认知‌</strong></p>
+<p>项目管理的本质是在‌资源约束下交付业务价值‌：</p>
+<p>技术层面：确保系统按时上线且符合质量要求（稳定、可维护、可扩展）
+商业层面：平衡需求范围、开发成本与交付时限（如通过MVP验证核心功能）
+<strong>二、程序员的关键协作点‌</strong>
+需求转化‌：
+将模糊业务需求拆解为可执行技术任务（如用户故事→技术方案）
+主动识别需求矛盾点，推动需求方明确优先级
+风险前置‌：
+技术预研（如新技术选型）、架构设计阶段预留扩展性
+代码质量卡控（自动化测试、Code Review避免后期返工）
+透明沟通‌：
+用非技术语言同步进度阻塞（如“数据库瓶颈导致接口延迟2天”）
+定期输出技术简报（性能数据、技术债务评估）
+<strong>三、敏捷实践建议‌</strong>
+迭代交付‌：拆分2周为一个迭代周期，快速验证核心模块
+度量驱动‌：
+跟踪代码交付速率（如Story Point/周）
+监控线上故障率（推动质量内建）
+<strong>四、避坑经验‌</strong>
+变更控制‌：需求变更需书面确认，评估对技术架构的影响（避免无序迭代）
+技术负债管理‌：在规划中预留20%时间偿还债务（重构、文档补全）</p>
+<p><strong>回答示例‌</strong></p>
+<p>“作为程序员，我认为项目管理是技术与业务的翻译桥梁。例如在XX项目中，我通过将用户登录流程拆解为认证、鉴权、日志三个模块，并行开发缩短工期30%。同时每周用流程图向产品经理展示技术风险，共同决策砍掉非核心功能，最终提前两周上线MVP版本。”</p>
+<p>⚡ ‌关键点‌：程序员回答此题需突出‌技术细节如何驱动管理决策‌（如架构设计影响排期、代码质量减少返工），而非泛谈理论。</p>
 <h3 id="14有没有学习英语的习惯">14、有没有学习英语的习惯</h3>
 <h3 id="15工作中提升自己的习惯文档编写">15、工作中提升自己的习惯，文档编写</h3>
 <h3 id="16贪心算法与动态规划的区别">16、贪心算法与动态规划的区别</h3>
+<h4 id="一核心区别对比">一、核心区别对比</h4>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>维度</strong>‌</th>
+          <th>‌<strong>贪心算法</strong>‌</th>
+          <th>‌<strong>动态规划</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>决策视角</strong>‌</td>
+          <td>每一步选择当前局部最优解</td>
+          <td>从全局状态推导最优子结构</td>
+      </tr>
+      <tr>
+          <td>‌<strong>问题适用性</strong>‌</td>
+          <td>仅适用于具有贪心选择性质的问题（如部分背包问题）</td>
+          <td>适用于具有重叠子问题和最优子结构的问题（如0-1背包）</td>
+      </tr>
+      <tr>
+          <td>‌<strong>解的质量</strong>‌</td>
+          <td>可能得到局部最优解，不保证全局最优</td>
+          <td>严格保证全局最优解</td>
+      </tr>
+      <tr>
+          <td>‌<strong>计算复杂度</strong>‌</td>
+          <td>通常为线性或低阶多项式时间</td>
+          <td>需存储中间状态，时空复杂度较高</td>
+      </tr>
+      <tr>
+          <td>‌<strong>回溯机制</strong>‌</td>
+          <td>无回溯，决策不可逆</td>
+          <td>需回溯比较所有可能路径</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="二典型场景分析">二、典型场景分析</h4>
+<ol>
+<li>
+<p>‌<strong>贪心算法适用场景</strong>‌</p>
+<ul>
+<li>
+<p>‌<strong>性质要求</strong>‌：问题需满足&quot;贪心选择性质&quot;（当前最优解能导向全局最优）</p>
+<p>案例：</p>
+<ul>
+<li>霍夫曼编码（每次合并频率最小的结点）</li>
+<li>部分背包问题（按价值密度优先装载）</li>
+</ul>
+</li>
+<li>
+<p>‌<strong>局限</strong>‌：无法解决0-1背包问题（物品不可拆分时可能失效）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>‌<strong>动态规划适用场景</strong>‌</p>
+<ul>
+<li>
+<p>‌<strong>性质要求</strong>‌：需同时满足‌<strong>最优子结构</strong>‌与‌<strong>重叠子问题</strong>‌</p>
+<p>经典问题‌：</p>
+<ul>
+<li>0-1背包问题（二维DP表存储子问题解）</li>
+<li>斐波那契数列（避免重复计算）</li>
+<li>最短路径（Floyd-Warshall算法）</li>
+</ul>
+</li>
+<li>
+<p>‌<strong>优势</strong>‌：通过记忆化存储消除重复计算，保证最优性</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="三直观理解差异比喻">三、直观理解差异（比喻）</h4>
+<p>以选择恋爱对象为例：</p>
+<ul>
+<li>‌<strong>贪心算法</strong>‌：只看当前最佳条件（如&quot;选最有钱的追求者&quot;），不考虑长远发展</li>
+<li>‌<strong>动态规划</strong>‌：综合评估未来潜力（如&quot;分析谁可能成为潜力股&quot;），追求长期最优结果</li>
+</ul>
+<h4 id="四关键差异总结">四、关键差异总结</h4>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>特征</strong>‌</th>
+          <th>贪心算法</th>
+          <th>动态规划</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>决策依据</strong>‌</td>
+          <td>当前状态局部最优</td>
+          <td>历史状态全局推导</td>
+      </tr>
+      <tr>
+          <td>‌<strong>解空间探索</strong>‌</td>
+          <td>单一路径，无回溯</td>
+          <td>多路径比较，需回溯</td>
+      </tr>
+      <tr>
+          <td>‌<strong>最优解保证</strong>‌</td>
+          <td>依赖问题特性，不绝对</td>
+          <td>严格保证</td>
+      </tr>
+      <tr>
+          <td>‌<strong>效率</strong>‌</td>
+          <td>高效但可能次优</td>
+          <td>资源密集型但精确</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>⚠️ ‌<strong>选择原则</strong>‌：若问题验证满足贪心选择性（如最小生成树Prim算法），优先使用贪心提升效率；</p>
+<p>当问题含重叠子结构且需精确解时（如编辑距离），必须采用动态规划</p></blockquote>
 <h2 id="boss二面2025-08-08">BOSS二面(2025-08-08)</h2>
 <h3 id="1redis是如何保证原子性的setnx做了什么-为什么不用get--set">1、redis是如何保证原子性的，setnx做了什么， 为什么不用get + set</h3>
+<h4 id="redis原子性的保证机制">Redis原子性的保证机制</h4>
+<p>Redis通过以下核心机制确保操作的原子性：</p>
+<ul>
+<li>‌<strong>单线程模型</strong>‌：Redis采用单线程处理命令请求，每个命令在执行过程中不会被其他线程中断。这意味着单个命令（如SET、GET或INC）是原子的，保证了数据一致性和完整性。</li>
+<li>‌<strong>事务机制</strong>‌：通过<code>MULTI</code>开启事务，<code>EXEC</code>执行一组命令时，Redis确保这些命令要么全部成功执行，要么全部回滚（如失败时撤销所有操作）。这在处理批量操作时提供了原子性保证。</li>
+<li>‌<strong>Lua脚本支持</strong>‌：执行Lua脚本时，脚本内的所有操作会被视为一个原子单元。Redis保证脚本执行期间不会被其他命令打断，适用于复杂逻辑（如先读取再更新）的原子性需求。</li>
+</ul>
+<h4 id="setnx的作用详解">SETNX的作用详解</h4>
+<p><code>SETNX</code>（Set if Not eXists）命令是Redis用于原子性检查和设置操作的经典工具：</p>
+<ul>
+<li>‌基本机制：当执行<code>SETNX key value</code>时：
+<ul>
+<li>如果key不存在，则设置value并返回1（成功）。</li>
+<li>如果key已存在，则不执行任何操作并返回0（失败）。
+这一过程是原子的，Redis的单线程模型确保多客户端并发时只有一个客户端能成功设置值。</li>
+</ul>
+</li>
+<li>‌应用场景‌：
+<ul>
+<li>‌<strong>分布式锁</strong>‌：客户端通过<code>SETNX lock_key unique_value</code>尝试获取锁。成功返回1的客户端获得独占访问权；失败返回0的客户端需等待重试。释放锁需结合Lua脚本验证值以避免误删。</li>
+<li>‌<strong>幂等性控制</strong>‌：例如支付接口中，用订单ID作为key执行<code>SETNX</code>，防止重复处理同一请求（返回0表示已处理）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="为什么不用get--set">为什么不用GET + SET</h4>
+<p>使用<code>GET + SET</code>组合无法保证原子性，而<code>SETNX</code>直接解决了这一问题：</p>
+<ul>
+<li>‌<strong>竞态条件风险</strong>‌：<code>GET</code>和<code>SET</code>是两个独立命令。在多客户端并发场景下，多个客户端可能同时<code>GET</code>到key不存在的状态，然后都执行<code>SET</code>，导致多个客户端“同时”设置成功。这会破坏互斥性（如多个客户端同时获得锁），造成数据不一致或超额操作。</li>
+<li>‌<strong>SETNX的原子性优势</strong>‌：<code>SETNX</code>将“检查并设置”合并为一个原子操作。Redis在执行时自动处理竞争，确保只有一个客户端能成功设置值，避免了<code>GET + SET</code>的非原子性问题23。这也解释了为什么分布式锁方案首选<code>SETNX</code>而非<code>GET + SET</code>组合。</li>
+</ul>
+<p>综上，Redis的原子性依赖于单线程模型和专用命令（如<code>SETNX</code>），而<code>GET + SET</code>的分离特性使其不适合并发敏感场景。</p>
 <h3 id="2事务回滚缓存如何处理的同一个事务呢分布式事务呢">2、事务回滚，缓存如何处理的，同一个事务呢？分布式事务呢？</h3>
 <h3 id="3jvm调优做过吗垃圾回收器用的什么">3、jvm调优做过吗？垃圾回收器用的什么</h3>
 <h3 id="4java用的什么版本17用过吗">4、java用的什么版本，17用过吗</h3>
 <h3 id="5项目优化讲一下">5、项目优化讲一下</h3>
 <h3 id="6联合索引讲一下什么场景会用联合索引是只要组合字段就要加吗联合索引的结构与单字段索引有什么不同联合索引比单条索引快在哪">6、联合索引讲一下，什么场景会用联合索引，是只要组合字段就要加吗？联合索引的结构与单字段索引有什么不同？联合索引比单条索引快在哪</h3>
+<p>联合索引是数据库中由多个字段组成的索引结构，适用于多条件组合查询的场景。其核心原理、应用场景及与单列索引的差异如下：</p>
+<hr>
+<h3 id="一联合索引的结构特性">一、联合索引的结构特性</h3>
+<ol>
+<li>
+<p>‌<strong>排序规则分层</strong>‌
+联合索引按字段顺序构建B+树：</p>
+<ul>
+<li>
+<p>数据页‌<strong>先按第一列排序</strong>‌ → 第一列相同时按第二列排序 → 逐层递进</p>
+</li>
+<li>
+<p>例如索引<code>(department_id, hire_date)</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">| department_id=1 | → hire_date=&#39;2024-01-01&#39;
+</span></span><span class="line"><span class="cl">                       → hire_date=&#39;2024-01-02&#39;
+</span></span><span class="line"><span class="cl">| department_id=2 | → hire_date=&#39;2024-01-01&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>‌<strong>与单列索引的本质区别</strong>‌</p>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>类型</strong>‌</th>
+          <th>‌<strong>存储结构</strong>‌</th>
+          <th>‌<strong>查询覆盖性</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>单列索引</td>
+          <td>多个独立的B+树</td>
+          <td>仅覆盖当前字段条件</td>
+      </tr>
+      <tr>
+          <td>联合索引</td>
+          <td>单棵B+树按字段顺序分层排序</td>
+          <td>可覆盖多字段组合查询</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ol>
+<hr>
+<h3 id="二适用场景与使用原则">二、适用场景与使用原则</h3>
+<ol>
+<li>
+<p>‌<strong>必须使用联合索引的场景</strong>‌</p>
+<ul>
+<li>
+<p>‌<strong>多条件组合查询</strong>‌：<code>WHERE a=? AND b=?</code>（需符合最左前缀原则）</p>
+</li>
+<li>
+<p>‌<strong>多字段排序/分组</strong>‌：<code>ORDER BY a,b</code> 或 <code>GROUP BY a,b</code></p>
+</li>
+<li>
+<p>‌覆盖索引优化：查询字段全部包含在索引中时，避免回表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- 联合索引(a,b,c)时，此查询只需扫描索引
+</span></span><span class="line"><span class="cl">SELECT a, b FROM table WHERE a=1 AND b=2;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>‌<strong>谨慎创建的场景</strong>‌</p>
+<ul>
+<li>‌<strong>字段区分度低</strong>‌：如性别、状态等低基数字段，联合索引效果有限</li>
+<li>‌<strong>高频单字段查询</strong>‌：若常单独查询字段b，应额外建单列索引（联合索引需a在前）</li>
+<li>‌<strong>跳过首字段查询</strong>‌：<code>WHERE b=?</code> 无法使用索引<code>(a,b)</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三性能优势的核心原因">三、性能优势的核心原因</h3>
+<ol>
+<li>
+<p>‌<strong>减少磁盘IO与空间占用</strong>‌</p>
+<ul>
+<li>一个联合索引替代多个单列索引，降低存储开销</li>
+<li>B+树层级更少，范围查询时减少磁盘寻道次数</li>
+</ul>
+</li>
+<li>
+<p>‌**避免索引合并（Index Merge）**‌</p>
+<ul>
+<li>单列索引处理多条件时需合并结果（交集/并集），额外消耗CPU和内存</li>
+<li>联合索引直接定位复合条件的数据块，效率更高</li>
+</ul>
+</li>
+<li>
+<p>‌<strong>覆盖索引加速查询</strong>‌</p>
+<ul>
+<li>
+<p>‌无需回表：当索引包含所有查询字段时，直接返回结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- 联合索引(a,b,c)可覆盖此查询
+</span></span><span class="line"><span class="cl">SELECT b, c FROM table WHERE a=1;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四索引失效的典型陷阱">四、索引失效的典型陷阱</h3>
+<ol>
+<li>
+<p>‌<strong>违反最左前缀原则</strong>‌</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code-- 索引(a,b,c)失效场景：
+</span></span><span class="line"><span class="cl">SELECT * FROM table WHERE b=2;          --  ❌ 缺少a
+</span></span><span class="line"><span class="cl">SELECT * FROM table WHERE a=1 AND c=3;   -- ✅ 用a；❌ c未用（b缺失中断链）
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>‌<strong>范围查询阻断后续字段</strong>‌</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- 索引(a,b,c)：
+</span></span><span class="line"><span class="cl">SELECT * FROM table WHERE a&gt;1 AND b=2;  -- ✅ a用索引；❌ b,c失效（范围查询后字段无法排序）
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>‌<strong>函数操作或隐式转换</strong>‌</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT * FROM table WHERE DATE(a)=&#39;2024-01-01&#39;; --  ❌ 索引列使用函数
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<hr>
+<h3 id="五设计建议">五、设计建议</h3>
+<ol>
+<li>‌<strong>字段顺序优先级</strong>‌
+<ul>
+<li>‌<strong>高频查询字段放最左</strong>‌</li>
+<li>‌<strong>高区分度字段优先</strong>‌（如用户ID &gt; 性别）</li>
+<li>‌<strong>等值查询字段</strong>‌ 置于 ‌<strong>范围查询字段</strong>‌ 前</li>
+</ul>
+</li>
+<li>‌<strong>避免冗余索引</strong>‌
+<ul>
+<li>索引<code>(a,b)</code>可覆盖<code>(a)</code>，无需额外建单列索引<code>(a)</code></li>
+</ul>
+</li>
+<li>‌<strong>权衡写入性能</strong>‌
+<ul>
+<li>每增加一个索引，INSERT/UPDATE/DELETE效率下降约10%</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>‌<strong>总结</strong>‌：联合索引通过组合字段的B+树结构优化多条件查询，尤其适合高频组合筛选、排序及覆盖查询场景34。但需严格遵循最左前缀原则，并结合查询模式设计字段顺序，避免过度索引影响写入性能</p></blockquote>
 <h3 id="7集群有哪些集群节点处理并发量有多少">7、集群有哪些，集群节点处理，并发量有多少</h3>
 <h2 id="顺丰2025-08-05">顺丰(2025-08-05)</h2>
 <h3 id="1介绍一下项目具体业务流程项目都是深度参与吗">1、介绍一下项目，具体业务流程，项目都是深度参与吗？</h3>
 <h3 id="2多语言问题处理多币别处理金额数据处理">2、多语言问题处理、多币别处理、金额数据处理</h3>
 <h3 id="3线上sql慢如何排查执行计划有哪些需要注意的字段">3、线上sql慢，如何排查，执行计划有哪些需要注意的字段</h3>
+<h4 id="一慢sql排查流程">‌<strong>一、慢SQL排查流程</strong>‌</h4>
+<ol>
+<li>
+<p>‌<strong>开启慢查询日志</strong>‌</p>
+<ul>
+<li>启用监控：<code>SET GLOBAL slow_query_log = ON;</code></li>
+<li>设置阈值（例：2秒）：<code>SET GLOBAL long_query_time = 2;</code></li>
+<li>记录未走索引查询：<code>SET GLOBAL log_queries_not_using_indexes = ON;</code></li>
+<li>日志输出位置：配置<code>log_output=FILE/TABLE</code>（文件或系统表<code>mysql.slow_log</code>）</li>
+</ul>
+<blockquote>
+<p><em>注：生产环境建议阈值设为1-2秒，避免日志过大。</em></p></blockquote>
+</li>
+<li>
+<p>‌<strong>定位慢SQL</strong>‌</p>
+<ul>
+<li>分析日志文件（默认路径：<code>/var/lib/mysql/slow.log</code>）</li>
+<li>查询系统表：<code>SELECT * FROM mysql.slow_log WHERE query_time &gt; 2;</code></li>
+</ul>
+</li>
+<li>
+<p>‌<strong>关联应用上下文</strong>‌</p>
+<ul>
+<li>使用阿里Druid连接池：监控SQL执行时间、频次，关联接口和用户ID</li>
+<li>ELK日志分析：通过Filebeat采集慢日志至Elasticsearch，可视化分析慢SQL模式^</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="二执行计划explain核心字段解析">‌<strong>二、执行计划（EXPLAIN）核心字段解析</strong>‌</h4>
+<p>执行<code>EXPLAIN SELECT ...</code>后，重点关注以下字段：</p>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>字段</strong>‌</th>
+          <th>‌<strong>含义与优化重点</strong>‌</th>
+          <th>‌<strong>风险场景</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>type</strong>‌</td>
+          <td>访问类型（性能排序）：<code>const</code> &gt; <code>ref</code> &gt; <code>range</code> &gt; <code>index</code> &gt; <code>ALL</code></td>
+          <td><code>ALL</code>（全表扫描）需立即优化</td>
+      </tr>
+      <tr>
+          <td>‌<strong>key</strong>‌</td>
+          <td>实际使用的索引</td>
+          <td>为空表示未走索引</td>
+      </tr>
+      <tr>
+          <td>‌<strong>key_len</strong>‌</td>
+          <td>索引使用的字节数，联合索引中可判断是否充分利用</td>
+          <td>长度过短可能未用全索引</td>
+      </tr>
+      <tr>
+          <td>‌<strong>rows</strong>‌</td>
+          <td>预估扫描行数</td>
+          <td>数值远大于实际需优化</td>
+      </tr>
+      <tr>
+          <td>‌<strong>Extra</strong>‌</td>
+          <td>额外信息： • <code>Using filesort</code>：内存排序开销大 • <code>Using temporary</code>：临时表影响性能</td>
+          <td>出现这两项需优先优化</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><em>示例诊断逻辑：</em>
+<code>type=ALL</code> + <code>key=NULL</code> → 未命中索引；
+<code>rows=10000</code> + <code>filtered=10%</code> → 实际扫描1万行仅返回1千行，效率低下。</p></blockquote>
+<hr>
+<h4 id="三高频慢sql优化方案">‌<strong>三、高频慢SQL优化方案</strong>‌</h4>
+<ol>
+<li>‌<strong>索引失效场景</strong>‌
+<ul>
+<li>违反最左前缀：索引<code>(a,b)</code>时，<code>WHERE b=?</code> 失效 → 调整查询条件或索引顺序3</li>
+<li>隐式类型转换：<code>WHERE varchar_col=123</code> 导致类型转换 → 确保类型一致</li>
+<li>函数操作：<code>WHERE DATE(create_time)='2024-01-01'</code> → 改为范围查询<code>create_time BETWEEN...</code></li>
+</ul>
+</li>
+<li>‌<strong>锁竞争处理</strong>‌
+<ul>
+<li>表锁阻塞：大表DDL操作阻塞DML → 业务低峰期执行</li>
+<li>行锁超时：长事务占用行锁 → 拆解事务或优化锁粒度</li>
+</ul>
+</li>
+<li>‌<strong>复杂查询拆解</strong>‌
+<ul>
+<li>多表关联（&gt;3张表）：改为分步查询或使用物化视图</li>
+<li>深度分页：<code>LIMIT 100000,10</code> → 使用<code>WHERE id &gt; last_id LIMIT 10</code></li>
+</ul>
+</li>
+<li>‌<strong>数据访问优化</strong>‌
+<ul>
+<li>避免<code>SELECT *</code> → 仅查询必要字段</li>
+<li>覆盖索引：索引包含所有查询字段（Extra显示<code>Using index</code>）</li>
+</ul>
+</li>
+</ol>
 <h3 id="4mysql与pgsql的执行计划一样吗有什么区别">4、mysql与pgsql的执行计划一样吗？有什么区别</h3>
 <h3 id="5数据量大之后分库分表如何实现如何分冷热字段分片分片后一个表数据量多大会比较合适分库分表有哪些中间件">5、数据量大之后，分库分表如何实现，如何分（冷热、字段分片），分片后一个表数据量多大会比较合适。分库分表有哪些中间件</h3>
+<h4 id="一分库分表实现方法">一、分库分表实现方法</h4>
+<ol>
+<li>‌<strong>冷热数据分离</strong>‌
+<ul>
+<li>核心思路：将高频访问的热数据（如最新视频）与低频访问的冷数据（如历史记录）物理分离。
+<ul>
+<li>‌<strong>判断逻辑</strong>‌：基于访问频率或时间戳动态标记。例如，短视频应用中，播放次数达阈值自动迁移至高性能存储作为热数据，反之归档为冷数据。</li>
+<li>‌实现方式：
+<ul>
+<li>‌<strong>透明分离</strong>‌：业务层无感知，仅性能差异（如热数据用SSD，冷数据用云存储）。</li>
+<li>‌<strong>自动化迁移</strong>‌：结合缓存层和中间件，实时监控访问模式调整数据状态。</li>
+</ul>
+</li>
+<li>‌<strong>优势</strong>‌：提升系统性能和用户体验（减少锁争用），降低存储成本（冷数据用低成本云服务），增强数据安全性（独立备份策略）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>‌**字段分片（分区）**‌
+<ul>
+<li>‌水平分片：按行切分数据，常用分片键（如用户ID或时间）。
+<ul>
+<li>例如，订单表按用户ID哈希分片，分散到多个库/表。</li>
+</ul>
+</li>
+<li>‌垂直分片：按列切分，分离高频和低频字段。
+<ul>
+<li>例如，用户表拆分基本信息（热数据）和历史行为（冷数据）。</li>
+</ul>
+</li>
+<li>‌分片策略：
+<ul>
+<li>基于目录的分片：使用查找服务映射键到分片，灵活性高但需管理复杂度。</li>
+<li>哈希或范围分片：确保数据均匀分布，避免热点。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="二分片后单表数据量合适阈值">二、分片后单表数据量合适阈值</h4>
+<p>阈值需综合数据量、性能及架构因素，并非绝对：</p>
+<ul>
+<li>‌<strong>数据量参考</strong>‌：
+- 单表行数超过‌<strong>1000万行</strong>‌（或保守阈值500万行）时，B+树索引深度增加导致查询延迟显著上升。
+- 表大小达‌<strong>50GB</strong>‌或数据库总大小超‌<strong>1TB</strong>‌，应考虑分库分表以优化I/O。</li>
+<li>‌<strong>性能阈值</strong>‌：
+- 查询延迟超业务容忍值（如&gt;2秒）、写入延迟增加或锁争用频繁时，需分片。
+- 并发用户数激增导致数据库瓶颈（CPU/内存利用率&gt;80%）。</li>
+<li>‌<strong>阈值确认方法</strong>‌：
+- ‌<strong>拐点分析</strong>‌：监控查询响应时间突变点（如用户流失期限）。
+- ‌<strong>二八法则</strong>‌：识别头部20%高频数据优先优化。</li>
+<li>‌<strong>实际建议</strong>‌：预留20-30%冗余，定期评估数据增长趋势</li>
+</ul>
 <h3 id="6线程有哪些启动方式代码写了就是就是一个线程吗线程池是如何使用的">6、线程有哪些启动方式，代码写了就是就是一个线程吗？线程池是如何使用的</h3>
 <h3 id="7一段很简单计算的代码偶发执行很慢可能有什么原因">7、一段很简单计算的代码，偶发执行很慢，可能有什么原因</h3>
 <h3 id="8mysql-sql没走索引可能有哪些原因如何排查大数据in为什么mysql会优化成全表扫描">8、mysql sql没走索引，可能有哪些原因？如何排查？大数据in为什么mysql会优化成全表扫描？</h3>
@@ -445,12 +1010,10 @@ InnoDB完全支持原子性、一致性、隔离性和持久性，适合金融�
 <h3 id="7分库分表有哪些策略会带来什么问题">7、分库分表，有哪些策略，会带来什么问题</h3>
 <h3 id="8设计模式事件模式代理模式策略模式后两个的区别">8、设计模式，事件模式、代理模式、策略模式，后两个的区别</h3>
 <h3 id="9场景题">9、场景题</h3>
-<p>微博中，每个人都会被关注或者关注别人，其中有人发了一条新的微博，如何及时通知粉丝，如果是大v发呢？如果是大v的朋友圈（许多大v转发呢）数据库怎么设计，消息怎么及时通知</p>
+<h4 id="微博中每个人都会被关注或者关注别人其中有人发了一条新的微博如何及时通知粉丝如果是大v发呢如果是大v的朋友圈许多大v转发呢数据库怎么设计消息怎么及时通知">微博中，每个人都会被关注或者关注别人，其中有人发了一条新的微博，如何及时通知粉丝，如果是大v发呢？如果是大v的朋友圈（许多大v转发呢）数据库怎么设计，消息怎么及时通知</h4>
 <h3 id="10回文字符串判断">10、回文字符串判断</h3>
 <h3 id="11有一些课程需要学习前置课程给你一个二维数组">11、有一些课程，需要学习前置课程，给你一个二维数组</h3>
-<p>【1，2】
-【1，3】  表示学习1需要前置学习2、3课程，可以同时学习多门课程，每门课程学习时间相同（例如同时学1、5、6，只需要一个单位）
-求最短时间需要多久学完</p>
+<p>【1，2】【1，3】  表示学习1需要前置学习2、3课程，可以同时学习多门课程，每门课程学习时间相同（例如同时学1、5、6，只需要一个单位）   求最短时间需要多久学完</p>
 <h3 id="12项目经历中比较复杂的怎么优化的">12、项目经历中比较复杂的，怎么优化的</h3>
 <h3 id="13如果包路径类与你的class路径类一模一样会发生什么">13、如果包路径、类，与你的class路径，类一模一样，会发生什么</h3>
 <h3 id="14redis大key-redis-热点数据怎么处理">14、redis大key, redis 热点数据怎么处理？</h3>

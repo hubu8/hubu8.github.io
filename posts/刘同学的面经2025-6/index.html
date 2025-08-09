@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  24816 ,
+        },"genre": "posts","wordcount":  25279 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 24816 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 50 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 25279 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 51 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -997,6 +997,26 @@
 <h4 id="redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</h4>
 <p>在 Redis 中使用 Lua 脚本实现限流时，为避免限流失败（例如并发问题、原子性破坏），需确保脚本的原子性和正确性。以下是具体实现方法和示例：</p>
 <h5 id="1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</h5>
+<p>‌<strong>令牌桶算法</strong>‌是一种广泛应用于网络流量整形和速率限制的控制算法，其核心特征在于通过动态生成令牌的机制实现流量管控，并允许处理突发流量需求。</p>
+<p>‌<strong>算法定义与工作原理</strong>‌</p>
+<p>令牌桶算法通过维护固定容量的令牌桶和恒定速率令牌生成器实现流量控制。其核心运作流程包括：</p>
+<ol>
+<li>‌<strong>令牌生成</strong>‌：以固定速率（r）向桶中添加令牌，直到达到桶容量上限（b）。‌‌</li>
+<li>‌<strong>令牌消耗</strong>‌：每个请求需消耗若干令牌（通常与数据包大小相关），令牌不足时触发限流策略。‌‌</li>
+<li>‌<strong>突发处理</strong>‌：桶内积累的令牌允许短时间内处理超出平均速率的流量，突发流量规模受桶容量限制。‌‌</li>
+</ol>
+<p>‌<strong>核心技术参数</strong>‌</p>
+<ul>
+<li>‌**生成速率（r）**‌：决定系统长期平均处理能力。</li>
+<li>‌**桶容量（b）**‌：控制单次突发流量的最大规模。</li>
+<li>‌<strong>动态调整</strong>‌：部分实现采用滑动窗口统计或PID反馈机制优化参数适应性。‌‌</li>
+</ul>
+<p>‌<strong>典型应用场景</strong>‌</p>
+<ol>
+<li>‌<strong>网络传输流量整形</strong>‌：在TCP拥塞控制中平衡带宽利用率与公平性。</li>
+<li>‌<strong>API接口限流</strong>‌：保护后端服务免受突发请求冲击，如云计算API网关设计。</li>
+<li>‌<strong>实时系统资源调度</strong>‌：视频流媒体服务中保障QoS的突发帧处理。‌‌</li>
+</ol>
 <p>令牌桶算法允许突发流量，适合大多数场景。以下是一个原子性的 Lua 脚本实现：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

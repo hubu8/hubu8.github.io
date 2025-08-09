@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  27730 ,
+        },"genre": "posts","wordcount":  27726 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 27730 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 27726 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 56 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -377,7 +377,16 @@
         </li>
       </ul>
     </li>
-    <li><a href="#百度搜索-c">百度搜索-c++</a></li>
+    <li><a href="#百度搜索-c">百度搜索-c++</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#spring好在哪">spring好在哪</a></li>
+            <li><a href="#依赖注入控制反转属于什么设计模式">依赖注入、控制反转属于什么设计模式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#飞书-java">飞书-Java</a></li>
   </ul>
 </nav></div>
@@ -2852,17 +2861,9 @@ select * from tbl where c=3 and b=2 and a=1</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">CREATE INDEX idx_name_age ON users(name, age, gender);
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">CREATE INDEX idx_name_age ON users(name, age, gender);
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>这个索引会按照 <code>name → age → gender</code> 的顺序构建 B+树，查询时必须从最左边的列开始使用才能生效。</p>
@@ -2911,7 +2912,7 @@ select * from tbl where c=3 and b=2 and a=1</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code-- 可以使用索引
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- 可以使用索引
 </span></span><span class="line"><span class="cl">WHERE name LIKE &#39;张%&#39;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">-- 不能使用索引
@@ -2927,7 +2928,7 @@ select * from tbl where c=3 and b=2 and a=1</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlCopy Code-- age 和 gender 无法使用索引
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- age 和 gender 无法使用索引
 </span></span><span class="line"><span class="cl">WHERE name = &#39;张三&#39; AND age &gt; 20 AND gender = &#39;M&#39;
 </span></span></code></pre></td></tr></table>
 </div>
@@ -2960,10 +2961,10 @@ select * from tbl where c=3 and b=2 and a=1</p>
 <p>操作系统</p>
 <p>页缓存 tlb</p>
 <p>cpu缓存</p>
-<p>airag底层流程</p>
-<p>spring</p>
-<p>好在哪</p>
-<p>依赖注入、控制反转属于什么设计模式</p>
+<p>ai</p>
+<p>rag底层流程</p>
+<h4 id="spring好在哪">spring好在哪</h4>
+<h4 id="依赖注入控制反转属于什么设计模式">依赖注入、控制反转属于什么设计模式</h4>
 <p>子序列最大 贪心做的</p>
 <p>反转链表 用c++</p>
 <p>内存池 太长没做</p>

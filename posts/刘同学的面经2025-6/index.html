@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  27309 ,
+        },"genre": "posts","wordcount":  27730 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 27309 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 55 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 27730 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 56 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -308,18 +308,51 @@
     </li>
     <li><a href="#滴滴-java">滴滴-Java</a>
       <ul>
-        <li><a href="#滴滴一面">滴滴一面</a></li>
-        <li><a href="#java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</a></li>
-        <li><a href="#jvm-cms和g1">jvm cms和g1</a></li>
-        <li><a href="#redis-为什么速度快">redis 为什么速度快</a></li>
-        <li><a href="#mysql-inodb">mysql inodb</a></li>
-        <li><a href="#b树和b树和红黑树">B+树和b树、和红黑树</a></li>
-        <li><a href="#acid是什么">acid是什么</a></li>
-        <li><a href="#怎么实现的持久性">怎么实现的持久性</a></li>
-        <li><a href="#滴滴二面">滴滴二面</a></li>
+        <li><a href="#滴滴一面">滴滴一面</a>
+          <ul>
+            <li><a href="#java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</a></li>
+            <li><a href="#jvm-cms和g1">jvm cms和g1</a></li>
+            <li><a href="#redis-为什么速度快">redis 为什么速度快</a>
+              <ul>
+                <li><a href="#1-纯内存操作">1. ‌<strong>纯内存操作</strong>‌</a></li>
+                <li><a href="#-2-高效数据结构">⚡ 2. ‌<strong>高效数据结构</strong>‌</a></li>
+                <li><a href="#-3-单线程模型">🧵 3. ‌<strong>单线程模型</strong>‌</a></li>
+                <li><a href="#-4-io多路复用">📡 4. ‌<strong>I/O多路复用</strong>‌</a></li>
+                <li><a href="#-5-协议与底层优化">🛠️ 5. ‌<strong>协议与底层优化</strong>‌</a></li>
+              </ul>
+            </li>
+            <li><a href="#mysql-inodb">mysql inodb</a></li>
+            <li><a href="#b树和b树和红黑树">B+树和b树、和红黑树</a></li>
+            <li><a href="#acid是什么">acid是什么</a></li>
+            <li><a href="#怎么实现的持久性">怎么实现的持久性</a></li>
+          </ul>
+        </li>
+        <li><a href="#滴滴二面">滴滴二面</a>
+          <ul>
+            <li><a href="#算法简单">算法简单</a></li>
+            <li><a href="#自己挖坑提到单调栈">自己挖坑提到单调栈</a></li>
+            <li><a href="#pb级别文件排序多路归并描述归并排序">pb级别文件排序（多路归并），描述归并排序</a></li>
+            <li><a href="#mysql">mysql</a></li>
+            <li><a href="#abc联合索引">abc联合索引</a></li>
+            <li><a href="#redis">redis</a></li>
+            <li><a href="#redis项目做什么">redis项目做什么</a></li>
+            <li><a href="#做分布式锁做注意什么">做分布式锁做注意什么</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#高德-java">高德-Java</a></li>
+    <li><a href="#高德-java">高德-Java</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#sql优化手段">sql优化手段</a></li>
+            <li><a href="#activiti比flowable等框架好在哪">activiti比flowable等框架好在哪</a></li>
+            <li><a href="#设计一个系统">设计一个系统</a></li>
+            <li><a href="#消息的库表需要什么字段">消息的库表需要什么字段</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#京东物流-java">京东物流-Java</a>
       <ul>
         <li><a href="#京东物流一面">京东物流一面</a>
@@ -2574,41 +2607,74 @@ cms有几个阶段，g1
 </ol>
 <h2 id="滴滴-java">滴滴-Java</h2>
 <h3 id="滴滴一面">滴滴一面</h3>
-<h3 id="java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</h3>
-<p>​	充分散列
-​	位移问题向高位移动</p>
-<h3 id="jvm-cms和g1">jvm cms和g1</h3>
-<h3 id="redis-为什么速度快">redis 为什么速度快</h3>
-<h3 id="mysql-inodb">mysql inodb</h3>
-<h3 id="b树和b树和红黑树">B+树和b树、和红黑树</h3>
-<h3 id="acid是什么">acid是什么</h3>
-<h3 id="怎么实现的持久性">怎么实现的持久性</h3>
+<h4 id="java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</h4>
+<ul>
+<li>索引计算、均匀分布hash</li>
+<li>索引重新计算的高效性，低位元素不移动</li>
+<li>新索引位置仅由哈希值新增的最高位决定</li>
+<li>位运算比取模快10倍</li>
+</ul>
+<h4 id="jvm-cms和g1">jvm cms和g1</h4>
+<h4 id="redis-为什么速度快">redis 为什么速度快</h4>
+<h5 id="1-纯内存操作">1. ‌<strong>纯内存操作</strong>‌</h5>
+<ul>
+<li>数据完全存储在内存中，避免磁盘I/O瓶颈12</li>
+<li>内存访问速度比磁盘随机读写快数个数量级3，每秒可处理超10万次操作1</li>
+<li>数据结构基于内存优化（如哈希表实现O(1)复杂度查询）24</li>
+</ul>
+<h5 id="-2-高效数据结构">⚡ 2. ‌<strong>高效数据结构</strong>‌</h5>
+<ul>
+<li>专为性能设计的数据结构（字符串/列表/哈希/集合等）24</li>
+<li>底层实现优化（如跳表、压缩列表），减少内存占用并提升操作效率6</li>
+</ul>
+<h5 id="-3-单线程模型">🧵 3. ‌<strong>单线程模型</strong>‌</h5>
+<ul>
+<li>避免多线程竞争锁和上下文切换的CPU开销23</li>
+<li>无需处理死锁问题，简化代码逻辑46</li>
+<li>单线程内通过异步处理保证原子性操作15</li>
+</ul>
+<h5 id="-4-io多路复用">📡 4. ‌<strong>I/O多路复用</strong>‌</h5>
+<ul>
+<li>使用epoll/kqueue等非阻塞I/O模型24</li>
+<li>单线程监听大量连接事件，高效调度请求4</li>
+<li>减少系统调用开销，避免请求阻塞2</li>
+</ul>
+<h5 id="-5-协议与底层优化">🛠️ 5. ‌<strong>协议与底层优化</strong>‌</h5>
+<ul>
+<li>自定义轻量级RESP协议，减少网络传输开销4</li>
+<li>实现高效虚拟内存机制，优化数据移动流程24</li>
+<li>持久化采用后台异步刷盘，避免影响主线程性能</li>
+</ul>
+<h4 id="mysql-inodb">mysql inodb</h4>
+<h4 id="b树和b树和红黑树">B+树和b树、和红黑树</h4>
+<h4 id="acid是什么">acid是什么</h4>
+<h4 id="怎么实现的持久性">怎么实现的持久性</h4>
 <h3 id="滴滴二面">滴滴二面</h3>
-<p>算法简单
-第一列顺序，第二列倒叙排序</p>
-<p>自己挖坑提到单调栈
-要求实现，说java有，糊弄过去了</p>
-<p>pb级别文件排序（多路归并），描述归并排序</p>
-<p>mysql
-select * from tbl where a=1
+<h4 id="算法简单">算法简单</h4>
+<p>第一列顺序，第二列倒叙排序</p>
+<h4 id="自己挖坑提到单调栈">自己挖坑提到单调栈</h4>
+<p>要求实现，说java有，糊弄过去了</p>
+<h4 id="pb级别文件排序多路归并描述归并排序">pb级别文件排序（多路归并），描述归并排序</h4>
+<h4 id="mysql">mysql</h4>
+<p>select * from tbl where a=1
 select * from tbl where b=2 and a=1
 select * from tbl where c=3 and b=2 and a=1</p>
-<p>abc联合索引
-哪个走联合索引
+<h4 id="abc联合索引">abc联合索引</h4>
+<p>哪个走联合索引
 第二个和第三个一定不走吗
 第一个什么情况不走索引</p>
-<p>redis
-redis项目做什么
-做分布式锁做注意什么
-设计方案</p>
+<h4 id="redis">redis</h4>
+<h4 id="redis项目做什么">redis项目做什么</h4>
+<h4 id="做分布式锁做注意什么">做分布式锁做注意什么</h4>
+<p>设计方案</p>
 <h2 id="高德-java">高德-Java</h2>
-<p>sql优化手段
-activiti比flowable等框架好在哪</p>
-<p>设计一个系统
-1高并发，不能重复 幂等问题
+<h4 id="sql优化手段">sql优化手段</h4>
+<h4 id="activiti比flowable等框架好在哪">activiti比flowable等框架好在哪</h4>
+<h4 id="设计一个系统">设计一个系统</h4>
+<p>1高并发，不能重复 幂等问题
 2一致性?高可用?吞吐量？不记得了，面完应该直接写的
 3熔断限流 重试次数，死信队列，lua脚本限制</p>
-<p>消息的库表需要什么字段</p>
+<h4 id="消息的库表需要什么字段">消息的库表需要什么字段</h4>
 <h2 id="京东物流-java">京东物流-Java</h2>
 <h3 id="京东物流一面">京东物流一面</h3>
 <h4 id="加载过程类加载到静态方法区">加载过程，类加载到静态方法区</h4>
@@ -2887,21 +2953,20 @@ activiti比flowable等框架好在哪</p>
 <p>数据量多</p>
 <p>压力大的部分</p>
 <h2 id="百度搜索-c">百度搜索-c++</h2>
-<p>c++
-共享指针
-内存分配
-new对象过程</p>
-<p>操作系统
-页缓存 tlb
-cpu缓存</p>
-<p>ai
-rag底层流程</p>
-<p>spring
-好在哪
-依赖注入、控制反转属于什么设计模式</p>
-<p>子序列最大 贪心做的
-反转链表 用c++
-内存池 太长没做</p>
+<p>c++</p>
+<p>共享指针</p>
+<p>内存分配</p>
+<p>new对象过程</p>
+<p>操作系统</p>
+<p>页缓存 tlb</p>
+<p>cpu缓存</p>
+<p>airag底层流程</p>
+<p>spring</p>
+<p>好在哪</p>
+<p>依赖注入、控制反转属于什么设计模式</p>
+<p>子序列最大 贪心做的</p>
+<p>反转链表 用c++</p>
+<p>内存池 太长没做</p>
 <h2 id="飞书-java">飞书-Java</h2>
 <p>java
 抽象类、普通类 、接口的区别</p>

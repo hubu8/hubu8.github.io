@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  25279 ,
+        },"genre": "posts","wordcount":  27309 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 25279 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 51 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 27309 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 55 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -237,7 +237,7 @@
                 <li><a href="#thread">Thread</a></li>
                 <li><a href="#completablefuture">CompletableFuture</a></li>
                 <li><a href="#线程池">线程池</a></li>
-                <li><a href="#lambda表达式">Lambda表达式</a></li>
+                <li><a href="#lambda表达式-实现了runnable接口的run方法">Lambda表达式 (实现了Runnable接口的run方法)</a></li>
               </ul>
             </li>
             <li><a href="#thredlocal">thredlocal</a>
@@ -255,7 +255,16 @@
               </ul>
             </li>
             <li><a href="#jvm-垃圾处理器">jvm 垃圾处理器</a></li>
-            <li><a href="#redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</a></li>
+            <li><a href="#redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</a>
+              <ul>
+                <li><a href="#1-突破原生模块的限制性">1. ‌<strong>突破原生模块的限制性</strong>‌</a></li>
+                <li><a href="#2-多维度的限流策略">2. ‌<strong>多维度的限流策略</strong>‌</a></li>
+                <li><a href="#-3-自定义限流算法">️ 3. ‌<strong>自定义限流算法</strong>‌</a></li>
+                <li><a href="#4-执行阶段与流程可控">4. ‌<strong>执行阶段与流程可控</strong>‌</a></li>
+                <li><a href="#5-生态整合能力">5. ‌<strong>生态整合能力</strong>‌</a></li>
+                <li><a href="#总结lua-在-nginx-限流中的核心价值">总结：Lua 在 Nginx 限流中的核心价值</a></li>
+              </ul>
+            </li>
             <li><a href="#分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</a></li>
             <li><a href="#mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</a>
               <ul>
@@ -270,7 +279,16 @@
                 <li><a href="#跨域请求流程">跨域请求流程</a></li>
               </ul>
             </li>
-            <li><a href="#springboot常用的注解">Springboot常用的注解</a></li>
+            <li><a href="#springboot常用的注解">Springboot常用的注解</a>
+              <ul>
+                <li><a href="#一核心启动注解">一、‌<strong>核心启动注解</strong>‌</a></li>
+                <li><a href="#二bean定义与依赖注入">二、‌<strong>Bean定义与依赖注入</strong>‌</a></li>
+                <li><a href="#三web开发注解">三、‌<strong>Web开发注解</strong>‌</a></li>
+                <li><a href="#四配置与条件注解">四、‌<strong>配置与条件注解</strong>‌</a></li>
+                <li><a href="#五数据校验与事务">五、‌<strong>数据校验与事务</strong>‌</a></li>
+                <li><a href="#六其他实用注解">六、‌<strong>其他实用注解</strong>‌</a></li>
+              </ul>
+            </li>
             <li><a href="#zab和raft区别">zab和raft区别</a>
               <ul>
                 <li><a href="#核心机制对比">核心机制对比</a>
@@ -291,7 +309,7 @@
     <li><a href="#滴滴-java">滴滴-Java</a>
       <ul>
         <li><a href="#滴滴一面">滴滴一面</a></li>
-        <li><a href="#java-base-hasmap扩容为什么是两倍">java base hasmap扩容为什么是两倍</a></li>
+        <li><a href="#java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</a></li>
         <li><a href="#jvm-cms和g1">jvm cms和g1</a></li>
         <li><a href="#redis-为什么速度快">redis 为什么速度快</a></li>
         <li><a href="#mysql-inodb">mysql inodb</a></li>
@@ -1596,7 +1614,7 @@
 <p><code>ZRANGEBYSCORE ips 3232235776 3232236031</code></p>
 <h5 id="zset有序集合数据结构"><strong>ZSet:有序集合数据结构</strong></h5>
 <ol>
-<li><strong>成员唯一性</strong>‌：集合中的成员（member）不可重复，但关联的分数（score）可以重复‌6</li>
+<li><strong>成员唯一性</strong>‌：集合中的成员（member）不可重复，但关联的分数（score）可以重复‌</li>
 <li>‌<strong>自动排序</strong>‌：根据分数从小到大排序，分数相同时按字典序排序‌1</li>
 <li>‌<strong>高效操作</strong>‌：添加、删除和查找的时间复杂度均为 O(logn)‌</li>
 </ol>
@@ -1608,6 +1626,7 @@
 <p>4、new StringBuilder(s).reverse().toString()</p>
 <p>5、异或交换</p>
 <h4 id="快速排序">快速排序</h4>
+<p>快速排序是一种高效的排序算法，采用分治策略将数据分割为两部分，递归排序。其核心思想是选择一个基准元素（pivot），将数组分为两部分：左侧元素均小于基准元素，右侧元素均大于基准元素，再对两部分递归排序。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1667,6 +1686,8 @@
 </span><span class="lnt">55
 </span><span class="lnt">56
 </span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">QuickSort</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1719,6 +1740,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 排序后的数组: 2 3 4 5 8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 这个快速排序实现包含以下部分：</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// sort 方法：对外提供的排序接口，处理边界情况</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// quickSort 方法：递归进行分区排序</span><span class="w">
@@ -1760,19 +1783,19 @@
 </div><h4 id="线程池参数-根据什么配置">线程池参数 根据什么配置</h4>
 <h5 id="一核心参数设置依据">一、核心参数设置依据</h5>
 <ol>
-<li>‌**核心线程数（corePoolSize）**‌
+<li><strong>‌核心线程数（corePoolSize）</strong>
 <ul>
 <li>‌<strong>CPU密集型任务</strong>‌：建议设为CPU核数+1（避免单线程阻塞影响吞吐量）‌</li>
 <li>‌<strong>I/O密集型任务</strong>‌（如数据库操作）：设为CPU核数的2~3倍（因线程在等待I/O时会空闲）‌</li>
 </ul>
 </li>
-<li>‌**最大线程数（maximumPoolSize）**‌
+<li><strong>‌最大线程数（maximumPoolSize）‌</strong>
 <ul>
 <li>需大于核心线程数，通常不超过CPU核数的5~8倍（避免频繁线程切换开销）‌</li>
 <li>结合业务流量高峰期预估（如电商需预留更多线程应对突发流量）‌</li>
 </ul>
 </li>
-<li>‌**空闲线程存活时间（keepAliveTime）**‌
+<li><strong>‌空闲线程存活时间（keepAliveTime）‌</strong>
 <ul>
 <li>‌<strong>突发流量场景</strong>‌（如秒杀）：设为10~20秒（快速回收临时线程）‌</li>
 <li>‌<strong>平稳流量场景</strong>‌：设为30~60秒（减少线程频繁创建/销毁）‌</li>
@@ -1853,6 +1876,7 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Callable</span><span class="p">;</span><span class="w">
@@ -1870,6 +1894,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">FutureTask</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FutureTask</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyCallable</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Thread</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">task</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 主线程阻塞</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="na">get</span><span class="p">();</span><span class="w">  </span><span class="c1">// 获取线程返回的结果</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
@@ -1989,6 +2014,9 @@
 </span><span class="lnt">37
 </span><span class="lnt">38
 </span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ExecutorService</span><span class="p">;</span><span class="w">
@@ -1996,6 +2024,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 创建单线程的线程池，保证所有任务按提交顺序依次执行</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Executors</span><span class="p">.</span><span class="na">newSingleThreadExecutor</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 创建固定大小为5的线程池 核心=最大  无界队列</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ExecutorService</span><span class="w"> </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="n">5</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;线程池中的线程正在运行&#34;</span><span class="p">);</span><span class="w">
@@ -2004,7 +2035,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">/////////////////////////////////////////////////////////////</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ArrayBlockingQueue</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ThreadPoolExecutor</span><span class="p">;</span><span class="w">
@@ -2032,7 +2063,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="lambda表达式">Lambda表达式</h5>
+</div><h5 id="lambda表达式-实现了runnable接口的run方法">Lambda表达式 (实现了Runnable接口的run方法)</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2150,7 +2181,109 @@
 cms有几个阶段，g1
 他们的区别</p>
 <h4 id="redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</h4>
+<p>Lua 脚本在 Nginx 限流中扮演关键角色，主要因其能突破原生模块的静态限制，实现动态、精细化的流量控制。核心优势体现在以下方面：</p>
+<h5 id="1-突破原生模块的限制性">1. ‌<strong>突破原生模块的限制性</strong>‌</h5>
+<p>Nginx 原生限流模块（如 <code>limit_req</code>、<code>limit_conn</code>）需预先配置规则且无法动态调整参数（如限流阈值、维度）。
+‌<strong>Lua 解决方案</strong>‌：</p>
+<ul>
+<li>通过脚本实时读取外部配置（如 Redis、数据库），支持动态调整限流策略。</li>
+<li>例：为不同用户组设置差异化的请求速率，无需重启 Nginx。</li>
+</ul>
+<h5 id="2-多维度的限流策略">2. ‌<strong>多维度的限流策略</strong>‌</h5>
+<p>原生模块通常基于 IP 或连接数限流，灵活性不足。
+‌<strong>Lua 扩展能力</strong>‌：</p>
+<ul>
+<li>支持按请求路径、Header 值、用户 ID 等复杂维度限流。</li>
+<li>例：对 <code>/api/vip</code> 路径放行更高流量，对普通接口严格限制。</li>
+</ul>
+<h5 id="-3-自定义限流算法">️ 3. ‌<strong>自定义限流算法</strong>‌</h5>
+<p>原生模块依赖漏桶或固定窗口算法，难以应对突发流量或复杂场景。
+‌<strong>Lua 实现灵活性</strong>‌：</p>
+<ul>
+<li>
+<p>可集成令牌桶、滑动窗口等高级算法。</p>
+</li>
+<li>
+<p>结合 Redis 实现分布式限流，确保集群环境一致性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">luaCopy</span> <span class="n">Code</span><span class="c1">-- 伪代码示例：Redis+Lua 令牌桶限流</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">redis_call</span><span class="p">(</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">tokens</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">redis_call</span><span class="p">(</span><span class="s2">&#34;DECR&#34;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">return</span> <span class="s2">&#34;ALLOW&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">else</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">return</span> <span class="s2">&#34;REJECT&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="4-执行阶段与流程可控">4. ‌<strong>执行阶段与流程可控</strong>‌</h5>
+<p>Lua 脚本可嵌入 Nginx 处理流程的任意阶段（如访问前、响应后），支持：</p>
+<ul>
+<li>前置条件检查（如验证 Token 有效性后再限流）。</li>
+<li>自定义响应（如返回 JSON 格式错误代替默认 503）。</li>
+</ul>
+<h5 id="5-生态整合能力">5. ‌<strong>生态整合能力</strong>‌</h5>
+<ul>
+<li>通过 OpenResty 集成 Lua，直接调用 <code>lua-resty-limit-traffic</code> 等成熟库，简化开发。</li>
+<li>无缝对接 Redis、MySQL 等外部存储，实现限流状态共享。</li>
+</ul>
+<hr>
+<h5 id="总结lua-在-nginx-限流中的核心价值">总结：Lua 在 Nginx 限流中的核心价值</h5>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>特性</strong>‌</th>
+          <th>‌<strong>原生 Nginx 模块</strong>‌</th>
+          <th>‌<strong>Lua 脚本方案</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>规则动态性</td>
+          <td>静态配置，需重启生效</td>
+          <td>实时调整策略</td>
+      </tr>
+      <tr>
+          <td>维度灵活性</td>
+          <td>仅支持基础维度（如 IP）</td>
+          <td>支持任意业务维度</td>
+      </tr>
+      <tr>
+          <td>算法扩展性</td>
+          <td>固定算法（漏桶/连接数）</td>
+          <td>可自定义高级算法</td>
+      </tr>
+      <tr>
+          <td>响应控制</td>
+          <td>返回固定错误码</td>
+          <td>定制化响应内容与逻辑</td>
+      </tr>
+      <tr>
+          <td>分布式支持</td>
+          <td>单机限流</td>
+          <td>集群协同限流（需 Redis）</td>
+      </tr>
+  </tbody>
+</table>
+<p>👉 ‌<strong>适用场景</strong>‌：需高频调整规则、多维度策略、复杂算法或分布式一致性的高并发业务，如 API 网关、秒杀系统</p>
 <h4 id="分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</h4>
+<ul>
+<li>redis</li>
+<li>zookeeper</li>
+</ul>
 <h4 id="mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</h4>
 <h5 id="执行计划参数解读">执行计划参数解读</h5>
 <ol>
@@ -2266,6 +2399,84 @@ cms有几个阶段，g1
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="springboot常用的注解">Springboot常用的注解</h4>
+<p>以下是Spring Boot开发中高频使用的核心注解分类总结，结合功能场景与典型用法：</p>
+<hr>
+<h5 id="一核心启动注解">一、‌<strong>核心启动注解</strong>‌</h5>
+<ol>
+<li>
+<p>‌**<code>@SpringBootApplication</code>**‌
+主类注解，整合了<code>@Configuration</code>（标记配置类）、<code>@EnableAutoConfiguration</code>（启用自动配置）和<code>@ComponentScan</code>（组件扫描）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@SpringBootApplication
+</span></span><span class="line"><span class="cl">public class MyApp {
+</span></span><span class="line"><span class="cl">    public static void main(String[] args) {
+</span></span><span class="line"><span class="cl">        SpringApplication.run(MyApp.class, args);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>‌**<code>@EnableAutoConfiguration</code>**‌
+自动根据依赖配置Spring应用（如引入<code>spring-boot-starter-web</code>自动配置Tomcat)。</p>
+</li>
+</ol>
+<hr>
+<h5 id="二bean定义与依赖注入">二、‌<strong>Bean定义与依赖注入</strong>‌</h5>
+<ol>
+<li>‌**<code>@Component</code>**‌
+通用组件注解，标记类为Spring管理的Bean。</li>
+<li>‌**<code>@Service</code><strong>‌ / ‌</strong><code>@Repository</code><strong>‌ / ‌</strong><code>@Controller</code>**‌
+分别标识服务层、DAO层和控制器层组件，语义化分层。</li>
+<li>‌**<code>@Autowired</code>**‌
+自动注入依赖的Bean，支持构造器、字段或方法注入。</li>
+<li>‌**<code>@Bean</code>**‌
+在配置类中显式定义Bean，常用于第三方库集成48。</li>
+</ol>
+<hr>
+<h5 id="三web开发注解">三、‌<strong>Web开发注解</strong>‌</h5>
+<ol>
+<li>‌**<code>@RestController</code>**‌
+组合<code>@Controller</code>和<code>@ResponseBody</code>，直接返回JSON/XML响应。</li>
+<li>‌**<code>@RequestMapping</code><strong>‌ / ‌</strong><code>@GetMapping</code><strong>‌ / ‌</strong><code>@PostMapping</code>**‌
+定义HTTP端点路径和请求方法。</li>
+<li>‌**<code>@RequestBody</code><strong>‌ / ‌</strong><code>@PathVariable</code><strong>‌ / ‌</strong><code>@RequestParam</code>**‌
+分别处理请求体、URL路径参数和查询参数。</li>
+</ol>
+<hr>
+<h5 id="四配置与条件注解">四、‌<strong>配置与条件注解</strong>‌</h5>
+<ol>
+<li>‌**<code>@Value</code>**‌
+注入配置文件中的属性值（如<code>@Value(&quot;${server.port}&quot;)</code>）。</li>
+<li>‌**<code>@ConfigurationProperties</code>**‌
+批量绑定配置属性到Java对象。</li>
+<li>‌**<code>@ConditionalOnClass</code><strong>‌ / ‌</strong><code>@ConditionalOnMissingBean</code>**‌
+条件化加载Bean，根据类路径或容器状态动态配置。</li>
+</ol>
+<hr>
+<h5 id="五数据校验与事务">五、‌<strong>数据校验与事务</strong>‌</h5>
+<ol>
+<li>‌**<code>@Valid</code><strong>‌ / ‌</strong><code>@Validated</code>**‌
+触发JSR-303校验（如<code>@NotNull</code>、<code>@Size</code>）。</li>
+<li>‌**<code>@Transactional</code>**‌
+声明式事务管理，标注方法或类。</li>
+</ol>
+<hr>
+<h5 id="六其他实用注解">六、‌<strong>其他实用注解</strong>‌</h5>
+<ul>
+<li>‌**<code>@Slf4j</code>**‌：Lombok提供的日志注解。</li>
+<li>‌**<code>@JsonIgnore</code>**‌：忽略字段序列化。</li>
+<li>‌**<code>@Async</code>**‌：异步方法调用</li>
+</ul>
 <h4 id="zab和raft区别">zab和raft区别</h4>
 <p>ZAB(ZooKeeper Atomic Broadcast)是专为ZooKeeper设计的原子广播协议，专注于高吞吐量的顺序一致性‌。Raft则是为通用分布式系统设计的共识算法，强调可理解性和易实现性‌</p>
 <h5 id="核心机制对比">核心机制对比</h5>
@@ -2363,7 +2574,7 @@ cms有几个阶段，g1
 </ol>
 <h2 id="滴滴-java">滴滴-Java</h2>
 <h3 id="滴滴一面">滴滴一面</h3>
-<h3 id="java-base-hasmap扩容为什么是两倍">java base hasmap扩容为什么是两倍</h3>
+<h3 id="java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</h3>
 <p>​	充分散列
 ​	位移问题向高位移动</p>
 <h3 id="jvm-cms和g1">jvm cms和g1</h3>

@@ -17,6 +17,12 @@
 <h3 id="对c-介绍一下内存呢管理">对C++ ，介绍一下内存呢管理</h3>
 <h3 id="算法">算法</h3>
 <h4 id="k和升序集合求交集">K和升序集合，求交集</h4>
+<p>// 测试用例数组
+vector&lt;vector<int>&gt; arrays1 = {
+{1, 3, 5, 7, 9},
+{2, 3, 5, 8, 9},
+{3, 5, 6, 9, 10}
+};</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -96,6 +102,7 @@
 </span><span class="lnt">75
 </span><span class="lnt">76
 </span><span class="lnt">77
+</span><span class="lnt">78
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
@@ -136,6 +143,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// 记录每个子数组当前遍历的指针位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 创建一个与 arrays 大小相同的 vector 容器，所有元素都初始化为 0
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pointers</span><span class="p">(</span><span class="n">arrays</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">min_val</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>

@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/"
-        },"genre": "posts","wordcount":  30843 ,
+        },"genre": "posts","wordcount":  30842 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6\/","datePublished": "2025-06-12T08:59:26+08:00","dateModified": "2025-06-12T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刘同学的面经(2025-6)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 30843 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 30842 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 62 分钟&nbsp;<span id="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/" class="leancloud_visitors" data-flag-title="刘同学的面经(2025-6)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -139,39 +139,43 @@
         <li><a href="#java-nio-原理---java-nio-原理非阻塞-io-的高性能架构">java nio 原理 - （Java NIO 原理：非阻塞 I/O 的高性能架构）</a></li>
       </ul>
     </li>
-    <li><a href="#百度-java">百度-Java</a>
+    <li><a href="#百度-java一面">百度-Java一面</a>
       <ul>
-        <li><a href="#百度一面">百度一面</a>
+        <li><a href="#redis一致性hash算法">redis：一致性hash算法</a>
           <ul>
-            <li><a href="#redis一致性hash算法">redis：一致性hash算法</a>
+            <li><a href="#容错性">容错性</a></li>
+            <li><a href="#扩展性">扩展性</a></li>
+            <li><a href="#虚拟节点">虚拟节点</a></li>
+          </ul>
+        </li>
+        <li><a href="#redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</a>
+          <ul>
+            <li><a href="#1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</a></li>
+            <li><a href="#2-基于固定窗口计数器的简化实现">2. 基于固定窗口计数器的简化实现</a></li>
+            <li><a href="#3-关键注意事项">3. 关键注意事项</a>
               <ul>
-                <li><a href="#容错性">容错性</a></li>
-                <li><a href="#扩展性">扩展性</a></li>
-                <li><a href="#虚拟节点">虚拟节点</a></li>
+                <li><a href="#31-原子性保障">3.1 原子性保障</a></li>
+                <li><a href="#32-时间同步">3.2 时间同步</a></li>
+                <li><a href="#33-性能优化">3.3 性能优化</a></li>
+                <li><a href="#34-错误处理">3.4 错误处理</a></li>
               </ul>
             </li>
-            <li><a href="#redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</a>
-              <ul>
-                <li><a href="#1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</a></li>
-                <li><a href="#2-基于固定窗口计数器的简化实现">2. 基于固定窗口计数器的简化实现</a></li>
-                <li><a href="#3-关键注意事项">3. 关键注意事项</a>
-                  <ul>
-                    <li><a href="#31-原子性保障">3.1 原子性保障</a></li>
-                    <li><a href="#32-时间同步">3.2 时间同步</a></li>
-                    <li><a href="#33-性能优化">3.3 性能优化</a></li>
-                    <li><a href="#34-错误处理">3.4 错误处理</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#分布式锁-zk-redis">分布式锁 zk redis</a>
+          </ul>
+        </li>
+        <li><a href="#分布式锁-zk-redis">分布式锁 zk redis</a>
+          <ul>
+            <li>
               <ul>
                 <li><a href="#基于-redis-的分布式锁"><strong>基于 Redis 的分布式锁</strong></a></li>
                 <li><a href="#基于-zookeeper-的分布式锁">基于 ZooKeeper 的分布式锁</a></li>
                 <li><a href="#两种方式对比与总结">两种方式对比与总结</a></li>
               </ul>
             </li>
-            <li><a href="#网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</a>
+          </ul>
+        </li>
+        <li><a href="#网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</a>
+          <ul>
+            <li>
               <ul>
                 <li><a href="#一核心组件的角色定位">一、核心组件的角色定位</a></li>
                 <li><a href="#二两种网关的高可用实现方式">二、两种网关的高可用实现方式</a>
@@ -184,26 +188,42 @@
                 <li><a href="#四核心总结">四、核心总结</a></li>
               </ul>
             </li>
-            <li><a href="#分析性能问题思路">分析性能问题思路</a>
+          </ul>
+        </li>
+        <li><a href="#分析性能问题思路">分析性能问题思路</a>
+          <ul>
+            <li>
               <ul>
                 <li><a href="#明确问题定义性能指标与场景"><strong>明确问题：定义性能指标与场景</strong></a></li>
                 <li><a href="#数据收集全链路指标采集">数据收集：全链路指标采集</a></li>
                 <li><a href="#中间件层数据库--缓存--消息队列">中间件层（数据库 / 缓存 / 消息队列）</a></li>
               </ul>
             </li>
-            <li><a href="#找最高点算法-一个for">找最高点算法 一个for</a>
+          </ul>
+        </li>
+        <li><a href="#找最高点算法-一个for">找最高点算法 一个for</a>
+          <ul>
+            <li>
               <ul>
                 <li><a href="#一维数组的峰值查找">一维数组的峰值查找</a></li>
                 <li><a href="#二维网格的峰值查找">二维网格的峰值查找</a></li>
               </ul>
             </li>
-            <li><a href="#原地交换算法两个for">原地交换算法两个for</a></li>
-            <li><a href="#链表倒数500经典双指针">链表倒数500，经典双指针。</a>
+          </ul>
+        </li>
+        <li><a href="#原地交换算法两个for">原地交换算法两个for</a></li>
+        <li><a href="#链表倒数500经典双指针">链表倒数500，经典双指针。</a>
+          <ul>
+            <li>
               <ul>
                 <li><a href="#原理">原理</a></li>
               </ul>
             </li>
-            <li><a href="#ip范围的优化-zset-redis">ip范围的优化	 zset redis</a>
+          </ul>
+        </li>
+        <li><a href="#ip范围的优化-zset-redis">ip范围的优化	 zset redis</a>
+          <ul>
+            <li>
               <ul>
                 <li><a href="#ip-转长整型long"><strong>IP 转长整型（Long）</strong></a></li>
                 <li><a href="#ip-范围查询"><strong>IP 范围查询</strong></a></li>
@@ -212,133 +232,127 @@
             </li>
           </ul>
         </li>
-        <li><a href="#百度二面">百度二面</a>
+      </ul>
+    </li>
+    <li><a href="#百度-java二面">百度-java二面</a>
+      <ul>
+        <li><a href="#字符串反转-有多少方法">字符串反转 有多少方法</a></li>
+        <li><a href="#快速排序">快速排序</a></li>
+        <li><a href="#字符串常量池-创建了几个对象">字符串常量池 创建了几个对象</a></li>
+        <li><a href="#集合stream解决问题-时间内filter金额最大-前五limit映射为一个属性map">集合stream解决问题 	时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</a></li>
+        <li><a href="#线程池参数-根据什么配置">线程池参数 根据什么配置</a>
           <ul>
-            <li><a href="#字符串反转-有多少方法">字符串反转 有多少方法</a></li>
-            <li><a href="#快速排序">快速排序</a></li>
-            <li><a href="#字符串常量池-创建了几个对象">字符串常量池 创建了几个对象</a>
+            <li><a href="#一核心参数设置依据">一、核心参数设置依据</a></li>
+            <li><a href="#二动态调优技巧">二、动态调优技巧</a></li>
+            <li><a href="#三其他关键参数">三、其他关键参数</a></li>
+          </ul>
+        </li>
+        <li><a href="#如何创建线程">如何创建线程</a>
+          <ul>
+            <li><a href="#runnable">Runnable</a></li>
+            <li><a href="#callable和future-可以返回结果">Callable和Future （可以返回结果）</a></li>
+            <li><a href="#thread">Thread</a></li>
+            <li><a href="#completablefuture">CompletableFuture</a></li>
+            <li><a href="#线程池">线程池</a></li>
+            <li><a href="#lambda表达式-实现了runnable接口的run方法">Lambda表达式 (实现了Runnable接口的run方法)</a></li>
+          </ul>
+        </li>
+        <li><a href="#thredlocal">thredlocal</a>
+          <ul>
+            <li><a href="#核心原理">核心原理</a></li>
+            <li><a href="#主要特点">主要特点</a></li>
+            <li><a href="#使用场景">使用场景</a></li>
+          </ul>
+        </li>
+        <li><a href="#synchronized-和-reentrantlock-区别-什么时候使用">synchronized 和 ReentrantLock 区别, 什么时候使用</a>
+          <ul>
+            <li><a href="#核心区别分析">核心区别分析</a></li>
+            <li><a href="#适用场景建议">适用场景建议</a></li>
+            <li><a href="#最佳实践提示">最佳实践提示</a></li>
+          </ul>
+        </li>
+        <li><a href="#jvm-垃圾处理器">jvm 垃圾处理器</a></li>
+        <li><a href="#redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</a>
+          <ul>
+            <li><a href="#1-突破原生模块的限制性">1. ‌<strong>突破原生模块的限制性</strong>‌</a></li>
+            <li><a href="#2-多维度的限流策略">2. ‌<strong>多维度的限流策略</strong>‌</a></li>
+            <li><a href="#-3-自定义限流算法">️ 3. ‌<strong>自定义限流算法</strong>‌</a></li>
+            <li><a href="#4-执行阶段与流程可控">4. ‌<strong>执行阶段与流程可控</strong>‌</a></li>
+            <li><a href="#5-生态整合能力">5. ‌<strong>生态整合能力</strong>‌</a>
               <ul>
-                <li><a href="#string-a--abc">String a = &ldquo;abc&rdquo;</a></li>
-                <li><a href="#string-a--new-stringabc">String a = new String(&ldquo;abc&rdquo;)</a></li>
-              </ul>
-            </li>
-            <li><a href="#集合stream解决问题-时间内filter金额最大-前五limit映射为一个属性map">集合stream解决问题 	时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</a></li>
-            <li><a href="#线程池参数-根据什么配置">线程池参数 根据什么配置</a>
-              <ul>
-                <li><a href="#一核心参数设置依据">一、核心参数设置依据</a></li>
-                <li><a href="#二动态调优技巧">二、动态调优技巧</a></li>
-                <li><a href="#三其他关键参数">三、其他关键参数</a></li>
-              </ul>
-            </li>
-            <li><a href="#如何创建线程">如何创建线程</a>
-              <ul>
-                <li><a href="#runnable">Runnable</a></li>
-                <li><a href="#callable和future-可以返回结果">Callable和Future （可以返回结果）</a></li>
-                <li><a href="#thread">Thread</a></li>
-                <li><a href="#completablefuture">CompletableFuture</a></li>
-                <li><a href="#线程池">线程池</a></li>
-                <li><a href="#lambda表达式-实现了runnable接口的run方法">Lambda表达式 (实现了Runnable接口的run方法)</a></li>
-              </ul>
-            </li>
-            <li><a href="#thredlocal">thredlocal</a>
-              <ul>
-                <li><a href="#核心原理">核心原理</a></li>
-                <li><a href="#主要特点">主要特点</a></li>
-                <li><a href="#使用场景">使用场景</a></li>
-              </ul>
-            </li>
-            <li><a href="#synchronized-和-reentrantlock-区别-什么时候使用">synchronized 和 ReentrantLock 区别, 什么时候使用</a>
-              <ul>
-                <li><a href="#核心区别分析">核心区别分析</a></li>
-                <li><a href="#适用场景建议">适用场景建议</a></li>
-                <li><a href="#最佳实践提示">最佳实践提示</a></li>
-              </ul>
-            </li>
-            <li><a href="#jvm-垃圾处理器">jvm 垃圾处理器</a></li>
-            <li><a href="#redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</a>
-              <ul>
-                <li><a href="#1-突破原生模块的限制性">1. ‌<strong>突破原生模块的限制性</strong>‌</a></li>
-                <li><a href="#2-多维度的限流策略">2. ‌<strong>多维度的限流策略</strong>‌</a></li>
-                <li><a href="#-3-自定义限流算法">️ 3. ‌<strong>自定义限流算法</strong>‌</a></li>
-                <li><a href="#4-执行阶段与流程可控">4. ‌<strong>执行阶段与流程可控</strong>‌</a></li>
-                <li><a href="#5-生态整合能力">5. ‌<strong>生态整合能力</strong>‌</a></li>
                 <li><a href="#总结lua-在-nginx-限流中的核心价值">总结：Lua 在 Nginx 限流中的核心价值</a></li>
               </ul>
             </li>
-            <li><a href="#分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</a></li>
-            <li><a href="#mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</a>
+          </ul>
+        </li>
+        <li><a href="#分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</a></li>
+        <li><a href="#mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</a>
+          <ul>
+            <li><a href="#执行计划参数解读">执行计划参数解读</a></li>
+            <li><a href="#优化建议">优化建议</a></li>
+            <li><a href="#性能监控方法">性能监控方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#什么是跨域怎么解决跨域nginx和gateway怎么设置">什么是跨域，怎么解决跨域，nginx和gateway怎么设置？</a>
+          <ul>
+            <li><a href="#什么是跨域">什么是跨域</a></li>
+            <li><a href="#跨域请求流程">跨域请求流程</a></li>
+          </ul>
+        </li>
+        <li><a href="#springboot常用的注解">Springboot常用的注解</a>
+          <ul>
+            <li><a href="#一核心启动注解">一、‌<strong>核心启动注解</strong>‌</a></li>
+            <li><a href="#二bean定义与依赖注入">二、‌<strong>Bean定义与依赖注入</strong>‌</a></li>
+            <li><a href="#三web开发注解">三、‌<strong>Web开发注解</strong>‌</a></li>
+            <li><a href="#四配置与条件注解">四、‌<strong>配置与条件注解</strong>‌</a></li>
+            <li><a href="#五数据校验与事务">五、‌<strong>数据校验与事务</strong>‌</a></li>
+            <li><a href="#六其他实用注解">六、‌<strong>其他实用注解</strong>‌</a></li>
+          </ul>
+        </li>
+        <li><a href="#zab和raft区别">zab和raft区别</a>
+          <ul>
+            <li><a href="#核心机制对比">核心机制对比</a>
               <ul>
-                <li><a href="#执行计划参数解读">执行计划参数解读</a></li>
-                <li><a href="#优化建议">优化建议</a></li>
-                <li><a href="#性能监控方法">性能监控方法</a></li>
+                <li><a href="#选举机制差异">选举机制差异</a></li>
+                <li><a href="#日志处理差异">日志处理差异</a></li>
               </ul>
             </li>
-            <li><a href="#什么是跨域怎么解决跨域nginx和gateway怎么设置">什么是跨域，怎么解决跨域，nginx和gateway怎么设置？</a>
-              <ul>
-                <li><a href="#什么是跨域">什么是跨域</a></li>
-                <li><a href="#跨域请求流程">跨域请求流程</a></li>
-              </ul>
-            </li>
-            <li><a href="#springboot常用的注解">Springboot常用的注解</a>
-              <ul>
-                <li><a href="#一核心启动注解">一、‌<strong>核心启动注解</strong>‌</a></li>
-                <li><a href="#二bean定义与依赖注入">二、‌<strong>Bean定义与依赖注入</strong>‌</a></li>
-                <li><a href="#三web开发注解">三、‌<strong>Web开发注解</strong>‌</a></li>
-                <li><a href="#四配置与条件注解">四、‌<strong>配置与条件注解</strong>‌</a></li>
-                <li><a href="#五数据校验与事务">五、‌<strong>数据校验与事务</strong>‌</a></li>
-                <li><a href="#六其他实用注解">六、‌<strong>其他实用注解</strong>‌</a></li>
-              </ul>
-            </li>
-            <li><a href="#zab和raft区别">zab和raft区别</a>
-              <ul>
-                <li><a href="#核心机制对比">核心机制对比</a>
-                  <ul>
-                    <li><a href="#选举机制差异">选举机制差异</a></li>
-                    <li><a href="#日志处理差异">日志处理差异</a></li>
-                  </ul>
-                </li>
-                <li><a href="#协议阶段与性能特点">协议阶段与性能特点</a></li>
-                <li><a href="#适用场景对比">适用场景对比</a></li>
-                <li><a href="#相同点总结">相同点总结</a></li>
-              </ul>
-            </li>
+            <li><a href="#协议阶段与性能特点">协议阶段与性能特点</a></li>
+            <li><a href="#适用场景对比">适用场景对比</a></li>
+            <li><a href="#相同点总结">相同点总结</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#滴滴-java">滴滴-Java</a>
+    <li><a href="#滴滴-java一面">滴滴-Java一面</a>
       <ul>
-        <li><a href="#滴滴一面">滴滴一面</a>
+        <li><a href="#java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</a></li>
+        <li><a href="#jvm-cms和g1">jvm cms和g1</a></li>
+        <li><a href="#redis-为什么速度快">redis 为什么速度快</a>
           <ul>
-            <li><a href="#java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</a></li>
-            <li><a href="#jvm-cms和g1">jvm cms和g1</a></li>
-            <li><a href="#redis-为什么速度快">redis 为什么速度快</a>
-              <ul>
-                <li><a href="#1-纯内存操作">1. ‌<strong>纯内存操作</strong>‌</a></li>
-                <li><a href="#-2-高效数据结构">⚡ 2. ‌<strong>高效数据结构</strong>‌</a></li>
-                <li><a href="#-3-单线程模型">🧵 3. ‌<strong>单线程模型</strong>‌</a></li>
-                <li><a href="#-4-io多路复用">📡 4. ‌<strong>I/O多路复用</strong>‌</a></li>
-                <li><a href="#-5-协议与底层优化">🛠️ 5. ‌<strong>协议与底层优化</strong>‌</a></li>
-              </ul>
-            </li>
-            <li><a href="#mysql-inodb">mysql inodb</a></li>
-            <li><a href="#b树和b树和红黑树">B+树和b树、和红黑树</a></li>
-            <li><a href="#acid是什么">acid是什么</a></li>
-            <li><a href="#怎么实现的持久性">怎么实现的持久性</a></li>
+            <li><a href="#1-纯内存操作">1. ‌<strong>纯内存操作</strong>‌</a></li>
+            <li><a href="#-2-高效数据结构">⚡ 2. ‌<strong>高效数据结构</strong>‌</a></li>
+            <li><a href="#-3-单线程模型">🧵 3. ‌<strong>单线程模型</strong>‌</a></li>
+            <li><a href="#-4-io多路复用">📡 4. ‌<strong>I/O多路复用</strong>‌</a></li>
+            <li><a href="#-5-协议与底层优化">🛠️ 5. ‌<strong>协议与底层优化</strong>‌</a></li>
           </ul>
         </li>
-        <li><a href="#滴滴二面">滴滴二面</a>
-          <ul>
-            <li><a href="#算法简单">算法简单</a></li>
-            <li><a href="#自己挖坑提到单调栈">自己挖坑提到单调栈</a></li>
-            <li><a href="#pb级别文件排序多路归并描述归并排序">pb级别文件排序（多路归并），描述归并排序</a></li>
-            <li><a href="#mysql">mysql</a></li>
-            <li><a href="#abc联合索引">abc联合索引</a></li>
-            <li><a href="#redis">redis</a></li>
-            <li><a href="#redis项目做什么">redis项目做什么</a></li>
-            <li><a href="#做分布式锁做注意什么">做分布式锁做注意什么</a></li>
-          </ul>
-        </li>
+        <li><a href="#mysql-inodb">mysql inodb</a></li>
+        <li><a href="#b树和b树和红黑树">B+树和b树、和红黑树</a></li>
+        <li><a href="#acid是什么">acid是什么</a></li>
+        <li><a href="#怎么实现的持久性">怎么实现的持久性</a></li>
+      </ul>
+    </li>
+    <li><a href="#滴滴二面">滴滴二面</a>
+      <ul>
+        <li><a href="#算法简单">算法简单</a></li>
+        <li><a href="#自己挖坑提到单调栈">自己挖坑提到单调栈</a></li>
+        <li><a href="#pb级别文件排序多路归并描述归并排序">pb级别文件排序（多路归并），描述归并排序</a></li>
+        <li><a href="#mysql">mysql</a></li>
+        <li><a href="#abc联合索引">abc联合索引</a></li>
+        <li><a href="#redis">redis</a></li>
+        <li><a href="#redis项目做什么">redis项目做什么</a></li>
+        <li><a href="#做分布式锁做注意什么">做分布式锁做注意什么</a></li>
       </ul>
     </li>
     <li><a href="#高德-java">高德-Java</a>
@@ -353,40 +367,36 @@
         </li>
       </ul>
     </li>
-    <li><a href="#京东物流-java">京东物流-Java</a>
+    <li><a href="#京东物流-java一面">京东物流-Java一面</a>
       <ul>
-        <li><a href="#京东物流一面">京东物流一面</a>
-          <ul>
-            <li><a href="#加载过程类加载到静态方法区">加载过程，类加载到静态方法区</a></li>
-            <li><a href="#java线程池底层机制">java线程池底层机制</a></li>
-            <li><a href="#spring事务失效-的情况">spring事务失效 的情况</a></li>
-            <li><a href="#mysql-最左前匹配">mysql 最左前匹配</a></li>
-            <li><a href="#sql优化-索引">sql优化 索引</a></li>
-            <li><a href="#redis分布式通信">redis分布式通信</a></li>
-            <li><a href="#复制是三个sync">复制是三个sync</a></li>
-            <li><a href="#底层是gossip协议反熵和流言模式">底层是gossip协议，反熵和流言模式</a></li>
-            <li><a href="#事务-spring-start原理">事务 spring start原理</a></li>
-          </ul>
-        </li>
-        <li><a href="#京东物流二面">京东物流二面</a>
-          <ul>
-            <li><a href="#低代码架构">低代码架构</a></li>
-            <li><a href="#流程架构">流程架构</a></li>
-            <li><a href="#mq重试">mq重试</a></li>
-          </ul>
-        </li>
-        <li><a href="#京东物流三面">京东物流三面</a>
-          <ul>
-            <li><a href="#低代码架构-1">低代码架构</a></li>
-            <li><a href="#流程架构-1">流程架构</a></li>
-            <li><a href="#工作中遇到的困难mq重试redis击穿">工作中遇到的困难，mq重试+redis击穿</a></li>
-            <li><a href="#怎么测试测试moudle动态代理一个超时的类插拔">怎么测试，测试moudle，动态代理一个超时的类，插拔</a></li>
-            <li><a href="#工资加班">工资、加班</a></li>
-          </ul>
-        </li>
+        <li><a href="#加载过程类加载到静态方法区">加载过程，类加载到静态方法区</a></li>
+        <li><a href="#java线程池底层机制">java线程池底层机制</a></li>
+        <li><a href="#spring事务失效-的情况">spring事务失效 的情况</a></li>
+        <li><a href="#mysql-最左前匹配">mysql 最左前匹配</a></li>
+        <li><a href="#sql优化-索引">sql优化 索引</a></li>
+        <li><a href="#redis分布式通信">redis分布式通信</a></li>
+        <li><a href="#复制是三个sync">复制是三个sync</a></li>
+        <li><a href="#底层是gossip协议反熵和流言模式">底层是gossip协议，反熵和流言模式</a></li>
+        <li><a href="#事务-spring-start原理">事务 spring start原理</a></li>
       </ul>
     </li>
-    <li><a href="#百度搜索-c">百度搜索-c++</a>
+    <li><a href="#京东物流二面">京东物流二面</a>
+      <ul>
+        <li><a href="#低代码架构">低代码架构</a></li>
+        <li><a href="#流程架构">流程架构</a></li>
+        <li><a href="#mq重试">mq重试</a></li>
+      </ul>
+    </li>
+    <li><a href="#京东物流三面">京东物流三面</a>
+      <ul>
+        <li><a href="#低代码架构-1">低代码架构</a></li>
+        <li><a href="#流程架构-1">流程架构</a></li>
+        <li><a href="#工作中遇到的困难mq重试redis击穿">工作中遇到的困难，mq重试+redis击穿</a></li>
+        <li><a href="#怎么测试测试moudle动态代理一个超时的类插拔">怎么测试，测试moudle，动态代理一个超时的类，插拔</a></li>
+        <li><a href="#工资加班">工资、加班</a></li>
+      </ul>
+    </li>
+    <li><a href="#百度搜索-c一面">百度搜索-c++一面</a>
       <ul>
         <li><a href="#c">c++</a>
           <ul>
@@ -1108,9 +1118,8 @@
 <li>推荐使用 ‌<strong>Netty</strong>‌ 等框架简化开发，其基于 NIO 封装了稳定高性能的 API。</li>
 </ul></blockquote>
 <p>通过 ‌<strong>Channel-Buffer-Selector 三角协作</strong>‌，Java NIO 在同等资源下实现 10 倍于传统 I/O 的并发能力，成为高性能网络应用的基石。</p>
-<h2 id="百度-java">百度-Java</h2>
-<h3 id="百度一面">百度一面</h3>
-<h4 id="redis一致性hash算法">redis：一致性hash算法</h4>
+<h2 id="百度-java一面">百度-Java一面</h2>
+<h3 id="redis一致性hash算法">redis：一致性hash算法</h3>
 <p>一致哈希 是一种特殊的哈希算法。在使用一致哈希算法后，哈希表槽位数（大小）的改变平均只需要对 K/n 个关键字重新映射，其中K是关键字的数量， n是槽位数量。然而在传统的哈希表中，添加或删除一个槽位的几乎需要对所有关键字进行重新映射。</p>
 <p>简单的说，一致性哈希是将整个哈希值空间组织成一个虚拟的圆环，如假设哈希函数H的值空间为0-2^32-1（哈希值是32位无符号整形），整个哈希空间环如下：</p>
 <p><img
@@ -1142,7 +1151,7 @@
         alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847103.png"
         title="哈希环3" width="628" height="500" /></p>
 <p>根据一致性哈希算法，数据A会被定为到Server 1上，数据B被定为到Server 2上，而C、D被定为到Server 3上。</p>
-<h5 id="容错性">容错性</h5>
+<h4 id="容错性">容错性</h4>
 <p>假如RedisService2宕机了，那么会怎样呢？</p>
 <p><img
         class="lazyload"
@@ -1153,7 +1162,7 @@
         alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847104.png"
         title="Redis2宕机" width="592" height="520" /></p>
 <p>那么，数据B对应的节点保存到RedisService3中。因此，其中一台宕机后，干扰的只有前面的数据（原数据被保存到顺时针的下一个服务器），而不会干扰到其他的数据。</p>
-<h5 id="扩展性">扩展性</h5>
+<h4 id="扩展性">扩展性</h4>
 <p>下面考虑另一种情况，假如增加一台服务器Redis4，具体位置如下图所示：</p>
 <p><img
         class="lazyload"
@@ -1165,7 +1174,7 @@
         title="RedisServicee4" width="634" height="592" /></p>
 <p>原本数据C是保存到Redis3中，但由于增加了Redis4，数据C被保存到Redis4中。干扰的也只有Redis3而已，其他数据不会受到影响。</p>
 <p>因此，一致性哈希算法对于节点的增减都只需重定位换空间的一小部分即可，具有较好的容错性和可扩展性</p>
-<h5 id="虚拟节点">虚拟节点</h5>
+<h4 id="虚拟节点">虚拟节点</h4>
 <p>前面部分都是讲述到Redis节点较多和节点分布较为均衡的情况，如果节点较少就会出现节点分布不均衡造成数据倾斜问题。</p>
 <p>例如，我们的的系统有两台Redis，分布的环位置如下图所示：</p>
 <p><img
@@ -1188,9 +1197,9 @@
         alt="/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/images/1460000017847107.png"
         title="虚拟节点" width="771" height="668" /></p>
 <p>对于数据定位的hash算法仍然不变，只是增加了虚拟节点到实际节点的映射。例如，数据C保存到虚拟节点Redis1#2，实际上数据保存到Redis1中。这样，就能解决服务节点少时数据不平均的问题。在实际应用中，通常将虚拟节点数设置为<strong>32甚至更大</strong>，因此即使<strong>很少的服务节点</strong>也能做到相对<strong>均匀的数据分布</strong>。</p>
-<h4 id="redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</h4>
+<h3 id="redis-lua脚本-如何避免限流失败过期时间自动续期">redis lua脚本 如何避免限流失败，过期时间，自动续期</h3>
 <p>在 Redis 中使用 Lua 脚本实现限流时，为避免限流失败（例如并发问题、原子性破坏），需确保脚本的原子性和正确性。以下是具体实现方法和示例：</p>
-<h5 id="1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</h5>
+<h4 id="1-基于令牌桶算法的限流脚本">1. 基于令牌桶算法的限流脚本</h4>
 <p>‌<strong>令牌桶算法</strong>‌是一种广泛应用于网络流量整形和速率限制的控制算法，其核心特征在于通过动态生成令牌的机制实现流量管控，并允许处理突发流量需求。</p>
 <p>‌<strong>算法定义与工作原理</strong>‌</p>
 <p>令牌桶算法通过维护固定容量的令牌桶和恒定速率令牌生成器实现流量控制。其核心运作流程包括：</p>
@@ -1296,7 +1305,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">return</span> <span class="p">{</span> <span class="n">allowed</span> <span class="ow">and</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">new_tokens</span> <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="2-基于固定窗口计数器的简化实现">2. 基于固定窗口计数器的简化实现</h5>
+</div><h4 id="2-基于固定窗口计数器的简化实现">2. 基于固定窗口计数器的简化实现</h4>
 <p>适合严格限制请求频率的场景：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1366,13 +1375,13 @@
 </span></span><span class="line"><span class="cl"><span class="kr">return</span> <span class="p">{</span> <span class="n">allowed</span> <span class="ow">and</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">max_requests</span> <span class="o">-</span> <span class="n">count</span> <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="3-关键注意事项">3. 关键注意事项</h5>
-<h6 id="31-原子性保障">3.1 原子性保障</h6>
+</div><h4 id="3-关键注意事项">3. 关键注意事项</h4>
+<h5 id="31-原子性保障">3.1 原子性保障</h5>
 <ul>
 <li><strong>单脚本执行</strong>：Redis 保证 Lua 脚本执行的原子性，无需担心并发问题。</li>
 <li><strong>避免外部依赖</strong>：脚本内不要调用可能阻塞的 Redis 命令（如 <code>KEYS</code>）。</li>
 </ul>
-<h6 id="32-时间同步">3.2 时间同步</h6>
+<h5 id="32-时间同步">3.2 时间同步</h5>
 <ul>
 <li>
 <p><strong>使用 Redis 时间</strong>：避免客户端时间与 Redis 服务器时间不一致，可改用 <code>redis.call('time')</code> 获取服务器时间：</p>
@@ -1386,12 +1395,12 @@
 </div>
 </div></li>
 </ul>
-<h6 id="33-性能优化">3.3 性能优化</h6>
+<h5 id="33-性能优化">3.3 性能优化</h5>
 <ul>
 <li><strong>批量处理</strong>：对于需要频繁调用的限流场景，可将多个操作合并到一个脚本中。</li>
 <li><strong>缓存预热</strong>：对热点 key 提前初始化，避免首次调用时的额外开销。</li>
 </ul>
-<h6 id="34-错误处理">3.4 错误处理</h6>
+<h5 id="34-错误处理">3.4 错误处理</h5>
 <ul>
 <li><strong>返回明确状态</strong>：脚本返回 <code>{允许访问标志, 剩余令牌/次数}</code>，便于客户端处理。</li>
 <li><strong>异常处理</strong>：在客户端代码中增加重试逻辑（如网络波动导致的执行失败）。</li>
@@ -1426,7 +1435,7 @@
 </ul>
 </li>
 </ol>
-<h4 id="分布式锁-zk-redis">分布式锁 zk redis</h4>
+<h3 id="分布式锁-zk-redis">分布式锁 zk redis</h3>
 <h5 id="基于-redis-的分布式锁"><strong>基于 Redis 的分布式锁</strong></h5>
 <p><strong>实现原理</strong></p>
 <p>利用 Redis 的原子命令（如 <code>SET key value NX PX</code>）实现锁的抢占，通过过期时间避免死锁，使用 Lua 脚本保证释放锁的原子性。</p>
@@ -1515,7 +1524,7 @@
   </tbody>
 </table>
 <p><strong>总结</strong>：分布式锁的核心是解决 “跨进程、跨机器的资源互斥”，Redis 锁侧重性能，ZooKeeper 锁侧重一致性，需根据业务的并发量、一致性要求和事务时长选择。</p>
-<h4 id="网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</h4>
+<h3 id="网关-getewayzuul分布式提高高可用nginx">网关 geteway、zuul分布式提高高可用，nginx</h3>
 <h5 id="一核心组件的角色定位">一、核心组件的角色定位</h5>
 <ul>
 <li><strong>Nginx</strong>：高性能反向代理服务器，工作在 TCP/HTTP 层，主要负责 <strong>入口流量转发、负载均衡、静态资源缓存、SSL 终结</strong> 等，是系统的 “前端网关”。</li>
@@ -1658,7 +1667,7 @@
 <li><strong>API 网关高可用</strong>：核心是 “集群化 + 容错机制”，通过服务发现、熔断降级、动态配置应对微服务间的复杂交互。</li>
 <li><strong>联合架构</strong>：Nginx 作为 “前端屏障”，API 网关作为 “业务中枢”，分层协作实现端到端高可用，适合大规模分布式系统。</li>
 </ol>
-<h4 id="分析性能问题思路">分析性能问题思路</h4>
+<h3 id="分析性能问题思路">分析性能问题思路</h3>
 <p>涵盖 <strong>问题定义、数据收集、分层定位、优化验证</strong> 四个核心步骤：</p>
 <h5 id="明确问题定义性能指标与场景"><strong>明确问题：定义性能指标与场景</strong></h5>
 <p>核心性能指标：响应时间、吞吐量、资源利用率</p>
@@ -1671,7 +1680,7 @@
 <p>数据库：慢日志查询、连接与锁</p>
 <p>缓存redis：缓存策略</p>
 <p>消息队列：队列堆积量</p>
-<h4 id="找最高点算法-一个for">找最高点算法 一个for</h4>
+<h3 id="找最高点算法-一个for">找最高点算法 一个for</h3>
 <h5 id="一维数组的峰值查找">一维数组的峰值查找</h5>
 <p>二分查找（O (log n) 最优解）</p>
 <p><strong>二分逻辑</strong>：</p>
@@ -1743,8 +1752,8 @@
 </ol>
 </li>
 </ul>
-<h4 id="原地交换算法两个for">原地交换算法两个for</h4>
-<h4 id="链表倒数500经典双指针">链表倒数500，经典双指针。</h4>
+<h3 id="原地交换算法两个for">原地交换算法两个for</h3>
+<h3 id="链表倒数500经典双指针">链表倒数500，经典双指针。</h3>
 <h5 id="原理">原理</h5>
 <p>通过两个指针（<code>fast</code> 快指针、<code>slow</code> 慢指针）实现一次遍历找到目标节点，避免先统计链表长度（第一次遍历）再定位（第二次遍历）的低效方式。</p>
 <p><strong>步骤</strong>：</p>
@@ -1754,7 +1763,7 @@
 <li><strong>双指针同步移动</strong>：<code>fast</code> 和 <code>slow</code> 同时向前移动，直到 <code>fast</code> 到达链表尾部（<code>fast == null</code>）。</li>
 <li><strong>结果</strong>：此时 <code>slow</code> 指针指向的节点即为链表倒数第 500 个节点（因为 <code>fast</code> 比 <code>slow</code> 超前 500 步，<code>fast</code> 到尾时，<code>slow</code> 距尾恰好 500 步）。</li>
 </ol>
-<h4 id="ip范围的优化-zset-redis">ip范围的优化	 zset redis</h4>
+<h3 id="ip范围的优化-zset-redis">ip范围的优化	 zset redis</h3>
 <h5 id="ip-转长整型long"><strong>IP 转长整型（Long）</strong></h5>
 <p>将 IPv4 地址（如 <code>192.168.1.1</code>）转换为无符号 32 位整数（范围：0~4,294,967,295），利用 ZSet 的分数（score）进行排序。</p>
 <div class="highlight"><div class="chroma">
@@ -1794,14 +1803,14 @@
 <li>‌<strong>自动排序</strong>‌：根据分数从小到大排序，分数相同时按字典序排序‌1</li>
 <li>‌<strong>高效操作</strong>‌：添加、删除和查找的时间复杂度均为 O(logn)‌</li>
 </ol>
-<h3 id="百度二面">百度二面</h3>
-<h4 id="字符串反转-有多少方法">字符串反转 有多少方法</h4>
+<h2 id="百度-java二面">百度-java二面</h2>
+<h3 id="字符串反转-有多少方法">字符串反转 有多少方法</h3>
 <p>1、双指针原地交换</p>
 <p>2、新建数组反向填充</p>
 <p>3、递归法</p>
 <p>4、new StringBuilder(s).reverse().toString()</p>
 <p>5、异或交换</p>
-<h4 id="快速排序">快速排序</h4>
+<h3 id="快速排序">快速排序</h3>
 <p>快速排序是一种高效的排序算法，采用分治策略将数据分割为两部分，递归排序。其核心思想是选择一个基准元素（pivot），将数组分为两部分：左侧元素均小于基准元素，右侧元素均大于基准元素，再对两部分递归排序。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1927,13 +1936,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 算法的时间复杂度平均为 O (n log n)，最坏情况下为 O (n²)。空间复杂度为 O (log n)。</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="字符串常量池-创建了几个对象">字符串常量池 创建了几个对象</h4>
-<h5 id="string-a--abc">String a = &ldquo;abc&rdquo;</h5>
+</div><h3 id="字符串常量池-创建了几个对象">字符串常量池 创建了几个对象</h3>
+<p><strong>String a = &ldquo;abc&rdquo;</strong></p>
 <p><strong>常量池不存在&quot;abc&quot;时</strong>：创建1个String对象并存入常量池，然后将引用赋给变量<code>a</code></p>
 <p><strong>常量池已存在&quot;abc&quot;时</strong>：不会创建新对象，直接复用常量池中的对象并引用赋值‌</p>
-<h5 id="string-a--new-stringabc">String a = new String(&ldquo;abc&rdquo;)</h5>
+<p><strong>String a = new String(&ldquo;abc&rdquo;)</strong></p>
 <p>最多 ‌<strong>2个</strong>‌（1个常量池对象 + 1个堆对象）‌</p>
-<h4 id="集合stream解决问题-时间内filter金额最大-前五limit映射为一个属性map">集合stream解决问题 	时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</h4>
+<h3 id="集合stream解决问题-时间内filter金额最大-前五limit映射为一个属性map">集合stream解决问题 	时间内（filter），金额最大 前五，（limit），映射为一个属性（map）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1956,8 +1965,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="线程池参数-根据什么配置">线程池参数 根据什么配置</h4>
-<h5 id="一核心参数设置依据">一、核心参数设置依据</h5>
+</div><h3 id="线程池参数-根据什么配置">线程池参数 根据什么配置</h3>
+<h4 id="一核心参数设置依据">一、核心参数设置依据</h4>
 <ol>
 <li><strong>‌核心线程数（corePoolSize）</strong>
 <ul>
@@ -1978,12 +1987,12 @@
 </ul>
 </li>
 </ol>
-<h5 id="二动态调优技巧">二、动态调优技巧</h5>
+<h4 id="二动态调优技巧">二、动态调优技巧</h4>
 <ul>
 <li>‌<strong>避免重启服务</strong>‌：通过配置中心（如Nacos、Apollo）动态调整参数，结合监控告警（如DTP组件）实时优化‌</li>
 <li>‌<strong>监控指标</strong>‌：观察CPU、内存、磁盘、网络使用率，调整线程数以平衡资源消耗与吞吐量‌</li>
 </ul>
-<h5 id="三其他关键参数">三、其他关键参数</h5>
+<h4 id="三其他关键参数">三、其他关键参数</h4>
 <ol>
 <li>‌任务队列
 <ul>
@@ -1996,8 +2005,8 @@
 </ul>
 </li>
 </ol>
-<h4 id="如何创建线程">如何创建线程</h4>
-<h5 id="runnable">Runnable</h5>
+<h3 id="如何创建线程">如何创建线程</h3>
+<h4 id="runnable">Runnable</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2030,7 +2039,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="callable和future-可以返回结果">Callable和Future （可以返回结果）</h5>
+</div><h4 id="callable和future-可以返回结果">Callable和Future （可以返回结果）</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2077,7 +2086,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="thread">Thread</h5>
+</div><h4 id="thread">Thread</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2110,7 +2119,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="completablefuture">CompletableFuture</h5>
+</div><h4 id="completablefuture">CompletableFuture</h4>
 <p>CompletableFuture是Java 8引入的异步编程工具，它改进了传统的Future模式，提供了更灵活、更强大的异步编程能力‌</p>
 <p><strong>1. 创建异步任务</strong></p>
 <ul>
@@ -2148,7 +2157,7 @@
 <li>‌**getNow()**‌：立即获取结果或默认值</li>
 <li>‌**join()**‌：阻塞获取结果‌4</li>
 </ul>
-<h5 id="线程池">线程池</h5>
+<h4 id="线程池">线程池</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2239,7 +2248,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="lambda表达式-实现了runnable接口的run方法">Lambda表达式 (实现了Runnable接口的run方法)</h5>
+</div><h4 id="lambda表达式-实现了runnable接口的run方法">Lambda表达式 (实现了Runnable接口的run方法)</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2262,29 +2271,29 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="thredlocal">thredlocal</h4>
+</div><h3 id="thredlocal">thredlocal</h3>
 <p>ThreadLocal是Java中用于管理线程局部变量的类，它为每个线程提供独立的变量副本，解决多线程并发访问共享资源时的线程安全问题‌。</p>
-<h5 id="核心原理">核心原理</h5>
+<h4 id="核心原理">核心原理</h4>
 <ol>
 <li>‌<strong>线程隔离机制</strong>‌：每个线程内部维护一个ThreadLocalMap结构，以ThreadLocal实例为键、变量副本为值‌</li>
 <li>‌<strong>独立存储</strong>‌：不同线程访问同一个ThreadLocal变量时，实际获取的是各自线程内的独立副本‌</li>
 <li>‌<strong>避免同步</strong>‌：通过隔离线程间的变量存储，避免了同步锁带来的性能损耗‌</li>
 </ol>
-<h5 id="主要特点">主要特点</h5>
+<h4 id="主要特点">主要特点</h4>
 <ul>
 <li>从JDK 1.2引入，在JDK 5.0中增加了泛型支持‌</li>
 <li>通常声明为private static类型，用于关联线程和线程上下文‌</li>
 <li>核心方法包括set()、get()、remove()和initialValue()‌</li>
 </ul>
-<h5 id="使用场景">使用场景</h5>
+<h4 id="使用场景">使用场景</h4>
 <ol>
 <li>‌<strong>数据库连接管理</strong>‌：如Hibernate会话管理‌</li>
 <li>‌<strong>事务上下文传递</strong>‌：Spring框架中的事务管理‌</li>
 <li>‌<strong>线程状态跟踪</strong>‌：跟踪特定线程的执行状态‌</li>
 <li>‌<strong>多数据源切换</strong>‌：不同线程使用不同数据源‌</li>
 </ol>
-<h4 id="synchronized-和-reentrantlock-区别-什么时候使用">synchronized 和 ReentrantLock 区别, 什么时候使用</h4>
-<h5 id="核心区别分析">核心区别分析</h5>
+<h3 id="synchronized-和-reentrantlock-区别-什么时候使用">synchronized 和 ReentrantLock 区别, 什么时候使用</h3>
+<h4 id="核心区别分析">核心区别分析</h4>
 <ol>
 <li>‌<strong>实现机制差异</strong>‌
 <ul>
@@ -2313,7 +2322,7 @@
 </ul>
 </li>
 </ol>
-<h5 id="适用场景建议">适用场景建议</h5>
+<h4 id="适用场景建议">适用场景建议</h4>
 <ol>
 <li>‌<strong>优先使用synchronized的情况</strong>‌
 <ul>
@@ -2331,7 +2340,7 @@
 </ul>
 </li>
 </ol>
-<h5 id="最佳实践提示">最佳实践提示</h5>
+<h4 id="最佳实践提示">最佳实践提示</h4>
 <ol>
 <li>‌<strong>锁释放注意事项</strong>‌
 <ul>
@@ -2352,27 +2361,27 @@
 </ul>
 </li>
 </ol>
-<h4 id="jvm-垃圾处理器">jvm 垃圾处理器</h4>
+<h3 id="jvm-垃圾处理器">jvm 垃圾处理器</h3>
 <p>cms和g1
 cms有几个阶段，g1
 他们的区别</p>
-<h4 id="redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</h4>
+<h3 id="redislua-脚本为什么用于限流-nginx">redis：lua 脚本为什么用于限流 nginx</h3>
 <p>Lua 脚本在 Nginx 限流中扮演关键角色，主要因其能突破原生模块的静态限制，实现动态、精细化的流量控制。核心优势体现在以下方面：</p>
-<h5 id="1-突破原生模块的限制性">1. ‌<strong>突破原生模块的限制性</strong>‌</h5>
+<h4 id="1-突破原生模块的限制性">1. ‌<strong>突破原生模块的限制性</strong>‌</h4>
 <p>Nginx 原生限流模块（如 <code>limit_req</code>、<code>limit_conn</code>）需预先配置规则且无法动态调整参数（如限流阈值、维度）。
 ‌<strong>Lua 解决方案</strong>‌：</p>
 <ul>
 <li>通过脚本实时读取外部配置（如 Redis、数据库），支持动态调整限流策略。</li>
 <li>例：为不同用户组设置差异化的请求速率，无需重启 Nginx。</li>
 </ul>
-<h5 id="2-多维度的限流策略">2. ‌<strong>多维度的限流策略</strong>‌</h5>
+<h4 id="2-多维度的限流策略">2. ‌<strong>多维度的限流策略</strong>‌</h4>
 <p>原生模块通常基于 IP 或连接数限流，灵活性不足。
 ‌<strong>Lua 扩展能力</strong>‌：</p>
 <ul>
 <li>支持按请求路径、Header 值、用户 ID 等复杂维度限流。</li>
 <li>例：对 <code>/api/vip</code> 路径放行更高流量，对普通接口严格限制。</li>
 </ul>
-<h5 id="-3-自定义限流算法">️ 3. ‌<strong>自定义限流算法</strong>‌</h5>
+<h4 id="-3-自定义限流算法">️ 3. ‌<strong>自定义限流算法</strong>‌</h4>
 <p>原生模块依赖漏桶或固定窗口算法，难以应对突发流量或复杂场景。
 ‌<strong>Lua 实现灵活性</strong>‌：</p>
 <ul>
@@ -2405,13 +2414,13 @@ cms有几个阶段，g1
 </div>
 </div></li>
 </ul>
-<h5 id="4-执行阶段与流程可控">4. ‌<strong>执行阶段与流程可控</strong>‌</h5>
+<h4 id="4-执行阶段与流程可控">4. ‌<strong>执行阶段与流程可控</strong>‌</h4>
 <p>Lua 脚本可嵌入 Nginx 处理流程的任意阶段（如访问前、响应后），支持：</p>
 <ul>
 <li>前置条件检查（如验证 Token 有效性后再限流）。</li>
 <li>自定义响应（如返回 JSON 格式错误代替默认 503）。</li>
 </ul>
-<h5 id="5-生态整合能力">5. ‌<strong>生态整合能力</strong>‌</h5>
+<h4 id="5-生态整合能力">5. ‌<strong>生态整合能力</strong>‌</h4>
 <ul>
 <li>通过 OpenResty 集成 Lua，直接调用 <code>lua-resty-limit-traffic</code> 等成熟库，简化开发。</li>
 <li>无缝对接 Redis、MySQL 等外部存储，实现限流状态共享。</li>
@@ -2455,36 +2464,36 @@ cms有几个阶段，g1
   </tbody>
 </table>
 <p>👉 ‌<strong>适用场景</strong>‌：需高频调整规则、多维度策略、复杂算法或分布式一致性的高并发业务，如 API 网关、秒杀系统</p>
-<h4 id="分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</h4>
+<h3 id="分布式锁两种方式怎么实现的">分布式锁两种方式怎么实现的</h3>
 <ul>
 <li>redis</li>
 <li>zookeeper</li>
 </ul>
-<h4 id="mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</h4>
-<h5 id="执行计划参数解读">执行计划参数解读</h5>
+<h3 id="mysql-执行计划的参数-index性能为什么不好走了全部索引">mysql 执行计划的参数 index性能为什么不好（走了全部索引）</h3>
+<h4 id="执行计划参数解读">执行计划参数解读</h4>
 <ol>
 <li>‌<strong>type列</strong>‌：显示访问类型，从最优到最差依次为：system &gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL‌4。出现index或ALL通常表示性能问题‌。</li>
 <li>‌<strong>key_len列</strong>‌：表示索引使用的字节数，可判断是否充分利用了复合索引‌。</li>
 <li>‌<strong>rows列</strong>‌：预估需要检查的行数，数值越大性能越差‌。</li>
 </ol>
-<h5 id="优化建议">优化建议</h5>
+<h4 id="优化建议">优化建议</h4>
 <ol>
 <li>‌<strong>创建覆盖索引</strong>‌：确保查询涉及的列都包含在索引中‌。例如为<code>SELECT user_id, username FROM users WHERE email='...'</code>创建<code>(email, username)</code>复合索引‌2。</li>
 <li>‌<strong>优化复合索引顺序</strong>‌：将高选择性列放在复合索引左侧‌。</li>
 <li>‌<strong>避免索引失效写法</strong>‌：不使用函数操作索引列、注意类型匹配、避免OR条件等‌。</li>
 <li>‌<strong>定期维护索引</strong>‌：大数据量下索引可能失效，需要定期重建‌。</li>
 </ol>
-<h5 id="性能监控方法">性能监控方法</h5>
+<h4 id="性能监控方法">性能监控方法</h4>
 <ol>
 <li>‌<strong>使用EXPLAIN分析</strong>‌：查看MySQL如何选择索引，识别不合理的索引选择‌。</li>
 <li>‌<strong>开启慢查询日志</strong>‌：设置阈值(如3秒)捕获慢SQL‌。</li>
 <li>‌<strong>对比不同环境执行计划</strong>‌：分析数据量差异对索引选择的影响‌</li>
 </ol>
-<h4 id="什么是跨域怎么解决跨域nginx和gateway怎么设置">什么是跨域，怎么解决跨域，nginx和gateway怎么设置？</h4>
-<h5 id="什么是跨域">什么是跨域</h5>
+<h3 id="什么是跨域怎么解决跨域nginx和gateway怎么设置">什么是跨域，怎么解决跨域，nginx和gateway怎么设置？</h3>
+<h4 id="什么是跨域">什么是跨域</h4>
 <p>跨域(Cross-Origin)是指浏览器出于安全考虑，限制从一个源(协议+域名+端口)加载的文档或脚本与来自另一个源的资源进行交互。两个URL被认为是不同源，只要协议、域名或端口任意一个不相同‌12。</p>
 <p>‌**同源策略(Same-Origin Policy)**‌是浏览器实现的安全机制，防止恶意网站通过一个域的网页访问另一个域的敏感数据。如果没有同源策略，恶意网页可能会读取另一个网页的敏感信息，如用户输入的密码、银行账号等‌1。</p>
-<h5 id="跨域请求流程">跨域请求流程</h5>
+<h4 id="跨域请求流程">跨域请求流程</h4>
 <ol>
 <li>浏览器发送跨域请求时，会自动在请求头中添加Origin字段，标明请求来源</li>
 <li>服务器根据配置决定是否允许该来源的请求</li>
@@ -2574,10 +2583,10 @@ cms有几个阶段，g1
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="springboot常用的注解">Springboot常用的注解</h4>
+</div><h3 id="springboot常用的注解">Springboot常用的注解</h3>
 <p>以下是Spring Boot开发中高频使用的核心注解分类总结，结合功能场景与典型用法：</p>
 <hr>
-<h5 id="一核心启动注解">一、‌<strong>核心启动注解</strong>‌</h5>
+<h4 id="一核心启动注解">一、‌<strong>核心启动注解</strong>‌</h4>
 <ol>
 <li>
 <p>‌**<code>@SpringBootApplication</code>**‌
@@ -2607,7 +2616,7 @@ cms有几个阶段，g1
 </li>
 </ol>
 <hr>
-<h5 id="二bean定义与依赖注入">二、‌<strong>Bean定义与依赖注入</strong>‌</h5>
+<h4 id="二bean定义与依赖注入">二、‌<strong>Bean定义与依赖注入</strong>‌</h4>
 <ol>
 <li>‌**<code>@Component</code>**‌
 通用组件注解，标记类为Spring管理的Bean。</li>
@@ -2619,7 +2628,7 @@ cms有几个阶段，g1
 在配置类中显式定义Bean，常用于第三方库集成48。</li>
 </ol>
 <hr>
-<h5 id="三web开发注解">三、‌<strong>Web开发注解</strong>‌</h5>
+<h4 id="三web开发注解">三、‌<strong>Web开发注解</strong>‌</h4>
 <ol>
 <li>‌**<code>@RestController</code>**‌
 组合<code>@Controller</code>和<code>@ResponseBody</code>，直接返回JSON/XML响应。</li>
@@ -2629,7 +2638,7 @@ cms有几个阶段，g1
 分别处理请求体、URL路径参数和查询参数。</li>
 </ol>
 <hr>
-<h5 id="四配置与条件注解">四、‌<strong>配置与条件注解</strong>‌</h5>
+<h4 id="四配置与条件注解">四、‌<strong>配置与条件注解</strong>‌</h4>
 <ol>
 <li>‌**<code>@Value</code>**‌
 注入配置文件中的属性值（如<code>@Value(&quot;${server.port}&quot;)</code>）。</li>
@@ -2639,7 +2648,7 @@ cms有几个阶段，g1
 条件化加载Bean，根据类路径或容器状态动态配置。</li>
 </ol>
 <hr>
-<h5 id="五数据校验与事务">五、‌<strong>数据校验与事务</strong>‌</h5>
+<h4 id="五数据校验与事务">五、‌<strong>数据校验与事务</strong>‌</h4>
 <ol>
 <li>‌**<code>@Valid</code><strong>‌ / ‌</strong><code>@Validated</code>**‌
 触发JSR-303校验（如<code>@NotNull</code>、<code>@Size</code>）。</li>
@@ -2647,16 +2656,16 @@ cms有几个阶段，g1
 声明式事务管理，标注方法或类。</li>
 </ol>
 <hr>
-<h5 id="六其他实用注解">六、‌<strong>其他实用注解</strong>‌</h5>
+<h4 id="六其他实用注解">六、‌<strong>其他实用注解</strong>‌</h4>
 <ul>
 <li>‌**<code>@Slf4j</code>**‌：Lombok提供的日志注解。</li>
 <li>‌**<code>@JsonIgnore</code>**‌：忽略字段序列化。</li>
 <li>‌**<code>@Async</code>**‌：异步方法调用</li>
 </ul>
-<h4 id="zab和raft区别">zab和raft区别</h4>
+<h3 id="zab和raft区别">zab和raft区别</h3>
 <p>ZAB(ZooKeeper Atomic Broadcast)是专为ZooKeeper设计的原子广播协议，专注于高吞吐量的顺序一致性‌。Raft则是为通用分布式系统设计的共识算法，强调可理解性和易实现性‌</p>
-<h5 id="核心机制对比">核心机制对比</h5>
-<h6 id="选举机制差异">选举机制差异</h6>
+<h4 id="核心机制对比">核心机制对比</h4>
+<h5 id="选举机制差异">选举机制差异</h5>
 <table>
   <thead>
       <tr>
@@ -2683,7 +2692,7 @@ cms有几个阶段，g1
       </tr>
   </tbody>
 </table>
-<h6 id="日志处理差异">日志处理差异</h6>
+<h5 id="日志处理差异">日志处理差异</h5>
 <table>
   <thead>
       <tr>
@@ -2710,7 +2719,7 @@ cms有几个阶段，g1
       </tr>
   </tbody>
 </table>
-<h5 id="协议阶段与性能特点">协议阶段与性能特点</h5>
+<h4 id="协议阶段与性能特点">协议阶段与性能特点</h4>
 <ol>
 <li>‌<strong>协议阶段</strong>‌：
 <ul>
@@ -2726,7 +2735,7 @@ cms有几个阶段，g1
 </ul>
 </li>
 </ol>
-<h5 id="适用场景对比">适用场景对比</h5>
+<h4 id="适用场景对比">适用场景对比</h4>
 <ol>
 <li>‌<strong>ZAB适用场景</strong>‌：
 <ul>
@@ -2741,74 +2750,73 @@ cms有几个阶段，g1
 </ul>
 </li>
 </ol>
-<h5 id="相同点总结">相同点总结</h5>
+<h4 id="相同点总结">相同点总结</h4>
 <ol>
 <li>都采用quorum(多数派投票)机制确定系统一致性‌</li>
 <li>都由Leader发起写操作‌</li>
 <li>都使用心跳检测存活性‌</li>
 <li>Leader选举都采用先到先得的投票方式</li>
 </ol>
-<h2 id="滴滴-java">滴滴-Java</h2>
-<h3 id="滴滴一面">滴滴一面</h3>
-<h4 id="java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</h4>
+<h2 id="滴滴-java一面">滴滴-Java一面</h2>
+<h3 id="java-base----hasmap扩容为什么是两倍">java base    hasmap扩容为什么是两倍</h3>
 <ul>
 <li>索引计算、均匀分布hash</li>
 <li>索引重新计算的高效性，低位元素不移动</li>
 <li>新索引位置仅由哈希值新增的最高位决定</li>
 <li>位运算比取模快10倍</li>
 </ul>
-<h4 id="jvm-cms和g1">jvm cms和g1</h4>
-<h4 id="redis-为什么速度快">redis 为什么速度快</h4>
-<h5 id="1-纯内存操作">1. ‌<strong>纯内存操作</strong>‌</h5>
+<h3 id="jvm-cms和g1">jvm cms和g1</h3>
+<h3 id="redis-为什么速度快">redis 为什么速度快</h3>
+<h4 id="1-纯内存操作">1. ‌<strong>纯内存操作</strong>‌</h4>
 <ul>
 <li>数据完全存储在内存中，避免磁盘I/O瓶颈12</li>
 <li>内存访问速度比磁盘随机读写快数个数量级3，每秒可处理超10万次操作1</li>
 <li>数据结构基于内存优化（如哈希表实现O(1)复杂度查询）24</li>
 </ul>
-<h5 id="-2-高效数据结构">⚡ 2. ‌<strong>高效数据结构</strong>‌</h5>
+<h4 id="-2-高效数据结构">⚡ 2. ‌<strong>高效数据结构</strong>‌</h4>
 <ul>
 <li>专为性能设计的数据结构（字符串/列表/哈希/集合等）24</li>
 <li>底层实现优化（如跳表、压缩列表），减少内存占用并提升操作效率6</li>
 </ul>
-<h5 id="-3-单线程模型">🧵 3. ‌<strong>单线程模型</strong>‌</h5>
+<h4 id="-3-单线程模型">🧵 3. ‌<strong>单线程模型</strong>‌</h4>
 <ul>
 <li>避免多线程竞争锁和上下文切换的CPU开销23</li>
 <li>无需处理死锁问题，简化代码逻辑46</li>
 <li>单线程内通过异步处理保证原子性操作15</li>
 </ul>
-<h5 id="-4-io多路复用">📡 4. ‌<strong>I/O多路复用</strong>‌</h5>
+<h4 id="-4-io多路复用">📡 4. ‌<strong>I/O多路复用</strong>‌</h4>
 <ul>
 <li>使用epoll/kqueue等非阻塞I/O模型24</li>
 <li>单线程监听大量连接事件，高效调度请求4</li>
 <li>减少系统调用开销，避免请求阻塞2</li>
 </ul>
-<h5 id="-5-协议与底层优化">🛠️ 5. ‌<strong>协议与底层优化</strong>‌</h5>
+<h4 id="-5-协议与底层优化">🛠️ 5. ‌<strong>协议与底层优化</strong>‌</h4>
 <ul>
 <li>自定义轻量级RESP协议，减少网络传输开销4</li>
 <li>实现高效虚拟内存机制，优化数据移动流程24</li>
 <li>持久化采用后台异步刷盘，避免影响主线程性能</li>
 </ul>
-<h4 id="mysql-inodb">mysql inodb</h4>
-<h4 id="b树和b树和红黑树">B+树和b树、和红黑树</h4>
-<h4 id="acid是什么">acid是什么</h4>
-<h4 id="怎么实现的持久性">怎么实现的持久性</h4>
-<h3 id="滴滴二面">滴滴二面</h3>
-<h4 id="算法简单">算法简单</h4>
+<h3 id="mysql-inodb">mysql inodb</h3>
+<h3 id="b树和b树和红黑树">B+树和b树、和红黑树</h3>
+<h3 id="acid是什么">acid是什么</h3>
+<h3 id="怎么实现的持久性">怎么实现的持久性</h3>
+<h2 id="滴滴二面">滴滴二面</h2>
+<h3 id="算法简单">算法简单</h3>
 <p>第一列顺序，第二列倒叙排序</p>
-<h4 id="自己挖坑提到单调栈">自己挖坑提到单调栈</h4>
+<h3 id="自己挖坑提到单调栈">自己挖坑提到单调栈</h3>
 <p>要求实现，说java有，糊弄过去了</p>
-<h4 id="pb级别文件排序多路归并描述归并排序">pb级别文件排序（多路归并），描述归并排序</h4>
-<h4 id="mysql">mysql</h4>
+<h3 id="pb级别文件排序多路归并描述归并排序">pb级别文件排序（多路归并），描述归并排序</h3>
+<h3 id="mysql">mysql</h3>
 <p>select * from tbl where a=1
 select * from tbl where b=2 and a=1
 select * from tbl where c=3 and b=2 and a=1</p>
-<h4 id="abc联合索引">abc联合索引</h4>
+<h3 id="abc联合索引">abc联合索引</h3>
 <p>哪个走联合索引
 第二个和第三个一定不走吗
 第一个什么情况不走索引</p>
-<h4 id="redis">redis</h4>
-<h4 id="redis项目做什么">redis项目做什么</h4>
-<h4 id="做分布式锁做注意什么">做分布式锁做注意什么</h4>
+<h3 id="redis">redis</h3>
+<h3 id="redis项目做什么">redis项目做什么</h3>
+<h3 id="做分布式锁做注意什么">做分布式锁做注意什么</h3>
 <p>设计方案</p>
 <h2 id="高德-java">高德-Java</h2>
 <h4 id="sql优化手段">sql优化手段</h4>
@@ -2818,9 +2826,8 @@ select * from tbl where c=3 and b=2 and a=1</p>
 2一致性?高可用?吞吐量？不记得了，面完应该直接写的
 3熔断限流 重试次数，死信队列，lua脚本限制</p>
 <h4 id="消息的库表需要什么字段">消息的库表需要什么字段</h4>
-<h2 id="京东物流-java">京东物流-Java</h2>
-<h3 id="京东物流一面">京东物流一面</h3>
-<h4 id="加载过程类加载到静态方法区">加载过程，类加载到静态方法区</h4>
+<h2 id="京东物流-java一面">京东物流-Java一面</h2>
+<h3 id="加载过程类加载到静态方法区">加载过程，类加载到静态方法区</h3>
 <p>在Java中，类的加载过程涉及到Java虚拟机（JVM）的类加载器（Class Loader）机制。这个过程大致可以分为以下几个阶段：</p>
 <ol>
 <li>
@@ -2860,8 +2867,8 @@ select * from tbl where c=3 and b=2 and a=1</p>
 <li><strong>初始化</strong> 主要涉及的是执行类的静态代码块和静态变量的初始化，这部分是在加载和链接之后进行的。</li>
 </ul>
 <p>因此，可以说静态方法区是存储了类的元数据的地方，而类的初始化过程则是在这些元数据基础上进行的。两者共同构成了Java中类的完整生命周期的一部分。</p>
-<h4 id="java线程池底层机制">java线程池底层机制</h4>
-<h4 id="spring事务失效-的情况">spring事务失效 的情况</h4>
+<h3 id="java线程池底层机制">java线程池底层机制</h3>
+<h3 id="spring事务失效-的情况">spring事务失效 的情况</h3>
 <p>Spring 事务失效是指使用 <code>@Transactional</code> 注解时，事务行为未按预期执行（如未回滚），常见于以下 8 种场景，其失效原理与解决方案如下：</p>
 <hr>
 <p><strong>🔧 一、Spring 事务失效的 8 种核心场景</strong></p>
@@ -2988,7 +2995,7 @@ select * from tbl where c=3 and b=2 and a=1</p>
 <li>多线程或跨微服务调用需引入分布式事务（如 Seata）</li>
 </ul></blockquote>
 <p>start的机制</p>
-<h4 id="mysql-最左前匹配">mysql 最左前匹配</h4>
+<h3 id="mysql-最左前匹配">mysql 最左前匹配</h3>
 <p>MySQL 的最左前缀匹配(Leftmost Prefix Matching)是 B+树索引的核心特性，指复合索引按照从左到右的顺序进行匹配的规则。</p>
 <p><strong>一、最左前缀匹配的本质</strong></p>
 <p>当你在 MySQL 中创建复合索引时，例如：</p>
@@ -3075,25 +3082,25 @@ select * from tbl where c=3 and b=2 and a=1</p>
 <li>合理设计查询语句，确保从最左列开始使用</li>
 </ol>
 <p>理解最左前缀匹配原理可以帮助你设计更高效的索引结构，提升查询性能。</p>
-<h4 id="sql优化-索引">sql优化 索引</h4>
-<h4 id="redis分布式通信">redis分布式通信</h4>
-<h4 id="复制是三个sync">复制是三个sync</h4>
+<h3 id="sql优化-索引">sql优化 索引</h3>
+<h3 id="redis分布式通信">redis分布式通信</h3>
+<h3 id="复制是三个sync">复制是三个sync</h3>
 <p>直接复制，断点复制，宕机复制断点</p>
-<h4 id="底层是gossip协议反熵和流言模式">底层是gossip协议，反熵和流言模式</h4>
-<h4 id="事务-spring-start原理">事务 spring start原理</h4>
-<h3 id="京东物流二面">京东物流二面</h3>
-<h4 id="低代码架构">低代码架构</h4>
-<h4 id="流程架构">流程架构</h4>
-<h4 id="mq重试">mq重试</h4>
+<h3 id="底层是gossip协议反熵和流言模式">底层是gossip协议，反熵和流言模式</h3>
+<h3 id="事务-spring-start原理">事务 spring start原理</h3>
+<h2 id="京东物流二面">京东物流二面</h2>
+<h3 id="低代码架构">低代码架构</h3>
+<h3 id="流程架构">流程架构</h3>
+<h3 id="mq重试">mq重试</h3>
 <p>数据量多</p>
 <p>压力大的部分</p>
-<h3 id="京东物流三面">京东物流三面</h3>
-<h4 id="低代码架构-1">低代码架构</h4>
-<h4 id="流程架构-1">流程架构</h4>
-<h4 id="工作中遇到的困难mq重试redis击穿">工作中遇到的困难，mq重试+redis击穿</h4>
-<h4 id="怎么测试测试moudle动态代理一个超时的类插拔">怎么测试，测试moudle，动态代理一个超时的类，插拔</h4>
-<h4 id="工资加班">工资、加班</h4>
-<h2 id="百度搜索-c">百度搜索-c++</h2>
+<h2 id="京东物流三面">京东物流三面</h2>
+<h3 id="低代码架构-1">低代码架构</h3>
+<h3 id="流程架构-1">流程架构</h3>
+<h3 id="工作中遇到的困难mq重试redis击穿">工作中遇到的困难，mq重试+redis击穿</h3>
+<h3 id="怎么测试测试moudle动态代理一个超时的类插拔">怎么测试，测试moudle，动态代理一个超时的类，插拔</h3>
+<h3 id="工资加班">工资、加班</h3>
+<h2 id="百度搜索-c一面">百度搜索-c++一面</h2>
 <h3 id="c">c++</h3>
 <h4 id="共享指针">共享指针</h4>
 <h4 id="内存分配">内存分配</h4>

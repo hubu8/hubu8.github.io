@@ -142,7 +142,7 @@ vector&lt;vector<int>&gt; arrays1 = {
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// 记录每个子数组当前遍历的指针位置
+</span></span><span class="line"><span class="cl">    <span class="c1">// 记录每个子数组当前遍历的指针位置  子数组的指针
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 创建一个与 arrays 大小相同的 vector 容器，所有元素都初始化为 0
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pointers</span><span class="p">(</span><span class="n">arrays</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>

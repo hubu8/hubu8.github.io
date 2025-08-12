@@ -231,6 +231,7 @@ vector&lt;vector<int>&gt; arrays1 = {
 </span><span class="lnt">41
 </span><span class="lnt">42
 </span><span class="lnt">43
+</span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstddef&gt;</span><span class="cp">  </span><span class="c1">// 用于 size_t 类型
@@ -248,6 +249,7 @@ vector&lt;vector<int>&gt; arrays1 = {
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// 2. 转换为 unsigned char* 操作单个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// unsigned char 能正确表示所有可能的字节值，不会有符号扩展问题
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">dest_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">dest</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">src_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">

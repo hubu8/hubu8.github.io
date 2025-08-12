@@ -1,0 +1,21 @@
+{
+  "name": "Eccentric's Note",
+  "short_name": "Eccentric",
+  "description": "本站主要用来收集整理资料、记录笔记，方便自己查询使用。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5bbad5",
+  "icons": [
+    {
+      "src": "/header_images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/header_images/avatar.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

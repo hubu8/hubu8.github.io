@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/"
-        },"genre": "posts","wordcount":  13249 ,
+        },"genre": "posts","wordcount":  14119 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/","datePublished": "2025-08-01T08:59:26+08:00","dateModified": "2025-08-01T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">凯同学的面经(2025-8)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 13249 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 27 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 14119 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 29 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -131,7 +131,13 @@
         <li><a href="#5rabbitmq怎么保证消息不丢失的有没有横向对比过其他mq">5、rabbitmq怎么保证消息不丢失的，有没有横向对比过其他mq</a></li>
         <li><a href="#6规则引擎听说过没有哪些规则引擎">6、规则引擎听说过没，有哪些规则引擎</a></li>
         <li><a href="#7用的哪种jvm有没有对比过">7、用的哪种jvm，有没有对比过</a></li>
-        <li><a href="#8java17有哪些新特性有没有对比过每个版本">8、java17有哪些新特性，有没有对比过每个版本</a></li>
+        <li><a href="#8java17有哪些新特性有没有对比过每个版本">8、java17有哪些新特性，有没有对比过每个版本</a>
+          <ul>
+            <li><a href="#一java-17-核心新特性">‌<strong>一、Java 17 核心新特性</strong>‌</a></li>
+            <li><a href="#二版本对比java-81117">‌**二、版本对比（Java 8/11/17）**‌</a></li>
+            <li><a href="#三升级建议">‌<strong>三、升级建议</strong>‌</a></li>
+          </ul>
+        </li>
         <li><a href="#9线程池线程是怎么复用的">9、线程池线程是怎么复用的</a></li>
         <li><a href="#10多线程的使用场景">10、多线程的使用场景</a>
           <ul>
@@ -533,6 +539,95 @@
 <li>关键业务低延迟场景选用 ‌Zing‌。</li>
 </ul>
 <h3 id="8java17有哪些新特性有没有对比过每个版本">8、java17有哪些新特性，有没有对比过每个版本</h3>
+<p>Java 17 作为长期支持版本（LTS），引入了多项重要特性，同时与早期版本（如 Java 8、11）相比在语法、性能和功能上有显著差异。以下是详细对比分析：</p>
+<hr>
+<h4 id="一java-17-核心新特性">‌<strong>一、Java 17 核心新特性</strong>‌</h4>
+<ol>
+<li>‌<strong>语言特性增强</strong>‌
+<ul>
+<li>‌**密封类（Sealed Classes）**‌：限制类的继承关系，增强类型安全（<code>permits</code>关键字指定子类）。</li>
+<li>‌模式匹配（Pattern Matching）：
+<ul>
+<li><code>instanceof</code>直接类型转换：<code>if (obj instanceof String s) {...}</code>。</li>
+<li><code>switch</code>表达式支持类型匹配：<code>case String s -&gt; s.length()</code>。</li>
+</ul>
+</li>
+<li>‌**文本块（Text Blocks）**‌：简化多行字符串（<code>&quot;&quot;&quot;...&quot;&quot;&quot;</code>语法）。</li>
+<li>‌**记录类（Record）**‌：自动生成<code>equals()</code>、<code>hashCode()</code>等方法，简化数据载体类。</li>
+</ul>
+</li>
+<li>‌<strong>性能与内存优化</strong>‌
+<ul>
+<li>‌<strong>ZGC/Shenandoah GC</strong>‌：低延迟垃圾回收器（停顿时间&lt;10ms）。</li>
+<li>‌<strong>容器感知内存管理</strong>‌：自动适配容器环境的内存限制。</li>
+</ul>
+</li>
+<li>‌<strong>API 更新与移除</strong>‌
+<ul>
+<li>‌<strong>移除实验性 AOT/JIT 编译器</strong>‌：简化 JDK 实现。</li>
+<li>‌<strong>弃用 Security Manager</strong>‌：逐步淘汰旧安全模型。</li>
+<li>‌**外部函数与内存 API（孵化）**‌：支持原生代码交互。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="二版本对比java-81117">‌**二、版本对比（Java 8/11/17）**‌</h4>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>特性</strong>‌</th>
+          <th>‌<strong>Java 8</strong>‌</th>
+          <th>‌<strong>Java 11</strong>‌</th>
+          <th>‌<strong>Java 17</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>‌<strong>函数式编程</strong>‌</td>
+          <td>Lambda/Stream API</td>
+          <td>无新增</td>
+          <td>无新增</td>
+      </tr>
+      <tr>
+          <td>‌<strong>模块化</strong>‌</td>
+          <td>无</td>
+          <td>模块系统（Jigsaw）</td>
+          <td>优化模块封装</td>
+      </tr>
+      <tr>
+          <td>‌<strong>垃圾回收器</strong>‌</td>
+          <td>G1 GC（默认）</td>
+          <td>ZGC（实验性）</td>
+          <td>ZGC/Shenandoah（生产可用）</td>
+      </tr>
+      <tr>
+          <td>‌<strong>启动速度</strong>‌</td>
+          <td>较慢</td>
+          <td>提升 20%</td>
+          <td>提升 30%+</td>
+      </tr>
+      <tr>
+          <td>‌<strong>语法简化</strong>‌</td>
+          <td>无</td>
+          <td><code>var</code>局部变量推断</td>
+          <td>记录类/模式匹配</td>
+      </tr>
+      <tr>
+          <td>‌**长期支持（LTS）**‌</td>
+          <td>是（支持至 2030）</td>
+          <td>是（支持至 2026）</td>
+          <td>是（支持至 2029）</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="三升级建议">‌<strong>三、升级建议</strong>‌</h4>
+<ul>
+<li>‌<strong>兼容性</strong>‌：Java 17 强封装内部 API，需检查依赖库兼容性。</li>
+<li>‌<strong>性能敏感场景</strong>‌：优先选择 Java 17（ZGC/Shenandoah）。</li>
+<li>‌<strong>语法现代化</strong>‌：新项目推荐使用记录类、模式匹配等特性减少代码量。</li>
+</ul>
+<p>如需从 Java 8 迁移，建议逐步过渡至 Java 11 再升级到 17，以平衡稳定性和新特性</p>
 <h3 id="9线程池线程是怎么复用的">9、线程池线程是怎么复用的</h3>
 <p>线程池将线程和任务进⾏解耦，线程是线程，任务是任务，摆脱了之前通过 Thread 创建线程时的⼀个线程必须对应⼀个任务的限制。</p>
 <p>在线程池中，同⼀个线程可以从阻塞队列中不断获取新任务来执⾏，其核⼼原理在于线程池对 Thread 进⾏了封装，并不是每次执⾏任务都会调⽤ Thread.start() 来创建新线程，⽽是让每个线程去执⾏⼀个“循环任务”，在这个“循环任务”中不停检查是否有任务需要被执⾏，如果有则直接执⾏，也就是调⽤ 任务中的 run ⽅法，将 run ⽅法当成⼀个普通的⽅法执⾏，通过这种⽅式只使⽤固定的线程就将所有任务的 run ⽅法串联起来。</p>

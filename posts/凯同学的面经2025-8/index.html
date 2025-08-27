@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/"
-        },"genre": "posts","wordcount":  12607 ,
+        },"genre": "posts","wordcount":  13249 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/","datePublished": "2025-08-01T08:59:26+08:00","dateModified": "2025-08-01T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">凯同学的面经(2025-8)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12607 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 26 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 13249 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 27 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -440,6 +440,98 @@
 <li><strong>LiteFlow</strong>：支持任意编排规则、平滑热刷新、多级嵌套与外部存储扩展【兼容任意Java架构，学习成本低，分钟级上手】</li>
 </ul>
 <h3 id="7用的哪种jvm有没有对比过">7、用的哪种jvm，有没有对比过</h3>
+<p>Java 常用的 JVM 实现及其核心区别如下：</p>
+<ol>
+<li>
+<p><strong>HotSpot JVM‌</strong>
+特点‌：Oracle/OpenJDK 默认实现，采用混合模式（解释器 + JIT 编译器），支持多种垃圾回收器（如 G1、ZGC、Shenandoah）。
+优势‌：
+高性能优化（如分层编译、逃逸分析）。
+成熟的生态和社区支持。
+劣势‌：
+启动时间较长，内存占用较高。</p>
+</li>
+<li>
+<p><strong>OpenJ9（原 IBM J9）‌</strong>
+特点‌：模块化设计，针对云原生和低内存场景优化。
+优势‌：
+快速启动（比 HotSpot 快 30%-50%）。
+内存占用更低（共享类缓存技术）。
+劣势‌：
+长时间运行吞吐量略低于 HotSpot。</p>
+</li>
+<li>
+<p><strong>GraalVM‌</strong>
+特点‌：支持多语言（JS、Python 等）和 AOT 编译（生成原生镜像）。
+优势‌：
+极速启动（毫秒级），适合 Serverless 场景。
+跨语言互操作性。
+劣势‌：
+原生镜像兼容性受限（反射需额外配置）。</p>
+</li>
+<li>
+<p><strong>Zing（Azul Systems）‌</strong>
+特点‌：商业闭源，主打“无暂停”垃圾回收（C4 算法）。
+优势‌：
+亚毫秒级 GC 停顿，适合金融、实时系统。
+劣势‌：
+需付费授权，社区支持有限。</p>
+</li>
+</ol>
+<p><strong>对比总结‌</strong>**</p>
+<table>
+  <thead>
+      <tr>
+          <th>‌<strong>JVM</strong>‌</th>
+          <th>‌<strong>适用场景</strong>‌</th>
+          <th>‌<strong>启动速度</strong>‌</th>
+          <th>‌<strong>内存占用</strong>‌</th>
+          <th>‌<strong>GC 性能</strong>‌</th>
+          <th>‌<strong>生态兼容性</strong>‌</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HotSpot</td>
+          <td>通用服务端应用</td>
+          <td>中等</td>
+          <td>较高</td>
+          <td>均衡（多种 GC）</td>
+          <td>最佳</td>
+      </tr>
+      <tr>
+          <td>OpenJ9</td>
+          <td>云原生/嵌入式</td>
+          <td>快</td>
+          <td>低</td>
+          <td>中等（平衡型）</td>
+          <td>较好</td>
+      </tr>
+      <tr>
+          <td>GraalVM</td>
+          <td>Serverless/微服务</td>
+          <td>极快</td>
+          <td>极低</td>
+          <td>一般（AOT 限制）</td>
+          <td>较弱</td>
+      </tr>
+      <tr>
+          <td>Zing</td>
+          <td>低延迟实时系统</td>
+          <td>中等</td>
+          <td>中等</td>
+          <td>最优（无暂停）</td>
+          <td>商业依赖</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>选择建议‌：</strong></p>
+<ul>
+<li>开发环境或通用服务端优先选择 ‌HotSpot‌；</li>
+<li>容器化部署考虑 ‌OpenJ9‌；</li>
+<li>需要极致启动速度时使用 ‌GraalVM 原生镜像‌；</li>
+<li>关键业务低延迟场景选用 ‌Zing‌。</li>
+</ul>
 <h3 id="8java17有哪些新特性有没有对比过每个版本">8、java17有哪些新特性，有没有对比过每个版本</h3>
 <h3 id="9线程池线程是怎么复用的">9、线程池线程是怎么复用的</h3>
 <p>线程池将线程和任务进⾏解耦，线程是线程，任务是任务，摆脱了之前通过 Thread 创建线程时的⼀个线程必须对应⼀个任务的限制。</p>

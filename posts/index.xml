@@ -463,7 +463,18 @@ vector&lt;vector<int>&gt; arrays1 = {
 <h3 id="4集合与hashmap的差异集合之间-list-hashset-集合和hashmap">4.集合与hashmap的差异(集合之间 list hashset 。集合和hashmap)</h3>
 <h3 id="5hashmap扩容机制">5.hashmap扩容机制</h3>
 <h3 id="6线程的创建方式">6.线程的创建方式</h3>
-<h3 id="7线程池的参数">7.线程池的参数</h3>]]></description>
+<h3 id="7线程池的参数">7.线程池的参数</h3>
+<h2 id="迪博-全栈2025-08-28">迪博-全栈(2025-08-28)</h2>
+<h3 id="java基础多线程-线程池的几个参数工作中怎么使用的线程池使用的什么线程池">Java基础（多线程）： 线程池的几个参数，工作中怎么使用的线程池，使用的什么线程池</h3>
+<h3 id="并发juc下的东西了解吗提到了个cas--aba问题--版本控制有个名词形容">并发：juc下的东西了解吗？提到了个cas  ABA问题  版本控制（有个名词形容）</h3>
+<h3 id="springbean的创建过程">Spring：Bean的创建过程</h3>
+<h3 id="springmvc解释一下什么是springmvc--处理流程">SpringMVC：解释一下什么是SpringMVC  处理流程</h3>
+<h3 id="mybatis常见的设计模式">Mybatis：常见的设计模式</h3>
+<h3 id="mysql说一下你的sql优化过程">MySQL：说一下你的sql优化过程</h3>
+<h3 id="redis常见的数据结构--工作中怎么使用的---hash和string的区别">Redis：常见的数据结构  工作中怎么使用的   hash和String的区别</h3>
+<h3 id="消息中间件如何保证rabbitmq消息不被重复消费">消息中间件：如何保证RabbitMQ消息不被重复消费</h3>
+<h3 id="linux常见的命令----给一个文件赋予可执行权限具体怎么写">Linux：常见的命令    给一个文件赋予可执行权限具体怎么写</h3>
+<h3 id="项目挑一个你认为最值得讲的一个项目怎么实现的采用什么技术方案">项目：挑一个你认为最值得讲的一个项目，怎么实现的，采用什么技术方案</h3>]]></description>
 </item>
 <item>
     <title>kd-分布式事务</title>

@@ -3,9 +3,17 @@
         <title>Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 08 Sep 2025 21:08:01 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 08 Sep 2025 08:08:01 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>kd-微服务简介</title>
+    <link>https://hubu8.github.io/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Mon, 08 Sep 2025 08:08:01 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://hubu8.github.io/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>SonarQube安装与静态代码扫描</title>
     <link>https://hubu8.github.io/posts/sonarqube%E5%AE%89%E8%A3%85%E4%B8%8E%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F/</link>
     <pubDate>Mon, 25 Aug 2025 08:59:26 &#43;0800</pubDate>
@@ -562,22 +570,6 @@ vector&lt;vector<int>&gt; arrays1 = {
 </div>
 </div><h3 id="同步锁-reentrantlock">同步锁 ReentrantLock</h3>
 <p><strong>JDK 1.7之后引入的JUC包中的重要工具类，让线程同步变得如此丝滑</strong></p>]]></description>
-</item>
-<item>
-    <title>kd-OpenAPI-API请求的身份鉴权</title>
-    <link>https://hubu8.github.io/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</link>
-    <pubDate>Thu, 05 Jun 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/kd-openapi-api%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%89%B4%E6%9D%83/</guid>
-    <description><![CDATA[<p>OpenAPI共支持五种认证方式，分别是：</p>
-<ul>
-<li>AccessToken 认证</li>
-<li>JWT认证</li>
-<li>摘要认证</li>
-<li>基本认证</li>
-<li>签名认证</li>
-</ul>
-<p>其中，AccessToken认证应用最广泛，基本认证则最方便。从安全和易用性的角度进行分析，不同的认证方式各有特点，用户可以根据具体需求，选择合适的认证方式。</p>]]></description>
 </item>
 </channel>
 </rss>

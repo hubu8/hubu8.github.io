@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B\/"
-        },"genre": "posts","wordcount":  9383 ,
+        },"genre": "posts","wordcount":  10826 ,
         "url": "https:\/\/hubu8.github.io\/posts\/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B\/","datePublished": "2025-09-08T08:08:01+08:00","dateModified": "2025-09-08T08:08:01+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">kd-微服务简介</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-08">2025-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 9383 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 19 分钟&nbsp;<span id="/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/" class="leancloud_visitors" data-flag-title="kd-微服务简介">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-08">2025-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 10826 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 22 分钟&nbsp;<span id="/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/" class="leancloud_visitors" data-flag-title="kd-微服务简介">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -153,6 +153,19 @@
             <li><a href="#使用的设计模式及好处">使用的设计模式及好处</a></li>
             <li><a href="#典型调用链路图">典型调用链路图</a></li>
             <li><a href="#优势总结">优势总结</a></li>
+          </ul>
+        </li>
+        <li><a href="#feign-vs-dubbo">Feign VS Dubbo</a>
+          <ul>
+            <li><a href="#技术定位与通信协议">技术定位与通信协议</a></li>
+            <li><a href="#服务发现与注册中心">服务发现与注册中心</a></li>
+            <li><a href="#负载均衡与集群容错">负载均衡与集群容错</a></li>
+            <li><a href="#序列化与性能">序列化与性能</a></li>
+            <li><a href="#服务治理与扩展性">服务治理与扩展性</a></li>
+            <li><a href="#多语言支持">多语言支持</a></li>
+            <li><a href="#开发体验与生态">开发体验与生态</a></li>
+            <li><a href="#适用场景对比">适用场景对比</a></li>
+            <li><a href="#总结">总结</a></li>
           </ul>
         </li>
       </ul>
@@ -2860,7 +2873,75 @@
 <li><strong>扩展性</strong>：支持多协议（RPC/HTTP）、多编解码方式，且可扩展新的服务查找策略。</li>
 <li><strong>可观测性</strong>：集成链路追踪（<code>EntityTracer</code>）和调试代理（<code>LocalDebugProxy</code>），便于问题定位。</li>
 <li><strong>性能优化</strong>：通过缓存和复用代理实例减少重复创建开销，适应高并发场景。</li>
-</ol></div><div class="post-footer" id="post-footer">
+</ol>
+<h3 id="feign-vs-dubbo">Feign VS Dubbo</h3>
+<h4 id="技术定位与通信协议">技术定位与通信协议</h4>
+<p><strong>Feign</strong></p>
+<p>定位：HTTP客户端工具，本质是对HTTP调用的封装，简化RESTful API的调用。
+协议：基于HTTP协议，支持JSON/XML等通用数据格式，天然跨语言（需API规范一致）。
+场景：适用于基于HTTP的微服务架构，尤其是云原生场景（如Kubernetes原生支持HTTP）。</p>
+<p><strong>Dubbo</strong></p>
+<p>定位：高性能RPC框架，提供服务发现、负载均衡、集群容错等完整的微服务解决方案。
+协议：默认使用Dubbo协议（二进制序列化），也支持HTTP、gRPC等协议，强调高性能和低延迟。
+场景：适用于高并发、低延迟的内部服务调用，尤其是Java技术栈主导的大型分布式系统。</p>
+<h4 id="服务发现与注册中心">服务发现与注册中心</h4>
+<p><strong>Feign</strong></p>
+<p>依赖外部服务发现组件（如Spring Cloud Eureka、Consul、Nacos），需手动集成。
+服务调用通过服务名解析为具体URL，需配合负载均衡器（如Ribbon）。
+<strong>Dubbo</strong></p>
+<p>内置多种注册中心（ZooKeeper、Nacos、Etcd等），支持服务自动注册与发现。
+服务发现与负载均衡由框架自动处理，提供更细粒度的流量控制（如权重、标签路由）。</p>
+<h4 id="负载均衡与集群容错">负载均衡与集群容错</h4>
+<p><strong>Feign</strong></p>
+<p>依赖Spring Cloud LoadBalancer或Ribbon实现负载均衡，支持轮询、随机等策略。
+容错需集成Hystrix或Resilience4j实现熔断、降级。</p>
+<p><strong>Dubbo</strong></p>
+<p>内置丰富的负载均衡策略（随机、加权轮询、最少活跃调用等）和集群容错模式（failover、failfast等）。
+提供更细粒度的服务治理能力，如动态权重调整、流量隔离、自适应负载均衡。</p>
+<h4 id="序列化与性能">序列化与性能</h4>
+<p><strong>Feign</strong></p>
+<p>基于HTTP协议，默认使用JSON序列化，性能受限于文本格式的开销。
+适合对吞吐量要求不极端、API兼容性要求高的场景。</p>
+<p><strong>Dubbo</strong></p>
+<p>默认使用Hessian2二进制序列化，性能显著优于JSON（尤其对于复杂对象）。
+支持多种序列化协议（如Kryo、Protobuf），并可通过TCP长连接复用提升效率。</p>
+<h4 id="服务治理与扩展性">服务治理与扩展性</h4>
+<p><strong>Feign</strong></p>
+<p>服务治理能力较弱，需依赖Spring Cloud生态组件（如Gateway、Sentinel）。
+扩展性主要通过拦截器（RequestInterceptor）和解码器（ErrorDecoder）实现。</p>
+<p><strong>Dubbo</strong></p>
+<p>提供全方位的服务治理能力：
+动态配置（如参数路由、流量控制）。
+服务降级与熔断（支持自适应熔断）。
+服务监控与链路追踪（集成Zipkin、Skywalking等）。
+支持SPI扩展机制，可自定义协议、序列化、负载均衡策略等。</p>
+<h4 id="多语言支持">多语言支持</h4>
+<p><strong>Feign</strong></p>
+<p>基于标准HTTP协议，天然支持跨语言调用（只要API规范一致）。
+其他语言需自行实现HTTP客户端。</p>
+<p><strong>Dubbo</strong></p>
+<p>原生支持Java，对其他语言（如Go、Python）的支持需依赖Dubbo3的Triple协议或REST扩展。
+跨语言场景需额外开发适配层。</p>
+<h4 id="开发体验与生态">开发体验与生态</h4>
+<p><strong>Feign</strong></p>
+<p>简单易用，通过接口+注解即可定义服务调用（如@FeignClient）。
+强依赖Spring Cloud生态，适合Spring Boot项目快速集成。
+<strong>Dubbo</strong></p>
+<p>配置相对复杂，需理解服务提供者/消费者、注册中心等概念。
+提供丰富的可视化管理工具（如Dubbo Admin），生态逐渐完善（尤其在阿里系技术栈中）。</p>
+<h4 id="适用场景对比">适用场景对比</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/images/image-20250908142306922.png"
+        data-srcset="/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/images/image-20250908142306922.png, /posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/images/image-20250908142306922.png 1.5x, /posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/images/image-20250908142306922.png 2x"
+        data-sizes="auto"
+        alt="/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/images/image-20250908142306922.png"
+        title="image-20250908142306922" width="979" height="297" /></p>
+<h4 id="总结">总结</h4>
+<p>选Feign：若项目基于Spring Cloud，追求简单集成HTTP接口，且对性能要求不是极端苛刻。
+选Dubbo：若项目需要高性能RPC、丰富的服务治理能力，且以Java技术栈为主，尤其适合大型分布式系统。
+两者并非完全互斥，在混合架构中也可结合使用（如外部API用Feign，内部服务用Dubbo)。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

@@ -3,7 +3,15 @@
         <title>所有文章 - Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 08 Sep 2025 08:08:01 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 14 Sep 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>uni-app离线打包流程</title>
+    <link>https://hubu8.github.io/posts/uni-app%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Sun, 14 Sep 2025 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://hubu8.github.io/posts/uni-app%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>kd-微服务简介</title>
     <link>https://hubu8.github.io/posts/kd-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%AE%80%E4%BB%8B/</link>
     <pubDate>Mon, 08 Sep 2025 08:08:01 &#43;0800</pubDate>
@@ -511,63 +519,6 @@ vector&lt;vector<int>&gt; arrays1 = {
     <description><![CDATA[<h2 id="1-简介">1. 简介</h2>
 <h3 id="11-什么是分布式事务">1.1 什么是分布式事务</h3>
 <p>  分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。</p>]]></description>
-</item>
-<item>
-    <title>kd-分布式锁</title>
-    <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</link>
-    <pubDate>Fri, 06 Jun 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</guid>
-    <description><![CDATA[<h2 id="单体式锁">单体式锁</h2>
-<h3 id="synchronized">synchronized</h3>
-<p>同步代码块</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">synchronized</span><span class="p">(</span><span class="n">obj</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//需要被同步的代码块</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">synchronized</span><span class="p">(</span><span class="k">this</span><span class="p">){}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//上面两种锁的都是对象</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">synchronize</span><span class="p">(</span><span class="n">TheClass</span><span class="p">.</span><span class="na">class</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//这种锁住的是一个类</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>同步方法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testThread</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//需要被同步的代码块</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="同步锁-reentrantlock">同步锁 ReentrantLock</h3>
-<p><strong>JDK 1.7之后引入的JUC包中的重要工具类，让线程同步变得如此丝滑</strong></p>]]></description>
 </item>
 </channel>
 </rss>

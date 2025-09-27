@@ -475,11 +475,11 @@ vector&lt;vector<int>&gt; arrays1 = {
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>叶同学的面经(2025-6)</title>
-    <link>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/</link>
+    <title>叶同学的面经(2025/06 —— 2025/09)</title>
+    <link>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025/06-2025/09/</link>
     <pubDate>Thu, 12 Jun 2025 08:59:26 &#43;0800</pubDate>
     <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/</guid>
+    <guid>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025/06-2025/09/</guid>
     <description><![CDATA[<h2 id="北京超星-一面2025-06">北京超星 一面(2025-06)</h2>
 <h3 id="1sql调优相关有哪些方式调优">1.sql调优相关，有哪些方式调优</h3>
 <h3 id="2索引失效的情况">2.索引失效的情况</h3>
@@ -568,7 +568,42 @@ vector&lt;vector<int>&gt; arrays1 = {
 <h3 id="mysql事务原理">MySQL事务原理</h3>
 <h3 id="场景mvsql服务和redis服务同时断电了怎么恢复">场景:MVSQL服务和redis服务同时断电了，怎么恢复?</h3>
 <h3 id="linux区分cpumemory文件视图应该使用什么命令">Linux:区分CPU、memory、文件视图应该使用什么命令</h3>
-<h3 id="容器dockerk8s了解吗">容器:docker，k8s了解吗?</h3>]]></description>
+<h3 id="容器dockerk8s了解吗">容器:docker，k8s了解吗?</h3>
+<h2 id="中地">中地</h2>
+<h3 id="springcloud和springcloud-alibaba有啥区别">springcloud和springcloud alibaba有啥区别</h3>
+<h3 id="有没有用过国产数据库">有没有用过国产数据库</h3>
+<h3 id="地理方面的数据处理有没有做过">地理方面的数据处理有没有做过</h3>
+<h3 id="安全漏洞扫描这类情况有没有接触过怎么处理的">安全漏洞扫描这类情况有没有接触过怎么处理的?</h3>
+<h3 id="环境上出现问题怎么排查">环境上出现问题怎么排查?</h3>
+<h3 id="接口压测有没有做过">接口压测有没有做过</h3>
+<h3 id="使用什么工具做压测">使用什么工具做压测?</h3>
+<h2 id="太平保险">太平保险</h2>
+<h3 id="3数据库sql优化索引失效的情况">3.数据库sql优化，索引失效的情况</h3>
+<h3 id="4redis怎么使用的">4.redis怎么使用的</h3>
+<h3 id="5spring--bean的生命周期">5.spring  bean的生命周期</h3>
+<h3 id="6spring事务">6.spring事务</h3>
+<h3 id="7spring-cloud-有哪些组件">7.spring cloud 有哪些组件</h3>
+<h3 id="8除了ocr还有什么技术">8.除了ocr还有什么技术？</h3>
+<h3 id="9平台整体架构">9.平台整体架构</h3>
+<h3 id="10注册中心用的啥">10.注册中心用的啥</h3>
+<h3 id="11springbean怎么自动注入的">11.springbean怎么自动注入的</h3>
+<h3 id="12mybatis有用过吗">12.mybatis有用过吗？</h3>
+<h2 id="顺丰">顺丰</h2>
+<h3 id="简单聊了一下项目微服务有几个节点">简单聊了一下项目微服务有几个节点</h3>
+<h3 id="场景请求用mq转发处理然后通过消费者端去处理这其中可能会存在的问题">场景：请求用MQ转发处理，然后通过消费者端去处理，这其中可能会存在的问题</h3>
+<h2 id="atp">ATP</h2>
+<h3 id="前面的八股java中和equals区别">前面的八股：Java中==和equals区别</h3>
+<h3 id="java中线程创建方式">Java中线程创建方式</h3>
+<h3 id="java中常见的集合">Java中常见的集合</h3>
+<h3 id="工作中有使用到线程池吗怎么使用的">工作中有使用到线程池吗？怎么使用的</h3>
+<h3 id="数据库优化">数据库优化</h3>
+<h3 id="mysql索引索引失效的情况abc三个字段的索引哪些情况下会失效">mysql索引，索引失效的情况，abc三个字段的索引，哪些情况下会失效</h3>
+<h3 id="spring中component和configuration有什么区别">spring中@Component和@Configuration有什么区别</h3>
+<h2 id="点峰科技">点峰科技</h2>
+<h3 id="1java中的hashmap--hashmap的put过程---hashmap扩容">1.Java中的hashmap  hashmap的put过程   hashmap扩容</h3>
+<h3 id="2jvm的内存结构--元空间存的什么内容">2.jvm的内存结构  元空间存的什么内容</h3>
+<h3 id="3java中线程池主要参数--怎么使用的">3.Java中线程池主要参数  怎么使用的</h3>
+<h3 id="4mq怎么保证幂等性--mq怎么保证消息的可靠性">4.mq怎么保证幂等性  mq怎么保证消息的可靠性</h3>]]></description>
 </item>
 <item>
     <title>kd-分布式事务</title>

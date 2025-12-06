@@ -3,7 +3,16 @@
         <title>所有文章 - Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 14 Sep 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 Dec 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>什么是跨域，如何解决跨域？</title>
+    <link>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</link>
+    <pubDate>Wed, 03 Dec 2025 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</guid>
+    <description><![CDATA[<h3 id="什么是跨域">什么是跨域</h3>
+<p>跨域，即跨域资源共享（CORS，Cross-Origin Resource Sharing），是一个W3C标准，它定义了一种浏览器和服务器交互的方式来确定是否允许跨源请求。简单来说，跨域就是浏览器的同源策略导致来自不同源的脚本在没有明确授权的情况下，不能读写对方的资源。</p>]]></description>
+</item>
+<item>
     <title>uni-app离线打包流程</title>
     <link>https://hubu8.github.io/posts/uni-app%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</link>
     <pubDate>Sun, 14 Sep 2025 08:59:26 &#43;0800</pubDate>
@@ -604,16 +613,6 @@ vector&lt;vector<int>&gt; arrays1 = {
 <h3 id="2jvm的内存结构--元空间存的什么内容">2.jvm的内存结构  元空间存的什么内容</h3>
 <h3 id="3java中线程池主要参数--怎么使用的">3.Java中线程池主要参数  怎么使用的</h3>
 <h3 id="4mq怎么保证幂等性--mq怎么保证消息的可靠性">4.mq怎么保证幂等性  mq怎么保证消息的可靠性</h3>]]></description>
-</item>
-<item>
-    <title>kd-分布式事务</title>
-    <link>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
-    <pubDate>Sat, 07 Jun 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/kd-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
-    <description><![CDATA[<h2 id="1-简介">1. 简介</h2>
-<h3 id="11-什么是分布式事务">1.1 什么是分布式事务</h3>
-<p>  分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。通俗的说就是某个操作中的事务跨了多个库，或者是跨了多个服务节点而产生了分布式事务，所以一般来讲就是分库分表或者微服务化导致了分布式事务的产生。而本地事务的所有操作都是在某一个库中进行。</p>]]></description>
 </item>
 </channel>
 </rss>

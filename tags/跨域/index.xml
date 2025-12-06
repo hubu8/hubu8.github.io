@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>跨域 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E8%B7%A8%E5%9F%9F/</link>
+    <description>Recent content in 跨域 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 03 Dec 2025 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E8%B7%A8%E5%9F%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>什么是跨域，如何解决跨域？</title>
+      <link>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</link>
+      <pubDate>Wed, 03 Dec 2025 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</guid>
+      <description>&lt;h3 id=&#34;什么是跨域&#34;&gt;什么是跨域&lt;/h3&gt;&#xA;&lt;p&gt;跨域，即跨域资源共享（CORS，Cross-Origin Resource Sharing），是一个W3C标准，它定义了一种浏览器和服务器交互的方式来确定是否允许跨源请求。简单来说，跨域就是浏览器的同源策略导致来自不同源的脚本在没有明确授权的情况下，不能读写对方的资源。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

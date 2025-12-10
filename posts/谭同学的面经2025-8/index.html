@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E8%B0%AD%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/"
-        },"genre": "posts","wordcount":  1957 ,
+        },"genre": "posts","wordcount":  6673 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E8%B0%AD%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/","datePublished": "2025-08-11T08:59:26+08:00","dateModified": "2025-08-11T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">谭同学的面经(2025-8)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-11">2025-08-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1957 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/posts/%E8%B0%AD%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="谭同学的面经(2025-8)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-11">2025-08-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 6673 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 14 分钟&nbsp;<span id="/posts/%E8%B0%AD%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="谭同学的面经(2025-8)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -175,11 +175,18 @@
       <ul>
         <li><a href="#java中int和integer的区别">java中int和Integer的区别？</a></li>
         <li><a href="#string-stringbuffer-stingbuilder的区别">String StringBuffer StingBuilder的区别？</a></li>
-        <li><a href="#介绍一下threadlocal">介绍一下ThreadLocal</a></li>
+        <li><a href="#介绍一下threadlocal">介绍一下ThreadLocal</a>
+          <ul>
+            <li><a href="#一核心概念">一、核心概念</a></li>
+            <li><a href="#二工作原理">二、工作原理</a></li>
+            <li><a href="#三典型应用场景">三、典型应用场景</a></li>
+            <li><a href="#四注意事项">四、注意事项</a></li>
+            <li><a href="#五实现优势">五、实现优势</a></li>
+          </ul>
+        </li>
         <li><a href="#spring中bean的生命周期">Spring中Bean的生命周期？</a></li>
         <li><a href="#spring的事务隔离级别">Spring的事务隔离级别？</a></li>
         <li><a href="#maven-遇到jar包冲突怎么解决">Maven 遇到Jar包冲突怎么解决？</a></li>
-        <li><a href="#mybatis中如何避免sql注入">Mybatis中如何避免SQL注入？</a></li>
       </ul>
     </li>
   </ul>
@@ -611,13 +618,571 @@ vector&lt;vector<int>&gt; arrays1 = {
 <h3 id="阻塞队列什么时候会阻塞">阻塞队列什么时候会阻塞？</h3>
 <h2 id="易大宗-2025-12-08">易大宗 2025-12-08</h2>
 <h3 id="java中int和integer的区别">java中int和Integer的区别？</h3>
+<p><strong>数据类型</strong></p>
+<ul>
+<li>int是Java的基本数据类型，用于表示整数值，占用固定的内存空间。</li>
+<li>Integer是Java的包装类，用于将int类型的数据包装成对象，从而可以作为类的实例来使用。</li>
+</ul>
+<p><strong>装箱和拆箱</strong></p>
+<ul>
+<li>int是基本数据类型，不是对象，不能直接参与面向对象的操作，需要通过装箱（boxing）将int类型转换成Integer对象。</li>
+<li>Integer对象通过拆箱（unboxing）转换成int类型。</li>
+</ul>
+<p><strong>可空性</strong></p>
+<ul>
+<li>int是基本数据类型，不能表示为null，即int类型的变量总是有初始值的。</li>
+<li>Integer是一个类，是引用类型，可以表示为null，即Integer类型的变量可以赋值为null，表示不存在数值。</li>
+</ul>
+<p><strong>内存占用</strong></p>
+<ul>
+<li>int类型的变量占用的内存空间固定，通常是4个字节（32位）。</li>
+<li>Integer类型的对象占用的内存空间较大，除了保存值以外，还需要额外的空间用于对象头和其他元数据。</li>
+</ul>
+<p><strong>性能</strong></p>
+<ul>
+<li>int是基本数据类型，在计算和比较等操作时性能较好，因为不涉及装箱和拆箱的开销。</li>
+<li>Integer是引用类型，涉及装箱和拆箱的开销，性能相对较差，尤其在大量数据操作时会有一定的性能损耗。</li>
+</ul>
+<p><strong>初始化默认值</strong></p>
+<ul>
+<li>int类型的变量在声明时会自动初始化为0。</li>
+<li>Integer类型的对象在声明时如果没有初始化，会默认为null。</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>int适用于需要简单的整数运算和存储的场景，例如计数器、数组索引等。</li>
+<li>Integer适用于需要在对象中使用整数值，或者需要表示可能为null的整数值的场景，例如集合类、泛型等。</li>
+</ul>
+<p><strong>参与运算方式</strong></p>
+<ul>
+<li>int类型的变量可以直接参与数值运算。</li>
+<li>Integer类型的对象需要先进行拆箱为int，然后才能进行数值运算。</li>
+</ul>
 <h3 id="string-stringbuffer-stingbuilder的区别">String StringBuffer StingBuilder的区别？</h3>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>String</th>
+          <th>StringBuffer</th>
+          <th>StringBuilder</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>可变性</td>
+          <td>不可变（final）</td>
+          <td>可变</td>
+          <td>可变</td>
+      </tr>
+      <tr>
+          <td>线程安全</td>
+          <td>线程安全（不可变）</td>
+          <td>线程安全（同步方法）</td>
+          <td>非线程安全</td>
+      </tr>
+      <tr>
+          <td>性能</td>
+          <td>最差（每次操作生成新对象）</td>
+          <td>中等（同步开销）</td>
+          <td>最优（无同步开销）</td>
+      </tr>
+      <tr>
+          <td>存储位置</td>
+          <td>常量池（JVM内部优化）</td>
+          <td>堆内存</td>
+          <td>堆内存</td>
+      </tr>
+      <tr>
+          <td>适用场景</td>
+          <td>静态字符串、少操作</td>
+          <td>多线程环境，频繁篡改</td>
+          <td>单线程环境、频繁篡改</td>
+      </tr>
+  </tbody>
+</table>
+<p>关键区别解析</p>
+<p><strong>可变性‌</strong></p>
+<ul>
+<li>String 是不可变的，任何修改操作都会生成新对象。</li>
+<li>StringBuffer 和 StringBuilder 是可变的，通过 append() 方法直接修改原对象。</li>
+</ul>
+<p><strong>线程安全‌</strong></p>
+<ul>
+<li>String 由于不可变性天然线程安全。</li>
+<li>StringBuffer 通过 synchronized 保证线程安全。</li>
+<li>StringBuilder 无同步机制，线程不安全但性能最优。</li>
+</ul>
+<p><strong>性能‌</strong></p>
+<ul>
+<li>String 拼接时频繁创建新对象，性能最差。</li>
+<li>StringBuffer 同步开销导致性能中等。</li>
+<li>StringBuilder 无同步开销，性能最优。</li>
+</ul>
+<p><strong>存储位置‌</strong></p>
+<ul>
+<li>String 存储在常量池，JVM 优化内存使用。</li>
+<li>StringBuffer 和 StringBuilder 存储在堆内存。</li>
+</ul>
+<p><strong>适用场景建议</strong>
+静态字符串‌：使用 String。
+多线程环境‌：使用 StringBuffer。
+单线程大数据量操作‌：使用 StringBuilder。</p>
+<p>总结‌：选择时优先考虑线程安全需求和操作频率，StringBuilder 在单线程场景下性能最优。</p>
 <h3 id="介绍一下threadlocal">介绍一下ThreadLocal</h3>
+<h4 id="一核心概念">一、核心概念</h4>
+<p>‌<strong>ThreadLocal</strong>‌ 是 Java 提供的线程局部变量类，用于为每个线程创建独立的变量副本，避免多线程环境下的共享变量冲突。其核心机制是通过 <code>Thread</code> 类的 <code>ThreadLocalMap</code> 存储变量副本，每个线程对副本的修改互不影响。</p>
+<h4 id="二工作原理">二、工作原理</h4>
+<ol>
+<li>‌<strong>存储结构</strong>‌
+<ul>
+<li>每个线程内部维护一个 <code>ThreadLocalMap</code>，以 <code>ThreadLocal</code> 实例为键、变量副本为值的映射表。</li>
+<li><code>ThreadLocalMap</code> 采用弱引用存储 <code>ThreadLocal</code> 键，避免内存泄漏。</li>
+</ul>
+</li>
+<li>‌<strong>核心方法</strong>‌
+<ul>
+<li><code>set(T value)</code>：将值存入当前线程的 <code>ThreadLocalMap</code>。</li>
+<li><code>get()</code>：从当前线程的 <code>ThreadLocalMap</code> 获取值。</li>
+<li><code>remove()</code>：删除当前线程的 <code>ThreadLocalMap</code> 中的值。</li>
+</ul>
+</li>
+<li>‌<strong>生命周期</strong>‌
+<ul>
+<li>变量在当前线程存活期间有效，线程结束时自动回收。</li>
+</ul>
+</li>
+</ol>
+<h4 id="三典型应用场景">三、典型应用场景</h4>
+<ol>
+<li>‌<strong>线程上下文传递</strong>‌
+<ul>
+<li>在跨线程调用中传递请求上下文（如用户信息、请求ID）。</li>
+<li>示例：Spring MVC 中通过 <code>RequestContextHolder</code> 获取请求信息。</li>
+</ul>
+</li>
+<li>‌<strong>数据库连接管理</strong>‌
+<ul>
+<li>每个线程独立管理数据库连接（如 MyBatis 的 <code>SqlSession</code>）。</li>
+<li>避免线程间连接冲突。</li>
+</ul>
+</li>
+<li>‌<strong>事务管理</strong>‌
+<ul>
+<li>手动管理事务上下文，保证事务隔离性。</li>
+<li>示例：Spring 事务管理器通过 <code>ThreadLocal</code> 存储事务状态。</li>
+</ul>
+</li>
+</ol>
+<h4 id="四注意事项">四、注意事项</h4>
+<ul>
+<li>‌<strong>内存泄漏风险</strong>‌：若 <code>ThreadLocal</code> 键未被及时移除，可能导致 <code>ThreadLocalMap</code> 持有线程引用，引发内存泄漏。</li>
+<li>‌<strong>线程隔离性</strong>‌：<code>ThreadLocal</code> 仅在当前线程内有效，子线程无法继承父线程的 <code>ThreadLocal</code> 值（需使用 <code>InheritableThreadLocal</code>）。</li>
+<li>‌<strong>性能影响</strong>‌：频繁创建和销毁 <code>ThreadLocal</code> 可能导致性能开销，建议在类级别静态声明。</li>
+</ul>
+<h4 id="五实现优势">五、实现优势</h4>
+<ul>
+<li>‌<strong>避免同步锁</strong>‌：通过副本隔离，消除线程间竞争，提升并发性能。</li>
+<li>‌<strong>简化代码</strong>‌：替代参数传递，减少方法签名复杂度。</li>
+<li>‌<strong>线程安全</strong>‌：每个线程独立操作变量副本，无需额外同步措施。</li>
+</ul>
 <h3 id="spring中bean的生命周期">Spring中Bean的生命周期？</h3>
+<p>Spring 中 Bean 的生命周期详解</p>
+<p>Spring Bean 的生命周期包括从创建到销毁的整个过程，主要分为以下五个阶段：</p>
+<p><strong>实例化（Instantiation）‌</strong></p>
+<p>描述‌：为 Bean 分配内存空间，通过构造函数或工厂方法创建实例。
+时机‌：单例 Bean 在容器启动时实例化；原型 Bean 在每次获取时实例化。
+关键点‌：仅分配内存，未进行属性赋值和依赖注入。</p>
+<p><strong>属性赋值（Property Population）‌</strong></p>
+<p>描述‌：将配置的属性值注入到 Bean 的属性中。
+时机‌：实例化后立即执行。
+关键点‌：通过 setXxx() 方法设置属性值。</p>
+<p><strong>初始化（Initialization）‌</strong></p>
+<p>描述‌：执行 Bean 的初始化逻辑，包括以下步骤：
+Aware 接口回调‌：如 setBeanName()、setBeanFactory()、setApplicationContext()。
+BeanPostProcessor 前置处理‌：postProcessBeforeInitialization()。
+初始化方法‌：通过 @PostConstruct 注解、InitializingBean 接口或 XML 配置的 init-method。
+BeanPostProcessor 后置处理‌：postProcessAfterInitialization()。
+时机‌：属性赋值后立即执行。
+关键点‌：将 Bean 转换为可使用的状态。</p>
+<p><strong>使用（Usage）‌</strong></p>
+<p>描述‌：Bean 在应用程序中被调用和使用。
+时机‌：初始化后立即开始。
+关键点‌：Bean 的核心业务逻辑执行阶段。</p>
+<p><strong>销毁（Destruction）‌</strong></p>
+<p>描述‌：执行 Bean 的销毁逻辑，包括以下步骤：
+销毁方法‌：通过 @PreDestroy 注解、DisposableBean 接口或 XML 配置的 destroy-method。
+时机‌：单例 Bean 在容器关闭时销毁；原型 Bean 由垃圾回收机制处理。
+关键点‌：释放资源、关闭连接等清理操作。</p>
+<p>关键扩展点</p>
+<ul>
+<li>
+<p>生命周期钩子‌：
+初始化方法‌：@PostConstruct、init-method、InitializingBean。
+销毁方法‌：@PreDestroy、destroy-method、DisposableBean。</p>
+</li>
+<li>
+<p>BeanPostProcessor‌：
+作用‌：在 Bean 初始化前后执行自定义逻辑。
+方法‌：postProcessBeforeInitialization()、postProcessAfterInitialization()。</p>
+</li>
+<li>
+<p>单例 vs 原型‌：
+单例‌：容器启动时实例化，容器关闭时销毁。
+原型‌：每次获取时实例化，由垃圾回收机制销毁。</p>
+<p><strong>示例代码</strong></p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Component</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyBean</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">InitializingBean</span><span class="p">,</span><span class="w"> </span><span class="n">DisposableBean</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PostConstruct</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Bean 初始化&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PreDestroy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Bean 销毁&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterPropertiesSet</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;InitializingBean 初始化&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;DisposableBean 销毁&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意‌：实例化和初始化是两个独立阶段，实例化仅分配内存，初始化涉及属性赋值和业务逻辑执行。</p>
 <h3 id="spring的事务隔离级别">Spring的事务隔离级别？</h3>
+<p>Spring的事务隔离级别主要基于数据库的隔离级别实现，分为5种标准级别（对应SQL标准）：</p>
+<ol>
+<li>‌**默认隔离级别（<code>Isolation.DEFAULT</code>）**‌
+使用数据库的默认隔离级别，如MySQL的可重复读（<code>REPEATABLE_READ</code>），Oracle的读已提交（<code>READ_COMMITTED</code>）。</li>
+<li>‌**读未提交（<code>Isolation.READ_UNCOMMITTED</code>）**‌
+允许读取未提交的数据，可能导致脏读、不可重复读和幻读问题。</li>
+<li>‌**读已提交（<code>Isolation.READ_COMMITTED</code>）**‌
+避免脏读，但可能仍出现不可重复读和幻读。</li>
+<li>‌**可重复读（<code>Isolation.REPEATABLE_READ</code>）**‌
+避免脏读和不可重复读，但可能仍出现幻读（如InnoDB通过多版本并发控制实现）。</li>
+<li>‌**串行化（<code>Isolation.SERIALIZABLE</code>）**‌
+最高隔离级别，完全避免脏读、不可重复读和幻读，但性能最低（通过表级锁实现）。</li>
+</ol>
 <h3 id="maven-遇到jar包冲突怎么解决">Maven 遇到Jar包冲突怎么解决？</h3>
-<h3 id="mybatis中如何避免sql注入">Mybatis中如何避免SQL注入？</h3>
-</div><div class="post-footer" id="post-footer">
+<p>在 Maven 项目中遇到 Jar 包冲突时，可采用以下几种高效解决方法：</p>
+<ol>
+<li>‌基础排除法（<exclusions> 标签）‌
+适用场景‌：排除直接依赖中的传递性冲突包。
+操作示例‌：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-tomcat<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>要点‌：无需指定被排除依赖的版本，仅作用于当前声明的依赖项。
+2. ‌多层级依赖排除‌
+适用场景‌：冲突由间接依赖（非直接引入）引起。
+操作示例‌：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>module-a<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;groupId&gt;</span>org.hsqldb<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;artifactId&gt;</span>hsqldb<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>原理‌：依赖树 A→ B → hsqldb，在 A 的依赖声明中排除 hsqldb 即可切断传递链。
+3. ‌全局依赖管理（dependencyManagement）‌
+适用场景‌：统一管理多模块项目的依赖版本。
+操作示例‌：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- 父 POM --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;artifactId&gt;</span>log4j-core<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;version&gt;</span>2.17.1<span class="nt">&lt;/version&gt;</span> <span class="c">&lt;!-- 安全版本 --&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencyManagement&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>作用‌：强制所有子模块使用统一版本。
+4. ‌重定位类（maven-shade-plugin）‌
+适用场景‌：解决第三方依赖之间的冲突。
+操作示例‌：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>maven-shade-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;executions&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;execution&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;phase&gt;</span>package<span class="nt">&lt;/phase&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;goals&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="nt">&lt;goal&gt;</span>shade<span class="nt">&lt;/goal&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;/goals&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="nt">&lt;relocations&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="nt">&lt;relocation&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;pattern&gt;</span>com.google.common<span class="nt">&lt;/pattern&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;shadedPattern&gt;</span>com.shaded.google.common<span class="nt">&lt;/shadedPattern&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="nt">&lt;/relocation&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="nt">&lt;/relocations&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/execution&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/executions&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plugin&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>效果‌：将依赖的第三方 jar 包重命名后打包到项目 jar 包中。
+5. ‌类隔离策略‌
+适用场景‌：解决运行时类冲突。
+技术示例‌：Flink、SOFAArk、Tomcat 等框架通过类加载策略实现隔离。
+6. ‌依赖树分析‌
+操作步骤‌：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn dependency:tree  <span class="c1"># 查看完整依赖树</span>
+</span></span><span class="line"><span class="cl">mvn dependency:tree -Dincludes<span class="o">=</span>冲突包名  <span class="c1"># 精准定位冲突包</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">工具辅助‌：IDEA 安装 Maven Helper 插件可直观查看冲突情况。
+</span></span><span class="line"><span class="cl">7. ‌版本规则优先级‌
+</span></span><span class="line"><span class="cl">原则‌：
+</span></span><span class="line"><span class="cl">最短路径优先‌：路径更短的依赖版本生效。
+</span></span><span class="line"><span class="cl">先声明优先‌：路径长度相同时，先声明的依赖版本生效。
+</span></span><span class="line"><span class="cl">注意事项
+</span></span><span class="line"><span class="cl">运行时冲突‌：编译时解决方法可能引发运行时类找不到问题，需结合类隔离策略。
+</span></span><span class="line"><span class="cl">第三方冲突‌：重定位类和类隔离策略更适用于第三方依赖冲突。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">通过以上方法，可有效解决 Maven 项目中的 Jar 包冲突问题。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### Mybatis中如何避免SQL注入？</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. **使用MyBatis的参数绑定**
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MyBatis提供了预处理语句（PreparedStatement）的支持，这是避免SQL注入的关键。在MyBatis中，你应该使用<span class="sb">`</span><span class="c1">#{}`来绑定参数，而不是使用`${}`。`#{}`会自动地使用PreparedStatement的参数绑定，而`${}`会将参数直接嵌入到SQL语句中，这可能导致SQL注入。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="sb">```</span>xml
+</span></span><span class="line"><span class="cl">&lt;<span class="k">select</span> <span class="nv">id</span><span class="o">=</span><span class="s2">&#34;selectUsers&#34;</span> <span class="nv">resultType</span><span class="o">=</span><span class="s2">&#34;User&#34;</span>&gt;
+</span></span><span class="line"><span class="cl">  SELECT * FROM users WHERE <span class="nv">username</span> <span class="o">=</span> <span class="c1">#{username}</span>
+</span></span><span class="line"><span class="cl">&lt;/select&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>错误使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;selectUsers&#34;</span> <span class="na">resultType=</span><span class="s">&#34;User&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  SELECT * FROM users WHERE username = ${username}
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/select&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li><strong>验证和清理输入</strong></li>
+</ol>
+<p>虽然MyBatis本身提供了很好的防御措施，但在某些情况下，你可能需要对用户输入进行额外的验证和清理。例如，你可以使用Java的库如Apache Commons Validator来验证输入数据。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.commons.validator.routines.EmailValidator</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">validateEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">EmailValidator</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">isValid</span><span class="p">(</span><span class="n">email</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&#34;Invalid email address&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li><strong>使用MyBatis的XML映射文件或注解配置时，确保不拼接SQL语句</strong></li>
+</ol>
+<p>确保不要在Mapper XML文件中或通过注解拼接SQL语句。例如，不要在XML映射文件中这样做：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">select</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&#34;selectUsers&#34;</span><span class="w"> </span><span class="n">resultType</span><span class="o">=</span><span class="s">&#34;User&#34;</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">$</span><span class="p">{</span><span class="n">username</span><span class="p">}</span><span class="err">&#39;</span><span class="w"> </span><span class="n">AND</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">#</span><span class="p">{</span><span class="n">status</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li><strong>限制数据类型和范围</strong></li>
+</ol>
+<p>在数据库层面和应用程序层面都应限制数据类型和范围。例如，如果你知道某个字段应该是整数，那么在数据库中设置该字段为整型，并在应用程序中验证输入确保其为整数。</p>
+<ol start="5">
+<li><strong>使用ORM框架的高级功能</strong></li>
+</ol>
+<p>MyBatis支持动态SQL，如<code>&lt;if&gt;</code>、<code>&lt;choose&gt;</code>、<code>&lt;when&gt;</code>、<code>&lt;otherwise&gt;</code>等标签，这些可以安全地用来构建动态查询而不会引起SQL注入。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;select id=&#34;findActiveUsers&#34; resultType=&#34;User&#34;&gt;
+</span></span><span class="line"><span class="cl">  SELECT * FROM users
+</span></span><span class="line"><span class="cl">  WHERE status = &#39;ACTIVE&#39;
+</span></span><span class="line"><span class="cl">  &lt;if test=&#34;username != null&#34;&gt;
+</span></span><span class="line"><span class="cl">    AND username LIKE #{username}
+</span></span><span class="line"><span class="cl">  &lt;/if&gt;
+</span></span><span class="line"><span class="cl">&lt;/select&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

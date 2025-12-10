@@ -3,7 +3,15 @@
         <title>所有文章 - Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 Dec 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 09 Dec 2025 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://hubu8.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux 定时任务工具 crontab 配置详解</title>
+    <link>https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</link>
+    <pubDate>Tue, 09 Dec 2025 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>什么是跨域，如何解决跨域？</title>
     <link>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</link>
     <pubDate>Wed, 03 Dec 2025 08:59:26 &#43;0800</pubDate>
@@ -482,137 +490,6 @@ vector&lt;vector<int>&gt; arrays1 = {
     <author>Eccentric</author>
     <guid>https://hubu8.github.io/posts/%E5%88%98%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-6/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>叶同学的面经(2025/06 —— 2025/09)</title>
-    <link>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025/06-2025/09/</link>
-    <pubDate>Thu, 12 Jun 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/%E5%8F%B6%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025/06-2025/09/</guid>
-    <description><![CDATA[<h2 id="北京超星-一面2025-06">北京超星 一面(2025-06)</h2>
-<h3 id="1sql调优相关有哪些方式调优">1.sql调优相关，有哪些方式调优</h3>
-<h3 id="2索引失效的情况">2.索引失效的情况</h3>
-<h3 id="3java中的集合">3.Java中的集合</h3>
-<h3 id="4集合与hashmap的差异集合之间-list-hashset-集合和hashmap">4.集合与hashmap的差异(集合之间 list hashset 。集合和hashmap)</h3>
-<h3 id="5hashmap扩容机制">5.hashmap扩容机制</h3>
-<h3 id="6线程的创建方式">6.线程的创建方式</h3>
-<h3 id="7线程池的参数">7.线程池的参数</h3>
-<h2 id="迪博-全栈2025-08-28">迪博-全栈(2025-08-28)</h2>
-<h3 id="java介绍一下双亲委派机制介绍一下类加载器">Java：介绍一下双亲委派机制；介绍一下类加载器</h3>
-<h3 id="java基础多线程-线程池的几个参数工作中怎么使用的线程池使用的什么线程池">Java基础（多线程）： 线程池的几个参数，工作中怎么使用的线程池，使用的什么线程池</h3>
-<h3 id="并发juc下的东西了解吗提到了个cas--aba问题--版本控制有个名词形容">并发：juc下的东西了解吗？提到了个cas  ABA问题  版本控制（有个名词形容）</h3>
-<h3 id="springbean的创建过程">Spring：Bean的创建过程</h3>
-<h3 id="springmvc解释一下什么是springmvc--处理流程">SpringMVC：解释一下什么是SpringMVC  处理流程</h3>
-<h3 id="mybatis常见的设计模式">Mybatis：常见的设计模式</h3>
-<h3 id="mysql说一下你的sql优化过程">MySQL：说一下你的sql优化过程</h3>
-<h3 id="redis常见的数据结构--工作中怎么使用的---hash和string的区别">Redis：常见的数据结构  工作中怎么使用的   hash和String的区别</h3>
-<h3 id="消息中间件如何保证rabbitmq消息不被重复消费">消息中间件：如何保证RabbitMQ消息不被重复消费</h3>
-<h3 id="linux常见的命令----给一个文件赋予可执行权限具体怎么写">Linux：常见的命令    给一个文件赋予可执行权限具体怎么写</h3>
-<h3 id="项目挑一个你认为最值得讲的一个项目怎么实现的采用什么技术方案">项目：挑一个你认为最值得讲的一个项目，怎么实现的，采用什么技术方案</h3>
-<h2 id="斯维尔-java开发2025-09-01">斯维尔-Java开发(2025-09-01)</h2>
-<h3 id="笔试前后端都有">笔试&hellip;..前后端都有</h3>
-<h3 id="整体围绕项目开始感觉人员不多面试管忙不过来都最后一个面试的幸运的面对两个面试官">整体围绕项目开始（感觉人员不多，面试管忙不过来都&hellip;.最后一个面试的幸运的面对两个面试官）</h3>
-<h3 id="1介绍一下你在上一家公司的工作内容主要用到了哪些技术栈">1.介绍一下你在上一家公司的工作内容，主要用到了哪些技术栈</h3>
-<h3 id="2聊sql从项目切入15秒优化怎么个情况多少张表说了七八张有没有更好的方案中间表定时更新数据之类的">2.聊sql，从项目切入，15秒优化怎么个情况，多少张表（说了七八张）。有没有更好的方案（中间表&hellip;定时更新数据之类的）</h3>
-<h3 id="3jvm了解吗只能尽量回答提问了个一个java文件到jvm主要做了哪些东西">3.JVM了解吗？（只能尽量回答），提问了个：一个Java文件到jvm主要做了哪些东西。</h3>
-<h3 id="4jenkins了解吗说一下jenkins的一个流程完全不会">4.Jenkins了解吗？说一下Jenkins的一个流程（完全不会&hellip;）</h3>
-<h3 id="5vue了解吗在上家公司vue怎么用的">5.vue了解吗？在上家公司vue怎么用的</h3>
-<h3 id="6你说的平台是用的啥spring封装的说不上具体的是微服务还是单体微服务体现在哪感觉有点歧视低代码">6.你说的平台是用的啥（spring封装的&hellip;.说不上具体的），是微服务还是单体，微服务体现在哪&hellip;.感觉有点歧视低代码&hellip;</h3>
-<h2 id="0910米可世界线上">0910米可世界（线上）</h2>
-<h3 id="1jvm3内存划分">1.jvm3内存划分</h3>
-<h3 id="2垃圾收集器">2.垃圾收集器</h3>
-<h3 id="3接2问题cms为啥效率高">3.接2问题，CMS为啥效率高？</h3>
-<h3 id="4什么样的对象会进入新生代什么样的对象会进入老年代---公司用的什么虚拟机">4.什么样的对象会进入新生代、什么样的对象会进入老年代   公司用的什么虚拟机</h3>
-<h3 id="5spring如何解决循环依赖的三级缓存面试的时候在说啥">5.spring如何解决循环依赖的（三级缓存。。。。面试的时候在说啥&hellip;)</h3>
-<h3 id="6hashmap原理">6.hashmap原理</h3>
-<h3 id="7hashmap扩容">7.hashmap扩容</h3>
-<h3 id="8hashmap线程安全吗线程安全的有哪些">8.hashmap线程安全吗？线程安全的有哪些</h3>
-<h3 id="9concurrenthashmap为啥是线程安全的">9.concurrenthashmap为啥是线程安全的</h3>
-<h3 id="10mysql索引是啥">10.mysql索引是啥</h3>
-<h3 id="11索引失效的情况">11.索引失效的情况</h3>
-<h3 id="12mysql为啥是遵循最左匹配原则">12.mysql为啥是遵循最左匹配原则</h3>
-<h3 id="13讲一下项目">13.讲一下项目</h3>
-<h3 id="14你遇到的比较困难的问题怎么解决的">14.你遇到的比较困难的问题，怎么解决的</h3>
-<h3 id="15反问">15.反问</h3>
-<h2 id="0910-cet中电技术">0910 CET中电技术</h2>
-<h3 id="1项目">1，项目</h3>
-<h3 id="2技术方面">2.技术方面</h3>
-<h4 id="比较两个对象相等的方式">比较两个对象相等的方式</h4>
-<h4 id="redis持久化方式两者对比呢redis缓存怎么使用的有用过其他数据结构吗">redis持久化方式，两者对比呢，redis缓存怎么使用的，有用过其他数据结构吗</h4>
-<h4 id="synchronized的锁优化">synchronized的锁优化</h4>
-<h4 id="mysql索引遵循啥原则这个原则是根据什么来的又没答上来">mysql索引遵循啥原则，这个原则是根据什么来的（又没答上来&hellip;.）</h4>
-<h4 id="arrrylist和liknedlist的区别">arrryList和liknedlist的区别</h4>
-<h4 id="消息队列如何保证消息不丢失">消息队列如何保证消息不丢失</h4>
-<h4 id="线程池参数参数设置">线程池参数，参数设置</h4>
-<h3 id="3回到项目">3.回到项目</h3>
-<h3 id="4反问">4.反问</h3>
-<h2 id="0911喜茶">0911喜茶</h2>
-<h3 id="1项目招标流程是怎么样的">1.项目：招标流程是怎么样的</h3>
-<h3 id="2性能瓶颈sql优化索引水平分表日志事务">2.性能瓶颈sql优化、索引、水平分表、日志、事务</h3>
-<h3 id="3垃圾收集器cms和g1的区别--cms会触发几次stw">3.垃圾收集器CMS和G1的区别  cms会触发几次stw</h3>
-<h3 id="4redis缓存怎么使用的redis宕机了该如何处理列表服务组织缓存">4.redis缓存怎么使用的，redis宕机了该如何处理（列表服务组织缓存&hellip;.）</h3>
-<h3 id="5mq内部组件">5.MQ内部组件</h3>
-<h3 id="6业务架构是怎么样的在你手上的有几个微服务">6.业务架构是怎么样的，在你手上的有几个微服务？</h3>
-<h3 id="7分布式事务有了解吗--解决方案有哪些">7.分布式事务有了解吗  解决方案有哪些</h3>
-<h3 id="8项目从其他地方取数据合并的场景看板-采用中间表存数-如何处理数据不一致的问题">8.项目，从其他地方取数据合并的场景（看板） 采用中间表存数 如何处理数据不一致的问题</h3>
-<h3 id="9公司用的什么虚拟机">9.公司用的什么虚拟机</h3>
-<h3 id="10反问">10.反问</h3>
-<h2 id="0911-奇富科技原360数科--真凉面">0911 奇富科技（原360数科）  真凉面</h2>
-<h3 id="1项目入手涉及到那些技术点面试官从技术点发问但是说的偏业务面试官无从下手">1.项目入手，涉及到那些技术点，面试官从技术点发问但是说的偏业务，面试官无从下手</h3>
-<h3 id="2springboot启动流程自动装配">2.springboot启动流程，自动装配</h3>
-<h3 id="3jvm调优相关有没有碰到过oom频繁gc的问题">3.jvm调优相关，有没有碰到过oom，频繁gc的问题</h3>
-<h3 id="4云服务了解吗k8s不会啊">4.云服务了解吗？k8s&hellip;（不会啊）</h3>
-<h3 id="5反问">5.反问</h3>
-<h2 id="巨益科技0916">巨益科技（0916）</h2>
-<h3 id="线程安全切入点从计算机组成原理的层面解释一下为啥计算机不涉及成线程安全的">(线程安全切入点)从计算机组成原理的层面解释一下为啥计算机不涉及成线程安全的</h3>
-<h3 id="java中如何做的线程安全">Java中如何做的线程安全</h3>
-<h3 id="怎么在多线程中保证变量的可见性volatile关键字">怎么在多线程中保证变量的可见性(volatile关键字)</h3>
-<h3 id="volatile关键字保证可见性的原理">Volatile关键字保证可见性的原理</h3>
-<h3 id="线程池的主要参数">线程池的主要参数</h3>
-<h3 id="场景页面有个按钮可以无限点击利用线程池我只想要第一次请求和最后一次请求">场景:页面有个按钮可以无限点击，利用线程池我只想要第一次请求和最后一次请求</h3>
-<h3 id="数据库mysql和redis的索引介绍一下">数据库:MySQL和redis的索引介绍一下</h3>
-<h3 id="mysql索引结构是b树层高是多少">MySQL索引结构是b+树，层高是多少</h3>
-<h3 id="层高过多影响的是什么">层高过多影响的是什么</h3>
-<h3 id="mysql事务和redis事务">MySQL事务和redis事务</h3>
-<h3 id="mysql事务原理">MySQL事务原理</h3>
-<h3 id="场景mvsql服务和redis服务同时断电了怎么恢复">场景:MVSQL服务和redis服务同时断电了，怎么恢复?</h3>
-<h3 id="linux区分cpumemory文件视图应该使用什么命令">Linux:区分CPU、memory、文件视图应该使用什么命令</h3>
-<h3 id="容器dockerk8s了解吗">容器:docker，k8s了解吗?</h3>
-<h2 id="中地">中地</h2>
-<h3 id="springcloud和springcloud-alibaba有啥区别">springcloud和springcloud alibaba有啥区别</h3>
-<h3 id="有没有用过国产数据库">有没有用过国产数据库</h3>
-<h3 id="地理方面的数据处理有没有做过">地理方面的数据处理有没有做过</h3>
-<h3 id="安全漏洞扫描这类情况有没有接触过怎么处理的">安全漏洞扫描这类情况有没有接触过怎么处理的?</h3>
-<h3 id="环境上出现问题怎么排查">环境上出现问题怎么排查?</h3>
-<h3 id="接口压测有没有做过">接口压测有没有做过</h3>
-<h3 id="使用什么工具做压测">使用什么工具做压测?</h3>
-<h2 id="太平保险">太平保险</h2>
-<h3 id="3数据库sql优化索引失效的情况">3.数据库sql优化，索引失效的情况</h3>
-<h3 id="4redis怎么使用的">4.redis怎么使用的</h3>
-<h3 id="5spring--bean的生命周期">5.spring  bean的生命周期</h3>
-<h3 id="6spring事务">6.spring事务</h3>
-<h3 id="7spring-cloud-有哪些组件">7.spring cloud 有哪些组件</h3>
-<h3 id="8除了ocr还有什么技术">8.除了ocr还有什么技术？</h3>
-<h3 id="9平台整体架构">9.平台整体架构</h3>
-<h3 id="10注册中心用的啥">10.注册中心用的啥</h3>
-<h3 id="11springbean怎么自动注入的">11.springbean怎么自动注入的</h3>
-<h3 id="12mybatis有用过吗">12.mybatis有用过吗？</h3>
-<h2 id="顺丰">顺丰</h2>
-<h3 id="简单聊了一下项目微服务有几个节点">简单聊了一下项目微服务有几个节点</h3>
-<h3 id="场景请求用mq转发处理然后通过消费者端去处理这其中可能会存在的问题">场景：请求用MQ转发处理，然后通过消费者端去处理，这其中可能会存在的问题</h3>
-<h2 id="atp">ATP</h2>
-<h3 id="前面的八股java中和equals区别">前面的八股：Java中==和equals区别</h3>
-<h3 id="java中线程创建方式">Java中线程创建方式</h3>
-<h3 id="java中常见的集合">Java中常见的集合</h3>
-<h3 id="工作中有使用到线程池吗怎么使用的">工作中有使用到线程池吗？怎么使用的</h3>
-<h3 id="数据库优化">数据库优化</h3>
-<h3 id="mysql索引索引失效的情况abc三个字段的索引哪些情况下会失效">mysql索引，索引失效的情况，abc三个字段的索引，哪些情况下会失效</h3>
-<h3 id="spring中component和configuration有什么区别">spring中@Component和@Configuration有什么区别</h3>
-<h2 id="点峰科技">点峰科技</h2>
-<h3 id="1java中的hashmap--hashmap的put过程---hashmap扩容">1.Java中的hashmap  hashmap的put过程   hashmap扩容</h3>
-<h3 id="2jvm的内存结构--元空间存的什么内容">2.jvm的内存结构  元空间存的什么内容</h3>
-<h3 id="3java中线程池主要参数--怎么使用的">3.Java中线程池主要参数  怎么使用的</h3>
-<h3 id="4mq怎么保证幂等性--mq怎么保证消息的可靠性">4.mq怎么保证幂等性  mq怎么保证消息的可靠性</h3>]]></description>
 </item>
 </channel>
 </rss>

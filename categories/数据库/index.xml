@@ -16,6 +16,13 @@
       <description>&lt;p&gt;大家在学习数据库的过程中一定都接触过外键这个概念，并且在各种课后习题中外键还是一个非常重要的考察内容，但是在实际的企业开发过程中，你会发现外键是被严格禁止使用的，当需要多个表之间进行关联时，做法是冗余相关字段，而不是建立外键。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Redis宕机了，如何恢复数据</title>
+      <link>https://hubu8.github.io/posts/redis%E5%AE%95%E6%9C%BA%E4%BA%86%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 13 May 2024 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/redis%E5%AE%95%E6%9C%BA%E4%BA%86%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Row size too large. The maximum row size(Mysql行长度超过65535)</title>
       <link>https://hubu8.github.io/posts/row-size-too-large.-the-maximum-row-sizemysql%E8%A1%8C%E9%95%BF%E5%BA%A6%E8%B6%85%E8%BF%8765535/</link>
       <pubDate>Mon, 08 Jan 2024 08:59:26 +0800</pubDate>

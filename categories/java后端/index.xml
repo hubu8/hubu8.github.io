@@ -13,7 +13,7 @@
       <link>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
       <pubDate>Sat, 03 Jan 2026 08:59:26 +0800</pubDate>
       <guid>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;什么是-spring-循环依赖&#34;&gt;什么是 Spring 循环依赖？&lt;/h2&gt;&#xA;&lt;p&gt;简单来说，Spring 循环依赖 就是两个或多个 Bean 之间互相持有对方的引用，形成闭环依赖关系。比如：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;A Bean 的创建需要依赖 B Bean，而 B Bean 的创建又需要依赖 A Bean；&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spring Bean的生命周期</title>

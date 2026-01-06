@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>循环依赖 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
+    <description>Recent content in 循环依赖 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 03 Jan 2026 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring 如何解决循环依赖</title>
+      <link>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Sat, 03 Jan 2026 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

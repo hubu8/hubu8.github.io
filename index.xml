@@ -14,9 +14,25 @@
     <description><![CDATA[<p>大家在学习数据库的过程中一定都接触过外键这个概念，并且在各种课后习题中外键还是一个非常重要的考察内容，但是在实际的企业开发过程中，你会发现外键是被严格禁止使用的，当需要多个表之间进行关联时，做法是冗余相关字段，而不是建立外键。</p>]]></description>
 </item>
 <item>
+    <title>Spring 如何解决循环依赖</title>
+    <link>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
+    <pubDate>Sat, 03 Jan 2026 08:59:26 &#43;0800</pubDate>
+    <author>Better</author>
+    <guid>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Spring Bean的生命周期</title>
+    <link>https://hubu8.github.io/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+    <pubDate>Fri, 02 Jan 2026 08:59:26 &#43;0800</pubDate>
+    <author>Better</author>
+    <guid>https://hubu8.github.io/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>什么是代理对象？</title>
     <link>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/</link>
-    <pubDate>Mon, 05 Jan 2026 08:59:26 &#43;0800</pubDate>
+    <pubDate>Thu, 01 Jan 2026 08:59:26 &#43;0800</pubDate>
     <author>Better</author>
     <guid>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/</guid>
     <description><![CDATA[<p>在Spring框架中，代理对象是一个非常重要的概念，特别是在使用依赖注入（Dependency Injection）和面向切面编程（AOP，Aspect-Oriented Programming）时。下面我将详细解释什么是代理对象，以及在Spring中如何创建和使用代理对象。</p>]]></description>
@@ -473,25 +489,6 @@ vector&lt;vector<int>&gt; arrays1 = {
 <h3 id="在工作中有用到网络编程吗">在工作中有用到网络编程吗？</h3>
 <h2 id="http状态码100-200-300-400-500系列什么意思">HTTP状态码：100， 200， 300， 400， 500系列什么意思？</h2>
 <p>306？307？</p>]]></description>
-</item>
-<item>
-    <title>凯同学的面经(2025-8)</title>
-    <link>https://hubu8.github.io/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/</link>
-    <pubDate>Fri, 01 Aug 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/</guid>
-    <description><![CDATA[<h2 id="boss直聘2025-08-02">Boss直聘(2025-08-02)</h2>
-<h3 id="1写一道动态规划题目">1、写一道动态规划题目</h3>
-<p><a href="https://leetcode.cn/problems/taking-maximum-energy-from-the-mystic-dungeon/" target="_blank" rel="noopener noreffer ">从魔法师身上吸取的最大能量</a></p>
-<p>在神秘的地牢中，<code>n</code> 个魔法师站成一排。每个魔法师都拥有一个属性，这个属性可以给你提供能量。有些魔法师可能会给你负能量，即从你身上吸取能量。</p>]]></description>
-</item>
-<item>
-    <title>ipv6网络使用</title>
-    <link>https://hubu8.github.io/posts/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8/</link>
-    <pubDate>Mon, 14 Jul 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/ipv6%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

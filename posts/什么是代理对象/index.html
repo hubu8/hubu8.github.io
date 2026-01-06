@@ -11,8 +11,8 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-01-05T08:59:26+08:00">
-    <meta property="article:modified_time" content="2026-01-05T08:59:26+08:00">
+    <meta property="article:published_time" content="2026-01-01T08:59:26+08:00">
+    <meta property="article:modified_time" content="2026-01-01T08:59:26+08:00">
     <meta property="article:tag" content="代理对象">
     <meta property="og:image" content="https://hubu8.github.io/logo.png">
 
@@ -21,7 +21,7 @@
   <meta name="twitter:title" content="什么是代理对象？">
   <meta name="twitter:description" content="在Spring框架中，代理对象是一个非常重要的概念，特别是在使用依赖注入（Dependency Injection）和面向切面编程（AOP，Aspect-Oriented Programming）时。下面我将详细解释什么是代理对象，以及在Spring中如何创建和使用代理对象。">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/" /><link rel="prev" href="https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" /><link rel="next" href="https://hubu8.github.io/posts/%E5%A4%A7%E5%8E%82%E4%B8%BA%E5%95%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A4%96%E9%94%AE/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/" /><link rel="prev" href="https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" /><link rel="next" href="https://hubu8.github.io/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -33,7 +33,7 @@
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1\/"
         },"genre": "posts","keywords": "代理对象","wordcount":  5412 ,
-        "url": "https:\/\/hubu8.github.io\/posts\/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1\/","datePublished": "2026-01-05T08:59:26+08:00","dateModified": "2026-01-05T08:59:26+08:00","publisher": {
+        "url": "https:\/\/hubu8.github.io\/posts\/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1\/","datePublished": "2026-01-01T08:59:26+08:00","dateModified": "2026-01-01T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">什么是代理对象？</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-05">2026-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5412 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-01">2026-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5412 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/" class="leancloud_visitors" data-flag-title="什么是代理对象？">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -967,7 +967,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2026-01-05</span>
+                <span>更新于 2026-01-01</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -985,7 +985,7 @@
     </div>
 
     <div class="post-nav"><a href="/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" class="prev" rel="prev" title="Linux 定时任务工具 crontab 配置详解"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Linux 定时任务工具 crontab 配置详解</a>
-            <a href="/posts/%E5%A4%A7%E5%8E%82%E4%B8%BA%E5%95%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A4%96%E9%94%AE/" class="next" rel="next" title="大厂为啥不使用外键？">大厂为啥不使用外键？<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+            <a href="/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="next" rel="next" title="Spring Bean的生命周期">Spring Bean的生命周期<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

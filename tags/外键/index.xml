@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>外键 on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/%E5%A4%96%E9%94%AE/</link>
+    <description>Recent content in 外键 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 06 Jan 2026 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/%E5%A4%96%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大厂为啥不使用外键？</title>
+      <link>https://hubu8.github.io/posts/%E5%A4%A7%E5%8E%82%E4%B8%BA%E5%95%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A4%96%E9%94%AE/</link>
+      <pubDate>Tue, 06 Jan 2026 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/%E5%A4%A7%E5%8E%82%E4%B8%BA%E5%95%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A4%96%E9%94%AE/</guid>
+      <description>&lt;p&gt;大家在学习数据库的过程中一定都接触过外键这个概念，并且在各种课后习题中外键还是一个非常重要的考察内容，但是在实际的企业开发过程中，你会发现外键是被严格禁止使用的，当需要多个表之间进行关联时，做法是冗余相关字段，而不是建立外键。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

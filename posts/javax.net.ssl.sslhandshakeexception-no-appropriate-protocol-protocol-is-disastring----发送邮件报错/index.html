@@ -595,32 +595,32 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.ruoyi.common.email.util</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">cn.hutool.extra.mail.Mail</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">cn.hutool.extra.mail.MailAccount</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">cn.hutool.extra.mail.MailUtil</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.constant.CacheConstants</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.core.redis.RedisCache</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.email.EmailConfig</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.email.EmailVO</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.exception.GlobalException</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.exception.tool.EmailConfigException</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.exception.tool.EmailSendException</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.utils.EncryptUtils</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.utils.StringUtils</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.utils.spring.SpringUtils</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.sun.mail.util.MailSSLSocketFactory</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.LoggerFactory</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">cn.hutool.extra.mail.Mail</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">cn.hutool.extra.mail.MailAccount</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">cn.hutool.extra.mail.MailUtil</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.constant.CacheConstants</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.core.redis.RedisCache</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.email.EmailConfig</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.email.EmailVO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.exception.GlobalException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.exception.tool.EmailConfigException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.exception.tool.EmailSendException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.utils.EncryptUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.utils.StringUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.ruoyi.common.utils.spring.SpringUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.sun.mail.util.MailSSLSocketFactory</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.LoggerFactory</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.activation.DataSource</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.InputStream</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URL</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URLConnection</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.security.GeneralSecurityException</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">javax.activation.DataSource</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.InputStream</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URL</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URLConnection</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.security.GeneralSecurityException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EmailSendUtil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EmailSendUtil</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">EmailSendUtil</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">EMAIL_CONFIG_HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;email.config.host&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">EMAIL_CONFIG_PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;email.config.port&#34;</span><span class="p">;</span><span class="w">
@@ -663,15 +663,15 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">account</span><span class="p">.</span><span class="na">setSslProtocols</span><span class="p">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 方案二：</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 补充 SSL SocketFactory 相关参数，避免因缺少证书信任导致握手失败：添加 SSL 安全套接字工厂配置</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        MailSSLSocketFactory sf = null;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        try {</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            sf = new MailSSLSocketFactory();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        } catch (GeneralSecurityException e) {</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            throw new RuntimeException(e);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        }</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        MailSSLSocketFactory sf = null;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        try {</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf = new MailSSLSocketFactory();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        } catch (GeneralSecurityException e) {</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            throw new RuntimeException(e);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// ssl方式发送</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">account</span><span class="p">.</span><span class="na">setSslEnable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 使用STARTTLS安全连接</span><span class="w">
@@ -849,7 +849,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>jdk1.8版本导致SSL调用权限上有问题，新电脑装的jdk是jdk1.8.0_291，版本比较高。搜到的解决方法是：</p>
@@ -871,8 +871,8 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Example:</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#   jdk.tls.disabledAlgorithms=MD5, SSLv3, DSA, RSA keySize &lt; 2048</span>
 </span></span><span class="line"><span class="cl">jdk.tls.disabledAlgorithms<span class="o">=</span>SSLv3, TLSv1, TLSv1.1,RC4, DES, MD5withRSA, <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    DH keySize &lt; 1024, EC keySize &lt; 224, 3DES_EDE_CBC, anon, NULL, <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    include jdk.disabled.namedCurves
+</span></span></span><span class="line"><span class="cl">    DH keySize &lt; 1024, EC keySize &lt; 224, 3DES_EDE_CBC, anon, NULL, <span class="se">\
+</span></span></span><span class="line"><span class="cl">    include jdk.disabled.namedCurves
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Legacy algorithms for Secure Socket Layer/Transport Layer Security (SSL/TLS)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># processing in JSSE implementation.</span>
@@ -894,8 +894,8 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Example:</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#   jdk.tls.disabledAlgorithms=MD5, SSLv3, DSA, RSA keySize &lt; 2048</span>
 </span></span><span class="line"><span class="cl">jdk.tls.disabledAlgorithms<span class="o">=</span>RC4, DES, MD5withRSA, <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    DH keySize &lt; 1024, EC keySize &lt; 224, 3DES_EDE_CBC, anon, NULL, <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    include jdk.disabled.namedCurves
+</span></span></span><span class="line"><span class="cl">    DH keySize &lt; 1024, EC keySize &lt; 224, 3DES_EDE_CBC, anon, NULL, <span class="se">\
+</span></span></span><span class="line"><span class="cl">    include jdk.disabled.namedCurves
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Legacy algorithms for Secure Socket Layer/Transport Layer Security (SSL/TLS)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># processing in JSSE implementation.</span>
@@ -977,15 +977,15 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">account</span><span class="p">.</span><span class="na">setSslProtocols</span><span class="p">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 方案二：</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 补充 SSL SocketFactory 相关参数，避免因缺少证书信任导致握手失败：添加 SSL 安全套接字工厂配置</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        MailSSLSocketFactory sf = null;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        try {</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            sf = new MailSSLSocketFactory();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        } catch (GeneralSecurityException e) {</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//            throw new RuntimeException(e);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//        }</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        MailSSLSocketFactory sf = null;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        try {</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf = new MailSSLSocketFactory();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            sf.setTrustAllHosts(true);  // 信任所有主机（测试环境可临时启用）:ml-citation{ref=&#34;4&#34; data=&#34;citationList&#34;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.socketFactory&#34;, sf);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            account.setCustomProperty(&#34;mail.smtp.ssl.enable&#34;, &#34;true&#34;);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        } catch (GeneralSecurityException e) {</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            throw new RuntimeException(e);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="方案二">方案二</h4>
@@ -1001,9 +1001,9 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MailAccount</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailAccount</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">account</span><span class="p">.</span><span class="na">setSslEnable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">account</span><span class="p">.</span><span class="na">setSslEnable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">account</span><span class="p">.</span><span class="na">setStarttlsEnable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">account</span><span class="p">.</span><span class="na">setStarttlsEnable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果比较着急，并且对邮件安全要求不高，可以这样，也能解决。</p>
@@ -1035,12 +1035,12 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MailAccount</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailAccount</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ssl启用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">account</span><span class="p">.</span><span class="na">setSslEnable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// STARTTLS启用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">account</span><span class="p">.</span><span class="na">setStarttlsEnable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ssl启用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">account</span><span class="p">.</span><span class="na">setSslEnable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// STARTTLS启用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">account</span><span class="p">.</span><span class="na">setStarttlsEnable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c1">// 解决连接smtp服务失败问题，升级了hutool版本才有这个方法</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">MailSSLSocketFactory</span><span class="w"> </span><span class="n">sf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailSSLSocketFactory</span><span class="p">(</span><span class="s">&#34;TLSv1.2&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c1">//信任所有host</span><span class="w">
@@ -1048,9 +1048,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c1">//自定义设置</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">account</span><span class="p">.</span><span class="na">setCustomProperty</span><span class="p">(</span><span class="s">&#34;mail.smtp.ssl.socketFactory&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">sf</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">account</span><span class="p">.</span><span class="na">setCustomProperty</span><span class="p">(</span><span class="s">&#34;mail.smtp.ssl.protocols&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;TLSv1.2&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">GeneralSecurityException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">GeneralSecurityException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意，如果是老版本hutool的jar包，有可能没有setCustomProperty方法，需要换成新版本hutool的jar包才有（已测试5.3.4版本没有，5.7.19有）：</p>
@@ -1087,7 +1087,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

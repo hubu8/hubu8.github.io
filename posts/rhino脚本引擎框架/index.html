@@ -183,12 +183,12 @@ Object result = cx.evaluateString(scope, string, error, num, null);
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">evaluateString</span><span class="p">(</span><span class="n">Scriptable</span><span class="w"> </span><span class="n">scope</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="n">String</span><span class="w"> </span><span class="n">sourceName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lineno</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">securityDomain</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">参数解释</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Scope</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">运行的作用域</span><span class="p">,</span><span class="n">运行js时会在作用域</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="n">中寻找所需要的变量</span><span class="p">.</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">Source</span><span class="p">:</span><span class="w"> </span><span class="n">待运行的JS脚本字符串</span><span class="p">.</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">SourceName</span><span class="p">:</span><span class="w"> </span><span class="n">定义源码的名称</span><span class="p">,</span><span class="n">出错的时候方便定位</span><span class="p">,</span><span class="n">可以为null</span><span class="p">.</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">Lineno</span><span class="p">:</span><span class="w"> </span><span class="n">发生错误时显示的行号</span><span class="p">.</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">securityDomain</span><span class="p">:</span><span class="w"> </span><span class="n">一个指定安全性的任意对象</span><span class="p">,</span><span class="n">如果不关心线程安全是</span><span class="p">,</span><span class="n">可以为null值</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">参数解释</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">Scope</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">运行的作用域</span><span class="p">,</span><span class="n">运行js时会在作用域</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="n">中寻找所需要的变量</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">Source</span><span class="p">:</span><span class="w"> </span><span class="n">待运行的JS脚本字符串</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">SourceName</span><span class="p">:</span><span class="w"> </span><span class="n">定义源码的名称</span><span class="p">,</span><span class="n">出错的时候方便定位</span><span class="p">,</span><span class="n">可以为null</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">Lineno</span><span class="p">:</span><span class="w"> </span><span class="n">发生错误时显示的行号</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">securityDomain</span><span class="p">:</span><span class="w"> </span><span class="n">一个指定安全性的任意对象</span><span class="p">,</span><span class="n">如果不关心线程安全是</span><span class="p">,</span><span class="n">可以为null值</span><span class="p">.</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="5结束上下文"><strong>5.结束上下文</strong></h4>
@@ -258,7 +258,7 @@ Context.exit();</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Context</span><span class="p">.</span><span class="na">exit</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>方式二:</p>
@@ -311,7 +311,7 @@ Context.exit();</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Context</span><span class="p">.</span><span class="na">exit</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="五java-和-javascript-对象相互调用">五:Java 和 JavaScript 对象相互调用</h3>
@@ -395,7 +395,7 @@ Context.exit();</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Context</span><span class="p">.</span><span class="na">exit</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2在java中调用javascript脚本">2.在Java中调用JavaScript脚本</h4>
@@ -450,7 +450,7 @@ A.在 Java 中调用 JavaScript 脚本中的变量</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Context</span><span class="p">.</span><span class="na">exit</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>B.在Java中调用Script中的函数</strong></p>
@@ -528,7 +528,7 @@ A.在 Java 中调用 JavaScript 脚本中的变量</p>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

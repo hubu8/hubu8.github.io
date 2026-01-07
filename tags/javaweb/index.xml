@@ -13,7 +13,7 @@
       <link>https://hubu8.github.io/posts/javaweb-%E5%85%AD/</link>
       <pubDate>Mon, 19 Jul 2021 21:17:57 +0800</pubDate>
       <guid>https://hubu8.github.io/posts/javaweb-%E5%85%AD/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;本文由 &lt;a href=&#34;http://ksria.com/simpread/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;简悦 SimpRead&lt;/a&gt; 转码， 原文地址 &lt;a href=&#34;https://blog.csdn.net/fangchao2011/article/details/89185249&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;blog.csdn.net&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;java-208-道面试题--java-web&#34;&gt;Java 208 道面试题 · Java Web&lt;/h2&gt;&#xA;&lt;h3 id=&#34;64-jsp-和-servlet-有什么区别&#34;&gt;&lt;strong&gt;64. jsp 和 servlet 有什么区别？&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;jsp经编译后就变成了Servlet.（JSP的本质就是Servlet，JVM只能识别java的类，不能识别JSP的代码，Web容器将JSP的代码编译成JVM能够识别的java类）&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;本文由 &lt;a href=&#34;http://ksria.com/simpread/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;简悦 SimpRead&lt;/a&gt; 转码， 原文地址 &lt;a href=&#34;https://blog.csdn.net/fangchao2011/article/details/89185249&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;blog.csdn.net&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;java-208-道面试题--java-web&#34;&gt;Java 208 道面试题 · Java Web&lt;/h2&gt;&#xA;&lt;h3 id=&#34;64-jsp-和-servlet-有什么区别&#34;&gt;&lt;strong&gt;64. jsp 和 servlet 有什么区别？&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;jsp经编译后就变成了Servlet.（JSP的本质就是Servlet，JVM只能识别java的类，不能识别JSP的代码，Web容器将JSP的代码编译成JVM能够识别的java类）&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

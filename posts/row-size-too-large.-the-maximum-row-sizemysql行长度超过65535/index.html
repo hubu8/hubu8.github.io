@@ -154,17 +154,20 @@
 <p>不同字符集下，占用空间不一样</p>
 <p>gbk编码中，1个字符占用2个字节</p>
 <p>utf8编码（默认）中，1个字符占用3个字节</p>
-<p>utf8mb4编码中，1个字符占用4个字节</p></blockquote>
+<p>utf8mb4编码中，1个字符占用4个字节</p>
+</blockquote>
 <ul>
 <li>存储规则</li>
 </ul>
 <blockquote>
-<p>varchar除了存储字符，还需要额外的空间来存储长度和是否为NULL，分别占用1-2字节和1字节</p></blockquote>
+<p>varchar除了存储字符，还需要额外的空间来存储长度和是否为NULL，分别占用1-2字节和1字节</p>
+</blockquote>
 <ul>
 <li>行大小限制</li>
 </ul>
 <blockquote>
-<p>MySQL 表的内部表示具有 65,535 字节的最大行大小限制，即使存储引擎能够支持更大的行。BLOB 和 TEXT列仅对行大小限制贡献 9 到 12 个字节，因为它们的内容与行的其余部分分开存储</p></blockquote>
+<p>MySQL 表的内部表示具有 65,535 字节的最大行大小限制，即使存储引擎能够支持更大的行。BLOB 和 TEXT列仅对行大小限制贡献 9 到 12 个字节，因为它们的内容与行的其余部分分开存储</p>
+</blockquote>
 <p>接下来，我们进行验证下</p>
 <p>根据行最大65535字节，我们选择utf8编码，那我们最多可以设置的字符数为65535/3=21845</p>
 <p><img
@@ -240,7 +243,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

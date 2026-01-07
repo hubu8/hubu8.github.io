@@ -170,7 +170,8 @@
 <p>IPv6地址由八组、每组四位16进制数字组成，每组之间由&quot;：&ldquo;来分隔。</p>
 <p><strong>看个简单的例子：</strong></p>
 <blockquote>
-<p>2610:00f8:0c34:67f9:0200:83ff:fe94:4c36，每个“：”前后都是4位16进制的数字，共分隔成8组。</p></blockquote>
+<p>2610:00f8:0c34:67f9:0200:83ff:fe94:4c36，每个“：”前后都是4位16进制的数字，共分隔成8组。</p>
+</blockquote>
 <p><strong>如下图所示：</strong></p>
 <p><img
         class="lazyload"
@@ -200,7 +201,8 @@
 <p>首先，最重要的一点，就是前面所说的地址池扩容。IPv4的地址池是约42.9亿，IPv6能达到多少呢？</p>
 <p><strong>数量如下：</strong></p>
 <blockquote>
-<p>340282366920938463463374607431768211456个…</p></blockquote>
+<p>340282366920938463463374607431768211456个…</p>
+</blockquote>
 <p>不用数了，太多了… 简单说，是2的128次方。</p>
 <table>
   <thead>
@@ -233,24 +235,29 @@
 <p>如果以二进制来写，IPv6的地址是128位。不过，这样写显然不太方便（一行都写不下）。所以，通常用十六进制来写，也就缩短成32位（32位会分为8组，每组4位）。</p>
 <p><strong>下面就是一个标准、合法的IPv6地址示例：</strong></p>
 <blockquote>
-<p>2001:0db8:85a3:08d3:1319:8a2e:0370:7344</p></blockquote>
+<p>2001:0db8:85a3:08d3:1319:8a2e:0370:7344</p>
+</blockquote>
 <p>**注意：**IPv6的地址是可以简写的，每项数字前导的0可以省略。</p>
 <p><strong>例如，下面这个地址：</strong></p>
 <blockquote>
-<p>2001:0DB8:02de:0000:0000:0000:0000:0e13</p></blockquote>
+<p>2001:0DB8:02de:0000:0000:0000:0000:0e13</p>
+</blockquote>
 <p><strong>粉红的“0”就可以省略，变成：</strong></p>
 <blockquote>
-<p>2001: DB8:2de:0:0:0:0:e13</p></blockquote>
+<p>2001: DB8:2de:0:0:0:0:e13</p>
+</blockquote>
 <p><strong>如果有一组或连续几组都是0，那么可以简写成“::”，也就是：</strong></p>
 <blockquote>
-<p>2001: DB8:2de::e13</p></blockquote>
+<p>2001: DB8:2de::e13</p>
+</blockquote>
 <p>**注意：**一个IPv6地址，只能有一个“::”。</p>
 <p><strong>为什么？很简单，你看下面这四个地址，如果所有0全都缩写，会变成什么样？</strong></p>
 <blockquote>
 <p>2001:0000:0000:0000:0000:25de:0000:cade</p>
 <p>2001: 0000: 0000:0000:25de:0000:0000:cade</p>
 <p>2001: 0000: 0000:25de:0000:0000:0000:cade</p>
-<p>2001: 0000: 25de:0000:0000:0000:0000:cade</p></blockquote>
+<p>2001: 0000: 25de:0000:0000:0000:0000:cade</p>
+</blockquote>
 <p>是的，都是2001::25de::cade，冲突了。所以，这个地址是非法的，不允许存在的。</p>
 <p>关于IPv6还有很多技术细节，因篇幅原因，不再赘述。</p>
 <p><strong>除了地址数量之外，IPv6还有很多优点，例如：</strong></p>
@@ -261,7 +268,8 @@
 <p>4）IPv6具有更高的安全性。用户可以对网络层的数据进行加密并对IP报文进行校验，极大地增强了网络的安全性；</p>
 <p>5）IPv6具有更好的扩容能力。如果新的技术或应用需要时，IPV6允许协议进行扩充；</p>
 <p>6）IPv6具有更好的头部格式。IPV6使用新的头部格式，就简化和加速了路由选择过程，提高了效率；</p>
-<p>……</p></blockquote>
+<p>……</p>
+</blockquote>
 <h3 id="ipv6的优点这么多为什么之前普及却这么慢">IPv6的优点这么多，为什么之前普及却这么慢？</h3>
 <p>IPv6优点这么多，为什么它问世已经20年了，还是没有完全替代IPv4呢？这里面的水就很深了。。。说白了，主要还是和利益有关。</p>
 <h4 id="nat这类技术让ipv4得以续命">NAT这类技术，让IPv4得以续命</h4>
@@ -403,7 +411,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

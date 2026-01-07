@@ -263,9 +263,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">*</span><span class="w"> </span><span class="n">servlet</span><span class="w"> </span><span class="n">实现的三种方式</span><span class="err">：</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">*</span><span class="w">      </span><span class="n">1</span><span class="p">.</span><span class="w"> </span><span class="n">实现servlet接口</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">*</span><span class="w">      </span><span class="n">2</span><span class="p">.</span><span class="w"> </span><span class="n">继承</span><span class="w"> </span><span class="n">GenericServlet</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">*</span><span class="w">      </span><span class="n">3</span><span class="p">.</span><span class="w"> </span><span class="n">继承</span><span class="w"> </span><span class="nf">HttpServlet</span><span class="w">     </span><span class="p">(</span><span class="n">和前面区别</span><span class="err">：</span><span class="w"> </span><span class="n">是一个带有http协议的servlet</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">*</span><span class="w">      </span><span class="n">1</span><span class="p">.</span><span class="w"> </span><span class="n">实现servlet接口</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">*</span><span class="w">      </span><span class="n">2</span><span class="p">.</span><span class="w"> </span><span class="n">继承</span><span class="w"> </span><span class="n">GenericServlet</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">*</span><span class="w">      </span><span class="n">3</span><span class="p">.</span><span class="w"> </span><span class="n">继承</span><span class="w"> </span><span class="nf">HttpServlet</span><span class="w">     </span><span class="p">(</span><span class="n">和前面区别</span><span class="err">：</span><span class="w"> </span><span class="n">是一个带有http协议的servlet</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><img src="assets/image-20201026151750912.png" alt="image-20201026151750912" style="zoom:80%;" />
@@ -283,7 +283,8 @@
 service : 客户端发起的每次请求当前servlet都会访问到service方法！ （访问N次，执行N次） &mdash;&gt; 用于处理业务（处理用户的每次请求）</p>
 <p>生命周期方法：
 init:  初始化  （只执行1次： 对象创建时）   &ndash;&gt; 我们可以用来加载资源
-destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;&gt; 我们可以释放资源，然后再销毁</p></blockquote>
+destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;&gt; 我们可以释放资源，然后再销毁</p>
+</blockquote>
 <h3 id="132-servlet的线程安全">1.3.2 Servlet的线程安全</h3>
 <p>由于Servlet运用了单例模式，即整个应用中只有一个实例对象，所以我们需要分析这个唯一的实例中的类成员是否线程安全。接下来，我们来看下面的的示例：</p>
 <div class="highlight"><div class="chroma">
@@ -332,7 +333,7 @@ destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * @author 黑马程序员
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * @Company http://www.itheima.com
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Servlet05</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Servlet05</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -359,7 +360,7 @@ destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">doPost</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">resp</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过上面的测试我们发现，在Servlet中定义了类成员之后，多个浏览器都会共享类成员的数据。其实每一个浏览器端发送请求，就代表是一个线程，那么多个浏览器就是多个线程，所以测试的结果说明了多个线程会共享Servlet类成员中的数据，其中任何一个线程修改了数据，都会影响其他线程。因此，我们可以认为Servlet它不是线程安全的。</p>
@@ -391,9 +392,11 @@ destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;
 <h3 id="1-关于单例模式">1. 关于单例模式：</h3>
 <blockquote>
 <p><strong>什么是单例：</strong> 在程序运行过程中，不管获取或者访问该对象多少次，最终都是只创建一个对象；</p>
-<p>​						我们今天使用的servlet就是单例模式的！（默认是懒汉）</p></blockquote>
+<p>​						我们今天使用的servlet就是单例模式的！（默认是懒汉）</p>
+</blockquote>
 <blockquote>
-<p><strong>什么是多例:</strong>   每次访问该对象，都是一个全新的对象，都是新初始化的一个！ （以前用的  new User()）;</p></blockquote>
+<p><strong>什么是多例:</strong>   每次访问该对象，都是一个全新的对象，都是新初始化的一个！ （以前用的  new User()）;</p>
+</blockquote>
 <p><strong>单例实现的两种方式：</strong></p>
 <h3 id="2单例线程不安全那么我们为什么还要使用-如何避免线程问题">2.单例线程不安全，那么我们为什么还要使用？&mdash; 如何避免线程问题？</h3>
 <blockquote>
@@ -403,7 +406,8 @@ destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;
 <p>​				在单例对象中，要谨慎使用成员变量！ 如果是没有必要， 建议不要使用；</p>
 <p>​				只要在成员位置没有变量，那么单例模式数据也是安全的！</p>
 <p>为什么servlet被设计成单例呢？</p>
-<p>​				为了性能！</p></blockquote></div><div class="post-footer" id="post-footer">
+<p>​				为了性能！</p>
+</blockquote></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -431,7 +435,7 @@ destroy： 销毁 （只执行1次： 服务器关闭对象销毁时）  &ndash;
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

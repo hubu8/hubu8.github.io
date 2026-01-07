@@ -238,23 +238,23 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1、卸载旧版本</span>
 </span></span><span class="line"><span class="cl">sudo yum remove docker <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-client <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-client-latest <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-common <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-latest <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-latest-logrotate <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-logrotate <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-engine
+</span></span></span><span class="line"><span class="cl">                  docker-client <span class="se">\
+</span></span></span><span class="line"><span class="cl">                  docker-client-latest <span class="se">\
+</span></span></span><span class="line"><span class="cl">                  docker-common <span class="se">\
+</span></span></span><span class="line"><span class="cl">                  docker-latest <span class="se">\
+</span></span></span><span class="line"><span class="cl">                  docker-latest-logrotate <span class="se">\
+</span></span></span><span class="line"><span class="cl">                  docker-logrotate <span class="se">\
+</span></span></span><span class="line"><span class="cl">                  docker-engine
 </span></span><span class="line"><span class="cl"><span class="c1"># 2、 需要的安装包</span>
 </span></span><span class="line"><span class="cl">sudo yum install -y yum-utils
 </span></span><span class="line"><span class="cl"><span class="c1"># 3、设置镜像仓库</span>
 </span></span><span class="line"><span class="cl">sudo yum-config-manager <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-repo <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    https://download.docker.com/linux/centos/docker-ce.repo	<span class="c1"># 默认是国外的</span>
+</span></span></span><span class="line"><span class="cl">    --add-repo <span class="se">\
+</span></span></span><span class="line"><span class="cl">    https://download.docker.com/linux/centos/docker-ce.repo	<span class="c1"># 默认是国外的</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">sudo yum-config-manager <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-repo <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo	<span class="c1"># 默认是国外的 可换国内</span>
+</span></span></span><span class="line"><span class="cl">    --add-repo <span class="se">\
+</span></span></span><span class="line"><span class="cl">    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo	<span class="c1"># 默认是国外的 可换国内</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">yum makecache fast
 </span></span><span class="line"><span class="cl">
@@ -3370,8 +3370,8 @@
 </span></span><span class="line"><span class="cl"> 
 </span></span><span class="line"><span class="cl"> <span class="c1"># 通过脚本创建6个redis</span>
 </span></span><span class="line"><span class="cl"> <span class="k">for</span> port in <span class="k">$(</span>seq <span class="m">1</span> 6<span class="k">)</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="k">do</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>mkdir -p /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf
+</span></span></span><span class="line"><span class="cl"><span class="k">do</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">mkdir -p /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf
 </span></span><span class="line"><span class="cl">touch /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf/redis.conf
 </span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt; EOF &gt;/mydata/redis/node-${port}/conf/redis.conf
 </span></span></span><span class="line"><span class="cl"><span class="s">port 6379 
@@ -3387,8 +3387,8 @@
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="k">for</span> port in <span class="k">$(</span>seq <span class="m">1</span> 6<span class="k">)</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span> <span class="k">do</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span> mkdir -p /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf
+</span></span></span><span class="line"><span class="cl"> <span class="k">do</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"> mkdir -p /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf
 </span></span><span class="line"><span class="cl"> touch /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf/redis.conf
 </span></span><span class="line"><span class="cl"> cat <span class="s">&lt;&lt; EOF &gt;/mydata/redis/node-${port}/conf/redis.conf
 </span></span></span><span class="line"><span class="cl"><span class="s"> port 6379
@@ -3404,21 +3404,21 @@
 </span></span><span class="line"><span class="cl"> <span class="k">done</span>
 </span></span><span class="line"><span class="cl"> <span class="c1"># 创建6个redis节点</span>
 </span></span><span class="line"><span class="cl"> docker run -p 6371:6379 -p 16371:16379 --name redis-1 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /mydata/redis/node-1/data:/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /mydata/redis/node-1/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d --net redis-net --ip 172.38.0.11 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
+</span></span></span><span class="line"><span class="cl">    -v /mydata/redis/node-1/data:/data <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -v /mydata/redis/node-1/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -d --net redis-net --ip 172.38.0.11 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">docker run -p 6373:6379 -p 16373:16379 --name redis-3 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /mydata/redis/node-3/data:/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /mydata/redis/node-3/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d --net redis-net --ip 172.38.0.13 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
+</span></span></span><span class="line"><span class="cl">    -v /mydata/redis/node-3/data:/data <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -v /mydata/redis/node-3/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -d --net redis-net --ip 172.38.0.13 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"> <span class="c1"># 通过脚本一次启动6个redis容器</span>
 </span></span><span class="line"><span class="cl">docker run -p 637<span class="si">${</span><span class="nv">port</span><span class="si">}</span>:6379 -p 1637<span class="si">${</span><span class="nv">port</span><span class="si">}</span>:16379 --name redis-<span class="si">${</span><span class="nv">port</span><span class="si">}</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/data:/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d --net redis --ip 172.38.0.1<span class="si">${</span><span class="nv">port</span><span class="si">}</span> redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
+</span></span></span><span class="line"><span class="cl">-v /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/data:/data <span class="se">\
+</span></span></span><span class="line"><span class="cl">-v /mydata/redis/node-<span class="si">${</span><span class="nv">port</span><span class="si">}</span>/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
+</span></span></span><span class="line"><span class="cl">-d --net redis --ip 172.38.0.1<span class="si">${</span><span class="nv">port</span><span class="si">}</span> redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -3448,8 +3448,8 @@
 </span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis-1 /bin/sh
 </span></span><span class="line"><span class="cl"><span class="c1"># 创建redis集群</span>
 </span></span><span class="line"><span class="cl">redis-cli --cluster create 172.38.0.11:6379 172.38.0.12:6379 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>172.38.0.13:6379 172.38.0.14:6379 172.38.0.15:6379 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>172.38.0.16:6379 --cluster-replicas <span class="m">1</span>
+</span></span></span><span class="line"><span class="cl">172.38.0.13:6379 172.38.0.14:6379 172.38.0.15:6379 <span class="se">\
+</span></span></span><span class="line"><span class="cl">172.38.0.16:6379 --cluster-replicas <span class="m">1</span>
 </span></span><span class="line"><span class="cl"> <span class="c1"># 输入yes</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3681,7 +3681,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

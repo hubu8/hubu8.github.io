@@ -177,7 +177,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#启动showdoc容器</span>
 </span></span><span class="line"><span class="cl">docker run -d --name showdoc --user<span class="o">=</span>root --privileged<span class="o">=</span><span class="nb">true</span> -p 4999:80 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /showdoc_data/html:/var/www/html/ star7th/showdoc
+</span></span></span><span class="line"><span class="cl">-v /showdoc_data/html:/var/www/html/ star7th/showdoc
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>根据以上命令操作的话，往后showdoc的数据都会存放在 /showdoc_data/html 目录下。
@@ -249,7 +249,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#启动showdoc容器</span>
 </span></span><span class="line"><span class="cl">docker run -d --name showdoc --user<span class="o">=</span>root --privileged<span class="o">=</span><span class="nb">true</span> -p 4999:80 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /showdoc_data/html:/var/www/html/ star7th/showdoc
+</span></span></span><span class="line"><span class="cl">-v /showdoc_data/html:/var/www/html/ star7th/showdoc
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#执行新代码安装。默认安装中文版。如果想安装英文版，将下面参数中的zh改为en</span>
 </span></span><span class="line"><span class="cl">curl http://localhost:4999/install/non_interactive.php?lang<span class="o">=</span>zh
@@ -313,7 +313,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

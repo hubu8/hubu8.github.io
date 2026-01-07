@@ -360,7 +360,8 @@
 <p>IOE：</p>
 <p>​	ibm  &ndash; 服务器硬件</p>
 <p>​	oracle &ndash; 数据库</p>
-<p>​	emc  &mdash; 存储</p></blockquote>
+<p>​	emc  &mdash; 存储</p>
+</blockquote>
 <h3 id="211-关于服务器">2.1.1 关于服务器</h3>
 <p>服务器的概念非常的广泛，它可以指代一台特殊的计算机（相比普通计算机运行更快、负载更高、价格更贵），也可以指代用于部署网站的应用。我们这里说的服务器，其实是web服务器，或者应用服务器。它本质就是一个软件，一个应用。作用就是发布我们的应用（工程），让用户可以通过浏览器访问我们的应用。</p>
 <p>常见的应用服务器，请看下表：</p>
@@ -402,7 +403,8 @@
         title="tomcat官网.png" /></p>
 <h3 id="213-tomcat各版本所需支持">2.1.3 Tomcat各版本所需支持</h3>
 <blockquote>
-<p>JDK8 + tomcat9</p></blockquote>
+<p>JDK8 + tomcat9</p>
+</blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -483,7 +485,8 @@
 <p>例如：启动产生异常，但是不能正常启动。此时就需要解压一个新的Tomcat启动，来确定是系统问题，还是Tomcat的问题。</p>
 <p>所以，此时就需要具体问题，具体分析，然后再对症解决。</p>
 <blockquote>
-<p>如果是中文乱码： 可以改配置文件中的字符集：gbk (可以不配置)</p></blockquote>
+<p>如果是中文乱码： 可以改配置文件中的字符集：gbk (可以不配置)</p>
+</blockquote>
 <h3 id="222-idea集成tomcat服务器重要">2.2.2 IDEA集成Tomcat服务器（重要）</h3>
 <p><strong>第一步</strong></p>
 <p><img
@@ -788,7 +791,8 @@
 <p><strong>配置默认端口</strong></p>
 <p>Tomcat的默认端口是<b><font color='red'>8080</font></b>。</p>
 <blockquote>
-<p>http：的默认端口 80 ， 80是可以省略！</p></blockquote>
+<p>http：的默认端口 80 ， 80是可以省略！</p>
+</blockquote>
 <p>配置方式如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1159,23 +1163,27 @@
   					2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
   					3. 请求空行  ----- 什么都没有（空白）
   					4. 请求体   ----- （get没有请求体， post有请求体）
-</code></pre></blockquote>
+</code></pre>
+</blockquote>
 <blockquote>
 <p>响应分成几部分：</p>
-<p>​		同上，4部分</p></blockquote>
+<p>​		同上，4部分</p>
+</blockquote>
 <p><strong>2. get和post的区别：</strong></p>
 <blockquote>
 <p>a. 请求的参数位置：</p>
 <p>b. 请求的参数的容量是否有限制：</p>
 <p>c. 是否有请求体：</p>
-<p>d. 安全性：</p></blockquote>
+<p>d. 安全性：</p>
+</blockquote>
 <p><strong>3. 响应状态码：</strong></p>
 <blockquote>
 <p>200： 成功</p>
 <p>302： 重定向</p>
 <p>304： 资源有缓存；</p>
 <p>404： 资源未找到（请求路径有误）</p>
-<p>500： 服务器内部错误（java代码有误）</p></blockquote>
+<p>500： 服务器内部错误（java代码有误）</p>
+</blockquote>
 <h1 id="4-综合案例-tomcat的具体应用">4 综合案例-Tomcat的具体应用</h1>
 <h2 id="41-静态资源案例-门户类网站的部署和访问">4.1 静态资源案例-门户类网站的部署和访问</h2>
 <h3 id="411-案例介绍">4.1.1 案例介绍</h3>
@@ -1299,14 +1307,16 @@
         title="动态资源工程3.png" /></p>
 <h4 id="注意细节">注意细节：</h4>
 <blockquote>
-<p>注意在idea中的tomcat的配置中添加虚拟访问路径： /crm</p></blockquote>
+<p>注意在idea中的tomcat的配置中添加虚拟访问路径： /crm</p>
+</blockquote>
 <h3 id="432-创建案例中的动态资源-servlet">4.3.2 创建案例中的动态资源-Servlet</h3>
 <h4 id="1-servlet简介">1） Servlet简介</h4>
 <p>Servlet翻译成中文是服务端脚本，它是SUN公司推出的一套规范，称为Servlet规范。Servlet规范是JavaEE规范中的一部分。我们可以通过查阅JavaEE规范的API来了解Servlet的基本概念。通过点击<a href="https://javaee.github.io/javaee-spec/javadocs/" target="_blank" rel="noopener noreffer ">JavaEE8官方文档</a>，就可以看到关于Servlet的内容介绍。</p>
 <blockquote>
 <p>servlet是 运行在客户端和服务器端的一个小程序！</p>
 <p>JDK只定义接口规范，并没有实现；</p>
-<p>具体的实现在服务器tomcat中！</p></blockquote>
+<p>具体的实现在服务器tomcat中！</p>
+</blockquote>
 <h4 id="2-按步骤编写servlet">2） 按步骤编写Servlet</h4>
 <p><strong>前期准备：在IDEA创建Javaweb工程</strong></p>
 <p><img
@@ -1367,7 +1377,8 @@
         title="image-20201026103052174.png" /></p>
 <h5 id="2servlet的执行顺序">2.servlet的执行顺序</h5>
 <blockquote>
-<p>注意： 两种配置以后使用一种即可 （自己选择）</p></blockquote>
+<p>注意： 两种配置以后使用一种即可 （自己选择）</p>
+</blockquote>
 <p><strong>方式1：注解形式：</strong></p>
 <img src="/实训/tomcat/image-20201026104504241.png" alt="image-20201026104504241" style="zoom:80%;" />
 <p><strong>方式2：web.xml形式：</strong></p>
@@ -1389,10 +1400,12 @@
   					2. 请求头  ---- 很多信息（后面具体使用，展开讲解）
   					3. 请求空行  ----- 什么都没有（空白）
   					4. 请求体   ----- （get没有请求体， post有请求体）
-</code></pre></blockquote>
+</code></pre>
+</blockquote>
 <blockquote>
 <p>响应分成几部分：</p>
-<p>​		同上，4部分</p></blockquote>
+<p>​		同上，4部分</p>
+</blockquote>
 <h4 id="2-get和post的区别"><strong>2. get和post的区别：</strong></h4>
 <ol>
 <li>参数的位置不同</li>
@@ -1406,7 +1419,8 @@
 <p>302 重定向</p>
 <p>304 代表浏览器缓存（此请求没有真正访问资源）</p>
 <p>404 请求路径有误（资源访问不到）</p>
-<p>500 后台服务器内部错误（java程序有异常）</p></blockquote>
+<p>500 后台服务器内部错误（java程序有异常）</p>
+</blockquote>
 <h1 id="今日作业安排">【今日作业安排】</h1>
 <ol>
 <li>完成tomcat的安装（能正常启动，并访问看到tomcat猫）</li>
@@ -1530,8 +1544,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *              如果不正确，提示登录失败；
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/userLoginServlet&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLoginServlet</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Servlet</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/userLoginServlet&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserLoginServlet</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Servlet</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
@@ -1577,9 +1591,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">ccleaner</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//    ==========其他4个方法，明天详细讲解=============================</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    ==========其他4个方法，明天详细讲解=============================</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
@@ -1610,7 +1624,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

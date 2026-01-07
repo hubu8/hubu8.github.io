@@ -356,129 +356,129 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c">#Dockerfile_comp_rec</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># NOTE: this docker file is used to build runtime environment.</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># The project is a python app which contains a java jar lib.</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># NOTE: this docker file is used to build runtime environment.</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># The project is a python app which contains a java jar lib.</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="s"> python:3</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">MAINTAINER</span><span class="s"> yangpf &lt;cherishpf@163.com&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">python:3</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">MAINTAINER</span><span class="w"> </span><span class="s">yangpf</span> &lt;cherishpf@163.com&gt;<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># COPY ./requirements.txt /usr/local/src/requirements.txt</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># COPY ./requirements.txt /usr/local/src/requirements.txt</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">set</span> -eux<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    apt-get update<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    apt-get install -y --no-install-recommends <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        bzip2 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        unzip <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        xz-utils <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># utilities for keeping Debian and OpenJDK CA certificates in sync</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>        ca-certificates p11-kit <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1">#       \</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">set</span> -eux<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    apt-get update<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    apt-get install -y --no-install-recommends <span class="se">\
+</span></span></span><span class="line"><span class="cl">        bzip2 <span class="se">\
+</span></span></span><span class="line"><span class="cl">        unzip <span class="se">\
+</span></span></span><span class="line"><span class="cl">        xz-utils <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># utilities for keeping Debian and OpenJDK CA certificates in sync</span><span class="err">
+</span></span></span><span class="line"><span class="cl">        ca-certificates p11-kit <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1">#       \</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># java.lang.UnsatisfiedLinkError: /usr/local/openjdk-11/lib/libfontmanager.so: libfreetype.so.6: cannot open shared object file: No such file or directory</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># java.lang.NoClassDefFoundError: Could not initialize class sun.awt.X11FontManager</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># https://github.com/docker-library/openjdk/pull/235#issuecomment-424466077</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>        fontconfig libfreetype6 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    rm -rf /var/lib/apt/lists/*<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># java.lang.NoClassDefFoundError: Could not initialize class sun.awt.X11FontManager</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># https://github.com/docker-library/openjdk/pull/235#issuecomment-424466077</span><span class="err">
+</span></span></span><span class="line"><span class="cl">        fontconfig libfreetype6 <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    rm -rf /var/lib/apt/lists/*<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Default to UTF-8 file.encoding</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> LANG C.UTF-8<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># Default to UTF-8 file.encoding</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> LANG C.UTF-8<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> JAVA_HOME /usr/local/openjdk-8<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> PATH <span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> JAVA_HOME /usr/local/openjdk-8<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> PATH <span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># backwards compatibility shim</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="o">{</span> <span class="nb">echo</span> <span class="s1">&#39;#/bin/sh&#39;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;echo &#34;$JAVA_HOME&#34;&#39;</span><span class="p">;</span> <span class="o">}</span> &gt; /usr/local/bin/docker-java-home <span class="o">&amp;&amp;</span> chmod +x /usr/local/bin/docker-java-home <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-java-home<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># backwards compatibility shim</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="o">{</span> <span class="nb">echo</span> <span class="s1">&#39;#/bin/sh&#39;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;echo &#34;$JAVA_HOME&#34;&#39;</span><span class="p">;</span> <span class="o">}</span> &gt; /usr/local/bin/docker-java-home <span class="o">&amp;&amp;</span> chmod +x /usr/local/bin/docker-java-home <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-java-home<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># https://adoptopenjdk.net/upstream.html</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt; What are these binaries?</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt; These binaries are built by Red Hat on their infrastructure on behalf of the OpenJDK jdk8u and jdk11u projects. The binaries are created from the unmodified source code at OpenJDK. Although no formal support agreement is provided, please report any bugs you may find to https://bugs.java.com/.</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> JAVA_VERSION 8u252<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> JAVA_BASE_URL https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u252-b09/OpenJDK8U-jre_<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> JAVA_URL_VERSION 8u252b09<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># https://github.com/docker-library/openjdk/issues/320#issuecomment-494050246</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt; I am the OpenJDK 8 and 11 Updates OpenJDK project lead.</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt; ...</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt; While it is true that the OpenJDK Governing Board has not sanctioned those releases, they (or rather we, since I am a member) didn&#39;t sanction Oracle&#39;s OpenJDK releases either. As far as I am aware, the lead of an OpenJDK project is entitled to release binary builds, and there is clearly a need for them.</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># &gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># https://adoptopenjdk.net/upstream.html</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt; What are these binaries?</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt; These binaries are built by Red Hat on their infrastructure on behalf of the OpenJDK jdk8u and jdk11u projects. The binaries are created from the unmodified source code at OpenJDK. Although no formal support agreement is provided, please report any bugs you may find to https://bugs.java.com/.</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> JAVA_VERSION 8u252<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> JAVA_BASE_URL https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u252-b09/OpenJDK8U-jre_<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> JAVA_URL_VERSION 8u252b09<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># https://github.com/docker-library/openjdk/issues/320#issuecomment-494050246</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt; I am the OpenJDK 8 and 11 Updates OpenJDK project lead.</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt; ...</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt; While it is true that the OpenJDK Governing Board has not sanctioned those releases, they (or rather we, since I am a member) didn&#39;t sanction Oracle&#39;s OpenJDK releases either. As far as I am aware, the lead of an OpenJDK project is entitled to release binary builds, and there is clearly a need for them.</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># &gt;</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">set</span> -eux<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">dpkgArch</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$dpkgArch</span><span class="s2">&#34;</span> in <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        amd64<span class="o">)</span> <span class="nv">upstreamArch</span><span class="o">=</span><span class="s1">&#39;x64&#39;</span> <span class="p">;;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        arm64<span class="o">)</span> <span class="nv">upstreamArch</span><span class="o">=</span><span class="s1">&#39;aarch64&#39;</span> <span class="p">;;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        *<span class="o">)</span> <span class="nb">echo</span> &gt;<span class="p">&amp;</span><span class="m">2</span> <span class="s2">&#34;error: unsupported architecture: </span><span class="nv">$dpkgArch</span><span class="s2">&#34;</span> <span class="p">;;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="k">esac</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    wget -O openjdk.tgz.asc <span class="s2">&#34;</span><span class="si">${</span><span class="nv">JAVA_BASE_URL</span><span class="si">}${</span><span class="nv">upstreamArch</span><span class="si">}</span><span class="s2">_linux_</span><span class="si">${</span><span class="nv">JAVA_URL_VERSION</span><span class="si">}</span><span class="s2">.tar.gz.sign&#34;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    wget -O openjdk.tgz <span class="s2">&#34;</span><span class="si">${</span><span class="nv">JAVA_BASE_URL</span><span class="si">}${</span><span class="nv">upstreamArch</span><span class="si">}</span><span class="s2">_linux_</span><span class="si">${</span><span class="nv">JAVA_URL_VERSION</span><span class="si">}</span><span class="s2">.tar.gz&#34;</span> --progress<span class="o">=</span>dot:giga<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nb">export</span> <span class="nv">GNUPGHOME</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>mktemp -d<span class="k">)</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># also verify that key was signed by Andrew Haley (the OpenJDK 8 and 11 Updates OpenJDK project lead)</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># (https://github.com/docker-library/openjdk/pull/322#discussion_r286839190)</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="p">|</span> tee /dev/stderr <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="p">|</span> grep <span class="s1">&#39;0xA5CD6035332FA671&#39;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="p">|</span> grep <span class="s1">&#39;Andrew Haley&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    gpg --batch --verify openjdk.tgz.asc openjdk.tgz<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    gpgconf --kill all<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    rm -rf <span class="s2">&#34;</span><span class="nv">$GNUPGHOME</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    mkdir -p <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    tar --extract <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --file openjdk.tgz <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --directory <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --strip-components <span class="m">1</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --no-same-owner <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    rm openjdk.tgz*<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># TODO strip &#34;demo&#34; and &#34;man&#34; folders?</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># update &#34;cacerts&#34; bundle to use Debian&#39;s CA certificates (and make sure it stays up-to-date with changes to Debian&#39;s store)</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># see https://github.com/docker-library/openjdk/issues/327</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#     http://rabexc.org/posts/certificates-not-working-java#comment-4099504075</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#     https://salsa.debian.org/java-team/ca-certificates-java/blob/3e51a84e9104823319abeb31f880580e46f45a98/debian/jks-keystore.hook.in</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#     https://git.alpinelinux.org/aports/tree/community/java-cacerts/APKBUILD?id=761af65f38b4570093461e6546dcf6b179d2b624#n29</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="o">{</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="nb">echo</span> <span class="s1">&#39;#!/usr/bin/env bash&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="nb">echo</span> <span class="s1">&#39;set -Eeuo pipefail&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="nb">echo</span> <span class="s1">&#39;if ! [ -d &#34;$JAVA_HOME&#34; ]; then echo &gt;&amp;2 &#34;error: missing JAVA_HOME environment variable&#34;; exit 1; fi&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># 8-jdk uses &#34;$JAVA_HOME/jre/lib/security/cacerts&#34; and 8-jre and 11+ uses &#34;$JAVA_HOME/lib/security/cacerts&#34; directly (no &#34;jre&#34; directory)</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>        <span class="nb">echo</span> <span class="s1">&#39;cacertsFile=; for f in &#34;$JAVA_HOME/lib/security/cacerts&#34; &#34;$JAVA_HOME/jre/lib/security/cacerts&#34;; do if [ -e &#34;$f&#34; ]; then cacertsFile=&#34;$f&#34;; break; fi; done&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="nb">echo</span> <span class="s1">&#39;if [ -z &#34;$cacertsFile&#34; ] || ! [ -f &#34;$cacertsFile&#34; ]; then echo &gt;&amp;2 &#34;error: failed to find cacerts file in $JAVA_HOME&#34;; exit 1; fi&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        <span class="nb">echo</span> <span class="s1">&#39;trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth &#34;$cacertsFile&#34;&#39;</span><span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="o">}</span> &gt; /etc/ca-certificates/update.d/docker-openjdk<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    chmod +x /etc/ca-certificates/update.d/docker-openjdk<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /etc/ca-certificates/update.d/docker-openjdk<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># https://github.com/docker-library/openjdk/issues/331#issuecomment-498834472</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    find <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">/lib&#34;</span> -name <span class="s1">&#39;*.so&#39;</span> -exec dirname <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;;&#39;</span> <span class="p">|</span> sort -u &gt; /etc/ld.so.conf.d/docker-openjdk.conf<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    ldconfig<span class="p">;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1"># basic smoke test</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    java -version<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">set</span> -eux<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="nv">dpkgArch</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$dpkgArch</span><span class="s2">&#34;</span> in <span class="se">\
+</span></span></span><span class="line"><span class="cl">        amd64<span class="o">)</span> <span class="nv">upstreamArch</span><span class="o">=</span><span class="s1">&#39;x64&#39;</span> <span class="p">;;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        arm64<span class="o">)</span> <span class="nv">upstreamArch</span><span class="o">=</span><span class="s1">&#39;aarch64&#39;</span> <span class="p">;;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        *<span class="o">)</span> <span class="nb">echo</span> &gt;<span class="p">&amp;</span><span class="m">2</span> <span class="s2">&#34;error: unsupported architecture: </span><span class="nv">$dpkgArch</span><span class="s2">&#34;</span> <span class="p">;;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="k">esac</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl">    wget -O openjdk.tgz.asc <span class="s2">&#34;</span><span class="si">${</span><span class="nv">JAVA_BASE_URL</span><span class="si">}${</span><span class="nv">upstreamArch</span><span class="si">}</span><span class="s2">_linux_</span><span class="si">${</span><span class="nv">JAVA_URL_VERSION</span><span class="si">}</span><span class="s2">.tar.gz.sign&#34;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    wget -O openjdk.tgz <span class="s2">&#34;</span><span class="si">${</span><span class="nv">JAVA_BASE_URL</span><span class="si">}${</span><span class="nv">upstreamArch</span><span class="si">}</span><span class="s2">_linux_</span><span class="si">${</span><span class="nv">JAVA_URL_VERSION</span><span class="si">}</span><span class="s2">.tar.gz&#34;</span> --progress<span class="o">=</span>dot:giga<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="nb">export</span> <span class="nv">GNUPGHOME</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>mktemp -d<span class="k">)</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07</span><span class="err">
+</span></span></span><span class="line"><span class="cl">    gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># also verify that key was signed by Andrew Haley (the OpenJDK 8 and 11 Updates OpenJDK project lead)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># (https://github.com/docker-library/openjdk/pull/322#discussion_r286839190)</span><span class="err">
+</span></span></span><span class="line"><span class="cl">    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="p">|</span> tee /dev/stderr <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="p">|</span> grep <span class="s1">&#39;0xA5CD6035332FA671&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="p">|</span> grep <span class="s1">&#39;Andrew Haley&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    gpg --batch --verify openjdk.tgz.asc openjdk.tgz<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    gpgconf --kill all<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    rm -rf <span class="s2">&#34;</span><span class="nv">$GNUPGHOME</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">&#34;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    tar --extract <span class="se">\
+</span></span></span><span class="line"><span class="cl">        --file openjdk.tgz <span class="se">\
+</span></span></span><span class="line"><span class="cl">        --directory <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        --strip-components <span class="m">1</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        --no-same-owner <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    rm openjdk.tgz*<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># TODO strip &#34;demo&#34; and &#34;man&#34; folders?</span><span class="err">
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># update &#34;cacerts&#34; bundle to use Debian&#39;s CA certificates (and make sure it stays up-to-date with changes to Debian&#39;s store)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># see https://github.com/docker-library/openjdk/issues/327</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">#     http://rabexc.org/posts/certificates-not-working-java#comment-4099504075</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">#     https://salsa.debian.org/java-team/ca-certificates-java/blob/3e51a84e9104823319abeb31f880580e46f45a98/debian/jks-keystore.hook.in</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">#     https://git.alpinelinux.org/aports/tree/community/java-cacerts/APKBUILD?id=761af65f38b4570093461e6546dcf6b179d2b624#n29</span><span class="err">
+</span></span></span><span class="line"><span class="cl">    <span class="o">{</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;#!/usr/bin/env bash&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;set -Eeuo pipefail&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;if ! [ -d &#34;$JAVA_HOME&#34; ]; then echo &gt;&amp;2 &#34;error: missing JAVA_HOME environment variable&#34;; exit 1; fi&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 8-jdk uses &#34;$JAVA_HOME/jre/lib/security/cacerts&#34; and 8-jre and 11+ uses &#34;$JAVA_HOME/lib/security/cacerts&#34; directly (no &#34;jre&#34; directory)</span><span class="err">
+</span></span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;cacertsFile=; for f in &#34;$JAVA_HOME/lib/security/cacerts&#34; &#34;$JAVA_HOME/jre/lib/security/cacerts&#34;; do if [ -e &#34;$f&#34; ]; then cacertsFile=&#34;$f&#34;; break; fi; done&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;if [ -z &#34;$cacertsFile&#34; ] || ! [ -f &#34;$cacertsFile&#34; ]; then echo &gt;&amp;2 &#34;error: failed to find cacerts file in $JAVA_HOME&#34;; exit 1; fi&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth &#34;$cacertsFile&#34;&#39;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="o">}</span> &gt; /etc/ca-certificates/update.d/docker-openjdk<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    chmod +x /etc/ca-certificates/update.d/docker-openjdk<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    /etc/ca-certificates/update.d/docker-openjdk<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># https://github.com/docker-library/openjdk/issues/331#issuecomment-498834472</span><span class="err">
+</span></span></span><span class="line"><span class="cl">    find <span class="s2">&#34;</span><span class="nv">$JAVA_HOME</span><span class="s2">/lib&#34;</span> -name <span class="s1">&#39;*.so&#39;</span> -exec dirname <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;;&#39;</span> <span class="p">|</span> sort -u &gt; /etc/ld.so.conf.d/docker-openjdk.conf<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    ldconfig<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1"># basic smoke test</span><span class="err">
+</span></span></span><span class="line"><span class="cl">    java -version<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># RUN pip install --no-cache-dir -r /usr/local/src/requirements.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pip install pandas  -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pip install pymysql --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pip install numpy --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># RUN pip install --no-cache-dir -r /usr/local/src/requirements.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pip install pandas  -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pip install pymysql --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pip install numpy --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pip install sklearn --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pip install sklearn --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># If you&#39;re reading this and have any feedback on how this image could be</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># improved, please open an issue or a pull request so we can discuss it!</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># https://github.com/docker-library/openjdk/issues</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># If you&#39;re reading this and have any feedback on how this image could be</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># improved, please open an issue or a pull request so we can discuss it!</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">#</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># https://github.com/docker-library/openjdk/issues</span><span class="err">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="compose脚本需要加入微服务网络环境文件">compose脚本，需要加入微服务网络，环境文件：</h2>
@@ -508,10 +508,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">networks</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dockercompose_sc-net</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c">#人员信息服务</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">comp_rec</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
@@ -596,7 +596,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

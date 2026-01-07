@@ -119,19 +119,19 @@
   <ul>
     <li><a href="#导入导出">导入导出</a>
       <ul>
-        <li><a href="#注解参数说明"><a href="http://doc.ruoyi.vip/ruoyi-cloud/document/htsc.html#%E6%B3%A8%E8%A7%A3%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E">#</a>注解参数说明</a></li>
-        <li><a href="#导出实现流程"><a href="http://doc.ruoyi.vip/ruoyi-cloud/document/htsc.html#%E5%AF%BC%E5%87%BA%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B">#</a>导出实现流程</a></li>
-        <li><a href="#导入实现流程"><a href="http://doc.ruoyi.vip/ruoyi-cloud/document/htsc.html#%E5%AF%BC%E5%85%A5%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B">#</a>导入实现流程</a></li>
+        <li><a href="#注解参数说明">#注解参数说明</a></li>
+        <li><a href="#导出实现流程">#导出实现流程</a></li>
+        <li><a href="#导入实现流程">#导入实现流程</a></li>
         <li><a href="#自定义标题信息">自定义标题信息</a></li>
-        <li><a href="#自定义数据处理器"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%99%A8">#</a>自定义数据处理器</a></li>
-        <li><a href="#自定义隐藏属性列"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%9A%90%E8%97%8F%E5%B1%9E%E6%80%A7%E5%88%97">#</a>自定义隐藏属性列</a></li>
-        <li><a href="#导出对象的子列表"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E5%AF%BC%E5%87%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%90%E5%88%97%E8%A1%A8">#</a>导出对象的子列表</a></li>
+        <li><a href="#自定义数据处理器">#自定义数据处理器</a></li>
+        <li><a href="#自定义隐藏属性列">#自定义隐藏属性列</a></li>
+        <li><a href="#导出对象的子列表">#导出对象的子列表</a></li>
       </ul>
     </li>
-    <li><a href="#上传下载"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD">#</a>上传下载</a>
+    <li><a href="#上传下载">#上传下载</a>
       <ul>
-        <li><a href="#上传实现流程"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E4%B8%8A%E4%BC%A0%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B">#</a>上传实现流程</a></li>
-        <li><a href="#下载实现流程"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%E4%B8%8B%E8%BD%BD%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B">#</a>下载实现流程</a></li>
+        <li><a href="#上传实现流程">#上传实现流程</a></li>
+        <li><a href="#下载实现流程">#下载实现流程</a></li>
       </ul>
     </li>
   </ul>
@@ -315,7 +315,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 查询参数 queryParams
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">queryParams</span><span class="o">:</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">queryParams</span><span class="o">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">pageNum</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">pageSize</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">userName</span><span class="o">:</span> <span class="kc">undefined</span>
@@ -365,16 +365,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户序号&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">prompt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户编号&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户名称&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户名称&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userName</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户性别&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">readConverterExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0=男,1=女,2=未知&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sex</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户性别&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">readConverterExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0=男,1=女,2=未知&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sex</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;最后登陆时间&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">30</span><span class="p">,</span><span class="w"> </span><span class="n">dateFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">loginDate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;最后登陆时间&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">30</span><span class="p">,</span><span class="w"> </span><span class="n">dateFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">loginDate</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>4、在Controller添加导出方法</p>
@@ -392,14 +392,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Log</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户管理&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">businessType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BusinessType</span><span class="p">.</span><span class="na">EXPORT</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@PreAuthorize</span><span class="p">(</span><span class="n">hasPermi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;system:user:export&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/export&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">SysUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@PreAuthorize</span><span class="p">(</span><span class="n">hasPermi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;system:user:export&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/export&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">SysUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">List</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userService</span><span class="p">.</span><span class="na">selectUserList</span><span class="p">(</span><span class="n">user</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SysUser</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">util</span><span class="p">.</span><span class="na">exportExcel</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;用户数据&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="导入实现流程"><a href="http://doc.ruoyi.vip/ruoyi-cloud/document/htsc.html#%e5%af%bc%e5%85%a5%e5%ae%9e%e7%8e%b0%e6%b5%81%e7%a8%8b" target="_blank" rel="noopener noreffer ">#</a>导入实现流程</h3>
@@ -459,23 +459,23 @@
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">getToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@/utils/auth&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 用户导入参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">upload</span><span class="o">:</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">upload</span><span class="o">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 是否显示弹出层（用户导入）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">open</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">open</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 弹出层标题（用户导入）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 是否禁用上传
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">isUploading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">isUploading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 是否更新已经存在的用户数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">updateSupport</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">updateSupport</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 设置上传的请求头部
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">Authorization</span><span class="o">:</span> <span class="s2">&#34;Bearer &#34;</span> <span class="o">+</span> <span class="nx">getToken</span><span class="p">()</span> <span class="p">},</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">Authorization</span><span class="o">:</span> <span class="s2">&#34;Bearer &#34;</span> <span class="o">+</span> <span class="nx">getToken</span><span class="p">()</span> <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 上传的地址
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">url</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_BASE_API</span> <span class="o">+</span> <span class="s2">&#34;/system/user/importData&#34;</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">url</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_BASE_API</span> <span class="o">+</span> <span class="s2">&#34;/system/user/importData&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">},</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 导入模板接口importTemplate
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">importTemplate</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@/api/system/user&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">importTemplate</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@/api/system/user&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cm">/** 导入按钮操作 */</span>
 </span></span><span class="line"><span class="cl"><span class="nx">handleImport</span><span class="p">()</span> <span class="p">{</span>
@@ -489,11 +489,11 @@
 </span></span><span class="line"><span class="cl">  <span class="p">});</span>
 </span></span><span class="line"><span class="cl"><span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 文件上传中处理
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">handleFileUploadProgress</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">fileList</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">handleFileUploadProgress</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">fileList</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">isUploading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 文件上传成功处理
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">handleFileSuccess</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">fileList</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">handleFileSuccess</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">fileList</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">isUploading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">clearFiles</span><span class="p">();</span>
@@ -501,7 +501,7 @@
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 提交上传文件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">submitFileForm</span><span class="p">()</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">submitFileForm</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -617,24 +617,24 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户序号&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;部门编号&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Type</span><span class="p">.</span><span class="na">IMPORT</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">deptId</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;部门编号&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Type</span><span class="p">.</span><span class="na">IMPORT</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">deptId</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户名称&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户名称&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userName</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/** 导出部门多个对象 */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excels</span><span class="p">({</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="cm">/** 导出部门多个对象 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excels</span><span class="p">({</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;部门名称&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">targetAttr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;deptName&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Type</span><span class="p">.</span><span class="na">EXPORT</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;部门负责人&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">targetAttr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;leader&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Type</span><span class="p">.</span><span class="na">EXPORT</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">})</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">SysDept</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">SysDept</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/** 导出部门单个对象 */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;部门名称&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">targetAttr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;deptName&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Type</span><span class="p">.</span><span class="na">EXPORT</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">SysDept</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="cm">/** 导出部门单个对象 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;部门名称&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">targetAttr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;deptName&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Type</span><span class="p">.</span><span class="na">EXPORT</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">SysDept</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>5、在Controller添加导入方法，updateSupport属性为是否存在则覆盖（可选）</p>
@@ -661,23 +661,23 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Log</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户管理&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">businessType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BusinessType</span><span class="p">.</span><span class="na">IMPORT</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/importData&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">importData</span><span class="p">(</span><span class="n">MultipartFile</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">updateSupport</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/importData&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">importData</span><span class="p">(</span><span class="n">MultipartFile</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">updateSupport</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SysUser</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">List</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">importExcel</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">LoginUser</span><span class="w"> </span><span class="n">loginUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tokenService</span><span class="p">.</span><span class="na">getLoginUser</span><span class="p">(</span><span class="n">ServletUtils</span><span class="p">.</span><span class="na">getRequest</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">operName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loginUser</span><span class="p">.</span><span class="na">getUsername</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userService</span><span class="p">.</span><span class="na">importUser</span><span class="p">(</span><span class="n">userList</span><span class="p">,</span><span class="w"> </span><span class="n">updateSupport</span><span class="p">,</span><span class="w"> </span><span class="n">operName</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">AjaxResult</span><span class="p">.</span><span class="na">success</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&#34;/importTemplate&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">importTemplate</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&#34;/importTemplate&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">importTemplate</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SysUser</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">importTemplateExcel</span><span class="p">(</span><span class="s">&#34;用户数据&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>提示</p>
@@ -690,8 +690,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">InputStream</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&#34;D:\\test.xlsx&#34;</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Entity</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">importExcel</span><span class="p">(</span><span class="n">is</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Entity</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">importExcel</span><span class="p">(</span><span class="n">is</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="自定义标题信息">自定义标题信息</h3>
@@ -708,11 +708,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="n">SysUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">List</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userService</span><span class="p">.</span><span class="na">selectUserList</span><span class="p">(</span><span class="n">user</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SysUser</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">exportExcel</span><span class="p">(</span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;用户数据&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;用户列表&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>导入表格包含标题处理方式，其中<code>1</code>表示标题占用行数，根据实际情况填写。</strong></p>
@@ -729,13 +729,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">importData</span><span class="p">(</span><span class="n">MultipartFile</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">updateSupport</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SysUser</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">List</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">importExcel</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">(),</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">operName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecurityUtils</span><span class="p">.</span><span class="na">getUsername</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userService</span><span class="p">.</span><span class="na">importUser</span><span class="p">(</span><span class="n">userList</span><span class="p">,</span><span class="w"> </span><span class="n">updateSupport</span><span class="p">,</span><span class="w"> </span><span class="n">operName</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">AjaxResult</span><span class="p">.</span><span class="na">success</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="自定义数据处理器"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86%e5%99%a8" target="_blank" rel="noopener noreffer ">#</a>自定义数据处理器</h3>
@@ -751,10 +751,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseEntity</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户名称&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyDataHandler</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&#34;aaa&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;bbb&#34;</span><span class="w"> </span><span class="p">})</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userName</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>2、编写数据处理器<code>MyDataHandler</code>继承<code>ExcelHandlerAdapter</code>，返回值为处理后的值。</p>
@@ -773,7 +773,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyDataHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ExcelHandlerAdapter</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">{</span><span class="w">
@@ -781,7 +781,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">// args 为excel注解args参数组</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="自定义隐藏属性列"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%9a%90%e8%97%8f%e5%b1%9e%e6%80%a7%e5%88%97" target="_blank" rel="noopener noreffer ">#</a>自定义隐藏属性列</h3>
@@ -806,8 +806,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/export&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">SysUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">SysUser</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">List</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userService</span><span class="p">.</span><span class="na">selectUserList</span><span class="p">(</span><span class="n">user</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExcelUtil</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SysUser</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">条件A</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -818,7 +818,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="n">util</span><span class="p">.</span><span class="na">hideColumn</span><span class="p">(</span><span class="s">&#34;userId&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;phonenumber&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">util</span><span class="p">.</span><span class="na">exportExcel</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;用户数据&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="导出对象的子列表"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%e5%af%bc%e5%87%ba%e5%af%b9%e8%b1%a1%e7%9a%84%e5%ad%90%e5%88%97%e8%a1%a8" target="_blank" rel="noopener noreffer ">#</a>导出对象的子列表</h3>
@@ -883,7 +883,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SysUser</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户编号&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">cellType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColumnType</span><span class="p">.</span><span class="na">NUMERIC</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">20</span><span class="p">,</span><span class="w"> </span><span class="n">needMerge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -935,7 +935,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">roles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roles</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>SysRole.java</strong></p>
@@ -986,7 +986,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SysRole</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Excel</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;角色编号&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">cellType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColumnType</span><span class="p">.</span><span class="na">NUMERIC</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">roleId</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -1026,7 +1026,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">roleKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roleKey</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>测试验证</strong></p>
@@ -1128,7 +1128,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SysUser</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
@@ -1219,7 +1219,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">AjaxResult</span><span class="w"> </span><span class="n">ajax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="na">exportExcel</span><span class="p">(</span><span class="n">userList</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;用户数据&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;用户数据&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ajax</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>导出文件结果</strong> <img
@@ -1244,12 +1244,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">sys_file_info</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">sys_file_info</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">sys_file_info</span><span class="w"> </span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">file_id</span><span class="w">           </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w">          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="n">auto_increment</span><span class="w">       </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;文件id&#39;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">file_name</span><span class="w">         </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w">      </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">                    </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;文件名称&#39;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">file_path</span><span class="w">         </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">     </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">                    </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;文件路径&#39;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">file_id</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">engine</span><span class="o">=</span><span class="n">innodb</span><span class="w"> </span><span class="n">auto_increment</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">charset</span><span class="o">=</span><span class="n">utf8</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;文件信息表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w"> </span><span class="n">engine</span><span class="o">=</span><span class="n">innodb</span><span class="w"> </span><span class="n">auto_increment</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">charset</span><span class="o">=</span><span class="n">utf8</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;文件信息表&#39;</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="上传实现流程"><a href="http://doc.ruoyi.vip/ruoyi/document/htsc.html#%e4%b8%8a%e4%bc%a0%e5%ae%9e%e7%8e%b0%e6%b5%81%e7%a8%8b" target="_blank" rel="noopener noreffer ">#</a>上传实现流程</h3>
@@ -1340,16 +1340,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/add&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@ResponseBody</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">addSave</span><span class="p">(</span><span class="nd">@RequestParam</span><span class="p">(</span><span class="s">&#34;file&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">MultipartFile</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">FileInfo</span><span class="w"> </span><span class="n">fileInfo</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@ResponseBody</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">AjaxResult</span><span class="w"> </span><span class="nf">addSave</span><span class="p">(</span><span class="nd">@RequestParam</span><span class="p">(</span><span class="s">&#34;file&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">MultipartFile</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">FileInfo</span><span class="w"> </span><span class="n">fileInfo</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 上传文件路径</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RuoYiConfig</span><span class="p">.</span><span class="na">getUploadPath</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 上传并返回新文件名称</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileUploadUtils</span><span class="p">.</span><span class="na">upload</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">fileInfo</span><span class="p">.</span><span class="na">setFilePath</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">toAjax</span><span class="p">(</span><span class="n">fileInfoService</span><span class="p">.</span><span class="na">insertFileInfo</span><span class="p">(</span><span class="n">fileInfo</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>4、上传成功后需要预览可以对该属性格式化处理</p>
@@ -1386,7 +1386,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># 文件上传</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">servlet</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">servlet</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nt">multipart</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="c"># 单个文件大小</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">max-file-size</span><span class="p">:</span><span class="w">  </span><span class="l">10MB</span><span class="w">
@@ -1437,10 +1437,10 @@
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 本地资源通用下载
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&#34;/common/download/resource&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">resourceDownload</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">resource</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&#34;/common/download/resource&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">resourceDownload</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">resource</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 本地资源路径</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">localPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Global</span><span class="p">.</span><span class="na">getProfile</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 数据库资源地址</span><span class="w">
@@ -1452,7 +1452,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">response</span><span class="p">.</span><span class="na">setHeader</span><span class="p">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="s">&#34;attachment;fileName=&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FileUtils</span><span class="p">.</span><span class="na">setFileDownloadHeader</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">downloadName</span><span class="p">));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">FileUtils</span><span class="p">.</span><span class="na">writeBytes</span><span class="p">(</span><span class="n">downloadPath</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
@@ -1483,7 +1483,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

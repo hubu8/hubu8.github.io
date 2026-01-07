@@ -121,19 +121,19 @@
     <li><a href="#1-configtoml-配置">1 config.toml 配置</a></li>
     <li><a href="#2-algolia-配置">2 Algolia 配置</a>
       <ul>
-        <li><a href="#21-登录-algolia-官网-注册账号创建-application-名为-test01作为举例默认选择-free-即可这里自定义名称">2.1 登录 <a href="https://www.algolia.com/">Algolia 官网</a> ，注册账号，创建 Application 名为 “test01”作为举例，默认选择 “FREE” 即可，这里自定义名称</a></li>
+        <li><a href="#21-登录-algolia-官网-注册账号创建-application-名为-test01作为举例默认选择-free-即可这里自定义名称">2.1 登录 Algolia 官网 ，注册账号，创建 Application 名为 “test01”作为举例，默认选择 “FREE” 即可，这里自定义名称</a></li>
         <li><a href="#22-我这里选择香港作为存储地区">2.2 我这里选择香港作为存储地区</a></li>
         <li><a href="#23-创建index要与configtoml-的配置-index-一样">2.3 创建index，要与config.toml 的配置 index 一样</a></li>
         <li><a href="#24-将-api-keys-里面补充到-configtoml-里面">2.4 将 API Keys 里面补充到 config.toml 里面</a></li>
       </ul>
     </li>
-    <li><a href="#3-使用-atomic-algolia-来完成自动更新索引">3 使用 <a href="https://github.com/chrisdmacrae/atomic-algolia">atomic-algolia</a> 来完成自动更新索引</a>
+    <li><a href="#3-使用-atomic-algolia-来完成自动更新索引">3 使用 atomic-algolia 来完成自动更新索引</a>
       <ul>
         <li><a href="#31-首先安装-npm这里不介绍">3.1 首先安装 npm，这里不介绍</a></li>
         <li><a href="#32-安装-atomic-algolia">3.2 安装 atomic-algolia</a></li>
         <li><a href="#33-创建-env-文件存放-algolia-配置">3.3 创建 .env 文件存放 algolia 配置</a></li>
         <li><a href="#34-可能影响环境变量的githu设置">3.4 可能影响环境变量的githu设置</a></li>
-        <li><a href="#35-修改根目录下的-packagejson-文件没有就新建在-scripts-下添加-algolia-atomic-algolia">3.5 修改根目录下的 <code>package.json</code> 文件（没有就新建），在 <code>scripts</code> 下添加 <code>&quot;algolia&quot;: &quot;atomic-algolia&quot;</code></a></li>
+        <li><a href="#35-修改根目录下的-packagejson-文件没有就新建在-scripts-下添加-algolia-atomic-algolia">3.5 修改根目录下的 <code>package.json</code> 文件（没有就新建），在 <code>scripts</code> 下添加 <code>&#34;algolia&#34;: &#34;atomic-algolia&#34;</code></a></li>
         <li><a href="#36-上传索引的命令-你可以本地执行-npm-run-algolia-查看运行效果">3.6 上传索引的命令 你可以本地执行 <code>npm run algolia</code> 查看运行效果</a></li>
       </ul>
     </li>
@@ -361,7 +361,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># If a command fails then the deploy stops</span>
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> -e
 </span></span><span class="line"><span class="cl">
@@ -452,7 +452,8 @@
 <p>sh deploy.sh 3：将 public 静态文件站点上传到Github Pages 存储库。</p>
 <p>sh deploy.sh 4：更新 algolia 的索引.</p>
 <p>sh deploy.sh 5：主要是用来调试 cdn，评论系统等，所以要用 production 变量来启动。</p>
-<p>sh deploy.sh 6：查看官方例子，方便调试。</p></blockquote>
+<p>sh deploy.sh 6：查看官方例子，方便调试。</p>
+</blockquote>
 <p>仓库代码检验：</p>
 <p><img
         class="lazyload"
@@ -498,7 +499,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

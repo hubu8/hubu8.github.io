@@ -259,7 +259,8 @@
 <p>==本质也是采用客户端会话管理技术。 (session必须依赖于cookie  )==</p>
 <p>只不过在客户端保存的是一个特殊标识，而共享的数据保存到了服务器端的内存对象中。 （JSESSIONID)
 每次请求时，会将特殊标识带到服务器端，根据这个标识来找到对应的内存空间，从而实现数据共享！
-是 Servlet 规范中四大域对象之一的会话域对象。</p></blockquote>
+是 Servlet 规范中四大域对象之一的会话域对象。</p>
+</blockquote>
 <p>**作用：**可以实现数据共享</p>
 <p><img
         class="lazyload"
@@ -271,7 +272,8 @@
         title="image-20201029161905911.png" /></p>
 <p>注意： 从大到小的顺序：  servletContext  &gt; session &gt; request</p>
 <blockquote>
-<p>当前服务器有100个用户， 每个用户访问100次，  会分别产生多少个 servletContext  、 session 、request？</p></blockquote>
+<p>当前服务器有100个用户， 每个用户访问100次，  会分别产生多少个 servletContext  、 session 、request？</p>
+</blockquote>
 <h4 id="2session的获取掌握">2.session的获取：（掌握）</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -297,15 +299,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="c1">// 域对象存取值：</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">session</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">session</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">session</span><span class="p">.</span><span class="na">removeAttribute</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">session</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">session</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">session</span><span class="p">.</span><span class="na">removeAttribute</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//// 销毁session : 退出功能</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">session</span><span class="p">.</span><span class="na">invalidate</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="c1">//// 销毁session : 退出功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">session</span><span class="p">.</span><span class="na">invalidate</span><span class="p">();</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 获取的是当前session对应的 JSESSIONID  --&gt; 唯一的 （每个会话的id是唯一的）</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">session</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 获取的是当前session对应的 JSESSIONID  --&gt; 唯一的 （每个会话的id是唯一的）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">session</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span><span class="w"> 
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="三jsp次要">三.JSP（次要）</h1>
@@ -314,7 +316,8 @@
 <p>JSP全称是Java Server Page，它和Servlet一样，也是sun公司推出的一套开发动态web资源的技术，称为JSP/Servlet规范。</p>
 <p>JSP的本质其实就是一个Servlet。</p>
 <p>与html的区别： 可以在页面上也后台java代码！</p>
-<p><strong>注意：</strong>（虽然能写，但是我们应当尽量不写； 能在后台处理的逻辑，不要在页面处理！）</p></blockquote>
+<p><strong>注意：</strong>（虽然能写，但是我们应当尽量不写； 能在后台处理的逻辑，不要在页面处理！）</p>
+</blockquote>
 <h4 id="2jsp快速入门">2.jsp快速入门</h4>
 <p><img
         class="lazyload"
@@ -326,7 +329,8 @@
         title="image-20201030104238499.png" /></p>
 <h4 id="3jsp的本质">3.jsp的本质：</h4>
 <blockquote>
-<p><strong>jsp效率低下的原因</strong>: (所以大型项目基本不用jsp，一些小型的后台系统会使用)</p></blockquote>
+<p><strong>jsp效率低下的原因</strong>: (所以大型项目基本不用jsp，一些小型的后台系统会使用)</p>
+</blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -429,7 +433,8 @@
 <img src="/实训/jsp/image-20201030114408573.png" alt="image-20201030114408573" style="zoom:80%;" />
 <h1 id="四mvc模型的理解重要">四.MVC模型的理解（重要）</h1>
 <blockquote>
-<p>把数据的封装、展示和业务处理，进行分工！</p></blockquote>
+<p>把数据的封装、展示和业务处理，进行分工！</p>
+</blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -494,7 +499,8 @@
 <p>&mdash;查看安装资料</p>
 <blockquote>
 <p>1.在windows安装mysql服务器；</p>
-<p>2.在windows安装mysql连接工具；（图形化界面）</p></blockquote>
+<p>2.在windows安装mysql连接工具；（图形化界面）</p>
+</blockquote>
 <h3 id="三sql语句">三、SQL语句</h3>
 <h4 id="1数据库数据表数据的关系介绍">1.数据库、数据表、数据的关系介绍</h4>
 <ul>
@@ -579,7 +585,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 查询所有数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">DATABASES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="k">DATABASES</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -602,14 +608,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 创建db1数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 创建db1数据库
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 创建一个已存在的数据库会报错
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 创建一个已存在的数据库会报错
 </span></span></span><span class="line"><span class="cl"><span class="c1">-- 错误代码：1007  Can&#39;t create database &#39;db1&#39;; database exists
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -625,10 +631,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 创建数据库db2(判断，如果不存在则创建)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">db2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 创建数据库db2(判断，如果不存在则创建)
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">db2</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -647,13 +653,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">数据库名称</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="err">字符集名称</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">数据库名称</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="err">字符集名称</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 创建数据库db3、并指定字符集utf8
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db3</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 创建数据库db3、并指定字符集utf8
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db3</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看db3数据库的字符集
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db3</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看db3数据库的字符集
+</span></span></span><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db3</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -669,10 +675,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 创建db4数据库、如果不存在则创建，指定字符集为 utf8
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">db4</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">db4</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看db4数据库的字符集
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看db4数据库的字符集
+</span></span></span><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db4</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -688,17 +694,18 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">USE</span><span class="w"> </span><span class="err">数据库名称；</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">USE</span><span class="w"> </span><span class="err">数据库名称；</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 使用db4数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">USE</span><span class="w"> </span><span class="n">db4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 使用db4数据库
+</span></span></span><span class="line"><span class="cl"><span class="k">USE</span><span class="w"> </span><span class="n">db4</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
 <h5 id="小结库操作常用sql">【小结：库操作常用sql</h5>
 <blockquote>
-<p>（需要记住的sql）</p></blockquote>
+<p>（需要记住的sql）</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -715,14 +722,14 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 1. 创建db4数据库、如果不存在则创建，指定字符集为 utf8
 </span></span></span><span class="line"><span class="cl"><span class="c1">-- CREATE DATABASE IF NOT EXISTS 数据库名 CHARACTER SET 字符集名;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">db01</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">db01</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 2.展示当前数据库下所有的表：  (还没建表的时候没有)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 2.展示当前数据库下所有的表：  (还没建表的时候没有)
+</span></span></span><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 3. 删除数据库：  DROP DATABASE 数据库名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db03</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 3. 删除数据库：  DROP DATABASE 数据库名
+</span></span></span><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db03</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="4ddl-操作数据表">4.DDL-操作数据表</h4>
@@ -742,10 +749,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 使用mysql数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">USE</span><span class="w"> </span><span class="n">mysql</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">USE</span><span class="w"> </span><span class="n">mysql</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查询库中所有的表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="kp">TABLES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查询库中所有的表
+</span></span></span><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="kp">TABLES</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -761,10 +768,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DESC</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">DESC</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查询user表结构
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DESC</span><span class="w"> </span><span class="k">user</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查询user表结构
+</span></span></span><span class="line"><span class="cl"><span class="k">DESC</span><span class="w"> </span><span class="k">user</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -780,10 +787,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">库名</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;表名&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">库名</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;表名&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看mysql数据库中user表字符集
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看mysql数据库中user表字符集
+</span></span></span><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -811,8 +818,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">列名</span><span class="mi">2</span><span class="w"> </span><span class="err">数据类型</span><span class="mi">2</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">....</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">列名</span><span class="n">n</span><span class="w"> </span><span class="err">数据类型</span><span class="n">n</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 注意：最后一列，不需要加逗号
+</span></span></span><span class="line"><span class="cl"><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 注意：最后一列，不需要加逗号
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -836,14 +843,14 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="kt">int</span><span class="err">：整数类型</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="o">*</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="kt">int</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="kt">double</span><span class="p">:</span><span class="err">小数类型</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="kt">double</span><span class="p">:</span><span class="err">小数类型</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="o">*</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="kt">double</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="o">*</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="kt">double</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="kt">date</span><span class="p">:</span><span class="err">日期，只包含年月日</span><span class="w">     </span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">4</span><span class="p">.</span><span class="w"> </span><span class="kt">datetime</span><span class="p">:</span><span class="err">日期，包含年月日时分秒</span><span class="w">	 </span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w"> </span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">5</span><span class="p">.</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">:</span><span class="err">时间戳类型</span><span class="w">	</span><span class="err">包含年月日时分秒</span><span class="w">	 </span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w"> </span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="kt">date</span><span class="p">:</span><span class="err">日期，只包含年月日</span><span class="w">     </span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">4</span><span class="p">.</span><span class="w"> </span><span class="kt">datetime</span><span class="p">:</span><span class="err">日期，包含年月日时分秒</span><span class="w">	 </span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w"> </span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">5</span><span class="p">.</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">:</span><span class="err">时间戳类型</span><span class="w">	</span><span class="err">包含年月日时分秒</span><span class="w">	 </span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w"> </span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="w">	
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="o">*</span><span class="w"> </span><span class="err">如果将来不给这个字段赋值，或赋值为</span><span class="no">null</span><span class="err">，则默认使用当前的系统时间，来自动赋值</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">6</span><span class="p">.</span><span class="w"> </span><span class="kt">varchar</span><span class="err">：字符串</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">6</span><span class="p">.</span><span class="w"> </span><span class="kt">varchar</span><span class="err">：字符串</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span><span class="err">姓名最大</span><span class="mi">20</span><span class="err">个字符</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="o">*</span><span class="w"> </span><span class="n">zhangsan</span><span class="w"> </span><span class="mi">8</span><span class="err">个字符</span><span class="w">  </span><span class="err">张三</span><span class="w"> </span><span class="mi">2</span><span class="err">个字符</span><span class="o">*</span><span class="mi">3</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
@@ -867,16 +874,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 使用db3数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">USE</span><span class="w"> </span><span class="n">db3</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">USE</span><span class="w"> </span><span class="n">db3</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 创建一个product商品表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 创建一个product商品表
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">id</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">				</span><span class="c1">-- 商品编号
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">NAME</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">	</span><span class="c1">-- 商品名称
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">price</span><span class="w"> </span><span class="kt">DOUBLE</span><span class="p">,</span><span class="w">		</span><span class="c1">-- 商品价格
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">stock</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">			</span><span class="c1">-- 商品库存
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">insert_time</span><span class="w"> </span><span class="kt">DATE</span><span class="w">    </span><span class="c1">-- 上架时间
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">NAME</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">	</span><span class="c1">-- 商品名称
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">price</span><span class="w"> </span><span class="kt">DOUBLE</span><span class="p">,</span><span class="w">		</span><span class="c1">-- 商品价格
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">stock</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">			</span><span class="c1">-- 商品库存
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">insert_time</span><span class="w"> </span><span class="kt">DATE</span><span class="w">    </span><span class="c1">-- 上架时间
+</span></span></span><span class="line"><span class="cl"><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -887,7 +894,8 @@
 <p>对库的操作： 都是database关键字；</p>
 <p>对表结构的操作： 都是table关键字；</p>
 <p>上面的操作都是对数据库、数据表结构操作的sql语句，不涉及数据！</p>
-<p>真正以后非常常用的sql是下面的对数据的crud（增删改查）！</p></blockquote>
+<p>真正以后非常常用的sql是下面的对数据的crud（增删改查）！</p>
+</blockquote>
 <h3 id="五对数据的操作重要--对数据的增删改查">五.对数据的操作（重要） &ndash; 对数据的增删改查</h3>
 <h4 id="5dml-insert语句">5.DML-INSERT语句</h4>
 <ul>
@@ -912,16 +920,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="p">,...)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="p">,...)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 向product表添加一条数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">stock</span><span class="p">,</span><span class="n">insert_time</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;手机&#39;</span><span class="p">,</span><span class="mi">1999</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s1">&#39;2099-09-09&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 向product表添加一条数据
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">stock</span><span class="p">,</span><span class="n">insert_time</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;手机&#39;</span><span class="p">,</span><span class="mi">1999</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s1">&#39;2099-09-09&#39;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 向product表添加指定列数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">product</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;电脑&#39;</span><span class="p">,</span><span class="mi">4999</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 向product表添加指定列数据
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">product</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;电脑&#39;</span><span class="p">,</span><span class="mi">4999</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看表中所有数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看表中所有数据
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -940,13 +948,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 默认给全部列添加数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;电视&#39;</span><span class="p">,</span><span class="mi">2999</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;2099-06-06&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 默认给全部列添加数据
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;电视&#39;</span><span class="p">,</span><span class="mi">2999</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;2099-06-06&#39;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看表中所有数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看表中所有数据
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -973,21 +981,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 默认添加所有列数据 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="err">值</span><span class="mi">3</span><span class="p">,...);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 批量添加数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;冰箱&#39;</span><span class="p">,</span><span class="mi">999</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="s1">&#39;2099-08-08&#39;</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;洗衣机&#39;</span><span class="p">,</span><span class="mi">1999</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="s1">&#39;2099-05-10&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看表中所有数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 批量添加数据
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;冰箱&#39;</span><span class="p">,</span><span class="mi">999</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="s1">&#39;2099-08-08&#39;</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;洗衣机&#39;</span><span class="p">,</span><span class="mi">1999</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="s1">&#39;2099-05-10&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看表中所有数据
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 给指定列添加数据 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="p">,...)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 给指定列添加数据 标准语法
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="p">,...)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...),(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">值</span><span class="mi">2</span><span class="p">,...);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 批量添加指定列数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">product</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;微波炉&#39;</span><span class="p">,</span><span class="mi">499</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;电磁炉&#39;</span><span class="p">,</span><span class="mi">899</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看表中所有数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 批量添加指定列数据
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">product</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;微波炉&#39;</span><span class="p">,</span><span class="mi">499</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;电磁炉&#39;</span><span class="p">,</span><span class="mi">899</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看表中所有数据
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -1022,19 +1030,19 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="err">列名</span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">,...</span><span class="w"> </span><span class="p">[</span><span class="k">where</span><span class="w"> </span><span class="err">条件</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="err">列名</span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">,...</span><span class="w"> </span><span class="p">[</span><span class="k">where</span><span class="w"> </span><span class="err">条件</span><span class="p">];</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 修改手机的价格为3500
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">price</span><span class="o">=</span><span class="mi">3500</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;手机&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 修改手机的价格为3500
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">price</span><span class="o">=</span><span class="mi">3500</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;手机&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看所有数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看所有数据
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 修改电视的价格为1800、库存为36
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">price</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span><span class="n">stock</span><span class="o">=</span><span class="mi">36</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;电视&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 修改电视的价格为1800、库存为36
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">price</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span><span class="n">stock</span><span class="o">=</span><span class="mi">36</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;电视&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 修改电磁炉的库存为10
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">stock</span><span class="o">=</span><span class="mi">10</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 修改电磁炉的库存为10
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">stock</span><span class="o">=</span><span class="mi">10</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1065,16 +1073,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">[</span><span class="k">WHERE</span><span class="w"> </span><span class="err">条件</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">[</span><span class="k">WHERE</span><span class="w"> </span><span class="err">条件</span><span class="p">];</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 删除product表中的微波炉信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;微波炉&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 删除product表中的微波炉信息
+</span></span></span><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;微波炉&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 删除product表中库存为10的商品信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">stock</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 删除product表中库存为10的商品信息
+</span></span></span><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">stock</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查看所有商品信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查看所有商品信息
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1118,29 +1126,29 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 创建db1数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 使用db1数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">USE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 使用db1数据库
+</span></span></span><span class="line"><span class="cl"><span class="k">USE</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 创建数据表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 创建数据表
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">id</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">				</span><span class="c1">-- 商品编号
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">NAME</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w">	</span><span class="c1">-- 商品名称
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">price</span><span class="w"> </span><span class="kt">DOUBLE</span><span class="p">,</span><span class="w">		</span><span class="c1">-- 商品价格
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">brand</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w">	</span><span class="c1">-- 商品品牌
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">stock</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">			</span><span class="c1">-- 商品库存
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">insert_time</span><span class="w"> </span><span class="kt">DATE</span><span class="w">    </span><span class="c1">-- 添加时间
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">NAME</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w">	</span><span class="c1">-- 商品名称
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">price</span><span class="w"> </span><span class="kt">DOUBLE</span><span class="p">,</span><span class="w">		</span><span class="c1">-- 商品价格
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">brand</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w">	</span><span class="c1">-- 商品品牌
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">stock</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">			</span><span class="c1">-- 商品库存
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">insert_time</span><span class="w"> </span><span class="kt">DATE</span><span class="w">    </span><span class="c1">-- 添加时间
+</span></span></span><span class="line"><span class="cl"><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 添加数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;华为手机&#39;</span><span class="p">,</span><span class="mi">3999</span><span class="p">,</span><span class="s1">&#39;华为&#39;</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="s1">&#39;2088-03-10&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;小米手机&#39;</span><span class="p">,</span><span class="mi">2999</span><span class="p">,</span><span class="s1">&#39;小米&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;2088-05-15&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;苹果手机&#39;</span><span class="p">,</span><span class="mi">5999</span><span class="p">,</span><span class="s1">&#39;苹果&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;2088-08-20&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;华为电脑&#39;</span><span class="p">,</span><span class="mi">6999</span><span class="p">,</span><span class="s1">&#39;华为&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;2088-06-16&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;小米电脑&#39;</span><span class="p">,</span><span class="mi">4999</span><span class="p">,</span><span class="s1">&#39;小米&#39;</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="s1">&#39;2088-07-08&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;苹果电脑&#39;</span><span class="p">,</span><span class="mi">8999</span><span class="p">,</span><span class="s1">&#39;苹果&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;2088-10-25&#39;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;联想电脑&#39;</span><span class="p">,</span><span class="mi">7999</span><span class="p">,</span><span class="s1">&#39;联想&#39;</span><span class="p">,</span><span class="no">NULL</span><span class="p">,</span><span class="s1">&#39;2088-11-11&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 添加数据
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;华为手机&#39;</span><span class="p">,</span><span class="mi">3999</span><span class="p">,</span><span class="s1">&#39;华为&#39;</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="s1">&#39;2088-03-10&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;小米手机&#39;</span><span class="p">,</span><span class="mi">2999</span><span class="p">,</span><span class="s1">&#39;小米&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;2088-05-15&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;苹果手机&#39;</span><span class="p">,</span><span class="mi">5999</span><span class="p">,</span><span class="s1">&#39;苹果&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;2088-08-20&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;华为电脑&#39;</span><span class="p">,</span><span class="mi">6999</span><span class="p">,</span><span class="s1">&#39;华为&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;2088-06-16&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;小米电脑&#39;</span><span class="p">,</span><span class="mi">4999</span><span class="p">,</span><span class="s1">&#39;小米&#39;</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="s1">&#39;2088-07-08&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;苹果电脑&#39;</span><span class="p">,</span><span class="mi">8999</span><span class="p">,</span><span class="s1">&#39;苹果&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;2088-10-25&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;联想电脑&#39;</span><span class="p">,</span><span class="mi">7999</span><span class="p">,</span><span class="s1">&#39;联想&#39;</span><span class="p">,</span><span class="no">NULL</span><span class="p">,</span><span class="s1">&#39;2088-11-11&#39;</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1166,17 +1174,17 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">字段列表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">from</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">表名列表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">where</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">条件列表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">分组字段</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">having</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">having</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">分组之后的条件</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">排序</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">limit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">limit</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">分页限定</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -1191,10 +1199,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查询product表所有数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查询product表所有数据
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1213,10 +1221,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 标准语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="p">,...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="err">列名</span><span class="mi">2</span><span class="p">,...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查询名称、价格、品牌
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">brand</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 查询名称、价格、品牌
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">NAME</span><span class="p">,</span><span class="n">price</span><span class="p">,</span><span class="n">brand</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -1342,117 +1350,117 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 1. 创建db4数据库、如果不存在则创建，指定字符集为 utf8
 </span></span></span><span class="line"><span class="cl"><span class="c1">-- CREATE DATABASE IF NOT EXISTS 数据库名 CHARACTER SET 字符集名;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 2.展示当前数据库下所有的表：  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 3. 删除数据库：  DROP DATABASE 数据库名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 4.创建数据库中的表： 创建user表：  id, 姓名username(VARCHAR), 年龄age（int）, 性别gender(VARCHAR = string)，生日birthday（date）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 5. 新需求： 修改user2表username为uname, 新增一列 password.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 6. 删除表： -- 删除user2表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 7.insert插入数据：  在t_user表中插入一条王大锤的数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 8.update修改数据： 修改王大锤的性别为女，年龄为22：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 2.展示当前数据库下所有的表：  
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 9.delete删除数据：  删除名字叫王大锤的数据：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 10. 删除一批性别为女的用户信息：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 3. 删除数据库：  DROP DATABASE 数据库名
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 4.创建数据库中的表： 创建user表：  id, 姓名username(VARCHAR), 年龄age（int）, 性别gender(VARCHAR = string)，生日birthday（date）
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 5. 新需求： 修改user2表username为uname, 新增一列 password.
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- ==========================================
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 【select查询：】
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 6. 删除表： -- 删除user2表
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 7.insert插入数据：  在t_user表中插入一条王大锤的数据
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 8.update修改数据： 修改王大锤的性别为女，年龄为22：
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 9.delete删除数据：  删除名字叫王大锤的数据：
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 10. 删除一批性别为女的用户信息：
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- ==========================================
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 【select查询：】
 </span></span></span><span class="line"><span class="cl"><span class="c1">--  1. 查询全表：   * 代表查询所有字段
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">--  2. 查询指定字段：  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">--  3. 别名： 给字段起别名：    as,也可以省略
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">--  2. 查询指定字段：  
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 4.去重查询： distinct：  ---查询所有用户的名，如果有重复的名字，只展示一个：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 5. 对列进行数学运算： 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="c1">-- 查询用户信息，对年龄整体增加10岁：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">--  3. 别名： 给字段起别名：    as,也可以省略
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 4.去重查询： distinct：  ---查询所有用户的名，如果有重复的名字，只展示一个：
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 5. 对列进行数学运算： 
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户信息，对年龄整体增加10岁：
+</span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 对商品数据的价格打五折展示：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 6.条件查询： where 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="c1">-- 查询所有的小米品牌的商品
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 6.条件查询： where 
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询所有的小米品牌的商品
+</span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品价格 1000-5000之间的商品
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品价格 1000-5000之间的小米的商品
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-------------------【day02】----------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="c1">-------------------【day02】----------------------------------------
 </span></span></span><span class="line"><span class="cl"><span class="c1">-------------------【day02】----------------------------------------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 7.模糊查询： like关键字 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="c1">-- &#34;%&#34; ：代表匹配任意个数模糊匹配;   eg: &#39;%小米%&#39;  xxxx小米xxxx
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="c1">-- “_” : 代表模糊匹配一位;    eg： &#39;王_&#39;   王思聪x  王五√
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="c1">-------------------【day02】----------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 7.模糊查询： like关键字 
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- &#34;%&#34; ：代表匹配任意个数模糊匹配;   eg: &#39;%小米%&#39;  xxxx小米xxxx
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- “_” : 代表模糊匹配一位;    eg： &#39;王_&#39;   王思聪x  王五√
+</span></span></span><span class="line"><span class="cl"><span class="w">			
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品中包含“智能”关键字的商品
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户名包含“徐”的用户：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户名姓“徐”的用户：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户名第二个字是&#39;宝&#39;的用户：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 8.排序查询： order by 默认升序， 后面加上 desc代表倒序
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="c1">-- 根据商品价格倒序排列：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 将所有小米产品，进行价格升序排列：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">--  9.聚合函数： 求和sum ,求平均值avg  ,最大值max ,最小值min , 计数count
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 对所有的商品价格进行求和：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 求出所有商品的平均价格；   求出user表中用户的平均年龄
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 最大年龄
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 最小年龄
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 计数： count 男性用户有多少个
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 10.分组查询： group by  xxx列名  
-</span></span></span><span class="line"><span class="cl"><span class="c1">--    分组函数group by 通常结合聚合函数(5个)一起使用, 不能跟随便写其他没有分组的列！
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品表，对品牌进行分组：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品表，对品牌进行分组, 再统计每个品牌的商品个数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户表，对性别进行分组：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户表，对性别进行分组, 统计男性女性分别多少人？
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户名包含“徐”的用户：
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户名姓“徐”的用户：
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 11. 分页查询： limit 参数1,参数2;
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户名第二个字是&#39;宝&#39;的用户：
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 8.排序查询： order by 默认升序， 后面加上 desc代表倒序
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 根据商品价格倒序排列：
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 将所有小米产品，进行价格升序排列：
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">--  9.聚合函数： 求和sum ,求平均值avg  ,最大值max ,最小值min , 计数count
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 对所有的商品价格进行求和：
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 求出所有商品的平均价格；   求出user表中用户的平均年龄
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 最大年龄
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 最小年龄
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 计数： count 男性用户有多少个
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 10.分组查询： group by  xxx列名  
+</span></span></span><span class="line"><span class="cl"><span class="c1">--    分组函数group by 通常结合聚合函数(5个)一起使用, 不能跟随便写其他没有分组的列！
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品表，对品牌进行分组：
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询商品表，对品牌进行分组, 再统计每个品牌的商品个数
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户表，对性别进行分组：
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询用户表，对性别进行分组, 统计男性女性分别多少人？
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 11. 分页查询： limit 参数1,参数2;
 </span></span></span><span class="line"><span class="cl"><span class="c1">--      select * from 表名 limit 0,10;    (参数1代表起始行的索引， 参数2代表每次查询多少条)
 </span></span></span><span class="line"><span class="cl"><span class="c1">--      每次分页查询时，不同的页数只需要变更参数1 的值！ 参数1=（页码-1）*参数2；
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">		</span><span class="c1">-- 查询product表， 展示第1页数据，每页展示5条：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询product表， 展示第1页数据，每页展示5条：
+</span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">-- 查询product表， 展示第2页数据，每页展示5条：
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -1473,7 +1481,8 @@
 <blockquote>
 <p>尝试完成一个功能，用于判断用户是否登录：</p>
 <p>如果用户已经登录，就让用户可以查询出用户需要的数据；</p>
-<p>如果没有登录，就跳转到登录页面；</p></blockquote>
+<p>如果没有登录，就跳转到登录页面；</p>
+</blockquote>
 </li>
 </ol>
 <hr></div><div class="post-footer" id="post-footer">
@@ -1504,7 +1513,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.7">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

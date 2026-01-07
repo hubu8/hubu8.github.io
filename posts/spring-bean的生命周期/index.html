@@ -530,14 +530,24 @@
 </ol>
 <h4 id="原型-bean-的生命周期差异">原型 Bean 的生命周期差异</h4>
 <ol>
-<li>原型 Bean 由容器创建实例、注入属性、执行初始化，但不管理销毁阶段（容器关闭时不会调用 destroy 方法）；</li>
-<li>若需销毁原型 Bean，需手动调用销毁方法。</li>
+<li>
+<p>原型 Bean 由容器创建实例、注入属性、执行初始化，但不管理销毁阶段（容器关闭时不会调用 destroy 方法）；</p>
+</li>
+<li>
+<p>若需销毁原型 Bean，需手动调用销毁方法。</p>
+</li>
 </ol>
 <h4 id="若依框架中的生命周期应用">若依框架中的生命周期应用</h4>
 <ol>
-<li>ApplicationContextAware：若依框架中的 SpringUtils 工具类实现此接口，用于手动获取容器中的 Bean，解决循环依赖；</li>
-<li>@PostConstruct：若依的定时任务、缓存初始化等逻辑，常放在 @PostConstruct 方法中，确保 Bean 初始化完成后执行；</li>
-<li>BeanPostProcessor：若依的权限注解解析、数据权限切面等，底层依赖 BeanPostProcessor 扩展。</li>
+<li>
+<p>ApplicationContextAware：若依框架中的 SpringUtils 工具类实现此接口，用于手动获取容器中的 Bean，解决循环依赖；</p>
+</li>
+<li>
+<p>@PostConstruct：若依的定时任务、缓存初始化等逻辑，常放在 @PostConstruct 方法中，确保 Bean 初始化完成后执行；</p>
+</li>
+<li>
+<p>BeanPostProcessor：若依的权限注解解析、数据权限切面等，底层依赖 BeanPostProcessor 扩展。</p>
+</li>
 </ol>
 <h3 id="核心原理为什么能控制生命周期">核心原理（为什么能控制生命周期？）</h3>
 <p>Spring 容器通过 BeanFactory（核心是 DefaultListableBeanFactory）管理 Bean 生命周期：</p>

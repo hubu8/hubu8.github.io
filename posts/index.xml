@@ -35,9 +35,7 @@
     <pubDate>Fri, 02 Jan 2026 08:59:26 &#43;0800</pubDate>
     <author>Better</author>
     <guid>https://hubu8.github.io/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
-    <description><![CDATA[<p>谈一谈Sping Bean的生命周期？</p>
-<h3 id="spring-bean-生命周期核心概念">Spring Bean 生命周期核心概念</h3>
-<p>简单来说，Spring Bean 的生命周期 就是 Bean 从「被 Spring 容器创建」到「最终被销毁」的全流程。Spring 容器会接管 Bean 的创建、初始化、依赖注入、使用、销毁等所有环节，我们可以通过各种扩展点（如接口、注解）介入这个流程，实现自定义逻辑。</p>]]></description>
+    <description><![CDATA[]]></description>
 </item>
 <item>
     <title>什么是代理对象？</title>

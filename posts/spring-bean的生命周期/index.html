@@ -34,7 +34,7 @@ Spring Bean 生命周期核心概念 简单来说，Spring Bean 的生命周期 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F\/"
-        },"genre": "posts","keywords": "Bean","wordcount":  3493 ,
+        },"genre": "posts","keywords": "Bean","wordcount":  3496 ,
         "url": "https:\/\/hubu8.github.io\/posts\/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F\/","datePublished": "2026-01-02T08:59:26+08:00","dateModified": "2026-01-02T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +108,7 @@ Spring Bean 生命周期核心概念 简单来说，Spring Bean 的生命周期 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Spring Bean的生命周期</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-02">2026-01-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3493 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-02">2026-01-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3496 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="leancloud_visitors" data-flag-title="Spring Bean的生命周期">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -144,8 +144,10 @@ Spring Bean 生命周期核心概念 简单来说，Spring Bean 的生命周期 
 <h3 id="spring-bean-生命周期核心概念">Spring Bean 生命周期核心概念</h3>
 <p>简单来说，Spring Bean 的生命周期 就是 Bean 从「被 Spring 容器创建」到「最终被销毁」的全流程。Spring 容器会接管 Bean 的创建、初始化、依赖注入、使用、销毁等所有环节，我们可以通过各种扩展点（如接口、注解）介入这个流程，实现自定义逻辑。</p>
 <h3 id="spring-bean-完整生命周期8-个核心阶段">Spring Bean 完整生命周期（8 个核心阶段）</h3>
-<p>Bean生命周期：</p>
+<p>示例：</p>
 <div class="mermaid" id="id-1"></div>
+<p>Bean生命周期：</p>
+<div class="mermaid" id="id-2"></div>
 <h4 id="代码示例">代码示例：</h4>
 <p><strong>示例Bean:</strong></p>
 <div class="highlight"><div class="chroma">

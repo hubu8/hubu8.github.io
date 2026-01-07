@@ -7,8 +7,7 @@
         <title>Spring 如何解决循环依赖 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/">
   <meta property="og:site_name" content="Eccentric&#39;s Note">
   <meta property="og:title" content="Spring 如何解决循环依赖">
-  <meta property="og:description" content="在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？
-什么是 Spring 循环依赖？ 简单来说，Spring 循环依赖 就是两个或多个 Bean 之间互相持有对方的引用，形成闭环依赖关系。比如：">
+  <meta property="og:description" content="在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -20,8 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
   <meta name="twitter:title" content="Spring 如何解决循环依赖">
-  <meta name="twitter:description" content="在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？
-什么是 Spring 循环依赖？ 简单来说，Spring 循环依赖 就是两个或多个 Bean 之间互相持有对方的引用，形成闭环依赖关系。比如：">
+  <meta name="twitter:description" content="在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？">
 <meta name="application-name" content="Eccentric&#39;s Note">
 <meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/" /><link rel="prev" href="https://hubu8.github.io/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" /><link rel="next" href="https://hubu8.github.io/posts/%E5%A4%A7%E5%8E%82%E4%B8%BA%E5%95%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A4%96%E9%94%AE/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -436,8 +434,7 @@
 </div><p><strong>总结</strong></p>
 <p>核心定义：Spring 循环依赖是 Bean 之间互相引用形成闭环，Spring 仅自动解决「单例 + setter / 字段注入」的循环依赖；</p>
 <p>常见场景：业务层互相依赖、跨模块依赖，若依框架中 Service 层循环依赖最典型；</p>
-<p>解决方案：优先用 @Lazy 延迟加载，其次重构代码优化设计，兜底方案是手动从 ApplicationContext 获取 Bean。</p>
-</div><div class="post-footer" id="post-footer">
+<p>解决方案：优先用 @Lazy 延迟加载，其次重构代码优化设计，兜底方案是手动从 ApplicationContext 获取 Bean。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

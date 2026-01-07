@@ -27,9 +27,7 @@
     <pubDate>Sat, 03 Jan 2026 08:59:26 &#43;0800</pubDate>
     <author>Better</author>
     <guid>https://hubu8.github.io/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
-    <description><![CDATA[<p>在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？</p>
-<h2 id="什么是-spring-循环依赖">什么是 Spring 循环依赖？</h2>
-<p>简单来说，Spring 循环依赖 就是两个或多个 Bean 之间互相持有对方的引用，形成闭环依赖关系。比如：</p>]]></description>
+    <description><![CDATA[<p>在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？</p>]]></description>
 </item>
 <item>
     <title>Spring Bean的生命周期</title>

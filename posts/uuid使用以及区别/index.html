@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB\/"
-        },"genre": "posts","keywords": "UUID","wordcount":  79 ,
+        },"genre": "posts","keywords": "UUID","wordcount":  1433 ,
         "url": "https:\/\/hubu8.github.io\/posts\/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB\/","datePublished": "2026-01-14T08:59:26+08:00","dateModified": "2026-01-14T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">UUID使用以及区别</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-14">2026-01-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 79 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/posts/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="UUID使用以及区别">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-14">2026-01-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1433 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/posts/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="UUID使用以及区别">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -124,19 +124,130 @@
     <li><a href="#uuid-版本5">UUID 版本5</a></li>
     <li><a href="#uuid-版本6">UUID 版本6</a></li>
     <li><a href="#uuid-版本7">UUID 版本7</a></li>
-    <li><a href="#uuid-版本8">UUID 版本8</a></li>
+    <li><a href="#uuid-版本8--尚未正式发布">UUID 版本8  （尚未正式发布）</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#结论和建议">结论和建议</a></li>
+      </ul>
+    </li>
     <li><a href="#能不能使用uuid作为数据库主键">能不能使用UUID作为数据库主键？</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>UUID 的 8 个版本以及何时使用它们；能不能用UUID作为数据库主键</p>
+<p>UUID的全称是Universally Unique Identifier，中文为通用唯一识别码。</p>
+<p>在对 UUID 进行说明之前，我们来看一个标准的 UUID。</p>
+<p>下面就是一个标准的 UUID，使用横杠分隔符来进行分隔：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/image-20260115205830070.png"
+        data-srcset="./images/image-20260115205830070.png, ./images/image-20260115205830070.png 1.5x, ./images/image-20260115205830070.png 2x"
+        data-sizes="auto"
+        alt="./images/image-20260115205830070.png"
+        title="image-20260115205830070" /></p>
+<ul>
+<li>M 表示 UUID版本，目前只有五个<strong>版本</strong>，即只会出现1，2，3，4，5&hellip;</li>
+<li>数字 N 的一至三个最高有效位表示 UUID <strong>变体</strong>，目前只会出现 8，9，a，b 四种情况。</li>
+</ul>
 <h2 id="uuid-版本1">UUID 版本1</h2>
+<p><strong>原理：timestamp + MAC 地址。</strong></p>
+<p>缺点：</p>
+<ul>
+<li>机器的MAC地址出厂后不能保证完全唯一，且之后 MAC 地址也可手动修改</li>
+<li>MAC 地址的暴露会造成了隐私与安全问题</li>
+<li>若一台机子上的两个进程同时跑，有可能出现重复问题</li>
+</ul>
 <h2 id="uuid-版本2">UUID 版本2</h2>
+<p><strong>原理：基于 v1 的基础上优化了下，更安全。</strong></p>
 <h2 id="uuid-版本3">UUID 版本3</h2>
+<p><strong>原理：基于 namespace + 输入内容 进行 MD5。</strong></p>
+<p>确保相同输入的结果具有确定性</p>
 <h2 id="uuid-版本4">UUID 版本4</h2>
+<p><strong>原理：基于随机数。</strong></p>
+<p>这个版本的UUID是<strong>使用最多</strong>的。提供了简单性和隐私性，但代价是潜在的（尽管极不可能发生）碰撞。该版本被广泛应用于顺序排列并不重要的场合。</p>
 <h2 id="uuid-版本5">UUID 版本5</h2>
+<p><strong>原理：跟 V3 差不多，只是把散列算法的 MD5 变成 SHA1。</strong></p>
+<p>确保相同输入的结果具有确定性</p>
 <h2 id="uuid-版本6">UUID 版本6</h2>
+<p>v1 的重组版本，具有更强的私密性，并针对时间顺序排序进行了优化。</p>
 <h2 id="uuid-版本7">UUID 版本7</h2>
-<h2 id="uuid-版本8">UUID 版本8</h2>
+<p>旨在提供基于时间的顺序排序，是数据库索引和分布式系统的理想选择。</p>
+<p>UUIDv7 解决了早期版本的主要缺陷，尤其是在数据库索引和分布式系统方面。通过使用有时间顺序的结构，可以确保：</p>
+<ul>
+<li><strong>高效索引</strong>：基于时间的顺序排列减少了数据库索引中的碎片，从而提高了查询性能。</li>
+<li><strong>高可扩展性</strong>：适用于需要唯一、有序标识符的分布式环境。</li>
+<li><strong>隐私性</strong>：避免包含 MAC 地址等敏感信息。</li>
+</ul>
+<p>例如，生成 UUIDv7 需要将时间戳编码到标识符中，这样即使在分布式系统中也能确保有序。<a href="https://link.zhihu.com/?target=https%3A//github.com/google/uuid" target="_blank" rel="noopener noreffer ">谷歌的 UUID 库</a>等工具支持用各种编程语言生成 UUIDv7。</p>
+<h2 id="uuid-版本8--尚未正式发布">UUID 版本8  （尚未正式发布）</h2>
+<p>允许自定义应用特定元数据字段，提供无与伦比的灵活性。</p>
+<p>UUIDv8 引入了一项突破性功能：针对特定应用需求的自定义位。该版本允许在 UUID 中直接嵌入元数据，使其具有很强的适应性：</p>
+<ul>
+<li><strong>物联网设备</strong>：嵌入设备特定信息</li>
+<li><strong>跨系统数据传输</strong>：包含上下文元数据，便于跟踪。</li>
+<li><strong>自定义应用</strong>：根据特定领域需求定制 UUID。</li>
+</ul>
+<p>UUIDv8 的灵活性需要权衡利弊，如确保自定义字段在应用上下文中保持唯一性。随着采用率的提高，很可能会出现最佳实践和库来规范这些实施。</p>
+<h2 id="总结">总结</h2>
+<p>比较 UUID 版本</p>
+<table>
+  <thead>
+      <tr>
+          <th>版本</th>
+          <th>构造方式</th>
+          <th>主要功能</th>
+          <th>用例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>v1</td>
+          <td>时间 + MAC地址</td>
+          <td>高唯一性, 隐私问题</td>
+          <td>传统系统, 内部工具</td>
+      </tr>
+      <tr>
+          <td>v4</td>
+          <td>随机</td>
+          <td>简单, 高隐私性</td>
+          <td>Web应用, 通用功能</td>
+      </tr>
+      <tr>
+          <td>v6</td>
+          <td>基于时间(重构的)</td>
+          <td>有序, 隐私增强</td>
+          <td>现代数据库</td>
+      </tr>
+      <tr>
+          <td>v7</td>
+          <td>时间有序(RFC 9562)</td>
+          <td>索引优化</td>
+          <td>分布式系统, 日志</td>
+      </tr>
+      <tr>
+          <td>v8</td>
+          <td>自定义字段</td>
+          <td>高灵活性</td>
+          <td>IoT, 特定应用</td>
+      </tr>
+  </tbody>
+</table>
+<p>超越 UUID：替代方案与灵感</p>
+<p>UUIDv7 和 UUIDv8 的开发参考了其他 ID 生成方法，如：</p>
+<ul>
+<li><strong><a href="https://zhida.zhihu.com/search?content_id=252352067&amp;content_type=Article&amp;match_order=1&amp;q=ULID&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3Njg2NTQ5ODcsInEiOiJVTElEIiwiemhpZGFfc291cmNlIjoiZW50aXR5IiwiY29udGVudF9pZCI6MjUyMzUyMDY3LCJjb250ZW50X3R5cGUiOiJBcnRpY2xlIiwibWF0Y2hfb3JkZXIiOjEsInpkX3Rva2VuIjpudWxsfQ.SYcmHYjPLvrlmJHAZYaRX3t4v4Td0_5Z1zZPAkFg5xw&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">ULID</a></strong>：将基于时间戳的排序与随机性相结合，确保单调性。</li>
+<li><strong><a href="https://zhida.zhihu.com/search?content_id=252352067&amp;content_type=Article&amp;match_order=1&amp;q=Snowflake&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3Njg2NTQ5ODcsInEiOiJTbm93Zmxha2UiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyNTIzNTIwNjcsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.zt1p-ddzExRSG1kdTDUtV5d2-tl9xtcGJ-bBjS5qjkM&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">Snowflake</a></strong>：由 Twitter 提出，包含时间戳、机器 ID 和序列号。</li>
+<li><strong><a href="https://zhida.zhihu.com/search?content_id=252352067&amp;content_type=Article&amp;match_order=1&amp;q=KSUID&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3Njg2NTQ5ODcsInEiOiJLU1VJRCIsInpoaWRhX3NvdXJjZSI6ImVudGl0eSIsImNvbnRlbnRfaWQiOjI1MjM1MjA2NywiY29udGVudF90eXBlIjoiQXJ0aWNsZSIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.5GVu562hG304udtKdYLEEBka4hyRtvk_oradzmr-B40&amp;zhida_source=entity" target="_blank" rel="noopener noreffer ">KSUID</a></strong>：为分布式系统优化的 K 排序唯一标识符。</li>
+</ul>
+<p>虽然这些替代方案在特定情况下很有效，但 UUID 为大部分应用提供了标准化、跨平台的解决方案。</p>
+<h3 id="结论和建议">结论和建议</h3>
+<p>UUID 的发展反映了分布式系统日益增长的复杂性，以及对高效、安全和灵活的唯一标识符的需求。随着 UUIDv7 和 UUIDv8 等新版本的普及，开发人员应该：</p>
+<ul>
+<li><strong>选择正确的版本</strong>：使用 UUIDv7 满足有时间顺序的需求，使用 UUIDv8 满足自定义元数据的需求。</li>
+<li><strong>利用库</strong>：利用现有的库，确保符合 RFC 规范。</li>
+<li><strong>随时了解信息</strong>：监控 UUID 标准和库的更新，利用新功能。</li>
+</ul>
+<p>通过了解和使用合适的 UUID 版本，从而确保系统的可扩展性、性能和安全性。</p>
 <h2 id="能不能使用uuid作为数据库主键">能不能使用UUID作为数据库主键？</h2></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

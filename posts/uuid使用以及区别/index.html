@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB\/"
-        },"genre": "posts","keywords": "UUID","wordcount":  1433 ,
+        },"genre": "posts","keywords": "UUID","wordcount":  2528 ,
         "url": "https:\/\/hubu8.github.io\/posts\/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB\/","datePublished": "2026-01-14T08:59:26+08:00","dateModified": "2026-01-14T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">UUID使用以及区别</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-14">2026-01-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1433 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/posts/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="UUID使用以及区别">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-14">2026-01-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2528 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/posts/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="UUID使用以及区别">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -117,20 +117,21 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#uuid-版本1">UUID 版本1</a></li>
-    <li><a href="#uuid-版本2">UUID 版本2</a></li>
-    <li><a href="#uuid-版本3">UUID 版本3</a></li>
-    <li><a href="#uuid-版本4">UUID 版本4</a></li>
-    <li><a href="#uuid-版本5">UUID 版本5</a></li>
-    <li><a href="#uuid-版本6">UUID 版本6</a></li>
-    <li><a href="#uuid-版本7">UUID 版本7</a></li>
-    <li><a href="#uuid-版本8--尚未正式发布">UUID 版本8  （尚未正式发布）</a></li>
+    <li><a href="#uuid-v1-基于时间戳的-uuid">UUID V1 基于时间戳的 UUID</a></li>
+    <li><a href="#uuid-v2-dcedistributed-computing-environment安全的-uuid">UUID V2 DCE(Distributed Computing Environment)安全的 UUID</a></li>
+    <li><a href="#uuid-v3-基于名称空间的-uuidmd5">UUID V3 基于名称空间的 UUID(MD5)</a></li>
+    <li><a href="#uuid-v4-基于随机数的-uuid">UUID V4 基于随机数的 UUID</a></li>
+    <li><a href="#uuid-v5-基于命名空间的uuidsha-1">UUID V5 基于命名空间的UUID（SHA-1）</a></li>
+    <li><a href="#uuid-v6-改进的时间序列uuid">UUID V6 改进的时间序列UUID</a></li>
+    <li><a href="#uuid-v7-时间戳--随机数">UUID V7 时间戳 + 随机数</a></li>
+    <li><a href="#uuid-v8-自定义uuid-尚未正式发布">UUID V8 自定义UUID （尚未正式发布）</a></li>
     <li><a href="#总结">总结</a>
       <ul>
         <li><a href="#结论和建议">结论和建议</a></li>
       </ul>
     </li>
     <li><a href="#能不能使用uuid作为数据库主键">能不能使用UUID作为数据库主键？</a></li>
+    <li><a href="#自增id-作为数据库id的好处与坏处">自增ID 作为数据库id的好处与坏处</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>UUID 的 8 个版本以及何时使用它们；能不能用UUID作为数据库主键</p>
@@ -149,28 +150,35 @@
 <li>M 表示 UUID版本，目前只有五个<strong>版本</strong>，即只会出现1，2，3，4，5&hellip;</li>
 <li>数字 N 的一至三个最高有效位表示 UUID <strong>变体</strong>，目前只会出现 8，9，a，b 四种情况。</li>
 </ul>
-<h2 id="uuid-版本1">UUID 版本1</h2>
-<p><strong>原理：timestamp + MAC 地址。</strong></p>
+<h2 id="uuid-v1-基于时间戳的-uuid">UUID V1 基于时间戳的 UUID</h2>
+<p><strong>原理</strong>：timestamp + MAC 地址。</p>
+<p><strong>‌特点</strong>‌：具有时间顺序性，能确保全局唯一性。</p>
+<p><strong>‌安全性</strong>‌：由于使用了MAC地址，可能暴露设备信息，存在隐私风险。</p>
+<p><strong>‌适用场景</strong>‌：适用于需要时间顺序的场景，如日志记录等。</p>
 <p>缺点：</p>
 <ul>
 <li>机器的MAC地址出厂后不能保证完全唯一，且之后 MAC 地址也可手动修改</li>
 <li>MAC 地址的暴露会造成了隐私与安全问题</li>
 <li>若一台机子上的两个进程同时跑，有可能出现重复问题</li>
 </ul>
-<h2 id="uuid-版本2">UUID 版本2</h2>
+<h2 id="uuid-v2-dcedistributed-computing-environment安全的-uuid">UUID V2 DCE(Distributed Computing Environment)安全的 UUID</h2>
 <p><strong>原理：基于 v1 的基础上优化了下，更安全。</strong></p>
-<h2 id="uuid-版本3">UUID 版本3</h2>
-<p><strong>原理：基于 namespace + 输入内容 进行 MD5。</strong></p>
-<p>确保相同输入的结果具有确定性</p>
-<h2 id="uuid-版本4">UUID 版本4</h2>
+<p>这个版本的 UUID 算法与V1版本的 UUID 相同，但会将时间戳的前 4 位替换为 POSIX 的 UID 或 GID。</p>
+<p>安全性较高，但实际应用较少。</p>
+<h2 id="uuid-v3-基于名称空间的-uuidmd5">UUID V3 基于名称空间的 UUID(MD5)</h2>
+<p><strong>原理</strong>：基于 namespace + 输入内容 进行 MD5。</p>
+<p><strong>特点</strong>‌：具有可重复性，相同命名空间和名称生成的UUID一致。</p>
+<p><strong>‌安全性</strong>‌：使用MD5算法，安全性较低。</p>
+<p><strong>‌适用场景</strong>‌：适用于需要确定性生成的场景，如命名空间下的唯一标识。</p>
+<h2 id="uuid-v4-基于随机数的-uuid">UUID V4 基于随机数的 UUID</h2>
 <p><strong>原理：基于随机数。</strong></p>
 <p>这个版本的UUID是<strong>使用最多</strong>的。提供了简单性和隐私性，但代价是潜在的（尽管极不可能发生）碰撞。该版本被广泛应用于顺序排列并不重要的场合。</p>
-<h2 id="uuid-版本5">UUID 版本5</h2>
+<h2 id="uuid-v5-基于命名空间的uuidsha-1">UUID V5 基于命名空间的UUID（SHA-1）</h2>
 <p><strong>原理：跟 V3 差不多，只是把散列算法的 MD5 变成 SHA1。</strong></p>
 <p>确保相同输入的结果具有确定性</p>
-<h2 id="uuid-版本6">UUID 版本6</h2>
+<h2 id="uuid-v6-改进的时间序列uuid">UUID V6 改进的时间序列UUID</h2>
 <p>v1 的重组版本，具有更强的私密性，并针对时间顺序排序进行了优化。</p>
-<h2 id="uuid-版本7">UUID 版本7</h2>
+<h2 id="uuid-v7-时间戳--随机数">UUID V7 时间戳 + 随机数</h2>
 <p>旨在提供基于时间的顺序排序，是数据库索引和分布式系统的理想选择。</p>
 <p>UUIDv7 解决了早期版本的主要缺陷，尤其是在数据库索引和分布式系统方面。通过使用有时间顺序的结构，可以确保：</p>
 <ul>
@@ -179,7 +187,7 @@
 <li><strong>隐私性</strong>：避免包含 MAC 地址等敏感信息。</li>
 </ul>
 <p>例如，生成 UUIDv7 需要将时间戳编码到标识符中，这样即使在分布式系统中也能确保有序。<a href="https://link.zhihu.com/?target=https%3A//github.com/google/uuid" target="_blank" rel="noopener noreffer ">谷歌的 UUID 库</a>等工具支持用各种编程语言生成 UUIDv7。</p>
-<h2 id="uuid-版本8--尚未正式发布">UUID 版本8  （尚未正式发布）</h2>
+<h2 id="uuid-v8-自定义uuid-尚未正式发布">UUID V8 自定义UUID （尚未正式发布）</h2>
 <p>允许自定义应用特定元数据字段，提供无与伦比的灵活性。</p>
 <p>UUIDv8 引入了一项突破性功能：针对特定应用需求的自定义位。该版本允许在 UUID 中直接嵌入元数据，使其具有很强的适应性：</p>
 <ul>
@@ -248,7 +256,65 @@
 <li><strong>随时了解信息</strong>：监控 UUID 标准和库的更新，利用新功能。</li>
 </ul>
 <p>通过了解和使用合适的 UUID 版本，从而确保系统的可扩展性、性能和安全性。</p>
-<h2 id="能不能使用uuid作为数据库主键">能不能使用UUID作为数据库主键？</h2></div><div class="post-footer" id="post-footer">
+<h2 id="能不能使用uuid作为数据库主键">能不能使用UUID作为数据库主键？</h2>
+<p>可以使用UUID作为数据库主键，但需要考虑其优缺点和适用场景。</p>
+<p>‌优点‌：</p>
+<ul>
+<li>
+<p>全局唯一性‌：UUID保证了在分布式系统中生成的ID不会重复，无需中央协调。</p>
+</li>
+<li>
+<p>无需中心化生成‌：每个节点都可以独立生成，无需依赖中心服务器。</p>
+</li>
+<li>
+<p>适合分布式系统‌：特别适用于多主数据库架构或需要离线操作的场景。</p>
+</li>
+</ul>
+<p>缺点‌：</p>
+<ul>
+<li>性能影响‌：UUID是无序的，插入时可能导致索引分裂和重组，影响写入性能。
+‌- 存储空间‌：UUID通常为128位（如UUIDv4），比整型ID占用更多存储空间。
+‌索引效率‌：由于随机性，可能导致索引碎片化，影响查询性能。
+‌推荐使用场景‌：</li>
+</ul>
+<p>‌分布式系统‌：当系统分布在多个节点且需要避免ID冲突时。
+‌多主数据库‌：在需要多个主数据库同时写入的场景中。
+‌离线操作‌：当应用可能在离线状态下运行，需要生成唯一ID时。
+‌最新建议‌：
+目前推荐使用‌UUIDv7‌，它结合了时间戳和随机数，具有时间有序性，能较好地解决传统UUID的性能问题。</p>
+<p>选择是否使用UUID作为主键，应根据具体业务需求、数据量大小和性能要求来决定。</p>
+<h2 id="自增id-作为数据库id的好处与坏处">自增ID 作为数据库id的好处与坏处</h2>
+<p>在 MySQL 中，可以通过设置 AUTO_INCREMENT 属性实现 ID 的自增长，通常用于作为主键 ID。</p>
+<p>使用自增 ID 作为主键的好处包括：</p>
+<ul>
+<li>
+<p><strong>存储空间节省</strong>：ID 为数字，占用的位数比 UUID 小得多，因此在存储空间上更加节省。</p>
+</li>
+<li>
+<p><strong>查询效率高</strong>：ID 递增，利于 B+Tree 索引的查询效率提高。</p>
+</li>
+<li>
+<p><strong>方便展示</strong>：ID 较短，方便在系统间或前台页面进行展示。</p>
+</li>
+<li>
+<p><strong>分页方便</strong>：ID 连续自增，有利于解决深度分页问题。</p>
+</li>
+</ul>
+<p>然而，使用自增主键也存在一些问题：</p>
+<ul>
+<li>
+<p><strong>分库分表困难</strong>：在分库分表时，无法依赖单一表的自增主键，可能导致冲突问题。</p>
+</li>
+<li>
+<p><strong>可预测性</strong>：由于 ID 是顺序自增的，因此具有一定可预测性，存在一定的安全风险。</p>
+</li>
+<li>
+<p><strong>可能用尽</strong>：自增 ID 可能是 int、bigint 等，但它们都有范围限制，可能会用尽。</p>
+</li>
+<li>
+<p><strong>性能问题</strong>： 在数据迁移期间，如果使用自增主键，数据库可能会产生额外的性能开销。这可能是由于重新计算主键值或更新相关索引所致。这可能会导致数据迁移过程变慢。</p>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

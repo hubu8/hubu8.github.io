@@ -6,8 +6,15 @@
     <description>Recent content in 运维 on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 09 Dec 2025 08:59:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 08:59:26 +0800</lastBuildDate>
     <atom:link href="https://hubu8.github.io/categories/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grep、sed、awk高效文件处理3剑客</title>
+      <link>https://hubu8.github.io/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/</link>
+      <pubDate>Mon, 19 Jan 2026 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/</guid>
+      <description>&lt;p&gt;grep、sed、awk我们叫他们三剑客，掌握它们可以更好的运维，提升工作效率，即使不是运维，对我们处理数据都是非常方便的～就很多数据处理来讲，写程序肯定是也能处理的，但是远没有已经存在特定功能的命令更高效，我们只需要操作命令即可。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Linux 定时任务工具 crontab 配置详解</title>
       <link>https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</link>

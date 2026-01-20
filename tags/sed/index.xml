@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sed on Eccentric&#39;s Note</title>
+    <link>https://hubu8.github.io/tags/sed/</link>
+    <description>Recent content in Sed on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 19 Jan 2026 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://hubu8.github.io/tags/sed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grep、sed、awk高效文件处理3剑客</title>
+      <link>https://hubu8.github.io/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/</link>
+      <pubDate>Mon, 19 Jan 2026 08:59:26 +0800</pubDate>
+      <guid>https://hubu8.github.io/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/</guid>
+      <description>&lt;p&gt;grep、sed、awk我们叫他们三剑客，掌握它们可以更好的运维，提升工作效率，即使不是运维，对我们处理数据都是非常方便的～就很多数据处理来讲，写程序肯定是也能处理的，但是远没有已经存在特定功能的命令更高效，我们只需要操作命令即可。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

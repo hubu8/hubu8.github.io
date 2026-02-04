@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/sonarqube%E5%AE%89%E8%A3%85%E4%B8%8E%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F\/"
-        },"genre": "posts","keywords": "静态代码扫描","wordcount":  284 ,
+        },"genre": "posts","keywords": "静态代码扫描","wordcount":  1137 ,
         "url": "https:\/\/hubu8.github.io\/posts\/sonarqube%E5%AE%89%E8%A3%85%E4%B8%8E%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F\/","datePublished": "2025-08-25T08:59:26+08:00","dateModified": "2025-08-25T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SonarQube安装与静态代码扫描</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-25">2025-08-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 284 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/posts/sonarqube%E5%AE%89%E8%A3%85%E4%B8%8E%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F/" class="leancloud_visitors" data-flag-title="SonarQube安装与静态代码扫描">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-25">2025-08-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1137 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/posts/sonarqube%E5%AE%89%E8%A3%85%E4%B8%8E%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F/" class="leancloud_visitors" data-flag-title="SonarQube安装与静态代码扫描">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -121,6 +121,20 @@
       <ul>
         <li><a href="#软件下载">软件下载</a></li>
         <li><a href="#安装">安装</a></li>
+        <li><a href="#docker--sonarqube">Docker + Sonarqube</a>
+          <ul>
+            <li><a href="#1-准备sonarqube-docker容器">1. 准备SonarQube Docker容器</a></li>
+            <li><a href="#2-准备java项目">2. 准备Java项目</a></li>
+            <li><a href="#3-配置sonarqube扫描">3. 配置SonarQube扫描</a>
+              <ul>
+                <li><a href="#对于maven项目">对于Maven项目：</a></li>
+                <li><a href="#对于gradle项目">对于Gradle项目：</a></li>
+              </ul>
+            </li>
+            <li><a href="#4-查看结果">4. 查看结果</a></li>
+            <li><a href="#注意事项">注意事项：</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -158,7 +172,112 @@
 <p>访问http://localhost:9000/进入SonarQube登录界面，SonarQube的默认用户名/密码为admin/admin，首次登录后需要更改密码</p>
 </li>
 <li></li>
-</ol></div><div class="post-footer" id="post-footer">
+</ol>
+<h3 id="docker--sonarqube">Docker + Sonarqube</h3>
+<h4 id="1-准备sonarqube-docker容器">1. 准备SonarQube Docker容器</h4>
+<p>首先，你需要一个运行中的SonarQube容器。你可以使用官方的SonarQube Docker镜像来启动一个容器。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d --name sonarqube -e <span class="nv">SONAR_ES_BOOTSTRAP_CHECKS_DISABLE</span><span class="o">=</span><span class="nb">true</span> -p 9000:9000 sonarqube:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这条命令会启动一个SonarQube实例，暴露9000端口，并禁用Elasticsearch的启动检查（在某些环境中可能需要）。</p>
+<h4 id="2-准备java项目">2. 准备Java项目</h4>
+<p>确保你的Java项目已经设置好，并且有一个有效的<code>pom.xml</code>文件（对于Maven项目）或<code>build.gradle</code>文件（对于Gradle项目）。</p>
+<h4 id="3-配置sonarqube扫描">3. 配置SonarQube扫描</h4>
+<h5 id="对于maven项目">对于Maven项目：</h5>
+<ol>
+<li>
+<p>在你的项目根目录下，创建一个<code>sonar-project.properties</code>文件，并添加以下内容（根据你的实际情况修改）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="na">propertiesCopy</span> <span class="s">Codesonar.projectKey=my-java-project</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.sources</span><span class="o">=</span><span class="s">src</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.java.binaries</span><span class="o">=</span><span class="s">target/classes</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.host.url</span><span class="o">=</span><span class="s">http://localhost:9000</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.login</span><span class="o">=</span><span class="s">admin</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.password</span><span class="o">=</span><span class="s">admin</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装并配置SonarQube Scanner。如果你还没有安装，可以通过以下命令安装（对于Debian/Ubuntu）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -sL https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip &gt; sonar-scanner.zip <span class="o">&amp;&amp;</span> unzip sonar-scanner.zip <span class="o">&amp;&amp;</span> rm sonar-scanner.zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>运行SonarQube Scanner：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h5 id="对于gradle项目">对于Gradle项目：</h5>
+<ol>
+<li>
+<p>在你的项目根目录下，创建一个<code>gradle.properties</code>文件，并添加以下内容（根据你的实际情况修改）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="na">propertiesCopy</span> <span class="s">Codesonar.projectKey=my-java-project</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.sources</span><span class="o">=</span><span class="s">.</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.java.binaries</span><span class="o">=</span><span class="s">build/classes</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.host.url</span><span class="o">=</span><span class="s">http://localhost:9000</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.login</span><span class="o">=</span><span class="s">admin</span>
+</span></span><span class="line"><span class="cl"><span class="na">sonar.password</span><span class="o">=</span><span class="s">admin</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>运行SonarQube Scanner：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./gradlew sonarqube
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="4-查看结果">4. 查看结果</h4>
+<p>扫描完成后，你可以在浏览器中访问 <code>http://localhost:9000</code> 来查看你的项目的质量报告。使用你的SonarQube实例的用户名和密码登录。</p>
+<h4 id="注意事项">注意事项：</h4>
+<ul>
+<li>确保SonarQube和你的Java项目在同一网络中，或者正确配置了网络设置以允许访问。</li>
+<li>根据你的具体需求调整<code>sonar-project.properties</code>或<code>gradle.properties</code>文件中的配置项。例如，指定不同的源代码目录或二进制目录。</li>
+<li>如果使用的是非root用户，可能需要以适当的方式运行Docker容器或SonarQube Scanner，例如使用<code>sudo</code>或通过用户组管理权限。</li>
+<li>确保SonarQube服务器的版本与SonarQube Scanner兼容。如果不确定，可以查看官方文档或使用最新版本的Scanner。</li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

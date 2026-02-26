@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/"
-        },"genre": "posts","wordcount":  14357 ,
+        },"genre": "posts","wordcount":  16724 ,
         "url": "https:\/\/hubu8.github.io\/posts\/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8\/","datePublished": "2025-08-01T08:59:26+08:00","dateModified": "2025-08-01T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">凯同学的面经(2025-8)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E9%9D%A2%E8%AF%95/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java面试</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 14357 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 29 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-01">2025-08-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 16724 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 34 分钟&nbsp;<span id="/posts/%E5%87%AF%E5%90%8C%E5%AD%A6%E7%9A%84%E9%9D%A2%E7%BB%8F2025-8/" class="leancloud_visitors" data-flag-title="凯同学的面经(2025-8)">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -1824,8 +1824,99 @@ InnoDB完全支持原子性、一致性、隔离性和持久性，适合金融�
 <h2 id="tplink二面-hr闲聊">tplink二面-hr闲聊</h2>
 <h2 id="tplink三面2025-09-02">tplink三面（2025-09-02）</h2>
 <h3 id="1mysqlpgsql的区别一次update语句磁盘中文件是发生了什么">1、mysql、pgsql的区别？一次update语句，磁盘中文件是发生了什么</h3>
+<p>MySQL 和 PostgreSQL（简称 PG）在处理 UPDATE 语句时，对磁盘中文件的影响存在一些差异，主要体现在存储结构、日志机制和并发控制等方面。</p>
+<ol>
+<li>‌存储结构差异‌
+MySQL (InnoDB)‌：采用索引组织表（IOT），数据按主键顺序存储在 B+ 树中。当执行 UPDATE 时，如果更新的是主键或索引列，可能会导致页分裂或数据移动，从而影响磁盘上的物理存储位置。
+PostgreSQL‌：使用堆表（Heap Table）存储数据，行数据在磁盘上是无序的，通过行标识符（CTID）来定位。更新操作通常会生成新的行版本（在 MVCC 机制下），旧版本数据不会立即删除，而是标记为“已删除”或“过期”，直到后续的 VACUUM 操作清理。</li>
+<li>‌日志机制‌
+MySQL (InnoDB)‌：使用重做日志（Redo Log）记录事务的修改，确保数据的持久性。UPDATE 操作会写入 redo log，保证即使系统崩溃也能恢复到一致状态。此外，InnoDB 还有 undo log 来支持回滚和 MVCC。
+PostgreSQL‌：使用 WAL（Write-Ahead Logging）机制记录所有变更。每个 UPDATE 操作都会被记录到 WAL 日志中，以确保事务的原子性和持久性。同时，PostgreSQL 通过 MVCC 实现并发控制，更新不会直接覆盖原数据，而是产生新版本。</li>
+<li>‌并发控制与锁机制‌
+MySQL (InnoDB)‌：支持行级锁和间隙锁（Gap Lock），在高并发场景下，间隙锁可能导致“锁住一片数据”的现象，影响性能。
+PostgreSQL‌：使用乐观并发控制（OCC），通过 MVCC 实现读写不冲突，减少了锁竞争。</li>
+<li>‌磁盘文件的变化‌
+MySQL‌：当执行 UPDATE 时，InnoDB 会根据更新内容决定是否需要修改页中的数据行。若更新字段未改变，则可能只更新索引；若字段改变，可能触发页内或页间的移动，甚至产生新的页。日志文件（如 redo log）记录这些操作以便恢复。
+PostgreSQL‌：UPDATE 操作在磁盘上不会直接覆盖原行，而是插入一条新行，旧行被标记为无效。这一过程由 MVCC 管理，多个事务可以并发访问不同版本的数据。WAL 日志记录了更新操作，确保一致性。
+总结</li>
+</ol>
+<p>虽然两者都支持事务和持久化，但在 UPDATE 操作对磁盘文件的影响上，MySQL 更依赖于索引组织和页结构，而 PostgreSQL 更依赖于 MVCC 和 WAL 日志机制。</p>
+<p>如果你有具体场景或性能需求，可进一步探讨其在实际应用中的表现。</p>
 <h3 id="2苍穹技术能介绍一下吗具体这个模型用到了什么技术代码怎么样影响这个系统的有对苍穹的性能做优化吗">2、苍穹技术能介绍一下吗？具体这个模型用到了什么技术，代码怎么样影响这个系统的，有对苍穹的性能做优化吗？</h3>
+<p>苍穹平台是金蝶自主研发的企业级低代码开发平台，其核心技术与架构设计围绕“动态领域模型”（KDDM）展开，旨在支持企业快速构建高可用、高并发的数字化应用。以下是关于苍穹技术体系、模型实现、代码影响及性能优化的详细说明：</p>
+<p>一、苍穹平台核心技术与模型实现</p>
+<p>苍穹平台的核心技术基础包括：</p>
+<ul>
+<li>
+<p>动态领域模型（KDDM）‌：这是苍穹平台的底层逻辑核心，通过元数据驱动业务逻辑，使系统能够灵活应对企业多变的业务需求。KDDM将业务对象、字段、规则、流程等以模型形式抽象出来，支持图形化配置与插件扩展。</p>
+</li>
+<li>
+<p>云原生架构‌：平台采用微服务架构，支持容器化部署，具备高可用性与弹性伸缩能力，适用于私有云、公有云和混合云环境。</p>
+</li>
+<li>
+<p>低代码开发能力‌：通过可视化设计器与插件机制，开发者可快速构建应用，减少代码编写量，提升开发效率。</p>
+</li>
+</ul>
+<p>在具体实现上，苍穹通过以下技术支撑其动态模型：</p>
+<ul>
+<li>
+<p>反射机制‌：插件的执行依赖于反射机制，平台在事件触发时动态加载插件类并执行指定方法。</p>
+</li>
+<li>
+<p>元数据驱动‌：业务逻辑由元数据定义，而非硬编码，实现了业务与技术的解耦。</p>
+</li>
+<li>
+<p>分布式与并发控制‌：平台支持多线程处理，通过线程池、分布式锁等机制控制并发，避免数据冲突。</p>
+</li>
+</ul>
+<p>二、代码对系统的影响</p>
+<p>苍穹的代码设计强调模块化与低耦合，主要体现在：</p>
+<ul>
+<li>
+<p>插件机制‌：通过插件机制扩展功能，开发者可在不修改核心代码的前提下，实现个性化业务逻辑。</p>
+</li>
+<li>
+<p>事务与并发控制‌：在高并发场景下，系统通过事务隔离级别与锁机制（如乐观锁、悲观锁）保障数据一致性。</p>
+</li>
+<li>
+<p>性能优化策略‌：针对大数据量处理，系统支持分批处理、批量查询、异步任务等优化手段，减少数据库压力。</p>
+</li>
+</ul>
+<p>三、苍穹性能优化实践</p>
+<p>苍穹平台在性能优化方面采取了多种策略：</p>
+<ul>
+<li>
+<p>数据库层面优化‌：针对 MySQL 和 PostgreSQL 的事务隔离级别差异，平台在设计时充分考虑并发场景下的性能表现，避免锁等待与死锁。</p>
+</li>
+<li>
+<p>代码层面优化‌：通过分析慢 SQL、线程堆栈、调用链等方式定位性能瓶颈，优化循环查询、批量处理逻辑等。</p>
+</li>
+<li>
+<p>并发与异步处理‌：采用异步任务、多线程处理、分批操作等方式提升系统吞吐量，减少用户等待时间。</p>
+</li>
+<li>
+<p>监控与诊断工具‌：平台提供集中式日志系统（如 ELK）与堆栈分析工具，帮助开发者快速定位问题。</p>
+</li>
+</ul>
+<p>四、总结</p>
+<p>苍穹平台通过 KDDM 模型实现业务的动态配置与扩展，结合云原生架构与低代码开发能力，显著提升了企业开发效率。其性能优化策略覆盖数据库、代码、并发控制等多个层面，保障了系统在高并发、大数据量场景下的稳定运行。</p>
 <h3 id="3介绍一下你对项目的一个难点的优化">3、介绍一下你对项目的一个难点的优化</h3>
+<p>在苍穹平台项目中，一个关键难点的优化主要体现在‌动态领域模型（KDDM）与高并发事务处理的协同优化‌。该优化通过以下方式实现：</p>
+<ol>
+<li>
+<p><strong>元数据驱动的动态模型优化</strong>‌：苍穹平台采用动态领域模型（KDDM），使得业务逻辑通过元数据定义而非硬编码实现。在高并发场景下，系统通过缓存机制优化元数据加载速度，减少重复解析带来的性能损耗。</p>
+</li>
+<li>
+<p><strong>事务隔离与锁机制优化</strong>‌：针对数据库层面的并发控制，平台采用乐观锁与悲观锁相结合的策略。在更新操作中，通过减少锁粒度与优化事务提交逻辑，降低锁等待时间，提升系统吞吐量。</p>
+</li>
+<li>
+<p><strong>插件机制的性能优化</strong>‌：苍穹平台通过反射机制动态加载插件，为避免频繁反射带来的性能开销，系统引入插件缓存机制，提升插件执行效率。</p>
+</li>
+<li>
+<p><strong>异步处理与批量操作</strong>‌：在处理大数据量时，平台通过异步任务与批量操作机制，减少数据库压力，提升响应速度。例如，将多个小事务合并为批量更新操作，减少数据库交互次数。</p>
+</li>
+</ol>
+<p>这些优化措施有效解决了在高并发、复杂业务场景下，苍穹平台动态模型与事务处理之间的性能瓶颈，显著提升了系统的稳定性和响应速度。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

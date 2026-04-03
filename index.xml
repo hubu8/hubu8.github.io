@@ -3,7 +3,7 @@
         <title>Eccentric&#39;s Note</title>
         <link>https://188.hubu.eu.cc/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Apr 2026 08:59:26 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Apr 2026 08:59:26 &#43;0800</lastBuildDate>
             <atom:link href="https://188.hubu.eu.cc/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>hugo绘制echarts图表</title>
@@ -12,6 +12,14 @@
     <author>Dillon</author>
     <guid>https://188.hubu.eu.cc/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/</guid>
     <description><![CDATA[<p><code>echarts</code> shortcode 使用 <a href="https://echarts.apache.org/" target="_blank" rel="noopener noreffer ">ECharts</a> 库提供数据可视化的功能.</p>]]></description>
+</item>
+<item>
+    <title>数字签名原理与校验流程</title>
+    <link>https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Fri, 03 Apr 2026 08:59:26 &#43;0800</pubDate>
+    <author>Better</author>
+    <guid>https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[<p>数字签名是一种结合非对称加密与哈希算法的安全机制，用于保证数据的完整性、真实性和不可否认性。验证过程的核心思想是：用发送方公钥解密签名得到摘要，再与接收方自行计算的摘要比对。</p>]]></description>
 </item>
 <item>
     <title>github pages 访问加速</title>
@@ -77,14 +85,6 @@
     <author>Better</author>
     <guid>https://188.hubu.eu.cc/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>什么是代理对象？</title>
-    <link>https://188.hubu.eu.cc/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/</link>
-    <pubDate>Thu, 01 Jan 2026 08:59:26 &#43;0800</pubDate>
-    <author>Better</author>
-    <guid>https://188.hubu.eu.cc/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/</guid>
-    <description><![CDATA[<p>在Spring框架中，代理对象是一个非常重要的概念，特别是在使用依赖注入（Dependency Injection）和面向切面编程（AOP，Aspect-Oriented Programming）时。下面我将详细解释什么是代理对象，以及在Spring中如何创建和使用代理对象。</p>]]></description>
 </item>
 </channel>
 </rss>

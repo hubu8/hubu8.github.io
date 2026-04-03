@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数字签名 on Eccentric&#39;s Note</title>
+    <link>https://188.hubu.eu.cc/tags/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</link>
+    <description>Recent content in 数字签名 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 03 Apr 2026 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://188.hubu.eu.cc/tags/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数字签名原理与校验流程</title>
+      <link>https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Fri, 03 Apr 2026 08:59:26 +0800</pubDate>
+      <guid>https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/</guid>
+      <description>&lt;p&gt;数字签名是一种结合非对称加密与哈希算法的安全机制，用于保证数据的完整性、真实性和不可否认性。验证过程的核心思想是：用发送方公钥解密签名得到摘要，再与接收方自行计算的摘要比对。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

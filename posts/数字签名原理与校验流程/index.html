@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>数字签名原理与校验流程 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="数字签名原理与校验流程">
+  <meta property="og:description" content="数字签名是一种结合非对称加密与哈希算法的安全机制，用于保证数据的完整性、真实性和不可否认性。验证过程的核心思想是：用发送方公钥解密签名得到摘要，再与接收方自行计算的摘要比对。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-03T08:59:26+08:00">
+    <meta property="article:modified_time" content="2026-04-03T08:59:26+08:00">
+    <meta property="article:tag" content="数字签名">
+    <meta property="article:tag" content="PDF">
+    <meta property="og:image" content="https://188.hubu.eu.cc/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://188.hubu.eu.cc/logo.png">
+  <meta name="twitter:title" content="数字签名原理与校验流程">
+  <meta name="twitter:description" content="数字签名是一种结合非对称加密与哈希算法的安全机制，用于保证数据的完整性、真实性和不可否认性。验证过程的核心思想是：用发送方公钥解密签名得到摘要，再与接收方自行计算的摘要比对。">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/" /><link rel="prev" href="https://188.hubu.eu.cc/posts/github-pages-%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F/" /><link rel="next" href="https://188.hubu.eu.cc/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "数字签名原理与校验流程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/188.hubu.eu.cc\/posts\/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B\/"
+        },"genre": "posts","keywords": "数字签名, PDF","wordcount":  2287 ,
+        "url": "https:\/\/188.hubu.eu.cc\/posts\/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B\/","datePublished": "2026-04-03T08:59:26+08:00","dateModified": "2026-04-03T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Better"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"><i class='fa-solid fa-book'></i> pdf </a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title=""><i class='fa-solid fa-book'></i>pdf</a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i>友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">数字签名原理与校验流程</h1><h2 class="single-subtitle">数字签名原理与校验流程</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-04-03">2026-04-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2287 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/" class="leancloud_visitors" data-flag-title="数字签名原理与校验流程">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一核心概念">一、核心概念</a></li>
+    <li><a href="#二签名流程">二、签名流程</a>
+      <ul>
+        <li><a href="#关键字段说明">关键字段说明</a></li>
+        <li><a href="#byterange-的含义">ByteRange 的含义</a></li>
+      </ul>
+    </li>
+    <li><a href="#三校验流程">三、校验流程</a>
+      <ul>
+        <li><a href="#验证的三个层次">验证的三个层次</a></li>
+      </ul>
+    </li>
+    <li><a href="#四cms-signeddata-结构">四、CMS SignedData 结构</a></li>
+    <li><a href="#五常见签名格式">五、常见签名格式</a></li>
+    <li><a href="#六为什么不能直接复制签名">六、为什么不能直接复制签名</a></li>
+    <li><a href="#七信任链示意">七、信任链示意</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>数字签名是一种结合非对称加密与哈希算法的安全机制，用于保证数据的完整性、真实性和不可否认性。验证过程的核心思想是：用发送方公钥解密签名得到摘要，再与接收方自行计算的摘要比对。</p>
+<h2 id="一核心概念">一、核心概念</h2>
+<p>PDF 数字签名本质上是 <strong>CMS (Cryptographic Message Syntax) 签名</strong> 嵌入到 PDF 文件结构中。</p>
+<p>签名涉及三个角色：</p>
+<ul>
+<li><strong>签名者</strong>：持有私钥，对文档进行签名</li>
+<li><strong>验证者</strong>：持有公钥（通过证书获取），验证签名是否合法</li>
+<li><strong>CA（证书颁发机构）</strong>：为签名者颁发证书，建立信任链</li>
+</ul>
+<hr>
+<h2 id="二签名流程">二、签名流程</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│                    签名过程                           │
+</span></span><span class="line"><span class="cl">│                                                      │
+</span></span><span class="line"><span class="cl">│  原始 PDF                                             │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  1. 在 PDF 中预留签名空间（/Contents 占位）               │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  2. 计算 ByteRange 范围内的字节哈希                      │
+</span></span><span class="line"><span class="cl">│     （排除 /Contents 占位区域）                         │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  3. 用签名者的私钥对哈希值进行加密 → 得到签名值              │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  4. 将签名值 + 证书链打包为 CMS SignedData               │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  5. 将 CMS 数据填入 /Contents 占位区域                  │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  已签名的 PDF                                         │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────────────────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="关键字段说明">关键字段说明</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">签名字典 (Signature Dictionary):
+</span></span><span class="line"><span class="cl">  /Type       /Sig
+</span></span><span class="line"><span class="cl">  /Filter     /Adobe.PPKLite          ← 签名处理器
+</span></span><span class="line"><span class="cl">  /SubFilter  /adbe.pkcs7.detached    ← 签名格式（CMS detached）
+</span></span><span class="line"><span class="cl">  /ByteRange  [0 offset1 offset2 len] ← 哈希计算的字节范围
+</span></span><span class="line"><span class="cl">  /Contents   &lt;hex...&gt;                ← CMS SignedData（DER 编码，hex 表示）
+</span></span><span class="line"><span class="cl">  /Reason     (已审批)                 ← 签名原因（可选）
+</span></span><span class="line"><span class="cl">  /Location   (北京)                   ← 签名地点（可选）
+</span></span><span class="line"><span class="cl">  /M          (D:20240101120000+08&#39;00&#39;)← 签名时间（可选）
+</span></span><span class="line"><span class="cl">  /Name       (张三)                   ← 签名者名称（可选）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="byterange-的含义">ByteRange 的含义</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PDF 文件字节流:
+</span></span><span class="line"><span class="cl">|&lt;--- 第一段 ---&gt;|&lt;--- /Contents ---&gt;|&lt;--- 第二段 ---&gt;|
+</span></span><span class="line"><span class="cl">0            offset1              offset2           EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ByteRange = [0, offset1, offset2, 文件总长-offset2]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">哈希计算 = SHA256(第一段 + 第二段)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>签名计算时<strong>跳过</strong> <code>/Contents</code> 区域，因为签名结果本身就存在那里（不能对自己签名）。</p>
+<hr>
+<h2 id="三校验流程">三、校验流程</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│                    验证过程                           │
+</span></span><span class="line"><span class="cl">│                                                      │
+</span></span><span class="line"><span class="cl">│  已签名的 PDF                                          │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  1. 读取签名字典，获取 /ByteRange 和 /Contents           │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  2. 根据 ByteRange 提取文件字节，计算哈希                 │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  3. 解析 /Contents 中的 CMS SignedData                │
+</span></span><span class="line"><span class="cl">│     提取：签名值、签名者证书、证书链                       │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  4. 用证书中的公钥解密签名值 → 得到原始哈希                 │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  5. 比较：计算的哈希 == 解密的哈希？                      │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ├── 一致 → 文档完整性验证通过                        │
+</span></span><span class="line"><span class="cl">│     └── 不一致 → 文档已被篡改                           │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  6. 验证证书链是否可信（是否由受信 CA 签发）                │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ├── 可信 → 签名有效 ✓                              │
+</span></span><span class="line"><span class="cl">│     └── 不可信 → 签名者身份无法确认 ⚠                    │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ▼                                                │
+</span></span><span class="line"><span class="cl">│  7. 检查签名覆盖范围                                    │
+</span></span><span class="line"><span class="cl">│     │                                                │
+</span></span><span class="line"><span class="cl">│     ├── 覆盖整个文件 → 无后续修改                        │
+</span></span><span class="line"><span class="cl">│     └── 未覆盖全部 → 签名后文档有增量更新 ⚠               │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────────────-────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="验证的三个层次">验证的三个层次</h3>
+<table>
+  <thead>
+      <tr>
+          <th>层次</th>
+          <th>验证内容</th>
+          <th>含义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>完整性 (Integrity)</td>
+          <td>哈希比对</td>
+          <td>文档自签名后是否被修改</td>
+      </tr>
+      <tr>
+          <td>身份性 (Authenticity)</td>
+          <td>证书链验证</td>
+          <td>签名者身份是否可信</td>
+      </tr>
+      <tr>
+          <td>覆盖性 (Coverage)</td>
+          <td>ByteRange 检查</td>
+          <td>签名是否覆盖整个文档</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="四cms-signeddata-结构">四、CMS SignedData 结构</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ContentInfo
+</span></span><span class="line"><span class="cl">  └─ contentType: signedData (1.2.840.113549.1.7.2)
+</span></span><span class="line"><span class="cl">  └─ content: SignedData
+</span></span><span class="line"><span class="cl">       ├─ version: 1
+</span></span><span class="line"><span class="cl">       ├─ digestAlgorithms: { sha256 }
+</span></span><span class="line"><span class="cl">       ├─ encapContentInfo:
+</span></span><span class="line"><span class="cl">       │    └─ contentType: data (detached，无实际内容)
+</span></span><span class="line"><span class="cl">       ├─ certificates:                    ← 证书链
+</span></span><span class="line"><span class="cl">       │    ├─ [0] 签名者证书
+</span></span><span class="line"><span class="cl">       │    ├─ [1] 中间 CA 证书
+</span></span><span class="line"><span class="cl">       │    └─ [2] 根 CA 证书（可选）
+</span></span><span class="line"><span class="cl">       └─ signerInfos:
+</span></span><span class="line"><span class="cl">            └─ SignerInfo
+</span></span><span class="line"><span class="cl">                 ├─ sid: 签名者标识（证书序列号）
+</span></span><span class="line"><span class="cl">                 ├─ digestAlgorithm: sha256
+</span></span><span class="line"><span class="cl">                 ├─ signedAttrs:            ← 签名属性
+</span></span><span class="line"><span class="cl">                 │    ├─ contentType
+</span></span><span class="line"><span class="cl">                 │    ├─ messageDigest       ← 文档哈希
+</span></span><span class="line"><span class="cl">                 │    └─ signingTime         ← 签名时间
+</span></span><span class="line"><span class="cl">                 ├─ signatureAlgorithm: rsaEncryption / ECDSA
+</span></span><span class="line"><span class="cl">                 └─ signature: &lt;签名值&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="五常见签名格式">五、常见签名格式</h2>
+<table>
+  <thead>
+      <tr>
+          <th>SubFilter</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>adbe.pkcs7.detached</td>
+          <td>最常用，CMS detached 签名</td>
+      </tr>
+      <tr>
+          <td>adbe.pkcs7.sha1</td>
+          <td>旧格式，SHA1 哈希（不推荐）</td>
+      </tr>
+      <tr>
+          <td>ETSI.CAdES.detached</td>
+          <td>PAdES 长期签名，支持时间戳</td>
+      </tr>
+      <tr>
+          <td>ETSI.RFC3161</td>
+          <td>文档级时间戳</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="六为什么不能直接复制签名">六、为什么不能直接复制签名</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PDF-A 的签名:
+</span></span><span class="line"><span class="cl">  哈希 = SHA256(PDF-A 的 ByteRange 内容) = abc123...
+</span></span><span class="line"><span class="cl">  签名值 = RSA_Encrypt(私钥, abc123...) = xyz789...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">如果把签名复制到 PDF-B:
+</span></span><span class="line"><span class="cl">  实际哈希 = SHA256(PDF-B 的 ByteRange 内容) = def456...  ← 不同的内容
+</span></span><span class="line"><span class="cl">  解密签名 = RSA_Decrypt(公钥, xyz789...) = abc123...     ← 原来的哈希
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  def456... ≠ abc123...  → 验证失败 ✗
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>签名是对<strong>特定文档内容</strong>的数学承诺，内容变了签名就失效。
+这正是数字签名防篡改的核心原理。</p>
+<hr>
+<h2 id="七信任链示意">七、信任链示意</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">根 CA 证书（预装在系统/Adobe 中）
+</span></span><span class="line"><span class="cl">  │
+</span></span><span class="line"><span class="cl">  │ 签发
+</span></span><span class="line"><span class="cl">  ▼
+</span></span><span class="line"><span class="cl">中间 CA 证书
+</span></span><span class="line"><span class="cl">  │
+</span></span><span class="line"><span class="cl">  │ 签发
+</span></span><span class="line"><span class="cl">  ▼
+</span></span><span class="line"><span class="cl">签名者证书（包含公钥）
+</span></span><span class="line"><span class="cl">  │
+</span></span><span class="line"><span class="cl">  │ 对应的私钥签名
+</span></span><span class="line"><span class="cl">  ▼
+</span></span><span class="line"><span class="cl">PDF 文档签名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Adobe Reader 内置了受信任的根 CA 列表 (AATL)。
+只有证书链最终能追溯到受信根 CA，签名才会显示为&quot;有效&quot;绿色勾。
+自签名证书因为不在信任列表中，会显示&quot;签名者身份未知&quot;黄色警告。</p>
+<p>个人的证书能否破解？</p>
+<p>只要密钥长度足够，个人证书（自签名证书）和 CA 签发的证书在密码学安全性上是一样的，都是不可破解的。</p>
+<p>核心在于非对称加密的数学难题：</p>
+<p>RSA 依赖大整数分解难题（2048 位 RSA 意味着要分解一个 617 位十进制数的乘积）
+ECC 依赖椭圆曲线离散对数难题
+目前的算力水平下，暴力破解 2048 位 RSA 密钥需要的时间远超宇宙年龄，所以实际上是不可破解的。</p>
+<p>个人证书和 CA 证书的区别不在安全性，而在信任：</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>个人/自签名证书</th>
+          <th>CA 签发的证书</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>加密强度</td>
+          <td>一样</td>
+          <td>一样</td>
+      </tr>
+      <tr>
+          <td>防篡改</td>
+          <td>能</td>
+          <td>能</td>
+      </tr>
+      <tr>
+          <td>身份可信</td>
+          <td>只有自己认</td>
+          <td>第三方背书，大家都认</td>
+      </tr>
+      <tr>
+          <td>Adobe 显示</td>
+          <td>黄色警告&quot;身份未知&quot;</td>
+          <td>绿色勾&quot;签名有效&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<p>打个比方：个人证书就像你自己刻了一个章，章本身造不了假，但别人不认；CA 证书就像公安局给你发的身份证，大家都信。</p>
+<p>所以你的私钥只要保管好（不泄露、密码够强），签名就是安全的。别人能看到你的公钥和证书信息，但推不出私钥，也伪造不了你的签名。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-04-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/">数字签名</a>,&nbsp;<a href="/tags/pdf/">PDF</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/github-pages-%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F/" class="prev" rel="prev" title="github pages 访问加速"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>github pages 访问加速</a>
+            <a href="/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/" class="next" rel="next" title="hugo绘制echarts图表">hugo绘制echarts图表<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

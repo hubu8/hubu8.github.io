@@ -3,7 +3,7 @@
         <title>Eccentric&#39;s Note</title>
         <link>https://hubu8.github.io/</link>
         <description>本站主要用来收集整理资料、记录笔记，方便自己查询使用。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Feb 2026 08:59:26 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Apr 2026 08:59:26 &#43;0800</lastBuildDate>
             <atom:link href="https://hubu8.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>hugo绘制echarts图表</title>
@@ -12,6 +12,14 @@
     <author>Dillon</author>
     <guid>https://hubu8.github.io/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/</guid>
     <description><![CDATA[<p><code>echarts</code> shortcode 使用 <a href="https://echarts.apache.org/" target="_blank" rel="noopener noreffer ">ECharts</a> 库提供数据可视化的功能.</p>]]></description>
+</item>
+<item>
+    <title>github pages 访问加速</title>
+    <link>https://hubu8.github.io/posts/github-pages-%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F/</link>
+    <pubDate>Wed, 01 Apr 2026 08:59:26 &#43;0800</pubDate>
+    <author>Better</author>
+    <guid>https://hubu8.github.io/posts/github-pages-%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F/</guid>
+    <description><![CDATA[<p>GitHub Pages 在国内本身就慢、不稳定，想让别人也能稳定快速访问，最靠谱、成本最低的方案是：套国内 CDN / 反代加速。</p>]]></description>
 </item>
 <item>
     <title>领星-牛客网面经</title>
@@ -77,14 +85,6 @@
     <author>Better</author>
     <guid>https://hubu8.github.io/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/</guid>
     <description><![CDATA[<p>在Spring框架中，代理对象是一个非常重要的概念，特别是在使用依赖注入（Dependency Injection）和面向切面编程（AOP，Aspect-Oriented Programming）时。下面我将详细解释什么是代理对象，以及在Spring中如何创建和使用代理对象。</p>]]></description>
-</item>
-<item>
-    <title>Linux 定时任务工具 crontab 配置详解</title>
-    <link>https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</link>
-    <pubDate>Tue, 09 Dec 2025 08:59:26 &#43;0800</pubDate>
-    <author>Eccentric</author>
-    <guid>https://hubu8.github.io/posts/linux-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7-crontab-%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

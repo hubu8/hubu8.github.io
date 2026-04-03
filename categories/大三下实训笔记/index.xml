@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>大三下实训笔记 on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/</link>
+    <link>https://188.hubu.eu.cc/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 大三下实训笔记 on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 28 Jul 2021 20:59:34 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/categories/%E5%A4%A7%E4%B8%89%E4%B8%8B%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JDBC-01</title>
-      <link>https://hubu8.github.io/posts/jdbc-01/</link>
+      <link>https://188.hubu.eu.cc/posts/jdbc-01/</link>
       <pubDate>Wed, 28 Jul 2021 20:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/jdbc-01/</guid>
+      <guid>https://188.hubu.eu.cc/posts/jdbc-01/</guid>
       <description></description>
     </item>
     <item>
       <title>session &amp; jsp &amp; mysql</title>
-      <link>https://hubu8.github.io/posts/session-jsp-mysql/</link>
+      <link>https://188.hubu.eu.cc/posts/session-jsp-mysql/</link>
       <pubDate>Wed, 28 Jul 2021 19:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/session-jsp-mysql/</guid>
+      <guid>https://188.hubu.eu.cc/posts/session-jsp-mysql/</guid>
       <description></description>
     </item>
     <item>
       <title>request &amp; response</title>
-      <link>https://hubu8.github.io/posts/request-response/</link>
+      <link>https://188.hubu.eu.cc/posts/request-response/</link>
       <pubDate>Sat, 24 Jul 2021 19:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/request-response/</guid>
+      <guid>https://188.hubu.eu.cc/posts/request-response/</guid>
       <description></description>
     </item>
     <item>
       <title>Collection -01</title>
-      <link>https://hubu8.github.io/posts/collection-01/</link>
+      <link>https://188.hubu.eu.cc/posts/collection-01/</link>
       <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/collection-01/</guid>
+      <guid>https://188.hubu.eu.cc/posts/collection-01/</guid>
       <description></description>
     </item>
     <item>
       <title>Collection -02</title>
-      <link>https://hubu8.github.io/posts/collection-02/</link>
+      <link>https://188.hubu.eu.cc/posts/collection-02/</link>
       <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/collection-02/</guid>
+      <guid>https://188.hubu.eu.cc/posts/collection-02/</guid>
       <description></description>
     </item>
     <item>
       <title>Collection -03</title>
-      <link>https://hubu8.github.io/posts/collection-03/</link>
+      <link>https://188.hubu.eu.cc/posts/collection-03/</link>
       <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/collection-03/</guid>
+      <guid>https://188.hubu.eu.cc/posts/collection-03/</guid>
       <description></description>
     </item>
     <item>
       <title>Collection -04</title>
-      <link>https://hubu8.github.io/posts/collection-04/</link>
+      <link>https://188.hubu.eu.cc/posts/collection-04/</link>
       <pubDate>Wed, 21 Jul 2021 15:32:07 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/collection-04/</guid>
+      <guid>https://188.hubu.eu.cc/posts/collection-04/</guid>
       <description></description>
     </item>
     <item>
       <title>File &amp; IO 二</title>
-      <link>https://hubu8.github.io/posts/file-io-%E4%BA%8C/</link>
+      <link>https://188.hubu.eu.cc/posts/file-io-%E4%BA%8C/</link>
       <pubDate>Mon, 19 Jul 2021 20:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/file-io-%E4%BA%8C/</guid>
+      <guid>https://188.hubu.eu.cc/posts/file-io-%E4%BA%8C/</guid>
       <description></description>
     </item>
     <item>
       <title>Servlet</title>
-      <link>https://hubu8.github.io/posts/servlet/</link>
+      <link>https://188.hubu.eu.cc/posts/servlet/</link>
       <pubDate>Mon, 19 Jul 2021 20:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/servlet/</guid>
+      <guid>https://188.hubu.eu.cc/posts/servlet/</guid>
       <description></description>
     </item>
     <item>
       <title>File &amp; IO 一</title>
-      <link>https://hubu8.github.io/posts/file-io-%E4%B8%80/</link>
+      <link>https://188.hubu.eu.cc/posts/file-io-%E4%B8%80/</link>
       <pubDate>Mon, 19 Jul 2021 09:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/file-io-%E4%B8%80/</guid>
+      <guid>https://188.hubu.eu.cc/posts/file-io-%E4%B8%80/</guid>
       <description></description>
     </item>
     <item>
       <title>Tomcat&amp;Http</title>
-      <link>https://hubu8.github.io/posts/tomcathttp/</link>
+      <link>https://188.hubu.eu.cc/posts/tomcathttp/</link>
       <pubDate>Sat, 17 Jul 2021 19:59:34 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/tomcathttp/</guid>
+      <guid>https://188.hubu.eu.cc/posts/tomcathttp/</guid>
       <description></description>
     </item>
   </channel>

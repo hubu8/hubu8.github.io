@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JPA on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/tags/jpa/</link>
+    <link>https://188.hubu.eu.cc/tags/jpa/</link>
     <description>Recent content in JPA on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 26 Aug 2021 15:49:24 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JPA</title>
-      <link>https://hubu8.github.io/posts/jpa/</link>
+      <link>https://188.hubu.eu.cc/posts/jpa/</link>
       <pubDate>Thu, 26 Aug 2021 15:49:24 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/jpa/</guid>
+      <guid>https://188.hubu.eu.cc/posts/jpa/</guid>
       <description></description>
     </item>
     <item>
       <title>JPA实现动态SQL</title>
-      <link>https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</link>
+      <link>https://188.hubu.eu.cc/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</link>
       <pubDate>Sat, 15 May 2021 12:03:18 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</guid>
+      <guid>https://188.hubu.eu.cc/posts/jpa%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81sql/</guid>
       <description></description>
     </item>
   </channel>

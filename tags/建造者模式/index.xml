@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>建造者模式 on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+    <link>https://188.hubu.eu.cc/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
     <description>Recent content in 建造者模式 on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 16 Apr 2021 20:51:31 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实验三---抽象工厂模式、建造者模式</title>
-      <link>https://hubu8.github.io/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://188.hubu.eu.cc/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Fri, 16 Apr 2021 20:51:31 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://188.hubu.eu.cc/posts/%E5%AE%9E%E9%AA%8C%E4%B8%89---%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>建造者模式</title>
-      <link>https://hubu8.github.io/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://188.hubu.eu.cc/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Fri, 16 Apr 2021 03:51:31 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://188.hubu.eu.cc/posts/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
   </channel>

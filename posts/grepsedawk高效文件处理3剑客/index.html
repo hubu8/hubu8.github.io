@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>grep、sed、awk高效文件处理3剑客 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://hubu8.github.io/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/">
+        <title>grep、sed、awk高效文件处理3剑客 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://188.hubu.eu.cc/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/">
   <meta property="og:site_name" content="Eccentric&#39;s Note">
   <meta property="og:title" content="grep、sed、awk高效文件处理3剑客">
   <meta property="og:description" content="grep、sed、awk我们叫他们三剑客，掌握它们可以更好的运维，提升工作效率，即使不是运维，对我们处理数据都是非常方便的～就很多数据处理来讲，写程序肯定是也能处理的，但是远没有已经存在特定功能的命令更高效，我们只需要操作命令即可。">
@@ -16,14 +16,14 @@
     <meta property="article:tag" content="Grep">
     <meta property="article:tag" content="Sed">
     <meta property="article:tag" content="Awk">
-    <meta property="og:image" content="https://hubu8.github.io/logo.png">
+    <meta property="og:image" content="https://188.hubu.eu.cc/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://hubu8.github.io/logo.png">
+  <meta name="twitter:image" content="https://188.hubu.eu.cc/logo.png">
   <meta name="twitter:title" content="grep、sed、awk高效文件处理3剑客">
   <meta name="twitter:description" content="grep、sed、awk我们叫他们三剑客，掌握它们可以更好的运维，提升工作效率，即使不是运维，对我们处理数据都是非常方便的～就很多数据处理来讲，写程序肯定是也能处理的，但是远没有已经存在特定功能的命令更高效，我们只需要操作命令即可。">
 <meta name="application-name" content="Eccentric&#39;s Note">
-<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hubu8.github.io/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/" /><link rel="prev" href="https://hubu8.github.io/posts/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" /><link rel="next" href="https://hubu8.github.io/posts/%E9%A2%86%E6%98%9F-%E7%89%9B%E5%AE%A2%E7%BD%91%E9%9D%A2%E7%BB%8F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://188.hubu.eu.cc/posts/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2/" /><link rel="prev" href="https://188.hubu.eu.cc/posts/uuid%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" /><link rel="next" href="https://188.hubu.eu.cc/posts/%E9%A2%86%E6%98%9F-%E7%89%9B%E5%AE%A2%E7%BD%91%E9%9D%A2%E7%BB%8F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -33,9 +33,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hubu8.github.io\/posts\/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2\/"
+            "@id": "https:\/\/188.hubu.eu.cc\/posts\/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2\/"
         },"genre": "posts","keywords": "grep, sed, awk","wordcount":  6150 ,
-        "url": "https:\/\/hubu8.github.io\/posts\/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2\/","datePublished": "2026-01-19T08:59:26+08:00","dateModified": "2026-01-19T08:59:26+08:00","publisher": {
+        "url": "https:\/\/188.hubu.eu.cc\/posts\/grepsedawk%E9%AB%98%E6%95%88%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%863%E5%89%91%E5%AE%A2\/","datePublished": "2026-01-19T08:59:26+08:00","dateModified": "2026-01-19T08:59:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",

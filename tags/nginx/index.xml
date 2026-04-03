@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/tags/nginx/</link>
+    <link>https://188.hubu.eu.cc/tags/nginx/</link>
     <description>Recent content in Nginx on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 20 May 2021 09:11:23 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Https配置</title>
-      <link>https://hubu8.github.io/posts/https%E9%85%8D%E7%BD%AE/</link>
+      <link>https://188.hubu.eu.cc/posts/https%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Thu, 20 May 2021 09:11:23 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/https%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://188.hubu.eu.cc/posts/https%E9%85%8D%E7%BD%AE/</guid>
       <description></description>
     </item>
   </channel>

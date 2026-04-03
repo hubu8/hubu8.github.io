@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ThreadLocal on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/tags/threadlocal/</link>
+    <link>https://188.hubu.eu.cc/tags/threadlocal/</link>
     <description>Recent content in ThreadLocal on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 24 May 2023 10:58:05 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/tags/threadlocal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/tags/threadlocal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ThreadLocal多值应用</title>
-      <link>https://hubu8.github.io/posts/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</link>
+      <link>https://188.hubu.eu.cc/posts/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 24 May 2023 10:58:05 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://188.hubu.eu.cc/posts/threadlocal%E5%A4%9A%E5%80%BC%E5%BA%94%E7%94%A8/</guid>
       <description></description>
     </item>
   </channel>

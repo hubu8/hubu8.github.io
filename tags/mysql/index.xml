@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/tags/mysql/</link>
+    <link>https://188.hubu.eu.cc/tags/mysql/</link>
     <description>Recent content in MySQL on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 17 Apr 2021 20:47:26 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL</title>
-      <link>https://hubu8.github.io/posts/mysql/</link>
+      <link>https://188.hubu.eu.cc/posts/mysql/</link>
       <pubDate>Sat, 17 Apr 2021 20:47:26 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/mysql/</guid>
+      <guid>https://188.hubu.eu.cc/posts/mysql/</guid>
       <description></description>
     </item>
   </channel>

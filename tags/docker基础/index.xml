@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker基础 on Eccentric&#39;s Note</title>
-    <link>https://hubu8.github.io/tags/docker%E5%9F%BA%E7%A1%80/</link>
+    <link>https://188.hubu.eu.cc/tags/docker%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in Docker基础 on Eccentric&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 06 Apr 2021 20:23:59 +0800</lastBuildDate>
-    <atom:link href="https://hubu8.github.io/tags/docker%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://188.hubu.eu.cc/tags/docker%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker基础</title>
-      <link>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</link>
+      <link>https://188.hubu.eu.cc/posts/docker%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Tue, 06 Apr 2021 20:23:59 +0800</pubDate>
-      <guid>https://hubu8.github.io/posts/docker%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://188.hubu.eu.cc/posts/docker%E5%9F%BA%E7%A1%80/</guid>
       <description>&lt;p&gt;从开发到上线，两套环境，版本不同导致软件不可用，开发与运维有差距！部署配置环境费时费力&lt;/p&gt;&#xA;&lt;p&gt;原：jar&amp;mdash;&amp;mdash;-redis,mysql,jdk,项目能不能带上环境安装打包？跨平台，隔离，&lt;/p&gt;</description>
     </item>
   </channel>

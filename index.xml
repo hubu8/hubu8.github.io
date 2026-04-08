@@ -28,6 +28,14 @@
 </ol>]]></description>
 </item>
 <item>
+    <title>安卓逆向入门-apk文件结构</title>
+    <link>https://188.hubu.eu.cc/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
+    <pubDate>Tue, 07 Apr 2026 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://188.hubu.eu.cc/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>数字签名原理与校验流程</title>
     <link>https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/</link>
     <pubDate>Fri, 03 Apr 2026 08:59:26 &#43;0800</pubDate>
@@ -83,14 +91,6 @@
     <author>Better</author>
     <guid>https://188.hubu.eu.cc/posts/%E5%A4%A7%E5%8E%82%E4%B8%BA%E5%95%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A4%96%E9%94%AE/</guid>
     <description><![CDATA[<p>大家在学习数据库的过程中一定都接触过外键这个概念，并且在各种课后习题中外键还是一个非常重要的考察内容，但是在实际的企业开发过程中，你会发现外键是被严格禁止使用的，当需要多个表之间进行关联时，做法是冗余相关字段，而不是建立外键。</p>]]></description>
-</item>
-<item>
-    <title>Spring 如何解决循环依赖</title>
-    <link>https://188.hubu.eu.cc/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
-    <pubDate>Sat, 03 Jan 2026 08:59:26 &#43;0800</pubDate>
-    <author>Better</author>
-    <guid>https://188.hubu.eu.cc/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
-    <description><![CDATA[<p>在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>安卓逆向入门-apk文件结构 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://188.hubu.eu.cc/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="安卓逆向入门-apk文件结构">
+  <meta property="og:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-07T08:59:26+08:00">
+    <meta property="article:modified_time" content="2026-04-07T08:59:26+08:00">
+    <meta property="article:tag" content="Apk">
+    <meta property="og:image" content="https://188.hubu.eu.cc/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://188.hubu.eu.cc/logo.png">
+  <meta name="twitter:title" content="安卓逆向入门-apk文件结构">
+  <meta name="twitter:description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://188.hubu.eu.cc/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" /><link rel="prev" href="https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/" /><link rel="next" href="https://188.hubu.eu.cc/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "安卓逆向入门-apk文件结构",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/188.hubu.eu.cc\/posts\/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84\/"
+        },"genre": "posts","keywords": "apk","wordcount":  9937 ,
+        "url": "https:\/\/188.hubu.eu.cc\/posts\/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84\/","datePublished": "2026-04-07T08:59:26+08:00","dateModified": "2026-04-07T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"><i class='fa-solid fa-book'></i> pdf </a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title=""><i class='fa-solid fa-book'></i>pdf</a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i>友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安卓逆向入门-apk文件结构</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-04-07">2026-04-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 9937 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 20 分钟&nbsp;<span id="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" class="leancloud_visitors" data-flag-title="安卓逆向入门-apk文件结构">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一apk文件结构">一、apk文件结构</a>
+      <ul>
+        <li><a href="#assets文件夹">assets文件夹</a></li>
+        <li><a href="#lib文件夹">lib文件夹</a></li>
+        <li><a href="#meta-inf文件夹">META-INF文件夹</a>
+          <ul>
+            <li><a href="#apk签名机制原理">APK签名机制原理</a>
+              <ul>
+                <li><a href="#问什么是数字摘要">问：什么是数字摘要？</a></li>
+                <li><a href="#问为什么会出现数字签名">问：为什么会出现数字签名？</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#androidmanifestxml配置文件">AndroidManifest.xml配置文件</a></li>
+        <li><a href="#resourcesarsc文件">resources.arsc文件</a></li>
+        <li><a href="#res文件夹">res文件夹</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="一apk文件结构">一、apk文件结构</h2>
+<p>APK是Android Package的缩写,即Android安装包。而apk文件其实就是一个压缩包，我们可以将apk文件的后缀改为.zip来观察apk中的文件。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160235174.png"
+        data-srcset="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160235174.png, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160235174.png 1.5x, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160235174.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160235174.png"
+        title="image-20260408160235174" width="909" height="613" /></p>
+<p>我们来了解当中一些常见的文件和文件夹：</p>
+<h3 id="assets文件夹">assets文件夹</h3>
+<p>assets 这里存放的是静态资源文件(图片，视频等)，这个文件夹下的资源文件不会被编译。不被编译的资源文件是指在编译过程中不会被转换成二进制代码的文件，而是直接被打包到最终的程序中。这些文件通常是一些静态资源，如图片、音频、文本文件等。</p>
+<h3 id="lib文件夹">lib文件夹</h3>
+<p>lib：.so库(c或c++编译的动态链接库)。APK文件中的动态链接库（Dynamic Link Library，简称DLL）是一种可重用的代码库，它包含在应用程序中，以便在运行时被调用。这些库通常包含许多常见的函数和程序，可以在多个应用程序中共享，从而提高了代码的复用性和效率。</p>
+<p>lib文件夹下的每个目录都适用于不同的环境下，armeabi-v7a目录基本通用所有android设备，arm64-v8a目录只适用于64位的android设备，x86目录常见用于android模拟器，x86-64目录适用于支持x86_64架构的Android设备(适用于支持通常称为“x86-64”的指令集的 CPU)</p>
+<h3 id="meta-inf文件夹">META-INF文件夹</h3>
+<p>META-INF：在Android应用的APK文件中，META-INF文件夹是存放数字签名相关文件的文件夹，包含以下三个文件：</p>
+<ol>
+<li>MANIFEST.MF：MANIFEST.MF 是一个摘要清单文件，它包含了 APK 文件中除自身外所有文件的数字摘要。这些摘要通常是通过特定的哈希算法（如 SHA - 1、SHA - 256 等）对文件内容进行计算得到的，用于确保文件内容在传输或存储过程中未被篡改。</li>
+<li>CERT.SF：CERT.SF 文件存储了 MANIFEST.MF 文件的数字摘要以及 MANIFEST.MF 中每个文件条目的数字摘要的二次摘要。开发者使用自己的私钥对 CERT.SF 进行签名，以保证 CERT.SF 文件内容的完整性和真实性。</li>
+<li>CERT.RSA：CERT.RSA 文件包含了使用开发者私钥对 CERT.SF 文件进行签名得到的数字签名以及签名时所使用的数字证书。当验证 APK 的签名时，系统会使用数字证书中的公钥来验证 CERT.SF 文件的数字签名是否有效，从而确保 CERT.SF 文件未被篡改，进而验证 MANIFEST.MF 文件和整个 APK 的完整性。</li>
+</ol>
+<p>总之，META-INF文件夹中的文件是用于保护APK文件的完整性和真实性的重要文件，可以确保APK文件来自合法的开发者，并且没有被篡改过。这里多提一嘴，在安卓签名校验的代码中主要是通过后缀名去找文件的，后缀名前的名字可以随便改，但以RSA和SF结尾的文件后缀名前的名字必须一致。现在有些大型的APP中META-INF文件夹下不止这三个文件，还会有其他的文件来加强APP的签名校验，所以这是比较麻烦的东西。</p>
+<p>现在看这些东西是不是有些不明白？什么是数字摘要、什么是数字签名、什么是数字证书什么的，没事，我们接下来讲解这些东西，让你搞明白。</p>
+<h4 id="apk签名机制原理">APK签名机制原理</h4>
+<h5 id="问什么是数字摘要">问：什么是数字摘要？</h5>
+<p>答：数字摘要是一种数学算法，将任何长度的数据转换为固定长度的唯一字符串，而且不同的明文通过Hash算法转换成固定长度的密文，其结果总是不同的，而同样的明文其摘要必定一致。数字摘要通常用于数据完整性验证和加密技术中，以确保数据在传输或存储过程中没有被篡改或损坏。数字摘要算法是单向的，即无法通过数字摘要反推出原始数据。常见的数字摘要使用的Hash算法有MD5、SHA-1、SHA-256等。这里插一嘴，现在MD5在有的情况下已经不安全了，可能会出现不同的数据加密成相同的密文，因为明文的排列是有无数种可能的，而MD5所转换的密文长度是固定的128位，无限的数据对应有限的长度是不可能永远让不同的数据转换为不同的内容的。</p>
+<h5 id="问为什么会出现数字签名">问：为什么会出现数字签名？</h5>
+<p>答：要回答这个问题说来话长，我们要先从信息的传输开始讲起。</p>
+<p>对称加密：</p>
+<p>这天小红和小明在教室里通过纸条来传递信息，但小红和小明间隔甚远，需要经过其他同学帮助才能成功传输信息，在这个过程中是无法保证信息不被泄露的，那为了这个传输的信息不被泄露就需要对信息进行加密，而加密和解密是需要一个双方都知道的密钥来进行的，加密者用密钥对明文进行加密得到密文，解密者用密钥对密文进行解密得到明文，加解密都用同样的密钥，即为对称加密。所以双方该如何确定出一个同样的密钥呢？如果由一方生成密钥，再将密钥发送给对方，那么攻击者也可以获取到密钥，就会导致加解密没有了作用。</p>
+<p>那么什么办法可以解决这个问题呢？可以用非对称加密。</p>
+<p>非对称加密：</p>
+<p>在非对称加密中，密钥总是成对出现的，分别称之为公钥和私钥，私钥由自己安全保管不外泄，而公钥则可以发给网络中的任何人。用其中一把密钥加密的明文只能用另一把密钥进行解密，无法使用同一把密钥进行加解密，比如用公钥进行加密的明文只能用私钥进行解密，公钥自己没法解密。</p>
+<p>你可能还是会有疑问，如果一方将公钥发送给另一方，自己再用私钥对明文进行加密，再把加密的数据给另一方，那这不还是会导致加解密没有了作用？又或者一方将私钥发送给另一方，自己再用公钥对明文进行加密，再把加密的数据给另一方，这不还是会被攻击者获取到私钥从而解密数据？如果非对称加密这么使用确实会出现这种问题，但是非对称加密一般不这么用，而是下面这种操作：</p>
+<p>现在是服务器和浏览器之间的信息传输，它们之间是怎么做才能信息不外泄呢？</p>
+<p>第一步：服务器会将非对称加密中的公钥发送给浏览器，浏览器生成一串随机数字，而这串随机数字使用服务器发送过来的公钥进行加密。</p>
+<p>第二步：将通过公钥加密的随机数字发送给服务器，服务器接收后使用私钥进行解密，这样双方就都得到了一个同样的随机数字，而这个随机数字可以作为对称加密的密钥。</p>
+<p>第三步：使用随机数字作为密钥对真正需要传递的数据进行加密传输。</p>
+<p>这样就算是攻击者拦截到了服务器发送给浏览器的公钥，也只能无济于事，因为通过公钥加密的数据没法通过公钥进行解密。这套流程也被称之为SSL(安全套接字层)。</p>
+<p>这看似很美好，但是这真的无懈可击吗？不，因为服务器和浏览器之间无法得知接收的公钥或者数据来自于谁，这样攻击者可以先将服务器发送的公钥拦截下来替换成自己的公钥，浏览器接收到之后无法辨别这个公钥是来自于谁的，只会傻傻的使用这个公钥对生成的随机数字进行加密，然后返回给服务器，攻击者再将返回的内容拦截下来，通过自己的私钥进行解密，这样攻击者又获得了对称加密的密钥。</p>
+<p>所以想要解决这个问题，那么就需要知道接收到的信息是由谁发送的，这就引出了下一个概念——数字证书。</p>
+<p>数字证书：</p>
+<p>在讲数字证书之前，我们需要知道一个第三方机构——CA机构。CA机构是指数字证书认证机构（Certificate Authority），也称为证书颁发机构。它是一种可信第三方机构，负责颁发数字证书，用于证明数字身份、数字签名等安全通信和交易中的身份验证和数据保护。CA机构通过对证书申请者的身份进行认证，为其颁发数字证书，使得用户可以在网络上进行加密通信、数字签名、身份认证等安全操作，保障网络安全和数据隐私。</p>
+<p>我们来讲讲数字证书和CA机构在身份验证中是扮演一个什么样的角色：</p>
+<p>第一步、服务器会将自己的公钥、域名，还有自己所申请认证证书的CA机构，以及数字摘要的Hash算法、签名算法（用于生成数字签名的加密算法）、数字摘要、原始数据等信息打包在一起发送给自己申请的CA机构，该机构也有一对公私钥对，CA机构会用它的私钥对打包数据中的数字摘要进行加密，得到一个密文，而这个密文就是签名，数字签名生成后会被放在证书中发送给服务器的管理员，而这个证书就叫做TLS证书。</p>
+<p>第二步、服务器将CA机构发送过来的TLS证书代替原本要发送给浏览器的公钥发送给浏览器，浏览器拿到这个证书之后不会选择第一时间相信，而是拿CA机构公开的公钥对证书中的签名进行解密得到数字摘要，浏览器也会从证书中提取出原始数据和数字摘要的Hash算法进行转换，这样就可以获得原始数据的数字摘要，再将这两数字摘要一对比就知道数据在服务器发送过来的途中有没有被篡改了。</p>
+<p>第三步、如果解密后的数字摘要和由原始数据转换成的数字摘要一致，那么浏览器就会从证书中提取出公钥，从而可以安全的进行SSL。</p>
+<p>不过需要注意的是，上面的数字证书是https的验证流程，而apk文件和https在验证数字证书的过程中所用到的算法和流程也有所不同。</p>
+<p>HTTPS所用的数字证书通常需要经过CA机构的认证和颁发。而apk文件的数字证书包含了签名者的公钥、签名算法、签名时间等信息，在Android系统中使用的数字证书，是可以由开发者自行生成和使用。</p>
+<p>Android 在安装 APK 时，会验证 APK 的数字签名是否合法。验证的过程包括以下几个步骤：提取数字证书：提取 APK 文件META - INF目录下的.RSA（如CERT.RSA）或.DSA文件中的数字证书。提取公钥：从数字证书中提取公钥，该公钥将用于后续的签名验证。验证签名：使用提取的公钥对 APK 文件中CERT.SF文件的数字签名进行验证操作，检查该签名是否是由对应的私钥生成的，以此来确保CERT.SF文件的完整性和真实性。重新计算文件哈希值：对MANIFEST.MF文件中记录的 APK 内各个文件进行哈希运算，生成每个文件新的数字摘要。比较哈希值：将重新计算得到的各文件数字摘要与MANIFEST.MF文件中记录的对应文件的数字摘要进行比较，同时结合步骤 3 中签名验证的结果。如果所有文件的哈希值都一致且签名验证通过，则认为数字签名合法；否则，认为数字签名不合法。需要注意的是，数字证书包含了签名者的身份信息、公钥、证书有效期等内容。数字签名是使用私钥对CERT.SF文件（该文件包含了MANIFEST.MF文件的数字摘要以及MANIFEST.MF中每个文件条目的数字摘要的二次摘要）进行签名得到的结果，而不是对数字证书或整个 APK 文件的数字摘要进行加密。在安装 APK 文件时，Android 系统会按照上述流程进行验证，以确保 APK 的真实性和完整性。如果数字证书无效、签名验证不通过或文件哈希值不匹配，则会提示安装失败或警告用户存在安全风险。
+MT管理器是一个可以对APK文件进行修改和重新签名的工具。它使用的签名工具是Android SDK中的apksigner工具，一个官方提供的APK签名工具。</p>
+<p>当MT管理器对APK文件进行修改后，它会将修改后的文件打包成一个新的APK文件。然后，MT管理器会调用apksigner工具，使用开发者提供的数字证书对新的APK文件进行签名。签名过程中，apksigner会对APK文件进行Hash运算，生成数字摘要，并使用提供的数字证书对数字摘要进行加密，最后生成新的META-INF目录和CERT.RSA文件。</p>
+<p>最后，MT管理器会将签名后的APK文件保存到指定位置。需要注意的是，MT管理器只能对已经进行过数字签名的APK文件进行修改和重新签名。因为apksigner要求原本的APK文件必须进行了数字签名才能进行重新签名的操作。所以如果APK文件没有进行数字签名，apksigner无法对其进行签名操作，从而无法通过MT管理器进行修改和签名。</p>
+<p>总结来说，Android系统验证APK的数字签名是为了确保APK的真实性和完整性。MT管理器使用apksigner工具对APK文件进行签名，并要求原始APK文件已经进行了数字签名才能进行修改和重新签名操作。</p>
+<h3 id="androidmanifestxml配置文件">AndroidManifest.xml配置文件</h3>
+<p>AndroidManifest.xml是Android应用程序中最重要的文件之一，它包含了应用程序的基本信息，如应用程序的名称、图标、版本号、权限、组件（Activity、Service、BroadcastReceiver、Content Provider）等等。在应用程序运行时，系统会根据这个文件来管理应用程序的生命周期，启动和关闭应用程序，管理应用程序的组件等等。</p>
+<p>我们来了解一下AndroidManifest.xml文件的主要组成部分：</p>
+<ol>
+<li>manifest标签</li>
+</ol>
+<p>manifest标签是AndroidManifest.xml文件的根标签，它包含了应用程序的基本信息，如包名、版本号、SDK版本、应用程序的名称和图标等等。</p>
+<ol start="2">
+<li>application标签</li>
+</ol>
+<p>application标签是应用程序的主要标签，它包含了应用程序的所有组件，如Activity(活动)、Service(服务)、Broadcast Receiver(广播接收器)、Content Provider(内容提供者)等等。在application标签中，也可以设置应用程序的全局属性，如主题、权限等等。</p>
+<ol start="3">
+<li>activity标签</li>
+</ol>
+<p>activity标签定义了一个Activity组件，它包含了Activity的基本信息，如Activity的名称、图标、主题、启动模式等等。在activity标签中，还可以定义Activity的布局、Intent过滤器等等。</p>
+<ol start="4">
+<li>service标签</li>
+</ol>
+<p>service标签定义了一个Service组件，它包含了Service的基本信息，如Service的名称、图标、启动模式等等。在service标签中，还可以定义Service的Intent过滤器等等。</p>
+<ol start="5">
+<li>receiver标签</li>
+</ol>
+<p>receiver标签定义了一个BroadcastReceiver组件，它包含了BroadcastReceiver的基本信息，如BroadcastReceiver的名称、图标、权限等等。在receiver标签中，还可以定义BroadcastReceiver的Intent过滤器等等。</p>
+<ol start="6">
+<li>provider标签</li>
+</ol>
+<p>provider标签定义了一个Content Provider组件，它包含了Content Provider的基本信息，如Content Provider的名称、图标、权限等等。在provider标签中，还可以定义Content Provider的URI和Mime Type等等。</p>
+<ol start="7">
+<li>uses-permission标签</li>
+</ol>
+<p>uses-permission标签定义了应用程序需要的权限，如访问网络、读取SD卡等等。在应用程序安装时，系统会提示用户授权这些权限。</p>
+<ol start="8">
+<li>uses-feature标签</li>
+</ol>
+<p>uses-feature标签定义了应用程序需要的硬件或软件特性，如摄像头、GPS等等。在应用程序安装时，系统会检查设备是否支持这些特性。</p>
+<p>以上是AndroidManifest.xml文件的主要组成部分，它们共同定义了应用程序的基本信息和组件，是应用程序的重要配置文件。现在如果看起来有点懵，没关系，后面实战会使用到它的，以后也会对它进行详解，那时你或许会有一点对它的理解了。</p>
+<h3 id="resourcesarsc文件">resources.arsc文件</h3>
+<p>resources.arsc文件是Android应用程序的资源文件之一，它是一个二进制文件，包含了应用程序的所有资源信息，例如布局文件、字符串、图片等。这个文件在应用程序编译过程中由aapt工具生成，并被打包进APK文件中。</p>
+<p>resources.arsc文件的主要作用是提供资源的索引和映射关系。它将资源文件名、类型、值等信息映射到一个唯一的整数ID上。这个ID在R文件中定义，并且可以通过代码中的R类来引用。例如，R.layout.main表示布局文件main.xml对应的ID，R.string.app_name表示字符串资源app_name对应的ID。</p>
+<p>当应用程序运行时，系统会根据R类中的ID来查找对应的资源，并将其加载到内存中，供应用程序使用。这个过程是通过解析resources.arsc文件和R类实现的。通过这种方式，应用程序可以方便地访问和使用资源，而不需要手动处理资源文件的位置和命名等问题。</p>
+<p>需要注意的是，resources.arsc文件只包含资源的索引和映射关系，并不包含实际的资源内容。实际的资源内容存储在res文件夹中，按照资源类型和名称进行组织。当应用程序需要使用资源时，系统会根据resources.arsc文件中的索引信息找到对应的资源文件，并将其加载到内存中。</p>
+<p>总之，resources.arsc文件是Android应用程序的资源文件之一，包含了资源的索引和映射关系。它和R类一起构成了应用程序访问和使用资源的基础。通过解析resources.arsc文件和使用R类，应用程序可以方便地加载和使用资源。</p>
+<h3 id="res文件夹">res文件夹</h3>
+<p>res：资源文件目录，二进制格式。实际上，APK文件下的res文件夹并不是二进制格式，而是经过编译后的二进制资源文件。在Android应用程序开发中，资源文件通常是以XML格式存储的，如布局文件、字符串资源、颜色资源等。在编译时，Android编译器会将这些XML资源文件编译成二进制格式的资源文件，以提高应用程序的运行效率和安全性。虽然res文件夹下的二进制资源文件不能直接编辑和修改，但是开发者仍然可以通过Android提供的资源管理工具，如aapt、apktool等，来反编译和编辑这些资源文件的。</p>
+<p>在res文件夹中，主要包含以下子文件夹和文件：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">res子目录</th>
+          <th style="text-align: left">存储的资源类型</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>animator/</code></td>
+          <td style="text-align: left">用于定义<a href="https://developer.android.google.cn/guide/topics/graphics/prop-animation?hl=zh-cn" target="_blank" rel="noopener noreffer ">属性动画</a>的 XML 文件。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>anim/</code></td>
+          <td style="text-align: left">用于定义<a href="https://developer.android.google.cn/guide/topics/graphics/view-animation?hl=zh-cn#tween-animation" target="_blank" rel="noopener noreffer ">补间动画</a>的 XML 文件。属性动画也可保存在此目录中，但为了区分这两种类型，属性动画首选 <code>animator/</code> 目录。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>color/</code></td>
+          <td style="text-align: left">定义颜色状态列表的 XML 文件。如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/resources/color-list-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">颜色状态列表资源</a>。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>drawable/</code></td>
+          <td style="text-align: left">位图文件（PNG、<code>.9.png</code>、JPG 或 GIF）或编译为以下可绘制资源子类型的 XML 文件：位图文件九宫图（可调整大小的位图）状态列表形状动画可绘制对象其他可绘制对象如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/resources/drawable-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">可绘制资源</a>。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>mipmap/</code></td>
+          <td style="text-align: left">适用于不同启动器图标密度的可绘制对象文件。如需详细了解如何使用 <code>mipmap/</code> 文件夹管理启动器图标，请参阅<a href="https://developer.android.google.cn/training/multiscreen/screendensities?hl=zh-cn#mipmap" target="_blank" rel="noopener noreffer ">将应用图标放在 mipmap 目录中</a>。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>layout/</code></td>
+          <td style="text-align: left">用于定义界面布局的 XML 文件。如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/resources/layout-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">布局资源</a>。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>menu/</code></td>
+          <td style="text-align: left">用于定义应用菜单（例如选项菜单、上下文菜单或子菜单）的 XML 文件。如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/resources/menu-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">菜单资源</a>。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>raw/</code></td>
+          <td style="text-align: left">需以原始形式保存的任意文件。如要使用原始 <code>InputStream</code> 打开这些资源，请使用资源 ID（即 <code>R.raw.*filename*</code>）调用 <code>Resources.openRawResource()</code>。但是，如需访问原始文件名和文件层次结构，请考虑将资源保存在 <code>assets/</code> 目录（而非 <code>res/raw/</code>）下。<code>assets/</code> 中的文件没有资源 ID，因此您只能使用 <code>AssetManager</code> 读取这些文件。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>values/</code></td>
+          <td style="text-align: left">包含字符串、整数和颜色等简单值的 XML 文件。其他 <code>res/</code> 子目录中的 XML 资源文件会根据 XML 文件名定义单个资源，而 <code>values/</code> 目录中的文件可描述多个资源。对于此目录中的文件，<code>&lt;resources&gt;</code> 元素的每个子元素均会定义一个资源。例如，<code>&lt;string&gt;</code> 元素会创建 <code>R.string</code> 资源，<code>&lt;color&gt;</code> 元素会创建 <code>R.color</code> 资源。由于每个资源均使用自己的 XML 元素进行定义，因此您可以随意命名文件，并在某个文件中放入不同的资源类型。但是，您可能需要将独特的资源类型放在不同的文件中，使其一目了然。例如，对于可在此目录中创建的资源，下面给出了相应的文件名约定：<code>arrays.xml</code> 用于资源数组（<a href="https://developer.android.google.cn/guide/topics/resources/more-resources?hl=zh-cn#TypedArray" target="_blank" rel="noopener noreffer ">类型化数组</a>）<code>colors.xml</code> 用于<a href="https://developer.android.google.cn/guide/topics/resources/more-resources?hl=zh-cn#Color" target="_blank" rel="noopener noreffer ">颜色值</a><code>dimens.xml</code> 用于<a href="https://developer.android.google.cn/guide/topics/resources/more-resources?hl=zh-cn#Dimension" target="_blank" rel="noopener noreffer ">维度值</a><code>strings.xml</code> 用于<a href="https://developer.android.google.cn/guide/topics/resources/string-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">字符串值</a><code>styles.xml</code> 用于<a href="https://developer.android.google.cn/guide/topics/resources/style-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">样式</a>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/resources/string-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">字符串资源</a>、<a href="https://developer.android.google.cn/guide/topics/resources/style-resource?hl=zh-cn" target="_blank" rel="noopener noreffer ">样式资源</a>和<a href="https://developer.android.google.cn/guide/topics/resources/more-resources?hl=zh-cn" target="_blank" rel="noopener noreffer ">更多资源类型</a>。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>xml/</code></td>
+          <td style="text-align: left">可在运行时通过调用 <code>Resources.getXML()</code> 读取的任意 XML 文件。各种 XML 配置文件（例如<a href="https://developer.android.google.cn/guide/topics/search/searchable-config?hl=zh-cn" target="_blank" rel="noopener noreffer ">搜索配置</a>）都必须保存在此处。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>font/</code></td>
+          <td style="text-align: left">带有扩展名的字体文件（例如 TTF、OTF 或 TTC），或包含 <code>&lt;font-family&gt;</code> 元素的 XML 文件。如需详细了解以资源形式使用的字体，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/look-and-feel/fonts-in-xml?hl=zh-cn" target="_blank" rel="noopener noreffer ">将字体添加为 XML 资源</a>。</td>
+      </tr>
+  </tbody>
+</table>
+<p>上表的内容为安卓官方文档中所记录的内容。</p>
+<p>上表所定义的子目录中，保存的资源为默认资源。换言之，这些资源定义应用的默认设计和内容。然而，不同类型的 Android 设备可能需要不同类型的资源。</p>
+<p>例如，开发者可以为屏幕尺寸大于普通屏幕的设备提供不同的布局资源，以充分利用额外的屏幕空间。还可以提供不同的字符串资源，以便根据设备的语言设置翻译界面中的文本。如需为不同设备配置提供这些不同资源，除默认资源以外，开发者还需提供备用资源。这个现在可能不太明白，但后面实战会讲到。</p>
+<p>在Android应用程序中，res文件夹中的资源文件可通过引用其资源 ID 来应用该资源。所有资源 ID 都在项目的 <code>R</code> 类中进行定义，该类由 <code>aapt</code> 工具自动生成，可以通过这些ID值来访问和使用应用程序中的资源。</p>
+<p>那R类和res文件夹的关系是怎么样的呢？</p>
+<p>R类与res文件夹下的资源文件之间的关系如下：</p>
+<ol>
+<li>
+<p>R类的包名与应用程序的包名相同，即com.example.myapp。</p>
+</li>
+<li>
+<p>R类中的子类与res文件夹下的子文件夹相对应，如Rdrawable对应drawable文件夹，Rlayout对应layout文件夹(前面的类名表示表示子类，后面的类名表示父类)。</p>
+</li>
+<li>
+<p>R类中的每个子类都包含了对应资源文件的ID值，如R$drawable中包含了所有drawable文件夹下的图片的ID值。</p>
+</li>
+<li>
+<p>R类中的ID值是由Android编译器(aapt工具)自动生成的，每个ID值都是唯一的，可以通过这些ID值来访问和使用对应的资源文件。</p>
+</li>
+</ol>
+<p>虽说所有资源 ID 都在项目的 <code>R</code> 类中进行定义，但是有的安卓应用程序中R类中有attr子类，而res下却没有attr子目录的。遇到这种情况不要觉得惊讶，下面就要着重讲讲res下的values子目录了。</p>
+<p>所有资源ID都在项目的R类中进行定义，也就是说是可以通过资源ID来进行引用的资源那就会在项目的R类中进行定义。所以res文件夹下的子目录也就官方列出的那些，而且每个子目录都装有特定类型的资源，资源还不能乱放，那有的在R类中定义了资源ID的资源但res下没有对应资源的子类，如attr、bool等资源都会在values子目录中声明，前面官方文档中也提到了 <code>values/</code> 目录中的文件可描述多个资源，所有在values子目录中一个xml文件就描述了特定类型的多个资源。我们来看看这里面有哪些资源在values子目录中并且于R类中声明：</p>
+<p>Bool：</p>
+<p>包含布尔值的 XML 资源，保存在 的 XML 文件： <code>res/values-small/bools.xml</code>。</p>
+<p>color：</p>
+<p>包含颜色值（十六进制颜色）的 XML 资源，保存在 的 XML 文件： <code>res/values/colors.xml</code>。</p>
+<p>dimen</p>
+<p>包含尺寸值（及度量单位）的 XML 资源，保存在 的 XML 文件： <code>res/values/dimens.xml</code>。</p>
+<p>id：</p>
+<p>提供应用资源和组件的唯一标识符的 XML 资源，保存在 的 XML 文件：<code>res/values/ids.xml</code>。</p>
+<p>integer：</p>
+<p>包含整数值的 XML 资源，保存在 的 XML 文件：<code>res/values/integers.xml</code>。</p>
+<p>integers：</p>
+<p>提供整数数组的 XML 资源，保存在 的 XML 文件： <code>res/values/integers.xml</code>。</p>
+<p>array：</p>
+<p>提供 （可用于可绘制对象数组）的 XML 资源，保存在 的 XML 文件： <code>res/values/arrays.xml</code>。</p>
+<p>这些虽说是安卓官方文档所展示的values文件夹中的资源类型，但其实values中的资源类型还不止这些，如drawable、plural等资源类型。还有一点，上面所述的资源类型integers和array都是通过名称进行引用的，而不是通过资源ID来进行引用的。</p>
+<p>总的来说就是通过资源ID来进行引用的资源那就会在项目的R类中进行定义，在R类中定义的资源在res下的子目录中找不到，那就去res/values中寻找。有的资源类型没有在R类中定义的是因为该资源类型不是通过资源的ID去引用的，而是通过名称等其他方式进行的引用。</p>
+<p>为了更好的理解这玩意实战中的作用，我们来进行次实战——将程序的默认启动activity改为我们自己的activity。</p>
+<p>我这里使用的是apktool。</p>
+<p>第一步：先把要反编译的apk文件放到apktool所在的文件夹</p>
+<p>第二步：在此文件夹中打开powershell并且输入cmd</p>
+<p>第三步：输入命令：apktool.bat d 要反编译的apk文件名</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160658531.png"
+        data-srcset="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160658531.png, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160658531.png 1.5x, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160658531.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160658531.png"
+        title="image-20260408160658531" width="771" height="404" /></p>
+<p>完成上面步骤后在apktool文件夹中就会生成一个与要反编译的apk文件同名的文件夹，反编译的结果就在里面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160715938.png"
+        data-srcset="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160715938.png, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160715938.png 1.5x, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160715938.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160715938.png"
+        title="image-20260408160715938" width="773" height="225" /></p>
+<p>我们下一步需要通过反编译查看Java源码，这里使用的是dex2jar。</p>
+<p>第一步：将apk文件修改为.zip后缀后将.dex文件解压到dex2jar目录下</p>
+<p>第二步：在dex2jar目录下使用命令行中输入“d2j-dex2jar.bat &lt;dex文件名&gt;”命令运行dex2jar工具</p>
+<p>第三步：等待dex2jar工具完成转换。转换完成后，会在dex2jar目录下生成一个与.dex文件同名的.jar文件，这个就是源码了</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160733805.png"
+        data-srcset="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160733805.png, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160733805.png 1.5x, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160733805.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160733805.png"
+        title="image-20260408160733805" width="764" height="741" /></p>
+<p>我们使用jd-gui打开刚才得到的源码，大概就是这个样子：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160754408.png"
+        data-srcset="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160754408.png, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160754408.png 1.5x, /posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160754408.png 2x"
+        data-sizes="auto"
+        alt="/posts/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8-apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/images/image-20260408160754408.png"
+        title="image-20260408160754408" width="1239" height="837" /></p>
+<p>安卓逆向入门笔记(一)——apk文件结构
+<a href="https://www.52pojie.cn/thread-1781093-1-1.html" target="_blank" rel="noopener noreffer ">https://www.52pojie.cn/thread-1781093-1-1.html</a>
+(出处: 吾爱破解论坛)</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-04-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/apk/">Apk</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/" class="prev" rel="prev" title="数字签名原理与校验流程"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>数字签名原理与校验流程</a>
+            <a href="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" class="next" rel="next" title="uni-app-x离线打包流程">uni-app-x离线打包流程<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -3,13 +3,27 @@
         <title>所有文章 - Eccentric&#39;s Note</title>
         <link>https://188.hubu.eu.cc/posts/</link>
         <description>所有文章 | Eccentric&#39;s Note</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Apr 2026 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://188.hubu.eu.cc/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Apr 2026 08:59:26 &#43;0800</lastBuildDate><atom:link href="https://188.hubu.eu.cc/posts/" rel="self" type="application/rss+xml" /><item>
     <title>hugo绘制echarts图表</title>
     <link>https://188.hubu.eu.cc/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/</link>
     <pubDate>Tue, 03 Mar 2020 15:29:59 &#43;0800</pubDate>
     <author>Dillon</author>
     <guid>https://188.hubu.eu.cc/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/</guid>
     <description><![CDATA[<p><code>echarts</code> shortcode 使用 <a href="https://echarts.apache.org/" target="_blank" rel="noopener noreffer ">ECharts</a> 库提供数据可视化的功能.</p>]]></description>
+</item>
+<item>
+    <title>uni-app-x离线打包流程</title>
+    <link>https://188.hubu.eu.cc/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Wed, 08 Apr 2026 08:59:26 &#43;0800</pubDate>
+    <author>Eccentric</author>
+    <guid>https://188.hubu.eu.cc/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[<p><strong>本地打包的绝对优势：</strong></p>
+<ol>
+<li><strong>极速出包</strong>：打包时间从原本半小时以上（周五较多人排队打包更是一次一小时以上），直接缩短到 <strong>20 秒左右</strong>！（视情况而定）</li>
+<li><strong>绝对自由</strong>：你可以随心所欲地修改 Android 原生配置（如包名、各种第三方登录的名称等）。</li>
+<li><strong>自主瘦身</strong>：可自行精简 SDK，剔除不需要的模块，完美避开云打包的大体积收费限制。</li>
+<li><strong>无限续杯</strong>：没有次数限制，没有排队，随心所欲，想打就打！</li>
+</ol>]]></description>
 </item>
 <item>
     <title>数字签名原理与校验流程</title>
@@ -75,14 +89,6 @@
     <author>Better</author>
     <guid>https://188.hubu.eu.cc/posts/spring-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
     <description><![CDATA[<p>在开发过程中，有遇到过Spring循环依赖问题吗？怎么解决的？</p>]]></description>
-</item>
-<item>
-    <title>Spring Bean的生命周期</title>
-    <link>https://188.hubu.eu.cc/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
-    <pubDate>Fri, 02 Jan 2026 08:59:26 &#43;0800</pubDate>
-    <author>Better</author>
-    <guid>https://188.hubu.eu.cc/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

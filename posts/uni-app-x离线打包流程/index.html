@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>uni-app-x离线打包流程 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://188.hubu.eu.cc/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="uni-app-x离线打包流程">
+  <meta property="og:description" content="本地打包的绝对优势：
+极速出包：打包时间从原本半小时以上（周五较多人排队打包更是一次一小时以上），直接缩短到 20 秒左右！（视情况而定） 绝对自由：你可以随心所欲地修改 Android 原生配置（如包名、各种第三方登录的名称等）。 自主瘦身：可自行精简 SDK，剔除不需要的模块，完美避开云打包的大体积收费限制。 无限续杯：没有次数限制，没有排队，随心所欲，想打就打！">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-08T08:59:26+08:00">
+    <meta property="article:modified_time" content="2026-04-08T08:59:26+08:00">
+    <meta property="article:tag" content="Uni-App-X打包">
+    <meta property="og:image" content="https://188.hubu.eu.cc/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://188.hubu.eu.cc/logo.png">
+  <meta name="twitter:title" content="uni-app-x离线打包流程">
+  <meta name="twitter:description" content="本地打包的绝对优势：
+极速出包：打包时间从原本半小时以上（周五较多人排队打包更是一次一小时以上），直接缩短到 20 秒左右！（视情况而定） 绝对自由：你可以随心所欲地修改 Android 原生配置（如包名、各种第三方登录的名称等）。 自主瘦身：可自行精简 SDK，剔除不需要的模块，完美避开云打包的大体积收费限制。 无限续杯：没有次数限制，没有排队，随心所欲，想打就打！">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://188.hubu.eu.cc/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" /><link rel="prev" href="https://188.hubu.eu.cc/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/" /><link rel="next" href="https://188.hubu.eu.cc/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "uni-app-x离线打包流程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/188.hubu.eu.cc\/posts\/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B\/"
+        },"genre": "posts","keywords": "uni-app-x打包","wordcount":  2197 ,
+        "url": "https:\/\/188.hubu.eu.cc\/posts\/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B\/","datePublished": "2026-04-08T08:59:26+08:00","dateModified": "2026-04-08T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Eccentric"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"><i class='fa-solid fa-book'></i> pdf </a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title=""><i class='fa-solid fa-book'></i>pdf</a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i>友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">uni-app-x离线打包流程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Eccentric</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-04-08">2026-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2197 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" class="leancloud_visitors" data-flag-title="uni-app-x离线打包流程">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#准备阶段环境与资源">准备阶段：环境与资源</a>
+          <ul>
+            <li><a href="#1-下载官方离线-sdk">1. 下载官方离线 SDK</a></li>
+            <li><a href="#2-在-hbuilderx-中生成本地资源">2. 在 HBuilderX 中生成本地资源</a></li>
+          </ul>
+        </li>
+        <li><a href="#核心阶段配置-android-studio-工程">核心阶段：配置 Android Studio 工程</a>
+          <ul>
+            <li><a href="#第一步打开正确的纯安卓工程">第一步：打开正确的纯安卓工程</a></li>
+            <li><a href="#第二步导入你的前端代码资源">第二步：导入你的前端代码资源</a></li>
+            <li><a href="#第三步修改-app-桌面名称">第三步：修改 App 桌面名称</a></li>
+            <li><a href="#第四步修改应用包名-package-name">第四步：修改应用包名 (Package Name)</a></li>
+          </ul>
+        </li>
+        <li><a href="#关键阶段配置证书与离线-appkey">关键阶段：配置证书与离线 AppKey</a>
+          <ul>
+            <li><a href="#第五步获取云端证书与生成-appkey">第五步：获取云端证书与生成 AppKey</a></li>
+            <li><a href="#第六步将证书放入工程并配置">第六步：将证书放入工程并配置</a></li>
+            <li><a href="#第七步配置离线-appkey">第七步：配置离线 AppKey</a></li>
+          </ul>
+        </li>
+        <li><a href="#避坑指南解决白屏与包体积过大问题必看">避坑指南：解决白屏与包体积过大问题（必看！）</a>
+          <ul>
+            <li><a href="#第八步解决首页白屏问题">第八步：解决首页白屏问题</a></li>
+            <li><a href="#第九步app-瘦身减小包体积">第九步：App 瘦身（减小包体积）</a></li>
+          </ul>
+        </li>
+        <li><a href="#最终阶段一键出包">最终阶段：一键出包！</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>本地打包的绝对优势：</strong></p>
+<ol>
+<li><strong>极速出包</strong>：打包时间从原本半小时以上（周五较多人排队打包更是一次一小时以上），直接缩短到 <strong>20 秒左右</strong>！（视情况而定）</li>
+<li><strong>绝对自由</strong>：你可以随心所欲地修改 Android 原生配置（如包名、各种第三方登录的名称等）。</li>
+<li><strong>自主瘦身</strong>：可自行精简 SDK，剔除不需要的模块，完美避开云打包的大体积收费限制。</li>
+<li><strong>无限续杯</strong>：没有次数限制，没有排队，随心所欲，想打就打！</li>
+</ol>
+<h3 id="准备阶段环境与资源">准备阶段：环境与资源</h3>
+<h4 id="1-下载官方离线-sdk">1. 下载官方离线 SDK</h4>
+<p>前往 DCloud 官网，下载与你的 HBuilderX 版本<strong>完全一致</strong>的 Android 离线 SDK。</p>
+<p><a href="https://doc.dcloud.net.cn/uni-app-x/native/use/android.html" target="_blank" rel="noopener noreffer ">uni-app x 原生SDK Android版 | uni-app x</a></p>
+<h4 id="2-在-hbuilderx-中生成本地资源">2. 在 HBuilderX 中生成本地资源</h4>
+<p>在你的 uni-app x 项目中，点击顶部菜单栏 <strong>发行 ➡️ 原生App-本地打包 ➡️ 生成本地打包App资源</strong>。
+编译完成后，会生成一个以你的 AppID 命名的文件夹（如 __UNI__1940137），复制这个文件夹备用。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092357693.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092357693.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092357693.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092357693.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092357693.png"
+        title="image-20260408092357693" width="1224" height="356" /></p>
+<h3 id="核心阶段配置-android-studio-工程">核心阶段：配置 Android Studio 工程</h3>
+<h4 id="第一步打开正确的纯安卓工程">第一步：打开正确的纯安卓工程</h4>
+<ol>
+<li>解压刚才下载的官方离线 SDK 压缩包。(如下图所示)</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092433924.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092433924.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092433924.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092433924.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092433924.png"
+        title="image-20260408092433924" width="832" height="247" /></p>
+<ol start="2">
+<li>
+<p>打开 Android Studio，点击 <strong>Open</strong>（或 File -&gt; Open）。</p>
+</li>
+<li>
+<p><strong>⚠️重点防坑：</strong> 不要直接打开最外层文件夹，一定要展开目录，选中里面的 <strong>uniappxnativepackage</strong> 这个文件夹，点击打开。（如图所示）</p>
+</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092535742.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092535742.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092535742.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092535742.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092535742.png"
+        title="image-20260408092535742" width="901" height="569" /></p>
+<ol start="4">
+<li><strong>【注意：耐心等待】</strong>  打开之后，注意看软件的<strong>右下角</strong>，会有一个进度条在转，或者显示 Gradle Build Running&hellip; / Syncing&hellip;。</li>
+</ol>
+<p>👉 只要右下角还在转，就什么都不要点，把手离开鼠标，去喝口水。等它彻底转完，左边出现一个带绿色安卓小机器人图标的 <strong>app</strong> 文件夹，才算准备就绪！</p>
+<ol start="5">
+<li>加载成功，准备就绪：</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092729339.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092729339.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092729339.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092729339.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092729339.png"
+        title="image-20260408092729339" width="644" height="558" /></p>
+<ol start="6">
+<li>这时候注意你的文件类型识别为了<strong>Android</strong>，为了方便操作对应文件路径，把<strong>Android</strong>切换为<strong>Project</strong>，如图所示：</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092759863.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092759863.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092759863.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092759863.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408092759863.png"
+        title="image-20260408092759863" width="645" height="557" /></p>
+<h4 id="第二步导入你的前端代码资源">第二步：导入你的前端代码资源</h4>
+<ol>
+<li>
+<p>在 Android Studio 左侧目录树，依次展开：app -&gt; src -&gt; main -&gt; assets -&gt; apps。（如果找不到assets文件夹，可直接在main下自行创建）</p>
+</li>
+<li>
+<p>将刚才在 HBuilderX 里生成的 __UNI__XXXXXXX 文件夹，直接<strong>粘贴</strong>到 apps 目录中。（如下图所示）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093046860.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093046860.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093046860.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093046860.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093046860.png"
+        title="image-20260408093046860" width="889" height="696" /></p>
+</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093059600.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093059600.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093059600.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093059600.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093059600.png"
+        title="image-20260408093059600" width="1005" height="495" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093114370.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093114370.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093114370.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093114370.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093114370.png"
+        title="image-20260408093114370" width="794" height="635" /></p>
+<h4 id="第三步修改-app-桌面名称">第三步：修改 App 桌面名称</h4>
+<ol>
+<li>展开目录：app -&gt; src -&gt; main -&gt; res -&gt; values。</li>
+<li>双击打开 strings.xml。</li>
+<li>将 uni-app x 中的 uni-app x 修改为你真实的 App 名称。</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093135048.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093135048.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093135048.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093135048.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093135048.png"
+        title="image-20260408093135048" width="1097" height="768" /></p>
+<h4 id="第四步修改应用包名-package-name">第四步：修改应用包名 (Package Name)</h4>
+<ol>
+<li>找到 app 目录直属的 <strong>build.gradle</strong>（图标带个大象🐘）并打开。</li>
+<li>找到 <strong>defaultConfig</strong> 节点下的 <strong>applicationId &ldquo;com.xxxx.xxxx&rdquo;</strong>。</li>
+<li>将其修改为你自己的包名（如 <strong>com.yourcompany.app</strong>）。</li>
+<li><strong>务必点击右上角弹出的 Sync Now</strong> 进行代码同步。</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093159918.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093159918.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093159918.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093159918.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093159918.png"
+        title="image-20260408093159918" width="1456" height="793" /></p>
+<p>注意：修改<strong>build.gradle</strong>后要点击右上角的 <strong>Sync Now</strong>应用一下，否则无效</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093216223.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093216223.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093216223.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093216223.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093216223.png"
+        title="image-20260408093216223" width="1458" height="583" /></p>
+<h3 id="关键阶段配置证书与离线-appkey">关键阶段：配置证书与离线 AppKey</h3>
+<p>要让 App 正常运行并成功打包，必须配置签名证书和离线打包 Key，否则打开会直接<strong>红屏报错</strong>。</p>
+<h4 id="第五步获取云端证书与生成-appkey">第五步：获取云端证书与生成 AppKey</h4>
+<ol>
+<li>登录 DCloud 开发者后台（<a href="https://link.juejin.cn?target=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3DE%26q%3Dhttps%3A%2F%2Fdev.dcloud.net.cn%2F" target="_blank" rel="noopener noreffer ">dev.dcloud.net.cn</a>），进入你的项目。</li>
+<li>在 <strong>“Android云端证书”</strong>  页面，下载你的 .keystore 证书文件到电脑桌面，并记录下<strong>证书密码</strong>、<strong>证书别名 (Alias)</strong>  和 <strong>SHA1指纹</strong>。</li>
+<li>在左侧菜单找到 <strong>“各平台信息” -&gt; “离线打包Key管理”</strong> 。</li>
+<li>填入你刚才配置的包名和 SHA1 指纹，点击生成，复制生成好的那一长串 <strong>AppKey</strong>。</li>
+</ol>
+<h4 id="第六步将证书放入工程并配置">第六步：将证书放入工程并配置</h4>
+<ol>
+<li>将下载好的 .keystore 证书文件，直接<strong>复制粘贴</strong>到 Android Studio 左侧的 <strong>app</strong> 文件夹根目录下。（如下图所示放到app目录下）</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093243595.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093243595.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093243595.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093243595.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093243595.png"
+        title="image-20260408093243595" width="1451" height="676" /></p>
+<ol>
+<li>再次打开 app/build.gradle 文件，在 buildTypes { 这一行的<strong>正上方</strong>，手动添加如下签名配置：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">signingConfigs {
+</span></span><span class="line"><span class="cl">        config {
+</span></span><span class="line"><span class="cl">            keyAlias &#39;你的证书别名&#39;
+</span></span><span class="line"><span class="cl">            keyPassword &#39;你的证书密码&#39;
+</span></span><span class="line"><span class="cl">            storeFile file(&#39;你的证书文件名.keystore&#39;)
+</span></span><span class="line"><span class="cl">            storePassword &#39;你的证书密码&#39;
+</span></span><span class="line"><span class="cl">            v1SigningEnabled true
+</span></span><span class="line"><span class="cl">            v2SigningEnabled true
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>然后在下方的 <strong>buildTypes</strong> -&gt; <strong>release</strong> 里面，加上一行引用：<strong>signingConfig signingConfigs.config</strong>。</li>
+<li>修改完毕后，再次点击右上角的 <strong>Sync Now</strong>。</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093321157.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093321157.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093321157.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093321157.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093321157.png"
+        title="image-20260408093321157" width="1449" height="901" /></p>
+<h4 id="第七步配置离线-appkey">第七步：配置离线 AppKey</h4>
+<ol>
+<li>
+<p>打开 app -&gt; src -&gt; main -&gt; AndroidManifest.xml。</p>
+</li>
+<li>
+<p>滑动到文件最下方，在 标签的<strong>正上方</strong>，添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;meta-data
+</span></span><span class="line"><span class="cl">            android:name=&#34;dcloud_appkey&#34;
+</span></span><span class="line"><span class="cl">            android:value=&#34;在这里粘贴你刚才生成的极长AppKey字符串&#34; /&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093348671.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093348671.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093348671.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093348671.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093348671.png"
+        title="image-20260408093348671" width="1449" height="876" /></p>
+<h3 id="避坑指南解决白屏与包体积过大问题必看">避坑指南：解决白屏与包体积过大问题（必看！）</h3>
+<p>如果现在直接打包，你会面临两个新手必踩的坑：<strong>打开只有标题栏一片空白</strong>，以及<strong>包体积高达 150MB+</strong> 。我们需要做最后两步优化。</p>
+<h4 id="第八步解决首页白屏问题">第八步：解决首页白屏问题</h4>
+<p><strong>原因：</strong>  官方模版默认的 MainActivity.kt 是一个带安卓原生按钮的测试壳子，我们需要把它换成直接启动 uni-app 的代码。
+<strong>解决：</strong></p>
+<ol>
+<li>打开 app -&gt; src -&gt; main -&gt; java -&gt; &hellip; -&gt; MainActivity.kt。</li>
+<li><strong>清空里面的所有代码</strong>，替换为以下纯净版启动代码（注意包名要保留你自己的）：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">uniappx_native_package</span><span class="w"> </span><span class="c1">// 这里的 package 保持你文件原有的不要动</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nx">android</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">Bundle</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">dcloud</span><span class="p">.</span><span class="nx">uniapp</span><span class="p">.</span><span class="nx">UniAppActivity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">class</span><span class="w"> </span><span class="nx">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nf">UniAppActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">override</span><span class="w"> </span><span class="nx">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="nx">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="nx">Bundle</span><span class="err">?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="nx">savedInstanceState</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093419839.png"
+        data-srcset="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093419839.png, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093419839.png 1.5x, /posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093419839.png 2x"
+        data-sizes="auto"
+        alt="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/images/image-20260408093419839.png"
+        title="image-20260408093419839" width="1882" height="755" /></p>
+<h4 id="第九步app-瘦身减小包体积">第九步：App 瘦身（减小包体积）</h4>
+<p><strong>原因：</strong>  离线 SDK 默认是“全家桶”，把微信、支付宝、个推、地图等所有模块全塞进去了。
+<strong>解决：</strong></p>
+<ol>
+<li>打开 app/build.gradle，滑到最底部的 dependencies { &hellip; } 区域。</li>
+<li>把你项目中<strong>没有用到</strong>的功能依赖，在前面加上 // 注释掉。
+(例如：没用到华为广告，就注释掉 implementation &ldquo;com.huawei.hms:ads-lite&hellip;&quot;；没用到高德地图，就注释掉 implementation &lsquo;com.amap.api:&hellip;&rsquo; 等等)</li>
+<li>注释完成后，点击 <strong>Sync Now</strong>。这能让你的 APK 体积瞬间缩小几十兆！</li>
+</ol>
+<h3 id="最终阶段一键出包">最终阶段：一键出包！</h3>
+<p>激动人心的时刻到了！</p>
+<ol>
+<li>点击 Android Studio 顶部菜单栏：<strong>Build -&gt; Generate Signed Bundle / APK&hellip;</strong></li>
+<li>选择 <strong>APK</strong>，点击 Next。</li>
+<li>选择你的证书路径，填入密码和别名，勾选记住密码，点击 Next。</li>
+<li>在最后一个窗口，选中 <strong>release（正式版）</strong> ，或者 <strong>debug（调试版）</strong></li>
+<li>点击 <strong>Create</strong>。</li>
+</ol></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-04-08</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/uni-app-x%E6%89%93%E5%8C%85/">Uni-App-X打包</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A0%A1%E9%AA%8C%E6%B5%81%E7%A8%8B/" class="prev" rel="prev" title="数字签名原理与校验流程"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>数字签名原理与校验流程</a>
+            <a href="/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/" class="next" rel="next" title="hugo绘制echarts图表">hugo绘制echarts图表<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

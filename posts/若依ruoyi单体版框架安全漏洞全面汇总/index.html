@@ -118,42 +118,55 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-apache-shiro-默认密钥反序列化-rce">1. Apache Shiro 默认密钥反序列化 RCE</a></li>
-    <li><a href="#2-thymeleaf-ssti-模板注入可获取-shiro-密钥rce">2. Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</a></li>
-    <li><a href="#3-定时任务-snakeyaml-反序列化-rce">3. 定时任务 SnakeYAML 反序列化 RCE</a></li>
-    <li><a href="#4-定时任务-jndi-注入-rce">4. 定时任务 JNDI 注入 RCE</a></li>
-    <li><a href="#5-定时任务-sql-注入绕过白名单致-rce">5. 定时任务 SQL 注入绕过白名单致 RCE</a></li>
-    <li><a href="#6-quartz-定时任务代码注入-rce">6. Quartz 定时任务代码注入 RCE</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#7-认证用户-sql-注入createtable-接口">7. 认证用户 SQL 注入（createTable 接口）</a></li>
-    <li><a href="#8-sql-注入黑名单绕过">8. SQL 注入黑名单绕过</a></li>
-    <li><a href="#9-后台分页参数-sql-注入orderbycolumn">9. 后台分页参数 SQL 注入（orderByColumn）</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#10-任意文件下载漏洞">10. 任意文件下载漏洞</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#11-权限提升漏洞joblogid-参数">11. 权限提升漏洞（jobLogId 参数）</a></li>
-    <li><a href="#12-白名单-getbeanname-函数绕过">12. 白名单 getBeanName 函数绕过</a></li>
-    <li><a href="#13-权限提升漏洞">13. 权限提升漏洞</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#14-默认弱口令-adminadmin123">14. 默认弱口令 admin/admin123</a></li>
-    <li><a href="#15-druid-监控页面未授权访问">15. Druid 监控页面未授权访问</a></li>
-    <li><a href="#16-swagger-接口文档未授权访问">16. Swagger 接口文档未授权访问</a></li>
-    <li><a href="#17-多个安全漏洞v480-集中披露">17. 多个安全漏洞（v4.8.0 集中披露）</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#漏洞总览速查表">漏洞总览速查表</a></li>
+    <li><a href="#1-远程代码执行rce漏洞-严重-">1. 远程代码执行（RCE）漏洞[ 严重 ]</a>
+      <ul>
+        <li><a href="#1-apache-shiro-默认密钥反序列化-rce">1. Apache Shiro 默认密钥反序列化 RCE</a></li>
+        <li><a href="#2-thymeleaf-ssti-模板注入可获取-shiro-密钥rce">2. Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</a></li>
+        <li><a href="#3-定时任务-snakeyaml-反序列化-rce">3. 定时任务 SnakeYAML 反序列化 RCE</a></li>
+        <li><a href="#4-定时任务-jndi-注入-rce">4. 定时任务 JNDI 注入 RCE</a></li>
+        <li><a href="#5-定时任务-sql-注入绕过白名单致-rce">5. 定时任务 SQL 注入绕过白名单致 RCE</a></li>
+        <li><a href="#6-quartz-定时任务代码注入-rce">6. Quartz 定时任务代码注入 RCE</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-sql-注入漏洞---高危-">2. SQL 注入漏洞  [ 高危 ]</a>
+      <ul>
+        <li><a href="#7-认证用户-sql-注入createtable-接口">7. 认证用户 SQL 注入（createTable 接口）</a></li>
+        <li><a href="#8-sql-注入黑名单绕过">8. SQL 注入黑名单绕过</a></li>
+        <li><a href="#9-后台分页参数-sql-注入orderbycolumn">9. 后台分页参数 SQL 注入（orderByColumn）</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-文件操作漏洞---高危-">3. 文件操作漏洞  [ 高危 ]</a>
+      <ul>
+        <li><a href="#10-任意文件下载漏洞">10. 任意文件下载漏洞</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-权限提升与安全绕过---高危-">4. 权限提升与安全绕过  [ 高危 ]</a>
+      <ul>
+        <li><a href="#11-权限提升漏洞joblogid-参数">11. 权限提升漏洞（jobLogId 参数）</a></li>
+        <li><a href="#12-白名单-getbeanname-函数绕过">12. 白名单 getBeanName 函数绕过</a></li>
+        <li><a href="#13-权限提升漏洞">13. 权限提升漏洞</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-认证与配置缺陷---中危高危-">5. 认证与配置缺陷  [ 中危~高危 ]</a>
+      <ul>
+        <li><a href="#14-默认弱口令-adminadmin123">14. 默认弱口令 admin/admin123</a></li>
+        <li><a href="#15-druid-监控页面未授权访问">15. Druid 监控页面未授权访问</a></li>
+        <li><a href="#16-swagger-接口文档未授权访问">16. Swagger 接口文档未授权访问</a></li>
+        <li><a href="#17-多个安全漏洞v480-集中披露">17. 多个安全漏洞（v4.8.0 集中披露）</a></li>
+      </ul>
+    </li>
+    <li><a href="#通用安全加固建议">通用安全加固建议</a></li>
+    <li><a href="#附录若依资产发现语法">附录：若依资产发现语法</a></li>
+    <li><a href="#参考来源">参考来源</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>覆盖 v4.5.x ~ v4.8.2+ 全版本线  |  17 个漏洞  |  7 个 CVE 编号 | 整理时间：2026年5月</p>
-<h1 id="前言">前言</h1>
+<h2 id="前言">前言</h2>
 <p>若依（RuoYi）是国内使用最广泛的开源 Java 快速开发平台之一，基于 Spring Boot + MyBatis 构建，GitHub/Gitee 星标数万。正因其广泛使用，若依框架也成为了攻防演练和渗透测试中的高频目标。本文系统梳理若依单体版（非微服务版本）从 v4.5.x 到最新 v4.8.2+ 的全部已知安全漏洞，涵盖反序列化 RCE、模板注入、SQL 注入、任意文件下载、权限提升、未授权访问等多个维度，供安全研究人员和开发者参考。</p>
 <p>声明：本文仅用于安全研究和防御加固参考，请勿将相关信息用于非法用途。所有漏洞信息均来自公开渠道。</p>
-<h1 id="漏洞总览速查表">漏洞总览速查表</h1>
+<h2 id="漏洞总览速查表">漏洞总览速查表</h2>
 <table>
   <thead>
       <tr>
@@ -322,8 +335,8 @@
       </tr>
   </tbody>
 </table>
-<h1 id="1-远程代码执行rce漏洞-严重-">1. 远程代码执行（RCE）漏洞[ 严重 ]</h1>
-<h2 id="1-apache-shiro-默认密钥反序列化-rce">1. Apache Shiro 默认密钥反序列化 RCE</h2>
+<h2 id="1-远程代码执行rce漏洞-严重-">1. 远程代码执行（RCE）漏洞[ 严重 ]</h2>
+<h3 id="1-apache-shiro-默认密钥反序列化-rce">1. Apache Shiro 默认密钥反序列化 RCE</h3>
 <table>
   <thead>
       <tr>
@@ -365,7 +378,7 @@
 </ol>
 <p>修复建议</p>
 <p>升级到 RuoYi &gt;= 4.6.2（使用随机密钥）；检查 ShiroConfig.java 中是否仍包含固定密钥；升级 Shiro 组件至最新版本。</p>
-<h2 id="2-thymeleaf-ssti-模板注入可获取-shiro-密钥rce">2. Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</h2>
+<h3 id="2-thymeleaf-ssti-模板注入可获取-shiro-密钥rce">2. Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</h3>
 <table>
   <thead>
       <tr>
@@ -407,7 +420,7 @@
 </ol>
 <p>修复建议</p>
 <p>升级到官方修复版本；对 controller 方法添加 @ResponseBody 注解防止模板解析；对输入进行严格过滤。</p>
-<h2 id="3-定时任务-snakeyaml-反序列化-rce">3. 定时任务 SnakeYAML 反序列化 RCE</h2>
+<h3 id="3-定时任务-snakeyaml-反序列化-rce">3. 定时任务 SnakeYAML 反序列化 RCE</h3>
 <table>
   <thead>
       <tr>
@@ -449,7 +462,7 @@
 </ol>
 <p>修复建议</p>
 <p>升级 SnakeYAML 到安全版本；对 invokeTarget 实施严格白名单校验；禁止调用危险类和方法；移除类全路径实例化执行逻辑。</p>
-<h2 id="4-定时任务-jndi-注入-rce">4. 定时任务 JNDI 注入 RCE</h2>
+<h3 id="4-定时任务-jndi-注入-rce">4. 定时任务 JNDI 注入 RCE</h3>
 <table>
   <thead>
       <tr>
@@ -491,7 +504,7 @@
 </ol>
 <p>修复建议</p>
 <p>禁用类路径调用方式；升级 JDK 至高版本（&gt;= 8u191，默认禁止远程 Reference 工厂类加载）；升级到若依修复版本。</p>
-<h2 id="5-定时任务-sql-注入绕过白名单致-rce">5. 定时任务 SQL 注入绕过白名单致 RCE</h2>
+<h3 id="5-定时任务-sql-注入绕过白名单致-rce">5. 定时任务 SQL 注入绕过白名单致 RCE</h3>
 <table>
   <thead>
       <tr>
@@ -530,7 +543,7 @@
 </ol>
 <p>修复建议</p>
 <p>对 genTableServiceImpl.createTable 进行严格 SQL 白名单校验（仅允许 CREATE TABLE）；禁止 mapper 中 ${sql} 直接拼接。</p>
-<h2 id="6-quartz-定时任务代码注入-rce">6. Quartz 定时任务代码注入 RCE</h2>
+<h3 id="6-quartz-定时任务代码注入-rce">6. Quartz 定时任务代码注入 RCE</h3>
 <table>
   <thead>
       <tr>
@@ -569,8 +582,8 @@
 </ol>
 <p>修复建议</p>
 <p>升级到官方最新修复版本；对 invokeTarget 参数实施更严格的安全校验。</p>
-<h1 id="2-sql-注入漏洞---高危-">2. SQL 注入漏洞  [ 高危 ]</h1>
-<h2 id="7-认证用户-sql-注入createtable-接口">7. 认证用户 SQL 注入（createTable 接口）</h2>
+<h2 id="2-sql-注入漏洞---高危-">2. SQL 注入漏洞  [ 高危 ]</h2>
+<h3 id="7-认证用户-sql-注入createtable-接口">7. 认证用户 SQL 注入（createTable 接口）</h3>
 <table>
   <thead>
       <tr>
@@ -609,7 +622,7 @@
 </ol>
 <p>修复建议</p>
 <p>升级至最新版本；对 createTable 接口的 SQL 输入使用参数化处理；加强正则过滤规则，用白名单替代黑名单。</p>
-<h2 id="8-sql-注入黑名单绕过">8. SQL 注入黑名单绕过</h2>
+<h3 id="8-sql-注入黑名单绕过">8. SQL 注入黑名单绕过</h3>
 <table>
   <thead>
       <tr>
@@ -648,7 +661,7 @@
 </ol>
 <p>修复建议</p>
 <p>采用参数化查询替代黑名单过滤；升级到修复版本；使用 WAF 进行深层 SQL 注入防护。</p>
-<h2 id="9-后台分页参数-sql-注入orderbycolumn">9. 后台分页参数 SQL 注入（orderByColumn）</h2>
+<h3 id="9-后台分页参数-sql-注入orderbycolumn">9. 后台分页参数 SQL 注入（orderByColumn）</h3>
 <table>
   <thead>
       <tr>
@@ -677,8 +690,8 @@
 <p>在后台功能请求中修改 orderByColumn 参数，注入恶意 SQL 表达式，通过时间盲注或联合查询实现数据窃取。</p>
 <p>修复建议</p>
 <p>将所有 ${} 动态拼接改为 #{} 参数化查询；对排序字段进行严格白名单校验。</p>
-<h1 id="3-文件操作漏洞---高危-">3. 文件操作漏洞  [ 高危 ]</h1>
-<h2 id="10-任意文件下载漏洞">10. 任意文件下载漏洞</h2>
+<h2 id="3-文件操作漏洞---高危-">3. 文件操作漏洞  [ 高危 ]</h2>
+<h3 id="10-任意文件下载漏洞">10. 任意文件下载漏洞</h3>
 <table>
   <thead>
       <tr>
@@ -717,8 +730,8 @@
 </ol>
 <p>修复建议</p>
 <p>升级到 RuoYi &gt;= 4.7.7；对文件下载路径进行严格白名单限制和规范化处理；禁止 ../ 等目录穿越字符。</p>
-<h1 id="4-权限提升与安全绕过---高危-">4. 权限提升与安全绕过  [ 高危 ]</h1>
-<h2 id="11-权限提升漏洞joblogid-参数">11. 权限提升漏洞（jobLogId 参数）</h2>
+<h2 id="4-权限提升与安全绕过---高危-">4. 权限提升与安全绕过  [ 高危 ]</h2>
+<h3 id="11-权限提升漏洞joblogid-参数">11. 权限提升漏洞（jobLogId 参数）</h3>
 <table>
   <thead>
       <tr>
@@ -747,7 +760,7 @@
 <p>通过构造包含特定 jobLogId 参数的请求，越权访问或操作高权限资源。</p>
 <p>修复建议</p>
 <p>升级到 RuoYi &gt; v4.8.0；对 getBeanName 函数增加严格的权限校验。</p>
-<h2 id="12-白名单-getbeanname-函数绕过">12. 白名单 getBeanName 函数绕过</h2>
+<h3 id="12-白名单-getbeanname-函数绕过">12. 白名单 getBeanName 函数绕过</h3>
 <table>
   <thead>
       <tr>
@@ -776,7 +789,7 @@
 <p>通过构造特殊请求绕过白名单检查机制，执行未授权的 Bean 调用。</p>
 <p>修复建议</p>
 <p>升级至官方修复版本；加强白名单校验逻辑。</p>
-<h2 id="13-权限提升漏洞">13. 权限提升漏洞</h2>
+<h3 id="13-权限提升漏洞">13. 权限提升漏洞</h3>
 <table>
   <thead>
       <tr>
@@ -805,8 +818,8 @@
 <p>低权限攻击者通过特定请求构造，提升至管理员权限。</p>
 <p>修复建议</p>
 <p>升级到修复后版本，加强后端权限校验逻辑。</p>
-<h1 id="5-认证与配置缺陷---中危高危-">5. 认证与配置缺陷  [ 中危~高危 ]</h1>
-<h2 id="14-默认弱口令-adminadmin123">14. 默认弱口令 admin/admin123</h2>
+<h2 id="5-认证与配置缺陷---中危高危-">5. 认证与配置缺陷  [ 中危~高危 ]</h2>
+<h3 id="14-默认弱口令-adminadmin123">14. 默认弱口令 admin/admin123</h3>
 <table>
   <thead>
       <tr>
@@ -835,7 +848,7 @@
 <p>直接使用 admin/admin123 登录后台管理系统，获取所有管理权限。</p>
 <p>修复建议</p>
 <p>部署后立即修改所有默认密码；强制密码复杂度策略（至少12位）；启用登录失败锁定；集成 OAuth2 或多因素认证。</p>
-<h2 id="15-druid-监控页面未授权访问">15. Druid 监控页面未授权访问</h2>
+<h3 id="15-druid-监控页面未授权访问">15. Druid 监控页面未授权访问</h3>
 <table>
   <thead>
       <tr>
@@ -864,7 +877,7 @@
 <p>直接访问 /druid/index.html，获取 SQL 执行记录、数据源配置、Session 等信息。</p>
 <p>修复建议</p>
 <p>在 ShiroConfig 或 Spring Security 配置中对 /druid/** 路径添加认证拦截；或在 Druid 配置中启用登录认证。</p>
-<h2 id="16-swagger-接口文档未授权访问">16. Swagger 接口文档未授权访问</h2>
+<h3 id="16-swagger-接口文档未授权访问">16. Swagger 接口文档未授权访问</h3>
 <table>
   <thead>
       <tr>
@@ -893,7 +906,7 @@
 <p>访问 /swagger-ui.html 或 /swagger-resources 等路径，获取全部 API 接口定义。</p>
 <p>修复建议</p>
 <p>生产环境禁用 Swagger，或为 Swagger 路径添加认证要求。</p>
-<h2 id="17-多个安全漏洞v480-集中披露">17. 多个安全漏洞（v4.8.0 集中披露）</h2>
+<h3 id="17-多个安全漏洞v480-集中披露">17. 多个安全漏洞（v4.8.0 集中披露）</h3>
 <table>
   <thead>
       <tr>
@@ -922,7 +935,7 @@
 <p>通过系统监控接口查看 admin 会话 ID，可能进行会话劫持等攻击。</p>
 <p>修复建议</p>
 <p>升级到 RuoYi &gt; v4.8.0 的修复版本。</p>
-<h1 id="通用安全加固建议">通用安全加固建议</h1>
+<h2 id="通用安全加固建议">通用安全加固建议</h2>
 <table>
   <thead>
       <tr>
@@ -974,7 +987,7 @@
       </tr>
   </tbody>
 </table>
-<h1 id="附录若依资产发现语法">附录：若依资产发现语法</h1>
+<h2 id="附录若依资产发现语法">附录：若依资产发现语法</h2>
 <p>在渗透测试和攻防演练中，快速识别若依资产是第一步。以下是常用的搜索引擎语法：</p>
 <table>
   <thead>
@@ -1002,7 +1015,7 @@
       </tr>
   </tbody>
 </table>
-<h1 id="参考来源">参考来源</h1>
+<h2 id="参考来源">参考来源</h2>
 <ul>
 <li>
 <p>博客园 - 若依(RuoYi)框架漏洞总结 (backlion)</p>

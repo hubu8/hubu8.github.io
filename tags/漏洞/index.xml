@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>漏洞 on Eccentric&#39;s Note</title>
+    <link>https://188.hubu.eu.cc/tags/%E6%BC%8F%E6%B4%9E/</link>
+    <description>Recent content in 漏洞 on Eccentric&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 01 May 2026 08:59:26 +0800</lastBuildDate>
+    <atom:link href="https://188.hubu.eu.cc/tags/%E6%BC%8F%E6%B4%9E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>若依（RuoYi）单体版框架安全漏洞全面汇总</title>
+      <link>https://188.hubu.eu.cc/posts/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Fri, 01 May 2026 08:59:26 +0800</pubDate>
+      <guid>https://188.hubu.eu.cc/posts/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/</guid>
+      <description>&lt;p&gt;覆盖 v4.5.x ~ v4.8.2+ 全版本线  |  17 个漏洞  |  7 个 CVE 编号 | 整理时间：2026年5月&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

